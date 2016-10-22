@@ -135,6 +135,13 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		9C181B891DB8E99000D941EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		9C987A3A1DB79826005515F4 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +167,7 @@
 		9C987A451DB79826005515F4 /* wallabag */ = {
 			isa = PBXGroup;
 			children = (
+				9C181B891DB8E99000D941EB /* Model */,
 				9C181B841DB8D47C00D941EB /* Controller */,
 				9C181B831DB8D47600D941EB /* Lib */,
 				9C987A461DB79826005515F4 /* AppDelegate.swift */,
