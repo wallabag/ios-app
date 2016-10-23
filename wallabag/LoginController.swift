@@ -9,21 +9,21 @@
 import UIKit
 
 class LoginController: UIViewController {
-    
+
     @IBOutlet weak var endpoint: UITextField!
     @IBOutlet weak var clientId: UITextField!
     @IBOutlet weak var clientSecret: UITextField!
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
-    
+
     @IBAction func login(_ sender: UIButton) {
         WallabagApi.configureApi(endpoint: endpoint.text!, clientId: clientId.text!, clientSecret: clientSecret.text!, username: username.text!, password: password.text!)
-        
+
         WallabagApi.requestToken() {
             self.performSegue(withIdentifier: "loginSuccessful", sender: nil)
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         endpoint.text = "http://www.annonces-airsoft.fr:8080"

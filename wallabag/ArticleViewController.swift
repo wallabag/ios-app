@@ -10,8 +10,8 @@ import UIKit
 
 class ArticleViewController: UIViewController {
 
-    var article:Article!
-    
+    var article: Article!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

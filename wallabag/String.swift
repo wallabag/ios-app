@@ -9,11 +9,11 @@
 import Foundation
 
 extension String {
-    var date:Date? {
+    var date: Date? {
         get {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
-            
+
             return dateFormatter.date(from: self)
         }
     }

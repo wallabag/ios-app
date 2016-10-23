@@ -9,26 +9,26 @@
 import Foundation
 
 struct Article {
-    let annotations:Set<String>
-    let content:String
-    let created_at:Date
-    let domain_name:String
-    let id:Int
-    let is_archived:Bool
-    let is_starred:Bool
-    let language:String
-    let mimetype:String
-    let preview_picture:String
-    let reading_time:Int
-    let tags:Set<String>
-    let title:String
-    let updated_at:Date
-    let url:URL
-    let user_email:String
-    let user_id:Int
-    let user_name:String
+    let annotations: Set<String>
+    let content: String
+    let created_at: Date
+    let domain_name: String
+    let id: Int
+    let is_archived: Bool
+    let is_starred: Bool
+    let language: String
+    let mimetype: String
+    let preview_picture: String
+    let reading_time: Int
+    let tags: Set<String>
+    let title: String
+    let updated_at: Date
+    let url: URL
+    let user_email: String
+    let user_id: Int
+    let user_name: String
 
-    init(fromItem:[String:Any]) {
+    init(fromItem: [String: Any]) {
         annotations = []
         content = fromItem["content"] as! String
         created_at = (fromItem["created_at"] as! String).date ?? Date()
