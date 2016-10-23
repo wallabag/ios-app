@@ -10,6 +10,8 @@
 		01971931BCF414226F407E96 /* Pods_wallabagTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C75DD9CC88FFD838573A351 /* Pods_wallabagTests.framework */; };
 		9C181B861DB8D56600D941EB /* WallabagApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C181B851DB8D56600D941EB /* WallabagApi.swift */; };
 		9C181B881DB8E27000D941EB /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C181B871DB8E27000D941EB /* ArticlesTableViewController.swift */; };
+		9C7596191DBB540D0096614B /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7596181DBB540D0096614B /* Article.swift */; };
+		9C75961C1DBB567E0096614B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75961B1DBB567E0096614B /* String.swift */; };
 		9C987A471DB79826005515F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C987A461DB79826005515F4 /* AppDelegate.swift */; };
 		9C987A491DB79826005515F4 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C987A481DB79826005515F4 /* LoginController.swift */; };
 		9C987A4C1DB79826005515F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A4A1DB79826005515F4 /* Main.storyboard */; };
@@ -47,6 +49,8 @@
 		9B9EB64D938632DA7CDDFD2A /* Pods-wallabagUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9C181B851DB8D56600D941EB /* WallabagApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallabagApi.swift; sourceTree = "<group>"; };
 		9C181B871DB8E27000D941EB /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
+		9C7596181DBB540D0096614B /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		9C75961B1DBB567E0096614B /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		9C75DD9CC88FFD838573A351 /* Pods_wallabagTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C987A431DB79826005515F4 /* wallabag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wallabag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C987A461DB79826005515F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,8 +142,17 @@
 		9C181B891DB8E99000D941EB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9C7596181DBB540D0096614B /* Article.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		9C75961A1DBB56730096614B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9C75961B1DBB567E0096614B /* String.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 		9C987A3A1DB79826005515F4 = {
@@ -167,6 +180,7 @@
 		9C987A451DB79826005515F4 /* wallabag */ = {
 			isa = PBXGroup;
 			children = (
+				9C75961A1DBB56730096614B /* Extension */,
 				9C181B891DB8E99000D941EB /* Model */,
 				9C181B841DB8D47C00D941EB /* Controller */,
 				9C181B831DB8D47600D941EB /* Lib */,
@@ -484,7 +498,9 @@
 			files = (
 				9C181B881DB8E27000D941EB /* ArticlesTableViewController.swift in Sources */,
 				9C987A491DB79826005515F4 /* LoginController.swift in Sources */,
+				9C7596191DBB540D0096614B /* Article.swift in Sources */,
 				9C181B861DB8D56600D941EB /* WallabagApi.swift in Sources */,
+				9C75961C1DBB567E0096614B /* String.swift in Sources */,
 				9C987A471DB79826005515F4 /* AppDelegate.swift in Sources */,
 				9C987A4F1DB79826005515F4 /* wallabag.xcdatamodeld in Sources */,
 			);

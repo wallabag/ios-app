@@ -10,7 +10,7 @@ import UIKit
 
 final class ArticlesTableViewController: UITableViewController {
 
-    var articles = [String]()
+    var articles = [Article]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ final class ArticlesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        cell.textLabel?.text = articles[indexPath.item]
+        cell.textLabel?.text = articles[indexPath.item].title
     
         return cell
     }

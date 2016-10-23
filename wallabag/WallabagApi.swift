@@ -45,16 +45,16 @@ final class WallabagApi {
         }
     }
     
-    static func retrieveArticle(_ completion: @escaping ([String]) -> ()) {
+    static func retrieveArticle(_ completion: @escaping ([Article]) -> Void) {
         let parameters = ["access_token" : access_token!]
-        var articles = [String]()
+        var articles = [Article]()
         
         Alamofire.request(endpoint! + "/api/entries.html", parameters: parameters).responseJSON { response in
             if let result = response.result.value {
                 if let JSON = result as? NSDictionary {
-                    if let embedded = JSON["_embedded"] as? NSDictionary {
-                        for item in embedded["items"] as! [NSDictionary] {
-                            articles.append(item["title"] as! String)
+                    if let embedded = JSON["_embedded"] as? [String:Any] {
+                        for item in embedded["items"] as! [[String:Any]] {
+                            articles.append(Article(fromItem: item))
                         }
                     }
                 }
