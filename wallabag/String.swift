@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
     var date: Date? {
@@ -17,4 +18,11 @@ extension String {
             return dateFormatter.date(from: self)
         }
     }
+
+    var attributedHTML: NSAttributedString {
+        get {
+            return try! NSAttributedString(data: self.data(using: .unicode, allowLossyConversion: true)!, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil)
+        }
+    }
+
 }

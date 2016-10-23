@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -120,12 +121,47 @@
                     <view key="view" contentMode="scaleToFill" id="IIB-w3-phs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jq-MA-AJF" userLabel="title">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="KWp-bu-GKd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IDa-f5-dR7" userLabel="content">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Content">
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="14"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1Jq-MA-AJF" firstAttribute="leading" secondItem="IIB-w3-phs" secondAttribute="leadingMargin" id="Cxa-c3-RAV"/>
+                            <constraint firstItem="0ii-Ho-OiO" firstAttribute="top" secondItem="IDa-f5-dR7" secondAttribute="bottom" id="GWY-3o-1g7"/>
+                            <constraint firstItem="IDa-f5-dR7" firstAttribute="top" secondItem="1Jq-MA-AJF" secondAttribute="bottom" constant="8" id="N28-sf-Tsd"/>
+                            <constraint firstItem="IDa-f5-dR7" firstAttribute="trailing" secondItem="IIB-w3-phs" secondAttribute="trailingMargin" id="N5A-EJ-mH0"/>
+                            <constraint firstItem="1Jq-MA-AJF" firstAttribute="trailing" secondItem="IIB-w3-phs" secondAttribute="trailingMargin" id="Pkj-t2-jtW"/>
+                            <constraint firstItem="1Jq-MA-AJF" firstAttribute="top" secondItem="Kf2-pV-a1B" secondAttribute="bottom" constant="8" id="UeA-q2-786"/>
+                            <constraint firstItem="IDa-f5-dR7" firstAttribute="leading" secondItem="IIB-w3-phs" secondAttribute="leadingMargin" id="Vzc-LL-sKa"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentText" destination="IDa-f5-dR7" id="oEI-Le-bsk"/>
+                        <outlet property="titleLabel" destination="1Jq-MA-AJF" id="9y3-g7-wDI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfU-tW-LRl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2546" y="-528"/>
+            <point key="canvasLocation" x="2544.8000000000002" y="-528.48575712143929"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2m4-p4-EbE">

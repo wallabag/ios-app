@@ -12,15 +12,16 @@ class ArticleViewController: UIViewController {
 
     var article: Article!
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var contentText: UITextView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.title = article.title
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+        titleLabel.text = article.title
 
+        contentText.attributedText = article.content.attributedHTML
+    }
 }
