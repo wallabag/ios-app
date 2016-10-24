@@ -19,6 +19,7 @@ extension String {
         }
     }
 
+    // @todo optimize time
     var attributedHTML: NSAttributedString {
         get {
             return try! NSAttributedString(data: self.data(using: .unicode, allowLossyConversion: true)!, options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], documentAttributes: nil)
