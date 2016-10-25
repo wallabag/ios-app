@@ -68,19 +68,33 @@
         <scene sceneID="vTl-iM-X3B">
             <objects>
                 <tableViewController id="Ykf-Ei-TaT" userLabel="Articles TableView" customClass="ArticlesTableViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bbq-TK-Tgo">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="97" sectionHeaderHeight="28" sectionFooterHeight="28" id="bbq-TK-Tgo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="articleIdentifier" id="BOk-fg-qmd">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="articleIdentifier" rowHeight="97" id="BOk-fg-qmd" customClass="ArticleTableViewCell" customModule="wallabag" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="375" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BOk-fg-qmd" id="Gj3-Gv-99G">
-                                    <frame key="frameInset" width="342" height="43"/>
+                                    <frame key="frameInset" width="342" height="96"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Article title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDD-og-deR" userLabel="Article title">
+                                            <frame key="frameInset" minX="8" minY="8" width="334" height="28"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="eDD-og-deR" firstAttribute="top" secondItem="Gj3-Gv-99G" secondAttribute="top" constant="8" id="8IB-4s-djP"/>
+                                        <constraint firstItem="eDD-og-deR" firstAttribute="leading" secondItem="Gj3-Gv-99G" secondAttribute="leading" constant="8" id="n9l-dF-FNs"/>
+                                        <constraint firstAttribute="trailing" secondItem="eDD-og-deR" secondAttribute="trailing" id="qJi-a6-J5E"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="title" destination="eDD-og-deR" id="lHe-ZG-3f6"/>
                                     <segue destination="zsG-x9-2za" kind="show" identifier="readArticle" id="bHx-HF-nTe"/>
                                 </connections>
                             </tableViewCell>
@@ -97,7 +111,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7b-wX-N2L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1713" y="81"/>
+            <point key="canvasLocation" x="1712.8" y="80.50974512743629"/>
         </scene>
         <!--Read Article-->
         <scene sceneID="UaL-Kt-Wcp">

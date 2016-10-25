@@ -30,7 +30,6 @@ struct Article {
 
     init(fromItem: [String: Any]) {
         print(fromItem)
-
         annotations = []
         content = fromItem["content"] as! String
         created_at = (fromItem["created_at"] as! String).date ?? Date()

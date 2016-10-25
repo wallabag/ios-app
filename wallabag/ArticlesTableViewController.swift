@@ -33,11 +33,16 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "articleIdentifier", for: indexPath)
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "articleIdentifier", for: indexPath) as? ArticleTableViewCell {
 
-        cell.textLabel?.text = articles[indexPath.item].title
+            let article = articles[indexPath.item]
 
-        return cell
+            cell.present(article)
+
+            return cell
+        } else {
+            return UITableViewCell()
+        }
     }
 
     func handleRefresh() {
