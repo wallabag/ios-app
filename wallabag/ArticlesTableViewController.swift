@@ -18,12 +18,9 @@ final class ArticlesTableViewController: UITableViewController {
         // hack ?
         navigationController?.setViewControllers([self], animated: false)
 
-        WallabagApi.retrieveArticle { articles in
-            self.articles = articles
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+        refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+
+        handleRefresh()
     }
 
     // MARK: - Table view data source
@@ -41,6 +38,17 @@ final class ArticlesTableViewController: UITableViewController {
         cell.textLabel?.text = articles[indexPath.item].title
 
         return cell
+    }
+
+    func handleRefresh() {
+        WallabagApi.retrieveArticle { articles in
+            self.articles = articles
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+
+        refreshControl?.endRefreshing()
     }
 
     /*
