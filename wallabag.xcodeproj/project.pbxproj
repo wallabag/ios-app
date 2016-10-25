@@ -21,6 +21,11 @@
 		9C987A541DB79826005515F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A521DB79826005515F4 /* LaunchScreen.storyboard */; };
 		9C987A5F1DB79826005515F4 /* wallabagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C987A5E1DB79826005515F4 /* wallabagTests.swift */; };
 		9C987A6A1DB79826005515F4 /* wallabagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C987A691DB79826005515F4 /* wallabagUITests.swift */; };
+		9CF1F21C1DBE943C0086B98B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F21B1DBE943C0086B98B /* HomeViewController.swift */; };
+		9CF1F21E1DBE966B0086B98B /* UbuntuTitling-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9CF1F21D1DBE96210086B98B /* UbuntuTitling-Bold.ttf */; };
+		9CF1F2211DBE97D80086B98B /* ServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F2201DBE97D80086B98B /* ServerViewController.swift */; };
+		9CF1F2231DBE9B800086B98B /* ClientIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F2221DBE9B800086B98B /* ClientIdViewController.swift */; };
+		9CF1F2251DBE9D150086B98B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F2241DBE9D150086B98B /* LoginViewController.swift */; };
 		AEDD1E205C0DF01C54999C21 /* Pods_wallabag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAE89D8A395291968A2E2A7 /* Pods_wallabag.framework */; };
 		DB5193211F1DB976C3862849 /* Pods_wallabagUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3678DDB92217E137039674C2 /* Pods_wallabagUITests.framework */; };
 /* End PBXBuildFile section */
@@ -68,6 +73,11 @@
 		9C987A651DB79826005515F4 /* wallabagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C987A691DB79826005515F4 /* wallabagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wallabagUITests.swift; sourceTree = "<group>"; };
 		9C987A6B1DB79826005515F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CF1F21B1DBE943C0086B98B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		9CF1F21D1DBE96210086B98B /* UbuntuTitling-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UbuntuTitling-Bold.ttf"; sourceTree = "<group>"; };
+		9CF1F2201DBE97D80086B98B /* ServerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerViewController.swift; sourceTree = "<group>"; };
+		9CF1F2221DBE9B800086B98B /* ClientIdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientIdViewController.swift; sourceTree = "<group>"; };
+		9CF1F2241DBE9D150086B98B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AFAE89D8A395291968A2E2A7 /* Pods_wallabag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5054CFAAEF931DD2335077B /* Pods-wallabag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabag/Pods-wallabag.debug.xcconfig"; sourceTree = "<group>"; };
 		D492A4BFBC05746741AD48FD /* Pods-wallabag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabag/Pods-wallabag.release.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +145,10 @@
 		9C181B841DB8D47C00D941EB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9CF1F21B1DBE943C0086B98B /* HomeViewController.swift */,
+				9CF1F2201DBE97D80086B98B /* ServerViewController.swift */,
+				9CF1F2221DBE9B800086B98B /* ClientIdViewController.swift */,
+				9CF1F2241DBE9D150086B98B /* LoginViewController.swift */,
 				9C987A481DB79826005515F4 /* LoginController.swift */,
 				9C181B871DB8E27000D941EB /* ArticlesTableViewController.swift */,
 				9C75961D1DBD59330096614B /* ArticleViewController.swift */,
@@ -183,6 +197,7 @@
 		9C987A451DB79826005515F4 /* wallabag */ = {
 			isa = PBXGroup;
 			children = (
+				9CF1F21F1DBE96740086B98B /* Fonts */,
 				9C75961A1DBB56730096614B /* Extension */,
 				9C181B891DB8E99000D941EB /* Model */,
 				9C181B841DB8D47C00D941EB /* Controller */,
@@ -213,6 +228,14 @@
 				9C987A6B1DB79826005515F4 /* Info.plist */,
 			);
 			path = wallabagUITests;
+			sourceTree = "<group>";
+		};
+		9CF1F21F1DBE96740086B98B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9CF1F21D1DBE96210086B98B /* UbuntuTitling-Bold.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,6 +357,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CF1F21E1DBE966B0086B98B /* UbuntuTitling-Bold.ttf in Resources */,
 				9C987A541DB79826005515F4 /* LaunchScreen.storyboard in Resources */,
 				9C987A511DB79826005515F4 /* Assets.xcassets in Resources */,
 				9C987A4C1DB79826005515F4 /* Main.storyboard in Resources */,
@@ -499,11 +523,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CF1F2251DBE9D150086B98B /* LoginViewController.swift in Sources */,
 				9C181B881DB8E27000D941EB /* ArticlesTableViewController.swift in Sources */,
 				9C75961E1DBD59330096614B /* ArticleViewController.swift in Sources */,
+				9CF1F2231DBE9B800086B98B /* ClientIdViewController.swift in Sources */,
 				9C987A491DB79826005515F4 /* LoginController.swift in Sources */,
+				9CF1F2211DBE97D80086B98B /* ServerViewController.swift in Sources */,
 				9C7596191DBB540D0096614B /* Article.swift in Sources */,
 				9C181B861DB8D56600D941EB /* WallabagApi.swift in Sources */,
+				9CF1F21C1DBE943C0086B98B /* HomeViewController.swift in Sources */,
 				9C75961C1DBB567E0096614B /* String.swift in Sources */,
 				9C987A471DB79826005515F4 /* AppDelegate.swift in Sources */,
 				9C987A4F1DB79826005515F4 /* wallabag.xcdatamodeld in Sources */,

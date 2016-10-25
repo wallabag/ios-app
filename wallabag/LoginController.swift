@@ -19,7 +19,7 @@ class LoginController: UIViewController {
     @IBAction func login(_ sender: UIButton) {
         WallabagApi.configureApi(endpoint: endpoint.text!, clientId: clientId.text!, clientSecret: clientSecret.text!, username: username.text!, password: password.text!)
 
-        WallabagApi.requestToken() {
+        WallabagApi.requestToken() { _ in
             self.performSegue(withIdentifier: "loginSuccessful", sender: nil)
         }
     }

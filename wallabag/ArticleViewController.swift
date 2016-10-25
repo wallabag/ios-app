@@ -9,19 +9,19 @@
 import UIKit
 
 class ArticleViewController: UIViewController {
-    
+
     var article: Article!
-    
+
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentText: UITextView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         navigationItem.title = article.title
-        
+
         titleLabel.text = article.title
-        
+
         DispatchQueue.main.async {
             self.contentText.attributedText = self.article.content.attributedHTML
         }

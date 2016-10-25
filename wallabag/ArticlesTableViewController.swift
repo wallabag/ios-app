@@ -15,6 +15,9 @@ final class ArticlesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // hack ?
+        navigationController?.setViewControllers([self], animated: false)
+
         WallabagApi.retrieveArticle { articles in
             self.articles = articles
             DispatchQueue.main.async {
@@ -24,7 +27,6 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

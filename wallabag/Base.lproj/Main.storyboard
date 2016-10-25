@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vl8-yY-Bdt">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="UbuntuTitling-Bold.ttf">
+            <string>UbuntuTitling-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login-->
         <scene sceneID="tne-QT-ifu">
@@ -78,6 +83,58 @@
             </objects>
             <point key="canvasLocation" x="89" y="81"/>
         </scene>
+        <!--Home-->
+        <scene sceneID="Qzl-1y-Dm3">
+            <objects>
+                <viewController id="Vl8-yY-Bdt" userLabel="Home" customClass="HomeViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8dj-Du-tEP"/>
+                        <viewControllerLayoutGuide type="bottom" id="uNp-2q-j9F"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jgR-CC-0zk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-icon-bg-white" translatesAutoresizingMaskIntoConstraints="NO" id="K7r-Is-Qyw">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="AaF-Wi-Xdv"/>
+                                    <constraint firstAttribute="width" constant="200" id="XWq-bE-k6T"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallabag" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRs-RA-L1c">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="JFd-lV-8XK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn4-yG-cxW" userLabel="Add Server">
+                                <frame key="frameInset" minX="200" minY="327" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="LDR-tz-9ed" kind="popoverPresentation" popoverAnchorView="Zn4-yG-cxW" id="Gj0-oO-eNh">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FRs-RA-L1c" firstAttribute="leading" secondItem="jgR-CC-0zk" secondAttribute="leadingMargin" id="0Zd-Ap-Bhh"/>
+                            <constraint firstItem="K7r-Is-Qyw" firstAttribute="centerX" secondItem="jgR-CC-0zk" secondAttribute="centerX" id="5h3-fR-vgJ"/>
+                            <constraint firstItem="FRs-RA-L1c" firstAttribute="top" secondItem="K7r-Is-Qyw" secondAttribute="bottom" constant="8" id="JWX-vu-NhE"/>
+                            <constraint firstItem="K7r-Is-Qyw" firstAttribute="top" secondItem="8dj-Du-tEP" secondAttribute="bottom" constant="8" id="WiD-2X-fhA"/>
+                            <constraint firstItem="FRs-RA-L1c" firstAttribute="trailing" secondItem="jgR-CC-0zk" secondAttribute="trailingMargin" id="xxp-3Q-Z9c"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nn0-zM-jd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="88.799999999999997" y="765.96701649175418"/>
+        </scene>
         <!--Articles TableView-->
         <scene sceneID="vTl-iM-X3B">
             <objects>
@@ -91,7 +148,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BOk-fg-qmd" id="Gj3-Gv-99G">
-                                    <frame key="frameInset" width="342" height="44"/>
+                                    <frame key="frameInset" width="342" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -161,7 +218,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="x1i-6j-aOJ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xv2-Vj-zIM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Xv2-Vj-zIM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -174,5 +231,213 @@
             </objects>
             <point key="canvasLocation" x="893.60000000000002" y="81.409295352323838"/>
         </scene>
+        <!--Server-->
+        <scene sceneID="tbh-yG-xcX">
+            <objects>
+                <viewController id="LPm-N3-FEI" userLabel="Server" customClass="ServerViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="znn-gf-Efm"/>
+                        <viewControllerLayoutGuide type="bottom" id="21n-Ne-pUp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a4U-4S-atg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Server" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eWS-vU-XLm">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallabag" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDI-0H-Usb">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="GWL-6I-ADv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teE-c3-any">
+                                <frame key="frameInset" minX="164" minY="160" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <segue destination="hyy-VQ-rcz" kind="show" identifier="toClientId" id="nah-0H-R3t"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qDI-0H-Usb" firstAttribute="top" secondItem="znn-gf-Efm" secondAttribute="bottom" constant="8" id="3jB-cr-zgh"/>
+                            <constraint firstItem="qDI-0H-Usb" firstAttribute="trailing" secondItem="a4U-4S-atg" secondAttribute="trailingMargin" id="Bpp-x0-Zfk"/>
+                            <constraint firstItem="eWS-vU-XLm" firstAttribute="top" secondItem="qDI-0H-Usb" secondAttribute="bottom" constant="8" id="Fm1-KH-6ch"/>
+                            <constraint firstItem="teE-c3-any" firstAttribute="centerX" secondItem="a4U-4S-atg" secondAttribute="centerX" id="avh-hr-RAH"/>
+                            <constraint firstItem="qDI-0H-Usb" firstAttribute="leading" secondItem="a4U-4S-atg" secondAttribute="leadingMargin" id="hH3-fO-d0x"/>
+                            <constraint firstItem="eWS-vU-XLm" firstAttribute="leading" secondItem="a4U-4S-atg" secondAttribute="leadingMargin" id="k6k-u3-Nia"/>
+                            <constraint firstItem="teE-c3-any" firstAttribute="top" secondItem="eWS-vU-XLm" secondAttribute="bottom" constant="8" id="nh3-3r-ZTa"/>
+                            <constraint firstItem="eWS-vU-XLm" firstAttribute="trailing" secondItem="a4U-4S-atg" secondAttribute="trailingMargin" id="z8r-EQ-Hn9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Server" id="03w-5D-czm"/>
+                    <connections>
+                        <outlet property="server" destination="eWS-vU-XLm" id="HEz-Ei-vTf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9vo-5P-413" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1712.8" y="765.96701649175418"/>
+        </scene>
+        <!--Add server navigation-->
+        <scene sceneID="5Qx-aD-tpR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LDR-tz-9ed" userLabel="Add server navigation" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="x91-Lh-MNV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="LPm-N3-FEI" kind="relationship" relationship="rootViewController" id="XHk-Ud-p3E"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SP4-m1-aB2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="893.60000000000002" y="765.96701649175418"/>
+        </scene>
+        <!--ClientId-->
+        <scene sceneID="VmF-x9-ghS">
+            <objects>
+                <viewController id="hyy-VQ-rcz" userLabel="ClientId" customClass="ClientIdViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T3x-Ud-Wa2"/>
+                        <viewControllerLayoutGuide type="bottom" id="BXs-WV-4No"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lmm-lG-qux">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallabag" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZI-U1-cVg">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="eps-ZG-n1a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ClientId" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dsM-5G-HXR">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ClientSecret" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iBk-4L-sqH">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDJ-gL-tA5">
+                                <frame key="frameInset" minX="164" minY="198" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <segue destination="kUA-VQ-mVR" kind="show" id="GaS-kf-QlA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iBk-4L-sqH" firstAttribute="leading" secondItem="lmm-lG-qux" secondAttribute="leadingMargin" id="0M9-nx-Ywu"/>
+                            <constraint firstItem="dsM-5G-HXR" firstAttribute="trailing" secondItem="lmm-lG-qux" secondAttribute="trailingMargin" id="4HL-oY-5kf"/>
+                            <constraint firstItem="hZI-U1-cVg" firstAttribute="trailing" secondItem="lmm-lG-qux" secondAttribute="trailingMargin" id="Chx-aL-zF6"/>
+                            <constraint firstItem="hZI-U1-cVg" firstAttribute="leading" secondItem="lmm-lG-qux" secondAttribute="leadingMargin" id="JDj-SD-oLu"/>
+                            <constraint firstItem="dsM-5G-HXR" firstAttribute="top" secondItem="hZI-U1-cVg" secondAttribute="bottom" constant="8" id="L6q-j7-f4U"/>
+                            <constraint firstItem="iBk-4L-sqH" firstAttribute="trailing" secondItem="lmm-lG-qux" secondAttribute="trailingMargin" id="P1x-X3-nql"/>
+                            <constraint firstItem="dsM-5G-HXR" firstAttribute="leading" secondItem="lmm-lG-qux" secondAttribute="leadingMargin" id="TGt-Cw-nZj"/>
+                            <constraint firstItem="mDJ-gL-tA5" firstAttribute="top" secondItem="iBk-4L-sqH" secondAttribute="bottom" constant="8" id="VxK-y9-QbG"/>
+                            <constraint firstItem="mDJ-gL-tA5" firstAttribute="centerX" secondItem="lmm-lG-qux" secondAttribute="centerX" id="W7j-ag-GL5"/>
+                            <constraint firstItem="hZI-U1-cVg" firstAttribute="top" secondItem="T3x-Ud-Wa2" secondAttribute="bottom" constant="8" id="gWJ-BN-uh3"/>
+                            <constraint firstItem="iBk-4L-sqH" firstAttribute="top" secondItem="dsM-5G-HXR" secondAttribute="bottom" constant="8" id="sxt-4K-7qb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Client Id" id="uvq-Qw-sZt"/>
+                    <connections>
+                        <outlet property="clientId" destination="dsM-5G-HXR" id="hz2-AJ-9dh"/>
+                        <outlet property="clientSecret" destination="iBk-4L-sqH" id="W9C-0n-Ppo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ckr-j6-LHz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2481" y="766"/>
+        </scene>
+        <!--Login View-->
+        <scene sceneID="UT9-CD-1CQ">
+            <objects>
+                <viewController id="kUA-VQ-mVR" userLabel="Login View" customClass="LoginViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mot-7w-8di"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lvb-T3-PgC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jMl-7N-NES">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C1D-rB-gOJ">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UQC-pk-uO1">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallabag" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5IJ-gJ-VQh">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="Ka4-YF-4pV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2e6-On-1Cd">
+                                <frame key="frameInset" minX="164" minY="198" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="login:" destination="kUA-VQ-mVR" eventType="touchUpInside" id="WYN-TM-OBp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5IJ-gJ-VQh" firstAttribute="leading" secondItem="jMl-7N-NES" secondAttribute="leadingMargin" id="1BL-6S-Lgn"/>
+                            <constraint firstItem="UQC-pk-uO1" firstAttribute="trailing" secondItem="jMl-7N-NES" secondAttribute="trailingMargin" id="8O6-QV-S55"/>
+                            <constraint firstItem="2e6-On-1Cd" firstAttribute="centerX" secondItem="jMl-7N-NES" secondAttribute="centerX" id="Isa-pk-E7A"/>
+                            <constraint firstItem="C1D-rB-gOJ" firstAttribute="trailing" secondItem="jMl-7N-NES" secondAttribute="trailingMargin" id="KGU-Tr-ipm"/>
+                            <constraint firstItem="2e6-On-1Cd" firstAttribute="top" secondItem="UQC-pk-uO1" secondAttribute="bottom" constant="8" id="KXa-Tz-vh7"/>
+                            <constraint firstItem="C1D-rB-gOJ" firstAttribute="leading" secondItem="jMl-7N-NES" secondAttribute="leadingMargin" id="MVV-XJ-koa"/>
+                            <constraint firstItem="C1D-rB-gOJ" firstAttribute="top" secondItem="5IJ-gJ-VQh" secondAttribute="bottom" constant="8" id="TG0-zh-92Z"/>
+                            <constraint firstItem="5IJ-gJ-VQh" firstAttribute="trailing" secondItem="jMl-7N-NES" secondAttribute="trailingMargin" id="YVE-2B-1yG"/>
+                            <constraint firstItem="UQC-pk-uO1" firstAttribute="leading" secondItem="jMl-7N-NES" secondAttribute="leadingMargin" id="Zge-Xt-lhS"/>
+                            <constraint firstItem="UQC-pk-uO1" firstAttribute="top" secondItem="C1D-rB-gOJ" secondAttribute="bottom" constant="8" id="bYm-Dn-11X"/>
+                            <constraint firstItem="5IJ-gJ-VQh" firstAttribute="top" secondItem="Mot-7w-8di" secondAttribute="bottom" constant="8" id="dHU-xI-Wdw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Auth" id="GhO-El-f27"/>
+                    <connections>
+                        <outlet property="password" destination="UQC-pk-uO1" id="okU-nQ-kEd"/>
+                        <outlet property="username" destination="C1D-rB-gOJ" id="uQp-5h-Wjr"/>
+                        <segue destination="Ykf-Ei-TaT" kind="show" identifier="toArticles" id="VzL-xw-wTu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hp5-1x-ziY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3185" y="766"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="logo-icon-bg-white" width="200" height="200"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="VzL-xw-wTu"/>
+    </inferredMetricsTieBreakers>
 </document>
