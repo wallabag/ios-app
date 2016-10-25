@@ -20,7 +20,7 @@ struct Article {
     let mimetype: String
     let preview_picture: String
     let reading_time: Int
-    let tags: Set<String>
+    let tags: [Tag]
     let title: String
     let updated_at: Date
     let url: URL
@@ -29,6 +29,8 @@ struct Article {
     let user_name: String
 
     init(fromItem: [String: Any]) {
+        print(fromItem)
+
         annotations = []
         content = fromItem["content"] as! String
         created_at = (fromItem["created_at"] as! String).date ?? Date()
@@ -40,7 +42,13 @@ struct Article {
         mimetype = fromItem["mimetype"] as! String
         preview_picture = fromItem["preview_picture"] as! String
         reading_time = fromItem["reading_time"] as! Int
-        tags = []
+
+        var tagsStack = [Tag]()
+        for tag in (fromItem["tags"] as? [[String: Any]])! {
+            tagsStack.append(Tag(id: tag["id"] as! Int, label: tag["label"] as! String, slug: tag["slug"] as! String))
+        }
+        tags = tagsStack
+
         title = fromItem["title"] as! String
         updated_at = (fromItem["updated_at"] as! String).date ?? Date()
         url = URL(string: fromItem["url"] as! String)!
