@@ -30,5 +30,4 @@ final class ClientIdViewController: UIViewController {
             controller.clientSecret = clientSecret.text!
         }
     }
-
 }
