@@ -17,8 +17,10 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
 
-    @IBAction func login(_ sender: AnyObject) {
+    @IBAction func login(_ sender: UIButton) {
         WallabagApi.configureApi(endpoint: server, clientId: clientId, clientSecret: clientSecret, username: username.text!, password: password.text!)
+
+        sender.isEnabled = false
 
         WallabagApi.requestToken() { success in
             if success {
@@ -28,6 +30,8 @@ final class LoginViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                 self.present(alert, animated: false)
             }
+
+            sender.isEnabled = true
         }
     }
 
