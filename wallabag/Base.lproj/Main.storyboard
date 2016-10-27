@@ -88,6 +88,11 @@
                                                 <constraint firstAttribute="width" constant="80" id="BxO-n3-Ngr"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="website" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reg-oP-baY">
+                                            <fontDescription key="fontDescription" name=".SFNSText" family=".SF NS Text" pointSize="17"/>
+                                            <color key="textColor" red="0.0094463747304899259" green="0.37359068703604648" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Article title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDD-og-deR" userLabel="Article title">
                                             <frame key="frameInset" minX="96" minY="8" width="246" height="28"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -96,10 +101,13 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="reg-oP-baY" secondAttribute="bottom" constant="8" id="5Le-Pj-Sjf"/>
                                         <constraint firstAttribute="trailing" secondItem="eDD-og-deR" secondAttribute="trailing" id="8Lc-jL-Me0"/>
                                         <constraint firstItem="yAa-Il-SM0" firstAttribute="leading" secondItem="Gj3-Gv-99G" secondAttribute="leadingMargin" id="8ng-ii-zbe"/>
                                         <constraint firstItem="yAa-Il-SM0" firstAttribute="top" secondItem="Gj3-Gv-99G" secondAttribute="topMargin" id="DYq-a4-3Ge"/>
+                                        <constraint firstAttribute="trailing" secondItem="reg-oP-baY" secondAttribute="trailing" id="NyG-HA-Kac"/>
                                         <constraint firstItem="eDD-og-deR" firstAttribute="leading" secondItem="yAa-Il-SM0" secondAttribute="trailing" constant="8" id="OZh-MF-nsJ"/>
+                                        <constraint firstItem="reg-oP-baY" firstAttribute="leading" secondItem="yAa-Il-SM0" secondAttribute="trailing" constant="8" id="b1t-FL-7FC"/>
                                         <constraint firstItem="yAa-Il-SM0" firstAttribute="bottom" secondItem="Gj3-Gv-99G" secondAttribute="bottomMargin" id="rGr-Kr-vNh"/>
                                         <constraint firstItem="eDD-og-deR" firstAttribute="top" secondItem="Gj3-Gv-99G" secondAttribute="top" constant="8" id="ufp-cN-vJ0"/>
                                     </constraints>
@@ -107,6 +115,7 @@
                                 <connections>
                                     <outlet property="previewImage" destination="yAa-Il-SM0" id="uak-hg-Ijj"/>
                                     <outlet property="title" destination="eDD-og-deR" id="lHe-ZG-3f6"/>
+                                    <outlet property="website" destination="reg-oP-baY" id="2HT-09-K4Y"/>
                                     <segue destination="zsG-x9-2za" kind="show" identifier="readArticle" id="bHx-HF-nTe"/>
                                 </connections>
                             </tableViewCell>
@@ -124,7 +133,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7b-wX-N2L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4716" y="-5"/>
+            <point key="canvasLocation" x="4716" y="-5.8470764617691158"/>
         </scene>
         <!--Read Article-->
         <scene sceneID="UaL-Kt-Wcp">
