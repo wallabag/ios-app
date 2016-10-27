@@ -15,9 +15,6 @@ final class ArticlesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // hack ?
-        navigationController?.setViewControllers([self], animated: false)
-
         refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
 
         handleRefresh()

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 final class LoginViewController: UIViewController {
 
@@ -24,6 +25,16 @@ final class LoginViewController: UIViewController {
 
         WallabagApi.requestToken() { success in
             if success {
+                let newServer = NSEntityDescription.insertNewObject(forEntityName: "Server", into: CoreData.context) as! Server
+
+                newServer.host = self.server
+                newServer.client_id = self.clientId
+                newServer.client_secret = self.clientSecret
+                newServer.username = self.username.text!
+                newServer.password = self.password.text!
+
+                CoreData.save()
+
                 self.performSegue(withIdentifier: "toArticles", sender: nil)
             } else {
                 let alert = UIAlertController(title: "Login", message: "Error", preferredStyle: .alert)
