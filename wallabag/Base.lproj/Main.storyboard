@@ -40,9 +40,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn4-yG-cxW" userLabel="Add Server">
-                                <frame key="frameInset" minX="200" minY="327" width="46" height="30"/>
+                                <frame key="frameInset" minX="200" minY="327" width="68" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Register"/>
                                 <connections>
                                     <segue destination="LDR-tz-9ed" kind="popoverPresentation" popoverAnchorView="Zn4-yG-cxW" id="Gj0-oO-eNh">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -65,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nn0-zM-jd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="70" y="817"/>
+            <point key="canvasLocation" x="69.599999999999994" y="816.34182908545733"/>
         </scene>
         <!--Articles TableView-->
         <scene sceneID="vTl-iM-X3B">
@@ -83,20 +83,29 @@
                                     <frame key="frameInset" width="342" height="96"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yAa-Il-SM0">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="80" id="BxO-n3-Ngr"/>
+                                            </constraints>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Article title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDD-og-deR" userLabel="Article title">
-                                            <frame key="frameInset" minX="8" minY="8" width="334" height="28"/>
+                                            <frame key="frameInset" minX="96" minY="8" width="246" height="28"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="eDD-og-deR" firstAttribute="top" secondItem="Gj3-Gv-99G" secondAttribute="top" constant="8" id="8IB-4s-djP"/>
-                                        <constraint firstItem="eDD-og-deR" firstAttribute="leading" secondItem="Gj3-Gv-99G" secondAttribute="leading" constant="8" id="n9l-dF-FNs"/>
-                                        <constraint firstAttribute="trailing" secondItem="eDD-og-deR" secondAttribute="trailing" id="qJi-a6-J5E"/>
+                                        <constraint firstAttribute="trailing" secondItem="eDD-og-deR" secondAttribute="trailing" id="8Lc-jL-Me0"/>
+                                        <constraint firstItem="yAa-Il-SM0" firstAttribute="leading" secondItem="Gj3-Gv-99G" secondAttribute="leadingMargin" id="8ng-ii-zbe"/>
+                                        <constraint firstItem="yAa-Il-SM0" firstAttribute="top" secondItem="Gj3-Gv-99G" secondAttribute="topMargin" id="DYq-a4-3Ge"/>
+                                        <constraint firstItem="eDD-og-deR" firstAttribute="leading" secondItem="yAa-Il-SM0" secondAttribute="trailing" constant="8" id="OZh-MF-nsJ"/>
+                                        <constraint firstItem="yAa-Il-SM0" firstAttribute="bottom" secondItem="Gj3-Gv-99G" secondAttribute="bottomMargin" id="rGr-Kr-vNh"/>
+                                        <constraint firstItem="eDD-og-deR" firstAttribute="top" secondItem="Gj3-Gv-99G" secondAttribute="top" constant="8" id="ufp-cN-vJ0"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="previewImage" destination="yAa-Il-SM0" id="uak-hg-Ijj"/>
                                     <outlet property="title" destination="eDD-og-deR" id="lHe-ZG-3f6"/>
                                     <segue destination="zsG-x9-2za" kind="show" identifier="readArticle" id="bHx-HF-nTe"/>
                                 </connections>
@@ -367,7 +376,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8tH-nc-JLr" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dK2-gx-arx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dK2-gx-arx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -385,6 +394,6 @@
         <image name="logo-icon-black-no-bg" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VzL-xw-wTu"/>
+        <segue reference="DM9-lr-LNE"/>
     </inferredMetricsTieBreakers>
 </document>

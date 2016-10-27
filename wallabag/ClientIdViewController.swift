@@ -17,8 +17,8 @@ final class ClientIdViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        clientId.text = "1_19ayjxe551eswc4gc0sggcc88oks8k04004404kkw84osk8s4k"
-        clientSecret.text = "9vwpapc5vawww4s880048go88400kgg0swg4wk8gow00ssowo"
+        clientId.text = "102_1k82ulkibxdwoccgs0cgoowgg0c04wsc8k08kcc0ksk80skcsg"
+        clientSecret.text = "5honlishnu8s4s0k4wg4kokg4kkw84kwww4ock8ko4wcw4okk0"
 
     }
 

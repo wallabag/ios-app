@@ -23,6 +23,7 @@
 		9C987A5F1DB79826005515F4 /* wallabagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C987A5E1DB79826005515F4 /* wallabagTests.swift */; };
 		9C987A6A1DB79826005515F4 /* wallabagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C987A691DB79826005515F4 /* wallabagUITests.swift */; };
 		9CE112161DC26E8B00FA2EB7 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE112151DC26E8B00FA2EB7 /* CoreData.swift */; };
+		9CE112181DC293C300FA2EB7 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE112171DC293C300FA2EB7 /* ImageDownloader.swift */; };
 		9CED088A1DC15A9F004C18C5 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED08891DC15A9F004C18C5 /* Server.swift */; };
 		9CF1F21C1DBE943C0086B98B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F21B1DBE943C0086B98B /* HomeViewController.swift */; };
 		9CF1F21E1DBE966B0086B98B /* UbuntuTitling-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9CF1F21D1DBE96210086B98B /* UbuntuTitling-Bold.ttf */; };
@@ -78,6 +79,7 @@
 		9C987A691DB79826005515F4 /* wallabagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wallabagUITests.swift; sourceTree = "<group>"; };
 		9C987A6B1DB79826005515F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CE112151DC26E8B00FA2EB7 /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		9CE112171DC293C300FA2EB7 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		9CED08891DC15A9F004C18C5 /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		9CF1F21B1DBE943C0086B98B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9CF1F21D1DBE96210086B98B /* UbuntuTitling-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UbuntuTitling-Bold.ttf"; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			children = (
 				9C181B851DB8D56600D941EB /* WallabagApi.swift */,
 				9CE112151DC26E8B00FA2EB7 /* CoreData.swift */,
+				9CE112171DC293C300FA2EB7 /* ImageDownloader.swift */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -534,6 +537,7 @@
 			files = (
 				9CED088A1DC15A9F004C18C5 /* Server.swift in Sources */,
 				9C2192791DBF7F8800F628C2 /* Tag.swift in Sources */,
+				9CE112181DC293C300FA2EB7 /* ImageDownloader.swift in Sources */,
 				9C21927D1DBFF44700F628C2 /* ArticleTableViewCell.swift in Sources */,
 				9CF1F2251DBE9D150086B98B /* LoginViewController.swift in Sources */,
 				9CE112161DC26E8B00FA2EB7 /* CoreData.swift in Sources */,

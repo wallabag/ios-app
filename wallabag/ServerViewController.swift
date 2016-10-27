@@ -15,7 +15,7 @@ final class ServerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        server.text = "http://www.annonces-airsoft.fr:8080"
+        server.text = "http://v2.wallabag.org"
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
