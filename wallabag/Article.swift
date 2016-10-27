@@ -18,7 +18,7 @@ struct Article {
     let is_starred: Bool
     let language: String
     let mimetype: String
-    let preview_picture: String
+    let preview_picture: String?
     let reading_time: Int
     let tags: [Tag]
     let title: String
@@ -36,9 +36,9 @@ struct Article {
         id = fromItem["id"] as! Int
         is_archived = fromItem["is_archived"] as! Bool
         is_starred = fromItem["is_starred"] as! Bool
-        language = fromItem["language"] as! String
+        language = fromItem["language"] as? String ?? ""
         mimetype = fromItem["mimetype"] as! String
-        preview_picture = fromItem["preview_picture"] as! String
+        preview_picture = fromItem["preview_picture"] as? String
         reading_time = fromItem["reading_time"] as! Int
 
         var tagsStack = [Tag]()

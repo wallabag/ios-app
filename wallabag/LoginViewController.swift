@@ -33,7 +33,7 @@ final class LoginViewController: UIViewController {
                 newServer.username = self.username.text!
                 newServer.password = self.password.text!
 
-                CoreData.save()
+                try! CoreData.save()
 
                 self.performSegue(withIdentifier: "toArticles", sender: nil)
             } else {
