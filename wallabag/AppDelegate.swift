@@ -19,7 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         CoreData.containerName = "wallabag"
 
+        initializeNSAttributedString()
+
         return true
+    }
+
+    fileprivate func initializeNSAttributedString() {
+        DispatchQueue.global(qos: .background).async {
+            let _ = "init".attributedHTML
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
