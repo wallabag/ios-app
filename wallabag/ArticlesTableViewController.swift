@@ -10,7 +10,14 @@ import UIKit
 
 final class ArticlesTableViewController: UITableViewController {
 
-    var articles = [Article]()
+    var articles = [Article]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            refreshControl?.endRefreshing()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +40,6 @@ final class ArticlesTableViewController: UITableViewController {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "articleIdentifier", for: indexPath) as? ArticleTableViewCell {
 
             let article = articles[indexPath.item]
-
             cell.present(article)
 
             return cell
@@ -45,12 +51,7 @@ final class ArticlesTableViewController: UITableViewController {
     func handleRefresh() {
         WallabagApi.retrieveArticle { articles in
             self.articles = articles
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
         }
-
-        refreshControl?.endRefreshing()
     }
 
     // MARK: - Navigation

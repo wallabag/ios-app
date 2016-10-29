@@ -6,7 +6,6 @@
 //  Copyright © 2016 maxime marinel. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 extension String {

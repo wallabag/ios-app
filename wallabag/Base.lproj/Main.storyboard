@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vl8-yY-Bdt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vl8-yY-Bdt">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,6 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-icon-black-no-bg" translatesAutoresizingMaskIntoConstraints="NO" id="K7r-Is-Qyw">
+                                <rect key="frame" x="87.5" y="28" width="200" height="200"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="AaF-Wi-Xdv"/>
@@ -32,6 +36,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallabag" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRs-RA-L1c">
+                                <rect key="frame" x="16" y="236" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="JFd-lV-8XK"/>
                                 </constraints>
@@ -40,7 +45,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn4-yG-cxW" userLabel="Add Server">
-                                <frame key="frameInset" minX="200" minY="327" width="68" height="30"/>
+                                <rect key="frame" x="200" y="327" width="68" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
@@ -77,24 +82,26 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="articleIdentifier" rowHeight="97" id="BOk-fg-qmd" customClass="ArticleTableViewCell" customModule="wallabag" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="375" height="97"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BOk-fg-qmd" id="Gj3-Gv-99G">
-                                    <frame key="frameInset" width="342" height="96"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="96.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yAa-Il-SM0">
+                                            <rect key="frame" x="8" y="8" width="80" height="80"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="BxO-n3-Ngr"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="website" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reg-oP-baY">
+                                            <rect key="frame" x="96" y="68" width="246" height="20"/>
                                             <fontDescription key="fontDescription" name=".SFNSText" family=".SF NS Text" pointSize="17"/>
                                             <color key="textColor" red="0.0094463747304899259" green="0.37359068703604648" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Article title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDD-og-deR" userLabel="Article title">
-                                            <frame key="frameInset" minX="96" minY="8" width="246" height="28"/>
+                                            <rect key="frame" x="96" y="8" width="246" height="28"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -148,6 +155,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jq-MA-AJF" userLabel="title">
+                                <rect key="frame" x="16" y="72" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="KWp-bu-GKd"/>
                                 </constraints>
@@ -156,30 +164,54 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IDa-f5-dR7" userLabel="content">
+                                <rect key="frame" x="16" y="101" width="343" height="522"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmR-l8-ha4">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Read" id="X3k-oF-ZXC">
+                                        <connections>
+                                            <action selector="read:" destination="zsG-x9-2za" id="5Bd-Ju-2d1"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Star" id="VcU-fa-V5f" userLabel="Star boutton">
+                                        <connections>
+                                            <action selector="star:" destination="zsG-x9-2za" id="RwX-qv-2d9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="cmR-l8-ha4" firstAttribute="leading" secondItem="IIB-w3-phs" secondAttribute="leading" id="Alq-ai-uQ0"/>
                             <constraint firstItem="1Jq-MA-AJF" firstAttribute="leading" secondItem="IIB-w3-phs" secondAttribute="leadingMargin" id="Cxa-c3-RAV"/>
                             <constraint firstItem="0ii-Ho-OiO" firstAttribute="top" secondItem="IDa-f5-dR7" secondAttribute="bottom" id="GWY-3o-1g7"/>
+                            <constraint firstAttribute="bottom" secondItem="cmR-l8-ha4" secondAttribute="bottom" id="Hut-cq-rLJ"/>
                             <constraint firstItem="IDa-f5-dR7" firstAttribute="top" secondItem="1Jq-MA-AJF" secondAttribute="bottom" constant="8" id="N28-sf-Tsd"/>
                             <constraint firstItem="IDa-f5-dR7" firstAttribute="trailing" secondItem="IIB-w3-phs" secondAttribute="trailingMargin" id="N5A-EJ-mH0"/>
                             <constraint firstItem="1Jq-MA-AJF" firstAttribute="trailing" secondItem="IIB-w3-phs" secondAttribute="trailingMargin" id="Pkj-t2-jtW"/>
                             <constraint firstItem="1Jq-MA-AJF" firstAttribute="top" secondItem="Kf2-pV-a1B" secondAttribute="bottom" constant="8" id="UeA-q2-786"/>
                             <constraint firstItem="IDa-f5-dR7" firstAttribute="leading" secondItem="IIB-w3-phs" secondAttribute="leadingMargin" id="Vzc-LL-sKa"/>
+                            <constraint firstItem="0ii-Ho-OiO" firstAttribute="top" secondItem="IDa-f5-dR7" secondAttribute="bottom" id="mmH-wb-C25"/>
+                            <constraint firstAttribute="trailing" secondItem="cmR-l8-ha4" secondAttribute="trailing" id="o0Q-ci-KOK"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="contentText" destination="IDa-f5-dR7" id="oEI-Le-bsk"/>
+                        <outlet property="readButton" destination="X3k-oF-ZXC" id="hnK-8N-UcN"/>
+                        <outlet property="starButton" destination="VcU-fa-V5f" id="YqQ-L0-xvZ"/>
                         <outlet property="titleLabel" destination="1Jq-MA-AJF" id="9y3-g7-wDI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfU-tW-LRl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5551" y="-5"/>
+            <point key="canvasLocation" x="5549.6000000000004" y="-5.8470764617691158"/>
         </scene>
         <!--Server-->
         <scene sceneID="tbh-yG-xcX">
@@ -194,11 +226,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Server" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eWS-vU-XLm">
+                                <rect key="frame" x="16" y="122" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallabag" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDI-0H-Usb">
+                                <rect key="frame" x="16" y="72" width="343" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="GWL-6I-ADv"/>
                                 </constraints>
@@ -207,6 +241,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teE-c3-any">
+                                <rect key="frame" x="169" y="160" width="37" height="29"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
@@ -240,7 +275,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LDR-tz-9ed" userLabel="Add server navigation" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="x91-Lh-MNV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x91-Lh-MNV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -266,6 +301,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallabag" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZI-U1-cVg">
+                                <rect key="frame" x="16" y="72" width="343" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="eps-ZG-n1a"/>
                                 </constraints>
@@ -274,16 +310,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ClientId" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dsM-5G-HXR">
+                                <rect key="frame" x="16" y="122" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ClientSecret" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iBk-4L-sqH">
+                                <rect key="frame" x="16" y="160" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDJ-gL-tA5">
+                                <rect key="frame" x="169" y="198" width="37" height="29"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
@@ -329,16 +368,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C1D-rB-gOJ">
+                                <rect key="frame" x="16" y="122" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UQC-pk-uO1">
+                                <rect key="frame" x="16" y="160" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallabag" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5IJ-gJ-VQh">
+                                <rect key="frame" x="16" y="72" width="343" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="Ka4-YF-4pV"/>
                                 </constraints>
@@ -347,6 +389,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2e6-On-1Cd">
+                                <rect key="frame" x="169.5" y="198" width="36" height="32"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
@@ -385,7 +428,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8tH-nc-JLr" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dK2-gx-arx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dK2-gx-arx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -46,11 +46,21 @@ final class WallabagApi {
         }
     }
 
+    // MARK: - Article
+    static func patchArticle(_ article: Article, withParamaters withParameters: [String: Any], completion: @escaping() -> Void) {
+        var parameters: [String: Any] = ["access_token": access_token!]
+        parameters = parameters.merge(dict: withParameters)
+
+        Alamofire.request(endpoint! + "/api/entries/" + String(article.id), method: .patch, parameters: parameters).responseJSON { response in
+            completion()
+        }
+    }
+
     static func retrieveArticle(_ completion: @escaping([Article]) -> Void) {
         let parameters = ["access_token": access_token!]
         var articles = [Article]()
 
-        Alamofire.request(endpoint! + "/api/entries.html", parameters: parameters).responseJSON { response in
+        Alamofire.request(endpoint! + "/api/entries", parameters: parameters).responseJSON { response in
             if let result = response.result.value {
                 if let JSON = result as? NSDictionary {
                     if let embedded = JSON["_embedded"] as? [String: Any] {
