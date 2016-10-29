@@ -10,17 +10,22 @@ import UIKit
 
 final class ArticleViewController: UIViewController {
 
-    var article: Article!
+    var article: Article! {
+        didSet {
+            readButton?.title = article.is_archived ? "Unread" : "Readed"
+            starButton?.title = article.is_starred ? "Unstar" : "Star"
+        }
+    }
 
     @IBAction func read(_ sender: Any) {
-        WallabagApi.patchArticle(article, withParamaters: ["archive": (!article.is_archived).hashValue]) {
-            self.readButton.title = !self.article.is_archived ? "Unread" : "Readed"
+        WallabagApi.patchArticle(article, withParamaters: ["archive": (!article.is_archived).hashValue]) { article in
+            self.article = article
         }
     }
 
     @IBAction func star(_ sender: Any) {
-        WallabagApi.patchArticle(article, withParamaters: ["starred": (!article.is_starred).hashValue]) {
-            self.starButton.title = !self.article.is_starred ? "Unstar" : "Star"
+        WallabagApi.patchArticle(article, withParamaters: ["starred": (!article.is_starred).hashValue]) { article in
+            self.article = article
         }
     }
 

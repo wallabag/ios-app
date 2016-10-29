@@ -47,12 +47,14 @@ final class WallabagApi {
     }
 
     // MARK: - Article
-    static func patchArticle(_ article: Article, withParamaters withParameters: [String: Any], completion: @escaping() -> Void) {
+    static func patchArticle(_ article: Article, withParamaters withParameters: [String: Any], completion: @escaping(_ article: Article) -> Void) {
         var parameters: [String: Any] = ["access_token": access_token!]
         parameters = parameters.merge(dict: withParameters)
 
         Alamofire.request(endpoint! + "/api/entries/" + String(article.id), method: .patch, parameters: parameters).responseJSON { response in
-            completion()
+            if let JSON = response.result.value as? [String: Any] {
+                completion(Article(fromItem: JSON))
+            }
         }
     }
 
