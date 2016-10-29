@@ -164,7 +164,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IDa-f5-dR7" userLabel="content">
-                                <rect key="frame" x="16" y="101" width="343" height="522"/>
+                                <rect key="frame" x="16" y="101" width="343" height="511"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -187,21 +187,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cmR-l8-ha4" firstAttribute="leading" secondItem="IIB-w3-phs" secondAttribute="leading" id="Alq-ai-uQ0"/>
+                            <constraint firstItem="cmR-l8-ha4" firstAttribute="leading" secondItem="IIB-w3-phs" secondAttribute="leading" id="1sS-vI-M5x"/>
+                            <constraint firstItem="IDa-f5-dR7" firstAttribute="leading" secondItem="1Jq-MA-AJF" secondAttribute="leading" id="3ee-Zc-o0d"/>
+                            <constraint firstAttribute="trailing" secondItem="cmR-l8-ha4" secondAttribute="trailing" id="BTa-dE-gEl"/>
                             <constraint firstItem="1Jq-MA-AJF" firstAttribute="leading" secondItem="IIB-w3-phs" secondAttribute="leadingMargin" id="Cxa-c3-RAV"/>
-                            <constraint firstItem="0ii-Ho-OiO" firstAttribute="top" secondItem="IDa-f5-dR7" secondAttribute="bottom" id="GWY-3o-1g7"/>
-                            <constraint firstAttribute="bottom" secondItem="cmR-l8-ha4" secondAttribute="bottom" id="Hut-cq-rLJ"/>
-                            <constraint firstItem="IDa-f5-dR7" firstAttribute="top" secondItem="1Jq-MA-AJF" secondAttribute="bottom" constant="8" id="N28-sf-Tsd"/>
-                            <constraint firstItem="IDa-f5-dR7" firstAttribute="trailing" secondItem="IIB-w3-phs" secondAttribute="trailingMargin" id="N5A-EJ-mH0"/>
+                            <constraint firstItem="IDa-f5-dR7" firstAttribute="top" secondItem="1Jq-MA-AJF" secondAttribute="bottom" constant="8" symbolic="YES" id="L2N-ds-PoA"/>
+                            <constraint firstItem="IDa-f5-dR7" firstAttribute="trailing" secondItem="1Jq-MA-AJF" secondAttribute="trailing" id="O18-8f-Vko"/>
                             <constraint firstItem="1Jq-MA-AJF" firstAttribute="trailing" secondItem="IIB-w3-phs" secondAttribute="trailingMargin" id="Pkj-t2-jtW"/>
                             <constraint firstItem="1Jq-MA-AJF" firstAttribute="top" secondItem="Kf2-pV-a1B" secondAttribute="bottom" constant="8" id="UeA-q2-786"/>
-                            <constraint firstItem="IDa-f5-dR7" firstAttribute="leading" secondItem="IIB-w3-phs" secondAttribute="leadingMargin" id="Vzc-LL-sKa"/>
-                            <constraint firstItem="0ii-Ho-OiO" firstAttribute="top" secondItem="IDa-f5-dR7" secondAttribute="bottom" id="mmH-wb-C25"/>
-                            <constraint firstAttribute="trailing" secondItem="cmR-l8-ha4" secondAttribute="trailing" id="o0Q-ci-KOK"/>
+                            <constraint firstItem="cmR-l8-ha4" firstAttribute="top" secondItem="IDa-f5-dR7" secondAttribute="bottom" constant="11" id="eTF-4h-Jqc"/>
+                            <constraint firstItem="0ii-Ho-OiO" firstAttribute="top" secondItem="cmR-l8-ha4" secondAttribute="bottom" id="uFj-ax-Oew"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="contentText" destination="IDa-f5-dR7" id="oEI-Le-bsk"/>
                         <outlet property="readButton" destination="X3k-oF-ZXC" id="hnK-8N-UcN"/>
