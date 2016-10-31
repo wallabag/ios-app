@@ -34,7 +34,7 @@ final class WallabagApi {
 
         Alamofire.request(endpoint! + "/oauth/v2/token", parameters: parameters).responseJSON { response in
             if let result = response.result.value {
-                let JSON = result as! NSDictionary
+                let JSON = result as! [String: Any]
 
                 if let token = JSON["access_token"] as? String {
                     access_token = token
@@ -64,7 +64,7 @@ final class WallabagApi {
 
         Alamofire.request(endpoint! + "/api/entries", parameters: parameters).responseJSON { response in
             if let result = response.result.value {
-                if let JSON = result as? NSDictionary {
+                if let JSON = result as? [String: Any] {
                     if let embedded = JSON["_embedded"] as? [String: Any] {
                         for item in embedded["items"] as! [[String: Any]] {
                             articles.append(Article(fromItem: item))
