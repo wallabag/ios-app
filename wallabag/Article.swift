@@ -23,7 +23,7 @@ struct Article {
     let tags: [Tag]
     let title: String
     let updated_at: Date
-    let url: URL
+    let url: String
     let user_email: String
     let user_id: Int
     let user_name: String
@@ -49,7 +49,7 @@ struct Article {
 
         title = fromItem["title"] as! String
         updated_at = (fromItem["updated_at"] as! String).date ?? Date()
-        url = URL(string: fromItem["url"] as! String)!
+        url = fromItem["url"] as? String ?? ""
         user_email = fromItem["user_email"] as! String
         user_id = fromItem["user_id"] as! Int
         user_name = fromItem["user_name"] as! String

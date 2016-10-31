@@ -12,6 +12,7 @@ class ArticleTableViewCell: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var website: UILabel!
+    @IBOutlet weak var readingTime: UILabel!
     @IBOutlet weak var previewImage: UIImageView!
 
     func present(_ article: Article) {
@@ -26,5 +27,7 @@ class ArticleTableViewCell: UITableViewCell {
         if let picture = article.preview_picture {
             previewImage.imageFromUrl(picture)
         }
+
+        readingTime.text = "Reading time \(article.reading_time.readingTime)"
     }
 }

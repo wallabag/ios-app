@@ -100,9 +100,15 @@
                                             <color key="textColor" red="0.0094463747304899259" green="0.37359068703604648" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Article title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDD-og-deR" userLabel="Article title">
-                                            <rect key="frame" x="96" y="8" width="246" height="28"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Article title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDD-og-deR" userLabel="Article title">
+                                            <rect key="frame" x="96" y="8" width="246" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reading time 00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgC-hH-jOI" userLabel="reading time">
+                                            <rect key="frame" x="96" y="37" width="246" height="11"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -114,13 +120,17 @@
                                         <constraint firstItem="yAa-Il-SM0" firstAttribute="top" secondItem="Gj3-Gv-99G" secondAttribute="topMargin" id="DYq-a4-3Ge"/>
                                         <constraint firstAttribute="trailing" secondItem="reg-oP-baY" secondAttribute="trailing" id="NyG-HA-Kac"/>
                                         <constraint firstItem="eDD-og-deR" firstAttribute="leading" secondItem="yAa-Il-SM0" secondAttribute="trailing" constant="8" id="OZh-MF-nsJ"/>
+                                        <constraint firstItem="kgC-hH-jOI" firstAttribute="top" secondItem="eDD-og-deR" secondAttribute="bottom" constant="8" id="WcH-R3-ArH"/>
                                         <constraint firstItem="reg-oP-baY" firstAttribute="leading" secondItem="yAa-Il-SM0" secondAttribute="trailing" constant="8" id="b1t-FL-7FC"/>
+                                        <constraint firstItem="kgC-hH-jOI" firstAttribute="leading" secondItem="yAa-Il-SM0" secondAttribute="trailing" constant="8" id="cXo-Ro-Zca"/>
                                         <constraint firstItem="yAa-Il-SM0" firstAttribute="bottom" secondItem="Gj3-Gv-99G" secondAttribute="bottomMargin" id="rGr-Kr-vNh"/>
+                                        <constraint firstAttribute="trailing" secondItem="kgC-hH-jOI" secondAttribute="trailing" id="tMv-nD-jUh"/>
                                         <constraint firstItem="eDD-og-deR" firstAttribute="top" secondItem="Gj3-Gv-99G" secondAttribute="top" constant="8" id="ufp-cN-vJ0"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="previewImage" destination="yAa-Il-SM0" id="uak-hg-Ijj"/>
+                                    <outlet property="readingTime" destination="kgC-hH-jOI" id="Pip-gI-rbX"/>
                                     <outlet property="title" destination="eDD-og-deR" id="lHe-ZG-3f6"/>
                                     <outlet property="website" destination="reg-oP-baY" id="2HT-09-K4Y"/>
                                     <segue destination="zsG-x9-2za" kind="show" identifier="readArticle" id="bHx-HF-nTe"/>
@@ -388,7 +398,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2e6-On-1Cd">
-                                <rect key="frame" x="169.5" y="198" width="36" height="32"/>
+                                <rect key="frame" x="169" y="198" width="37" height="29"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
