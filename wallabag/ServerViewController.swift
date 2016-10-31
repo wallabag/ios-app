@@ -12,12 +12,6 @@ final class ServerViewController: UIViewController {
 
     @IBOutlet weak var server: UITextField!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        server.text = "http://v2.wallabag.org"
-    }
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? ClientIdViewController {
             controller.server = server.text!

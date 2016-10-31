@@ -45,10 +45,4 @@ final class LoginViewController: UIViewController {
             sender.isEnabled = true
         }
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        username.text = "wallabag"
-        password.text = "wallabag"
-    }
 }

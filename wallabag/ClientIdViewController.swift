@@ -15,13 +15,6 @@ final class ClientIdViewController: UIViewController {
     @IBOutlet weak var clientId: UITextField!
     @IBOutlet weak var clientSecret: UITextField!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        clientId.text = "102_1k82ulkibxdwoccgs0cgoowgg0c04wsc8k08kcc0ksk80skcsg"
-        clientSecret.text = "5honlishnu8s4s0k4wg4kokg4kkw84kwww4ock8ko4wcw4okk0"
-
-    }
-
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? LoginViewController {
