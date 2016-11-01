@@ -10,6 +10,8 @@ import UIKit
 
 final class ArticlesTableViewController: UITableViewController {
 
+    lazy var slideInTransitioningDelegate = SlideInPresentationManager()
+
     var articles = [Article]() {
         didSet {
             DispatchQueue.main.async {
@@ -56,15 +58,24 @@ final class ArticlesTableViewController: UITableViewController {
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let controller = segue.destination
+
         if segue.identifier == "readArticle" {
             if let cell = sender as? UITableViewCell {
                 let indexPath = tableView.indexPath(for: cell)
                 if let index = indexPath?.row {
-                    if let controller = segue.destination as? ArticleViewController {
+                    if let controller = controller as? ArticleViewController {
                         controller.article = articles[index]
                     }
                 }
             }
+        }
+
+        if segue.identifier == "menu" {
+            slideInTransitioningDelegate.direction = .left
+            slideInTransitioningDelegate.disableCompactHeight = false
+            controller.transitioningDelegate = slideInTransitioningDelegate
+            controller.modalPresentationStyle = .custom
         }
     }
 }
