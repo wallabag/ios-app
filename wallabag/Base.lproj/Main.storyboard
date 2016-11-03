@@ -44,14 +44,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn4-yG-cxW" userLabel="Add Server">
-                                <rect key="frame" x="153" y="294" width="68" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn4-yG-cxW" userLabel="Add Server">
+                                <rect key="frame" x="158.5" y="294" width="57" height="30"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
-                                    <segue destination="LDR-tz-9ed" kind="popoverPresentation" popoverAnchorView="Zn4-yG-cxW" id="Gj0-oO-eNh">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <segue destination="LDR-tz-9ed" kind="show" id="Gj0-oO-eNh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -59,12 +56,15 @@
                         <constraints>
                             <constraint firstItem="FRs-RA-L1c" firstAttribute="leading" secondItem="jgR-CC-0zk" secondAttribute="leadingMargin" id="0Zd-Ap-Bhh"/>
                             <constraint firstItem="K7r-Is-Qyw" firstAttribute="centerX" secondItem="jgR-CC-0zk" secondAttribute="centerX" id="5h3-fR-vgJ"/>
+                            <constraint firstItem="Zn4-yG-cxW" firstAttribute="top" secondItem="FRs-RA-L1c" secondAttribute="bottom" constant="8" id="BwY-wA-FY9"/>
+                            <constraint firstItem="Zn4-yG-cxW" firstAttribute="centerX" secondItem="jgR-CC-0zk" secondAttribute="centerX" id="GFn-ae-qJr"/>
                             <constraint firstItem="FRs-RA-L1c" firstAttribute="top" secondItem="K7r-Is-Qyw" secondAttribute="bottom" constant="8" id="JWX-vu-NhE"/>
                             <constraint firstItem="K7r-Is-Qyw" firstAttribute="top" secondItem="8dj-Du-tEP" secondAttribute="bottom" constant="8" id="WiD-2X-fhA"/>
                             <constraint firstItem="FRs-RA-L1c" firstAttribute="trailing" secondItem="jgR-CC-0zk" secondAttribute="trailingMargin" id="xxp-3Q-Z9c"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="registerButton" destination="Zn4-yG-cxW" id="m7Z-tu-3xZ"/>
                         <segue destination="8tH-nc-JLr" kind="show" identifier="toArticles" id="DM9-lr-LNE"/>
                     </connections>
                 </viewController>
@@ -180,7 +180,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title=" Articles" id="ZjL-wI-QTt">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Meg-lP-qaT">
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" systemItem="edit" id="Meg-lP-qaT">
                             <connections>
                                 <segue destination="vNd-0f-GSW" kind="presentation" identifier="menu" id="XgL-Zt-Ctu"/>
                             </connections>
