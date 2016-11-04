@@ -32,9 +32,16 @@ final class WallabagApi {
     static func requestToken(_ completion: @escaping(_ success: Bool) -> ()) {
         let parameters = ["grant_type": "password", "client_id": clientId!, "client_secret": clientSecret!, "username": username!, "password": password!]
 
-        Alamofire.request(endpoint! + "/oauth/v2/token", parameters: parameters).responseJSON { response in
+        Alamofire.request(endpoint! + "/oauth/v2/token", parameters: parameters).validate().responseJSON { response in
+
+            if response.result.error != nil {
+                completion(false)
+            }
+
             if let result = response.result.value {
                 let JSON = result as! [String: Any]
+
+                print(JSON)
 
                 if let token = JSON["access_token"] as? String {
                     access_token = token

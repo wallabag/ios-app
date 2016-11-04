@@ -14,7 +14,7 @@ class WallabagApiTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        WallabagApi.configureApi(endpoint: "http://v2.wallabag.org", clientId: "102_1k82ulkibxdwoccgs0cgoowgg0c04wsc8k08kcc0ksk80skcsg", clientSecret: "5honlishnu8s4s0k4wg4kokg4kkw84kwww4ock8ko4wcw4okk0", username: "wallabag", password: "wallabag")
+        WallabagApi.configureApi(endpoint: "http://wallabag.maxime.marinel.me", clientId: "1_19ayjxe551eswc4gc0sggcc88oks8k04004404kkw84osk8s4k", clientSecret: "9vwpapc5vawww4s880048go88400kgg0swg4wk8gow00ssowo", username: "wallabag", password: "wallabag")
     }
 
     override func tearDown() {
@@ -23,9 +23,32 @@ class WallabagApiTests: XCTestCase {
 
     func testRequestTokenOnValidEndpoint() {
         let expectation = self.expectation(description: "testRequestTokenOnValidEndpoint")
-
         WallabagApi.requestToken { success in
             XCTAssertTrue(success)
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+
+    func testRequestTokenOnWithInvalidToken() {
+        WallabagApi.configureApi(endpoint: "http://wallabag.maxime.marinel.me", clientId: "1_19ayjxe551eswc4gc0sggcc88oks8k04004404kkw84osk8s4k", clientSecret: "invalid", username: "wallabag", password: "wallabag")
+
+        let expectation = self.expectation(description: "testRequestTokenOnWithInvalidToken")
+        WallabagApi.requestToken { result in
+            XCTAssertFalse(result)
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: 10, handler: nil)
+    }
+
+    func testRequestTokenOnWithInvalidEndpoint() {
+        WallabagApi.configureApi(endpoint: "http://wallaaeaeaxbag.maxime.marinel.me", clientId: "1_19ayjxe551eswc4gc0sggcc88oks8k04004404kkw84osk8s4k", clientSecret: "invalid", username: "wallabag", password: "wallabag")
+
+        let expectation = self.expectation(description: "testRequestTokenOnWithInvalidEndpoint")
+        WallabagApi.requestToken { result in
+            XCTAssertFalse(result)
             expectation.fulfill()
         }
 
