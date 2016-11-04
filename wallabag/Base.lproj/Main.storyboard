@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-icon-black-no-bg" translatesAutoresizingMaskIntoConstraints="NO" id="K7r-Is-Qyw">
-                                <rect key="frame" x="87.5" y="28" width="200" height="200"/>
+                                <rect key="frame" x="88" y="28" width="200" height="200"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="AaF-Wi-Xdv"/>
@@ -45,7 +45,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn4-yG-cxW" userLabel="Add Server">
-                                <rect key="frame" x="158.5" y="294" width="57" height="30"/>
+                                <rect key="frame" x="159" y="294" width="57" height="30"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <segue destination="LDR-tz-9ed" kind="show" id="Gj0-oO-eNh"/>
@@ -180,7 +180,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title=" Articles" id="ZjL-wI-QTt">
-                        <barButtonItem key="leftBarButtonItem" enabled="NO" systemItem="edit" id="Meg-lP-qaT">
+                        <barButtonItem key="leftBarButtonItem" image="home-25" id="Meg-lP-qaT">
                             <connections>
                                 <segue destination="vNd-0f-GSW" kind="presentation" identifier="menu" id="XgL-Zt-Ctu"/>
                             </connections>
@@ -495,6 +495,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="home-25" width="25" height="25"/>
         <image name="logo-icon-black-no-bg" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
