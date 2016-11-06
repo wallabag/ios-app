@@ -65,8 +65,8 @@ final class WallabagApi {
         }
     }
 
-    static func retrieveArticle(_ completion: @escaping([Article]) -> Void) {
-        let parameters: [String: Any] = ["access_token": access_token!, "perPage": 9999]
+    static func retrieveArticle(page: Int = 1, _ completion: @escaping([Article]) -> Void) {
+        let parameters: [String: Any] = ["access_token": access_token!, "perPage": 20, "page": page]
         var articles = [Article]()
 
         Alamofire.request(endpoint! + "/api/entries", parameters: parameters).responseJSON { response in

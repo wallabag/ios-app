@@ -12,6 +12,8 @@ final class ArticlesTableViewController: UITableViewController {
 
     lazy var slideInTransitioningDelegate = SlideInPresentationManager()
 
+    var page: Int = 2
+    var refreshing: Bool = false
     var articles = [Article]() {
         didSet {
             DispatchQueue.main.async {
@@ -53,6 +55,17 @@ final class ArticlesTableViewController: UITableViewController {
     func handleRefresh() {
         WallabagApi.retrieveArticle { articles in
             self.articles = articles
+        }
+    }
+
+    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !refreshing {
+            refreshing = true
+            WallabagApi.retrieveArticle(page: page) { articles in
+                self.page += 1
+                self.refreshing = false
+                self.articles += articles
+            }
         }
     }
 
