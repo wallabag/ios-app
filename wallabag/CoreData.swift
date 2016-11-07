@@ -88,17 +88,6 @@ final class CoreData: NSObject {
         try context.save()
     }
 
-    /*static func execute(_ request: NSPersistentStoreRequest) -> NSPersistentStoreResult? {
-     if #available(iOS 10.0, *) {
-     let result = try! persistentContainer!.viewContext.execute(request)
-     return result
-     } else {
-     // Fallback on earlier versions
-     }
-
-     return nil
-     }*/
-
     static func fetch(_ request: NSPersistentStoreRequest) -> [NSManagedObject] {
         if #available(iOS 10.0, *) {
             let result = try! persistentContainer!.viewContext.fetch(request as! NSFetchRequest<NSFetchRequestResult>)
