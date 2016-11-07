@@ -36,8 +36,8 @@ final class ArticleViewController: UIViewController {
         }
     }
 
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentText: UITextView!
+    @IBOutlet weak var contentWeb: UIWebView!
     @IBOutlet weak var readButton: UIBarButtonItem!
     @IBOutlet weak var starButton: UIBarButtonItem!
 
@@ -48,8 +48,12 @@ final class ArticleViewController: UIViewController {
 
         updateUi()
 
-        titleLabel.text = article.title
-        contentText.attributedText = article.content.attributedHTML
+        contentWeb.loadHTMLString(ArticleLoader.load(article), baseURL: Bundle.main.bundleURL)
+
+        /*contentText.attributedText = article.content.attributedHTML
+         contentWeb.loadHTMLString(article.content, baseURL: nil)
+         contentWeb.scalesPageToFit = true
+         contentWeb.contentMode = .scaleAspectFit*/
     }
 
     private func updateUi() {

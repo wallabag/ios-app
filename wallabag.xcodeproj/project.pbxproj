@@ -17,6 +17,11 @@
 		9C44A2031DC7D93D00C2BD0F /* SlideInPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C44A2021DC7D93D00C2BD0F /* SlideInPresentationManager.swift */; };
 		9C44A2051DC7D97A00C2BD0F /* SlideInPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C44A2041DC7D97A00C2BD0F /* SlideInPresentationAnimator.swift */; };
 		9C44A2091DC7D9B100C2BD0F /* SlideInPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C44A2081DC7D9B100C2BD0F /* SlideInPresentationController.swift */; };
+		9C4537921DD1236B00FF6CFE /* article.html in Resources */ = {isa = PBXBuildFile; fileRef = 9C45378E1DD1236B00FF6CFE /* article.html */; };
+		9C4537931DD1236B00FF6CFE /* main-night.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C45378F1DD1236B00FF6CFE /* main-night.css */; };
+		9C4537941DD1236B00FF6CFE /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C4537901DD1236B00FF6CFE /* main.css */; };
+		9C4537951DD1236B00FF6CFE /* ratatouille.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C4537911DD1236B00FF6CFE /* ratatouille.css */; };
+		9C4537971DD1243C00FF6CFE /* ArticleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4537961DD1243C00FF6CFE /* ArticleLoader.swift */; };
 		9C65DEB11DC5EE85002CA068 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C65DEB01DC5EE85002CA068 /* Int.swift */; };
 		9C7596191DBB540D0096614B /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7596181DBB540D0096614B /* Article.swift */; };
 		9C75961C1DBB567E0096614B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75961B1DBB567E0096614B /* String.swift */; };
@@ -72,6 +77,11 @@
 		9C44A2021DC7D93D00C2BD0F /* SlideInPresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationManager.swift; sourceTree = "<group>"; };
 		9C44A2041DC7D97A00C2BD0F /* SlideInPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationAnimator.swift; sourceTree = "<group>"; };
 		9C44A2081DC7D9B100C2BD0F /* SlideInPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationController.swift; sourceTree = "<group>"; };
+		9C45378E1DD1236B00FF6CFE /* article.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = article.html; sourceTree = "<group>"; };
+		9C45378F1DD1236B00FF6CFE /* main-night.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "main-night.css"; sourceTree = "<group>"; };
+		9C4537901DD1236B00FF6CFE /* main.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
+		9C4537911DD1236B00FF6CFE /* ratatouille.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ratatouille.css; sourceTree = "<group>"; };
+		9C4537961DD1243C00FF6CFE /* ArticleLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleLoader.swift; sourceTree = "<group>"; };
 		9C65DEB01DC5EE85002CA068 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		9C7596181DBB540D0096614B /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		9C75961B1DBB567E0096614B /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -160,6 +170,7 @@
 				9C181B851DB8D56600D941EB /* WallabagApi.swift */,
 				9CE112151DC26E8B00FA2EB7 /* CoreData.swift */,
 				9CE112171DC293C300FA2EB7 /* ImageDownloader.swift */,
+				9C4537961DD1243C00FF6CFE /* ArticleLoader.swift */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -199,6 +210,17 @@
 			name = Menu;
 			sourceTree = "<group>";
 		};
+		9C45378D1DD122FA00FF6CFE /* html-ressources */ = {
+			isa = PBXGroup;
+			children = (
+				9C45378E1DD1236B00FF6CFE /* article.html */,
+				9C45378F1DD1236B00FF6CFE /* main-night.css */,
+				9C4537901DD1236B00FF6CFE /* main.css */,
+				9C4537911DD1236B00FF6CFE /* ratatouille.css */,
+			);
+			name = "html-ressources";
+			sourceTree = "<group>";
+		};
 		9C75961A1DBB56730096614B /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +256,7 @@
 		9C987A451DB79826005515F4 /* wallabag */ = {
 			isa = PBXGroup;
 			children = (
+				9C45378D1DD122FA00FF6CFE /* html-ressources */,
 				9C44A2011DC7D91400C2BD0F /* Menu */,
 				9CF1F21F1DBE96740086B98B /* Fonts */,
 				9C75961A1DBB56730096614B /* Extension */,
@@ -397,8 +420,12 @@
 			files = (
 				9CF1F21E1DBE966B0086B98B /* UbuntuTitling-Bold.ttf in Resources */,
 				9C987A541DB79826005515F4 /* LaunchScreen.storyboard in Resources */,
+				9C4537921DD1236B00FF6CFE /* article.html in Resources */,
+				9C4537941DD1236B00FF6CFE /* main.css in Resources */,
+				9C4537951DD1236B00FF6CFE /* ratatouille.css in Resources */,
 				9C987A511DB79826005515F4 /* Assets.xcassets in Resources */,
 				9C987A4C1DB79826005515F4 /* Main.storyboard in Resources */,
+				9C4537931DD1236B00FF6CFE /* main-night.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,6 +600,7 @@
 				9C181B881DB8E27000D941EB /* ArticlesTableViewController.swift in Sources */,
 				9C44A2091DC7D9B100C2BD0F /* SlideInPresentationController.swift in Sources */,
 				9C75961E1DBD59330096614B /* ArticleViewController.swift in Sources */,
+				9C4537971DD1243C00FF6CFE /* ArticleLoader.swift in Sources */,
 				9CF1F2231DBE9B800086B98B /* ClientIdViewController.swift in Sources */,
 				9CF1F2211DBE97D80086B98B /* ServerViewController.swift in Sources */,
 				9C7596191DBB540D0096614B /* Article.swift in Sources */,
