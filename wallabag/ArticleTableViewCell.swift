@@ -25,7 +25,7 @@ class ArticleTableViewCell: UITableViewCell {
 
         previewImage.image = UIImage()
         if let picture = article.preview_picture {
-            previewImage.imageFromUrl(picture)
+            previewImage.image(fromString: picture)
         }
 
         readingTime.text = "Reading time \(article.reading_time.readingTime)"

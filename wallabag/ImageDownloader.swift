@@ -38,11 +38,12 @@ final class ImageDownloader {
 
 extension UIImageView {
 
-    public func imageFromUrl(_ urlString: String) {
+    public func image(fromString urlString: String) {
         ImageDownloader.downloadImage(fromString: urlString) { image in
             DispatchQueue.main.async() { () -> Void in
                 self.image = image
             }
         }
     }
+
 }
