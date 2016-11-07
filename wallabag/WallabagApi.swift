@@ -40,9 +40,6 @@ final class WallabagApi {
 
             if let result = response.result.value {
                 let JSON = result as! [String: Any]
-
-                print(JSON)
-
                 if let token = JSON["access_token"] as? String {
                     access_token = token
                     completion(true)

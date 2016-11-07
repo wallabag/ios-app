@@ -42,10 +42,7 @@ final class ArticlesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "articleIdentifier", for: indexPath) as? ArticleTableViewCell {
-
-            let article = articles[indexPath.item]
-            cell.present(article)
-
+            cell.present(articles[indexPath.item])
             return cell
         } else {
             return UITableViewCell()
@@ -55,21 +52,17 @@ final class ArticlesTableViewController: UITableViewController {
     func handleRefresh() {
         WallabagApi.retrieveArticle { articles in
             self.articles = articles
+            self.page = 2
         }
     }
 
     override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if scrollView == tableView {
-            print(scrollView.contentSize.height)
-            print((scrollView.contentOffset.y + scrollView.frame.size.height))
-
-            if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height - 100) && !refreshing {
-                refreshing = true
-                WallabagApi.retrieveArticle(page: page) { articles in
-                    self.page += 1
-                    self.refreshing = false
-                    self.articles += articles
-                }
+        if scrollView == tableView && ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height - 100) && !refreshing {
+            refreshing = true
+            WallabagApi.retrieveArticle(page: page) { articles in
+                self.page += 1
+                self.refreshing = false
+                self.articles += articles
             }
         }
     }
