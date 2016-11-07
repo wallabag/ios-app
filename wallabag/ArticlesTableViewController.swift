@@ -59,12 +59,17 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if !refreshing {
-            refreshing = true
-            WallabagApi.retrieveArticle(page: page) { articles in
-                self.page += 1
-                self.refreshing = false
-                self.articles += articles
+        if scrollView == tableView {
+            print(scrollView.contentSize.height)
+            print((scrollView.contentOffset.y + scrollView.frame.size.height))
+
+            if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height - 100) && !refreshing {
+                refreshing = true
+                WallabagApi.retrieveArticle(page: page) { articles in
+                    self.page += 1
+                    self.refreshing = false
+                    self.articles += articles
+                }
             }
         }
     }
