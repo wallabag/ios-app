@@ -77,6 +77,8 @@ final class ArticlesTableViewController: UITableViewController {
                 if let index = indexPath?.row {
                     if let controller = controller as? ArticleViewController {
                         controller.article = articles[index]
+                        controller.index = index
+                        controller.delegate = self
                     }
                 }
             }
@@ -88,5 +90,9 @@ final class ArticlesTableViewController: UITableViewController {
             controller.transitioningDelegate = slideInTransitioningDelegate
             controller.modalPresentationStyle = .custom
         }
+    }
+
+    func update(_ article: Article, atIndex index: Int) {
+        articles[index] = article
     }
 }

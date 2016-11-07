@@ -21,6 +21,8 @@ class ArticleTableViewCell: UITableViewCell {
 
         if !article.is_archived {
             title.font = UIFont.boldSystemFont(ofSize: 16.0)
+        } else {
+            title.font = UIFont.systemFont(ofSize: 16.0)
         }
 
         previewImage.image = UIImage()

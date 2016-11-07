@@ -10,9 +10,17 @@ import UIKit
 
 final class ArticleViewController: UIViewController {
 
+    var delegate: ArticlesTableViewController?
+    var index: Int!
     var article: Article! {
         didSet {
             updateUi()
+        }
+    }
+
+    override func didMove(toParentViewController parent: UIViewController?) {
+        if parent == nil {
+            delegate?.update(article, atIndex: index)
         }
     }
 
@@ -39,7 +47,7 @@ final class ArticleViewController: UIViewController {
         navigationItem.title = article.title
 
         updateUi()
-        
+
         titleLabel.text = article.title
         contentText.attributedText = article.content.attributedHTML
     }
