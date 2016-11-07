@@ -12,8 +12,7 @@ final class ArticleViewController: UIViewController {
 
     var article: Article! {
         didSet {
-            readButton?.title = article.is_archived ? "Unread" : "Readed"
-            starButton?.title = article.is_starred ? "Unstar" : "Star"
+            updateUi()
         }
     }
 
@@ -39,10 +38,14 @@ final class ArticleViewController: UIViewController {
 
         navigationItem.title = article.title
 
-        readButton.title = article.is_archived ? "Unread" : "Readed"
-        starButton.title = article.is_starred ? "Unstar" : "Star"
-
+        updateUi()
+        
         titleLabel.text = article.title
         contentText.attributedText = article.content.attributedHTML
+    }
+
+    private func updateUi() {
+        readButton?.title = article.is_archived ? "Unread" : "Readed"
+        starButton?.title = article.is_starred ? "Unstar" : "Star"
     }
 }
