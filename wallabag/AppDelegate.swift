@@ -24,8 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     fileprivate func initializeNSAttributedString() {
-        DispatchQueue.global(qos: .background).async {
-            let _ = "init".attributedHTML
+        DispatchQueue.global(qos: .userInteractive).async {
+            let _ = "<b>init</b>".attributedHTML
         }
     }
 
