@@ -60,6 +60,7 @@ class WallabagApiTests: XCTestCase {
 
         WallabagApi.retrieveArticle { articles in
             XCTAssertTrue(0 != articles.count)
+            XCTAssertTrue(20 == articles.count)
             expectation.fulfill()
         }
 
