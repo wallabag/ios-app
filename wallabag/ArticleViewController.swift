@@ -49,11 +49,6 @@ final class ArticleViewController: UIViewController {
         updateUi()
 
         contentWeb.loadHTMLString(ArticleLoader.load(article), baseURL: Bundle.main.bundleURL)
-
-        /*contentText.attributedText = article.content.attributedHTML
-         contentWeb.loadHTMLString(article.content, baseURL: nil)
-         contentWeb.scalesPageToFit = true
-         contentWeb.contentMode = .scaleAspectFit*/
     }
 
     private func updateUi() {
