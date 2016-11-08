@@ -57,7 +57,7 @@ final class WallabagApi {
 
         Alamofire.request(endpoint! + "/api/entries/" + String(article.id), method: .patch, parameters: parameters).responseJSON { response in
             if let JSON = response.result.value as? [String: Any] {
-                completion(Article(fromItem: JSON))
+                completion(Article(fromDictionary: JSON))
             }
         }
     }
@@ -71,7 +71,7 @@ final class WallabagApi {
                 if let JSON = result as? [String: Any] {
                     if let embedded = JSON["_embedded"] as? [String: Any] {
                         for item in embedded["items"] as! [[String: Any]] {
-                            articles.append(Article(fromItem: item))
+                            articles.append(Article(fromDictionary: item))
                         }
                     }
                 }

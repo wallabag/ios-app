@@ -12,4 +12,10 @@ struct Tag {
     let id: Int
     let label: String
     let slug: String
+
+    init(fromDictionary: [String: Any]) {
+    	id = from["id"] as! Int
+    	label = from["label"] as! String
+    	slug = from["slug"] as! String
+    }
 }
