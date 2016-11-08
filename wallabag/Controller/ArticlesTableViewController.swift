@@ -23,6 +23,10 @@ final class ArticlesTableViewController: UITableViewController {
         }
     }
 
+    @IBAction func backFromParameter(segue: UIStoryboardSegue) {
+
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

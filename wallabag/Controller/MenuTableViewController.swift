@@ -11,9 +11,9 @@ import UIKit
 class MenuTableViewController: UITableViewController {
 
     let menu: [[String: String]] = [
-        ["All articles": "allArticle"],
-        ["Unread articles": "allArticle"],
-        ["Read articles": "allArticle"],
+        ["All articles": "allArticles"],
+        ["Unread articles": "allArticles"],
+        ["Read articles": "allArticles"],
         ["Parameter": "parameter"],
     ]
 
@@ -43,6 +43,10 @@ class MenuTableViewController: UITableViewController {
         cell.textLabel?.text = menu[indexPath.item].keys.first
 
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: menu[indexPath.row].values.first!, sender: nil)
     }
 
     /*
