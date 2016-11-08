@@ -14,19 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-
         CoreData.containerName = "wallabag"
 
-        initializeNSAttributedString()
-
         return true
-    }
-
-    fileprivate func initializeNSAttributedString() {
-        DispatchQueue.global(qos: .userInteractive).async {
-            let _ = "<b>init</b>".attributedHTML
-        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

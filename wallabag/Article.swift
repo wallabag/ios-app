@@ -28,30 +28,30 @@ struct Article {
     let user_id: Int
     let user_name: String
 
-    init(fromItem: [String: Any]) {
+    init(fromDictionary: [String: Any]) {
         annotations = []
-        content = fromItem["content"] as! String
-        created_at = (fromItem["created_at"] as! String).date ?? Date()
-        domain_name = fromItem["domain_name"] as! String
-        id = fromItem["id"] as! Int
-        is_archived = fromItem["is_archived"] as! Bool
-        is_starred = fromItem["is_starred"] as! Bool
-        language = fromItem["language"] as? String ?? ""
-        mimetype = fromItem["mimetype"] as! String
-        preview_picture = fromItem["preview_picture"] as? String
-        reading_time = fromItem["reading_time"] as! Int
+        content = fromDictionary["content"] as! String
+        created_at = (fromDictionary["created_at"] as! String).date ?? Date()
+        domain_name = fromDictionary["domain_name"] as! String
+        id = fromDictionary["id"] as! Int
+        is_archived = fromDictionary["is_archived"] as! Bool
+        is_starred = fromDictionary["is_starred"] as! Bool
+        language = fromDictionary["language"] as? String ?? ""
+        mimetype = fromDictionary["mimetype"] as! String
+        preview_picture = fromDictionary["preview_picture"] as? String
+        reading_time = fromDictionary["reading_time"] as! Int
 
         var tagsStack = [Tag]()
-        for tag in (fromItem["tags"] as? [[String: Any]])! {
-            tagsStack.append(Tag(id: tag["id"] as! Int, label: tag["label"] as! String, slug: tag["slug"] as! String))
+        for tag in (fromDictionary["tags"] as? [[String: Any]])! {
+            tagsStack.append(Tag(fromDictionary: tag))
         }
         tags = tagsStack
 
-        title = fromItem["title"] as! String
-        updated_at = (fromItem["updated_at"] as! String).date ?? Date()
-        url = fromItem["url"] as? String ?? ""
-        user_email = fromItem["user_email"] as! String
-        user_id = fromItem["user_id"] as! Int
-        user_name = fromItem["user_name"] as! String
+        title = fromDictionary["title"] as! String
+        updated_at = (fromDictionary["updated_at"] as! String).date ?? Date()
+        url = fromDictionary["url"] as? String ?? ""
+        user_email = fromDictionary["user_email"] as! String
+        user_id = fromDictionary["user_id"] as! Int
+        user_name = fromDictionary["user_name"] as! String
     }
 }
