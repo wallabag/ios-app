@@ -54,7 +54,7 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     func handleRefresh() {
-        WallabagApi.retrieveArticle { articles in
+        WallabagApi.retrieveArticle(page: 1) { articles in
             self.articles = articles
             self.page = 2
         }

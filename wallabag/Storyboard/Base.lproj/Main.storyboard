@@ -107,12 +107,15 @@
                     <navigationItem key="navigationItem" id="nCH-In-IXo"/>
                     <connections>
                         <segue destination="aVJ-Ci-2zL" kind="presentation" identifier="parameter" id="Pbj-Xu-DhR"/>
-                        <segue destination="8tH-nc-JLr" kind="presentation" identifier="allArticles" id="LWe-DN-zwq"/>
+                        <segue destination="8tH-nc-JLr" kind="presentation" identifier="allArticles" animates="NO" id="LWe-DN-zwq"/>
+                        <segue destination="8tH-nc-JLr" kind="presentation" identifier="starredArticles" animates="NO" id="eEc-Xx-gEL"/>
+                        <segue destination="8tH-nc-JLr" kind="presentation" identifier="archivedArticles" animates="NO" id="Nsy-6k-a9Z"/>
+                        <segue destination="8tH-nc-JLr" kind="presentation" identifier="unarchivedArticles" animates="NO" id="zFb-eb-KI8"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="soG-JG-Cx4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6488.8000000000002" y="-702.99850074962524"/>
+            <point key="canvasLocation" x="6510" y="-860"/>
         </scene>
         <!--Parameter-->
         <scene sceneID="lwy-C8-NHT">
@@ -525,7 +528,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nl5-AU-1dT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5549.6000000000004" y="-703.89805097451278"/>
+            <point key="canvasLocation" x="5505" y="-818"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LoP-Es-jM4">

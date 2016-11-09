@@ -19,6 +19,8 @@ final class WallabagApi {
 
     static fileprivate var access_token: String?
 
+    static var mode: String = "allArticles"
+
     static func configureApi(endpoint: String, clientId: String, clientSecret: String, username: String, password: String) {
         self.endpoint = endpoint
         self.clientId = clientId
@@ -62,8 +64,10 @@ final class WallabagApi {
         }
     }
 
-    static func retrieveArticle(page: Int = 1, _ completion: @escaping([Article]) -> Void) {
-        let parameters: [String: Any] = ["access_token": access_token!, "perPage": 20, "page": page]
+    static func retrieveArticle(page: Int = 1, withParameters: [String: Any] = [:], _ completion: @escaping([Article]) -> Void) {
+        var parameters: [String: Any] = ["access_token": access_token!, "perPage": 20, "page": page]
+        parameters = parameters.merge(dict: withParameters).merge(dict: getRetrieveMode())
+
         var articles = [Article]()
 
         Alamofire.request(endpoint! + "/api/entries", parameters: parameters).responseJSON { response in
@@ -77,6 +81,21 @@ final class WallabagApi {
                 }
             }
             completion(articles)
+        }
+    }
+
+    static func getRetrieveMode() -> [String: Any] {
+        switch mode {
+        case "allArticles":
+            return [:]
+        case "archivedArticles":
+            return ["archive": 1]
+        case "unarchivedArticles":
+            return ["archive": 0]
+        case "starredArticles":
+            return ["starred": 1]
+        default:
+            return [:]
         }
     }
 }
