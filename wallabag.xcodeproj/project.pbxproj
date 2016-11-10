@@ -13,6 +13,8 @@
 		9C1EBA061DC3E9CA00FAE195 /* WallabagApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1EBA051DC3E9CA00FAE195 /* WallabagApiTests.swift */; };
 		9C2192791DBF7F8800F628C2 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2192781DBF7F8800F628C2 /* Tag.swift */; };
 		9C21927D1DBFF44700F628C2 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C21927C1DBFF44700F628C2 /* ArticleTableViewCell.swift */; };
+		9C2A2DAF1DD4A82A00EDA4E8 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2A2DAE1DD4A82A00EDA4E8 /* DictionaryTests.swift */; };
+		9C2A2DB21DD4A96B00EDA4E8 /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2A2DB11DD4A96B00EDA4E8 /* IntTests.swift */; };
 		9C44A2001DC7D8D500C2BD0F /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C44A1FF1DC7D8D500C2BD0F /* MenuTableViewController.swift */; };
 		9C44A2031DC7D93D00C2BD0F /* SlideInPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C44A2021DC7D93D00C2BD0F /* SlideInPresentationManager.swift */; };
 		9C44A2051DC7D97A00C2BD0F /* SlideInPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C44A2041DC7D97A00C2BD0F /* SlideInPresentationAnimator.swift */; };
@@ -72,7 +74,9 @@
 		9C181B871DB8E27000D941EB /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
 		9C1EBA051DC3E9CA00FAE195 /* WallabagApiTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallabagApiTests.swift; sourceTree = "<group>"; };
 		9C2192781DBF7F8800F628C2 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
-		9C21927C1DBFF44700F628C2 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleTableViewCell.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		9C21927C1DBFF44700F628C2 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		9C2A2DAE1DD4A82A00EDA4E8 /* DictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
+		9C2A2DB11DD4A96B00EDA4E8 /* IntTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
 		9C44A1FF1DC7D8D500C2BD0F /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		9C44A2021DC7D93D00C2BD0F /* SlideInPresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationManager.swift; sourceTree = "<group>"; };
 		9C44A2041DC7D97A00C2BD0F /* SlideInPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationAnimator.swift; sourceTree = "<group>"; };
@@ -204,8 +208,24 @@
 			children = (
 				9C21927C1DBFF44700F628C2 /* ArticleTableViewCell.swift */,
 			);
-			name = Cell;
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		9C2A2DAD1DD4A81000EDA4E8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9C2A2DAE1DD4A82A00EDA4E8 /* DictionaryTests.swift */,
+				9C2A2DB11DD4A96B00EDA4E8 /* IntTests.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		9C2A2DB01DD4A92D00EDA4E8 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				9C1EBA051DC3E9CA00FAE195 /* WallabagApiTests.swift */,
+			);
+			path = Lib;
 			sourceTree = "<group>";
 		};
 		9C380A1B1DD2683400E07CE7 /* Storyboard */ = {
@@ -293,8 +313,9 @@
 		9C987A5D1DB79826005515F4 /* wallabagTests */ = {
 			isa = PBXGroup;
 			children = (
+				9C2A2DAD1DD4A81000EDA4E8 /* Extension */,
+				9C2A2DB01DD4A92D00EDA4E8 /* Lib */,
 				9C987A601DB79826005515F4 /* Info.plist */,
-				9C1EBA051DC3E9CA00FAE195 /* WallabagApiTests.swift */,
 			);
 			path = wallabagTests;
 			sourceTree = "<group>";
@@ -535,7 +556,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BDE3CDF5182757371AC5B97E /* [CP] Check Pods Manifest.lock */ = {
@@ -550,7 +571,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C30604D19CABD26626D9E3A3 /* [CP] Check Pods Manifest.lock */ = {
@@ -565,7 +586,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C63B0385014D4D2A027B3CAF /* [CP] Copy Pods Resources */ = {
@@ -635,7 +656,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C2A2DB21DD4A96B00EDA4E8 /* IntTests.swift in Sources */,
 				9C1EBA061DC3E9CA00FAE195 /* WallabagApiTests.swift in Sources */,
+				9C2A2DAF1DD4A82A00EDA4E8 /* DictionaryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
