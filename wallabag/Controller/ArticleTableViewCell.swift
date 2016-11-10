@@ -25,7 +25,7 @@ class ArticleTableViewCell: UITableViewCell {
             title.font = UIFont.systemFont(ofSize: 16.0)
         }
 
-        previewImage.image = UIImage()
+        previewImage.image = UIImage(named: "logo-icon-black-no-bg")
         if let picture = article.preview_picture {
             previewImage.image(fromString: picture)
         }

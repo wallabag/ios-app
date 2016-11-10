@@ -156,11 +156,12 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BOk-fg-qmd" id="Gj3-Gv-99G">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="97"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="96"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yAa-Il-SM0">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-icon-black-no-bg" translatesAutoresizingMaskIntoConstraints="NO" id="yAa-Il-SM0">
                                             <rect key="frame" x="8" y="8" width="80" height="80"/>
+                                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="BxO-n3-Ngr"/>
                                             </constraints>
@@ -178,7 +179,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reading time 00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgC-hH-jOI" userLabel="reading time">
-                                            <rect key="frame" x="96" y="37" width="246" height="14"/>
+                                            <rect key="frame" x="96" y="37" width="246" height="12"/>
                                             <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
