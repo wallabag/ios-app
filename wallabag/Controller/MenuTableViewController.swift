@@ -15,7 +15,7 @@ class MenuTableViewController: UITableViewController {
         ["Unread articles": "unarchivedArticles"],
         ["Read articles": "archivedArticles"],
         ["Starred articles": "starredArticles"],
-        // ["Parameter": "parameter"],,
+        // ["Parameter": "parameter"],,,
     ]
 
     // MARK: - Table view data source
@@ -46,7 +46,7 @@ class MenuTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let navController = segue.destination as? UINavigationController {
             if (navController.topViewController as? ArticlesTableViewController) != nil {
-                WallabagApi.mode = segue.identifier!
+                WallabagApi.mode = RetrieveMode(rawValue: segue.identifier!)!
             }
         }
     }

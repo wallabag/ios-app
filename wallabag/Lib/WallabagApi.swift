@@ -9,6 +9,13 @@
 import Foundation
 import Alamofire
 
+enum RetrieveMode: String {
+    case allArticles
+    case archivedArticles
+    case unarchivedArticles
+    case starredArticles
+}
+
 final class WallabagApi {
     static fileprivate var endpoint: String?
     static fileprivate var clientId: String?
@@ -19,7 +26,7 @@ final class WallabagApi {
 
     static fileprivate var access_token: String?
 
-    static var mode: String = "allArticles"
+    static var mode: RetrieveMode = .allArticles
 
     static func configureApi(endpoint: String, clientId: String, clientSecret: String, username: String, password: String) {
         self.endpoint = endpoint
@@ -86,16 +93,14 @@ final class WallabagApi {
 
     static func getRetrieveMode() -> [String: Any] {
         switch mode {
-        case "allArticles":
+        case .allArticles:
             return [:]
-        case "archivedArticles":
+        case .archivedArticles:
             return ["archive": 1]
-        case "unarchivedArticles":
+        case .unarchivedArticles:
             return ["archive": 0]
-        case "starredArticles":
+        case .starredArticles:
             return ["starred": 1]
-        default:
-            return [:]
         }
     }
 }
