@@ -91,7 +91,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fxa-Eb-NLN">
                                             <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -156,7 +156,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="97"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BOk-fg-qmd" id="Gj3-Gv-99G">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="96"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="97"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yAa-Il-SM0">
@@ -178,8 +178,8 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reading time 00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgC-hH-jOI" userLabel="reading time">
-                                            <rect key="frame" x="96" y="37" width="246" height="11"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                            <rect key="frame" x="96" y="37" width="246" height="14"/>
+                                            <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -214,7 +214,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title=" Articles" id="ZjL-wI-QTt">
-                        <barButtonItem key="leftBarButtonItem" image="home-25" id="Meg-lP-qaT">
+                        <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="Meg-lP-qaT">
                             <connections>
                                 <segue destination="zBf-ku-xvb" kind="presentation" identifier="menu" id="XgL-Zt-Ctu"/>
                             </connections>
@@ -550,7 +550,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="home-25" width="25" height="25"/>
         <image name="logo-icon-black-no-bg" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
