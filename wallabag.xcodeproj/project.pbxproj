@@ -16,6 +16,7 @@
 		9C2A2DAF1DD4A82A00EDA4E8 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2A2DAE1DD4A82A00EDA4E8 /* DictionaryTests.swift */; };
 		9C2A2DB21DD4A96B00EDA4E8 /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2A2DB11DD4A96B00EDA4E8 /* IntTests.swift */; };
 		9C2A2DB41DD4AA1D00EDA4E8 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2A2DB31DD4AA1D00EDA4E8 /* StringTests.swift */; };
+		9C2A2DB71DD50F9700EDA4E8 /* TagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2A2DB61DD50F9700EDA4E8 /* TagTests.swift */; };
 		9C44A2001DC7D8D500C2BD0F /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C44A1FF1DC7D8D500C2BD0F /* MenuTableViewController.swift */; };
 		9C44A2031DC7D93D00C2BD0F /* SlideInPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C44A2021DC7D93D00C2BD0F /* SlideInPresentationManager.swift */; };
 		9C44A2051DC7D97A00C2BD0F /* SlideInPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C44A2041DC7D97A00C2BD0F /* SlideInPresentationAnimator.swift */; };
@@ -79,6 +80,7 @@
 		9C2A2DAE1DD4A82A00EDA4E8 /* DictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
 		9C2A2DB11DD4A96B00EDA4E8 /* IntTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
 		9C2A2DB31DD4AA1D00EDA4E8 /* StringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
+		9C2A2DB61DD50F9700EDA4E8 /* TagTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagTests.swift; sourceTree = "<group>"; };
 		9C44A1FF1DC7D8D500C2BD0F /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		9C44A2021DC7D93D00C2BD0F /* SlideInPresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationManager.swift; sourceTree = "<group>"; };
 		9C44A2041DC7D97A00C2BD0F /* SlideInPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationAnimator.swift; sourceTree = "<group>"; };
@@ -231,6 +233,15 @@
 			path = Lib;
 			sourceTree = "<group>";
 		};
+		9C2A2DB51DD50F8400EDA4E8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9C2A2DB61DD50F9700EDA4E8 /* TagTests.swift */,
+			);
+			name = Model;
+			path = Model;
+			sourceTree = "<group>";
+		};
 		9C380A1B1DD2683400E07CE7 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +329,7 @@
 			children = (
 				9C2A2DAD1DD4A81000EDA4E8 /* Extension */,
 				9C2A2DB01DD4A92D00EDA4E8 /* Lib */,
+				9C2A2DB51DD50F8400EDA4E8 /* Model */,
 				9C987A601DB79826005515F4 /* Info.plist */,
 			);
 			path = wallabagTests;
@@ -559,7 +571,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		BDE3CDF5182757371AC5B97E /* [CP] Check Pods Manifest.lock */ = {
@@ -574,7 +586,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C30604D19CABD26626D9E3A3 /* [CP] Check Pods Manifest.lock */ = {
@@ -589,7 +601,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		C63B0385014D4D2A027B3CAF /* [CP] Copy Pods Resources */ = {
@@ -661,6 +673,7 @@
 			files = (
 				9C2A2DB21DD4A96B00EDA4E8 /* IntTests.swift in Sources */,
 				9C1EBA061DC3E9CA00FAE195 /* WallabagApiTests.swift in Sources */,
+				9C2A2DB71DD50F9700EDA4E8 /* TagTests.swift in Sources */,
 				9C2A2DB41DD4AA1D00EDA4E8 /* StringTests.swift in Sources */,
 				9C2A2DAF1DD4A82A00EDA4E8 /* DictionaryTests.swift in Sources */,
 			);
@@ -812,7 +825,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = wallabag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -829,7 +842,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = wallabag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
