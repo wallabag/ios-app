@@ -72,7 +72,7 @@
 		9C181B871DB8E27000D941EB /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
 		9C1EBA051DC3E9CA00FAE195 /* WallabagApiTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallabagApiTests.swift; sourceTree = "<group>"; };
 		9C2192781DBF7F8800F628C2 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
-		9C21927C1DBFF44700F628C2 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		9C21927C1DBFF44700F628C2 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArticleTableViewCell.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		9C44A1FF1DC7D8D500C2BD0F /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		9C44A2021DC7D93D00C2BD0F /* SlideInPresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationManager.swift; sourceTree = "<group>"; };
 		9C44A2041DC7D97A00C2BD0F /* SlideInPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationAnimator.swift; sourceTree = "<group>"; };
@@ -178,7 +178,6 @@
 		9C181B841DB8D47C00D941EB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9C21927C1DBFF44700F628C2 /* ArticleTableViewCell.swift */,
 				9C75961D1DBD59330096614B /* ArticleViewController.swift */,
 				9C181B871DB8E27000D941EB /* ArticlesTableViewController.swift */,
 				9CF1F2221DBE9B800086B98B /* ClientIdViewController.swift */,
@@ -200,13 +199,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		9C2A2DAC1DD4A6D900EDA4E8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9C21927C1DBFF44700F628C2 /* ArticleTableViewCell.swift */,
+			);
+			name = Cell;
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		9C380A1B1DD2683400E07CE7 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
 				9C987A521DB79826005515F4 /* LaunchScreen.storyboard */,
 				9C987A4A1DB79826005515F4 /* Main.storyboard */,
 			);
-			name = Storyboard;
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
@@ -266,6 +273,7 @@
 		9C987A451DB79826005515F4 /* wallabag */ = {
 			isa = PBXGroup;
 			children = (
+				9C2A2DAC1DD4A6D900EDA4E8 /* Cell */,
 				9C181B841DB8D47C00D941EB /* Controller */,
 				9C75961A1DBB56730096614B /* Extension */,
 				9CF1F21F1DBE96740086B98B /* Fonts */,
