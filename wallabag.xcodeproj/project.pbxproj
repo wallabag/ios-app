@@ -15,6 +15,7 @@
 		9C21927D1DBFF44700F628C2 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C21927C1DBFF44700F628C2 /* ArticleTableViewCell.swift */; };
 		9C2A2DAF1DD4A82A00EDA4E8 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2A2DAE1DD4A82A00EDA4E8 /* DictionaryTests.swift */; };
 		9C2A2DB21DD4A96B00EDA4E8 /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2A2DB11DD4A96B00EDA4E8 /* IntTests.swift */; };
+		9C2A2DB41DD4AA1D00EDA4E8 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2A2DB31DD4AA1D00EDA4E8 /* StringTests.swift */; };
 		9C44A2001DC7D8D500C2BD0F /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C44A1FF1DC7D8D500C2BD0F /* MenuTableViewController.swift */; };
 		9C44A2031DC7D93D00C2BD0F /* SlideInPresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C44A2021DC7D93D00C2BD0F /* SlideInPresentationManager.swift */; };
 		9C44A2051DC7D97A00C2BD0F /* SlideInPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C44A2041DC7D97A00C2BD0F /* SlideInPresentationAnimator.swift */; };
@@ -77,6 +78,7 @@
 		9C21927C1DBFF44700F628C2 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		9C2A2DAE1DD4A82A00EDA4E8 /* DictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
 		9C2A2DB11DD4A96B00EDA4E8 /* IntTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
+		9C2A2DB31DD4AA1D00EDA4E8 /* StringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		9C44A1FF1DC7D8D500C2BD0F /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		9C44A2021DC7D93D00C2BD0F /* SlideInPresentationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationManager.swift; sourceTree = "<group>"; };
 		9C44A2041DC7D97A00C2BD0F /* SlideInPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationAnimator.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			children = (
 				9C2A2DAE1DD4A82A00EDA4E8 /* DictionaryTests.swift */,
 				9C2A2DB11DD4A96B00EDA4E8 /* IntTests.swift */,
+				9C2A2DB31DD4AA1D00EDA4E8 /* StringTests.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -658,6 +661,7 @@
 			files = (
 				9C2A2DB21DD4A96B00EDA4E8 /* IntTests.swift in Sources */,
 				9C1EBA061DC3E9CA00FAE195 /* WallabagApiTests.swift in Sources */,
+				9C2A2DB41DD4AA1D00EDA4E8 /* StringTests.swift in Sources */,
 				9C2A2DAF1DD4A82A00EDA4E8 /* DictionaryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
