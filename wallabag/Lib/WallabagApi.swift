@@ -71,6 +71,16 @@ final class WallabagApi {
         }
     }
 
+    static func deleteArticle(_ article: Article, completion: @escaping() -> Void) {
+        let parameters: [String: Any] = ["access_token": access_token!]
+
+        Alamofire.request(endpoint! + "/api/entries/" + String(article.id), method: .delete, parameters: parameters).responseJSON { response in
+
+            completion()
+
+        }
+    }
+
     static func retrieveArticle(page: Int = 1, withParameters: [String: Any] = [:], _ completion: @escaping([Article]) -> Void) {
         var parameters: [String: Any] = ["access_token": access_token!, "perPage": 20, "page": page]
         parameters = parameters.merge(dict: withParameters).merge(dict: getRetrieveMode())
