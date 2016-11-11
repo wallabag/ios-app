@@ -11,16 +11,11 @@ import UIKit
 final class ArticleViewController: UIViewController {
 
     var delegate: ArticlesTableViewController?
-    var index: Int!
+    var index: IndexPath!
+    var update: Bool = true
     var article: Article! {
         didSet {
             updateUi()
-        }
-    }
-
-    override func didMove(toParentViewController parent: UIViewController?) {
-        if parent == nil {
-            delegate?.update(article, atIndex: index)
         }
     }
 
@@ -36,7 +31,21 @@ final class ArticleViewController: UIViewController {
         }
     }
 
-    @IBOutlet weak var contentText: UITextView!
+    @IBAction func deleteArticle(_ sender: Any?) {
+        let alert = UIAlertController(title: "Delete", message: "Are you sure?", preferredStyle: .actionSheet)
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+            WallabagApi.deleteArticle(self.article) {
+                self.update = false
+                self.delegate?.delete(self.article, indexPath: self.index)
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+        })
+        alert.addAction(deleteAction)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+
+        present(alert, animated: true)
+    }
+
     @IBOutlet weak var contentWeb: UIWebView!
     @IBOutlet weak var readButton: UIBarButtonItem!
     @IBOutlet weak var starButton: UIBarButtonItem!
@@ -49,6 +58,12 @@ final class ArticleViewController: UIViewController {
         updateUi()
 
         contentWeb.loadHTMLString(ArticleLoader.load(article), baseURL: Bundle.main.bundleURL)
+    }
+
+    override func didMove(toParentViewController parent: UIViewController?) {
+        if parent == nil && update {
+            delegate?.update(article, atIndex: index)
+        }
     }
 
     private func updateUi() {

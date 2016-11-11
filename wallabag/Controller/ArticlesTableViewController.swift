@@ -78,11 +78,14 @@ final class ArticlesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let article = articles[indexPath.row]
+            delete(article, indexPath: indexPath)
+        }
+    }
 
-            WallabagApi.deleteArticle(article) {
-                self.articles.remove(at: indexPath.row)
-                self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            }
+    func delete(_ article: Article, indexPath: IndexPath) {
+        WallabagApi.deleteArticle(article) {
+            self.articles.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
 
@@ -96,7 +99,7 @@ final class ArticlesTableViewController: UITableViewController {
                 if let index = indexPath?.row {
                     if let controller = controller as? ArticleViewController {
                         controller.article = articles[index]
-                        controller.index = index
+                        controller.index = indexPath
                         controller.delegate = self
                     }
                 }
@@ -111,7 +114,7 @@ final class ArticlesTableViewController: UITableViewController {
         }
     }
 
-    func update(_ article: Article, atIndex index: Int) {
-        articles[index] = article
+    func update(_ article: Article, atIndex index: IndexPath) {
+        articles[index.row] = article
     }
 }

@@ -141,7 +141,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LFY-A9-naf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="tU7-sd-KVh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="8232.7999999999993" y="-707.49625187406298"/>
+            <point key="canvasLocation" x="8252" y="-860"/>
         </scene>
         <!--Articles TableView-->
         <scene sceneID="vTl-iM-X3B">
@@ -255,6 +255,12 @@
                                             <action selector="star:" destination="zsG-x9-2za" id="RwX-qv-2d9"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="nGx-Xe-U9r"/>
+                                    <barButtonItem systemItem="trash" id="IC0-DD-8KU">
+                                        <connections>
+                                            <action selector="deleteArticle:" destination="zsG-x9-2za" id="fWt-Cr-hlJ"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vxC-9m-osy">
@@ -283,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfU-tW-LRl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5549.6000000000004" y="-5.8470764617691158"/>
+            <point key="canvasLocation" x="5554" y="-6"/>
         </scene>
         <!--Server-->
         <scene sceneID="tbh-yG-xcX">
@@ -547,7 +553,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngX-Q0-Zbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7293.6000000000004" y="-707.49625187406298"/>
+            <point key="canvasLocation" x="7353" y="-860"/>
         </scene>
     </scenes>
     <resources>
