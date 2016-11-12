@@ -280,6 +280,13 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="51o-Ow-BBE">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="YkI-7q-ROS">
+                            <connections>
+                                <action selector="shareMenu:" destination="zsG-x9-2za" id="xlP-XW-3Zb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="contentWeb" destination="vxC-9m-osy" id="hEI-YH-oMy"/>

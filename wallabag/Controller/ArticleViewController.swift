@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TUSafariActivity
 
 final class ArticleViewController: UIViewController {
 
@@ -29,6 +30,14 @@ final class ArticleViewController: UIViewController {
         WallabagApi.patchArticle(article, withParamaters: ["starred": (!article.is_starred).hashValue]) { article in
             self.article = article
         }
+    }
+
+    @IBAction func shareMenu(_ sender: Any) {
+        let activity = TUSafariActivity()
+        let shareController = UIActivityViewController(activityItems: [URL(string: article.url)], applicationActivities: [activity])
+        shareController.excludedActivityTypes = [.airDrop, .addToReadingList, .copyToPasteboard]
+
+        present(shareController, animated: true)
     }
 
     @IBAction func deleteArticle(_ sender: Any?) {

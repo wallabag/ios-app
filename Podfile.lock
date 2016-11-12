@@ -1,12 +1,15 @@
 PODS:
   - Alamofire (4.0.1)
+  - TUSafariActivity (1.0.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - TUSafariActivity (~> 1.0)
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
 
-PODFILE CHECKSUM: 87394af834ba2b8ebb4974b316bc29089ebc8616
+PODFILE CHECKSUM: 29dacf2b19f940672e17d6aad29c564ea83584e2
 
 COCOAPODS: 1.1.1
