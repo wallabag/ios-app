@@ -14,17 +14,14 @@ final class CoreData: NSObject {
     static var containerName: String?
 
     @available(iOS 10.0, *)
-    static var persistentContainer: NSPersistentContainer? = {
-        if #available(iOS 10.0, *) {
-            let container = NSPersistentContainer(name: containerName!)
-            container.loadPersistentStores { storeDescription, error in
-                if let error = error as NSError? {
-                    fatalError("Unresolved error \(error), \(error.userInfo)")
-                }
+    static var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: containerName!)
+        container.loadPersistentStores { storeDescription, error in
+            if let error = error as NSError? {
+                fatalError("Unresolved error \(error), \(error.userInfo)")
             }
-            return container
         }
-        return nil
+        return container
     }()
 
     @available(iOS 9.3, *)
@@ -78,7 +75,7 @@ final class CoreData: NSObject {
 
     static var context: NSManagedObjectContext {
         if #available(iOS 10.0, *) {
-            return persistentContainer!.viewContext
+            return persistentContainer.viewContext
         } else {
             return managedObjectContext
         }
@@ -90,7 +87,7 @@ final class CoreData: NSObject {
 
     static func fetch(_ request: NSPersistentStoreRequest) -> [NSManagedObject] {
         if #available(iOS 10.0, *) {
-            let result = try! persistentContainer!.viewContext.fetch(request as! NSFetchRequest<NSFetchRequestResult>)
+            let result = try! persistentContainer.viewContext.fetch(request as! NSFetchRequest<NSFetchRequestResult>)
             return result as! [NSManagedObject]
         } else {
             let result = try! managedObjectContext.fetch(request as! NSFetchRequest<NSFetchRequestResult>)
