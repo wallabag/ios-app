@@ -29,11 +29,6 @@ class ArticleTests: XCTestCase {
                     "label": "My tag",
                     "slug": "my-tag",
                 ],
-                [
-                    "id": 43,
-                    "label": "My second tag",
-                    "slug": "my-second-tag",
-                ],
             ],
             "user_email": "user@mail.com",
             "user_id": 1,
@@ -55,7 +50,7 @@ class ArticleTests: XCTestCase {
         XCTAssertEqual("user@mail.com", article.user_email)
         XCTAssertEqual(1, article.user_id)
         XCTAssertEqual("wallabag", article.user_name)
-        XCTAssertEqual(2, article.tags.count)
+        XCTAssertEqual(1, article.tags.count)
         XCTAssertEqual(42, article.tags.first!.id)
         XCTAssertEqual("My tag", article.tags.first!.label)
         XCTAssertEqual("my-tag", article.tags.first!.slug)
