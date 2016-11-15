@@ -8,14 +8,22 @@
 
 import Foundation
 
-struct Tag {
+struct Tag: Hashable {
     let id: Int
     let label: String
     let slug: String
+
+    var hashValue: Int {
+        return id
+    }
 
     init(fromDictionary: [String: Any]) {
         id = fromDictionary["id"] as! Int
         label = fromDictionary["label"] as! String
         slug = fromDictionary["slug"] as! String
     }
+}
+
+func ==(tag1: Tag, tag2: Tag) -> Bool {
+    return tag1.id == tag2.id
 }

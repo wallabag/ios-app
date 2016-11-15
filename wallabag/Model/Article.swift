@@ -20,7 +20,7 @@ struct Article {
     let mimetype: String
     let preview_picture: String?
     let reading_time: Int
-    let tags: [Tag]
+    let tags: Set<Tag>
     let title: String
     let updated_at: Date
     let url: String
@@ -41,9 +41,9 @@ struct Article {
         preview_picture = fromDictionary["preview_picture"] as? String
         reading_time = fromDictionary["reading_time"] as? Int ?? 1
 
-        var tagsStack = [Tag]()
+        var tagsStack: Set<Tag> = Set()
         for tag in (fromDictionary["tags"] as? [[String: Any]])! {
-            tagsStack.append(Tag(fromDictionary: tag))
+            tagsStack.insert(Tag(fromDictionary: tag))
         }
         tags = tagsStack
 
