@@ -32,15 +32,17 @@ final class ArticleViewController: UIViewController {
         }
     }
 
-    @IBAction func shareMenu(_ sender: Any) {
+    @IBAction func shareMenu(_ sender: UIBarButtonItem) {
         let activity = TUSafariActivity()
         let shareController = UIActivityViewController(activityItems: [URL(string: article.url)], applicationActivities: [activity])
         shareController.excludedActivityTypes = [.airDrop, .addToReadingList, .copyToPasteboard]
 
+        shareController.popoverPresentationController?.barButtonItem = sender
+
         present(shareController, animated: true)
     }
 
-    @IBAction func deleteArticle(_ sender: Any?) {
+    @IBAction func deleteArticle(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Delete", message: "Are you sure?", preferredStyle: .actionSheet)
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
             WallabagApi.deleteArticle(self.article) {
@@ -51,6 +53,8 @@ final class ArticleViewController: UIViewController {
         })
         alert.addAction(deleteAction)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+
+        alert.popoverPresentationController?.barButtonItem = sender
 
         present(alert, animated: true)
     }
