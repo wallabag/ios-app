@@ -20,8 +20,6 @@ final class ArticlesTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
             refreshControl?.endRefreshing()
-
-            updateUi()
         }
     }
 
@@ -73,6 +71,7 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     func handleRefresh() {
+        updateUi()
         WallabagApi.retrieveArticle(page: 1) { articles in
             self.articles = articles
             self.page = 2
