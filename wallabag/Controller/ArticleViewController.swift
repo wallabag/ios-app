@@ -80,7 +80,7 @@ final class ArticleViewController: UIViewController {
     }
 
     private func updateUi() {
-        readButton?.title = article.is_archived ? "Unread" : "Readed"
+        readButton?.title = article.is_archived ? "Unread" : "Read"
         starButton?.title = article.is_starred ? "Unstar" : "Star"
     }
 }
