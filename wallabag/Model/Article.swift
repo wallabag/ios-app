@@ -30,16 +30,16 @@ struct Article {
 
     init(fromDictionary: [String: Any]) {
         annotations = []
-        content = fromDictionary["content"] as! String
+        content = fromDictionary["content"] as? String ?? ""
         created_at = (fromDictionary["created_at"] as! String).date ?? Date()
-        domain_name = fromDictionary["domain_name"] as! String
+        domain_name = fromDictionary["domain_name"] as? String ?? ""
         id = fromDictionary["id"] as! Int
         is_archived = fromDictionary["is_archived"] as! Bool
         is_starred = fromDictionary["is_starred"] as! Bool
         language = fromDictionary["language"] as? String ?? ""
-        mimetype = fromDictionary["mimetype"] as! String
+        mimetype = fromDictionary["mimetype"] as? String ?? ""
         preview_picture = fromDictionary["preview_picture"] as? String
-        reading_time = fromDictionary["reading_time"] as! Int
+        reading_time = fromDictionary["reading_time"] as? Int ?? 1
 
         var tagsStack = [Tag]()
         for tag in (fromDictionary["tags"] as? [[String: Any]])! {
@@ -47,7 +47,7 @@ struct Article {
         }
         tags = tagsStack
 
-        title = fromDictionary["title"] as! String
+        title = fromDictionary["title"] as? String ?? ""
         updated_at = (fromDictionary["updated_at"] as! String).date ?? Date()
         url = fromDictionary["url"] as? String ?? ""
         user_email = fromDictionary["user_email"] as! String
