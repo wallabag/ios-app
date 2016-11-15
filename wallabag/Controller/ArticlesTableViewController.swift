@@ -20,6 +20,25 @@ final class ArticlesTableViewController: UITableViewController {
                 self.tableView.reloadData()
             }
             refreshControl?.endRefreshing()
+
+            updateUi()
+        }
+    }
+
+    fileprivate func updateUi() {
+        switch WallabagApi.mode {
+        case .allArticles:
+            title = "All articles"
+            break
+        case .archivedArticles:
+            title = "Read articles"
+            break
+        case .starredArticles:
+            title = "Starred articles"
+            break
+        case .unarchivedArticles:
+            title = "Unread articles"
+            break
         }
     }
 
