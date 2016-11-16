@@ -44,6 +44,25 @@ final class ArticlesTableViewController: UITableViewController {
 
     }
 
+    @IBAction func addLink(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "Add link", message: nil, preferredStyle: .alert)
+        alertController.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Url"
+        })
+        alertController.addAction(UIAlertAction(title: "Add", style: .default, handler: { alert in
+            if let textfield = alertController.textFields?.first?.text {
+                if let url = URL(string: textfield) {
+                    WallabagApi.addArticle(url) { article in
+                        self.articles.insert(article, at: 0)
+                    }
+                }
+            }
+        }))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        present(alertController, animated: true)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
