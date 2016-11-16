@@ -81,6 +81,16 @@ final class WallabagApi {
         }
     }
 
+    static func addArticle(_ url: URL, completion: @escaping(_ article: Article) -> Void) {
+        let parameters: [String: Any] = ["access_token": access_token!, "url": url.absoluteString]
+
+        Alamofire.request(endpoint! + "/api/entries", method: .post, parameters: parameters).responseJSON { response in
+            if let JSON = response.result.value as? [String: Any] {
+                completion(Article(fromDictionary: JSON))
+            }
+        }
+    }
+
     static func retrieveArticle(page: Int = 1, withParameters: [String: Any] = [:], _ completion: @escaping([Article]) -> Void) {
         var parameters: [String: Any] = ["access_token": access_token!, "perPage": 20, "page": page]
         parameters = parameters.merge(dict: withParameters).merge(dict: getRetrieveMode())
