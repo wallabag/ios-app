@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireNetworkActivityIndicator
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIBarButtonItem.appearance().setTitleTextAttributes([
             NSFontAttributeName: UIFont(name: "UbuntuTitling-Bold", size: 15.0)!
         ], for: .normal)
+
+        NetworkActivityIndicatorManager.shared.isEnabled = true
+        NetworkActivityIndicatorManager.shared.startDelay = 0.1
 
         return true
     }
