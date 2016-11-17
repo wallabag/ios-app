@@ -44,6 +44,26 @@ final class ArticlesTableViewController: UITableViewController {
 
     }
 
+    @IBAction func unarchivedArticles(segue: UIStoryboardSegue) {
+        WallabagApi.mode = .unarchivedArticles
+        handleRefresh()
+    }
+
+    @IBAction func allArticles(segue: UIStoryboardSegue) {
+        WallabagApi.mode = .allArticles
+        handleRefresh()
+    }
+
+    @IBAction func archivedArticles(segue: UIStoryboardSegue) {
+        WallabagApi.mode = .archivedArticles
+        handleRefresh()
+    }
+
+    @IBAction func starredArticles(segue: UIStoryboardSegue) {
+        WallabagApi.mode = .starredArticles
+        handleRefresh()
+    }
+
     @IBAction func addLink(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: "Add link", message: nil, preferredStyle: .alert)
         alertController.addTextField(configurationHandler: { textField in
