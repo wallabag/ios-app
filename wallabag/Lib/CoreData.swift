@@ -101,6 +101,11 @@ final class CoreData: NSObject {
         return fetch(request)
     }
 
+    static func deleteAll(_ entity: String) {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+        try! context.execute(NSBatchDeleteRequest(fetchRequest: request))
+    }
+
     static func saveContext() {
         if context.hasChanges {
             do {
