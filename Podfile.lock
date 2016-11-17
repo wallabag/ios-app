@@ -1,15 +1,19 @@
 PODS:
   - Alamofire (4.0.1)
+  - AlamofireNetworkActivityIndicator (2.0.1):
+    - Alamofire (~> 4.0)
   - TUSafariActivity (1.0.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - AlamofireNetworkActivityIndicator (~> 2.0)
   - TUSafariActivity (~> 1.0)
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  AlamofireNetworkActivityIndicator: 3e55069ada3e1ff7703665156429eedcdfea0bc1
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
 
-PODFILE CHECKSUM: 71cb1709b337a928be014a309e925d2a31bf125e
+PODFILE CHECKSUM: bb6fa9eafbc027b0172e7a2f87d0dc3e7bef3e35
 
 COCOAPODS: 1.1.1
