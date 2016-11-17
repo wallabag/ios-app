@@ -86,13 +86,8 @@ final class CoreData: NSObject {
     }
 
     static func fetch(_ request: NSPersistentStoreRequest) -> [NSManagedObject] {
-        if #available(iOS 10.0, *) {
-            let result = try! persistentContainer.viewContext.fetch(request as! NSFetchRequest<NSFetchRequestResult>)
-            return result as! [NSManagedObject]
-        } else {
-            let result = try! managedObjectContext.fetch(request as! NSFetchRequest<NSFetchRequestResult>)
-            return result as! [NSManagedObject]
-        }
+        let result = try! context.fetch(request as! NSFetchRequest<NSFetchRequestResult>)
+        return result as! [NSManagedObject]
     }
 
     static func findAll(_ entity: String) -> [NSManagedObject] {
