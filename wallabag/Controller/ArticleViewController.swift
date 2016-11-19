@@ -23,6 +23,7 @@ final class ArticleViewController: UIViewController {
     @IBAction func read(_ sender: Any) {
         WallabagApi.patchArticle(article, withParamaters: ["archive": (!article.is_archived).hashValue]) { article in
             self.article = article
+            _ = self.navigationController?.popViewController(animated: true)
         }
     }
 
@@ -48,7 +49,7 @@ final class ArticleViewController: UIViewController {
             WallabagApi.deleteArticle(self.article) {
                 self.update = false
                 self.delegate?.delete(self.article, indexPath: self.index)
-                self.navigationController?.popToRootViewController(animated: true)
+                _ = self.navigationController?.popToRootViewController(animated: true)
             }
         })
         alert.addAction(deleteAction)
