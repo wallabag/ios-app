@@ -505,12 +505,35 @@
                                     <segue destination="kUA-VQ-mVR" kind="show" id="GaS-kf-QlA"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bkh-cz-HgQ">
+                                <rect key="frame" x="16" y="235" width="343" height="156"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="156" id="dHB-wO-nIM"/>
+                                </constraints>
+                                <string key="text">Well, now the client_id and client_secret.
+
+This token are secret and can be found in your developer page, And create a new client or use an already existing token</string>
+                                <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AM9-CO-l8h">
+                                <rect key="frame" x="91" y="399" width="193" height="29"/>
+                                <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
+                                <state key="normal" title="Open my developer page"/>
+                                <connections>
+                                    <action selector="openMyInstance:" destination="hyy-VQ-rcz" eventType="touchUpInside" id="MT8-Lt-KWf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="iBk-4L-sqH" firstAttribute="leading" secondItem="lmm-lG-qux" secondAttribute="leadingMargin" id="0M9-nx-Ywu"/>
                             <constraint firstItem="dsM-5G-HXR" firstAttribute="trailing" secondItem="lmm-lG-qux" secondAttribute="trailingMargin" id="4HL-oY-5kf"/>
+                            <constraint firstItem="Bkh-cz-HgQ" firstAttribute="top" secondItem="mDJ-gL-tA5" secondAttribute="bottom" constant="8" id="4Xp-zf-DGx"/>
+                            <constraint firstItem="AM9-CO-l8h" firstAttribute="top" secondItem="Bkh-cz-HgQ" secondAttribute="bottom" constant="8" id="CS9-Em-nGi"/>
                             <constraint firstItem="hZI-U1-cVg" firstAttribute="trailing" secondItem="lmm-lG-qux" secondAttribute="trailingMargin" id="Chx-aL-zF6"/>
+                            <constraint firstItem="AM9-CO-l8h" firstAttribute="centerX" secondItem="lmm-lG-qux" secondAttribute="centerX" id="E8n-GQ-a8l"/>
                             <constraint firstItem="hZI-U1-cVg" firstAttribute="leading" secondItem="lmm-lG-qux" secondAttribute="leadingMargin" id="JDj-SD-oLu"/>
                             <constraint firstItem="dsM-5G-HXR" firstAttribute="top" secondItem="hZI-U1-cVg" secondAttribute="bottom" constant="8" id="L6q-j7-f4U"/>
                             <constraint firstItem="iBk-4L-sqH" firstAttribute="trailing" secondItem="lmm-lG-qux" secondAttribute="trailingMargin" id="P1x-X3-nql"/>
@@ -518,7 +541,9 @@
                             <constraint firstItem="mDJ-gL-tA5" firstAttribute="top" secondItem="iBk-4L-sqH" secondAttribute="bottom" constant="8" id="VxK-y9-QbG"/>
                             <constraint firstItem="mDJ-gL-tA5" firstAttribute="centerX" secondItem="lmm-lG-qux" secondAttribute="centerX" id="W7j-ag-GL5"/>
                             <constraint firstItem="hZI-U1-cVg" firstAttribute="top" secondItem="T3x-Ud-Wa2" secondAttribute="bottom" constant="8" id="gWJ-BN-uh3"/>
+                            <constraint firstItem="Bkh-cz-HgQ" firstAttribute="leading" secondItem="lmm-lG-qux" secondAttribute="leadingMargin" id="mdO-bY-oVg"/>
                             <constraint firstItem="iBk-4L-sqH" firstAttribute="top" secondItem="dsM-5G-HXR" secondAttribute="bottom" constant="8" id="sxt-4K-7qb"/>
+                            <constraint firstItem="Bkh-cz-HgQ" firstAttribute="trailing" secondItem="lmm-lG-qux" secondAttribute="trailingMargin" id="vvA-wX-LlO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Client Id" id="uvq-Qw-sZt"/>
@@ -529,7 +554,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckr-j6-LHz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2430" y="817"/>
+            <point key="canvasLocation" x="2429.5999999999999" y="816.34182908545733"/>
         </scene>
         <!--Login View-->
         <scene sceneID="UT9-CD-1CQ">

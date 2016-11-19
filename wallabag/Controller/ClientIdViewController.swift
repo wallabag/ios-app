@@ -15,6 +15,10 @@ final class ClientIdViewController: UIViewController {
     @IBOutlet weak var clientId: UITextField!
     @IBOutlet weak var clientSecret: UITextField!
 
+    @IBAction func openMyInstance(_ sender: Any) {
+        UIApplication.shared.openURL(URL(string: server + "/developer")!)
+    }
+
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? LoginViewController {
