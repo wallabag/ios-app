@@ -168,8 +168,28 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Other" id="tC5-sq-Yza">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="parameters" textLabel="B7X-TD-PsC" style="IBUITableViewCellStyleDefault" id="YjN-Qj-BDF">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="about" textLabel="JQb-Ie-8b5" style="IBUITableViewCellStyleDefault" id="ql9-K2-Gkb">
                                         <rect key="frame" x="0.0" y="232" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ql9-K2-Gkb" id="U9k-Ub-EnL">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JQb-Ie-8b5">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="aVJ-Ci-2zL" kind="show" animates="NO" id="oDY-XY-Row"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="disconnect" textLabel="B7X-TD-PsC" style="IBUITableViewCellStyleDefault" id="YjN-Qj-BDF">
+                                        <rect key="frame" x="0.0" y="276" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YjN-Qj-BDF" id="h1F-5k-xps">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -203,10 +223,10 @@
             </objects>
             <point key="canvasLocation" x="6511" y="-818"/>
         </scene>
-        <!--Parameter-->
+        <!--About-->
         <scene sceneID="lwy-C8-NHT">
             <objects>
-                <viewController id="Y2L-5Y-ZRb" userLabel="Parameter" sceneMemberID="viewController">
+                <viewController id="Y2L-5Y-ZRb" userLabel="About" customClass="AboutViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="acV-B0-1hz"/>
                         <viewControllerLayoutGuide type="bottom" id="xz0-RO-cpu"/>
@@ -214,20 +234,124 @@
                     <view key="view" contentMode="scaleToFill" id="XKI-Xm-XQo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallabag v2 for iOs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OmZ-lq-KqG">
+                                <rect key="frame" x="73" y="88" width="229" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="CMc-3o-0on"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROP-iA-4oU">
+                                <rect key="frame" x="48.5" y="316.5" width="277" height="33"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Report issue:  ">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="https://github.com/wallabag/ios-app/issues">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="NSColor" red="0.25097999999999998" green="0.47059000000000001" blue="0.75294000000000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <url key="NSLink" string="https://github.com/wallabag/ios-app/issues"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.25097999999999998" green="0.47059000000000001" blue="0.75294000000000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0.0 build 14" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4F-5W-KZX">
+                                <rect key="frame" x="106.5" y="130" width="161" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsy-Ao-UlA">
+                                <rect key="frame" x="73" y="630" width="229.5" height="17"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Made by Maxime Marinel (">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="@bourvill">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <url key="NSLink" string="https://github.com/bourvill"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=")">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="NSColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <real key="NSKern" value="0.0"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="leftToRight" defaultTabInterval="36" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
+                                            <color key="NSStrokeColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wsy-Ao-UlA" firstAttribute="centerX" secondItem="XKI-Xm-XQo" secondAttribute="centerX" id="BU7-MP-UK6"/>
+                            <constraint firstItem="ROP-iA-4oU" firstAttribute="centerX" secondItem="XKI-Xm-XQo" secondAttribute="centerX" id="HrJ-vh-pOu"/>
+                            <constraint firstItem="p4F-5W-KZX" firstAttribute="centerX" secondItem="XKI-Xm-XQo" secondAttribute="centerX" id="Sax-sT-cq1"/>
+                            <constraint firstItem="p4F-5W-KZX" firstAttribute="top" secondItem="OmZ-lq-KqG" secondAttribute="bottom" constant="8" id="Y5i-ga-fI1"/>
+                            <constraint firstItem="OmZ-lq-KqG" firstAttribute="centerX" secondItem="XKI-Xm-XQo" secondAttribute="centerX" id="amn-hj-Y0i"/>
+                            <constraint firstItem="xz0-RO-cpu" firstAttribute="top" secondItem="wsy-Ao-UlA" secondAttribute="bottom" constant="20" id="dgi-Gt-HnR"/>
+                            <constraint firstItem="OmZ-lq-KqG" firstAttribute="top" secondItem="acV-B0-1hz" secondAttribute="bottom" constant="24" id="ljO-q6-Omk"/>
+                            <constraint firstItem="ROP-iA-4oU" firstAttribute="centerY" secondItem="XKI-Xm-XQo" secondAttribute="centerY" id="qN1-py-CPU"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Parameter" id="1Lt-G4-Rie">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="C2o-Ai-wTW">
+                    <navigationItem key="navigationItem" title="About" id="1Lt-G4-Rie">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="C2o-Ai-wTW">
                             <connections>
                                 <segue destination="tU7-sd-KVh" kind="unwind" unwindAction="backFromParameterWithSegue:" id="nxU-1W-keh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="versionText" destination="p4F-5W-KZX" id="173-3N-3cf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LFY-A9-naf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="tU7-sd-KVh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="8252" y="-860"/>
+            <point key="canvasLocation" x="8256.7999999999993" y="-818.14092953523243"/>
         </scene>
         <!--Articles TableView-->
         <scene sceneID="vTl-iM-X3B">
@@ -661,10 +785,10 @@ This token are secret and can be found in your developer page, And create a new 
             </objects>
             <point key="canvasLocation" x="5505" y="-818"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--About Navigation-->
         <scene sceneID="LoP-Es-jM4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aVJ-Ci-2zL" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aVJ-Ci-2zL" userLabel="About Navigation" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="b9u-Ga-Inf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -677,7 +801,7 @@ This token are secret and can be found in your developer page, And create a new 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ngX-Q0-Zbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7353" y="-860"/>
+            <point key="canvasLocation" x="7404" y="-818"/>
         </scene>
     </scenes>
     <resources>

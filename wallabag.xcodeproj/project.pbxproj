@@ -41,6 +41,7 @@
 		9CC4B0611DC5361000BC6830 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4B0601DC5361000BC6830 /* Dictionary.swift */; };
 		9CE112161DC26E8B00FA2EB7 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE112151DC26E8B00FA2EB7 /* CoreData.swift */; };
 		9CE112181DC293C300FA2EB7 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE112171DC293C300FA2EB7 /* ImageDownloader.swift */; };
+		9CE9F2061DE2151B002E06F5 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE9F2051DE2151B002E06F5 /* AboutViewController.swift */; };
 		9CED088A1DC15A9F004C18C5 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED08891DC15A9F004C18C5 /* Server.swift */; };
 		9CF1F21C1DBE943C0086B98B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F21B1DBE943C0086B98B /* HomeViewController.swift */; };
 		9CF1F21E1DBE966B0086B98B /* UbuntuTitling-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9CF1F21D1DBE96210086B98B /* UbuntuTitling-Bold.ttf */; };
@@ -115,6 +116,7 @@
 		9CC4B0601DC5361000BC6830 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		9CE112151DC26E8B00FA2EB7 /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		9CE112171DC293C300FA2EB7 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		9CE9F2051DE2151B002E06F5 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		9CED08891DC15A9F004C18C5 /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		9CF1F21B1DBE943C0086B98B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9CF1F21D1DBE96210086B98B /* UbuntuTitling-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UbuntuTitling-Bold.ttf"; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				9CF1F2241DBE9D150086B98B /* LoginViewController.swift */,
 				9C44A1FF1DC7D8D500C2BD0F /* MenuTableViewController.swift */,
 				9CF1F2201DBE97D80086B98B /* ServerViewController.swift */,
+				9CE9F2051DE2151B002E06F5 /* AboutViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -667,6 +670,7 @@
 				9CF1F2211DBE97D80086B98B /* ServerViewController.swift in Sources */,
 				9C7596191DBB540D0096614B /* Article.swift in Sources */,
 				9C181B861DB8D56600D941EB /* WallabagApi.swift in Sources */,
+				9CE9F2061DE2151B002E06F5 /* AboutViewController.swift in Sources */,
 				9CF1F21C1DBE943C0086B98B /* HomeViewController.swift in Sources */,
 				9C75961C1DBB567E0096614B /* String.swift in Sources */,
 				9CC4B0611DC5361000BC6830 /* Dictionary.swift in Sources */,
@@ -836,7 +840,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = wallabag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -853,7 +857,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 16;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = wallabag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
