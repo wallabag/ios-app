@@ -48,6 +48,7 @@
 		9CF1F2211DBE97D80086B98B /* ServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F2201DBE97D80086B98B /* ServerViewController.swift */; };
 		9CF1F2231DBE9B800086B98B /* ClientIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F2221DBE9B800086B98B /* ClientIdViewController.swift */; };
 		9CF1F2251DBE9D150086B98B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F2241DBE9D150086B98B /* LoginViewController.swift */; };
+		9CF91F161DE473B6006A417A /* ArticleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF91F151DE473B6006A417A /* ArticleManager.swift */; };
 		9CFEF3B41DD9EC5D00126D15 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEF3B31DD9EC5D00126D15 /* SnapshotHelper.swift */; };
 		AEDD1E205C0DF01C54999C21 /* Pods_wallabag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAE89D8A395291968A2E2A7 /* Pods_wallabag.framework */; };
 		DB5193211F1DB976C3862849 /* Pods_wallabagUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3678DDB92217E137039674C2 /* Pods_wallabagUITests.framework */; };
@@ -123,6 +124,7 @@
 		9CF1F2201DBE97D80086B98B /* ServerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerViewController.swift; sourceTree = "<group>"; };
 		9CF1F2221DBE9B800086B98B /* ClientIdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientIdViewController.swift; sourceTree = "<group>"; };
 		9CF1F2241DBE9D150086B98B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9CF91F151DE473B6006A417A /* ArticleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleManager.swift; sourceTree = "<group>"; };
 		9CFEF3B31DD9EC5D00126D15 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		AFAE89D8A395291968A2E2A7 /* Pods_wallabag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5054CFAAEF931DD2335077B /* Pods-wallabag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabag/Pods-wallabag.debug.xcconfig"; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				9CE112151DC26E8B00FA2EB7 /* CoreData.swift */,
 				9CE112171DC293C300FA2EB7 /* ImageDownloader.swift */,
 				9C181B851DB8D56600D941EB /* WallabagApi.swift */,
+				9CF91F151DE473B6006A417A /* ArticleManager.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -660,6 +663,7 @@
 				9C21927D1DBFF44700F628C2 /* ArticleTableViewCell.swift in Sources */,
 				9CF1F2251DBE9D150086B98B /* LoginViewController.swift in Sources */,
 				9C44A2051DC7D97A00C2BD0F /* SlideInPresentationAnimator.swift in Sources */,
+				9CF91F161DE473B6006A417A /* ArticleManager.swift in Sources */,
 				9CE112161DC26E8B00FA2EB7 /* CoreData.swift in Sources */,
 				9C31DF851DD7B8FA0065875A /* UIImage.swift in Sources */,
 				9C181B881DB8E27000D941EB /* ArticlesTableViewController.swift in Sources */,

@@ -14,13 +14,13 @@ final class ArticlesTableViewController: UITableViewController {
 
     var page: Int = 2
     var refreshing: Bool = false
-    var articles = [Article]() {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-            refreshControl?.endRefreshing()
+    var articlesManager: ArticleManager = ArticleManager()
+
+    fileprivate func refreshTableView() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
+        self.refreshControl?.endRefreshing()
     }
 
     fileprivate func updateUi() {
@@ -73,7 +73,7 @@ final class ArticlesTableViewController: UITableViewController {
             if let textfield = alertController.textFields?.first?.text {
                 if let url = URL(string: textfield) {
                     WallabagApi.addArticle(url) { article in
-                        self.articles.insert(article, at: 0)
+                        self.articlesManager.insert(article: article)
                     }
                 }
             }
@@ -85,9 +85,7 @@ final class ArticlesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
-
         handleRefresh()
     }
 
@@ -97,12 +95,12 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articles.count
+        return articlesManager.getArticles().count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "articleIdentifier", for: indexPath) as? ArticleTableViewCell {
-            cell.present(articles[indexPath.item])
+            cell.present(articlesManager.getArticles()[indexPath.item])
             return cell
         } else {
             return UITableViewCell()
@@ -112,8 +110,9 @@ final class ArticlesTableViewController: UITableViewController {
     func handleRefresh() {
         updateUi()
         WallabagApi.retrieveArticle(page: 1) { articles in
-            self.articles = articles
+            self.articlesManager.setArticles(articles: articles)
             self.page = 2
+            self.refreshTableView()
         }
     }
 
@@ -123,7 +122,8 @@ final class ArticlesTableViewController: UITableViewController {
             WallabagApi.retrieveArticle(page: page) { articles in
                 self.page += 1
                 self.refreshing = false
-                self.articles += articles
+                self.articlesManager.addArticles(articles: articles)
+                self.refreshTableView()
             }
         }
     }
@@ -134,15 +134,16 @@ final class ArticlesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let article = articles[indexPath.row]
+            let article = articlesManager.getArticles()[indexPath.row]
             delete(article, indexPath: indexPath)
         }
     }
 
     func delete(_ article: Article, indexPath: IndexPath) {
         WallabagApi.deleteArticle(article) {
-            self.articles.remove(at: indexPath.row)
+            self.articlesManager.removeArticle(atIndex: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            self.refreshTableView()
         }
     }
 
@@ -155,7 +156,7 @@ final class ArticlesTableViewController: UITableViewController {
                 let indexPath = tableView.indexPath(for: cell)
                 if let index = indexPath?.row {
                     if let controller = controller as? ArticleViewController {
-                        controller.article = articles[index]
+                        controller.article = articlesManager.getArticle(atIndex: index)
                         controller.index = indexPath
                         controller.delegate = self
                     }
@@ -172,6 +173,7 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     func update(_ article: Article, atIndex index: IndexPath) {
-        articles[index.row] = article
+        articlesManager.update(article: article, at: index.row)
+        refreshTableView()
     }
 }
