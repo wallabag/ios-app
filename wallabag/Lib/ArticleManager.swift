@@ -9,6 +9,7 @@
 import Foundation
 
 struct ArticleManager {
+
     fileprivate var articles: [Article] = []
 
     mutating func setArticles(articles: [Article]) {

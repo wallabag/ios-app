@@ -27,7 +27,7 @@
 		9C4537931DD1236B00FF6CFE /* main-night.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C45378F1DD1236B00FF6CFE /* main-night.css */; };
 		9C4537941DD1236B00FF6CFE /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C4537901DD1236B00FF6CFE /* main.css */; };
 		9C4537951DD1236B00FF6CFE /* ratatouille.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C4537911DD1236B00FF6CFE /* ratatouille.css */; };
-		9C4537971DD1243C00FF6CFE /* ArticleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4537961DD1243C00FF6CFE /* ArticleLoader.swift */; };
+		9C5658501DE4E110006042C1 /* ArticleManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56584F1DE4E110006042C1 /* ArticleManagerTests.swift */; };
 		9C65DEB11DC5EE85002CA068 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C65DEB01DC5EE85002CA068 /* Int.swift */; };
 		9C7596191DBB540D0096614B /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7596181DBB540D0096614B /* Article.swift */; };
 		9C75961C1DBB567E0096614B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75961B1DBB567E0096614B /* String.swift */; };
@@ -96,7 +96,7 @@
 		9C45378F1DD1236B00FF6CFE /* main-night.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "main-night.css"; sourceTree = "<group>"; };
 		9C4537901DD1236B00FF6CFE /* main.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
 		9C4537911DD1236B00FF6CFE /* ratatouille.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ratatouille.css; sourceTree = "<group>"; };
-		9C4537961DD1243C00FF6CFE /* ArticleLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleLoader.swift; sourceTree = "<group>"; };
+		9C56584F1DE4E110006042C1 /* ArticleManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleManagerTests.swift; sourceTree = "<group>"; };
 		9C65DEB01DC5EE85002CA068 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		9C7596181DBB540D0096614B /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		9C75961B1DBB567E0096614B /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -185,7 +185,6 @@
 		9C181B831DB8D47600D941EB /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				9C4537961DD1243C00FF6CFE /* ArticleLoader.swift */,
 				9CE112151DC26E8B00FA2EB7 /* CoreData.swift */,
 				9CE112171DC293C300FA2EB7 /* ImageDownloader.swift */,
 				9C181B851DB8D56600D941EB /* WallabagApi.swift */,
@@ -241,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				9C1EBA051DC3E9CA00FAE195 /* WallabagApiTests.swift */,
+				9C56584F1DE4E110006042C1 /* ArticleManagerTests.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -669,7 +669,6 @@
 				9C181B881DB8E27000D941EB /* ArticlesTableViewController.swift in Sources */,
 				9C44A2091DC7D9B100C2BD0F /* SlideInPresentationController.swift in Sources */,
 				9C75961E1DBD59330096614B /* ArticleViewController.swift in Sources */,
-				9C4537971DD1243C00FF6CFE /* ArticleLoader.swift in Sources */,
 				9CF1F2231DBE9B800086B98B /* ClientIdViewController.swift in Sources */,
 				9CF1F2211DBE97D80086B98B /* ServerViewController.swift in Sources */,
 				9C7596191DBB540D0096614B /* Article.swift in Sources */,
@@ -691,6 +690,7 @@
 				9C2A2DB21DD4A96B00EDA4E8 /* IntTests.swift in Sources */,
 				9C1EBA061DC3E9CA00FAE195 /* WallabagApiTests.swift in Sources */,
 				9C2A2DB91DD5113900EDA4E8 /* ArticleTests.swift in Sources */,
+				9C5658501DE4E110006042C1 /* ArticleManagerTests.swift in Sources */,
 				9C2A2DB71DD50F9700EDA4E8 /* TagTests.swift in Sources */,
 				9C2A2DB41DD4AA1D00EDA4E8 /* StringTests.swift in Sources */,
 				9C2A2DAF1DD4A82A00EDA4E8 /* DictionaryTests.swift in Sources */,

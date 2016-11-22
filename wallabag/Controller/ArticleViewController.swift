@@ -71,7 +71,7 @@ final class ArticleViewController: UIViewController {
 
         updateUi()
 
-        contentWeb.loadHTMLString(ArticleLoader.load(article), baseURL: Bundle.main.bundleURL)
+        contentWeb.loadHTMLString(article.contentForWebView(), baseURL: Bundle.main.bundleURL)
     }
 
     override func didMove(toParentViewController parent: UIViewController?) {
