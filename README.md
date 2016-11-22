@@ -1,7 +1,5 @@
-# ios-app
+# ios-app [![Build Status](https://travis-ci.org/wallabag/ios-app.svg?branch=master)](https://travis-ci.org/wallabag/ios-app)
 wallabag app for iOS (for wallabag v2)
-
-![Build Status](https://www.bitrise.io/app/5032f354975b3a3e.svg?token=MRZxzwIJKC53QwM6ssdNpg)
 
 # Tools used
 ## Project organizer
