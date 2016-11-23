@@ -1,8 +1,6 @@
 - Add menu About
 - Add menu Disconnect
-
-- Add link from app
-
-- More help to configure the app
-
+- Add menu parameter, now you can choose your favorite default opening view
+- Now you can add link from app
+- More help in registering processus
 - Fix bug rendering video in article view
