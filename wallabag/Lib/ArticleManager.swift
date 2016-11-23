@@ -37,6 +37,8 @@ struct ArticleManager {
     }
 
     mutating func insert(article: Article) {
-        self.articles.insert(article, at: 0)
+        if !self.articles.contains(where: { $0.id == article.id }) {
+            self.articles.insert(article, at: 0)
+        }
     }
 }

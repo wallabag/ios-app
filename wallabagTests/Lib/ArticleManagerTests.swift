@@ -9,7 +9,6 @@
 import XCTest
 @testable import wallabag
 
-
 class ArticleManagerTests: XCTestCase {
 
     let article = Article(fromDictionary: [
@@ -85,5 +84,14 @@ class ArticleManagerTests: XCTestCase {
         manager.insert(article: article1)
         XCTAssertEqual(2, manager.getArticles().count)
         XCTAssertEqual(43, manager.getArticle(atIndex: 0).id)
+    }
+
+    func testInsertArticleAtIndexDontInsertArticleAlreadyInList() {
+        var manager = ArticleManager()
+        manager.setArticles(articles: [article])
+        XCTAssertEqual(1, manager.getArticles().count)
+        XCTAssertEqual(42, manager.getArticle(atIndex: 0).id)
+        manager.insert(article: article)
+        XCTAssertEqual(1, manager.getArticles().count)
     }
 }
