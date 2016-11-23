@@ -16,8 +16,7 @@ class ParameterTableViewController: UITableViewController, UIPickerViewDataSourc
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //@todo set row Of pickerView with SettingBagValue
-        defaultModePicker.selectRow(2, inComponent: 0, animated: false)
+        defaultModePicker.selectRow(pickerDataSource.index(of: Setting.getDefaultMode())!, inComponent: 0, animated: false)
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -33,7 +32,6 @@ class ParameterTableViewController: UITableViewController, UIPickerViewDataSourc
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //@todo update SettingBag
-        print(pickerDataSource[row])
+        Setting.setDefaultMode(mode: pickerDataSource[row])
     }
 }
