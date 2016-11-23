@@ -77,36 +77,45 @@
         <scene sceneID="c3j-va-Rei">
             <objects>
                 <tableViewController id="cre-7a-Z1t" userLabel="Parameter" customClass="ParameterTableViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="f44-xd-6aq">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="f44-xd-6aq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection id="7VG-yW-E0x">
+                            <tableViewSection headerTitle="Articles" id="7VG-yW-E0x">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="uLn-n7-Ged">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="73" id="uLn-n7-Ged">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uLn-n7-Ged" id="38y-KT-ZPk">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="laK-f6-NlG">
-                                                    <rect key="frame" x="230" y="0.0" width="137" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="laK-f6-NlG">
+                                                    <rect key="frame" x="125" y="0.0" width="242" height="72"/>
                                                     <connections>
                                                         <outlet property="dataSource" destination="cre-7a-Z1t" id="wlu-2k-yaG"/>
                                                         <outlet property="delegate" destination="cre-7a-Z1t" id="L9o-ng-Bwc"/>
                                                     </connections>
                                                 </pickerView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Default mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJr-TW-lKS">
-                                                    <rect key="frame" x="8" y="11" width="133" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJr-TW-lKS">
+                                                    <rect key="frame" x="8" y="28" width="104.5" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="104.5" id="7AG-kV-dAI"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="laK-f6-NlG" firstAttribute="leading" secondItem="SJr-TW-lKS" secondAttribute="trailing" constant="12.5" id="AHE-y7-4yw"/>
+                                                <constraint firstAttribute="bottom" secondItem="laK-f6-NlG" secondAttribute="bottom" id="G1T-jv-flz"/>
+                                                <constraint firstItem="laK-f6-NlG" firstAttribute="top" secondItem="38y-KT-ZPk" secondAttribute="top" id="Qhf-sb-II0"/>
+                                                <constraint firstAttribute="trailing" secondItem="laK-f6-NlG" secondAttribute="trailing" constant="8" id="esE-fJ-SNX"/>
+                                                <constraint firstItem="SJr-TW-lKS" firstAttribute="centerY" secondItem="38y-KT-ZPk" secondAttribute="centerY" id="iOQ-uE-4v0"/>
+                                                <constraint firstItem="SJr-TW-lKS" firstAttribute="leading" secondItem="38y-KT-ZPk" secondAttribute="leadingMargin" id="jqz-CW-iPp"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -655,7 +664,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LDR-tz-9ed" userLabel="Add server navigation" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x91-Lh-MNV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="x91-Lh-MNV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -833,7 +842,7 @@ This token are secret and can be found in your developer page, And create a new 
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8tH-nc-JLr" userLabel="Article Navigation" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dK2-gx-arx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dK2-gx-arx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -852,7 +861,7 @@ This token are secret and can be found in your developer page, And create a new 
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zBf-ku-xvb" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BUk-9T-Y1M">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="BUk-9T-Y1M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -870,7 +879,7 @@ This token are secret and can be found in your developer page, And create a new 
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aVJ-Ci-2zL" userLabel="About Navigation" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b9u-Ga-Inf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="b9u-Ga-Inf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -888,7 +897,7 @@ This token are secret and can be found in your developer page, And create a new 
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2It-26-Sfb" userLabel="Parameter Navigation" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="A6a-Is-KQx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="A6a-Is-KQx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

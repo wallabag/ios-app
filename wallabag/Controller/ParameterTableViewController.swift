@@ -28,7 +28,7 @@ class ParameterTableViewController: UITableViewController, UIPickerViewDataSourc
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerDataSource[row].rawValue
+        return pickerDataSource[row].humainReadable()
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

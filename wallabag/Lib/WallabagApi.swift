@@ -14,6 +14,19 @@ enum RetrieveMode: String {
     case archivedArticles
     case unarchivedArticles
     case starredArticles
+
+    func humainReadable() -> String {
+        switch self {
+        case .allArticles:
+            return "All articles"
+        case .archivedArticles:
+            return "Read articles"
+        case .starredArticles:
+            return "Starred articles"
+        case .unarchivedArticles:
+            return "Unread articles"
+        }
+    }
 }
 
 final class WallabagApi {
