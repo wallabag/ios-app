@@ -24,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NetworkActivityIndicatorManager.shared.isEnabled = true
         NetworkActivityIndicatorManager.shared.startDelay = 0.1
 
+        WallabagApi.mode = Setting.getDefaultMode()
+
         return true
     }
 
