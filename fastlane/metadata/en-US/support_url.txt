@@ -1,1 +1,1 @@
-http://district-web.fr/wallabag-ios
+https://github.com/wallabag/ios-app/issues

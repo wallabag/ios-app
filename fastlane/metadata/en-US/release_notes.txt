@@ -1,1 +1,8 @@
-- Add link
+- Add menu About
+- Add menu Disconnect
+
+- Add link from app
+
+- More help to configure the app
+
+- Fix bug rendering video in article view
