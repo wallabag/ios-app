@@ -1,10 +1,6 @@
 language: objective-c
 osx_image: xcode8
-xcode_project: wallabag.xcodeproj
+xcode_workspace: wallabag.xcworkspace
 xcode_scheme: wallabag
-env:
-  global:
-  - PROJECT=wallabag.xcodeproj
-
 script:
-  - set -o pipefail && env "NSUnbufferedIO=YES" xcodebuild "-workspace" "wallabag.xcworkspace" "-scheme" "wallabag" "build" "test" "-destination" "platform=iOS Simulator,name=iPhone 6s Plus,OS=latest" | xcpretty  
+  - set -o pipefail && env "NSUnbufferedIO=YES" xcodebuild "-workspace" "wallabag.xcworkspace" "-scheme" "wallabag" "build" "test" "-destination" "platform=iOS Simulator,name=iPhone 6s Plus,OS=latest" | xcpretty
