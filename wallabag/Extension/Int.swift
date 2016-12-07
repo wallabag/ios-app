@@ -20,4 +20,8 @@ extension Int {
             return dateString
         }
     }
+    
+    var rgb: CGFloat{
+        return CGFloat(self) / 255.0
+    }
 }
