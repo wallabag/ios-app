@@ -444,9 +444,22 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qk9-mt-OdM">
+                                <rect key="frame" x="125.5" y="593" width="124.5" height="29"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="We use a cool icon of  https://icons8.com">
+                                        <attributes>
+                                            <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="qk9-mt-OdM" firstAttribute="centerX" secondItem="XKI-Xm-XQo" secondAttribute="centerX" id="AO0-9k-JGk"/>
                             <constraint firstItem="wsy-Ao-UlA" firstAttribute="centerX" secondItem="XKI-Xm-XQo" secondAttribute="centerX" id="BU7-MP-UK6"/>
                             <constraint firstItem="ROP-iA-4oU" firstAttribute="centerX" secondItem="XKI-Xm-XQo" secondAttribute="centerX" id="HrJ-vh-pOu"/>
                             <constraint firstItem="p4F-5W-KZX" firstAttribute="centerX" secondItem="XKI-Xm-XQo" secondAttribute="centerX" id="Sax-sT-cq1"/>
@@ -455,6 +468,7 @@
                             <constraint firstItem="xz0-RO-cpu" firstAttribute="top" secondItem="wsy-Ao-UlA" secondAttribute="bottom" constant="20" id="dgi-Gt-HnR"/>
                             <constraint firstItem="OmZ-lq-KqG" firstAttribute="top" secondItem="acV-B0-1hz" secondAttribute="bottom" constant="24" id="ljO-q6-Omk"/>
                             <constraint firstItem="ROP-iA-4oU" firstAttribute="centerY" secondItem="XKI-Xm-XQo" secondAttribute="centerY" id="qN1-py-CPU"/>
+                            <constraint firstItem="wsy-Ao-UlA" firstAttribute="top" secondItem="qk9-mt-OdM" secondAttribute="bottom" constant="8" id="szJ-fC-Qck"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="About" id="1Lt-G4-Rie">
