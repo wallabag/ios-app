@@ -81,7 +81,7 @@ final class ArticleViewController: UIViewController {
     }
 
     private func updateUi() {
-        readButton?.title = article.is_archived ? "Unread" : "Read"
-        starButton?.title = article.is_starred ? "Unstar" : "Star"
+        readButton?.image = article.is_archived ? UIImage(named: "readed") : UIImage(named: "unreaded")
+        starButton?.image = article.is_starred ? UIImage(named: "starred") : UIImage(named: "unstarred")
     }
 }
