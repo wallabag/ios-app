@@ -61,6 +61,7 @@ final class ArticlesTableViewController: UITableViewController {
                 if let url = URL(string: textfield) {
                     WallabagApi.addArticle(url) { article in
                         self.articlesManager.insert(article: article)
+                        self.tableView.reloadData()
                     }
                 }
             }
