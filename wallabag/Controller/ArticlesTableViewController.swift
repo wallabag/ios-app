@@ -119,15 +119,15 @@ final class ArticlesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
+
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let article = self.articlesManager.getArticle(atIndex: indexPath.row)
-        
+
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete", handler: { action, indexPath in
             self.delete(article, indexPath: indexPath)
         })
-        
-        let starAction = UITableViewRowAction(style: .default, title: article.is_starred ? "Unstar" : "Star" , handler: { action, indexPath in
+
+        let starAction = UITableViewRowAction(style: .default, title: article.is_starred ? "Unstar" : "Star", handler: { action, indexPath in
             self.tableView.setEditing(false, animated: true)
             WallabagApi.patchArticle(article, withParamaters: ["starred": (!article.is_starred).hashValue]) { article in
                 self.articlesManager.update(article: article, at: indexPath.row)
@@ -135,16 +135,16 @@ final class ArticlesTableViewController: UITableViewController {
             }
         })
         starAction.backgroundColor = UIColor.orange
-        
-        let readAction = UITableViewRowAction(style: .default, title: article.is_archived ? "Unread" : "Read" , handler: { action, indexPath in
+
+        let readAction = UITableViewRowAction(style: .default, title: article.is_archived ? "Unread" : "Read", handler: { action, indexPath in
             self.tableView.setEditing(false, animated: true)
             WallabagApi.patchArticle(article, withParamaters: ["archive": (!article.is_archived).hashValue]) { article in
                 self.articlesManager.update(article: article, at: indexPath.row)
                 self.tableView.reloadRows(at: [indexPath], with: .automatic)
             }
         })
-        readAction.backgroundColor = UIColor(red: 0.rgb, green: 122.rgb, blue: 255.rgb, alpha: 1)
-        
+        readAction.backgroundColor = UIColor.guidelineBlue
+
         return [deleteAction, starAction, readAction]
     }
 
