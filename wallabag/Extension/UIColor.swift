@@ -14,4 +14,12 @@ extension UIColor {
     static var guidelineBlue: UIColor {
         return UIColor(red: 0, green: 122 / 255, blue: 1, alpha: 1)
     }
+
+    static var guidelineOrange: UIColor {
+        return UIColor(red: 1, green: 149 / 255, blue: 0, alpha: 1)
+    }
+
+    static var guidelineRed: UIColor {
+        return UIColor(red: 1, green: 59 / 255, blue: 48 / 255, alpha: 1)
+    }
 }
