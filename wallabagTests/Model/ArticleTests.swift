@@ -72,4 +72,10 @@ class ArticleTests: XCTestCase {
 
         XCTAssertNotNil(article)
     }
+
+    func testInitFromDictionaryWithNoValue() {
+        let article = Article(fromDictionary: ["id": 42])
+
+        XCTAssertNotNil(article)
+    }
 }
