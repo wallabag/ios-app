@@ -1,3 +1,6 @@
+- Fix crash on start 
+- Fix add article
+
 - Add menu About
 - Add menu Disconnect
 - Add menu parameter, now you can choose your favorite default opening view
