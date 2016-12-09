@@ -10,10 +10,6 @@ import Foundation
 
 struct Article {
 
-    lazy var html: String = {
-        return try! String(contentsOfFile: Bundle.main.path(forResource: "article", ofType: "html")!)
-    }()
-
     let annotations: Set<String>
     let content: String
     let created_at: Date
@@ -60,9 +56,5 @@ struct Article {
         user_email = fromDictionary["user_email"] as? String ?? ""
         user_id = fromDictionary["user_id"] as? Int ?? 0
         user_name = fromDictionary["user_name"] as? String ?? ""
-    }
-
-    mutating func contentForWebView() -> String {
-        return String(format: html, arguments: [title, content])
     }
 }

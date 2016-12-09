@@ -41,4 +41,12 @@ struct ArticleManager {
             self.articles.insert(article, at: 0)
         }
     }
+
+    static func contentForWebView(_ article: Article) -> String {
+        let html = try! String(contentsOfFile: Bundle.main.path(forResource: "article", ofType: "html")!)
+
+        let justify = Setting.isJustifyArticle() ? "justify.css" : ""
+
+        return String(format: html, arguments: [justify, article.title, article.content])
+    }
 }

@@ -12,6 +12,7 @@ class Setting {
 
     fileprivate enum const: String {
         case defaultMode
+        case justifyArticle
     }
 
     static func getDefaultMode() -> RetrieveMode {
@@ -23,5 +24,13 @@ class Setting {
 
     static func setDefaultMode(mode: RetrieveMode) {
         UserDefaults.standard.set(mode.rawValue, forKey: const.defaultMode.rawValue)
+    }
+
+    static func isJustifyArticle() -> Bool {
+        return UserDefaults.standard.bool(forKey: const.justifyArticle.rawValue)
+    }
+
+    static func setJustifyArticle(value: Bool) {
+        UserDefaults.standard.set(value, forKey: const.justifyArticle.rawValue)
     }
 }

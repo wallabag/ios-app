@@ -168,8 +168,7 @@ header.mbm {
 
 #article {
   width: 70%;
-/*  margin-bottom: 3em; */
-  text-align: justify;
+  text-align: left;
   word-wrap: break-word;
 }
 

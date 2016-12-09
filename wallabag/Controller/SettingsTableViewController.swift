@@ -10,10 +10,17 @@ import UIKit
 
 final class SettingsTableViewController: UITableViewController {
 
+    @IBAction func justifySwitch(_ sender: UISwitch) {
+        Setting.setJustifyArticle(value: sender.isOn)
+    }
+    @IBOutlet weak var justifySwitch: UISwitch!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         prepareDefaultList()
+
+        justifySwitch.setOn(Setting.isJustifyArticle(), animated: false)
 
         tableView.separatorStyle = .none
     }
