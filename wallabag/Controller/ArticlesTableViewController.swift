@@ -126,7 +126,7 @@ final class ArticlesTableViewController: UITableViewController {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete", handler: { action, indexPath in
             self.delete(article, indexPath: indexPath)
         })
-        deleteAction.backgroundColor = UIColor.guidelineRed
+        deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.188235294, alpha: 1)
 
         let starAction = UITableViewRowAction(style: .default, title: article.is_starred ? "Unstar" : "Star", handler: { action, indexPath in
             self.tableView.setEditing(false, animated: true)
@@ -135,7 +135,7 @@ final class ArticlesTableViewController: UITableViewController {
                 self.tableView.reloadRows(at: [indexPath], with: .automatic)
             }
         })
-        starAction.backgroundColor = UIColor.guidelineOrange
+        starAction.backgroundColor = #colorLiteral(red: 1, green: 0.584313725, blue: 0, alpha: 1)
 
         let readAction = UITableViewRowAction(style: .default, title: article.is_archived ? "Unread" : "Read", handler: { action, indexPath in
             self.tableView.setEditing(false, animated: true)
@@ -144,7 +144,7 @@ final class ArticlesTableViewController: UITableViewController {
                 self.tableView.reloadRows(at: [indexPath], with: .automatic)
             }
         })
-        readAction.backgroundColor = UIColor.guidelineBlue
+        readAction.backgroundColor = #colorLiteral(red: 0, green: 0.478431373, blue: 1, alpha: 1)
 
         return [deleteAction, starAction, readAction]
     }

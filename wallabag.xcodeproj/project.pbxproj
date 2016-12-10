@@ -29,7 +29,6 @@
 		9C4537951DD1236B00FF6CFE /* ratatouille.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C4537911DD1236B00FF6CFE /* ratatouille.css */; };
 		9C5658501DE4E110006042C1 /* ArticleManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56584F1DE4E110006042C1 /* ArticleManagerTests.swift */; };
 		9C65DEB11DC5EE85002CA068 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C65DEB01DC5EE85002CA068 /* Int.swift */; };
-		9C6CAEB21DFA0FEB0090A519 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6CAEB11DFA0FEB0090A519 /* UIColor.swift */; };
 		9C7596191DBB540D0096614B /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7596181DBB540D0096614B /* Article.swift */; };
 		9C75961C1DBB567E0096614B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75961B1DBB567E0096614B /* String.swift */; };
 		9C75961E1DBD59330096614B /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75961D1DBD59330096614B /* ArticleViewController.swift */; };
@@ -102,7 +101,6 @@
 		9C4537911DD1236B00FF6CFE /* ratatouille.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ratatouille.css; sourceTree = "<group>"; };
 		9C56584F1DE4E110006042C1 /* ArticleManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleManagerTests.swift; sourceTree = "<group>"; };
 		9C65DEB01DC5EE85002CA068 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
-		9C6CAEB11DFA0FEB0090A519 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		9C7596181DBB540D0096614B /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		9C75961B1DBB567E0096614B /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		9C75961D1DBD59330096614B /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
@@ -302,7 +300,6 @@
 				9C65DEB01DC5EE85002CA068 /* Int.swift */,
 				9C75961B1DBB567E0096614B /* String.swift */,
 				9C31DF841DD7B8FA0065875A /* UIImage.swift */,
-				9C6CAEB11DFA0FEB0090A519 /* UIColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -669,7 +666,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C44A2031DC7D93D00C2BD0F /* SlideInPresentationManager.swift in Sources */,
-				9C6CAEB21DFA0FEB0090A519 /* UIColor.swift in Sources */,
 				9CED088A1DC15A9F004C18C5 /* Server.swift in Sources */,
 				9C2192791DBF7F8800F628C2 /* Tag.swift in Sources */,
 				9CE112181DC293C300FA2EB7 /* ImageDownloader.swift in Sources */,
