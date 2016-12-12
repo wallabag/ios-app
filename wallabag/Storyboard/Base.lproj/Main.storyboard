@@ -639,6 +639,12 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="nGx-Xe-U9r"/>
+                                    <barButtonItem image="theme" id="cip-iL-yHt">
+                                        <connections>
+                                            <action selector="theme:" destination="zsG-x9-2za" id="2Y2-GD-2rA"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="uLk-DD-ezt"/>
                                     <barButtonItem image="trash" id="IC0-DD-8KU">
                                         <connections>
                                             <action selector="deleteArticle:" destination="zsG-x9-2za" id="fWt-Cr-hlJ"/>
@@ -994,6 +1000,7 @@ This token are secret and can be found in your developer page, And create a new 
         <image name="logo-icon-black-no-bg" width="200" height="200"/>
         <image name="readed" width="22" height="22"/>
         <image name="starred" width="22" height="22"/>
+        <image name="theme" width="22" height="22"/>
         <image name="trash" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>

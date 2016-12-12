@@ -17,4 +17,16 @@ extension String {
             return dateFormatter.date(from: self)
         }
     }
+
+    var ucFirst: String {
+        let first = String(self.characters.prefix(1))
+
+        return first.uppercased() + String(characters.dropFirst())
+    }
+
+    var lcFirst: String {
+        let first = String(self.characters.prefix(1))
+
+        return first.lowercased() + String(characters.dropFirst())
+    }
 }

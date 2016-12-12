@@ -10,9 +10,17 @@ import Foundation
 
 class Setting {
 
+    enum Theme: String {
+        case none
+        case gray
+
+        static let allThemes: [Theme] = [.none, gray]
+    }
+
     fileprivate enum const: String {
         case defaultMode
         case justifyArticle
+        case articleTheme
     }
 
     static func getDefaultMode() -> RetrieveMode {
@@ -33,4 +41,17 @@ class Setting {
     static func setJustifyArticle(value: Bool) {
         UserDefaults.standard.set(value, forKey: const.justifyArticle.rawValue)
     }
+
+    static func getArticleTheme() -> String {
+        guard let value = UserDefaults.standard.string(forKey: const.articleTheme.rawValue) else {
+            return Theme.none.rawValue
+        }
+
+        return value
+    }
+
+    static func setArticleTheme(value: Theme) {
+        UserDefaults.standard.set(value.rawValue, forKey: const.articleTheme.rawValue)
+    }
+
 }

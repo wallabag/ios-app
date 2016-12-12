@@ -25,8 +25,17 @@ class StringTests: XCTestCase {
         XCTAssertEqual(2016, components.year)
         XCTAssertEqual(11, components.month)
         XCTAssertEqual(10, components.day)
-        //XCTAssertEqual(17, components.hour)
-        //XCTAssertEqual(34, components.minute)
-        //XCTAssertEqual(20, components.second)
+    }
+
+    func testUcFirst() {
+        let string = "test"
+
+        XCTAssertEqual("Test", string.ucFirst)
+    }
+
+    func testLcFirst() {
+        let string = "Test"
+
+        XCTAssertEqual("test", string.lcFirst)
     }
 }

@@ -33,6 +33,21 @@ final class ArticleViewController: UIViewController {
         }
     }
 
+    @IBAction func theme(_ sender: UIBarButtonItem) {
+        let themeController = UIAlertController(title: "Choose theme", message: nil, preferredStyle: .actionSheet)
+        themeController.popoverPresentationController?.barButtonItem = sender
+
+        for theme in Setting.Theme.allThemes {
+            let action = UIAlertAction(title: theme.rawValue.ucFirst, style: .default) { action in
+                Setting.setArticleTheme(value: Setting.Theme(rawValue: action.title!.lcFirst)!)
+                self.loadArticleContent()
+            }
+            themeController.addAction(action)
+        }
+
+        present(themeController, animated: true, completion: nil)
+    }
+
     @IBAction func shareMenu(_ sender: UIBarButtonItem) {
         let activity = TUSafariActivity()
         let shareController = UIActivityViewController(activityItems: [URL(string: article.url)], applicationActivities: [activity])
@@ -66,12 +81,15 @@ final class ArticleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         navigationItem.title = article.title
-
         updateUi()
+        loadArticleContent()
+    }
 
-        contentWeb.loadHTMLString(ArticleManager.contentForWebView(article), baseURL: Bundle.main.bundleURL)
+    fileprivate func loadArticleContent() {
+        DispatchQueue.main.async {
+            self.contentWeb.loadHTMLString(ArticleManager.contentForWebView(self.article), baseURL: Bundle.main.bundleURL)
+        }
     }
 
     override func didMove(toParentViewController parent: UIViewController?) {

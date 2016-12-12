@@ -46,7 +46,8 @@ struct ArticleManager {
         let html = try! String(contentsOfFile: Bundle.main.path(forResource: "article", ofType: "html")!)
 
         let justify = Setting.isJustifyArticle() ? "justify.css" : ""
+        let theme = Setting.getArticleTheme()
 
-        return String(format: html, arguments: [justify, article.title, article.content])
+        return String(format: html, arguments: [justify, theme, article.title, article.content])
     }
 }

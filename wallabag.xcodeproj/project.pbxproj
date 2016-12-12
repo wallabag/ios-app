@@ -24,7 +24,7 @@
 		9C44A2051DC7D97A00C2BD0F /* SlideInPresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C44A2041DC7D97A00C2BD0F /* SlideInPresentationAnimator.swift */; };
 		9C44A2091DC7D9B100C2BD0F /* SlideInPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C44A2081DC7D9B100C2BD0F /* SlideInPresentationController.swift */; };
 		9C4537921DD1236B00FF6CFE /* article.html in Resources */ = {isa = PBXBuildFile; fileRef = 9C45378E1DD1236B00FF6CFE /* article.html */; };
-		9C4537931DD1236B00FF6CFE /* main-night.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C45378F1DD1236B00FF6CFE /* main-night.css */; };
+		9C4537931DD1236B00FF6CFE /* gray.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C45378F1DD1236B00FF6CFE /* gray.css */; };
 		9C4537941DD1236B00FF6CFE /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C4537901DD1236B00FF6CFE /* main.css */; };
 		9C4537951DD1236B00FF6CFE /* ratatouille.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C4537911DD1236B00FF6CFE /* ratatouille.css */; };
 		9C5658501DE4E110006042C1 /* ArticleManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56584F1DE4E110006042C1 /* ArticleManagerTests.swift */; };
@@ -39,6 +39,7 @@
 		9C987A511DB79826005515F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A501DB79826005515F4 /* Assets.xcassets */; };
 		9C987A541DB79826005515F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A521DB79826005515F4 /* LaunchScreen.storyboard */; };
 		9C987A6A1DB79826005515F4 /* wallabagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C987A691DB79826005515F4 /* wallabagUITests.swift */; };
+		9CA232301DFECE74006B29B8 /* none.css in Resources */ = {isa = PBXBuildFile; fileRef = 9CA2322F1DFECE74006B29B8 /* none.css */; };
 		9CC4B0611DC5361000BC6830 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4B0601DC5361000BC6830 /* Dictionary.swift */; };
 		9CE112161DC26E8B00FA2EB7 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE112151DC26E8B00FA2EB7 /* CoreData.swift */; };
 		9CE112181DC293C300FA2EB7 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE112171DC293C300FA2EB7 /* ImageDownloader.swift */; };
@@ -96,7 +97,7 @@
 		9C44A2041DC7D97A00C2BD0F /* SlideInPresentationAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationAnimator.swift; sourceTree = "<group>"; };
 		9C44A2081DC7D9B100C2BD0F /* SlideInPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInPresentationController.swift; sourceTree = "<group>"; };
 		9C45378E1DD1236B00FF6CFE /* article.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = article.html; sourceTree = "<group>"; };
-		9C45378F1DD1236B00FF6CFE /* main-night.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "main-night.css"; sourceTree = "<group>"; };
+		9C45378F1DD1236B00FF6CFE /* gray.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = gray.css; sourceTree = "<group>"; };
 		9C4537901DD1236B00FF6CFE /* main.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
 		9C4537911DD1236B00FF6CFE /* ratatouille.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ratatouille.css; sourceTree = "<group>"; };
 		9C56584F1DE4E110006042C1 /* ArticleManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleManagerTests.swift; sourceTree = "<group>"; };
@@ -118,6 +119,7 @@
 		9C987A651DB79826005515F4 /* wallabagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C987A691DB79826005515F4 /* wallabagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wallabagUITests.swift; sourceTree = "<group>"; };
 		9C987A6B1DB79826005515F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CA2322F1DFECE74006B29B8 /* none.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = none.css; sourceTree = "<group>"; };
 		9CC4B0601DC5361000BC6830 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		9CE112151DC26E8B00FA2EB7 /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		9CE112171DC293C300FA2EB7 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
@@ -284,8 +286,9 @@
 		9C45378D1DD122FA00FF6CFE /* html-ressources */ = {
 			isa = PBXGroup;
 			children = (
+				9C45378F1DD1236B00FF6CFE /* gray.css */,
+				9CA2322F1DFECE74006B29B8 /* none.css */,
 				9C45378E1DD1236B00FF6CFE /* article.html */,
-				9C45378F1DD1236B00FF6CFE /* main-night.css */,
 				9C4537901DD1236B00FF6CFE /* main.css */,
 				9C4537911DD1236B00FF6CFE /* ratatouille.css */,
 				9C77751C1DFB72AD00CB775F /* justify.css */,
@@ -495,6 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CF1F21E1DBE966B0086B98B /* UbuntuTitling-Bold.ttf in Resources */,
+				9CA232301DFECE74006B29B8 /* none.css in Resources */,
 				9C987A541DB79826005515F4 /* LaunchScreen.storyboard in Resources */,
 				9C77751D1DFB72AD00CB775F /* justify.css in Resources */,
 				9C4537921DD1236B00FF6CFE /* article.html in Resources */,
@@ -502,7 +506,7 @@
 				9C4537951DD1236B00FF6CFE /* ratatouille.css in Resources */,
 				9C987A511DB79826005515F4 /* Assets.xcassets in Resources */,
 				9C987A4C1DB79826005515F4 /* Main.storyboard in Resources */,
-				9C4537931DD1236B00FF6CFE /* main-night.css in Resources */,
+				9C4537931DD1236B00FF6CFE /* gray.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
