@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         WallabagApi.mode = Setting.getDefaultMode()
 
+        ThemeManager.apply(theme: Setting.getTheme())
+
         return true
     }
 

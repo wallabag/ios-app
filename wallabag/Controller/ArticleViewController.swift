@@ -37,9 +37,9 @@ final class ArticleViewController: UIViewController {
         let themeController = UIAlertController(title: "Choose theme", message: nil, preferredStyle: .actionSheet)
         themeController.popoverPresentationController?.barButtonItem = sender
 
-        for theme in Setting.Theme.allThemes {
+        for theme in ThemeManager.Theme.allThemes {
             let action = UIAlertAction(title: theme.rawValue.ucFirst, style: .default) { action in
-                Setting.setArticleTheme(value: Setting.Theme(rawValue: action.title!.lcFirst)!)
+                Setting.setTheme(value: ThemeManager.Theme(rawValue: action.title!.lcFirst)!)
                 self.loadArticleContent()
             }
             themeController.addAction(action)

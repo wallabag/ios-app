@@ -9,14 +9,6 @@
 import Foundation
 
 class Setting {
-
-    enum Theme: String {
-        case none
-        case gray
-
-        static let allThemes: [Theme] = [.none, gray]
-    }
-
     fileprivate enum const: String {
         case defaultMode
         case justifyArticle
@@ -42,16 +34,16 @@ class Setting {
         UserDefaults.standard.set(value, forKey: const.justifyArticle.rawValue)
     }
 
-    static func getArticleTheme() -> String {
+    static func getTheme() -> ThemeManager.Theme {
         guard let value = UserDefaults.standard.string(forKey: const.articleTheme.rawValue) else {
-            return Theme.none.rawValue
+            return ThemeManager.Theme.light
         }
 
-        return value
+        return ThemeManager.Theme(rawValue: value)!
     }
 
-    static func setArticleTheme(value: Theme) {
+    static func setTheme(value: ThemeManager.Theme) {
+        ThemeManager.apply(theme: value)
         UserDefaults.standard.set(value.rawValue, forKey: const.articleTheme.rawValue)
     }
-
 }
