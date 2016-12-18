@@ -19,21 +19,58 @@ struct ThemeManager {
         var color: UIColor {
             switch self {
             case .night:
-                return UIColor.red
+                return UIColor.gray
             default:
                 return UIColor.black
+            }
+        }
+
+        var tintColor: UIColor {
+            switch self {
+            case .night:
+                return UIColor.white
+            default:
+                return UIColor.black
+            }
+        }
+
+        var backgroundColor: UIColor {
+            switch self {
+            case .night:
+                return UIColor.gray
+            default:
+                return UIColor.clear
+            }
+        }
+
+        var navigationBarBackground: UIImage? {
+            switch self {
+            case .night:
+                let image = #imageLiteral(resourceName: "navBackgroundNight")
+                return image
+            default:
+                return nil
             }
         }
     }
 
     static func apply(theme: Theme) {
         let sharedApplication = UIApplication.shared
-        sharedApplication.delegate?.window??.tintColor = theme.color
+        sharedApplication.delegate?.window??.tintColor = theme.tintColor
 
         let uiButton = UIButton.appearance()
-        uiButton.tintColor = theme.color
+        uiButton.tintColor = theme.tintColor
+
+        let uiBarButton = UIBarButtonItem.appearance()
+        uiBarButton.tintColor = theme.tintColor
 
         let uiLabel = UILabel.appearance()
         uiLabel.textColor = theme.color
+
+        let bar = UINavigationBar.appearance()
+        bar.setBackgroundImage(theme.navigationBarBackground, for: .default)
+
+        let toolbar = UIToolbar.appearance()
+        toolbar.setBackgroundImage(theme.navigationBarBackground, forToolbarPosition: .any, barMetrics: .default)
     }
 }

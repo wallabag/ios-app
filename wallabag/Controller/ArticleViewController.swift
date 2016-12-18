@@ -33,21 +33,6 @@ final class ArticleViewController: UIViewController {
         }
     }
 
-    @IBAction func theme(_ sender: UIBarButtonItem) {
-        let themeController = UIAlertController(title: "Choose theme", message: nil, preferredStyle: .actionSheet)
-        themeController.popoverPresentationController?.barButtonItem = sender
-
-        for theme in ThemeManager.Theme.allThemes {
-            let action = UIAlertAction(title: theme.rawValue.ucFirst, style: .default) { action in
-                Setting.setTheme(value: ThemeManager.Theme(rawValue: action.title!.lcFirst)!)
-                self.loadArticleContent()
-            }
-            themeController.addAction(action)
-        }
-
-        present(themeController, animated: true, completion: nil)
-    }
-
     @IBAction func shareMenu(_ sender: UIBarButtonItem) {
         let activity = TUSafariActivity()
         let shareController = UIActivityViewController(activityItems: [URL(string: article.url)], applicationActivities: [activity])

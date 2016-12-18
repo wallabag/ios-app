@@ -10,10 +10,22 @@ import UIKit
 
 final class SettingsTableViewController: UITableViewController {
 
+    @IBOutlet weak var justifySwitch: UISwitch!
     @IBAction func justifySwitch(_ sender: UISwitch) {
         Setting.setJustifyArticle(value: sender.isOn)
     }
-    @IBOutlet weak var justifySwitch: UISwitch!
+
+    @IBOutlet weak var nigthSwitch: UISwitch!
+    @IBAction func nightSwitch(_ sender: UISwitch) {
+        let theme: ThemeManager.Theme = sender.isOn ? .night : .light
+        if sender.isOn {
+            Setting.setTheme(value: theme)
+        } else {
+            Setting.setTheme(value: theme)
+        }
+
+        Setting.setTheme(value: theme)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +33,7 @@ final class SettingsTableViewController: UITableViewController {
         prepareDefaultList()
 
         justifySwitch.setOn(Setting.isJustifyArticle(), animated: false)
+        nigthSwitch.setOn(Setting.getTheme() == .night, animated: false)
 
         tableView.separatorStyle = .none
     }
