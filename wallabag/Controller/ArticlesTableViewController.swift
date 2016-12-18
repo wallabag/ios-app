@@ -28,7 +28,7 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     @IBAction func backFromParameter(segue: UIStoryboardSegue) {
-
+        navigationController?.navigationBar.setBackgroundImage(Setting.getTheme().navigationBarBackground, for: .default)
     }
 
     @IBAction func unarchivedArticles(segue: UIStoryboardSegue) {
