@@ -27,6 +27,8 @@ final class ArticlesTableViewController: UITableViewController {
         title = WallabagApi.mode.humainReadable()
     }
 
+    @IBOutlet weak var menu: UIBarButtonItem!
+    @IBOutlet weak var add: UIBarButtonItem!
     @IBAction func backFromParameter(segue: UIStoryboardSegue) {
         navigationController?.navigationBar.setBackgroundImage(Setting.getTheme().navigationBarBackground, for: .default)
     }

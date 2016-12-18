@@ -250,7 +250,7 @@
                         <sections>
                             <tableViewSection headerTitle="Articles" id="h3L-Uh-Cn2">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="allArticles" textLabel="Fxa-Eb-NLN" style="IBUITableViewCellStyleDefault" id="bSR-9C-Zmw">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="allArticles" textLabel="Fxa-Eb-NLN" style="IBUITableViewCellStyleDefault" id="bSR-9C-Zmw" customClass="ThemedTableViewCell" customModule="wallabag" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bSR-9C-Zmw" id="qvy-cK-hL4">
@@ -270,7 +270,7 @@
                                             <segue destination="jdi-WV-zt5" kind="unwind" unwindAction="allArticlesWithSegue:" id="IOf-Pd-vZH"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="unarchivedArticles" textLabel="fUa-0w-1to" style="IBUITableViewCellStyleDefault" id="0rt-Dv-gBN">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="unarchivedArticles" textLabel="fUa-0w-1to" style="IBUITableViewCellStyleDefault" id="0rt-Dv-gBN" customClass="ThemedTableViewCell" customModule="wallabag" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0rt-Dv-gBN" id="RDn-gA-KIm">
@@ -290,7 +290,7 @@
                                             <segue destination="jdi-WV-zt5" kind="unwind" unwindAction="unarchivedArticlesWithSegue:" id="BSg-bv-41w"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="archivedArticles" textLabel="BHi-pa-CbA" style="IBUITableViewCellStyleDefault" id="ExA-1y-iDu">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="archivedArticles" textLabel="BHi-pa-CbA" style="IBUITableViewCellStyleDefault" id="ExA-1y-iDu" customClass="ThemedTableViewCell" customModule="wallabag" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="116" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ExA-1y-iDu" id="4ba-bU-bCk">
@@ -310,7 +310,7 @@
                                             <segue destination="wq0-NI-I11" kind="unwind" unwindAction="archivedArticlesWithSegue:" id="rhS-FJ-LBd"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="starredArticles" textLabel="YyA-ww-rVl" style="IBUITableViewCellStyleDefault" id="aat-Ys-NDy">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="starredArticles" textLabel="YyA-ww-rVl" style="IBUITableViewCellStyleDefault" id="aat-Ys-NDy" customClass="ThemedTableViewCell" customModule="wallabag" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="160" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aat-Ys-NDy" id="wlc-tv-XWj">
@@ -334,7 +334,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Other" id="tC5-sq-Yza">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="paramater" textLabel="hr1-Yf-LzU" style="IBUITableViewCellStyleDefault" id="2xz-ML-8bB">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="paramater" textLabel="hr1-Yf-LzU" style="IBUITableViewCellStyleDefault" id="2xz-ML-8bB" customClass="ThemedTableViewCell" customModule="wallabag" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="232" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2xz-ML-8bB" id="eI7-eC-8FD">
@@ -354,7 +354,7 @@
                                             <segue destination="2It-26-Sfb" kind="show" id="Oik-Ka-2WI"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="about" textLabel="JQb-Ie-8b5" style="IBUITableViewCellStyleDefault" id="ql9-K2-Gkb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="about" textLabel="JQb-Ie-8b5" style="IBUITableViewCellStyleDefault" id="ql9-K2-Gkb" customClass="ThemedTableViewCell" customModule="wallabag" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="276" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ql9-K2-Gkb" id="U9k-Ub-EnL">
@@ -374,7 +374,7 @@
                                             <segue destination="aVJ-Ci-2zL" kind="show" animates="NO" id="oDY-XY-Row"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="disconnect" textLabel="B7X-TD-PsC" style="IBUITableViewCellStyleDefault" id="YjN-Qj-BDF">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="disconnect" textLabel="B7X-TD-PsC" style="IBUITableViewCellStyleDefault" id="YjN-Qj-BDF" customClass="ThemedTableViewCell" customModule="wallabag" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="320" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YjN-Qj-BDF" id="h1F-5k-xps">
@@ -422,7 +422,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wallabag v2 for iOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OmZ-lq-KqG">
-                                <rect key="frame" x="72" y="88" width="231.5" height="34"/>
+                                <rect key="frame" x="72" y="88" width="232" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="CMc-3o-0on"/>
                                 </constraints>
@@ -511,7 +511,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qk9-mt-OdM">
-                                <rect key="frame" x="125.5" y="593" width="124.5" height="29"/>
+                                <rect key="frame" x="125" y="593" width="125" height="29"/>
                                 <attributedString key="attributedText">
                                     <fragment content="We use a cool icon of  https://icons8.com">
                                         <attributes>
@@ -640,6 +640,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
+                    <connections>
+                        <outlet property="add" destination="3Vd-Vr-Rri" id="FI4-CG-JYV"/>
+                        <outlet property="menu" destination="Meg-lP-qaT" id="hY0-mj-Tsd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7b-wX-N2L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

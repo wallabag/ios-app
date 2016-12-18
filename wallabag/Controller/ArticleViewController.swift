@@ -69,6 +69,7 @@ final class ArticleViewController: UIViewController {
         navigationItem.title = article.title
         updateUi()
         loadArticleContent()
+        contentWeb.backgroundColor = Setting.getTheme().backgroundColor
     }
 
     fileprivate func loadArticleContent() {

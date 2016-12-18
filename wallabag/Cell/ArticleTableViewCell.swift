@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ArticleTableViewCell: UITableViewCell {
+class ArticleTableViewCell: ThemedTableViewCell {
 
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var website: UILabel!
@@ -16,6 +16,8 @@ class ArticleTableViewCell: UITableViewCell {
     @IBOutlet weak var previewImage: UIImageView!
 
     func present(_ article: Article) {
+        setupTheme()
+
         title.text = article.title
         website.text = article.domain_name
 
@@ -32,5 +34,12 @@ class ArticleTableViewCell: UITableViewCell {
         }
 
         readingTime.text = "Reading time \(article.reading_time.readingTime)"
+    }
+
+    override func setupTheme() {
+        super.setupTheme()
+        title.textColor = Setting.getTheme().color
+        website.textColor = Setting.getTheme().color
+        readingTime.textColor = Setting.getTheme().color
     }
 }

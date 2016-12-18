@@ -19,7 +19,7 @@ struct ThemeManager {
         var color: UIColor {
             switch self {
             case .night:
-                return UIColor.gray
+                return UIColor.black
             default:
                 return UIColor.black
             }
@@ -28,7 +28,7 @@ struct ThemeManager {
         var tintColor: UIColor {
             switch self {
             case .night:
-                return UIColor.white
+                return UIColor.black
             default:
                 return UIColor.black
             }
@@ -72,5 +72,13 @@ struct ThemeManager {
 
         let toolbar = UIToolbar.appearance()
         toolbar.setBackgroundImage(theme.navigationBarBackground, forToolbarPosition: .any, barMetrics: .default)
+
+        NotificationCenter.default.post(name: Notification.Name.themeUpdated, object: nil)
+    }
+}
+
+extension Notification.Name {
+    static var themeUpdated: Notification.Name {
+        return Notification.Name(rawValue: "theme.updted")
     }
 }
