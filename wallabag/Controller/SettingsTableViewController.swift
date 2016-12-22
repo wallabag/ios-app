@@ -22,7 +22,6 @@ final class SettingsTableViewController: UITableViewController {
         prepareDefaultList()
 
         justifySwitch.setOn(Setting.isJustifyArticle(), animated: false)
-        tableView.separatorStyle = .none
         currentThemeLabel.text = Setting.getTheme().rawValue.ucFirst
     }
 
@@ -39,8 +38,9 @@ final class SettingsTableViewController: UITableViewController {
             if let cell = tableView.cellForRow(at: indexPath) {
                 Setting.setDefaultMode(mode: RetrieveMode(rawValue: cell.reuseIdentifier!)!)
                 cell.accessoryType = .checkmark
-                cell.selectionStyle = .none
             }
+
+            tableView.deselectRow(at: indexPath, animated: true)
         }
     }
 
