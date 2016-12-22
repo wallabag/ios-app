@@ -10,6 +10,7 @@ import UIKit
 
 struct ThemeManager {
 
+    // Add theme here and dont forget add in allThemes
     enum Theme: String {
         case light
         case night
@@ -39,7 +40,7 @@ struct ThemeManager {
             case .night:
                 return UIColor.gray
             default:
-                return UIColor.clear
+                return UIColor.white
             }
         }
 

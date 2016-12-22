@@ -39,7 +39,7 @@ class Setting {
             return ThemeManager.Theme.light
         }
 
-        return ThemeManager.Theme(rawValue: value)!
+        return ThemeManager.Theme(rawValue: value) ?? .light
     }
 
     static func setTheme(value: ThemeManager.Theme) {

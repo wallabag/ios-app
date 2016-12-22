@@ -31,6 +31,7 @@ final class ArticlesTableViewController: UITableViewController {
     @IBOutlet weak var add: UIBarButtonItem!
     @IBAction func backFromParameter(segue: UIStoryboardSegue) {
         navigationController?.navigationBar.setBackgroundImage(Setting.getTheme().navigationBarBackground, for: .default)
+        tableView.backgroundColor = Setting.getTheme().backgroundColor
     }
 
     @IBAction func unarchivedArticles(segue: UIStoryboardSegue) {
@@ -77,6 +78,8 @@ final class ArticlesTableViewController: UITableViewController {
         super.viewDidLoad()
         refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         handleRefresh()
+
+        tableView.backgroundColor = Setting.getTheme().backgroundColor
     }
 
     // MARK: - Table view data source
