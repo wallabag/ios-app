@@ -16,7 +16,7 @@ html {
 
 body {
     color: #999999;
-    background: #111111;
+    background: #222;
 }
 
 /* ==========================================================================
@@ -182,7 +182,7 @@ header.mbm {
 
 blockquote {
     border:1px solid #999;
-    background: #AAA;
+    background: #333;
     padding: 1em;
     margin: 0;
 }
