@@ -1,13 +1,13 @@
 /* ==========================================================================
  Sommaire
- 
+
  1 = Style Guide
  2 = Layout
  3 = Pictos
  4 = Messages
  5 = Article
  6 = Media queries
- 
+
  ========================================================================== */
 
 html {
@@ -15,8 +15,8 @@ html {
 }
 
 body {
-    color: #FFF;
-    background: #888;
+    color: #999999;
+    background: #111111;
 }
 
 /* ==========================================================================
@@ -24,8 +24,8 @@ body {
  ========================================================================== */
 
 ::selection {
-    color: #FFF;
-    background: #000;
+    color: #999999;
+    background: #111111;
 }
 
 h2, h3, h4 {
@@ -38,7 +38,7 @@ p, li {
 }
 
 a {
-    color: #FFF;
+    color: #999999;
     font-weight: bold;
 }
 
@@ -50,7 +50,7 @@ h2:after {
     content: "";
     height: 4px;
     width: 70px;
-    background: #000;
+    background: #111111;
     display: block;
 }
 
@@ -89,7 +89,7 @@ h2:after {
 #links a {
     display: block;
     padding: 0.5em 2em 0.5em 1em;
-    color: #FFF;
+    color: #999999;
     position: relative;
     text-transform: uppercase;
     text-decoration: none;
@@ -104,7 +104,7 @@ h2:after {
 
 #links a:hover, #links a:focus {
     background: #999;
-    color: #000;
+    color: #111111;
 }
 
 #links .current:after {
@@ -148,14 +148,14 @@ footer {
     position: relative;
     bottom: 0;
     right: 5em;
-    color: #999;
+    color: #999999;
     font-size: 0.8em;
     font-style: italic;
     z-index: 20;
 }
 
 footer a {
-    color: #999;
+    color: #999999;
     font-weight: normal;
 }
 
@@ -181,7 +181,7 @@ header.mbm {
 }
 
 blockquote {
-    border:1px solid #FFF;
+    border:1px solid #999;
     background: #AAA;
     padding: 1em;
     margin: 0;
@@ -230,11 +230,11 @@ blockquote {
         padding-right: 1.5em;
         position: static;
     }
-    
+
     #article {
         width: 100%;
     }
-    
+
     #article h1 {
         font-size: 1.2em;
     }

@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "nightNavBackground.png",
+      "filename" : "softNavBackground.png",
       "scale" : "1x"
     },
     {
