@@ -15,6 +15,8 @@ class ThemedTableViewCell: UITableViewCell {
         NotificationCenter.default.addObserver(forName: Notification.Name.themeUpdated, object: nil, queue: nil) { object in
             self.setupTheme()
         }
+
+        setupTheme()
     }
 
     /**
