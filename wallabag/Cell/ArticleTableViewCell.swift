@@ -14,6 +14,8 @@ class ArticleTableViewCell: ThemedTableViewCell {
     @IBOutlet weak var website: UILabel!
     @IBOutlet weak var readingTime: UILabel!
     @IBOutlet weak var previewImage: UIImageView!
+    @IBOutlet weak var readed: UIImageView!
+    @IBOutlet weak var starred: UIImageView!
 
     func present(_ article: Article) {
         setupTheme()
@@ -23,9 +25,13 @@ class ArticleTableViewCell: ThemedTableViewCell {
 
         if !article.is_archived {
             title.font = UIFont.boldSystemFont(ofSize: 16.0)
+            readed.image = #imageLiteral(resourceName: "unreaded")
         } else {
             title.font = UIFont.systemFont(ofSize: 16.0)
+            readed.image = #imageLiteral(resourceName: "readed")
         }
+
+        starred.image = article.is_starred ? #imageLiteral(resourceName: "starred") : #imageLiteral(resourceName: "unstarred")
 
         if let picture = article.preview_picture {
             previewImage.image(fromString: picture)
