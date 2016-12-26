@@ -93,6 +93,7 @@ struct ThemeManager {
 
         let bar = UINavigationBar.appearance()
         bar.setBackgroundImage(theme.navigationBarBackground, for: .default)
+        bar.titleTextAttributes = [NSForegroundColorAttributeName: theme.color]
 
         let toolbar = UIToolbar.appearance()
         toolbar.setBackgroundImage(theme.navigationBarBackground, forToolbarPosition: .any, barMetrics: .default)
