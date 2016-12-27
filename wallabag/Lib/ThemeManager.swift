@@ -23,10 +23,13 @@ struct ThemeManager {
         var color: UIColor {
             switch self {
             case .light:
+                // #404040
                 return UIColor.init(red: 64.rgb, green: 64.rgb, blue: 64.rgb, alpha: 1)
             case .dusk:
+                // #a0a0a0
                 return UIColor.init(red: 160.rgb, green: 160.rgb, blue: 160.rgb, alpha: 1)
             case .night:
+                // #999999
                 return UIColor.init(red: 153.rgb, green: 153.rgb, blue: 153.rgb, alpha: 1)
             default:
                 return UIColor.black
@@ -51,10 +54,13 @@ struct ThemeManager {
         var backgroundColor: UIColor {
             switch self {
             case .light:
+                // #f6efdc
                 return UIColor.init(red: 246.rgb, green: 239.rgb, blue: 220.rgb, alpha: 1)
             case .dusk:
+                // #3c3c3c
                 return UIColor.init(red: 60.rgb, green: 60.rgb, blue: 60.rgb, alpha: 1)
             case .night:
+                // #222222
                 return UIColor.init(red: 34.rgb, green: 34.rgb, blue: 34.rgb, alpha: 1)
             default:
                 return UIColor.white
