@@ -9,6 +9,8 @@
 import Foundation
 
 class Setting {
+
+
     fileprivate enum const: String {
         case defaultMode
         case justifyArticle
@@ -45,5 +47,16 @@ class Setting {
     static func setTheme(value: ThemeManager.Theme) {
         ThemeManager.apply(theme: value)
         UserDefaults.standard.set(value.rawValue, forKey: const.articleTheme.rawValue)
+    }
+
+    static func set(server: Server) {
+        let shareDefaults = UserDefaults(suiteName: "group.wallabag.share_extension")
+        shareDefaults?.set(server.host, forKey: "host")
+        shareDefaults?.set(server.client_id, forKey: "clientId")
+        shareDefaults?.set(server.client_secret, forKey: "clientSecret")
+        shareDefaults?.set(server.username, forKey: "username")
+        shareDefaults?.set(server.password, forKey: "password")
+        shareDefaults?.set(true, forKey: "serverConfigured")
+        shareDefaults?.synchronize()
     }
 }

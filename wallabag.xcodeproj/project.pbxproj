@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		01971931BCF414226F407E96 /* Pods_wallabagTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C75DD9CC88FFD838573A351 /* Pods_wallabagTests.framework */; };
+		4BE7652521A50A12EE8BCD5B /* Pods_bagit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96F6D5610DD6249AEA66D5F /* Pods_bagit.framework */; };
 		9C181B861DB8D56600D941EB /* WallabagApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C181B851DB8D56600D941EB /* WallabagApi.swift */; };
 		9C181B881DB8E27000D941EB /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C181B871DB8E27000D941EB /* ArticlesTableViewController.swift */; };
 		9C1EBA061DC3E9CA00FAE195 /* WallabagApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1EBA051DC3E9CA00FAE195 /* WallabagApiTests.swift */; };
@@ -42,6 +43,17 @@
 		9C987A541DB79826005515F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A521DB79826005515F4 /* LaunchScreen.storyboard */; };
 		9C987A6A1DB79826005515F4 /* wallabagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C987A691DB79826005515F4 /* wallabagUITests.swift */; };
 		9CA232301DFECE74006B29B8 /* light.css in Resources */ = {isa = PBXBuildFile; fileRef = 9CA2322F1DFECE74006B29B8 /* light.css */; };
+		9CBA6C601E16FC2B000B9AE6 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBA6C5F1E16FC2B000B9AE6 /* ShareViewController.swift */; };
+		9CBA6C631E16FC2B000B9AE6 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CBA6C611E16FC2B000B9AE6 /* MainInterface.storyboard */; };
+		9CBA6C671E16FC2B000B9AE6 /* bagit.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9CBA6C5D1E16FC2B000B9AE6 /* bagit.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9CBA6C6E1E170382000B9AE6 /* WallabagApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C181B851DB8D56600D941EB /* WallabagApi.swift */; };
+		9CBA6C741E1705CE000B9AE6 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7596181DBB540D0096614B /* Article.swift */; };
+		9CBA6C751E1705E2000B9AE6 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4B0601DC5361000BC6830 /* Dictionary.swift */; };
+		9CBA6C761E170618000B9AE6 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C65DEB01DC5EE85002CA068 /* Int.swift */; };
+		9CBA6C771E170618000B9AE6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75961B1DBB567E0096614B /* String.swift */; };
+		9CBA6C781E170618000B9AE6 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C31DF841DD7B8FA0065875A /* UIImage.swift */; };
+		9CBA6C791E170620000B9AE6 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED08891DC15A9F004C18C5 /* Server.swift */; };
+		9CBA6C7A1E170620000B9AE6 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2192781DBF7F8800F628C2 /* Tag.swift */; };
 		9CC4B0611DC5361000BC6830 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4B0601DC5361000BC6830 /* Dictionary.swift */; };
 		9CCAC4011E0176CF002C6A66 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */; };
 		9CE112161DC26E8B00FA2EB7 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE112151DC26E8B00FA2EB7 /* CoreData.swift */; };
@@ -76,9 +88,38 @@
 			remoteGlobalIDString = 9C987A421DB79826005515F4;
 			remoteInfo = wallabag;
 		};
+		9CBA6C651E16FC2B000B9AE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C987A3B1DB79826005515F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9CBA6C5C1E16FC2B000B9AE6;
+			remoteInfo = bagit;
+		};
+		9CBA6C711E1703E1000B9AE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C987A3B1DB79826005515F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C987A421DB79826005515F4;
+			remoteInfo = wallabag;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9CBA6C6B1E16FC2B000B9AE6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9CBA6C671E16FC2B000B9AE6 /* bagit.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		081F547345F9E70248A02531 /* Pods-bagit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bagit.release.xcconfig"; path = "Pods/Target Support Files/Pods-bagit/Pods-bagit.release.xcconfig"; sourceTree = "<group>"; };
 		33649D7F894D49168B9683D2 /* Pods-wallabagUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3678DDB92217E137039674C2 /* Pods_wallabagUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7438BB540252BD33025E60F9 /* Pods-wallabagTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +166,13 @@
 		9C987A691DB79826005515F4 /* wallabagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wallabagUITests.swift; sourceTree = "<group>"; };
 		9C987A6B1DB79826005515F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CA2322F1DFECE74006B29B8 /* light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = light.css; sourceTree = "<group>"; };
+		9CBA6C5D1E16FC2B000B9AE6 /* bagit.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = bagit.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CBA6C5F1E16FC2B000B9AE6 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		9CBA6C621E16FC2B000B9AE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		9CBA6C641E16FC2B000B9AE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CBA6C6C1E17010E000B9AE6 /* wallabag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wallabag.entitlements; sourceTree = "<group>"; };
+		9CBA6C6D1E17011C000B9AE6 /* bagit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bagit.entitlements; sourceTree = "<group>"; };
+		9CBA6C6F1E1703A3000B9AE6 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/wallabag-fcirammgjylpzjcvizhrpwjyvjmq/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		9CC4B0601DC5361000BC6830 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		9CE112151DC26E8B00FA2EB7 /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
@@ -140,7 +188,9 @@
 		9CF1F2241DBE9D150086B98B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9CF91F151DE473B6006A417A /* ArticleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleManager.swift; sourceTree = "<group>"; };
 		9CFEF3B31DD9EC5D00126D15 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		A6538EB964B457B5B3DC7B46 /* Pods-bagit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bagit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bagit/Pods-bagit.debug.xcconfig"; sourceTree = "<group>"; };
 		AFAE89D8A395291968A2E2A7 /* Pods_wallabag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B96F6D5610DD6249AEA66D5F /* Pods_bagit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bagit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5054CFAAEF931DD2335077B /* Pods-wallabag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabag/Pods-wallabag.debug.xcconfig"; sourceTree = "<group>"; };
 		D492A4BFBC05746741AD48FD /* Pods-wallabag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabag/Pods-wallabag.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,15 +220,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9CBA6C5A1E16FC2B000B9AE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BE7652521A50A12EE8BCD5B /* Pods_bagit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		37E0BE100D92CFD90F2A6716 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9CBA6C6F1E1703A3000B9AE6 /* Alamofire.framework */,
 				AFAE89D8A395291968A2E2A7 /* Pods_wallabag.framework */,
 				9C75DD9CC88FFD838573A351 /* Pods_wallabagTests.framework */,
 				3678DDB92217E137039674C2 /* Pods_wallabagUITests.framework */,
+				B96F6D5610DD6249AEA66D5F /* Pods_bagit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -192,6 +252,8 @@
 				94D0C2FA2C870EE989B2406D /* Pods-wallabagTests.release.xcconfig */,
 				33649D7F894D49168B9683D2 /* Pods-wallabagUITests.debug.xcconfig */,
 				9B9EB64D938632DA7CDDFD2A /* Pods-wallabagUITests.release.xcconfig */,
+				A6538EB964B457B5B3DC7B46 /* Pods-bagit.debug.xcconfig */,
+				081F547345F9E70248A02531 /* Pods-bagit.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -319,6 +381,7 @@
 		9C987A3A1DB79826005515F4 = {
 			isa = PBXGroup;
 			children = (
+				9CBA6C5E1E16FC2B000B9AE6 /* bagit */,
 				37E0BE100D92CFD90F2A6716 /* Frameworks */,
 				5364F96E2A5E5163C06314B9 /* Pods */,
 				9C987A441DB79826005515F4 /* Products */,
@@ -334,6 +397,7 @@
 				9C987A431DB79826005515F4 /* wallabag.app */,
 				9C987A5A1DB79826005515F4 /* wallabagTests.xctest */,
 				9C987A651DB79826005515F4 /* wallabagUITests.xctest */,
+				9CBA6C5D1E16FC2B000B9AE6 /* bagit.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -341,6 +405,7 @@
 		9C987A451DB79826005515F4 /* wallabag */ = {
 			isa = PBXGroup;
 			children = (
+				9CBA6C6C1E17010E000B9AE6 /* wallabag.entitlements */,
 				9C2A2DAC1DD4A6D900EDA4E8 /* Cell */,
 				9C181B841DB8D47C00D941EB /* Controller */,
 				9C75961A1DBB56730096614B /* Extension */,
@@ -379,6 +444,17 @@
 			path = wallabagUITests;
 			sourceTree = "<group>";
 		};
+		9CBA6C5E1E16FC2B000B9AE6 /* bagit */ = {
+			isa = PBXGroup;
+			children = (
+				9CBA6C6D1E17011C000B9AE6 /* bagit.entitlements */,
+				9CBA6C5F1E16FC2B000B9AE6 /* ShareViewController.swift */,
+				9CBA6C611E16FC2B000B9AE6 /* MainInterface.storyboard */,
+				9CBA6C641E16FC2B000B9AE6 /* Info.plist */,
+			);
+			path = bagit;
+			sourceTree = "<group>";
+		};
 		9CF1F21F1DBE96740086B98B /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,10 +476,12 @@
 				9C987A411DB79826005515F4 /* Resources */,
 				1DF9979C51B322B7FE60E0F4 /* [CP] Embed Pods Frameworks */,
 				C63B0385014D4D2A027B3CAF /* [CP] Copy Pods Resources */,
+				9CBA6C6B1E16FC2B000B9AE6 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9CBA6C661E16FC2B000B9AE6 /* PBXTargetDependency */,
 			);
 			name = wallabag;
 			productName = wallabag;
@@ -452,20 +530,45 @@
 			productReference = 9C987A651DB79826005515F4 /* wallabagUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		9CBA6C5C1E16FC2B000B9AE6 /* bagit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CBA6C6A1E16FC2B000B9AE6 /* Build configuration list for PBXNativeTarget "bagit" */;
+			buildPhases = (
+				1064727F3787E02D9CFA3173 /* [CP] Check Pods Manifest.lock */,
+				9CBA6C591E16FC2B000B9AE6 /* Sources */,
+				9CBA6C5A1E16FC2B000B9AE6 /* Frameworks */,
+				9CBA6C5B1E16FC2B000B9AE6 /* Resources */,
+				C232E5C2161397CCEC0196CF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9CBA6C721E1703E1000B9AE6 /* PBXTargetDependency */,
+			);
+			name = bagit;
+			productName = bagit;
+			productReference = 9CBA6C5D1E16FC2B000B9AE6 /* bagit.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		9C987A3B1DB79826005515F4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0810;
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "maxime marinel";
 				TargetAttributes = {
 					9C987A421DB79826005515F4 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = G97URPCGB8;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					9C987A591DB79826005515F4 = {
 						CreatedOnToolsVersion = 8.0;
@@ -478,6 +581,16 @@
 						DevelopmentTeam = G97URPCGB8;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 9C987A421DB79826005515F4;
+					};
+					9CBA6C5C1E16FC2B000B9AE6 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = G97URPCGB8;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -497,6 +610,7 @@
 				9C987A421DB79826005515F4 /* wallabag */,
 				9C987A591DB79826005515F4 /* wallabagTests */,
 				9C987A641DB79826005515F4 /* wallabagUITests */,
+				9CBA6C5C1E16FC2B000B9AE6 /* bagit */,
 			);
 		};
 /* End PBXProject section */
@@ -533,9 +647,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9CBA6C5B1E16FC2B000B9AE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CBA6C631E16FC2B000B9AE6 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1064727F3787E02D9CFA3173 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		1CF7950C44CB289C35D29924 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -624,6 +761,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C232E5C2161397CCEC0196CF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bagit/Pods-bagit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C30604D19CABD26626D9E3A3 /* [CP] Check Pods Manifest.lock */ = {
@@ -734,6 +886,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9CBA6C591E16FC2B000B9AE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CBA6C771E170618000B9AE6 /* String.swift in Sources */,
+				9CBA6C601E16FC2B000B9AE6 /* ShareViewController.swift in Sources */,
+				9CBA6C751E1705E2000B9AE6 /* Dictionary.swift in Sources */,
+				9CBA6C761E170618000B9AE6 /* Int.swift in Sources */,
+				9CBA6C6E1E170382000B9AE6 /* WallabagApi.swift in Sources */,
+				9CBA6C741E1705CE000B9AE6 /* Article.swift in Sources */,
+				9CBA6C7A1E170620000B9AE6 /* Tag.swift in Sources */,
+				9CBA6C791E170620000B9AE6 /* Server.swift in Sources */,
+				9CBA6C781E170618000B9AE6 /* UIImage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -746,6 +914,16 @@
 			isa = PBXTargetDependency;
 			target = 9C987A421DB79826005515F4 /* wallabag */;
 			targetProxy = 9C987A661DB79826005515F4 /* PBXContainerItemProxy */;
+		};
+		9CBA6C661E16FC2B000B9AE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9CBA6C5C1E16FC2B000B9AE6 /* bagit */;
+			targetProxy = 9CBA6C651E16FC2B000B9AE6 /* PBXContainerItemProxy */;
+		};
+		9CBA6C721E1703E1000B9AE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C987A421DB79826005515F4 /* wallabag */;
+			targetProxy = 9CBA6C711E1703E1000B9AE6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -766,6 +944,14 @@
 			);
 			name = LaunchScreen.storyboard;
 			path = .;
+			sourceTree = "<group>";
+		};
+		9CBA6C611E16FC2B000B9AE6 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9CBA6C621E16FC2B000B9AE6 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -872,6 +1058,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = wallabag/wallabag.entitlements;
 				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = wallabag/Info.plist;
@@ -889,6 +1076,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = wallabag/wallabag.entitlements;
 				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = wallabag/Info.plist;
@@ -962,6 +1150,38 @@
 			};
 			name = Release;
 		};
+		9CBA6C681E16FC2B000B9AE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6538EB964B457B5B3DC7B46 /* Pods-bagit.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = bagit/bagit.entitlements;
+				DEVELOPMENT_TEAM = G97URPCGB8;
+				INFOPLIST_FILE = bagit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag.bagit";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9CBA6C691E16FC2B000B9AE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 081F547345F9E70248A02531 /* Pods-bagit.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = bagit/bagit.entitlements;
+				DEVELOPMENT_TEAM = G97URPCGB8;
+				INFOPLIST_FILE = bagit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag.bagit";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -997,6 +1217,15 @@
 			buildConfigurations = (
 				9C987A751DB79826005515F4 /* Debug */,
 				9C987A761DB79826005515F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9CBA6C6A1E16FC2B000B9AE6 /* Build configuration list for PBXNativeTarget "bagit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CBA6C681E16FC2B000B9AE6 /* Debug */,
+				9CBA6C691E16FC2B000B9AE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

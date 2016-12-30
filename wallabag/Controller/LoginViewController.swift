@@ -35,6 +35,8 @@ final class LoginViewController: UIViewController {
 
                 try! CoreData.save()
 
+                Setting.set(server: newServer)
+
                 self.performSegue(withIdentifier: "toArticles", sender: nil)
             } else {
                 let alert = UIAlertController(title: "Login", message: "Error", preferredStyle: .alert)
