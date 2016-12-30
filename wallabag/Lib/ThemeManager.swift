@@ -82,6 +82,10 @@ struct ThemeManager {
                 return nil
             }
         }
+
+        var backgroundSelectedColor: UIColor {
+            return UIColor.gray
+        }
     }
 
     static func apply(theme: Theme) {

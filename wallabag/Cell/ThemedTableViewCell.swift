@@ -25,5 +25,8 @@ class ThemedTableViewCell: UITableViewCell {
     func setupTheme() {
         backgroundColor = Setting.getTheme().backgroundColor
         textLabel?.textColor = Setting.getTheme().color
+
+        selectedBackgroundView = UIView()
+        selectedBackgroundView?.backgroundColor = Setting.getTheme().backgroundSelectedColor
     }
 }
