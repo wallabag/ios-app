@@ -36,8 +36,8 @@ final class ServerViewController: UIViewController {
         guard let url = URL(string: string) else { return false }
         if !UIApplication.shared.canOpenURL(url) { return false }
 
-        let regEx = "((https|http)://)((\\w|-)+)(([.]|[/])((\\w|-)+))+"
-        let predicate = NSPredicate(format: "SELF MATCHES %@", argumentArray: [regEx])
-        return predicate.evaluate(with: string)
+        let regex = try! NSRegularExpression(pattern: "(http|https)://", options: [])
+
+        return 1 == regex.matches(in: string, options: [], range: NSRange(location: 0, length: string.characters.count)).count
     }
 }
