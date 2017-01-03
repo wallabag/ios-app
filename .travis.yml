@@ -2,6 +2,7 @@ language: objective-c
 osx_image: xcode8
 xcode_workspace: wallabag.xcworkspace
 xcode_scheme: wallabag
+before_install:
+  - pod repo update > /dev/null
 script:
-  - pod repo update
   - set -o pipefail && env "NSUnbufferedIO=YES" xcodebuild "-workspace" "wallabag.xcworkspace" "-scheme" "wallabag" "build" "test" "-destination" "platform=iOS Simulator,name=iPhone 6s Plus,OS=latest" | xcpretty
