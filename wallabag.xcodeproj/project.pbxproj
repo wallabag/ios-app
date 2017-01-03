@@ -61,6 +61,7 @@
 		9CE369741DE632030005E20E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE369731DE632030005E20E /* SettingsTableViewController.swift */; };
 		9CE369761DE63D030005E20E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE369751DE63D030005E20E /* Setting.swift */; };
 		9CE9F2061DE2151B002E06F5 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE9F2051DE2151B002E06F5 /* AboutViewController.swift */; };
+		9CEC09001E1BC069002DC81D /* RegisterProcessUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC08FF1E1BC069002DC81D /* RegisterProcessUITests.swift */; };
 		9CED088A1DC15A9F004C18C5 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED08891DC15A9F004C18C5 /* Server.swift */; };
 		9CF1F21C1DBE943C0086B98B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F21B1DBE943C0086B98B /* HomeViewController.swift */; };
 		9CF1F21E1DBE966B0086B98B /* UbuntuTitling-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9CF1F21D1DBE96210086B98B /* UbuntuTitling-Bold.ttf */; };
@@ -181,6 +182,7 @@
 		9CE369731DE632030005E20E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		9CE369751DE63D030005E20E /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		9CE9F2051DE2151B002E06F5 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		9CEC08FF1E1BC069002DC81D /* RegisterProcessUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterProcessUITests.swift; sourceTree = "<group>"; };
 		9CED08891DC15A9F004C18C5 /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		9CF1F21B1DBE943C0086B98B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9CF1F21D1DBE96210086B98B /* UbuntuTitling-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UbuntuTitling-Bold.ttf"; sourceTree = "<group>"; };
@@ -442,6 +444,7 @@
 				9CFEF3B31DD9EC5D00126D15 /* SnapshotHelper.swift */,
 				9C987A6B1DB79826005515F4 /* Info.plist */,
 				9C987A691DB79826005515F4 /* wallabagUITests.swift */,
+				9CEC08FF1E1BC069002DC81D /* RegisterProcessUITests.swift */,
 			);
 			path = wallabagUITests;
 			sourceTree = "<group>";
@@ -883,6 +886,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CEC09001E1BC069002DC81D /* RegisterProcessUITests.swift in Sources */,
 				9C987A6A1DB79826005515F4 /* wallabagUITests.swift in Sources */,
 				9CFEF3B41DD9EC5D00126D15 /* SnapshotHelper.swift in Sources */,
 			);
