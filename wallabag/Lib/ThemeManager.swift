@@ -83,8 +83,22 @@ struct ThemeManager {
             }
         }
 
+        // background color when an element is selected in the list
         var backgroundSelectedColor: UIColor {
-            return UIColor.gray
+            switch self {
+            case .light:
+                // #ddd7c6
+                return UIColor.init(red: 221.rgb, green: 215.rgb, blue: 198.rgb, alpha: 1)
+            case .dusk:
+                // #4f4f4f
+                return UIColor.init(red: 79.rgb, green: 79.rgb, blue: 79.rgb, alpha: 1)
+            case .night:
+                // #383838
+                return UIColor.init(red: 56.rgb, green: 56.rgb, blue: 56.rgb, alpha: 1)
+            default:
+                // e5e5e5
+                return UIColor.init(red: 229.rgb, green: 229.rgb, blue: 229.rgb, alpha: 1)
+            }
         }
     }
 
