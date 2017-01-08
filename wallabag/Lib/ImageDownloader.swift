@@ -39,10 +39,9 @@ extension UIImageView {
 
     public func image(fromString urlString: String) {
         ImageDownloader.downloadImage(fromString: urlString) { image in
-            DispatchQueue.main.async() { () -> Void in
+            DispatchQueue.main.async {
                 self.image = image.crop(to: self.frame.size)
             }
         }
     }
-
 }
