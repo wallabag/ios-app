@@ -25,7 +25,12 @@ final class ArticlesTableViewController: UITableViewController {
 
     fileprivate func updateUi() {
         title = WallabagApi.mode.humainReadable()
+
         navigationController?.navigationBar.setBackgroundImage(Setting.getTheme().navigationBarBackground, for: .default)
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: Setting.getTheme().color]
+        menu.tintColor = Setting.getTheme().tintColor
+        add.tintColor = Setting.getTheme().tintColor
+
         tableView.backgroundColor = Setting.getTheme().backgroundColor
         for row in 0 ... tableView.numberOfRows(inSection: 0) {
             tableView.cellForRow(at: IndexPath(row: row, section: 0))?.backgroundColor = Setting.getTheme().backgroundColor

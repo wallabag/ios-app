@@ -10,7 +10,6 @@ import Foundation
 
 class Setting {
 
-
     fileprivate enum const: String {
         case defaultMode
         case justifyArticle
@@ -45,8 +44,8 @@ class Setting {
     }
 
     static func setTheme(value: ThemeManager.Theme) {
-        ThemeManager.apply(theme: value)
         UserDefaults.standard.set(value.rawValue, forKey: const.articleTheme.rawValue)
+        ThemeManager.apply(theme: value)
     }
 
     static func set(server: Server) {
