@@ -43,7 +43,6 @@
 		9C987A4F1DB79826005515F4 /* wallabag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C987A4D1DB79826005515F4 /* wallabag.xcdatamodeld */; };
 		9C987A511DB79826005515F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A501DB79826005515F4 /* Assets.xcassets */; };
 		9C987A541DB79826005515F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A521DB79826005515F4 /* LaunchScreen.storyboard */; };
-		9C987A6A1DB79826005515F4 /* snapshotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C987A691DB79826005515F4 /* snapshotUITests.swift */; };
 		9CA232301DFECE74006B29B8 /* light.css in Resources */ = {isa = PBXBuildFile; fileRef = 9CA2322F1DFECE74006B29B8 /* light.css */; };
 		9CBA6C601E16FC2B000B9AE6 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBA6C5F1E16FC2B000B9AE6 /* ShareViewController.swift */; };
 		9CBA6C631E16FC2B000B9AE6 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CBA6C611E16FC2B000B9AE6 /* MainInterface.storyboard */; };
@@ -177,7 +176,6 @@
 		9C987A5A1DB79826005515F4 /* wallabagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C987A601DB79826005515F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C987A651DB79826005515F4 /* wallabagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C987A691DB79826005515F4 /* snapshotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = snapshotUITests.swift; sourceTree = "<group>"; };
 		9C987A6B1DB79826005515F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CA2322F1DFECE74006B29B8 /* light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = light.css; sourceTree = "<group>"; };
 		9CBA6C5D1E16FC2B000B9AE6 /* bagit.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = bagit.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -468,7 +466,6 @@
 			isa = PBXGroup;
 			children = (
 				9C987A6B1DB79826005515F4 /* Info.plist */,
-				9C987A691DB79826005515F4 /* snapshotUITests.swift */,
 				9CEC08FF1E1BC069002DC81D /* RegisterProcessUITests.swift */,
 			);
 			path = wallabagUITests;
@@ -956,7 +953,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CEC09001E1BC069002DC81D /* RegisterProcessUITests.swift in Sources */,
-				9C987A6A1DB79826005515F4 /* snapshotUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1353,6 +1349,7 @@
 				9CC0D71F1E22AB15002E4E94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
