@@ -43,7 +43,7 @@
 		9C987A4F1DB79826005515F4 /* wallabag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C987A4D1DB79826005515F4 /* wallabag.xcdatamodeld */; };
 		9C987A511DB79826005515F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A501DB79826005515F4 /* Assets.xcassets */; };
 		9C987A541DB79826005515F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A521DB79826005515F4 /* LaunchScreen.storyboard */; };
-		9C987A6A1DB79826005515F4 /* wallabagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C987A691DB79826005515F4 /* wallabagUITests.swift */; };
+		9C987A6A1DB79826005515F4 /* snapshotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C987A691DB79826005515F4 /* snapshotUITests.swift */; };
 		9CA232301DFECE74006B29B8 /* light.css in Resources */ = {isa = PBXBuildFile; fileRef = 9CA2322F1DFECE74006B29B8 /* light.css */; };
 		9CBA6C601E16FC2B000B9AE6 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBA6C5F1E16FC2B000B9AE6 /* ShareViewController.swift */; };
 		9CBA6C631E16FC2B000B9AE6 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CBA6C611E16FC2B000B9AE6 /* MainInterface.storyboard */; };
@@ -56,6 +56,8 @@
 		9CBA6C781E170618000B9AE6 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C31DF841DD7B8FA0065875A /* UIImage.swift */; };
 		9CBA6C791E170620000B9AE6 /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CED08891DC15A9F004C18C5 /* Server.swift */; };
 		9CBA6C7A1E170620000B9AE6 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2192781DBF7F8800F628C2 /* Tag.swift */; };
+		9CC0D71A1E22AB15002E4E94 /* wallabagScreenshotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0D7191E22AB15002E4E94 /* wallabagScreenshotUITests.swift */; };
+		9CC0D7211E22AB55002E4E94 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEF3B31DD9EC5D00126D15 /* SnapshotHelper.swift */; };
 		9CC4B0611DC5361000BC6830 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4B0601DC5361000BC6830 /* Dictionary.swift */; };
 		9CCAC4011E0176CF002C6A66 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */; };
 		9CE112161DC26E8B00FA2EB7 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE112151DC26E8B00FA2EB7 /* CoreData.swift */; };
@@ -72,7 +74,6 @@
 		9CF1F2251DBE9D150086B98B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F2241DBE9D150086B98B /* LoginViewController.swift */; };
 		9CF91F161DE473B6006A417A /* ArticleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF91F151DE473B6006A417A /* ArticleManager.swift */; };
 		9CFCD96E1E1826190028C4EC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CBA6C6F1E1703A3000B9AE6 /* Alamofire.framework */; };
-		9CFEF3B41DD9EC5D00126D15 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEF3B31DD9EC5D00126D15 /* SnapshotHelper.swift */; };
 		AEDD1E205C0DF01C54999C21 /* Pods_wallabag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAE89D8A395291968A2E2A7 /* Pods_wallabag.framework */; };
 		DB5193211F1DB976C3862849 /* Pods_wallabagUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3678DDB92217E137039674C2 /* Pods_wallabagUITests.framework */; };
 /* End PBXBuildFile section */
@@ -100,6 +101,13 @@
 			remoteInfo = bagit;
 		};
 		9CBA6C711E1703E1000B9AE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C987A3B1DB79826005515F4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C987A421DB79826005515F4;
+			remoteInfo = wallabag;
+		};
+		9CC0D71C1E22AB15002E4E94 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9C987A3B1DB79826005515F4 /* Project object */;
 			proxyType = 1;
@@ -169,7 +177,7 @@
 		9C987A5A1DB79826005515F4 /* wallabagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C987A601DB79826005515F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C987A651DB79826005515F4 /* wallabagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C987A691DB79826005515F4 /* wallabagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wallabagUITests.swift; sourceTree = "<group>"; };
+		9C987A691DB79826005515F4 /* snapshotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = snapshotUITests.swift; sourceTree = "<group>"; };
 		9C987A6B1DB79826005515F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CA2322F1DFECE74006B29B8 /* light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = light.css; sourceTree = "<group>"; };
 		9CBA6C5D1E16FC2B000B9AE6 /* bagit.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = bagit.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +187,9 @@
 		9CBA6C6C1E17010E000B9AE6 /* wallabag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wallabag.entitlements; sourceTree = "<group>"; };
 		9CBA6C6D1E17011C000B9AE6 /* bagit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bagit.entitlements; sourceTree = "<group>"; };
 		9CBA6C6F1E1703A3000B9AE6 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/wallabag-fcirammgjylpzjcvizhrpwjyvjmq/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		9CC0D7171E22AB15002E4E94 /* wallabagScreenshotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagScreenshotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CC0D7191E22AB15002E4E94 /* wallabagScreenshotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wallabagScreenshotUITests.swift; sourceTree = "<group>"; };
+		9CC0D71B1E22AB15002E4E94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CC4B0601DC5361000BC6830 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		9CE112151DC26E8B00FA2EB7 /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
@@ -194,7 +205,7 @@
 		9CF1F2221DBE9B800086B98B /* ClientIdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientIdViewController.swift; sourceTree = "<group>"; };
 		9CF1F2241DBE9D150086B98B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9CF91F151DE473B6006A417A /* ArticleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleManager.swift; sourceTree = "<group>"; };
-		9CFEF3B31DD9EC5D00126D15 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		9CFEF3B31DD9EC5D00126D15 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = ../wallabagUITests/SnapshotHelper.swift; sourceTree = "<group>"; };
 		A6538EB964B457B5B3DC7B46 /* Pods-bagit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bagit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bagit/Pods-bagit.debug.xcconfig"; sourceTree = "<group>"; };
 		AFAE89D8A395291968A2E2A7 /* Pods_wallabag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96F6D5610DD6249AEA66D5F /* Pods_bagit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bagit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,6 +244,13 @@
 			files = (
 				9CFCD96E1E1826190028C4EC /* Alamofire.framework in Frameworks */,
 				4BE7652521A50A12EE8BCD5B /* Pods_bagit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CC0D7141E22AB15002E4E94 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +410,7 @@
 			isa = PBXGroup;
 			children = (
 				9CBA6C5E1E16FC2B000B9AE6 /* bagit */,
+				9CC0D7181E22AB15002E4E94 /* wallabagScreenshotUITests */,
 				37E0BE100D92CFD90F2A6716 /* Frameworks */,
 				5364F96E2A5E5163C06314B9 /* Pods */,
 				9C987A441DB79826005515F4 /* Products */,
@@ -408,6 +427,7 @@
 				9C987A5A1DB79826005515F4 /* wallabagTests.xctest */,
 				9C987A651DB79826005515F4 /* wallabagUITests.xctest */,
 				9CBA6C5D1E16FC2B000B9AE6 /* bagit.appex */,
+				9CC0D7171E22AB15002E4E94 /* wallabagScreenshotUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -447,9 +467,8 @@
 		9C987A681DB79826005515F4 /* wallabagUITests */ = {
 			isa = PBXGroup;
 			children = (
-				9CFEF3B31DD9EC5D00126D15 /* SnapshotHelper.swift */,
 				9C987A6B1DB79826005515F4 /* Info.plist */,
-				9C987A691DB79826005515F4 /* wallabagUITests.swift */,
+				9C987A691DB79826005515F4 /* snapshotUITests.swift */,
 				9CEC08FF1E1BC069002DC81D /* RegisterProcessUITests.swift */,
 			);
 			path = wallabagUITests;
@@ -464,6 +483,16 @@
 				9CBA6C641E16FC2B000B9AE6 /* Info.plist */,
 			);
 			path = bagit;
+			sourceTree = "<group>";
+		};
+		9CC0D7181E22AB15002E4E94 /* wallabagScreenshotUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9CFEF3B31DD9EC5D00126D15 /* SnapshotHelper.swift */,
+				9CC0D7191E22AB15002E4E94 /* wallabagScreenshotUITests.swift */,
+				9CC0D71B1E22AB15002E4E94 /* Info.plist */,
+			);
+			path = wallabagScreenshotUITests;
 			sourceTree = "<group>";
 		};
 		9CF1F21F1DBE96740086B98B /* Fonts */ = {
@@ -561,6 +590,24 @@
 			productReference = 9CBA6C5D1E16FC2B000B9AE6 /* bagit.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		9CC0D7161E22AB15002E4E94 /* wallabagScreenshotUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9CC0D7201E22AB15002E4E94 /* Build configuration list for PBXNativeTarget "wallabagScreenshotUITests" */;
+			buildPhases = (
+				9CC0D7131E22AB15002E4E94 /* Sources */,
+				9CC0D7141E22AB15002E4E94 /* Frameworks */,
+				9CC0D7151E22AB15002E4E94 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9CC0D71D1E22AB15002E4E94 /* PBXTargetDependency */,
+			);
+			name = wallabagScreenshotUITests;
+			productName = wallabagScreenshotUITests;
+			productReference = 9CC0D7171E22AB15002E4E94 /* wallabagScreenshotUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -603,6 +650,12 @@
 							};
 						};
 					};
+					9CC0D7161E22AB15002E4E94 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = G97URPCGB8;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9C987A421DB79826005515F4;
+					};
 				};
 			};
 			buildConfigurationList = 9C987A3E1DB79826005515F4 /* Build configuration list for PBXProject "wallabag" */;
@@ -622,6 +675,7 @@
 				9C987A591DB79826005515F4 /* wallabagTests */,
 				9C987A641DB79826005515F4 /* wallabagUITests */,
 				9CBA6C5C1E16FC2B000B9AE6 /* bagit */,
+				9CC0D7161E22AB15002E4E94 /* wallabagScreenshotUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -665,6 +719,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CBA6C631E16FC2B000B9AE6 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CC0D7151E22AB15002E4E94 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -895,8 +956,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CEC09001E1BC069002DC81D /* RegisterProcessUITests.swift in Sources */,
-				9C987A6A1DB79826005515F4 /* wallabagUITests.swift in Sources */,
-				9CFEF3B41DD9EC5D00126D15 /* SnapshotHelper.swift in Sources */,
+				9C987A6A1DB79826005515F4 /* snapshotUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -913,6 +973,15 @@
 				9CBA6C7A1E170620000B9AE6 /* Tag.swift in Sources */,
 				9CBA6C791E170620000B9AE6 /* Server.swift in Sources */,
 				9CBA6C781E170618000B9AE6 /* UIImage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9CC0D7131E22AB15002E4E94 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CC0D71A1E22AB15002E4E94 /* wallabagScreenshotUITests.swift in Sources */,
+				9CC0D7211E22AB55002E4E94 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -938,6 +1007,11 @@
 			isa = PBXTargetDependency;
 			target = 9C987A421DB79826005515F4 /* wallabag */;
 			targetProxy = 9CBA6C711E1703E1000B9AE6 /* PBXContainerItemProxy */;
+		};
+		9CC0D71D1E22AB15002E4E94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C987A421DB79826005515F4 /* wallabag */;
+			targetProxy = 9CC0D71C1E22AB15002E4E94 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1196,6 +1270,34 @@
 			};
 			name = Release;
 		};
+		9CC0D71E1E22AB15002E4E94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = G97URPCGB8;
+				INFOPLIST_FILE = wallabagScreenshotUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabagScreenshotUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = wallabag;
+			};
+			name = Debug;
+		};
+		9CC0D71F1E22AB15002E4E94 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = G97URPCGB8;
+				INFOPLIST_FILE = wallabagScreenshotUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabagScreenshotUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = wallabag;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1243,6 +1345,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		9CC0D7201E22AB15002E4E94 /* Build configuration list for PBXNativeTarget "wallabagScreenshotUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9CC0D71E1E22AB15002E4E94 /* Debug */,
+				9CC0D71F1E22AB15002E4E94 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 

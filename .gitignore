@@ -63,7 +63,7 @@ fastlane/report.xml
 fastlane/Deliverfile
 fastlane/Appfile
 #fastlane/Preview.html
-Preview.html
+#Preview.html
 #fastlane/screenshots
 fastlane/test_output
 

@@ -1,6 +1,6 @@
 We add some new cool features like :
 	- Theme
-	- ability to justify article or not
+	- Ability to justify article or not
 	- Share extension
 	- Add some icon on article for unread or favorite
 	- Support non standart port
