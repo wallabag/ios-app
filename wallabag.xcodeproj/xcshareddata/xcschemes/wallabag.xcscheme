@@ -53,6 +53,16 @@
                referenceType = "1">
             </LocationScenarioReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9CC0D7161E22AB15002E4E94"
+               BuildableName = "wallabagScreenshotUITests.xctest"
+               BlueprintName = "wallabagScreenshotUITests"
+               ReferencedContainer = "container:wallabag.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

@@ -1,9 +1,8 @@
-- Fix crash on start 
-- Fix add article
+We add some new cool features like :
+	- Theme
+	- Ability to justify article or not
+	- Share extension
+	- Add some icon on article for unread or favorite
+	- Support non standart port
 
-- Add menu About
-- Add menu Disconnect
-- Add menu parameter, now you can choose your favorite default opening view
-- Now you can add link from app
-- More help in registering processus
-- Fix bug rendering video in article view
+And Bug fix

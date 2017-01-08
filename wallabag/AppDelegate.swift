@@ -20,14 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let args = ProcessInfo.processInfo.arguments
         if args.contains("RESET_APPLICATION") {
             CoreData.deleteAll("Server")
+            Setting.setTheme(value: .white)
+            Setting.setDefaultMode(mode: .allArticles)
         }
 
         UIBarButtonItem.appearance().setTitleTextAttributes([
             NSFontAttributeName: UIFont(name: "UbuntuTitling-Bold", size: 15.0)!
         ], for: .normal)
 
-        //NetworkActivityIndicatorManager.shared.isEnabled = true
-        //NetworkActivityIndicatorManager.shared.startDelay = 0.1
+        NetworkActivityIndicatorManager.shared.isEnabled = true
+        NetworkActivityIndicatorManager.shared.startDelay = 0.1
 
         WallabagApi.mode = Setting.getDefaultMode()
 
