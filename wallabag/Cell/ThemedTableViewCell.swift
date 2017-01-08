@@ -15,6 +15,8 @@ class ThemedTableViewCell: UITableViewCell {
         NotificationCenter.default.addObserver(forName: Notification.Name.themeUpdated, object: nil, queue: nil) { object in
             self.setupTheme()
         }
+
+        setupTheme()
     }
 
     /**
@@ -23,5 +25,8 @@ class ThemedTableViewCell: UITableViewCell {
     func setupTheme() {
         backgroundColor = Setting.getTheme().backgroundColor
         textLabel?.textColor = Setting.getTheme().color
+
+        selectedBackgroundView = UIView()
+        selectedBackgroundView?.backgroundColor = Setting.getTheme().backgroundSelectedColor
     }
 }

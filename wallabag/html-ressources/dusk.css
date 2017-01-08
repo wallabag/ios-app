@@ -1,16 +1,16 @@
 
 body {
-    color: #999999;
-    background: #222;
+    color: #a0a0a0;
+    background: #3c3c3c;
 }
 
 ::selection {
-    color: #999999;
+    color: #a0a0a0;
     background: #111111;
 }
 
 p, li {
-    color: #EEE;
+    color: #a0a0a0;
 }
 
 a {

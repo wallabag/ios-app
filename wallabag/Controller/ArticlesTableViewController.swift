@@ -25,13 +25,17 @@ final class ArticlesTableViewController: UITableViewController {
 
     fileprivate func updateUi() {
         title = WallabagApi.mode.humainReadable()
+        navigationController?.navigationBar.setBackgroundImage(Setting.getTheme().navigationBarBackground, for: .default)
+        tableView.backgroundColor = Setting.getTheme().backgroundColor
+        for row in 0 ... tableView.numberOfRows(inSection: 0) {
+            tableView.cellForRow(at: IndexPath(row: row, section: 0))?.backgroundColor = Setting.getTheme().backgroundColor
+        }
     }
 
     @IBOutlet weak var menu: UIBarButtonItem!
     @IBOutlet weak var add: UIBarButtonItem!
     @IBAction func backFromParameter(segue: UIStoryboardSegue) {
-        navigationController?.navigationBar.setBackgroundImage(Setting.getTheme().navigationBarBackground, for: .default)
-        tableView.backgroundColor = Setting.getTheme().backgroundColor
+        updateUi()
     }
 
     @IBAction func unarchivedArticles(segue: UIStoryboardSegue) {
@@ -78,8 +82,6 @@ final class ArticlesTableViewController: UITableViewController {
         super.viewDidLoad()
         refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         handleRefresh()
-
-        tableView.backgroundColor = Setting.getTheme().backgroundColor
     }
 
     // MARK: - Table view data source

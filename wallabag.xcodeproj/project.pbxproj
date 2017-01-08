@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		01971931BCF414226F407E96 /* Pods_wallabagTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C75DD9CC88FFD838573A351 /* Pods_wallabagTests.framework */; };
 		4BE7652521A50A12EE8BCD5B /* Pods_bagit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96F6D5610DD6249AEA66D5F /* Pods_bagit.framework */; };
+		621665201E0CFC2600438EE2 /* white.css in Resources */ = {isa = PBXBuildFile; fileRef = 6216651F1E0CFC2600438EE2 /* white.css */; };
+		622923E91E10F8A5007B2307 /* dusk.css in Resources */ = {isa = PBXBuildFile; fileRef = 622923E81E10F8A5007B2307 /* dusk.css */; };
 		9C181B861DB8D56600D941EB /* WallabagApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C181B851DB8D56600D941EB /* WallabagApi.swift */; };
 		9C181B881DB8E27000D941EB /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C181B871DB8E27000D941EB /* ArticlesTableViewController.swift */; };
 		9C1EBA061DC3E9CA00FAE195 /* WallabagApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1EBA051DC3E9CA00FAE195 /* WallabagApiTests.swift */; };
@@ -124,6 +126,8 @@
 		081F547345F9E70248A02531 /* Pods-bagit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bagit.release.xcconfig"; path = "Pods/Target Support Files/Pods-bagit/Pods-bagit.release.xcconfig"; sourceTree = "<group>"; };
 		33649D7F894D49168B9683D2 /* Pods-wallabagUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3678DDB92217E137039674C2 /* Pods_wallabagUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6216651F1E0CFC2600438EE2 /* white.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = white.css; sourceTree = "<group>"; };
+		622923E81E10F8A5007B2307 /* dusk.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = dusk.css; sourceTree = "<group>"; };
 		7438BB540252BD33025E60F9 /* Pods-wallabagTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests.debug.xcconfig"; sourceTree = "<group>"; };
 		94D0C2FA2C870EE989B2406D /* Pods-wallabagTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests.release.xcconfig"; sourceTree = "<group>"; };
 		9B9EB64D938632DA7CDDFD2A /* Pods-wallabagUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -367,6 +371,8 @@
 				9C4537901DD1236B00FF6CFE /* main.css */,
 				9C4537911DD1236B00FF6CFE /* ratatouille.css */,
 				9C77751C1DFB72AD00CB775F /* justify.css */,
+				6216651F1E0CFC2600438EE2 /* white.css */,
+				622923E81E10F8A5007B2307 /* dusk.css */,
 			);
 			path = "html-ressources";
 			sourceTree = "<group>";
@@ -627,11 +633,13 @@
 			files = (
 				9CF1F21E1DBE966B0086B98B /* UbuntuTitling-Bold.ttf in Resources */,
 				9CA232301DFECE74006B29B8 /* light.css in Resources */,
+				622923E91E10F8A5007B2307 /* dusk.css in Resources */,
 				9C987A541DB79826005515F4 /* LaunchScreen.storyboard in Resources */,
 				9C77751D1DFB72AD00CB775F /* justify.css in Resources */,
 				9C4537921DD1236B00FF6CFE /* article.html in Resources */,
 				9C4537941DD1236B00FF6CFE /* main.css in Resources */,
 				9C4537951DD1236B00FF6CFE /* ratatouille.css in Resources */,
+				621665201E0CFC2600438EE2 /* white.css in Resources */,
 				9C987A511DB79826005515F4 /* Assets.xcassets in Resources */,
 				9C987A4C1DB79826005515F4 /* Main.storyboard in Resources */,
 				9C4537931DD1236B00FF6CFE /* night.css in Resources */,
