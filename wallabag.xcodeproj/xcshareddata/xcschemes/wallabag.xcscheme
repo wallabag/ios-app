@@ -54,7 +54,7 @@
             </LocationScenarioReference>
          </TestableReference>
          <TestableReference
-            skipped = "NO">
+            skipped = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9CC0D7161E22AB15002E4E94"
