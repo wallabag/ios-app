@@ -16,7 +16,10 @@ final class ImageDownloader {
 
     static func downloadImage(fromString urlString: String, completion: @escaping CompletionImageDownloaderHandler) {
         if cache.object(forKey: urlString as NSString) == nil {
-            URLSession.shared.dataTask(with: URL(string: urlString)!) { data, response, error in
+            guard let url = URL(string: urlString) else {
+                return
+            }
+            URLSession.shared.dataTask(with: url) { data, response, error in
                 if let imageData = data as Data? {
                     guard let image = UIImage(data: imageData) else {
                         return
