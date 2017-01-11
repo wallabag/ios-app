@@ -33,7 +33,7 @@ platform :ios do
     cert
     sigh(force: true)
     gym(scheme: "wallabag") # Build your app - more options available
-    deliver(force: true)
+    deliver(skip_binary_upload: true, force: true, automatic_release: true)
   end
 
   # You can define as many lanes as you want
