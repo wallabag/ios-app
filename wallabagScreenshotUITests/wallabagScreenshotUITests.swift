@@ -1,11 +1,10 @@
-
 //  Created by maxime marinel on 19/10/2016.
 //  Copyright © 2016 maxime marinel. All rights reserved.
 //
 
 import XCTest
 
-class snapshotUITests: XCTestCase {
+class SnapshotUITests: XCTestCase {
 
     override func setUp() {
         super.setUp()

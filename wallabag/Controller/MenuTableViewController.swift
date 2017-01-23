@@ -14,4 +14,3 @@ final class MenuTableViewController: UITableViewController {
         tableView.backgroundColor = Setting.getTheme().backgroundColor
     }
 }
-

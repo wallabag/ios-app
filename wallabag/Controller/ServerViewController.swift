@@ -36,8 +36,12 @@ final class ServerViewController: UIViewController {
         guard let url = URL(string: string) else { return false }
         if !UIApplication.shared.canOpenURL(url) { return false }
 
-        let regex = try! NSRegularExpression(pattern: "(http|https)://", options: [])
+        do {
+            let regex = try NSRegularExpression(pattern: "(http|https)://", options: [])
 
-        return 1 == regex.matches(in: string, options: [], range: NSRange(location: 0, length: string.characters.count)).count
+            return 1 == regex.matches(in: string, options: [], range: NSRange(location: 0, length: string.characters.count)).count
+        } catch {
+            return false
+        }
     }
 }

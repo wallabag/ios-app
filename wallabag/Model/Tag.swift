@@ -18,12 +18,18 @@ struct Tag: Hashable {
     }
 
     init(fromDictionary: [String: Any]) {
-        id = fromDictionary["id"] as! Int
-        label = fromDictionary["label"] as! String
-        slug = fromDictionary["slug"] as! String
+        guard let id = fromDictionary["id"] as? Int,
+            let label = fromDictionary["label"] as? String,
+            let slug = fromDictionary["slug"] as? String else {
+            fatalError("Invalid tag")
+        }
+
+        self.id = id
+        self.label = label
+        self.slug = slug
     }
 }
 
-func ==(tag1: Tag, tag2: Tag) -> Bool {
+func == (tag1: Tag, tag2: Tag) -> Bool {
     return tag1.id == tag2.id
 }

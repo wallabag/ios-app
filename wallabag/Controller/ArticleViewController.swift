@@ -11,7 +11,7 @@ import TUSafariActivity
 
 final class ArticleViewController: UIViewController {
 
-    var delegate: ArticlesTableViewController?
+    weak var delegate: ArticlesTableViewController?
     var index: IndexPath!
     var update: Bool = true
     var article: Article! {
@@ -21,14 +21,14 @@ final class ArticleViewController: UIViewController {
     }
 
     @IBAction func read(_ sender: Any) {
-        WallabagApi.patchArticle(article, withParamaters: ["archive": (!article.is_archived).hashValue]) { article in
+        WallabagApi.patchArticle(article, withParamaters: ["archive": (!article.isArchived).hashValue]) { article in
             self.article = article
             _ = self.navigationController?.popViewController(animated: true)
         }
     }
 
     @IBAction func star(_ sender: Any) {
-        WallabagApi.patchArticle(article, withParamaters: ["starred": (!article.is_starred).hashValue]) { article in
+        WallabagApi.patchArticle(article, withParamaters: ["starred": (!article.isStarred).hashValue]) { article in
             self.article = article
         }
     }
@@ -85,7 +85,7 @@ final class ArticleViewController: UIViewController {
     }
 
     private func updateUi() {
-        readButton?.image = article.is_archived ? #imageLiteral(resourceName: "readed") : #imageLiteral(resourceName: "unreaded")
-        starButton?.image = article.is_starred ? #imageLiteral(resourceName: "starred") : #imageLiteral(resourceName: "unstarred")
+        readButton?.image = article.isArchived ? #imageLiteral(resourceName: "readed") : #imageLiteral(resourceName: "unreaded")
+        starButton?.image = article.isStarred ? #imageLiteral(resourceName: "starred") : #imageLiteral(resourceName: "unstarred")
     }
 }

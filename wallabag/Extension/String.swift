@@ -10,12 +10,10 @@ import Foundation
 
 extension String {
     var date: Date? {
-        get {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
 
-            return dateFormatter.date(from: self)
-        }
+        return dateFormatter.date(from: self)
     }
 
     var ucFirst: String {

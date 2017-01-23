@@ -23,21 +23,26 @@ final class LoginViewController: UIViewController {
 
         sender.isEnabled = false
 
-        WallabagApi.requestToken() { success in
+        WallabagApi.requestToken { success in
             if success {
-                let newServer = NSEntityDescription.insertNewObject(forEntityName: "Server", into: CoreData.context) as! Server
+                if let newServer = NSEntityDescription.insertNewObject(forEntityName: "Server", into: CoreData.context) as? Server {
 
-                newServer.host = self.server
-                newServer.client_id = self.clientId
-                newServer.client_secret = self.clientSecret
-                newServer.username = self.username.text!
-                newServer.password = self.password.text!
+                    newServer.host = self.server
+                    newServer.client_id = self.clientId
+                    newServer.client_secret = self.clientSecret
+                    newServer.username = self.username.text!
+                    newServer.password = self.password.text!
 
-                try! CoreData.save()
+                    do {
+                        try CoreData.save()
+                    } catch {
+                        fatalError("Error saving server")
+                    }
 
-                Setting.set(server: newServer)
+                    Setting.set(server: newServer)
 
-                self.performSegue(withIdentifier: "toArticles", sender: nil)
+                    self.performSegue(withIdentifier: "toArticles", sender: nil)
+                }
             } else {
                 let alert = UIAlertController(title: "Login", message: "Error", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

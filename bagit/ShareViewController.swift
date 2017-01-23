@@ -21,9 +21,21 @@ class ShareViewController: SLComposeServiceViewController {
         if let item = extensionContext?.inputItems.first as? NSExtensionItem {
             if let itemProvider = item.attachments?.first as? NSItemProvider {
                 if itemProvider.hasItemConformingToTypeIdentifier("public.url") {
-                    itemProvider.loadItem(forTypeIdentifier: "public.url", options: nil, completionHandler: { (url, error) -> Void in
+                    itemProvider.loadItem(forTypeIdentifier: "public.url", options: nil, completionHandler: { (url, _) -> Void in
                         if let shareURL = url as? NSURL {
-                            WallabagApi.configureApi(endpoint: self.user?.value(forKey: "host") as! String, clientId: self.user?.value(forKey: "clientId") as! String, clientSecret: self.user?.value(forKey: "clientSecret") as! String, username: self.user?.value(forKey: "username") as! String, password: self.user?.value(forKey: "password") as! String)
+                            guard let server = self.user?.value(forKey: "host") as? String,
+                                let clientId = self.user?.value(forKey: "clientId") as? String,
+                                let clientSecret = self.user?.value(forKey: "clientSecret") as? String,
+                                let username = self.user?.value(forKey: "username") as? String,
+                                let password = self.user?.value(forKey: "password") as? String
+                                else {
+                                return
+                            }
+                            WallabagApi.configureApi(endpoint: server,
+                                clientId: clientId,
+                                clientSecret: clientSecret,
+                                username: username,
+                                password: password)
                             WallabagApi.addArticle(shareURL as URL, completion: { _ in
                                 self.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
                             })

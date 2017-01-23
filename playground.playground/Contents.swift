@@ -49,9 +49,7 @@ manager.set(articles: [article1, article2, article3])
 manager.sort()
 manager[1].id
 
-
 let date = Date()
 let other = Calendar.current.date(byAdding: .second, value: 3600 - 60, to: Date())!
 
 other > date
-

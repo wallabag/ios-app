@@ -508,6 +508,7 @@
 			buildConfigurationList = 9C987A6E1DB79826005515F4 /* Build configuration list for PBXNativeTarget "wallabag" */;
 			buildPhases = (
 				675CB1B13E826E9746D3DE45 /* [CP] Check Pods Manifest.lock */,
+				9C32BF121E369FBB00199DF2 /* ShellScript */,
 				9C987A3F1DB79826005515F4 /* Sources */,
 				9C987A401DB79826005515F4 /* Frameworks */,
 				9C987A411DB79826005515F4 /* Resources */,
@@ -818,6 +819,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		9C32BF121E369FBB00199DF2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		BDE3CDF5182757371AC5B97E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

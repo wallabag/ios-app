@@ -20,7 +20,7 @@ class ArticleManagerTests: XCTestCase {
         "tags": [],
         "user_email": "user@mail.com",
         "user_id": 1,
-        "user_name": "wallabag",
+        "user_name": "wallabag"
     ]
     )
 
@@ -33,7 +33,7 @@ class ArticleManagerTests: XCTestCase {
         "tags": [],
         "user_email": "user@mail.com",
         "user_id": 1,
-        "user_name": "wallabag",
+        "user_name": "wallabag"
     ]
     )
 

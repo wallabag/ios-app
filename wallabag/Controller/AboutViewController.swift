@@ -16,8 +16,8 @@ class AboutViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = Setting.getTheme().backgroundColor
 
-        let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
-        let build = Bundle.main.infoDictionary!["CFBundleVersion"] as! String
+        let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? "0"
+        let build = Bundle.main.infoDictionary!["CFBundleVersion"] as? String ?? "0"
 
         versionText.text = String(format: "Version %@ build %@", arguments: [version, build])
     }

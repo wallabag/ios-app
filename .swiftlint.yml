@@ -1,0 +1,10 @@
+excluded:
+  - Pods
+  - wallabag/Model/Server.swift
+  - wallabag/Lib/CoreData.swift
+line_length: 300
+variable_name:
+  excluded:
+    - id
+    - to
+    - at

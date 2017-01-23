@@ -10,18 +10,14 @@ import UIKit
 
 extension Int {
     var readingTime: String {
-        get {
-            let date = NSDate(timeIntervalSince1970: TimeInterval(self * 60))
-            let dayTimePeriodFormatter = DateFormatter()
-            dayTimePeriodFormatter.dateFormat = "mm:ss"
+        let date = NSDate(timeIntervalSince1970: TimeInterval(self * 60))
+        let dayTimePeriodFormatter = DateFormatter()
+        dayTimePeriodFormatter.dateFormat = "mm:ss"
 
-            let dateString = dayTimePeriodFormatter.string(from: date as Date)
-
-            return dateString
-        }
+        return dayTimePeriodFormatter.string(from: date as Date)
     }
-    
-    var rgb: CGFloat{
+
+    var rgb: CGFloat {
         return CGFloat(self) / 255.0
     }
 }

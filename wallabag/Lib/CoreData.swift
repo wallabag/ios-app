@@ -16,7 +16,7 @@ final class CoreData: NSObject {
     @available(iOS 10.0, *)
     static var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: containerName!)
-        container.loadPersistentStores { storeDescription, error in
+        container.loadPersistentStores { _, error in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }

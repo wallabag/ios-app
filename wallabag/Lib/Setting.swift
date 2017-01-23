@@ -10,33 +10,33 @@ import Foundation
 
 class Setting {
 
-    fileprivate enum const: String {
+    enum Const: String {
         case defaultMode
         case justifyArticle
         case articleTheme
     }
 
     static func getDefaultMode() -> RetrieveMode {
-        guard let value = UserDefaults.standard.string(forKey: const.defaultMode.rawValue) else {
+        guard let value = UserDefaults.standard.string(forKey: Const.defaultMode.rawValue) else {
             return RetrieveMode.allArticles
         }
         return RetrieveMode(rawValue: value)!
     }
 
     static func setDefaultMode(mode: RetrieveMode) {
-        UserDefaults.standard.set(mode.rawValue, forKey: const.defaultMode.rawValue)
+        UserDefaults.standard.set(mode.rawValue, forKey: Const.defaultMode.rawValue)
     }
 
     static func isJustifyArticle() -> Bool {
-        return UserDefaults.standard.bool(forKey: const.justifyArticle.rawValue)
+        return UserDefaults.standard.bool(forKey: Const.justifyArticle.rawValue)
     }
 
     static func setJustifyArticle(value: Bool) {
-        UserDefaults.standard.set(value, forKey: const.justifyArticle.rawValue)
+        UserDefaults.standard.set(value, forKey: Const.justifyArticle.rawValue)
     }
 
     static func getTheme() -> ThemeManager.Theme {
-        guard let value = UserDefaults.standard.string(forKey: const.articleTheme.rawValue) else {
+        guard let value = UserDefaults.standard.string(forKey: Const.articleTheme.rawValue) else {
             return ThemeManager.Theme.light
         }
 
@@ -44,7 +44,7 @@ class Setting {
     }
 
     static func setTheme(value: ThemeManager.Theme) {
-        UserDefaults.standard.set(value.rawValue, forKey: const.articleTheme.rawValue)
+        UserDefaults.standard.set(value.rawValue, forKey: Const.articleTheme.rawValue)
         ThemeManager.apply(theme: value)
     }
 

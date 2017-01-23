@@ -19,7 +19,7 @@ final class ImageDownloader {
             guard let url = URL(string: urlString) else {
                 return
             }
-            URLSession.shared.dataTask(with: url) { data, response, error in
+            URLSession.shared.dataTask(with: url) { data, _, _ in
                 if let imageData = data as Data? {
                     guard let image = UIImage(data: imageData) else {
                         return

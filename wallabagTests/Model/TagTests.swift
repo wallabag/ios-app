@@ -15,7 +15,7 @@ class TagTests: XCTestCase {
         let tag = Tag(fromDictionary: [
             "id": 42,
             "label": "My tag",
-            "slug": "my-tag",
+            "slug": "my-tag"
         ])
 
         XCTAssertEqual(42, tag.id)

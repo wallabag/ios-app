@@ -43,11 +43,15 @@ struct ArticleManager {
     }
 
     static func contentForWebView(_ article: Article) -> String {
-        let html = try! String(contentsOfFile: Bundle.main.path(forResource: "article", ofType: "html")!)
+        do {
+            let html = try String(contentsOfFile: Bundle.main.path(forResource: "article", ofType: "html")!)
 
-        let justify = Setting.isJustifyArticle() ? "justify.css" : ""
-        let theme = Setting.getTheme()
+            let justify = Setting.isJustifyArticle() ? "justify.css" : ""
+            let theme = Setting.getTheme()
 
-        return String(format: html, arguments: [justify, theme.rawValue, article.title, article.content])
+            return String(format: html, arguments: [justify, theme.rawValue, article.title, article.content])
+        } catch {
+            fatalError("Unable to load article view")
+        }
     }
 }

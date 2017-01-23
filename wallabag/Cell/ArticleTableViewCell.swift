@@ -21,9 +21,9 @@ class ArticleTableViewCell: ThemedTableViewCell {
         setupTheme()
 
         title.text = article.title
-        website.text = article.domain_name
+        website.text = article.domainName
 
-        if !article.is_archived {
+        if !article.isArchived {
             title.font = UIFont.boldSystemFont(ofSize: 16.0)
             readed.image = #imageLiteral(resourceName: "unreaded")
         } else {
@@ -31,15 +31,15 @@ class ArticleTableViewCell: ThemedTableViewCell {
             readed.image = #imageLiteral(resourceName: "readed")
         }
 
-        starred.image = article.is_starred ? #imageLiteral(resourceName: "starred") : #imageLiteral(resourceName: "unstarred")
+        starred.image = article.isStarred ? #imageLiteral(resourceName: "starred") : #imageLiteral(resourceName: "unstarred")
 
-        if let picture = article.preview_picture {
+        if let picture = article.previewPicture {
             previewImage.image(fromString: picture)
         } else {
             previewImage.image = #imageLiteral(resourceName: "logo-icon-black-no-bg")
         }
 
-        readingTime.text = "Reading time \(article.reading_time.readingTime)"
+        readingTime.text = "Reading time \(article.readingTime.readingTime)"
     }
 
     override func setupTheme() {

@@ -27,29 +27,29 @@ class ArticleTests: XCTestCase {
                 [
                     "id": 42,
                     "label": "My tag",
-                    "slug": "my-tag",
-                ],
+                    "slug": "my-tag"
+                ]
             ],
             "user_email": "user@mail.com",
             "user_id": 1,
-            "user_name": "wallabag",
+            "user_name": "wallabag"
         ]
         )
 
         XCTAssertEqual("my title", article.title)
         XCTAssertEqual("<b>awesome content</b>", article.content)
-        XCTAssertEqual("wallabag.org", article.domain_name)
+        XCTAssertEqual("wallabag.org", article.domainName)
         XCTAssertEqual(42, article.id)
-        XCTAssertEqual(false, article.is_archived)
-        XCTAssertEqual(false, article.is_starred)
+        XCTAssertEqual(false, article.isArchived)
+        XCTAssertEqual(false, article.isStarred)
         XCTAssertEqual("", article.language)
         XCTAssertEqual("txt", article.mimetype)
-        XCTAssertNil(article.preview_picture)
-        XCTAssertEqual(2, article.reading_time)
+        XCTAssertNil(article.previewPicture)
+        XCTAssertEqual(2, article.readingTime)
         XCTAssertEqual("", article.url)
-        XCTAssertEqual("user@mail.com", article.user_email)
-        XCTAssertEqual(1, article.user_id)
-        XCTAssertEqual("wallabag", article.user_name)
+        XCTAssertEqual("user@mail.com", article.userEmail)
+        XCTAssertEqual(1, article.userId)
+        XCTAssertEqual("wallabag", article.userName)
         XCTAssertEqual(1, article.tags.count)
         XCTAssertEqual(42, article.tags.first!.id)
         XCTAssertEqual("My tag", article.tags.first!.label)
@@ -66,7 +66,7 @@ class ArticleTests: XCTestCase {
             "tags": [],
             "user_email": "user@mail.com",
             "user_id": 1,
-            "user_name": "wallabag",
+            "user_name": "wallabag"
         ]
         )
 

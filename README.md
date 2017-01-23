@@ -4,5 +4,5 @@ wallabag app for iOS (for wallabag v2)
 # Tools used
 ## Project organizer
 https://github.com/venmo/synx
-## Code formatter 
-https://github.com/nicklockwood/SwiftFormat
+## Lint 
+with SwiftLint
