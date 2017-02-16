@@ -69,6 +69,16 @@ final class WallabagApi {
         configured = true
     }
 
+    static func configureApi(from server: Server) {
+        self.endpoint = server.host
+        self.clientId = server.client_id
+        self.clientSecret = server.client_secret
+        self.username = server.username
+        self.password = server.password
+
+        configured = true
+    }
+
     static func requestToken(_ completion: @escaping(_ success: Bool) -> Void) {
         let parameters = ["grant_type": "password", "client_id": clientId!, "client_secret": clientSecret!, "username": username!, "password": password!]
 

@@ -15,11 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        CoreData.containerName = "wallabag"
-
         let args = ProcessInfo.processInfo.arguments
         if args.contains("RESET_APPLICATION") {
-            CoreData.deleteAll("Server")
+            Setting.deleteServer()
             Setting.setTheme(value: .white)
             Setting.setDefaultMode(mode: .allArticles)
         }
@@ -51,6 +49,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        CoreData.saveContext()
     }
 }

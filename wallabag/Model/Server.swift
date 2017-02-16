@@ -6,20 +6,16 @@
 //  Copyright © 2016 maxime marinel. All rights reserved.
 //
 
-import CoreData
 import Foundation
 
-@objc(Server)
-class Server: NSManagedObject {
+struct Server {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Server> {
-        return NSFetchRequest<Server>(entityName: "Server")
-    }
 
-    @NSManaged var host: String
-    @NSManaged var client_secret: String
-    @NSManaged var client_id: String
-    @NSManaged var username: String
-    @NSManaged var password: String
+
+var host: String
+ var client_secret: String
+ var client_id: String
+ var username: String
+var password: String
 
 }
