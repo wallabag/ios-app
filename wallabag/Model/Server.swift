@@ -9,13 +9,9 @@
 import Foundation
 
 struct Server {
-
-
-
-var host: String
- var client_secret: String
- var client_id: String
- var username: String
-var password: String
-
+    var host: String
+    var client_secret: String
+    var client_id: String
+    var username: String
+    var password: String
 }

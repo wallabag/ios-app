@@ -18,22 +18,20 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
 
     @IBAction func login(_ sender: UIButton) {
-        WallabagApi.configureApi(endpoint: server, clientId: clientId, clientSecret: clientSecret, username: username.text!, password: password.text!)
+        let server = Server(host: self.server,
+                            client_secret: self.clientSecret,
+                            client_id: self.clientId,
+                            username: self.username.text!,
+                            password: self.password.text!
+        )
 
+        WallabagApi.configureApi(from: server)
         sender.isEnabled = false
 
         WallabagApi.requestToken { success in
             if success {
-                let server = Server(host: self.server,
-                                    client_secret: self.clientSecret,
-                                    client_id: self.clientId,
-                                    username: self.username.text!,
-                                    password: self.password.text!
-                )
                 Setting.set(server: server)
-
                 self.performSegue(withIdentifier: "toArticles", sender: nil)
-
             } else {
                 let alert = UIAlertController(title: "Login", message: "Error", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

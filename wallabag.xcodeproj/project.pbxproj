@@ -38,6 +38,7 @@
 		9C75961E1DBD59330096614B /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75961D1DBD59330096614B /* ArticleViewController.swift */; };
 		9C77751D1DFB72AD00CB775F /* justify.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C77751C1DFB72AD00CB775F /* justify.css */; };
 		9C8311861E06F56C004ACD5D /* ThemedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8311851E06F56C004ACD5D /* ThemedTableViewCell.swift */; };
+		9C9034881E5A26D90074540B /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */; };
 		9C987A471DB79826005515F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C987A461DB79826005515F4 /* AppDelegate.swift */; };
 		9C987A4C1DB79826005515F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A4A1DB79826005515F4 /* Main.storyboard */; };
 		9C987A4F1DB79826005515F4 /* wallabag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C987A4D1DB79826005515F4 /* wallabag.xcdatamodeld */; };
@@ -58,8 +59,9 @@
 		9CC0D71A1E22AB15002E4E94 /* wallabagScreenshotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0D7191E22AB15002E4E94 /* wallabagScreenshotUITests.swift */; };
 		9CC0D7211E22AB55002E4E94 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEF3B31DD9EC5D00126D15 /* SnapshotHelper.swift */; };
 		9CC4B0611DC5361000BC6830 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4B0601DC5361000BC6830 /* Dictionary.swift */; };
-		9CCAC4011E0176CF002C6A66 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */; };
 		9CE112181DC293C300FA2EB7 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE112171DC293C300FA2EB7 /* ImageDownloader.swift */; };
+		9CE19B2F1E58654E00C40532 /* BearerTokenAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE19B2E1E58654E00C40532 /* BearerTokenAdapter.swift */; };
+		9CE19B301E58660E00C40532 /* BearerTokenAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE19B2E1E58654E00C40532 /* BearerTokenAdapter.swift */; };
 		9CE369741DE632030005E20E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE369731DE632030005E20E /* SettingsTableViewController.swift */; };
 		9CE369761DE63D030005E20E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE369751DE63D030005E20E /* Setting.swift */; };
 		9CE9F2061DE2151B002E06F5 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE9F2051DE2151B002E06F5 /* AboutViewController.swift */; };
@@ -190,6 +192,7 @@
 		9CC4B0601DC5361000BC6830 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		9CE112171DC293C300FA2EB7 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		9CE19B2E1E58654E00C40532 /* BearerTokenAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BearerTokenAdapter.swift; sourceTree = "<group>"; };
 		9CE369731DE632030005E20E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		9CE369751DE63D030005E20E /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		9CE9F2051DE2151B002E06F5 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -288,6 +291,7 @@
 				9CF91F151DE473B6006A417A /* ArticleManager.swift */,
 				9CE369751DE63D030005E20E /* Setting.swift */,
 				9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */,
+				9CE19B2E1E58654E00C40532 /* BearerTokenAdapter.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -929,6 +933,7 @@
 				9CF1F2231DBE9B800086B98B /* ClientIdViewController.swift in Sources */,
 				9CF1F2211DBE97D80086B98B /* ServerViewController.swift in Sources */,
 				9CE369761DE63D030005E20E /* Setting.swift in Sources */,
+				9C9034881E5A26D90074540B /* ThemeManager.swift in Sources */,
 				9C7596191DBB540D0096614B /* Article.swift in Sources */,
 				9C181B861DB8D56600D941EB /* WallabagApi.swift in Sources */,
 				9CE9F2061DE2151B002E06F5 /* AboutViewController.swift in Sources */,
@@ -940,7 +945,7 @@
 				9C298B131E0BF8F400B72503 /* ThemeChoiceTableViewController.swift in Sources */,
 				9C987A471DB79826005515F4 /* AppDelegate.swift in Sources */,
 				9C987A4F1DB79826005515F4 /* wallabag.xcdatamodeld in Sources */,
-				9CCAC4011E0176CF002C6A66 /* ThemeManager.swift in Sources */,
+				9CE19B2F1E58654E00C40532 /* BearerTokenAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -978,6 +983,7 @@
 				9CBA6C741E1705CE000B9AE6 /* Article.swift in Sources */,
 				9CBA6C7A1E170620000B9AE6 /* Tag.swift in Sources */,
 				9CBA6C791E170620000B9AE6 /* Server.swift in Sources */,
+				9CE19B301E58660E00C40532 /* BearerTokenAdapter.swift in Sources */,
 				9CBA6C781E170618000B9AE6 /* UIImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

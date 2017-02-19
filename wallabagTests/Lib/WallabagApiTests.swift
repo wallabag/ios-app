@@ -15,7 +15,12 @@ class WallabagApiTests: XCTestCase {
     override func setUp() {
         super.setUp()
 
-        WallabagApi.configureApi(endpoint: "http://wallabag.maxime.marinel.me", clientId: "2_2vw9bl00nn6sk4skscc408wswk80gscg8o88swsw8ow4wkgccs", clientSecret: "30vyapj31jgg4cgw8s00k0go4cc0osgk0048cwooow4cc8o004", username: "dev", password: "dev")
+        let server = Server(host: "http://wallabag.maxime.marinel.me",
+                            client_secret: "2_2vw9bl00nn6sk4skscc408wswk80gscg8o88swsw8ow4wkgccs",
+                            client_id: "30vyapj31jgg4cgw8s00k0go4cc0osgk0048cwooow4cc8o004",
+                            username: "dev", password: "dev")
+
+        WallabagApi.configureApi(from: server)
     }
 
     override func tearDown() {
