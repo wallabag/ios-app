@@ -80,9 +80,9 @@ final class WallabagApi {
         sessionManager.request(endpoint! + "/api/entries/" + String(article.id), method: .patch, parameters: withParameters)
             .validate()
             .responseJSON { response in
-            if let JSON = response.result.value as? [String: Any] {
-                completion(Article(fromDictionary: JSON))
-            }
+                if let JSON = response.result.value as? [String: Any] {
+                    completion(Article(fromDictionary: JSON))
+                }
         }
     }
 
@@ -116,6 +116,24 @@ final class WallabagApi {
                 }
             }
             completion(articles)
+        }
+    }
+
+    static func retrieveUnreadArticle(_ completion: @escaping(_ total: Int) -> Void) {
+        let parameters: [String: Any] = ["perPage": 99, "archive": 0]
+        var total = 0
+
+        sessionManager.request(endpoint! + "/api/entries", parameters: parameters).validate().responseJSON { response in
+            if let result = response.result.value {
+                if let JSON = result as? [String: Any] {
+                    if let embedded = JSON["_embedded"] as? [String: Any] {
+                        if let items = embedded["items"] as? [[String: Any]] {
+                            total = items.count
+                        }
+                    }
+                }
+            }
+            completion(total)
         }
     }
 

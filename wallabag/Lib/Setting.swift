@@ -14,6 +14,7 @@ class Setting {
         case defaultMode
         case justifyArticle
         case articleTheme
+        case badge
     }
 
     static func getDefaultMode() -> RetrieveMode {
@@ -33,6 +34,18 @@ class Setting {
 
     static func setJustifyArticle(value: Bool) {
         UserDefaults.standard.set(value, forKey: Const.justifyArticle.rawValue)
+    }
+
+    static func isBadgeEnable() -> Bool {
+        //enabled by default
+        if nil == UserDefaults.standard.object(forKey: Const.badge.rawValue) {
+            return true
+        }
+        return UserDefaults.standard.bool(forKey: Const.badge.rawValue)
+    }
+
+    static func setBadgeEnable(value: Bool) {
+        UserDefaults.standard.set(value, forKey: Const.badge.rawValue)
     }
 
     static func getTheme() -> ThemeManager.Theme {

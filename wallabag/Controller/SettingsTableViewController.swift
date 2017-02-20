@@ -16,12 +16,18 @@ final class SettingsTableViewController: UITableViewController {
         Setting.setJustifyArticle(value: sender.isOn)
     }
 
+    @IBOutlet weak var badgeSwitch: UISwitch!
+    @IBAction func badgeSwitch(_ sender: UISwitch) {
+        Setting.setBadgeEnable(value: sender.isOn)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         prepareDefaultList()
 
         justifySwitch.setOn(Setting.isJustifyArticle(), animated: false)
+        badgeSwitch.setOn(Setting.isBadgeEnable(), animated: false)
         currentThemeLabel.text = Setting.getTheme().rawValue.ucFirst
     }
 
