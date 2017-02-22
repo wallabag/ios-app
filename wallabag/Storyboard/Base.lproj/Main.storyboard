@@ -581,11 +581,11 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="EdN-80-vis"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name=".SFNSText" family=".SF NS Text" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name=".SFNSText" family=".SF NS Text" pointSize="13"/>
                                             <color key="textColor" red="0.0094463747304899259" green="0.37359068703604648" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Article title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDD-og-deR" userLabel="Article title">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Article title big and long title" lineBreakMode="tailTruncation" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="eDD-og-deR" userLabel="Article title">
                                             <rect key="frame" x="115" y="8" width="219" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="6Q2-pn-N7x"/>
@@ -613,7 +613,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="12" id="TR1-m0-FYi"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="12"/>
+                                            <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="10"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
