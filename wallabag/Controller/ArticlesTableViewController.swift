@@ -199,4 +199,8 @@ final class ArticlesTableViewController: UITableViewController {
         articlesManager.update(article: article, at: index.row)
         refreshTableView()
     }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }

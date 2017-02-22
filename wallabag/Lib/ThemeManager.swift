@@ -50,6 +50,15 @@ struct ThemeManager {
             }
         }
 
+        var barStyle: UIBarStyle {
+            switch self {
+            case .night:
+                return .black
+            default:
+                return .default
+            }
+        }
+
         // background of the article (outside the webview) & the listing
         var backgroundColor: UIColor {
             switch self {
@@ -118,6 +127,7 @@ struct ThemeManager {
         let bar = UINavigationBar.appearance()
         bar.setBackgroundImage(theme.navigationBarBackground, for: .default)
         bar.titleTextAttributes = [NSForegroundColorAttributeName: theme.color]
+        bar.barStyle = theme.barStyle
 
         let toolbar = UIToolbar.appearance()
         toolbar.setBackgroundImage(theme.navigationBarBackground, forToolbarPosition: .any, barMetrics: .default)
