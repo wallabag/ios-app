@@ -18,8 +18,8 @@ platform :ios do
   desc "This will also make sure the profile is up to date"
   lane :beta do
     increment_build_number
-    cert
-    sigh(force: true)
+#    cert
+#    sigh(force: true)
     gym(scheme: "wallabag") # Build your app - more options available
     pilot
   end
