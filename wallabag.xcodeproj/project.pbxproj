@@ -46,7 +46,6 @@
 		9C987A541DB79826005515F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A521DB79826005515F4 /* LaunchScreen.storyboard */; };
 		9CA232301DFECE74006B29B8 /* light.css in Resources */ = {isa = PBXBuildFile; fileRef = 9CA2322F1DFECE74006B29B8 /* light.css */; };
 		9CBA6C601E16FC2B000B9AE6 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBA6C5F1E16FC2B000B9AE6 /* ShareViewController.swift */; };
-		9CBA6C631E16FC2B000B9AE6 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CBA6C611E16FC2B000B9AE6 /* MainInterface.storyboard */; };
 		9CBA6C671E16FC2B000B9AE6 /* bagit.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9CBA6C5D1E16FC2B000B9AE6 /* bagit.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9CBA6C6E1E170382000B9AE6 /* WallabagApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C181B851DB8D56600D941EB /* WallabagApi.swift */; };
 		9CBA6C741E1705CE000B9AE6 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7596181DBB540D0096614B /* Article.swift */; };
@@ -181,7 +180,6 @@
 		9CA2322F1DFECE74006B29B8 /* light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = light.css; sourceTree = "<group>"; };
 		9CBA6C5D1E16FC2B000B9AE6 /* bagit.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = bagit.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CBA6C5F1E16FC2B000B9AE6 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
-		9CBA6C621E16FC2B000B9AE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		9CBA6C641E16FC2B000B9AE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CBA6C6C1E17010E000B9AE6 /* wallabag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wallabag.entitlements; sourceTree = "<group>"; };
 		9CBA6C6D1E17011C000B9AE6 /* bagit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bagit.entitlements; sourceTree = "<group>"; };
@@ -477,7 +475,6 @@
 			children = (
 				9CBA6C6D1E17011C000B9AE6 /* bagit.entitlements */,
 				9CBA6C5F1E16FC2B000B9AE6 /* ShareViewController.swift */,
-				9CBA6C611E16FC2B000B9AE6 /* MainInterface.storyboard */,
 				9CBA6C641E16FC2B000B9AE6 /* Info.plist */,
 			);
 			path = bagit;
@@ -720,7 +717,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CBA6C631E16FC2B000B9AE6 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1047,14 +1043,6 @@
 			);
 			name = LaunchScreen.storyboard;
 			path = .;
-			sourceTree = "<group>";
-		};
-		9CBA6C611E16FC2B000B9AE6 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9CBA6C621E16FC2B000B9AE6 /* Base */,
-			);
-			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
