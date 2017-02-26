@@ -47,5 +47,7 @@ class ArticleTableViewCell: ThemedTableViewCell {
         title?.textColor = Setting.getTheme().color
         website?.textColor = Setting.getTheme().color
         readingTime?.textColor = Setting.getTheme().color
+        readed?.tintColor = Setting.getTheme().tintColor
+        starred?.tintColor = Setting.getTheme().tintColor
     }
 }
