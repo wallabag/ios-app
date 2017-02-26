@@ -1,4 +1,4 @@
-Wallabag, a self hostable application for saving web pages
+wallabag, a self hostable application for saving web pages
 
 Unlike other services, wallabag is free (as in freedom) and open source.
 
