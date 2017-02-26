@@ -88,6 +88,11 @@ final class ArticlesTableViewController: UITableViewController {
         super.viewDidLoad()
         refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         handleRefresh()
+        navigationController?.navigationBar.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.scrollTop)))
+    }
+
+    func scrollTop() {
+        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
 
     // MARK: - Table view data source
