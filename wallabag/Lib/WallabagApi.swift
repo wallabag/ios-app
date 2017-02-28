@@ -52,12 +52,17 @@ final class WallabagApi {
         configured = true
     }
 
-    static func requestToken(_ completion: @escaping(_ success: Bool) -> Void) {
+    static func requestToken(_ completion: @escaping(_ success: Bool, _ error: String?) -> Void) {
         let parameters = ["grant_type": "password", "client_id": clientId!, "client_secret": clientSecret!, "username": username!, "password": password!]
-
-        Alamofire.request(endpoint! + "/oauth/v2/token", method: .post, parameters: parameters).validate().responseJSON { response in
-            if response.result.error != nil {
-                completion(false)
+        Alamofire.request(endpoint! + "/oauth/v2/token", method: .post, parameters: parameters).responseJSON { response in
+            if response.response?.statusCode != 200 {
+                guard let result = response.result.value,
+                    let JSON = result as? [String: Any],
+                    let errorDescription = JSON["error_description"] as? String else {
+                        completion(false, "Unexpected error")
+                        return
+                }
+                completion(false, errorDescription)
             }
 
             guard let result = response.result.value,
@@ -71,7 +76,7 @@ final class WallabagApi {
             sessionManager.adapter = bearer
             sessionManager.retrier = bearer
 
-            completion(true)
+            completion(true, nil)
         }
     }
 

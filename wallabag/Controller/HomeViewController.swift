@@ -21,7 +21,7 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         if let server = Setting.getServer() {
             WallabagApi.configureApi(from: server)
-            WallabagApi.requestToken { success in
+            WallabagApi.requestToken { success, _ in
                 if success {
                     self.performSegue(withIdentifier: "toArticles", sender: nil)
                 } else {

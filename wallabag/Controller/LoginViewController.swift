@@ -28,12 +28,12 @@ final class LoginViewController: UIViewController {
         WallabagApi.configureApi(from: server)
         sender.isEnabled = false
 
-        WallabagApi.requestToken { success in
+        WallabagApi.requestToken { success, error in
             if success {
                 Setting.set(server: server)
                 self.performSegue(withIdentifier: "toArticles", sender: nil)
             } else {
-                let alert = UIAlertController(title: "Login", message: "Error", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
                 self.present(alert, animated: false)
             }
