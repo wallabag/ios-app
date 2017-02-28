@@ -25,10 +25,14 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     fileprivate func updateUi() {
-        title = WallabagApi.mode.humainReadable()
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 70, height: 44))
+        titleLabel.isUserInteractionEnabled = true
+        titleLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.scrollTop)))
+        titleLabel.text = WallabagApi.mode.humainReadable()
+        titleLabel.textColor = Setting.getTheme().color
+        navigationItem.titleView = titleLabel
 
         navigationController?.navigationBar.setBackgroundImage(Setting.getTheme().navigationBarBackground, for: .default)
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: Setting.getTheme().color]
         menu.tintColor = Setting.getTheme().tintColor
         add.tintColor = Setting.getTheme().tintColor
 
@@ -88,7 +92,6 @@ final class ArticlesTableViewController: UITableViewController {
         super.viewDidLoad()
         refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         handleRefresh()
-        navigationController?.navigationBar.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.scrollTop)))
     }
 
     func scrollTop() {
