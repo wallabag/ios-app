@@ -204,8 +204,36 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     func update(_ article: Article, atIndex index: IndexPath) {
-        articlesManager.update(article: article, at: index.row)
-        refreshTableView()
+        defer {
+            refreshTableView()
+        }
+
+        switch WallabagApi.mode {
+        case .allArticles:
+            articlesManager.update(article: article, at: index.row)
+            return
+        case .archivedArticles:
+            if article.isArchived {
+                articlesManager.update(article: article, at: index.row)
+            } else {
+                articlesManager.removeArticle(atIndex: index.row)
+            }
+            return
+        case .unarchivedArticles:
+            if article.isArchived {
+                articlesManager.removeArticle(atIndex: index.row)
+            } else {
+                articlesManager.update(article: article, at: index.row)
+            }
+            return
+        case .starredArticles:
+            if article.isStarred {
+                articlesManager.update(article: article, at: index.row)
+            } else {
+                articlesManager.removeArticle(atIndex: index.row)
+            }
+            return
+        }
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
