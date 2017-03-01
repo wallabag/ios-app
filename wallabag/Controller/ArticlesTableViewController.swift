@@ -215,23 +215,26 @@ final class ArticlesTableViewController: UITableViewController {
         case .archivedArticles:
             if article.isArchived {
                 articlesManager.update(article: article, at: index.row)
-            } else {
-                articlesManager.removeArticle(atIndex: index.row)
+                return
             }
+
+            articlesManager.removeArticle(atIndex: index.row)
             return
         case .unarchivedArticles:
             if article.isArchived {
                 articlesManager.removeArticle(atIndex: index.row)
-            } else {
-                articlesManager.update(article: article, at: index.row)
-            }
+                return
+            } 
+
+            articlesManager.update(article: article, at: index.row)
             return
         case .starredArticles:
             if article.isStarred {
                 articlesManager.update(article: article, at: index.row)
-            } else {
-                articlesManager.removeArticle(atIndex: index.row)
-            }
+                return
+            } 
+
+            articlesManager.removeArticle(atIndex: index.row)
             return
         }
     }
