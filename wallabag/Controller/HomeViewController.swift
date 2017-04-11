@@ -14,8 +14,10 @@ final class HomeViewController: UIViewController {
 
     @IBAction func disconnect(segue: UIStoryboardSegue) {
         registerButton.isEnabled = true
-
-        Setting.deleteServer()
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        appDelegate.resetApplication()
     }
 
     override func viewDidLoad() {

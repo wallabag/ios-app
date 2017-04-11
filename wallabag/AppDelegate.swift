@@ -17,9 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let args = ProcessInfo.processInfo.arguments
         if args.contains("RESET_APPLICATION") {
-            Setting.deleteServer()
-            Setting.setTheme(value: .white)
-            Setting.setDefaultMode(mode: .allArticles)
+            resetApplication()
         }
 
         requestBadge()
@@ -87,6 +85,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 UIApplication.shared.applicationIconBadgeNumber = total
             }
         }
+    }
 
+    func resetApplication() {
+        Setting.deleteServer()
+        Setting.setTheme(value: .white)
+        Setting.setDefaultMode(mode: .allArticles)
     }
 }
