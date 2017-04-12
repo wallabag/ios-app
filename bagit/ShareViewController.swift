@@ -16,6 +16,7 @@ class ShareViewController: UIViewController {
         let notification = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         notification.backgroundColor = .white
         notification.layer.cornerRadius = 9.0
+        notification.center = self.view.center
 
         let image = UIImageView(frame: CGRect(x: 25, y: 25, width: 50, height: 50))
         image.image = #imageLiteral(resourceName: "wallabag")
@@ -25,9 +26,16 @@ class ShareViewController: UIViewController {
         return notification
     }()
 
+    lazy var backView: UIView = {
+        let back = UIView(frame: self.view.frame)
+        back.backgroundColor = .gray
+        back.alpha = 0.6
+        return back
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        notificationView.center = view.center
+        view.addSubview(backView)
         view.addSubview(notificationView)
     }
 
