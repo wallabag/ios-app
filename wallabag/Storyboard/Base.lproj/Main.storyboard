@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vl8-yY-Bdt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vl8-yY-Bdt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -51,6 +51,16 @@
                                     <segue destination="LDR-tz-9ed" kind="show" id="Gj0-oO-eNh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2a9-yC-pw0">
+                                <rect key="frame" x="71" y="630" width="234" height="29"/>
+                                <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
+                                <state key="normal" title="Create account on wallabag.it">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="openWallabagIt:" destination="Vl8-yY-Bdt" eventType="touchUpInside" id="MrZ-vV-ujY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -58,8 +68,10 @@
                             <constraint firstItem="K7r-Is-Qyw" firstAttribute="centerX" secondItem="jgR-CC-0zk" secondAttribute="centerX" id="5h3-fR-vgJ"/>
                             <constraint firstItem="Zn4-yG-cxW" firstAttribute="top" secondItem="FRs-RA-L1c" secondAttribute="bottom" constant="8" id="BwY-wA-FY9"/>
                             <constraint firstItem="Zn4-yG-cxW" firstAttribute="centerX" secondItem="jgR-CC-0zk" secondAttribute="centerX" id="GFn-ae-qJr"/>
+                            <constraint firstItem="2a9-yC-pw0" firstAttribute="centerX" secondItem="jgR-CC-0zk" secondAttribute="centerX" id="JD1-zV-bZz"/>
                             <constraint firstItem="FRs-RA-L1c" firstAttribute="top" secondItem="K7r-Is-Qyw" secondAttribute="bottom" constant="8" id="JWX-vu-NhE"/>
                             <constraint firstItem="K7r-Is-Qyw" firstAttribute="top" secondItem="8dj-Du-tEP" secondAttribute="bottom" constant="8" id="WiD-2X-fhA"/>
+                            <constraint firstItem="uNp-2q-j9F" firstAttribute="top" secondItem="2a9-yC-pw0" secondAttribute="bottom" constant="8" id="YaY-rR-Go3"/>
                             <constraint firstItem="FRs-RA-L1c" firstAttribute="trailing" secondItem="jgR-CC-0zk" secondAttribute="trailingMargin" id="xxp-3Q-Z9c"/>
                         </constraints>
                     </view>
@@ -84,7 +96,7 @@
                             <tableViewSection headerTitle="Article default list" id="3cW-8W-1Xl">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="allArticles" textLabel="uDI-eD-zGh" style="IBUITableViewCellStyleDefault" id="F1a-2z-5pt">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F1a-2z-5pt" id="BaL-c7-NWU">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -101,7 +113,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="archivedArticles" textLabel="tpY-2N-dv1" style="IBUITableViewCellStyleDefault" id="CFr-Sr-Ce5">
-                                        <rect key="frame" x="0.0" y="100" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CFr-Sr-Ce5" id="QGJ-W4-xpC">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -118,7 +130,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="starredArticles" textLabel="vWc-HK-q7e" style="IBUITableViewCellStyleDefault" id="pnm-QX-hwZ">
-                                        <rect key="frame" x="0.0" y="144" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="143.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pnm-QX-hwZ" id="WhI-vg-EOR">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -135,7 +147,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="unarchivedArticles" textLabel="L2O-zX-aIh" style="IBUITableViewCellStyleDefault" id="9bG-fC-Lrk">
-                                        <rect key="frame" x="0.0" y="188" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="187.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9bG-fC-Lrk" id="L8n-xn-T4A">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -156,10 +168,10 @@
                             <tableViewSection headerTitle="Article" id="YmF-qh-OwI">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="4Om-Xb-QQg">
-                                        <rect key="frame" x="0.0" y="288" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="287.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Om-Xb-QQg" id="Z5z-sB-eYy">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QNI-iO-q9h">
@@ -187,7 +199,7 @@
                             <tableViewSection headerTitle="Theme" id="C5u-67-6oh">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="sIr-IY-HU7" style="IBUITableViewCellStyleDefault" id="Tq4-BF-aBt">
-                                        <rect key="frame" x="0.0" y="388" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="387.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tq4-BF-aBt" id="2U6-5h-Zh0">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
@@ -211,10 +223,10 @@
                             <tableViewSection headerTitle="Badge" id="hNQ-C1-sdE">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cAx-ca-mfr">
-                                        <rect key="frame" x="0.0" y="488" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="487.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cAx-ca-mfr" id="2Hd-Ld-KsH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Crn-AO-baC">
@@ -776,7 +788,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LDR-tz-9ed" userLabel="Add server navigation" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x91-Lh-MNV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="x91-Lh-MNV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -954,7 +966,7 @@ This token are secret and can be found in your developer page, And create a new 
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8tH-nc-JLr" userLabel="Article Navigation" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dK2-gx-arx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dK2-gx-arx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -973,7 +985,7 @@ This token are secret and can be found in your developer page, And create a new 
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zBf-ku-xvb" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BUk-9T-Y1M">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="BUk-9T-Y1M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -991,7 +1003,7 @@ This token are secret and can be found in your developer page, And create a new 
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aVJ-Ci-2zL" userLabel="About Navigation" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b9u-Ga-Inf">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="b9u-Ga-Inf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1009,7 +1021,7 @@ This token are secret and can be found in your developer page, And create a new 
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2It-26-Sfb" userLabel="Parameter Navigation" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="A6a-Is-KQx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="A6a-Is-KQx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

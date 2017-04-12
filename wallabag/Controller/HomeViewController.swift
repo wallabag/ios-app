@@ -12,6 +12,10 @@ final class HomeViewController: UIViewController {
 
     @IBOutlet weak var registerButton: UIButton!
 
+    @IBAction func openWallabagIt(_ sender: UIButton) {
+        UIApplication.shared.openURL(URL(string: "https://www.wallabag.it/en?pk_campaign=register&pk_kwd=wallabagapp")!)
+    }
+
     @IBAction func disconnect(segue: UIStoryboardSegue) {
         registerButton.isEnabled = true
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
