@@ -3,3 +3,8 @@ We fixed some bugs, like articles in list which doesn't match the selected filte
 Share extension are completly reworked and should work everywhere now !
 Article list is now more clear and a tap on the title will scroll up to the top.
 wallabag is now available on iOS 9.0 too (we care about people using that old iOS from 1 year and a half)
+
+Minor fix :
+- Update fading animation for extension
+- Rename extension "Bag it!" to "wallabag"
+- Disconnect now reset team
