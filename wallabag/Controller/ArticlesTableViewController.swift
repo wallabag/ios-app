@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import WallabagKit
 
 final class ArticlesTableViewController: UITableViewController {
 

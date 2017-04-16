@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WallabagKit
 import AlamofireNetworkActivityIndicator
 
 @UIApplicationMain

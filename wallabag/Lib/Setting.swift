@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WallabagKit
 
 class Setting {
 
@@ -17,14 +18,14 @@ class Setting {
         case badge
     }
 
-    static func getDefaultMode() -> RetrieveMode {
+    static func getDefaultMode() -> WallabagApi.RetrieveMode {
         guard let value = UserDefaults.standard.string(forKey: Const.defaultMode.rawValue) else {
-            return RetrieveMode.allArticles
+            return .allArticles
         }
-        return RetrieveMode(rawValue: value)!
+        return WallabagApi.RetrieveMode(rawValue: value)!
     }
 
-    static func setDefaultMode(mode: RetrieveMode) {
+    static func setDefaultMode(mode: WallabagApi.RetrieveMode) {
         UserDefaults.standard.set(mode.rawValue, forKey: Const.defaultMode.rawValue)
     }
 

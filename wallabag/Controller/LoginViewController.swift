@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WallabagKit
 
 final class LoginViewController: UIViewController {
 

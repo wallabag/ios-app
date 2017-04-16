@@ -8,6 +8,7 @@
 
 import UIKit
 import TUSafariActivity
+import WallabagKit
 
 final class ArticleViewController: UIViewController {
 
