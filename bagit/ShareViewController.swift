@@ -60,7 +60,7 @@ class ShareViewController: UIViewController {
                                 WallabagApi.configureApi(from: server)
                                 WallabagApi.requestToken { _ in
                                     WallabagApi.addArticle(shareURL as URL, completion: { _ in
-                                        UIView.animate(withDuration: 0.5, animations: {
+                                        UIView.animate(withDuration: 1.0, animations: {
                                             self.notificationView.alpha = 0.0
                                         }, completion: { _ in
                                             self.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
