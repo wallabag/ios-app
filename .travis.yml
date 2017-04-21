@@ -11,6 +11,7 @@ env:
   - WORKSPACE=wallabag.xcworkspace
   - SCHEME=wallabag
 before_install:
+  - gem install -N cocoapods -v 1.2.0
   - pod repo update > /dev/null
 script:
   - set -o pipefail
