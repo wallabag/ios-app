@@ -8,6 +8,7 @@
 
 import UIKit
 import WallabagKit
+import AlamofireImage
 
 class ArticleTableViewCell: ThemedTableViewCell {
 
@@ -33,14 +34,15 @@ class ArticleTableViewCell: ThemedTableViewCell {
         }
 
         starred.image = article.isStarred ? #imageLiteral(resourceName: "starred") : #imageLiteral(resourceName: "unstarred")
+        readingTime.text = "Reading time \(article.readingTime.readingTime)"
 
-        if let picture = article.previewPicture {
-            previewImage.image(fromString: picture)
-        } else {
+        guard let previewPicture = article.previewPicture,
+            let pictureURL = URL(string: previewPicture) else {
             previewImage.image = #imageLiteral(resourceName: "logo-icon-black-no-bg")
+            return
         }
 
-        readingTime.text = "Reading time \(article.readingTime.readingTime)"
+        previewImage.af_setImage(withURL: pictureURL)
     }
 
     override func setupTheme() {
