@@ -10,18 +10,14 @@ DEPENDENCIES:
   - Alamofire (~> 4.0)
   - AlamofireNetworkActivityIndicator (~> 2.0)
   - TUSafariActivity (~> 1.0)
-  - WallabagKit (from `../WallabagKit`)
-
-EXTERNAL SOURCES:
-  WallabagKit:
-    :path: "../WallabagKit"
+  - WallabagKit
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   AlamofireNetworkActivityIndicator: 4716f6554bdfb9c7cf13b1e0e3af21163129690a
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
-  WallabagKit: 2e580dba70285118d3f25614f985aa3b6db2a86e
+  WallabagKit: 53c40eb935202eb0e3a37ab97702c033b1d6b712
 
-PODFILE CHECKSUM: a2ddac36da82532909f0c3d4531e9bd771c8d140
+PODFILE CHECKSUM: ec03101bd3f907ba7cf645aa48a017746df6cea1
 
 COCOAPODS: 1.2.0
