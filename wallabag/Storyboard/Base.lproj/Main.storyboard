@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vl8-yY-Bdt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vl8-yY-Bdt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -84,10 +84,10 @@
             </objects>
             <point key="canvasLocation" x="892" y="-5"/>
         </scene>
-        <!--Parameter-->
+        <!--Settings-->
         <scene sceneID="c3j-va-Rei">
             <objects>
-                <tableViewController id="cre-7a-Z1t" userLabel="Parameter" customClass="SettingsTableViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Settings" id="cre-7a-Z1t" userLabel="Settings" customClass="SettingsTableViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="f44-xd-6aq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -273,7 +273,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xSn-oy-5YC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Len-oJ-Yb1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="8336.7999999999993" y="-1534.1829085457273"/>
+            <point key="canvasLocation" x="5553" y="-2087"/>
         </scene>
         <!--Theme Choice Table View Controller-->
         <scene sceneID="CA9-IW-tTX">
@@ -310,177 +310,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PFu-SB-SPX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9244" y="-1534"/>
-        </scene>
-        <!--Menu-->
-        <scene sceneID="bf2-T2-lGT">
-            <objects>
-                <tableViewController id="vNd-0f-GSW" userLabel="Menu" customClass="MenuTableViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="GRr-If-hmt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <sections>
-                            <tableViewSection headerTitle="Articles" id="h3L-Uh-Cn2">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="allArticles" textLabel="Fxa-Eb-NLN" style="IBUITableViewCellStyleDefault" id="bSR-9C-Zmw" customClass="ThemedTableViewCell" customModule="wallabag" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bSR-9C-Zmw" id="qvy-cK-hL4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="All articles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fxa-Eb-NLN">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="jdi-WV-zt5" kind="unwind" unwindAction="allArticlesWithSegue:" id="IOf-Pd-vZH"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="unarchivedArticles" textLabel="fUa-0w-1to" style="IBUITableViewCellStyleDefault" id="0rt-Dv-gBN" customClass="ThemedTableViewCell" customModule="wallabag" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0rt-Dv-gBN" id="RDn-gA-KIm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Unread articles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fUa-0w-1to">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="jdi-WV-zt5" kind="unwind" unwindAction="unarchivedArticlesWithSegue:" id="BSg-bv-41w"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="archivedArticles" textLabel="BHi-pa-CbA" style="IBUITableViewCellStyleDefault" id="ExA-1y-iDu" customClass="ThemedTableViewCell" customModule="wallabag" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="116" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ExA-1y-iDu" id="4ba-bU-bCk">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Read articles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BHi-pa-CbA">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="wq0-NI-I11" kind="unwind" unwindAction="archivedArticlesWithSegue:" id="rhS-FJ-LBd"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="starredArticles" textLabel="YyA-ww-rVl" style="IBUITableViewCellStyleDefault" id="aat-Ys-NDy" customClass="ThemedTableViewCell" customModule="wallabag" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="160" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aat-Ys-NDy" id="wlc-tv-XWj">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Starred articles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YyA-ww-rVl">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="wq0-NI-I11" kind="unwind" unwindAction="starredArticlesWithSegue:" id="905-4D-dQw"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection headerTitle="Other" id="tC5-sq-Yza">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="paramater" textLabel="hr1-Yf-LzU" style="IBUITableViewCellStyleDefault" id="2xz-ML-8bB" customClass="ThemedTableViewCell" customModule="wallabag" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="232" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2xz-ML-8bB" id="eI7-eC-8FD">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hr1-Yf-LzU">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="2It-26-Sfb" kind="show" id="Oik-Ka-2WI"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="about" textLabel="JQb-Ie-8b5" style="IBUITableViewCellStyleDefault" id="ql9-K2-Gkb" customClass="ThemedTableViewCell" customModule="wallabag" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="276" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ql9-K2-Gkb" id="U9k-Ub-EnL">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JQb-Ie-8b5">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="aVJ-Ci-2zL" kind="show" animates="NO" id="oDY-XY-Row"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="disconnect" textLabel="B7X-TD-PsC" style="IBUITableViewCellStyleDefault" id="YjN-Qj-BDF" customClass="ThemedTableViewCell" customModule="wallabag" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="320" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YjN-Qj-BDF" id="h1F-5k-xps">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Disconnect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="B7X-TD-PsC">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="0.028078071964938167" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="wq0-NI-I11" kind="unwind" unwindAction="disconnectWithSegue:" id="25g-lZ-WM7"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="vNd-0f-GSW" id="Kqu-0K-7xX"/>
-                            <outlet property="delegate" destination="vNd-0f-GSW" id="x6V-Zx-yGx"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="nCH-In-IXo"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="soG-JG-Cx4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="wq0-NI-I11" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="6511" y="-818"/>
+            <point key="canvasLocation" x="6458" y="-2087"/>
         </scene>
         <!--About-->
         <scene sceneID="lwy-C8-NHT">
@@ -548,21 +378,14 @@
                             <constraint firstItem="wsy-Ao-UlA" firstAttribute="top" secondItem="qk9-mt-OdM" secondAttribute="bottom" constant="8" id="szJ-fC-Qck"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="About" id="1Lt-G4-Rie">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="C2o-Ai-wTW">
-                            <connections>
-                                <segue destination="tU7-sd-KVh" kind="unwind" unwindAction="backFromParameterWithSegue:" id="nxU-1W-keh"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="About" id="1Lt-G4-Rie"/>
                     <connections>
                         <outlet property="versionText" destination="p4F-5W-KZX" id="173-3N-3cf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LFY-A9-naf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="tU7-sd-KVh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="8256.7999999999993" y="-818.14092953523243"/>
+            <point key="canvasLocation" x="4705" y="-2086"/>
         </scene>
         <!--Articles TableView-->
         <scene sceneID="vTl-iM-X3B">
@@ -636,7 +459,7 @@
                     <navigationItem key="navigationItem" title=" Articles" id="ZjL-wI-QTt">
                         <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="Meg-lP-qaT">
                             <connections>
-                                <segue destination="zBf-ku-xvb" kind="presentation" identifier="menu" id="XgL-Zt-Ctu"/>
+                                <segue destination="1X5-Uz-VZe" kind="presentation" id="qJr-6s-s66"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="3Vd-Vr-Rri">
@@ -655,6 +478,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7b-wX-N2L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="dap-gp-nIP" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4716" y="-5.8470764617691158"/>
         </scene>
@@ -976,63 +800,197 @@ This token are secret and can be found in your developer page, And create a new 
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eHv-yK-YjJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="jdi-WV-zt5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3914" y="-5"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Tpx-UD-plF">
+        <!--Wallabag-->
+        <scene sceneID="OWp-zn-SdB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zBf-ku-xvb" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="BUk-9T-Y1M">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="vNd-0f-GSW" kind="relationship" relationship="rootViewController" id="Tz9-zX-xpp"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Nl5-AU-1dT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="N4y-AF-V2y" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gd9-I9-m2y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection headerTitle="Articles" id="wu1-pA-PCy">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Oak-js-p1q" style="IBUITableViewCellStyleDefault" id="shw-Jh-9PU">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="shw-Jh-9PU" id="4K5-O7-gwl">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="All articles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Oak-js-p1q">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="dap-gp-nIP" kind="unwind" unwindAction="allArticlesWithSegue:" id="IZY-Qf-XsJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="id6-5J-i15" style="IBUITableViewCellStyleDefault" id="1wc-GJ-Pic">
+                                        <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1wc-GJ-Pic" id="ltW-6D-fIK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Read articles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="id6-5J-i15">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="dap-gp-nIP" kind="unwind" unwindAction="archivedArticlesWithSegue:" id="5rv-EB-pUp"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Jq2-Nb-TZS" style="IBUITableViewCellStyleDefault" id="w7N-RI-2il">
+                                        <rect key="frame" x="0.0" y="116" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w7N-RI-2il" id="7Ms-KG-F1g">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Starred articles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jq2-Nb-TZS">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="dap-gp-nIP" kind="unwind" unwindAction="starredArticlesWithSegue:" id="qQy-9L-hU5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="T0z-d1-R3T" style="IBUITableViewCellStyleDefault" id="Nnm-2q-Ewe">
+                                        <rect key="frame" x="0.0" y="160" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nnm-2q-Ewe" id="L4I-a8-OmB">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Unread articles" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T0z-d1-R3T">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="dap-gp-nIP" kind="unwind" unwindAction="unarchivedArticlesWithSegue:" id="Pu6-9I-Nax"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Other" id="eJr-Jk-JW5">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="eXt-Oa-Lm6" style="IBUITableViewCellStyleDefault" id="mgE-Hr-nEt">
+                                        <rect key="frame" x="0.0" y="232" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mgE-Hr-nEt" id="M8N-j4-LG3">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eXt-Oa-Lm6">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Y2L-5Y-ZRb" kind="show" id="E3k-eS-tUl"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="afM-i7-0Kb" style="IBUITableViewCellStyleDefault" id="eI8-6f-DGH">
+                                        <rect key="frame" x="0.0" y="276" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eI8-6f-DGH" id="FW1-KX-gOq">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="afM-i7-0Kb">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="cre-7a-Z1t" kind="show" id="luD-iN-k46"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="pO6-f6-PiT" style="IBUITableViewCellStyleDefault" id="ggB-CS-jug">
+                                        <rect key="frame" x="0.0" y="320" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ggB-CS-jug" id="yN5-Qf-hFl">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Disconnect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pO6-f6-PiT">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="zHc-UW-rkn" kind="unwind" unwindAction="disconnectWithSegue:" id="itb-RR-ORq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="N4y-AF-V2y" id="TqH-xh-ZmR"/>
+                            <outlet property="delegate" destination="N4y-AF-V2y" id="lCq-0x-6mo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Wallabag" id="kGU-bR-BWV"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V2R-i8-iZ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="zHc-UW-rkn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5505" y="-818"/>
+            <point key="canvasLocation" x="4706" y="-1241"/>
         </scene>
-        <!--About Navigation-->
-        <scene sceneID="LoP-Es-jM4">
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="o2q-Hd-t7S">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aVJ-Ci-2zL" userLabel="About Navigation" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="b9u-Ga-Inf">
+                <navigationController id="1X5-Uz-VZe" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="edy-e1-BkW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="Y2L-5Y-ZRb" kind="relationship" relationship="rootViewController" id="tU6-cA-Y79"/>
+                        <segue destination="N4y-AF-V2y" kind="relationship" relationship="rootViewController" id="xxe-ZI-7rC"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ngX-Q0-Zbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ANq-cy-aL2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7404" y="-818"/>
-        </scene>
-        <!--Parameter Navigation-->
-        <scene sceneID="E30-g3-gg3">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2It-26-Sfb" userLabel="Parameter Navigation" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="A6a-Is-KQx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="cre-7a-Z1t" kind="relationship" relationship="rootViewController" id="awG-0E-Fw8"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YkC-dq-Bih" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7397.6000000000004" y="-1534.1829085457273"/>
+            <point key="canvasLocation" x="3752" y="-1241"/>
         </scene>
     </scenes>
     <resources>

@@ -9,6 +9,7 @@ target 'wallabag' do
     pod 'TUSafariActivity', '~> 1.0'
     pod 'AlamofireNetworkActivityIndicator', '~> 2.0'
     pod 'WallabagKit'
+    pod 'SideMenu'
 
     target 'wallabagTests' do
         inherit! :search_paths

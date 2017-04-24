@@ -11,9 +11,6 @@ import UserNotifications
 import WallabagKit
 
 final class ArticlesTableViewController: UITableViewController {
-
-    lazy var slideInTransitioningManager = SlideInPresentationManager()
-
     var page: Int = 2
     var refreshing: Bool = false
     var articlesManager: ArticleManager = ArticleManager()
@@ -194,13 +191,6 @@ final class ArticlesTableViewController: UITableViewController {
                     }
                 }
             }
-        }
-
-        if segue.identifier == "menu" {
-            slideInTransitioningManager.direction = .left
-            slideInTransitioningManager.disableCompactHeight = false
-            controller.transitioningDelegate = slideInTransitioningManager
-            controller.modalPresentationStyle = .custom
         }
     }
 
