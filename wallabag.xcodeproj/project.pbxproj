@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		01971931BCF414226F407E96 /* Pods_wallabagTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C75DD9CC88FFD838573A351 /* Pods_wallabagTests.framework */; };
-		4BE7652521A50A12EE8BCD5B /* Pods_bagit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96F6D5610DD6249AEA66D5F /* Pods_bagit.framework */; };
 		621665201E0CFC2600438EE2 /* white.css in Resources */ = {isa = PBXBuildFile; fileRef = 6216651F1E0CFC2600438EE2 /* white.css */; };
 		622923E91E10F8A5007B2307 /* dusk.css in Resources */ = {isa = PBXBuildFile; fileRef = 622923E81E10F8A5007B2307 /* dusk.css */; };
 		9C181B881DB8E27000D941EB /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C181B871DB8E27000D941EB /* ArticlesTableViewController.swift */; };
@@ -27,7 +26,6 @@
 		9C4537951DD1236B00FF6CFE /* ratatouille.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C4537911DD1236B00FF6CFE /* ratatouille.css */; };
 		9C5658501DE4E110006042C1 /* ArticleManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56584F1DE4E110006042C1 /* ArticleManagerTests.swift */; };
 		9C65DEB11DC5EE85002CA068 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C65DEB01DC5EE85002CA068 /* Int.swift */; };
-		9C6C88891EAEA8F20078C491 /* WallabagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C6C88881EAEA8F20078C491 /* WallabagKit.framework */; };
 		9C75961C1DBB567E0096614B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75961B1DBB567E0096614B /* String.swift */; };
 		9C75961E1DBD59330096614B /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75961D1DBD59330096614B /* ArticleViewController.swift */; };
 		9C77751D1DFB72AD00CB775F /* justify.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C77751C1DFB72AD00CB775F /* justify.css */; };
@@ -43,6 +41,7 @@
 		9CBA6C671E16FC2B000B9AE6 /* bagit.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9CBA6C5D1E16FC2B000B9AE6 /* bagit.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9CC0D71A1E22AB15002E4E94 /* wallabagScreenshotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0D7191E22AB15002E4E94 /* wallabagScreenshotUITests.swift */; };
 		9CC0D7211E22AB55002E4E94 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEF3B31DD9EC5D00126D15 /* SnapshotHelper.swift */; };
+		9CC378931EB0BB4100C89619 /* Pods_bagit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC378921EB0BB4100C89619 /* Pods_bagit.framework */; };
 		9CC4B0611DC5361000BC6830 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4B0601DC5361000BC6830 /* Dictionary.swift */; };
 		9CE369741DE632030005E20E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE369731DE632030005E20E /* SettingsTableViewController.swift */; };
 		9CE369761DE63D030005E20E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE369751DE63D030005E20E /* Setting.swift */; };
@@ -54,7 +53,6 @@
 		9CF1F2231DBE9B800086B98B /* ClientIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F2221DBE9B800086B98B /* ClientIdViewController.swift */; };
 		9CF1F2251DBE9D150086B98B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F2241DBE9D150086B98B /* LoginViewController.swift */; };
 		9CF91F161DE473B6006A417A /* ArticleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF91F151DE473B6006A417A /* ArticleManager.swift */; };
-		9CFCD96E1E1826190028C4EC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CBA6C6F1E1703A3000B9AE6 /* Alamofire.framework */; };
 		AEDD1E205C0DF01C54999C21 /* Pods_wallabag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAE89D8A395291968A2E2A7 /* Pods_wallabag.framework */; };
 		DB5193211F1DB976C3862849 /* Pods_wallabagUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3678DDB92217E137039674C2 /* Pods_wallabagUITests.framework */; };
 /* End PBXBuildFile section */
@@ -113,8 +111,10 @@
 
 /* Begin PBXFileReference section */
 		081F547345F9E70248A02531 /* Pods-bagit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bagit.release.xcconfig"; path = "Pods/Target Support Files/Pods-bagit/Pods-bagit.release.xcconfig"; sourceTree = "<group>"; };
+		1EA9F29E7C865EE08172FE69 /* Pods-wallabag-bagit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag-bagit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabag-bagit/Pods-wallabag-bagit.debug.xcconfig"; sourceTree = "<group>"; };
 		33649D7F894D49168B9683D2 /* Pods-wallabagUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3678DDB92217E137039674C2 /* Pods_wallabagUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50A74F0181E01BFFEA22A662 /* Pods_wallabag_bagit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabag_bagit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6216651F1E0CFC2600438EE2 /* white.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = white.css; sourceTree = "<group>"; };
 		622923E81E10F8A5007B2307 /* dusk.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = dusk.css; sourceTree = "<group>"; };
 		7438BB540252BD33025E60F9 /* Pods-wallabagTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +163,7 @@
 		9CC0D7171E22AB15002E4E94 /* wallabagScreenshotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagScreenshotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CC0D7191E22AB15002E4E94 /* wallabagScreenshotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wallabagScreenshotUITests.swift; sourceTree = "<group>"; };
 		9CC0D71B1E22AB15002E4E94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CC378921EB0BB4100C89619 /* Pods_bagit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_bagit.framework; path = "../../Library/Developer/Xcode/DerivedData/wallabag-fcirammgjylpzjcvizhrpwjyvjmq/Build/Products/Debug-iphonesimulator/Pods_bagit.framework"; sourceTree = "<group>"; };
 		9CC4B0601DC5361000BC6830 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		9CE369731DE632030005E20E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +181,7 @@
 		AFAE89D8A395291968A2E2A7 /* Pods_wallabag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96F6D5610DD6249AEA66D5F /* Pods_bagit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bagit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5054CFAAEF931DD2335077B /* Pods-wallabag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabag/Pods-wallabag.debug.xcconfig"; sourceTree = "<group>"; };
+		CC20A18D953EAE5A218FF6BB /* Pods-wallabag-bagit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag-bagit.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabag-bagit/Pods-wallabag-bagit.release.xcconfig"; sourceTree = "<group>"; };
 		D492A4BFBC05746741AD48FD /* Pods-wallabag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabag/Pods-wallabag.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,9 +214,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C6C88891EAEA8F20078C491 /* WallabagKit.framework in Frameworks */,
-				9CFCD96E1E1826190028C4EC /* Alamofire.framework in Frameworks */,
-				4BE7652521A50A12EE8BCD5B /* Pods_bagit.framework in Frameworks */,
+				9CC378931EB0BB4100C89619 /* Pods_bagit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,12 +231,14 @@
 		37E0BE100D92CFD90F2A6716 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9CC378921EB0BB4100C89619 /* Pods_bagit.framework */,
 				9C6C88881EAEA8F20078C491 /* WallabagKit.framework */,
 				9CBA6C6F1E1703A3000B9AE6 /* Alamofire.framework */,
 				AFAE89D8A395291968A2E2A7 /* Pods_wallabag.framework */,
 				9C75DD9CC88FFD838573A351 /* Pods_wallabagTests.framework */,
 				3678DDB92217E137039674C2 /* Pods_wallabagUITests.framework */,
 				B96F6D5610DD6249AEA66D5F /* Pods_bagit.framework */,
+				50A74F0181E01BFFEA22A662 /* Pods_wallabag_bagit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -252,6 +254,8 @@
 				9B9EB64D938632DA7CDDFD2A /* Pods-wallabagUITests.release.xcconfig */,
 				A6538EB964B457B5B3DC7B46 /* Pods-bagit.debug.xcconfig */,
 				081F547345F9E70248A02531 /* Pods-bagit.release.xcconfig */,
+				1EA9F29E7C865EE08172FE69 /* Pods-wallabag-bagit.debug.xcconfig */,
+				CC20A18D953EAE5A218FF6BB /* Pods-wallabag-bagit.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
