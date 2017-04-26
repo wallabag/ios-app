@@ -10,11 +10,6 @@ target 'wallabag' do
     pod 'WallabagKit'
     pod 'SideMenu'
 
-    target 'wallabagTests' do
-        inherit! :search_paths
-        # Pods for testing
-    end
-
     target 'wallabagUITests' do
         inherit! :search_paths
         # Pods for testing
@@ -22,5 +17,9 @@ target 'wallabag' do
 end
 
 target 'bagit' do
+    pod 'WallabagKit'
+end
+
+target 'wallabagTests' do
     pod 'WallabagKit'
 end

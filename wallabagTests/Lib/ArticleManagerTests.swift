@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import WallabagKit
 @testable import wallabag
 
 class ArticleManagerTests: XCTestCase {
