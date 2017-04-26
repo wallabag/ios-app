@@ -27,6 +27,7 @@
 		9C4537951DD1236B00FF6CFE /* ratatouille.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C4537911DD1236B00FF6CFE /* ratatouille.css */; };
 		9C5658501DE4E110006042C1 /* ArticleManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56584F1DE4E110006042C1 /* ArticleManagerTests.swift */; };
 		9C65DEB11DC5EE85002CA068 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C65DEB01DC5EE85002CA068 /* Int.swift */; };
+		9C6C88891EAEA8F20078C491 /* WallabagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C6C88881EAEA8F20078C491 /* WallabagKit.framework */; };
 		9C75961C1DBB567E0096614B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75961B1DBB567E0096614B /* String.swift */; };
 		9C75961E1DBD59330096614B /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75961D1DBD59330096614B /* ArticleViewController.swift */; };
 		9C77751D1DFB72AD00CB775F /* justify.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C77751C1DFB72AD00CB775F /* justify.css */; };
@@ -135,6 +136,7 @@
 		9C4537911DD1236B00FF6CFE /* ratatouille.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ratatouille.css; sourceTree = "<group>"; };
 		9C56584F1DE4E110006042C1 /* ArticleManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleManagerTests.swift; sourceTree = "<group>"; };
 		9C65DEB01DC5EE85002CA068 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		9C6C88881EAEA8F20078C491 /* WallabagKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WallabagKit.framework; path = "../../Library/Developer/Xcode/DerivedData/wallabag-fcirammgjylpzjcvizhrpwjyvjmq/Build/Products/Debug-iphonesimulator/WallabagKit/WallabagKit.framework"; sourceTree = "<group>"; };
 		9C75961B1DBB567E0096614B /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		9C75961D1DBD59330096614B /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		9C75DD9CC88FFD838573A351 /* Pods_wallabagTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,6 +212,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C6C88891EAEA8F20078C491 /* WallabagKit.framework in Frameworks */,
 				9CFCD96E1E1826190028C4EC /* Alamofire.framework in Frameworks */,
 				4BE7652521A50A12EE8BCD5B /* Pods_bagit.framework in Frameworks */,
 			);
@@ -228,6 +231,7 @@
 		37E0BE100D92CFD90F2A6716 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9C6C88881EAEA8F20078C491 /* WallabagKit.framework */,
 				9CBA6C6F1E1703A3000B9AE6 /* Alamofire.framework */,
 				AFAE89D8A395291968A2E2A7 /* Pods_wallabag.framework */,
 				9C75DD9CC88FFD838573A351 /* Pods_wallabagTests.framework */,
@@ -1076,7 +1080,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = wallabag/wallabag.entitlements;
-				CURRENT_PROJECT_VERSION = 40;
+				CURRENT_PROJECT_VERSION = 42;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = wallabag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1094,7 +1098,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = wallabag/wallabag.entitlements;
-				CURRENT_PROJECT_VERSION = 40;
+				CURRENT_PROJECT_VERSION = 42;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = wallabag/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
