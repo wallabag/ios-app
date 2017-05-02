@@ -72,6 +72,9 @@ final class WallabagApi {
                     return
             }
 
+            let shareDefaults = UserDefaults(suiteName: "group.wallabag.share_extension")
+            shareDefaults?.set(accessToken, forKey: "token")
+            shareDefaults?.set(refreshToken, forKey: "refreshToken")
             let bearer = BearerTokenAdapter(clientID: clientId!, clientSecret: clientSecret!, username: username!, password: password!, baseURLString: endpoint!, accessToken: accessToken, refreshToken: refreshToken)
             sessionManager.adapter = bearer
             sessionManager.retrier = bearer

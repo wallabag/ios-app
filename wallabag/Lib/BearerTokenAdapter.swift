@@ -59,6 +59,9 @@ class BearerTokenAdapter: RequestAdapter, RequestRetrier {
                     strongSelf.lock.lock() ; defer { strongSelf.lock.unlock() }
 
                     if let accessToken = accessToken, let refreshToken = refreshToken {
+                        let shareDefaults = UserDefaults(suiteName: "group.wallabag.share_extension")
+                        shareDefaults?.set(accessToken, forKey: "token")
+                        shareDefaults?.set(refreshToken, forKey: "refreshToken")
                         strongSelf.accessToken = accessToken
                         strongSelf.refreshToken = refreshToken
                     }
