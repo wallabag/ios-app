@@ -62,33 +62,6 @@ class Setting {
         ThemeManager.apply(theme: value)
     }
 
-    static func set(server: Server) {
-        let shareDefaults = UserDefaults(suiteName: "group.wallabag.share_extension")
-        shareDefaults?.set(server.host, forKey: "host")
-        shareDefaults?.set(server.client_id, forKey: "clientId")
-        shareDefaults?.set(server.client_secret, forKey: "clientSecret")
-        shareDefaults?.set(server.username, forKey: "username")
-        shareDefaults?.set(server.password, forKey: "password")
-        shareDefaults?.set(true, forKey: "serverConfigured")
-        shareDefaults?.synchronize()
-    }
-
-    static func getServer() -> Server? {
-        let shareDefaults = UserDefaults(suiteName: "group.wallabag.share_extension")
-
-        guard let serverConfigured = shareDefaults?.object(forKey: "serverConfigured") as? Bool, serverConfigured == true else {
-            return nil
-        }
-
-        let server = Server(host: shareDefaults?.object(forKey: "host") as? String ?? "",
-                            client_secret: shareDefaults?.object(forKey: "clientSecret") as? String ?? "",
-                            client_id: shareDefaults?.object(forKey: "clientId") as? String ?? "",
-                            username: shareDefaults?.object(forKey: "username") as? String ?? "",
-                            password: shareDefaults?.object(forKey: "password") as? String ?? "")
-
-        return server
-    }
-
     static func deleteServer() {
         let shareDefaults = UserDefaults(suiteName: "group.wallabag.share_extension")
         shareDefaults?.removeObject(forKey: "host")
@@ -96,7 +69,8 @@ class Setting {
         shareDefaults?.removeObject(forKey: "clientSecret")
         shareDefaults?.removeObject(forKey: "username")
         shareDefaults?.removeObject(forKey: "password")
-        shareDefaults?.set(false, forKey: "serverConfigured")
+        shareDefaults?.removeObject(forKey: "token")
+        shareDefaults?.removeObject(forKey: "refreshToken")
         shareDefaults?.synchronize()
     }
 }

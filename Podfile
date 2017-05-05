@@ -7,7 +7,8 @@ target 'wallabag' do
     pod 'AlamofireImage', '~> 3.1'
     pod 'TUSafariActivity', '~> 1.0'
     pod 'AlamofireNetworkActivityIndicator', '~> 2.0'
-    pod 'WallabagKit'
+    #pod 'WallabagKit'
+    pod 'WallabagKit', :path => "../WallabagKit"
     pod 'SideMenu'
 
     target 'wallabagUITests' do
@@ -17,9 +18,11 @@ target 'wallabag' do
 end
 
 target 'bagit' do
-    pod 'WallabagKit'
+    #pod 'WallabagKit'
+    pod 'WallabagKit', :path => "../WallabagKit"
 end
 
 target 'wallabagTests' do
-    pod 'WallabagKit'
+    #pod 'WallabagKit'
+    pod 'WallabagKit', :path => "../WallabagKit"
 end

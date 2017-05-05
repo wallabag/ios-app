@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Vl8-yY-Bdt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8tH-nc-JLr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,7 +17,7 @@
         <!--Home-->
         <scene sceneID="Qzl-1y-Dm3">
             <objects>
-                <viewController id="Vl8-yY-Bdt" userLabel="Home" customClass="HomeViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="home" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vl8-yY-Bdt" userLabel="Home" customClass="HomeViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8dj-Du-tEP"/>
                         <viewControllerLayoutGuide type="bottom" id="uNp-2q-j9F"/>
@@ -43,10 +43,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn4-yG-cxW" userLabel="Add Server">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn4-yG-cxW" userLabel="Add Server">
                                 <rect key="frame" x="156" y="294" width="64" height="29"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
-                                <state key="normal" title="Register"/>
+                                <state key="normal" title="Register">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="LDR-tz-9ed" kind="show" id="Gj0-oO-eNh"/>
                                 </connections>
@@ -75,10 +77,6 @@
                             <constraint firstItem="FRs-RA-L1c" firstAttribute="trailing" secondItem="jgR-CC-0zk" secondAttribute="trailingMargin" id="xxp-3Q-Z9c"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="registerButton" destination="Zn4-yG-cxW" id="m7Z-tu-3xZ"/>
-                        <segue destination="8tH-nc-JLr" kind="show" identifier="toArticles" id="DM9-lr-LNE"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nn0-zM-jd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -553,7 +551,7 @@
         <!--Server-->
         <scene sceneID="tbh-yG-xcX">
             <objects>
-                <viewController id="LPm-N3-FEI" userLabel="Server" customClass="ServerViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="server" id="LPm-N3-FEI" userLabel="Server" customClass="ServerViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="znn-gf-Efm"/>
                         <viewControllerLayoutGuide type="bottom" id="21n-Ne-pUp"/>
@@ -610,7 +608,7 @@
         <!--Add server navigation-->
         <scene sceneID="5Qx-aD-tpR">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LDR-tz-9ed" userLabel="Add server navigation" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="serverNavigation" automaticallyAdjustsScrollViewInsets="NO" id="LDR-tz-9ed" userLabel="Add server navigation" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="x91-Lh-MNV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -955,7 +953,7 @@ This token are secret and can be found in your developer page, And create a new 
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="zHc-UW-rkn" kind="unwind" unwindAction="disconnectWithSegue:" id="itb-RR-ORq"/>
+                                            <segue destination="zHc-UW-rkn" kind="unwind" unwindAction="disconnectWithSegue:" id="7Jo-7A-h1h"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -999,7 +997,4 @@ This token are secret and can be found in your developer page, And create a new 
         <image name="starred" width="22" height="22"/>
         <image name="trash" width="22" height="22"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="DM9-lr-LNE"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -15,14 +15,23 @@ final class ArticlesTableViewController: UITableViewController {
     var refreshing: Bool = false
     var articlesManager: ArticleManager = ArticleManager()
 
-    fileprivate func refreshTableView() {
+    private func refreshTableView() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
         self.refreshControl?.endRefreshing()
     }
 
-    fileprivate func updateUi() {
+    @IBAction func disconnect(segue: UIStoryboardSegue) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        appDelegate.resetApplication()
+
+        appDelegate.window?.rootViewController = appDelegate.window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "home")
+    }
+
+    private func updateUi() {
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 70, height: 44))
         titleLabel.isUserInteractionEnabled = true
         titleLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.scrollTop)))
@@ -116,17 +125,22 @@ final class ArticlesTableViewController: UITableViewController {
 
     func handleRefresh() {
         updateUi()
-        WallabagApi.retrieveArticle(page: 1) { articles in
-            self.articlesManager.setArticles(articles: articles)
-            self.page = 2
-            self.refreshTableView()
+        WallabagApi.retrieveArticle(page: 1) { (articles, error) in
+            if error == nil {
+                self.articlesManager.setArticles(articles: articles)
+                self.page = 2
+                self.refreshTableView()
+            } else {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                self.present(storyboard.instantiateViewController(withIdentifier: "serverNavigation"), animated: false, completion: nil)
+            }
         }
     }
 
     override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if scrollView == tableView && ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height - 100) && !refreshing {
             refreshing = true
-            WallabagApi.retrieveArticle(page: page) { articles in
+            WallabagApi.retrieveArticle(page: page) { (articles, _) in
                 self.page += 1
                 self.refreshing = false
                 self.articlesManager.addArticles(articles: articles)
@@ -178,13 +192,11 @@ final class ArticlesTableViewController: UITableViewController {
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let controller = segue.destination
-
         if segue.identifier == "readArticle" {
             if let cell = sender as? UITableViewCell {
                 let indexPath = tableView.indexPath(for: cell)
                 if let index = indexPath?.row {
-                    if let controller = controller as? ArticleViewController {
+                    if let controller = segue.destination as? ArticleViewController {
                         controller.article = articlesManager.getArticle(atIndex: index)
                         controller.index = indexPath
                         controller.delegate = self
@@ -215,7 +227,7 @@ final class ArticlesTableViewController: UITableViewController {
             if article.isArchived {
                 articlesManager.removeArticle(atIndex: index.row)
                 return
-            } 
+            }
 
             articlesManager.update(article: article, at: index.row)
             return
@@ -223,7 +235,7 @@ final class ArticlesTableViewController: UITableViewController {
             if article.isStarred {
                 articlesManager.update(article: article, at: index.row)
                 return
-            } 
+            }
 
             articlesManager.removeArticle(atIndex: index.row)
             return

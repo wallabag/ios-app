@@ -36,7 +36,7 @@ final class ArticleViewController: UIViewController {
 
     @IBAction func shareMenu(_ sender: UIBarButtonItem) {
         let activity = TUSafariActivity()
-        let shareController = UIActivityViewController(activityItems: [URL(string: article.url)], applicationActivities: [activity])
+        let shareController = UIActivityViewController(activityItems: [URL(string: article.url) as Any], applicationActivities: [activity])
         shareController.excludedActivityTypes = [.airDrop, .addToReadingList, .copyToPasteboard]
 
         shareController.popoverPresentationController?.barButtonItem = sender

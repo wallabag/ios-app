@@ -21,6 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             resetApplication()
         }
 
+        WallabagApi.init(userStorage: UserDefaults(suiteName: "group.wallabag.share_extension")!)
+
+        if !WallabagApi.isConfigured() {
+            window?.rootViewController = window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "home")
+        }
+
         requestBadge()
         updateBadge()
 
@@ -56,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Swift.Void) {
-        if nil != Setting.getServer() && Setting.isBadgeEnable() {
+        if WallabagApi.isConfigured() {
             updateBadge()
             completionHandler(.newData)
         } else {
@@ -66,22 +72,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func requestBadge() {
         if Setting.isBadgeEnable() {
-            UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+            UIApplication.shared.setMinimumBackgroundFetchInterval(3600.0)
             let settings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
             UIApplication.shared.registerUserNotificationSettings(settings)
-        } else {
-
         }
     }
 
     private func updateBadge() {
-        guard let server = Setting.getServer(), Setting.isBadgeEnable() else {
-            UIApplication.shared.applicationIconBadgeNumber = 0
-            return
-        }
-
-        WallabagApi.configureApi(from: server)
-        WallabagApi.requestToken { _ in
+        if WallabagApi.isConfigured() {
             WallabagApi.retrieveUnreadArticle { total in
                 UIApplication.shared.applicationIconBadgeNumber = total
             }
