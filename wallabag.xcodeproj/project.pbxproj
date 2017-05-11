@@ -22,13 +22,18 @@
 		9C4537931DD1236B00FF6CFE /* night.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C45378F1DD1236B00FF6CFE /* night.css */; };
 		9C4537941DD1236B00FF6CFE /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C4537901DD1236B00FF6CFE /* main.css */; };
 		9C4537951DD1236B00FF6CFE /* ratatouille.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C4537911DD1236B00FF6CFE /* ratatouille.css */; };
+		9C4BFBE01EC08EF200B75EFB /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4BFBDE1EC08EF200B75EFB /* Entry+CoreDataClass.swift */; };
+		9C4BFBE11EC08EF200B75EFB /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4BFBDF1EC08EF200B75EFB /* Entry+CoreDataProperties.swift */; };
 		9C5658501DE4E110006042C1 /* ArticleManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56584F1DE4E110006042C1 /* ArticleManagerTests.swift */; };
 		9C65DEB11DC5EE85002CA068 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C65DEB01DC5EE85002CA068 /* Int.swift */; };
 		9C75961C1DBB567E0096614B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75961B1DBB567E0096614B /* String.swift */; };
 		9C75961E1DBD59330096614B /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75961D1DBD59330096614B /* ArticleViewController.swift */; };
 		9C77751D1DFB72AD00CB775F /* justify.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C77751C1DFB72AD00CB775F /* justify.css */; };
+		9C7B79E41EBF7E37004559B1 /* wallabag2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B79E21EBF7E37004559B1 /* wallabag2.xcdatamodeld */; };
+		9C7B79E61EBF8070004559B1 /* ArticleSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B79E51EBF8070004559B1 /* ArticleSync.swift */; };
 		9C8311861E06F56C004ACD5D /* ThemedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8311851E06F56C004ACD5D /* ThemedTableViewCell.swift */; };
 		9C9034881E5A26D90074540B /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */; };
+		9C914A4A1EBD1D6000973BA6 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C914A491EBD1D6000973BA6 /* CoreData.swift */; };
 		9C987A471DB79826005515F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C987A461DB79826005515F4 /* AppDelegate.swift */; };
 		9C987A4C1DB79826005515F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A4A1DB79826005515F4 /* Main.storyboard */; };
 		9C987A4F1DB79826005515F4 /* wallabag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C987A4D1DB79826005515F4 /* wallabag.xcdatamodeld */; };
@@ -50,7 +55,6 @@
 		9CF1F2211DBE97D80086B98B /* ServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F2201DBE97D80086B98B /* ServerViewController.swift */; };
 		9CF1F2231DBE9B800086B98B /* ClientIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F2221DBE9B800086B98B /* ClientIdViewController.swift */; };
 		9CF1F2251DBE9D150086B98B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F2241DBE9D150086B98B /* LoginViewController.swift */; };
-		9CF91F161DE473B6006A417A /* ArticleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF91F151DE473B6006A417A /* ArticleManager.swift */; };
 		AEDD1E205C0DF01C54999C21 /* Pods_wallabag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAE89D8A395291968A2E2A7 /* Pods_wallabag.framework */; };
 		DB5193211F1DB976C3862849 /* Pods_wallabagUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3678DDB92217E137039674C2 /* Pods_wallabagUITests.framework */; };
 /* End PBXBuildFile section */
@@ -129,6 +133,8 @@
 		9C45378F1DD1236B00FF6CFE /* night.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = night.css; sourceTree = "<group>"; };
 		9C4537901DD1236B00FF6CFE /* main.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
 		9C4537911DD1236B00FF6CFE /* ratatouille.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ratatouille.css; sourceTree = "<group>"; };
+		9C4BFBDE1EC08EF200B75EFB /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9C4BFBDF1EC08EF200B75EFB /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9C56584F1DE4E110006042C1 /* ArticleManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleManagerTests.swift; sourceTree = "<group>"; };
 		9C65DEB01DC5EE85002CA068 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		9C6C88881EAEA8F20078C491 /* WallabagKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WallabagKit.framework; path = "../../Library/Developer/Xcode/DerivedData/wallabag-fcirammgjylpzjcvizhrpwjyvjmq/Build/Products/Debug-iphonesimulator/WallabagKit/WallabagKit.framework"; sourceTree = "<group>"; };
@@ -136,7 +142,10 @@
 		9C75961D1DBD59330096614B /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		9C75DD9CC88FFD838573A351 /* Pods_wallabagTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C77751C1DFB72AD00CB775F /* justify.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = justify.css; sourceTree = "<group>"; };
+		9C7B79E31EBF7E37004559B1 /* wallabag2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabag2.xcdatamodel; sourceTree = "<group>"; };
+		9C7B79E51EBF8070004559B1 /* ArticleSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleSync.swift; sourceTree = "<group>"; };
 		9C8311851E06F56C004ACD5D /* ThemedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemedTableViewCell.swift; sourceTree = "<group>"; };
+		9C914A491EBD1D6000973BA6 /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		9C987A431DB79826005515F4 /* wallabag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wallabag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C987A461DB79826005515F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C987A4B1DB79826005515F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -170,7 +179,6 @@
 		9CF1F2201DBE97D80086B98B /* ServerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerViewController.swift; sourceTree = "<group>"; };
 		9CF1F2221DBE9B800086B98B /* ClientIdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientIdViewController.swift; sourceTree = "<group>"; };
 		9CF1F2241DBE9D150086B98B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		9CF91F151DE473B6006A417A /* ArticleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleManager.swift; sourceTree = "<group>"; };
 		9CFEF3B31DD9EC5D00126D15 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = ../wallabagUITests/SnapshotHelper.swift; sourceTree = "<group>"; };
 		A6538EB964B457B5B3DC7B46 /* Pods-bagit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bagit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bagit/Pods-bagit.debug.xcconfig"; sourceTree = "<group>"; };
 		AFAE89D8A395291968A2E2A7 /* Pods_wallabag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,9 +267,10 @@
 		9C181B831DB8D47600D941EB /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				9CF91F151DE473B6006A417A /* ArticleManager.swift */,
 				9CE369751DE63D030005E20E /* Setting.swift */,
 				9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */,
+				9C914A491EBD1D6000973BA6 /* CoreData.swift */,
+				9C7B79E51EBF8070004559B1 /* ArticleSync.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -372,6 +381,8 @@
 		9C987A451DB79826005515F4 /* wallabag */ = {
 			isa = PBXGroup;
 			children = (
+				9C4BFBDE1EC08EF200B75EFB /* Entry+CoreDataClass.swift */,
+				9C4BFBDF1EC08EF200B75EFB /* Entry+CoreDataProperties.swift */,
 				9CBA6C6C1E17010E000B9AE6 /* wallabag.entitlements */,
 				9C2A2DAC1DD4A6D900EDA4E8 /* Cell */,
 				9C181B841DB8D47C00D941EB /* Controller */,
@@ -384,6 +395,7 @@
 				9C987A501DB79826005515F4 /* Assets.xcassets */,
 				9C987A551DB79826005515F4 /* Info.plist */,
 				9C987A4D1DB79826005515F4 /* wallabag.xcdatamodeld */,
+				9C7B79E21EBF7E37004559B1 /* wallabag2.xcdatamodeld */,
 			);
 			path = wallabag;
 			sourceTree = "<group>";
@@ -857,12 +869,16 @@
 				9C21927D1DBFF44700F628C2 /* ArticleTableViewCell.swift in Sources */,
 				9CF1F2251DBE9D150086B98B /* LoginViewController.swift in Sources */,
 				9CE369741DE632030005E20E /* SettingsTableViewController.swift in Sources */,
-				9CF91F161DE473B6006A417A /* ArticleManager.swift in Sources */,
+				9C914A4A1EBD1D6000973BA6 /* CoreData.swift in Sources */,
+				9C4BFBE01EC08EF200B75EFB /* Entry+CoreDataClass.swift in Sources */,
+				9C4BFBE11EC08EF200B75EFB /* Entry+CoreDataProperties.swift in Sources */,
 				9C181B881DB8E27000D941EB /* ArticlesTableViewController.swift in Sources */,
 				9C75961E1DBD59330096614B /* ArticleViewController.swift in Sources */,
+				9C7B79E41EBF7E37004559B1 /* wallabag2.xcdatamodeld in Sources */,
 				9CF1F2231DBE9B800086B98B /* ClientIdViewController.swift in Sources */,
 				9CF1F2211DBE97D80086B98B /* ServerViewController.swift in Sources */,
 				9CE369761DE63D030005E20E /* Setting.swift in Sources */,
+				9C7B79E61EBF8070004559B1 /* ArticleSync.swift in Sources */,
 				9C9034881E5A26D90074540B /* ThemeManager.swift in Sources */,
 				9CE9F2061DE2151B002E06F5 /* AboutViewController.swift in Sources */,
 				9CF1F21C1DBE943C0086B98B /* HomeViewController.swift in Sources */,
@@ -1279,6 +1295,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		9C7B79E21EBF7E37004559B1 /* wallabag2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9C7B79E31EBF7E37004559B1 /* wallabag2.xcdatamodel */,
+			);
+			currentVersion = 9C7B79E31EBF7E37004559B1 /* wallabag2.xcdatamodel */;
+			path = wallabag2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		9C987A4D1DB79826005515F4 /* wallabag.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

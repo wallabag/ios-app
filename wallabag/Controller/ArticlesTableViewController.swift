@@ -9,11 +9,14 @@
 import UIKit
 import UserNotifications
 import WallabagKit
+import CoreData
 
 final class ArticlesTableViewController: UITableViewController {
+    let sync = ArticleSync()
     var page: Int = 2
     var refreshing: Bool = false
-    var articlesManager: ArticleManager = ArticleManager()
+    var entries: [Entry] = []
+    var mode: Setting.RetrieveMode = Setting.getDefaultMode()
 
     private func refreshTableView() {
         DispatchQueue.main.async {
@@ -32,10 +35,11 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     private func updateUi() {
+        log.debug("Update ui")
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 70, height: 44))
         titleLabel.isUserInteractionEnabled = true
         titleLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.scrollTop)))
-        titleLabel.text = WallabagApi.mode.humainReadable()
+        titleLabel.text = mode.humainReadable()
         titleLabel.textColor = Setting.getTheme().color
         navigationItem.titleView = titleLabel
 
@@ -55,23 +59,8 @@ final class ArticlesTableViewController: UITableViewController {
         updateUi()
     }
 
-    @IBAction func unarchivedArticles(segue: UIStoryboardSegue) {
-        WallabagApi.mode = .unarchivedArticles
-        handleRefresh()
-    }
-
-    @IBAction func allArticles(segue: UIStoryboardSegue) {
-        WallabagApi.mode = .allArticles
-        handleRefresh()
-    }
-
-    @IBAction func archivedArticles(segue: UIStoryboardSegue) {
-        WallabagApi.mode = .archivedArticles
-        handleRefresh()
-    }
-
-    @IBAction func starredArticles(segue: UIStoryboardSegue) {
-        WallabagApi.mode = .starredArticles
+    @IBAction func filterList(segue: UIStoryboardSegue) {
+        mode = Setting.RetrieveMode(rawValue: segue.identifier!)!
         handleRefresh()
     }
 
@@ -84,7 +73,7 @@ final class ArticlesTableViewController: UITableViewController {
             if let textfield = alertController.textFields?.first?.text {
                 if let url = URL(string: textfield) {
                     WallabagApi.addArticle(url) { article in
-                        self.articlesManager.insert(article: article)
+                        self.sync.insert(article)
                         self.tableView.reloadData()
                     }
                 }
@@ -98,6 +87,22 @@ final class ArticlesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+
+        sync.sync()
+
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self,
+                                       selector: #selector(managedObjectContextObjectsDidChange),
+                                       name: NSNotification.Name.NSManagedObjectContextObjectsDidChange,
+                                       object: CoreData.managedObjectContext
+        )
+
+        handleRefresh()
+    }
+
+    func managedObjectContextObjectsDidChange(notification: NSNotification) {
+        guard let _ = notification.userInfo else { return }
+        log.debug("managedObjectContextObjectsDidChange")
         handleRefresh()
     }
 
@@ -111,42 +116,40 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articlesManager.getArticles().count
+        return entries.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "articleIdentifier", for: indexPath) as? ArticleTableViewCell {
-            cell.present(articlesManager.getArticles()[indexPath.item])
-            return cell
-        } else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "articleIdentifier", for: indexPath) as? ArticleTableViewCell else {
             return UITableViewCell()
         }
+
+        cell.present(entries[indexPath.row])
+
+        return cell
     }
 
     func handleRefresh() {
         updateUi()
-        WallabagApi.retrieveArticle(page: 1) { (articles, error) in
-            if error == nil {
-                self.articlesManager.setArticles(articles: articles)
-                self.page = 2
-                self.refreshTableView()
-            } else {
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                self.present(storyboard.instantiateViewController(withIdentifier: "serverNavigation"), animated: false, completion: nil)
-            }
-        }
-    }
+        log.debug("Handle refresh")
+        let fetchRequest = NSFetchRequest<Entry>(entityName: "Entry")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created_at", ascending: false)]
 
-    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if scrollView == tableView && ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height - 100) && !refreshing {
-            refreshing = true
-            WallabagApi.retrieveArticle(page: page) { (articles, _) in
-                self.page += 1
-                self.refreshing = false
-                self.articlesManager.addArticles(articles: articles)
-                self.refreshTableView()
-            }
+        switch mode {
+        case .unarchivedArticles:
+            fetchRequest.predicate = NSPredicate(format: "is_archived == 0")
+            break
+        case .starredArticles:
+            fetchRequest.predicate = NSPredicate(format: "is_starred == 1")
+            break
+        case .archivedArticles:
+            fetchRequest.predicate = NSPredicate(format: "is_archived == 1")
+        default: break
+
         }
+
+        entries = (CoreData.fetch(fetchRequest) as? [Entry]) ?? []
+        refreshTableView()
     }
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -154,27 +157,30 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let article = self.articlesManager.getArticle(atIndex: indexPath.row)
-
+        let entry = entries[indexPath.row]
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete", handler: { _, indexPath in
-            self.delete(article, indexPath: indexPath)
+            self.delete(indexPath: indexPath)
         })
         deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.188235294, alpha: 1)
 
-        let starAction = UITableViewRowAction(style: .default, title: article.isStarred ? "Unstar" : "Star", handler: { _, indexPath in
+        let starAction = UITableViewRowAction(style: .default, title: entry.is_starred ? "Unstar" : "Star", handler: { _, indexPath in
             self.tableView.setEditing(false, animated: true)
-            WallabagApi.patchArticle(article, withParamaters: ["starred": (!article.isStarred).hashValue]) { article in
-                self.articlesManager.update(article: article, at: indexPath.row)
-                self.tableView.reloadRows(at: [indexPath], with: .automatic)
+            entry.is_starred = !entry.is_starred
+            entry.updated_at = NSDate()
+            CoreData.saveContext()
+            WallabagApi.patchArticle(Int(entry.id), withParamaters: ["starred": (entry.is_starred).hashValue]) { _ in
+                self.tableView.reloadRows(at: [indexPath], with: .none)
             }
         })
         starAction.backgroundColor = #colorLiteral(red: 1, green: 0.584313725, blue: 0, alpha: 1)
 
-        let readAction = UITableViewRowAction(style: .default, title: article.isArchived ? "Unread" : "Read", handler: { _, indexPath in
+        let readAction = UITableViewRowAction(style: .default, title: entry.is_archived ? "Unread" : "Read", handler: { _, indexPath in
             self.tableView.setEditing(false, animated: true)
-            WallabagApi.patchArticle(article, withParamaters: ["archive": (!article.isArchived).hashValue]) { article in
-                self.articlesManager.update(article: article, at: indexPath.row)
-                self.tableView.reloadRows(at: [indexPath], with: .automatic)
+            entry.is_archived = !entry.is_archived
+            entry.updated_at = NSDate()
+            CoreData.saveContext()
+            WallabagApi.patchArticle(Int(entry.id), withParamaters: ["archive": (entry.is_archived).hashValue]) { _ in
+                self.tableView.reloadRows(at: [indexPath], with: .none)
             }
         })
         readAction.backgroundColor = #colorLiteral(red: 0, green: 0.478431373, blue: 1, alpha: 1)
@@ -182,11 +188,14 @@ final class ArticlesTableViewController: UITableViewController {
         return [deleteAction, starAction, readAction]
     }
 
-    func delete(_ article: Article, indexPath: IndexPath) {
-        WallabagApi.deleteArticle(article) {
-            self.articlesManager.removeArticle(atIndex: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            self.refreshTableView()
+    func delete(indexPath: IndexPath) {
+        let entry = entries[indexPath.row]
+        let id = entry.value(forKey: "id") as? Int
+        do {
+            try CoreData.delete(entry)
+            WallabagApi.deleteArticle(id!) {}
+        } catch {
+
         }
     }
 
@@ -197,48 +206,12 @@ final class ArticlesTableViewController: UITableViewController {
                 let indexPath = tableView.indexPath(for: cell)
                 if let index = indexPath?.row {
                     if let controller = segue.destination as? ArticleViewController {
-                        controller.article = articlesManager.getArticle(atIndex: index)
+                        controller.entry = entries[index]
                         controller.index = indexPath
                         controller.delegate = self
                     }
                 }
             }
-        }
-    }
-
-    func update(_ article: Article, atIndex index: IndexPath) {
-        defer {
-            refreshTableView()
-        }
-
-        switch WallabagApi.mode {
-        case .allArticles:
-            articlesManager.update(article: article, at: index.row)
-            return
-        case .archivedArticles:
-            if article.isArchived {
-                articlesManager.update(article: article, at: index.row)
-                return
-            }
-
-            articlesManager.removeArticle(atIndex: index.row)
-            return
-        case .unarchivedArticles:
-            if article.isArchived {
-                articlesManager.removeArticle(atIndex: index.row)
-                return
-            }
-
-            articlesManager.update(article: article, at: index.row)
-            return
-        case .starredArticles:
-            if article.isStarred {
-                articlesManager.update(article: article, at: index.row)
-                return
-            }
-
-            articlesManager.removeArticle(atIndex: index.row)
-            return
         }
     }
 

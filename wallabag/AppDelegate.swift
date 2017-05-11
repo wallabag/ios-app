@@ -9,6 +9,9 @@
 import UIKit
 import WallabagKit
 import AlamofireNetworkActivityIndicator
+import SwiftyBeaver
+
+let log = SwiftyBeaver.self
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,15 +19,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        log.addDestination(ConsoleDestination())
+        log.addDestination(FileDestination())
+        log.addDestination(
+            SBPlatformDestination(
+                appID: "WxjB1g",
+                appSecret: "rEwZssKhfnrcjniafpwjhmvtgcvuhCc6",
+                encryptionKey: "j9tol59uyjd3w8okmhcKffggumkxlohi"
+            )
+        )
         let args = ProcessInfo.processInfo.arguments
         if args.contains("RESET_APPLICATION") {
             resetApplication()
         }
 
+        CoreData.containerName = "wallabag2"
+
         WallabagApi.init(userStorage: UserDefaults(suiteName: "group.wallabag.share_extension")!)
 
+        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        log.debug(urls[urls.count-1] as URL)
+
         if !WallabagApi.isConfigured() {
+            log.info("Wallabag api is not configured")
             window?.rootViewController = window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "home")
+        } else {
+            log.info("Wallabag api is configured")
         }
 
         requestBadge()
@@ -36,8 +56,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         NetworkActivityIndicatorManager.shared.isEnabled = true
         NetworkActivityIndicatorManager.shared.startDelay = 0.1
-
-        WallabagApi.mode = Setting.getDefaultMode()
 
         ThemeManager.apply(theme: Setting.getTheme())
 
@@ -59,6 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         updateBadge()
+        CoreData.saveContext()
     }
 
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Swift.Void) {

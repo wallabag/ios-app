@@ -5,15 +5,17 @@ PODS:
   - AlamofireNetworkActivityIndicator (2.1.0):
     - Alamofire (~> 4.1)
   - SideMenu (2.3.2)
+  - SwiftyBeaver (1.2.2)
   - TUSafariActivity (1.0.4)
   - WallabagKit (0.1.1):
-    - Alamofire (~> 4.0)
+    - Alamofire
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - AlamofireImage (~> 3.1)
   - AlamofireNetworkActivityIndicator (~> 2.0)
   - SideMenu
+  - SwiftyBeaver
   - TUSafariActivity (~> 1.0)
   - WallabagKit (from `../WallabagKit`)
 
@@ -26,9 +28,10 @@ SPEC CHECKSUMS:
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   AlamofireNetworkActivityIndicator: 4716f6554bdfb9c7cf13b1e0e3af21163129690a
   SideMenu: 3fa07dd05d4bade2b6f9889fb1877e312e1ba319
+  SwiftyBeaver: 90a39e3dc5136b7285f2e4c870b107e3933b8b84
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
-  WallabagKit: a46bb8cb73d07b68b98ae65d45309a778ffee31c
+  WallabagKit: 2ab4945ec4c2b6a2803aed9870aee4d0589996bf
 
-PODFILE CHECKSUM: 8f15ee0f17cf1742de3c5406701341f4d528552a
+PODFILE CHECKSUM: 682bafd5b5f0445f5c2a834b18bd414b68554d5a
 
 COCOAPODS: 1.2.0

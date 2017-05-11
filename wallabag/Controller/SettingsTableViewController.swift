@@ -43,7 +43,7 @@ final class SettingsTableViewController: UITableViewController {
             }
 
             if let cell = tableView.cellForRow(at: indexPath) {
-                Setting.setDefaultMode(mode: WallabagApi.RetrieveMode(rawValue: cell.reuseIdentifier!)!)
+                Setting.setDefaultMode(mode: Setting.RetrieveMode(rawValue: cell.reuseIdentifier!)!)
                 cell.accessoryType = .checkmark
             }
 
@@ -54,7 +54,7 @@ final class SettingsTableViewController: UITableViewController {
     fileprivate func prepareDefaultList() {
         for row in 0 ... tableView.numberOfRows(inSection: 0) {
             if let cell = tableView.cellForRow(at: IndexPath(row: row, section: 0)) {
-                if WallabagApi.RetrieveMode(rawValue: cell.reuseIdentifier!)! == Setting.getDefaultMode() {
+                if Setting.RetrieveMode(rawValue: cell.reuseIdentifier!)! == Setting.getDefaultMode() {
                     cell.accessoryType = .checkmark
                 }
             }

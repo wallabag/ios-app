@@ -10,6 +10,7 @@ target 'wallabag' do
     #pod 'WallabagKit'
     pod 'WallabagKit', :path => "../WallabagKit"
     pod 'SideMenu'
+    pod 'SwiftyBeaver'
 
     target 'wallabagUITests' do
         inherit! :search_paths

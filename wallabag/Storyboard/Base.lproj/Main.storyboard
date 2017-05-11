@@ -829,7 +829,7 @@ This token are secret and can be found in your developer page, And create a new 
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="dap-gp-nIP" kind="unwind" unwindAction="allArticlesWithSegue:" id="IZY-Qf-XsJ"/>
+                                            <segue destination="dap-gp-nIP" kind="unwind" identifier="allArticles" unwindAction="filterListWithSegue:" id="IZY-Qf-XsJ"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="id6-5J-i15" style="IBUITableViewCellStyleDefault" id="1wc-GJ-Pic">
@@ -849,7 +849,7 @@ This token are secret and can be found in your developer page, And create a new 
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="dap-gp-nIP" kind="unwind" unwindAction="archivedArticlesWithSegue:" id="5rv-EB-pUp"/>
+                                            <segue destination="dap-gp-nIP" kind="unwind" identifier="archivedArticles" unwindAction="filterListWithSegue:" id="5rv-EB-pUp"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Jq2-Nb-TZS" style="IBUITableViewCellStyleDefault" id="w7N-RI-2il">
@@ -869,7 +869,7 @@ This token are secret and can be found in your developer page, And create a new 
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="dap-gp-nIP" kind="unwind" unwindAction="starredArticlesWithSegue:" id="qQy-9L-hU5"/>
+                                            <segue destination="dap-gp-nIP" kind="unwind" identifier="starredArticles" unwindAction="filterListWithSegue:" id="qQy-9L-hU5"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="T0z-d1-R3T" style="IBUITableViewCellStyleDefault" id="Nnm-2q-Ewe">
@@ -889,7 +889,7 @@ This token are secret and can be found in your developer page, And create a new 
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="dap-gp-nIP" kind="unwind" unwindAction="unarchivedArticlesWithSegue:" id="Pu6-9I-Nax"/>
+                                            <segue destination="dap-gp-nIP" kind="unwind" identifier="unarchivedArticles" unwindAction="filterListWithSegue:" id="Pu6-9I-Nax"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>

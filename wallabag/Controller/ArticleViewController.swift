@@ -15,28 +15,33 @@ final class ArticleViewController: UIViewController {
     weak var delegate: ArticlesTableViewController?
     var index: IndexPath!
     var update: Bool = true
-    var article: Article! {
+    var entry: Entry! {
         didSet {
             updateUi()
         }
     }
 
     @IBAction func read(_ sender: Any) {
-        WallabagApi.patchArticle(article, withParamaters: ["archive": (!article.isArchived).hashValue]) { article in
-            self.article = article
+        entry.is_archived = !entry.is_archived
+        entry.updated_at = NSDate()
+        CoreData.saveContext()
+        WallabagApi.patchArticle(Int(entry.id), withParamaters: ["archive": (entry.is_archived).hashValue]) { _ in
             _ = self.navigationController?.popViewController(animated: true)
         }
     }
 
     @IBAction func star(_ sender: Any) {
-        WallabagApi.patchArticle(article, withParamaters: ["starred": (!article.isStarred).hashValue]) { article in
-            self.article = article
+        entry.is_starred = !entry.is_starred
+        entry.updated_at = NSDate()
+        CoreData.saveContext()
+        WallabagApi.patchArticle(Int(entry.id), withParamaters: ["starred": (entry.is_starred).hashValue]) { _ in
+            self.updateUi()
         }
     }
 
     @IBAction func shareMenu(_ sender: UIBarButtonItem) {
         let activity = TUSafariActivity()
-        let shareController = UIActivityViewController(activityItems: [URL(string: article.url) as Any], applicationActivities: [activity])
+        let shareController = UIActivityViewController(activityItems: [URL(string: entry.url!) as Any], applicationActivities: [activity])
         shareController.excludedActivityTypes = [.airDrop, .addToReadingList, .copyToPasteboard]
 
         shareController.popoverPresentationController?.barButtonItem = sender
@@ -47,9 +52,9 @@ final class ArticleViewController: UIViewController {
     @IBAction func deleteArticle(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Delete", message: "Are you sure?", preferredStyle: .actionSheet)
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
-            WallabagApi.deleteArticle(self.article) {
+            WallabagApi.deleteArticle(Int(self.entry.id)) {
                 self.update = false
-                self.delegate?.delete(self.article, indexPath: self.index)
+                self.delegate?.delete(indexPath: self.index)
                 _ = self.navigationController?.popToRootViewController(animated: true)
             }
         })
@@ -67,26 +72,39 @@ final class ArticleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = article.title
+        navigationItem.title = entry.title
         updateUi()
         loadArticleContent()
         contentWeb.backgroundColor = Setting.getTheme().backgroundColor
     }
 
-    fileprivate func loadArticleContent() {
-        DispatchQueue.main.async {
-            self.contentWeb.loadHTMLString(ArticleManager.contentForWebView(self.article), baseURL: Bundle.main.bundleURL)
+    override func didMove(toParentViewController parent: UIViewController?) {
+        if parent == nil && update {
+            delegate?.handleRefresh()
         }
     }
 
-    override func didMove(toParentViewController parent: UIViewController?) {
-        if parent == nil && update {
-            delegate?.update(article, atIndex: index)
+    private func loadArticleContent() {
+        DispatchQueue.main.async { [unowned self] in
+            self.contentWeb.loadHTMLString(self.contentForWebView(self.entry), baseURL: Bundle.main.bundleURL)
+        }
+    }
+
+    func contentForWebView(_ entry: Entry) -> String {
+        do {
+            let html = try String(contentsOfFile: Bundle.main.path(forResource: "article", ofType: "html")!)
+
+            let justify = Setting.isJustifyArticle() ? "justify.css" : ""
+            let theme = Setting.getTheme()
+
+            return String(format: html, arguments: [justify, theme.rawValue, entry.title!, entry.content!])
+        } catch {
+            fatalError("Unable to load article view")
         }
     }
 
     private func updateUi() {
-        readButton?.image = article.isArchived ? #imageLiteral(resourceName: "readed") : #imageLiteral(resourceName: "unreaded")
-        starButton?.image = article.isStarred ? #imageLiteral(resourceName: "starred") : #imageLiteral(resourceName: "unstarred")
+        readButton?.image = entry.is_archived ? #imageLiteral(resourceName: "readed") : #imageLiteral(resourceName: "unreaded")
+        starButton?.image = entry.is_starred ? #imageLiteral(resourceName: "starred") : #imageLiteral(resourceName: "unstarred")
     }
 }

@@ -11,6 +11,26 @@ import WallabagKit
 
 class Setting {
 
+    enum RetrieveMode: String {
+        case allArticles
+        case archivedArticles
+        case unarchivedArticles
+        case starredArticles
+
+        public func humainReadable() -> String {
+            switch self {
+            case .allArticles:
+                return "All articles"
+            case .archivedArticles:
+                return "Read articles"
+            case .starredArticles:
+                return "Starred articles"
+            case .unarchivedArticles:
+                return "Unread articles"
+            }
+        }
+    }
+
     enum Const: String {
         case defaultMode
         case justifyArticle
@@ -18,14 +38,14 @@ class Setting {
         case badge
     }
 
-    static func getDefaultMode() -> WallabagApi.RetrieveMode {
+    static func getDefaultMode() -> RetrieveMode {
         guard let value = UserDefaults.standard.string(forKey: Const.defaultMode.rawValue) else {
             return .allArticles
         }
-        return WallabagApi.RetrieveMode(rawValue: value)!
+        return RetrieveMode(rawValue: value)!
     }
 
-    static func setDefaultMode(mode: WallabagApi.RetrieveMode) {
+    static func setDefaultMode(mode: RetrieveMode) {
         UserDefaults.standard.set(mode.rawValue, forKey: Const.defaultMode.rawValue)
     }
 

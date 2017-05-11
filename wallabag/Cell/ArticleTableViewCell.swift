@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import WallabagKit
 import AlamofireImage
+import CoreData
 
 class ArticleTableViewCell: ThemedTableViewCell {
 
@@ -19,13 +19,13 @@ class ArticleTableViewCell: ThemedTableViewCell {
     @IBOutlet weak var readed: UIImageView!
     @IBOutlet weak var starred: UIImageView!
 
-    func present(_ article: Article) {
+    func present(_ entry: Entry) {
         setupTheme()
 
-        title.text = article.title
-        website.text = article.domainName
+        title.text = entry.title
+        website.text = entry.domain_name
 
-        if !article.isArchived {
+        if !entry.is_archived {
             title.font = UIFont.boldSystemFont(ofSize: 16.0)
             readed.image = #imageLiteral(resourceName: "unreaded")
         } else {
@@ -33,13 +33,13 @@ class ArticleTableViewCell: ThemedTableViewCell {
             readed.image = #imageLiteral(resourceName: "readed")
         }
 
-        starred.image = article.isStarred ? #imageLiteral(resourceName: "starred") : #imageLiteral(resourceName: "unstarred")
-        readingTime.text = "Reading time \(article.readingTime.readingTime)"
+        starred.image = entry.is_starred ? #imageLiteral(resourceName: "starred") : #imageLiteral(resourceName: "unstarred")
+        readingTime.text = "Reading time \(Int(entry.reading_time).readingTime)"
 
-        guard let previewPicture = article.previewPicture,
+        guard let previewPicture = entry.preview_picture,
             let pictureURL = URL(string: previewPicture) else {
-            previewImage.image = #imageLiteral(resourceName: "logo-icon-black-no-bg")
-            return
+                previewImage.image = #imageLiteral(resourceName: "logo-icon-black-no-bg")
+                return
         }
 
         previewImage.af_setImage(withURL: pictureURL)
