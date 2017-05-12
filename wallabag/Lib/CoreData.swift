@@ -25,7 +25,7 @@ final class CoreData: NSObject {
     }()
 
     @available(iOS 9.0, *)
-    static var managedObjectContext: NSManagedObjectContext = {
+    private static var managedObjectContext: NSManagedObjectContext = {
         let coordinator = persistentStoreCoordinator
         var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = coordinator
@@ -84,7 +84,6 @@ final class CoreData: NSObject {
 
     static func findAll(_ entity: String) -> [NSManagedObject] {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
-
         return fetch(request)
     }
 
@@ -99,13 +98,11 @@ final class CoreData: NSObject {
     }
 
     static func saveContext() {
-        if context.hasChanges {
-            do {
-                try save()
-            } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
+        do {
+            try save()
+        } catch {
+            let nserror = error as NSError
+            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
         }
     }
 }

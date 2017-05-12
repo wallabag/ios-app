@@ -7,7 +7,7 @@ PODS:
   - SideMenu (2.3.2)
   - SwiftyBeaver (1.2.2)
   - TUSafariActivity (1.0.4)
-  - WallabagKit (0.1.1):
+  - WallabagKit (0.1.2):
     - Alamofire
 
 DEPENDENCIES:
@@ -17,11 +17,7 @@ DEPENDENCIES:
   - SideMenu
   - SwiftyBeaver
   - TUSafariActivity (~> 1.0)
-  - WallabagKit (from `../WallabagKit`)
-
-EXTERNAL SOURCES:
-  WallabagKit:
-    :path: "../WallabagKit"
+  - WallabagKit
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
@@ -30,8 +26,8 @@ SPEC CHECKSUMS:
   SideMenu: 3fa07dd05d4bade2b6f9889fb1877e312e1ba319
   SwiftyBeaver: 90a39e3dc5136b7285f2e4c870b107e3933b8b84
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
-  WallabagKit: 2ab4945ec4c2b6a2803aed9870aee4d0589996bf
+  WallabagKit: f6c285143adf9d4c80f3705d425c20c217e3272f
 
-PODFILE CHECKSUM: 682bafd5b5f0445f5c2a834b18bd414b68554d5a
+PODFILE CHECKSUM: 6f769465ea8f6602d14e817c11be40a4f57d788b
 
 COCOAPODS: 1.2.0

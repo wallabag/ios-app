@@ -38,8 +38,8 @@ class ArticleSync: NSObject {
     }
 
     func insert(_ article: Article) {
-        let entityDescription = NSEntityDescription.entity(forEntityName: "Entry", in: CoreData.managedObjectContext)!
-        let entry = Entry.init(entity: entityDescription, insertInto: CoreData.managedObjectContext)
+        let entityDescription = NSEntityDescription.entity(forEntityName: "Entry", in: CoreData.context)!
+        let entry = Entry.init(entity: entityDescription, insertInto: CoreData.context)
         log.debug("Insert article \(article.id)")
         setDataForEntry(entry: entry, article: article)
     }
@@ -68,7 +68,7 @@ class ArticleSync: NSObject {
             setDataForEntry(entry: entry, article: article)
         }
     }
-    
+
     func delete() {
     }
 }

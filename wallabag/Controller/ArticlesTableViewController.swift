@@ -30,7 +30,6 @@ final class ArticlesTableViewController: UITableViewController {
             return
         }
         appDelegate.resetApplication()
-
         appDelegate.window?.rootViewController = appDelegate.window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "home")
     }
 
@@ -87,15 +86,14 @@ final class ArticlesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
-
-        sync.sync()
-
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self,
                                        selector: #selector(managedObjectContextObjectsDidChange),
                                        name: NSNotification.Name.NSManagedObjectContextObjectsDidChange,
-                                       object: CoreData.managedObjectContext
+                                       object: CoreData.context
         )
+
+        sync.sync()
 
         handleRefresh()
     }
