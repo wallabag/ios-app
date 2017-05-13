@@ -98,8 +98,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func updateBadge() {
-        let sync = ArticleSync()
-        sync.sync()
+        if WallabagApi.isConfigured() {
+            let sync = ArticleSync()
+            sync.sync()
+        }
         let request = Entry.fetchEntryRequest()
         switch Setting.getDefaultMode() {
         case .unarchivedArticles:

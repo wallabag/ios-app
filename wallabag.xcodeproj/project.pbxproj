@@ -11,6 +11,7 @@
 		621665201E0CFC2600438EE2 /* white.css in Resources */ = {isa = PBXBuildFile; fileRef = 6216651F1E0CFC2600438EE2 /* white.css */; };
 		622923E91E10F8A5007B2307 /* dusk.css in Resources */ = {isa = PBXBuildFile; fileRef = 622923E81E10F8A5007B2307 /* dusk.css */; };
 		94E4BE19881745BDBEBA546F /* Pods_bagit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96F6D5610DD6249AEA66D5F /* Pods_bagit.framework */; };
+		9C0BF8BA1EC723CF00CEBE93 /* ArticlesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0BF8B91EC723CF00CEBE93 /* ArticlesUITests.swift */; };
 		9C181B881DB8E27000D941EB /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C181B871DB8E27000D941EB /* ArticlesTableViewController.swift */; };
 		9C21927D1DBFF44700F628C2 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C21927C1DBFF44700F628C2 /* ArticleTableViewCell.swift */; };
 		9C298B131E0BF8F400B72503 /* ThemeChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C298B121E0BF8F400B72503 /* ThemeChoiceTableViewController.swift */; };
@@ -121,6 +122,7 @@
 		7438BB540252BD33025E60F9 /* Pods-wallabagTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests.debug.xcconfig"; sourceTree = "<group>"; };
 		94D0C2FA2C870EE989B2406D /* Pods-wallabagTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests.release.xcconfig"; sourceTree = "<group>"; };
 		9B9EB64D938632DA7CDDFD2A /* Pods-wallabagUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9C0BF8B91EC723CF00CEBE93 /* ArticlesUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesUITests.swift; sourceTree = "<group>"; };
 		9C181B871DB8E27000D941EB /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
 		9C21927C1DBFF44700F628C2 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		9C298B121E0BF8F400B72503 /* ThemeChoiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeChoiceTableViewController.swift; sourceTree = "<group>"; };
@@ -404,6 +406,7 @@
 			children = (
 				9C987A6B1DB79826005515F4 /* Info.plist */,
 				9CEC08FF1E1BC069002DC81D /* RegisterProcessUITests.swift */,
+				9C0BF8B91EC723CF00CEBE93 /* ArticlesUITests.swift */,
 			);
 			path = wallabagUITests;
 			sourceTree = "<group>";
@@ -895,6 +898,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C0BF8BA1EC723CF00CEBE93 /* ArticlesUITests.swift in Sources */,
 				9CEC09001E1BC069002DC81D /* RegisterProcessUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
