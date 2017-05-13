@@ -28,12 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 encryptionKey: "j9tol59uyjd3w8okmhcKffggumkxlohi"
             )
         )
+        CoreData.containerName = "wallabag2"
+
         let args = ProcessInfo.processInfo.arguments
         if args.contains("RESET_APPLICATION") {
             resetApplication()
         }
-
-        CoreData.containerName = "wallabag2"
 
         WallabagApi.init(userStorage: UserDefaults(suiteName: "group.wallabag.share_extension")!)
 
@@ -109,5 +109,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Setting.deleteServer()
         Setting.setTheme(value: .white)
         Setting.setDefaultMode(mode: .allArticles)
+        CoreData.deleteAll("Entry")
     }
 }

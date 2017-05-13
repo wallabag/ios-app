@@ -51,4 +51,60 @@ class RegisterProcessUITests: XCTestCase {
         nextButton.tap()
     }
 
+    func testRegisteringURLFail() {
+        let app = XCUIApplication()
+        app.launchArguments = ["RESET_APPLICATION"]
+        app.launch()
+
+        app.buttons["Register"].tap()
+
+        XCTAssertFalse(app.alerts["Error"].exists)
+        
+        let serverTextField = app.textFields["Server"]
+        serverTextField.tap()
+        serverTextField.typeText("wallabag.maxime.marinel.me")
+        app.buttons["Next"].tap()
+
+        XCTAssertTrue(app.alerts["Error"].exists)
+        XCTAssertTrue(app.alerts["Error"].staticTexts["Whoops looks like something went wrong. Check the url, don't forget http or https"].exists)
+    }
+
+    func testRegisteringClientIdAndSecretFail() {
+        let app = XCUIApplication()
+        app.launchArguments = ["RESET_APPLICATION"]
+        app.launch()
+
+        let registerButton = app.buttons["Register"]
+        XCTAssertTrue(registerButton.isEnabled)
+
+        app.buttons["Register"].tap()
+
+        let serverTextField = app.textFields["Server"]
+        serverTextField.tap()
+        serverTextField.typeText("http://wallabag.maxime.marinel.me")
+
+        let nextButton = app.buttons["Next"]
+        nextButton.tap()
+
+        let clientidTextField = app.textFields["ClientId"]
+        clientidTextField.tap()
+        clientidTextField.typeText("wrong_client")
+
+        let clientsecretTextField = app.textFields["ClientSecret"]
+        clientsecretTextField.tap()
+        clientsecretTextField.typeText("wrong_secret")
+        nextButton.tap()
+
+        XCTAssertFalse(app.alerts["Error"].exists)
+        let usernameTextField = app.textFields["Username"]
+        usernameTextField.tap()
+        usernameTextField.typeText("dev")
+
+        let passwordSecureTextField = app.secureTextFields["Password"]
+        passwordSecureTextField.tap()
+        passwordSecureTextField.typeText("dev")
+        nextButton.tap()
+        XCTAssertTrue(app.alerts["Error"].exists)
+        XCTAssertTrue(app.alerts["Error"].staticTexts["The client credentials are invalid"].exists)
+    }
 }

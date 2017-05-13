@@ -24,7 +24,6 @@
 		9C4537951DD1236B00FF6CFE /* ratatouille.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C4537911DD1236B00FF6CFE /* ratatouille.css */; };
 		9C4BFBE01EC08EF200B75EFB /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4BFBDE1EC08EF200B75EFB /* Entry+CoreDataClass.swift */; };
 		9C4BFBE11EC08EF200B75EFB /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4BFBDF1EC08EF200B75EFB /* Entry+CoreDataProperties.swift */; };
-		9C5658501DE4E110006042C1 /* ArticleManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C56584F1DE4E110006042C1 /* ArticleManagerTests.swift */; };
 		9C65DEB11DC5EE85002CA068 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C65DEB01DC5EE85002CA068 /* Int.swift */; };
 		9C75961C1DBB567E0096614B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75961B1DBB567E0096614B /* String.swift */; };
 		9C75961E1DBD59330096614B /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75961D1DBD59330096614B /* ArticleViewController.swift */; };
@@ -135,7 +134,6 @@
 		9C4537911DD1236B00FF6CFE /* ratatouille.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ratatouille.css; sourceTree = "<group>"; };
 		9C4BFBDE1EC08EF200B75EFB /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
 		9C4BFBDF1EC08EF200B75EFB /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		9C56584F1DE4E110006042C1 /* ArticleManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleManagerTests.swift; sourceTree = "<group>"; };
 		9C65DEB01DC5EE85002CA068 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		9C6C88881EAEA8F20078C491 /* WallabagKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WallabagKit.framework; path = "../../Library/Developer/Xcode/DerivedData/wallabag-fcirammgjylpzjcvizhrpwjyvjmq/Build/Products/Debug-iphonesimulator/WallabagKit/WallabagKit.framework"; sourceTree = "<group>"; };
 		9C75961B1DBB567E0096614B /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -310,14 +308,6 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		9C2A2DB01DD4A92D00EDA4E8 /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-				9C56584F1DE4E110006042C1 /* ArticleManagerTests.swift */,
-			);
-			path = Lib;
-			sourceTree = "<group>";
-		};
 		9C380A1B1DD2683400E07CE7 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,7 +394,6 @@
 			isa = PBXGroup;
 			children = (
 				9C2A2DAD1DD4A81000EDA4E8 /* Extension */,
-				9C2A2DB01DD4A92D00EDA4E8 /* Lib */,
 				9C987A601DB79826005515F4 /* Info.plist */,
 			);
 			path = wallabagTests;
@@ -897,7 +886,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C2A2DB21DD4A96B00EDA4E8 /* IntTests.swift in Sources */,
-				9C5658501DE4E110006042C1 /* ArticleManagerTests.swift in Sources */,
 				9C2A2DB41DD4AA1D00EDA4E8 /* StringTests.swift in Sources */,
 				9C2A2DAF1DD4A82A00EDA4E8 /* DictionaryTests.swift in Sources */,
 			);
