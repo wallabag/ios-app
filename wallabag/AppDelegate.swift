@@ -98,11 +98,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func updateBadge() {
-        if WallabagApi.isConfigured() {
-            WallabagApi.retrieveUnreadArticle { total in
-                UIApplication.shared.applicationIconBadgeNumber = total
-            }
+        let sync = ArticleSync()
+        sync.sync()
+        let request = Entry.fetchEntryRequest()
+        switch Setting.getDefaultMode() {
+        case .unarchivedArticles:
+            request.predicate = NSPredicate(format: "is_archived == 0")
+            break
+        case .starredArticles:
+            request.predicate = NSPredicate(format: "is_starred == 1")
+            break
+        case .archivedArticles:
+            request.predicate = NSPredicate(format: "is_archived == 1")
+        default: break
         }
+
+        UIApplication.shared.applicationIconBadgeNumber = ((CoreData.fetch(request) as? [Entry]) ?? []).count
     }
 
     func resetApplication() {
