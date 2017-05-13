@@ -22,7 +22,9 @@ final class ArticlesTableViewController: UITableViewController {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
-        self.refreshControl?.endRefreshing()
+        if refreshControl?.isRefreshing ?? false {
+            refreshControl?.endRefreshing()
+        }
     }
 
     @IBAction func disconnect(segue: UIStoryboardSegue) {
