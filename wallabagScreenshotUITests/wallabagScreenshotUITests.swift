@@ -13,7 +13,6 @@ class SnapshotUITests: XCTestCase {
 
     func testScreenshotProcess() {
         let app = XCUIApplication()
-        setupSnapshot(app)
         app.launchArguments = ["RESET_APPLICATION"]
         app.launch()
 
@@ -31,11 +30,11 @@ class SnapshotUITests: XCTestCase {
 
         let clientidTextField = app.textFields["ClientId"]
         clientidTextField.tap()
-        clientidTextField.typeText("2_2vw9bl00nn6sk4skscc408wswk80gscg8o88swsw8ow4wkgccs")
+        clientidTextField.typeText("2_5c32wcr27p4wkk8k8k8s800g8g488ocsss8wwcs4s0s44wcos")
 
         let clientsecretTextField = app.textFields["ClientSecret"]
         clientsecretTextField.tap()
-        clientsecretTextField.typeText("30vyapj31jgg4cgw8s00k0go4cc0osgk0048cwooow4cc8o004")
+        clientsecretTextField.typeText("5wy501ku6z8c4w84gg4wcgs8k0ks08s0c0gk8co00gwc4ssgco")
         nextButton.tap()
 
         let usernameTextField = app.textFields["Username"]

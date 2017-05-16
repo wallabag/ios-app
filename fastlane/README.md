@@ -42,9 +42,14 @@ fastlane ios beta
 Submit a new Beta Build to Apple TestFlight
 
 This will also make sure the profile is up to date
-### ios snapshot
+### ios screenshot
 ```
-fastlane ios snapshot
+fastlane ios screenshot
+```
+
+### ios frame
+```
+fastlane ios frame
 ```
 
 ### ios release

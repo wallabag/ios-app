@@ -1,6 +1,6 @@
 # This is the minimum version number required.
 # Update this, if you use features of a newer version
-fastlane_version "1.106.2"
+fastlane_version "2.0"
 
 default_platform :ios
 
@@ -24,8 +24,13 @@ platform :ios do
     pilot
   end
 
-  lane :snapshot do
+  lane :screenshot do
     snapshot(scheme: "wallabagScreenshot")
+  end
+
+  lane :frame do
+    #:screenshot
+    frameit
   end
 
   desc "Deploy a new version to the App Store"
