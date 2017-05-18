@@ -50,10 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         requestBadge()
         updateBadge()
 
-        UIBarButtonItem.appearance().setTitleTextAttributes([
-            NSFontAttributeName: UIFont(name: "UbuntuTitling-Bold", size: 15.0)!
-            ], for: .normal)
-
         NetworkActivityIndicatorManager.shared.isEnabled = true
         NetworkActivityIndicatorManager.shared.startDelay = 0.1
 
