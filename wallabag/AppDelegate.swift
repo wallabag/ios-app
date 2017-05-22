@@ -98,6 +98,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let sync = ArticleSync()
             sync.sync()
         }
+        log.info("Update badge")
         let request = Entry.fetchEntryRequest()
         switch Setting.getDefaultMode() {
         case .unarchivedArticles:
@@ -115,9 +116,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func resetApplication() {
-        Setting.deleteServer()
-        Setting.setTheme(value: .white)
-        Setting.setDefaultMode(mode: .allArticles)
+        Setting.purge()
         CoreData.deleteAll("Entry")
     }
 }

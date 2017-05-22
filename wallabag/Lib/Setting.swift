@@ -11,6 +11,10 @@ import WallabagKit
 
 class Setting {
 
+    static let sharedDomain = "group.wallabag.share_extension"
+    static var standard = UserDefaults.standard
+    static var shared = UserDefaults(suiteName: sharedDomain)!
+
     enum RetrieveMode: String {
         case allArticles
         case archivedArticles
@@ -39,58 +43,68 @@ class Setting {
     }
 
     static func getDefaultMode() -> RetrieveMode {
-        guard let value = UserDefaults.standard.string(forKey: Const.defaultMode.rawValue) else {
+        guard let value = standard.string(forKey: Const.defaultMode.rawValue) else {
             return .allArticles
         }
         return RetrieveMode(rawValue: value)!
     }
 
     static func setDefaultMode(mode: RetrieveMode) {
-        UserDefaults.standard.set(mode.rawValue, forKey: Const.defaultMode.rawValue)
+        standard.set(mode.rawValue, forKey: Const.defaultMode.rawValue)
     }
 
     static func isJustifyArticle() -> Bool {
-        return UserDefaults.standard.bool(forKey: Const.justifyArticle.rawValue)
+        return standard.bool(forKey: Const.justifyArticle.rawValue)
     }
 
     static func setJustifyArticle(value: Bool) {
-        UserDefaults.standard.set(value, forKey: Const.justifyArticle.rawValue)
+        standard.set(value, forKey: Const.justifyArticle.rawValue)
     }
 
     static func isBadgeEnable() -> Bool {
         //enabled by default
-        if nil == UserDefaults.standard.object(forKey: Const.badge.rawValue) {
+        if nil == standard.object(forKey: Const.badge.rawValue) {
             return true
         }
-        return UserDefaults.standard.bool(forKey: Const.badge.rawValue)
+        return standard.bool(forKey: Const.badge.rawValue)
     }
 
     static func setBadgeEnable(value: Bool) {
-        UserDefaults.standard.set(value, forKey: Const.badge.rawValue)
+        standard.set(value, forKey: Const.badge.rawValue)
     }
 
     static func getTheme() -> ThemeManager.Theme {
-        guard let value = UserDefaults.standard.string(forKey: Const.articleTheme.rawValue) else {
-            return ThemeManager.Theme.light
+        guard let value = standard.string(forKey: Const.articleTheme.rawValue) else {
+            return .white
         }
 
-        return ThemeManager.Theme(rawValue: value) ?? .light
+        return ThemeManager.Theme(rawValue: value) ?? .white
     }
 
     static func setTheme(value: ThemeManager.Theme) {
-        UserDefaults.standard.set(value.rawValue, forKey: Const.articleTheme.rawValue)
+        standard.set(value.rawValue, forKey: Const.articleTheme.rawValue)
         ThemeManager.apply(theme: value)
     }
 
     static func deleteServer() {
-        let shareDefaults = UserDefaults(suiteName: "group.wallabag.share_extension")
-        shareDefaults?.removeObject(forKey: "host")
-        shareDefaults?.removeObject(forKey: "clientId")
-        shareDefaults?.removeObject(forKey: "clientSecret")
-        shareDefaults?.removeObject(forKey: "username")
-        shareDefaults?.removeObject(forKey: "password")
-        shareDefaults?.removeObject(forKey: "token")
-        shareDefaults?.removeObject(forKey: "refreshToken")
-        shareDefaults?.synchronize()
+        shared.removeObject(forKey: "host")
+        shared.removeObject(forKey: "clientId")
+        shared.removeObject(forKey: "clientSecret")
+        shared.removeObject(forKey: "username")
+        shared.removeObject(forKey: "password")
+        shared.removeObject(forKey: "token")
+        shared.removeObject(forKey: "refreshToken")
+        shared.synchronize()
+    }
+
+    static func purge() {
+        defer {
+            standard.synchronize()
+            shared.synchronize()
+        }
+        standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+        deleteServer()
+        shared.removeSuite(named: sharedDomain)
+        shared.removePersistentDomain(forName: sharedDomain)
     }
 }
