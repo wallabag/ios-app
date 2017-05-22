@@ -9,6 +9,8 @@
 import Foundation
 import WallabagKit
 import CoreData
+import CoreSpotlight
+import MobileCoreServices
 
 class ArticleSync: NSObject {
 
@@ -56,6 +58,8 @@ class ArticleSync: NSObject {
         entry.setValue(article.domainName, forKey: "domain_name")
         entry.setValue(article.readingTime, forKey: "reading_time")
         entry.setValue(article.url, forKey: "url")
+
+        index(entry: entry)
     }
 
     func update(entry: Entry, article: Article) {
@@ -70,5 +74,24 @@ class ArticleSync: NSObject {
     }
 
     func delete() {
+    }
+
+    func index(entry: Entry) {
+        let uniqIdentifier = "\(Bundle.main.bundleIdentifier!).spotlight.\(Int(entry.id))"
+        let searchableItemAttributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeText as String)
+
+        searchableItemAttributeSet.title = entry.title
+        searchableItemAttributeSet.contentDescription = entry.content?.withoutHTML
+
+        let searchableItem = CSSearchableItem(uniqueIdentifier: uniqIdentifier,
+                                              domainIdentifier: "entry",
+                                              attributeSet: searchableItemAttributeSet
+        )
+
+        CSSearchableIndex.default().indexSearchableItems([searchableItem]) { (error) -> Void in
+            if error != nil {
+                log.error(error?.localizedDescription)
+            }
+        }
     }
 }

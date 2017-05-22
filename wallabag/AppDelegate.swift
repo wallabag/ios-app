@@ -10,6 +10,7 @@ import UIKit
 import WallabagKit
 import AlamofireNetworkActivityIndicator
 import SwiftyBeaver
+import CoreSpotlight
 
 let log = SwiftyBeaver.self
 
@@ -56,6 +57,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ThemeManager.apply(theme: Setting.getTheme())
 
         return true
+    }
+
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
+        if WallabagApi.isConfigured() {
+            guard let mainController = window?.rootViewController! as? UINavigationController,
+                let articlesTable = mainController.viewControllers.first as? ArticlesTableViewController else {
+                return false
+            }
+            articlesTable.restoreUserActivityState(userActivity)
+            return true
+        }
+        return false
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

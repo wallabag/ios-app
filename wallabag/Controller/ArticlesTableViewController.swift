@@ -10,6 +10,7 @@ import UIKit
 import UserNotifications
 import WallabagKit
 import CoreData
+import CoreSpotlight
 
 final class ArticlesTableViewController: UITableViewController {
     let sync = ArticleSync()
@@ -17,6 +18,12 @@ final class ArticlesTableViewController: UITableViewController {
     var refreshing: Bool = false
     var entries: [Entry] = []
     var mode: Setting.RetrieveMode = Setting.getDefaultMode()
+
+    override func restoreUserActivityState(_ activity: NSUserActivity) {
+        if CSSearchableItemActionType == activity.activityType {
+            log.debug("Back from activity")
+        }
+    }
 
     private func refreshTableView() {
         DispatchQueue.main.async {
