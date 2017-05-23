@@ -21,7 +21,12 @@ final class ArticlesTableViewController: UITableViewController {
 
     override func restoreUserActivityState(_ activity: NSUserActivity) {
         if CSSearchableItemActionType == activity.activityType {
-            log.debug("Back from activity")
+            if let userInfo = activity.userInfo {
+                //let selectedEntry = userInfo[CSSearchableItemActivityIdentifier] as! String
+                //selectedMovieIndex = Int(selectedEntry.componentsSeparatedByString(".").last!)
+                //performSegueWithIdentifier("idSegueShowMovieDetails", sender: self)
+                log.debug("Back from activity")
+            }
         }
     }
 
@@ -172,23 +177,13 @@ final class ArticlesTableViewController: UITableViewController {
 
         let starAction = UITableViewRowAction(style: .default, title: entry.is_starred ? "Unstar" : "Star", handler: { _, indexPath in
             self.tableView.setEditing(false, animated: true)
-            entry.is_starred = !entry.is_starred
-            entry.updated_at = NSDate()
-            CoreData.saveContext()
-            WallabagApi.patchArticle(Int(entry.id), withParamaters: ["starred": (entry.is_starred).hashValue]) { _ in
-                self.tableView.reloadRows(at: [indexPath], with: .none)
-            }
+            self.star(entry)
         })
         starAction.backgroundColor = #colorLiteral(red: 1, green: 0.584313725, blue: 0, alpha: 1)
 
         let readAction = UITableViewRowAction(style: .default, title: entry.is_archived ? "Unread" : "Read", handler: { _, indexPath in
             self.tableView.setEditing(false, animated: true)
-            entry.is_archived = !entry.is_archived
-            entry.updated_at = NSDate()
-            CoreData.saveContext()
-            WallabagApi.patchArticle(Int(entry.id), withParamaters: ["archive": (entry.is_archived).hashValue]) { _ in
-                self.tableView.reloadRows(at: [indexPath], with: .none)
-            }
+            self.read(entry)
         })
         readAction.backgroundColor = #colorLiteral(red: 0, green: 0.478431373, blue: 1, alpha: 1)
 
@@ -214,8 +209,15 @@ final class ArticlesTableViewController: UITableViewController {
                 if let index = indexPath?.row {
                     if let controller = segue.destination as? ArticleViewController {
                         controller.entry = entries[index]
-                        controller.index = indexPath
-                        controller.delegate = self
+                        controller.readHandler = { entry in
+                            self.read(entry)
+                        }
+                        controller.starHandler = { entry in
+                            self.star(entry)
+                        }
+                        controller.deleteHandler = { entry in
+                            self.delete(entry)
+                        }
                     }
                 }
             }
@@ -224,5 +226,31 @@ final class ArticlesTableViewController: UITableViewController {
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+
+    private func read(_ entry: Entry) {
+        entry.is_archived = !entry.is_archived
+        entry.updated_at = NSDate()
+        CoreData.saveContext()
+        WallabagApi.patchArticle(Int(entry.id), withParamaters: ["archive": (entry.is_archived).hashValue]) { _ in
+
+        }
+    }
+
+    private func star(_ entry: Entry) {
+        entry.is_starred = !entry.is_starred
+        entry.updated_at = NSDate()
+        CoreData.saveContext()
+        WallabagApi.patchArticle(Int(entry.id), withParamaters: ["starred": (entry.is_starred).hashValue]) { _ in
+        }
+    }
+    
+    private func delete(_ entry: Entry) {
+        do {
+            try CoreData.delete(entry)
+            WallabagApi.deleteArticle(Int(entry.id)) {}
+        } catch {
+            
+        }
     }
 }

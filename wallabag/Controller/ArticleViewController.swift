@@ -12,8 +12,6 @@ import WallabagKit
 
 final class ArticleViewController: UIViewController {
 
-    weak var delegate: ArticlesTableViewController?
-    var index: IndexPath!
     var update: Bool = true
     var entry: Entry! {
         didSet {
@@ -21,22 +19,18 @@ final class ArticleViewController: UIViewController {
         }
     }
 
+    var deleteHandler: ((_ entry: Entry) -> Void)?
+    var readHandler: ((_ entry: Entry) -> Void)?
+    var starHandler: ((_ entry: Entry) -> Void)?
+
     @IBAction func read(_ sender: Any) {
-        entry.is_archived = !entry.is_archived
-        entry.updated_at = NSDate()
-        CoreData.saveContext()
-        WallabagApi.patchArticle(Int(entry.id), withParamaters: ["archive": (entry.is_archived).hashValue]) { _ in
-            _ = self.navigationController?.popViewController(animated: true)
-        }
+        readHandler?(entry)
+        _ = self.navigationController?.popViewController(animated: true)
     }
 
     @IBAction func star(_ sender: Any) {
-        entry.is_starred = !entry.is_starred
-        entry.updated_at = NSDate()
-        CoreData.saveContext()
-        WallabagApi.patchArticle(Int(entry.id), withParamaters: ["starred": (entry.is_starred).hashValue]) { _ in
-            self.updateUi()
-        }
+        starHandler?(entry)
+        updateUi()
     }
 
     @IBAction func shareMenu(_ sender: UIBarButtonItem) {
@@ -52,15 +46,11 @@ final class ArticleViewController: UIViewController {
     @IBAction func deleteArticle(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Delete", message: "Are you sure?", preferredStyle: .actionSheet)
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
-            WallabagApi.deleteArticle(Int(self.entry.id)) {
-                self.update = false
-                self.delegate?.delete(indexPath: self.index)
-                _ = self.navigationController?.popToRootViewController(animated: true)
-            }
+            self.deleteHandler?(self.entry)
+            _ = self.navigationController?.popToRootViewController(animated: true)
         })
         alert.addAction(deleteAction)
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
-
         alert.popoverPresentationController?.barButtonItem = sender
 
         present(alert, animated: true)
@@ -76,12 +66,6 @@ final class ArticleViewController: UIViewController {
         updateUi()
         loadArticleContent()
         contentWeb.backgroundColor = Setting.getTheme().backgroundColor
-    }
-
-    override func didMove(toParentViewController parent: UIViewController?) {
-        if parent == nil && update {
-            delegate?.handleRefresh()
-        }
     }
 
     private func loadArticleContent() {
