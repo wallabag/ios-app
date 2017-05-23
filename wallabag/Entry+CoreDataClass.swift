@@ -11,5 +11,7 @@ import CoreData
 
 @objc(Entry)
 public class Entry: NSManagedObject {
-
+    var spotlightIdentifier: String {
+        return "\(Bundle.main.bundleIdentifier!).spotlight.\(Int(id))"
+    }
 }

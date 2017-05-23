@@ -21,12 +21,18 @@ final class ArticlesTableViewController: UITableViewController {
 
     override func restoreUserActivityState(_ activity: NSUserActivity) {
         if CSSearchableItemActionType == activity.activityType {
-            if let userInfo = activity.userInfo {
-                //let selectedEntry = userInfo[CSSearchableItemActivityIdentifier] as! String
-                //selectedMovieIndex = Int(selectedEntry.componentsSeparatedByString(".").last!)
-                //performSegueWithIdentifier("idSegueShowMovieDetails", sender: self)
-                log.debug("Back from activity")
+            guard let userInfo = activity.userInfo,
+                let selectedEntry = userInfo[CSSearchableItemActivityIdentifier] as? String,
+                let selectedEntryId = Int(selectedEntry.components(separatedBy: ".").last!) else {
+                    return
             }
+
+            let fetchRequest = Entry.fetchEntryRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", selectedEntryId as NSNumber)
+            let results = (CoreData.fetch(fetchRequest) as? [Entry]) ?? []
+            log.debug("Back from activity")
+
+            performSegue(withIdentifier: "readArticle", sender: results.first)
         }
     }
 
@@ -170,18 +176,18 @@ final class ArticlesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let entry = entries[indexPath.row]
-        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete", handler: { _, indexPath in
-            self.delete(indexPath: indexPath)
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete", handler: { _, _ in
+            self.delete(entry)
         })
         deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.188235294, alpha: 1)
 
-        let starAction = UITableViewRowAction(style: .default, title: entry.is_starred ? "Unstar" : "Star", handler: { _, indexPath in
+        let starAction = UITableViewRowAction(style: .default, title: entry.is_starred ? "Unstar" : "Star", handler: { _, _ in
             self.tableView.setEditing(false, animated: true)
             self.star(entry)
         })
         starAction.backgroundColor = #colorLiteral(red: 1, green: 0.584313725, blue: 0, alpha: 1)
 
-        let readAction = UITableViewRowAction(style: .default, title: entry.is_archived ? "Unread" : "Read", handler: { _, indexPath in
+        let readAction = UITableViewRowAction(style: .default, title: entry.is_archived ? "Unread" : "Read", handler: { _, _ in
             self.tableView.setEditing(false, animated: true)
             self.read(entry)
         })
@@ -190,35 +196,28 @@ final class ArticlesTableViewController: UITableViewController {
         return [deleteAction, starAction, readAction]
     }
 
-    func delete(indexPath: IndexPath) {
-        let entry = entries[indexPath.row]
-        let id = entry.value(forKey: "id") as? Int
-        do {
-            try CoreData.delete(entry)
-            WallabagApi.deleteArticle(id!) {}
-        } catch {
-
-        }
-    }
-
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "readArticle" {
-            if let cell = sender as? UITableViewCell {
-                let indexPath = tableView.indexPath(for: cell)
-                if let index = indexPath?.row {
-                    if let controller = segue.destination as? ArticleViewController {
+            if let controller = segue.destination as? ArticleViewController {
+                controller.readHandler = { entry in
+                    self.read(entry)
+                }
+                controller.starHandler = { entry in
+                    self.star(entry)
+                }
+                controller.deleteHandler = { entry in
+                    self.delete(entry)
+                }
+
+                if let cell = sender as? UITableViewCell {
+                    let indexPath = tableView.indexPath(for: cell)
+                    if let index = indexPath?.row {
                         controller.entry = entries[index]
-                        controller.readHandler = { entry in
-                            self.read(entry)
-                        }
-                        controller.starHandler = { entry in
-                            self.star(entry)
-                        }
-                        controller.deleteHandler = { entry in
-                            self.delete(entry)
-                        }
                     }
+                }
+                if let entry = sender as? Entry {
+                    controller.entry = entry
                 }
             }
         }
@@ -244,13 +243,13 @@ final class ArticlesTableViewController: UITableViewController {
         WallabagApi.patchArticle(Int(entry.id), withParamaters: ["starred": (entry.is_starred).hashValue]) { _ in
         }
     }
-    
+
     private func delete(_ entry: Entry) {
         do {
-            try CoreData.delete(entry)
+            sync.delete(entry: entry)
             WallabagApi.deleteArticle(Int(entry.id)) {}
+            try CoreData.delete(entry)
         } catch {
-            
         }
     }
 }

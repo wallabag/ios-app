@@ -73,17 +73,17 @@ class ArticleSync: NSObject {
         }
     }
 
-    func delete() {
+    func delete(entry: Entry) {
+        CSSearchableIndex.default().deleteSearchableItems(withIdentifiers: [entry.spotlightIdentifier], completionHandler: nil)
     }
 
     func index(entry: Entry) {
-        let uniqIdentifier = "\(Bundle.main.bundleIdentifier!).spotlight.\(Int(entry.id))"
         let searchableItemAttributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeText as String)
 
         searchableItemAttributeSet.title = entry.title
         searchableItemAttributeSet.contentDescription = entry.content?.withoutHTML
 
-        let searchableItem = CSSearchableItem(uniqueIdentifier: uniqIdentifier,
+        let searchableItem = CSSearchableItem(uniqueIdentifier: entry.spotlightIdentifier,
                                               domainIdentifier: "entry",
                                               attributeSet: searchableItemAttributeSet
         )
