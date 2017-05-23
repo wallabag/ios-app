@@ -23,6 +23,10 @@ final class ArticleViewController: UIViewController {
     var readHandler: ((_ entry: Entry) -> Void)?
     var starHandler: ((_ entry: Entry) -> Void)?
 
+    @IBOutlet weak var contentWeb: UIWebView!
+    @IBOutlet weak var readButton: UIBarButtonItem!
+    @IBOutlet weak var starButton: UIBarButtonItem!
+
     @IBAction func read(_ sender: Any) {
         readHandler?(entry)
         _ = self.navigationController?.popViewController(animated: true)
@@ -55,10 +59,6 @@ final class ArticleViewController: UIViewController {
 
         present(alert, animated: true)
     }
-
-    @IBOutlet weak var contentWeb: UIWebView!
-    @IBOutlet weak var readButton: UIBarButtonItem!
-    @IBOutlet weak var starButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()

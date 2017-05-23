@@ -14,13 +14,13 @@ final class ClientIdViewController: UIViewController {
     @IBOutlet weak var clientId: UITextField!
     @IBOutlet weak var clientSecret: UITextField!
 
+    @IBAction func openMyInstance(_ sender: Any) {
+        UIApplication.shared.openURL(URL(string: WallabagApi.getHost()! + "/developer")!)
+    }
+
     override func viewDidLoad() {
         clientId.text = WallabagApi.getClientId()
         clientSecret.text = WallabagApi.getClientSecret()
-    }
-
-    @IBAction func openMyInstance(_ sender: Any) {
-        UIApplication.shared.openURL(URL(string: WallabagApi.getHost()! + "/developer")!)
     }
 
     // MARK: - Navigation

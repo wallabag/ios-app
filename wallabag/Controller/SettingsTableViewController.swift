@@ -13,11 +13,12 @@ final class SettingsTableViewController: UITableViewController {
 
     @IBOutlet weak var currentThemeLabel: UILabel!
     @IBOutlet weak var justifySwitch: UISwitch!
+    @IBOutlet weak var badgeSwitch: UISwitch!
+
     @IBAction func justifySwitch(_ sender: UISwitch) {
         Setting.setJustifyArticle(value: sender.isOn)
     }
 
-    @IBOutlet weak var badgeSwitch: UISwitch!
     @IBAction func badgeSwitch(_ sender: UISwitch) {
         Setting.setBadgeEnable(value: sender.isOn)
     }

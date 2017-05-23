@@ -13,37 +13,15 @@ import CoreData
 import CoreSpotlight
 
 final class ArticlesTableViewController: UITableViewController {
+    
     let sync = ArticleSync()
     var page: Int = 2
     var refreshing: Bool = false
     var entries: [Entry] = []
     var mode: Setting.RetrieveMode = Setting.getDefaultMode()
-
-    override func restoreUserActivityState(_ activity: NSUserActivity) {
-        if CSSearchableItemActionType == activity.activityType {
-            guard let userInfo = activity.userInfo,
-                let selectedEntry = userInfo[CSSearchableItemActivityIdentifier] as? String,
-                let selectedEntryId = Int(selectedEntry.components(separatedBy: ".").last!) else {
-                    return
-            }
-
-            let fetchRequest = Entry.fetchEntryRequest()
-            fetchRequest.predicate = NSPredicate(format: "id == %@", selectedEntryId as NSNumber)
-            let results = (CoreData.fetch(fetchRequest) as? [Entry]) ?? []
-            log.debug("Back from activity")
-
-            performSegue(withIdentifier: "readArticle", sender: results.first)
-        }
-    }
-
-    private func refreshTableView() {
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-        if refreshControl?.isRefreshing ?? false {
-            refreshControl?.endRefreshing()
-        }
-    }
+    
+    @IBOutlet weak var menu: UIBarButtonItem!
+    @IBOutlet weak var add: UIBarButtonItem!
 
     @IBAction func disconnect(segue: UIStoryboardSegue) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -53,27 +31,6 @@ final class ArticlesTableViewController: UITableViewController {
         appDelegate.window?.rootViewController = appDelegate.window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "home")
     }
 
-    private func updateUi() {
-        log.debug("Update ui")
-        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 70, height: 44))
-        titleLabel.isUserInteractionEnabled = true
-        titleLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.scrollTop)))
-        titleLabel.text = mode.humainReadable()
-        titleLabel.textColor = Setting.getTheme().color
-        navigationItem.titleView = titleLabel
-
-        navigationController?.navigationBar.setBackgroundImage(Setting.getTheme().navigationBarBackground, for: .default)
-        menu.tintColor = Setting.getTheme().tintColor
-        add.tintColor = Setting.getTheme().tintColor
-
-        tableView.backgroundColor = Setting.getTheme().backgroundColor
-        for row in 0 ... tableView.numberOfRows(inSection: 0) {
-            tableView.cellForRow(at: IndexPath(row: row, section: 0))?.backgroundColor = Setting.getTheme().backgroundColor
-        }
-    }
-
-    @IBOutlet weak var menu: UIBarButtonItem!
-    @IBOutlet weak var add: UIBarButtonItem!
     @IBAction func backFromParameter(segue: UIStoryboardSegue) {
         updateUi()
     }
@@ -101,6 +58,51 @@ final class ArticlesTableViewController: UITableViewController {
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
 
         present(alertController, animated: true)
+    }
+
+    override func restoreUserActivityState(_ activity: NSUserActivity) {
+        if CSSearchableItemActionType == activity.activityType {
+            guard let userInfo = activity.userInfo,
+                let selectedEntry = userInfo[CSSearchableItemActivityIdentifier] as? String,
+                let selectedEntryId = Int(selectedEntry.components(separatedBy: ".").last!) else {
+                    return
+            }
+
+            let fetchRequest = Entry.fetchEntryRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", selectedEntryId as NSNumber)
+            let results = (CoreData.fetch(fetchRequest) as? [Entry]) ?? []
+            log.debug("Back from activity")
+
+            performSegue(withIdentifier: "readArticle", sender: results.first)
+        }
+    }
+
+    private func refreshTableView() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        if refreshControl?.isRefreshing ?? false {
+            refreshControl?.endRefreshing()
+        }
+    }
+
+    private func updateUi() {
+        log.debug("Update ui")
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 70, height: 44))
+        titleLabel.isUserInteractionEnabled = true
+        titleLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.scrollTop)))
+        titleLabel.text = mode.humainReadable()
+        titleLabel.textColor = Setting.getTheme().color
+        navigationItem.titleView = titleLabel
+
+        navigationController?.navigationBar.setBackgroundImage(Setting.getTheme().navigationBarBackground, for: .default)
+        menu.tintColor = Setting.getTheme().tintColor
+        add.tintColor = Setting.getTheme().tintColor
+
+        tableView.backgroundColor = Setting.getTheme().backgroundColor
+        for row in 0 ... tableView.numberOfRows(inSection: 0) {
+            tableView.cellForRow(at: IndexPath(row: row, section: 0))?.backgroundColor = Setting.getTheme().backgroundColor
+        }
     }
 
     override func viewDidLoad() {
