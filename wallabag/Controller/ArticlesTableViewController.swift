@@ -15,6 +15,8 @@ import CoreSpotlight
 final class ArticlesTableViewController: UITableViewController {
     
     let sync = ArticleSync()
+    let searchController = UISearchController(searchResultsController: nil)
+
     var page: Int = 2
     var refreshing: Bool = false
     var entries: [Entry] = []
@@ -118,6 +120,11 @@ final class ArticlesTableViewController: UITableViewController {
         sync.sync()
 
         handleRefresh()
+
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
     }
 
     func managedObjectContextObjectsDidChange(notification: NSNotification) {
@@ -253,5 +260,23 @@ final class ArticlesTableViewController: UITableViewController {
             try CoreData.delete(entry)
         } catch {
         }
+    }
+}
+
+extension ArticlesTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if searchController.searchBar.text! == "" {
+            handleRefresh()
+            return
+        }
+        log.debug("search: " + searchController.searchBar.text!)
+        let fetchRequest = NSFetchRequest<Entry>(entityName: "Entry")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created_at", ascending: false)]
+        let predicateTitle = NSPredicate(format: "title CONTAINS[cd] %@", searchController.searchBar.text!)
+        let predicateContent = NSPredicate(format: "content CONTAINS[cd] %@", searchController.searchBar.text!)
+        fetchRequest.predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [predicateTitle, predicateContent])
+        entries = (CoreData.fetch(fetchRequest) as? [Entry]) ?? []
+
+        tableView.reloadData()
     }
 }
