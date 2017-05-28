@@ -13,30 +13,42 @@ import CoreSpotlight
 import MobileCoreServices
 
 class ArticleSync: NSObject {
+    private let syncQueue = DispatchQueue(label: "fr.district-web.wallabag.articleSyncQueue")
+    private let spotlightQueue = DispatchQueue(label: "fr.district-web.wallabag.spotlightQueue", qos: .background)
 
-    var page = 1
+    private var page = 1
 
-    func sync(page: Int = 1) {
-        log.info("Start syncing")
-        WallabagApi.retrieveArticle(page: page) { (articles, _) in
-            for article in articles {
-                let fetchRequest = Entry.fetchEntryRequest()
-                fetchRequest.predicate = NSPredicate(format: "id == %@", article.id as NSNumber)
-                let results = (CoreData.fetch(fetchRequest) as? [Entry]) ?? []
-                if 0 == results.count {
-                    self.insert(article)
-                } else {
-                    self.update(entry: results.first!, article: article)
+    func sync() {
+        fetch()
+    }
+
+    private func fetch(page: Int = 1) {
+        syncQueue.async(execute: DispatchWorkItem {
+            log.debug("Article sync work on page \(page)")
+            WallabagApi.retrieveArticle(page: page) { (articles, _) in
+                for article in articles {
+                    let fetchRequest = Entry.fetchEntryRequest()
+                    fetchRequest.predicate = NSPredicate(format: "id == %@", article.id as NSNumber)
+                    let results = (CoreData.fetch(fetchRequest) as? [Entry]) ?? []
+                    if 0 == results.count {
+                        self.insert(article)
+                    } else {
+                        self.update(entry: results.first!, article: article)
+                    }
                 }
-            }
-            if 0 != articles.count {
-                self.page += 1
-                self.sync(page: self.page)
-            }
 
-            log.info("Sync end")
-            CoreData.saveContext()
-        }
+                if 0 != articles.count {
+                    self.page += 1
+                    self.fetch(page: self.page)
+                } else {
+                    self.syncQueue.async(execute: DispatchWorkItem {
+                        self.page = 1
+                    })
+                }
+
+                CoreData.saveContext()
+            }
+        })
     }
 
     func insert(_ article: Article) {
@@ -59,7 +71,9 @@ class ArticleSync: NSObject {
         entry.setValue(article.readingTime, forKey: "reading_time")
         entry.setValue(article.url, forKey: "url")
 
-        index(entry: entry)
+        spotlightQueue.async {
+            self.index(entry: entry)
+        }
     }
 
     func update(entry: Entry, article: Article) {
@@ -78,19 +92,15 @@ class ArticleSync: NSObject {
     }
 
     func index(entry: Entry) {
-        let searchableItemAttributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeText as String)
-
-        searchableItemAttributeSet.title = entry.title
-        searchableItemAttributeSet.contentDescription = entry.content?.withoutHTML
-
+        log.debug("Spotlight entry \(entry.id)")
         let searchableItem = CSSearchableItem(uniqueIdentifier: entry.spotlightIdentifier,
                                               domainIdentifier: "entry",
-                                              attributeSet: searchableItemAttributeSet
+                                              attributeSet: entry.searchableItemAttributeSet
         )
 
         CSSearchableIndex.default().indexSearchableItems([searchableItem]) { (error) -> Void in
             if error != nil {
-                log.error(error?.localizedDescription)
+                log.error(error!.localizedDescription)
             }
         }
     }

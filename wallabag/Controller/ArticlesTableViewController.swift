@@ -117,8 +117,6 @@ final class ArticlesTableViewController: UITableViewController {
                                        object: CoreData.context
         )
 
-        sync.sync()
-
         handleRefresh()
 
         searchController.searchResultsUpdater = self
@@ -158,6 +156,7 @@ final class ArticlesTableViewController: UITableViewController {
 
     func handleRefresh() {
         updateUi()
+        sync.sync()
         log.debug("Handle refresh")
         let fetchRequest = NSFetchRequest<Entry>(entityName: "Entry")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created_at", ascending: false)]
