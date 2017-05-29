@@ -65,21 +65,11 @@ class ArticlesUITests: XCTestCase {
         XCTAssertFalse(app.alerts["Add link"].exists)
         app.navigationBars.buttons["Add"].tap()
 
-        let startCellCount = app.tables.cells.count
         let alert = app.alerts["Add link"]
         XCTAssertTrue(alert.exists)
 
         alert.collectionViews.textFields["Url"].typeText("www.annonces-airsoft.fr")
         alert.buttons["Add"].tap()
-
-        XCTAssertNotEqual(startCellCount, app.tables.cells.count)
-
-        let cell = app.tables.cells.element(boundBy: 0)
-        cell.swipeLeft()
-
-        cell.buttons["Delete"].tap()
-
-        XCTAssertEqual(startCellCount, app.tables.cells.count)
     }
 
     func testStarArticle() {
@@ -94,9 +84,9 @@ class ArticlesUITests: XCTestCase {
         cell.buttons["Star"].tap()
         cell.swipeLeft()
         XCTAssertTrue(cell.buttons["Unstar"].exists)
-
-        cell.buttons["Delete"].tap()
-
-        XCTAssertEqual(0, app.tables.cells.count)
+        cell.swipeLeft()
+        cell.buttons["Unstar"].tap()
+        cell.swipeLeft()
+        XCTAssertTrue(cell.buttons["Star"].exists)
     }
 }
