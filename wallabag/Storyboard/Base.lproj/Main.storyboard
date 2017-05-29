@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8tH-nc-JLr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8tH-nc-JLr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -255,13 +255,7 @@
                             <outlet property="delegate" destination="cre-7a-Z1t" id="VxX-yz-ybe"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="WwB-ip-ILW">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="4di-ML-eGG">
-                            <connections>
-                                <segue destination="Len-oJ-Yb1" kind="unwind" unwindAction="backFromParameterWithSegue:" id="G1f-Qb-Ou8"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Settings" id="WwB-ip-ILW"/>
                     <connections>
                         <outlet property="badgeSwitch" destination="Crn-AO-baC" id="UIn-nE-fFw"/>
                         <outlet property="currentThemeLabel" destination="sIr-IY-HU7" id="3Ul-92-V2A"/>
@@ -269,7 +263,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xSn-oy-5YC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Len-oJ-Yb1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5553" y="-2087"/>
         </scene>
@@ -610,7 +603,7 @@
             <objects>
                 <navigationController storyboardIdentifier="serverNavigation" automaticallyAdjustsScrollViewInsets="NO" id="LDR-tz-9ed" userLabel="Add server navigation" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="x91-Lh-MNV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x91-Lh-MNV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -788,7 +781,7 @@ This token are secret and can be found in your developer page, And create a new 
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8tH-nc-JLr" userLabel="Article Navigation" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dK2-gx-arx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dK2-gx-arx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -975,7 +968,7 @@ This token are secret and can be found in your developer page, And create a new 
         <scene sceneID="o2q-Hd-t7S">
             <objects>
                 <navigationController id="1X5-Uz-VZe" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="edy-e1-BkW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="edy-e1-BkW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -33,7 +33,7 @@ final class ArticlesTableViewController: UITableViewController {
         appDelegate.window?.rootViewController = appDelegate.window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "home")
     }
 
-    @IBAction func backFromParameter(segue: UIStoryboardSegue) {
+    override func didMove(toParentViewController parent: UIViewController?) {
         updateUi()
     }
 
