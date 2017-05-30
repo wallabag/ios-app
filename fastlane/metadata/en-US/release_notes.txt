@@ -2,4 +2,4 @@ Welcome to the v2 version!
 This release brings the offline mode.
 And you can now look for articles into the application and from spotlight.
 
-No more changes, but in this release, we cleaned lots of technical stuffs.
+No more changes, but in this release, we cleaned lots of technical stuff.
