@@ -1,6 +1,5 @@
-Bienvenue à la version 2.0!
-Cette version apporte le mode offline!
-Et vous pouvez maintenant rechercher vos articles dans l'application et depuis  spotlight.
+Welcome to the v2 version!
+This release brings the offline mode.
+And you can now look for articles into the application and from spotlight.
 
-C'est peu de nouveauté. 
-Mais nous avons profiter de la 2.0 pour nettoyer beaucoup de code 
+No more changes, but in this release, we cleaned lots of technical stuff.
