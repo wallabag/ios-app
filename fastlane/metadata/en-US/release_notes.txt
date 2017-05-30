@@ -1,10 +1,6 @@
-In this release you can have badge on your app icon which will represent items in your default list view (if it's the unread list, you'll have a badge with the number of unread items, etc.). This feature can be disabled in settings.
-We fixed some bugs, like articles in list which doesn't match the selected filter and some problem with theme.
-Share extension are completly reworked and should work everywhere now !
-Article list is now more clear and a tap on the title will scroll up to the top.
-wallabag is now available on iOS 9.0 too (we care about people using that old iOS from 1 year and a half)
+Bienvenue à la version 2.0!
+Cette version apporte le mode offline!
+Et vous pouvez maintenant rechercher vos articles dans l'application et depuis  spotlight.
 
-Minor fix :
-- Update fading animation for extension
-- Rename extension "Bag it!" to "wallabag"
-- Disconnect now reset team
+C'est peu de nouveauté. 
+Mais nous avons profiter de la 2.0 pour nettoyer beaucoup de code 

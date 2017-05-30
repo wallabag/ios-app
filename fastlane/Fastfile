@@ -18,9 +18,7 @@ platform :ios do
   desc "This will also make sure the profile is up to date"
   lane :beta do
     increment_build_number
-#    cert
-#    sigh(force: true)
-    gym(scheme: "wallabag") # Build your app - more options available
+    gym(scheme: "wallabag")
     pilot
   end
 
@@ -29,7 +27,6 @@ platform :ios do
   end
 
   lane :frame do
-    #:screenshot
     frameit
   end
 
@@ -37,8 +34,6 @@ platform :ios do
   lane :release do
     deliver(skip_binary_upload: true, force: true, automatic_release: true)
   end
-
-  # You can define as many lanes as you want
 
   after_all do |lane|
     

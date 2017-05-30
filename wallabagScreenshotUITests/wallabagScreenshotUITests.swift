@@ -30,20 +30,20 @@ class SnapshotUITests: XCTestCase {
 
         let clientidTextField = app.textFields["ClientId"]
         clientidTextField.tap()
-        clientidTextField.typeText("2_5c32wcr27p4wkk8k8k8s800g8g488ocsss8wwcs4s0s44wcos")
+        clientidTextField.typeText("3_26wjjwi43i1w0oss400k8gw8gkck4wgg8ocsco8g4w8040sksw")
 
         let clientsecretTextField = app.textFields["ClientSecret"]
         clientsecretTextField.tap()
-        clientsecretTextField.typeText("5wy501ku6z8c4w84gg4wcgs8k0ks08s0c0gk8co00gwc4ssgco")
+        clientsecretTextField.typeText("555z72uyvqko40o8k0cc0sk4ocog0sogg40okws4sooc4o8k8k")
         nextButton.tap()
 
         let usernameTextField = app.textFields["Username"]
         usernameTextField.tap()
-        usernameTextField.typeText("dev")
+        usernameTextField.typeText("demo")
 
         let passwordSecureTextField = app.secureTextFields["Password"]
         passwordSecureTextField.tap()
-        passwordSecureTextField.typeText("dev")
+        passwordSecureTextField.typeText("demo")
         nextButton.tap()
 
         snapshot("01Home")
