@@ -1,0 +1,5 @@
+Bienvenue à la version 2.0 !
+Cette version apporte le mode offline.
+Et vous pouvez maintenant rechercher vos articles dans l'application et depuis spotlight.
+
+C'est peu de nouveautés, mais nous avons profité de la 2.0 pour nettoyer beaucoup de code.
