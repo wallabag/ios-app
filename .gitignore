@@ -66,6 +66,8 @@ fastlane/Appfile
 #Preview.html
 #fastlane/screenshots
 fastlane/test_output
+fastlane/metadata/review_information
+fastlane/metadata/trade_representative_contact_information
 
 *.cer
 *.mobileprovision
