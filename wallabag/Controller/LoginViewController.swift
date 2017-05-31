@@ -7,10 +7,10 @@
 //
 
 import UIKit
+import WallabagKit
 
 final class LoginViewController: UIViewController {
 
-    var server: String!
     var clientId: String!
     var clientSecret: String!
 
@@ -18,19 +18,10 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
 
     @IBAction func login(_ sender: UIButton) {
-        let server = Server(host: self.server,
-                            client_secret: self.clientSecret,
-                            client_id: self.clientId,
-                            username: self.username.text!,
-                            password: self.password.text!
-        )
-
-        WallabagApi.configureApi(from: server)
         sender.isEnabled = false
 
-        WallabagApi.requestToken { success, error in
+        WallabagApi.requestToken(username: username.text!, password: password.text!) { success, error in
             if success {
-                Setting.set(server: server)
                 self.performSegue(withIdentifier: "toArticles", sender: nil)
             } else {
                 let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)

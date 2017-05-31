@@ -7,14 +7,19 @@
 //
 
 import UIKit
-import Alamofire
+import WallabagKit
 
 final class ServerViewController: UIViewController {
 
     @IBOutlet weak var server: UITextField!
 
+    override func viewDidLoad() {
+        server.text = WallabagApi.getHost()
+    }
+
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if validateServer(string: server.text!) {
+            WallabagApi.configure(host: server.text!)
             return true
         }
 
@@ -24,12 +29,6 @@ final class ServerViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
 
         return false
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let controller = segue.destination as? ClientIdViewController {
-            controller.server = server.text!
-        }
     }
 
     func validateServer(string: String) -> Bool {

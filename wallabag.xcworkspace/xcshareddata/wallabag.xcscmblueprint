@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9F221A9779FD5BF6738149F7B36558CAB0954809",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "01505634E0EEFA7B598CA74F2E872076C01198DF" : 9223372036854775807,
+    "9F221A9779FD5BF6738149F7B36558CAB0954809" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2DD179AD-664D-43BC-AD6D-3CF134503AED",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "01505634E0EEFA7B598CA74F2E872076C01198DF" : "WallabagKit\/",
+    "9F221A9779FD5BF6738149F7B36558CAB0954809" : "wallabag\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "wallabag",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "wallabag.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:wallabag\/WallabagKit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "01505634E0EEFA7B598CA74F2E872076C01198DF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:wallabag\/ios-app.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9F221A9779FD5BF6738149F7B36558CAB0954809"
+    }
+  ]
+}

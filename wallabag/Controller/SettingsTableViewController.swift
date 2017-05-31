@@ -7,16 +7,18 @@
 //
 
 import UIKit
+import WallabagKit
 
 final class SettingsTableViewController: UITableViewController {
 
     @IBOutlet weak var currentThemeLabel: UILabel!
     @IBOutlet weak var justifySwitch: UISwitch!
+    @IBOutlet weak var badgeSwitch: UISwitch!
+
     @IBAction func justifySwitch(_ sender: UISwitch) {
         Setting.setJustifyArticle(value: sender.isOn)
     }
 
-    @IBOutlet weak var badgeSwitch: UISwitch!
     @IBAction func badgeSwitch(_ sender: UISwitch) {
         Setting.setBadgeEnable(value: sender.isOn)
     }
@@ -42,7 +44,7 @@ final class SettingsTableViewController: UITableViewController {
             }
 
             if let cell = tableView.cellForRow(at: indexPath) {
-                Setting.setDefaultMode(mode: RetrieveMode(rawValue: cell.reuseIdentifier!)!)
+                Setting.setDefaultMode(mode: Setting.RetrieveMode(rawValue: cell.reuseIdentifier!)!)
                 cell.accessoryType = .checkmark
             }
 
@@ -53,7 +55,7 @@ final class SettingsTableViewController: UITableViewController {
     fileprivate func prepareDefaultList() {
         for row in 0 ... tableView.numberOfRows(inSection: 0) {
             if let cell = tableView.cellForRow(at: IndexPath(row: row, section: 0)) {
-                if RetrieveMode(rawValue: cell.reuseIdentifier!)! == Setting.getDefaultMode() {
+                if Setting.RetrieveMode(rawValue: cell.reuseIdentifier!)! == Setting.getDefaultMode() {
                     cell.accessoryType = .checkmark
                 }
             }

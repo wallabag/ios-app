@@ -8,6 +8,7 @@
 
 import UIKit
 import Social
+import WallabagKit
 
 @objc(ShareViewController)
 class ShareViewController: UIViewController {
@@ -35,38 +36,25 @@ class ShareViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        WallabagApi.init(userStorage: UserDefaults(suiteName: "group.wallabag.share_extension")!)
         view.addSubview(backView)
         view.addSubview(notificationView)
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        DispatchQueue.main.async { [unowned self] in
-            guard let user = UserDefaults(suiteName: "group.wallabag.share_extension"),
-                let host = user.value(forKey: "host") as? String,
-                let clientId = user.value(forKey: "clientId") as? String,
-                let clientSecret = user.value(forKey: "clientSecret") as? String,
-                let username = user.value(forKey: "username") as? String,
-                let password = user.value(forKey: "password") as? String else {
-                    self.extensionContext?.cancelRequest(withError: NSError())
-                    return
-            }
-
+        if WallabagApi.isConfigured() {
             for item in (self.extensionContext?.inputItems as? [NSExtensionItem])! {
                 for attachements in (item.attachments as? [NSItemProvider])! {
                     if attachements.hasItemConformingToTypeIdentifier("public.url") {
                         attachements.loadItem(forTypeIdentifier: "public.url", options: nil, completionHandler: { (url, _) -> Void in
                             if let shareURL = url as? NSURL {
-                                let server = Server(host: host, client_secret: clientSecret, client_id: clientId, username: username, password: password)
-                                WallabagApi.configureApi(from: server)
-                                WallabagApi.requestToken { _ in
-                                    WallabagApi.addArticle(shareURL as URL, completion: { _ in
-                                        UIView.animate(withDuration: 1.0, animations: {
-                                            self.notificationView.alpha = 0.0
-                                        }, completion: { _ in
-                                            self.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
-                                        })
+                                WallabagApi.addArticle(shareURL as URL, completion: { _ in
+                                    UIView.animate(withDuration: 1.0, animations: {
+                                        self.notificationView.alpha = 0.0
+                                    }, completion: { _ in
+                                        self.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
                                     })
-                                }
+                                })
                             } else {
                                 self.extensionContext?.cancelRequest(withError: NSError())
                             }
@@ -74,6 +62,8 @@ class ShareViewController: UIViewController {
                     }
                 }
             }
+        } else {
+            // @todo handle no configured server or 4** response 
         }
     }
 }

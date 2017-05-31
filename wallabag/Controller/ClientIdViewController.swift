@@ -7,24 +7,26 @@
 //
 
 import UIKit
+import WallabagKit
 
 final class ClientIdViewController: UIViewController {
-
-    var server: String!
 
     @IBOutlet weak var clientId: UITextField!
     @IBOutlet weak var clientSecret: UITextField!
 
     @IBAction func openMyInstance(_ sender: Any) {
-        UIApplication.shared.openURL(URL(string: server + "/developer")!)
+        UIApplication.shared.openURL(URL(string: WallabagApi.getHost()! + "/developer")!)
+    }
+
+    override func viewDidLoad() {
+        clientId.text = WallabagApi.getClientId()
+        clientSecret.text = WallabagApi.getClientSecret()
     }
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let controller = segue.destination as? LoginViewController {
-            controller.server = server
-            controller.clientId = clientId.text!
-            controller.clientSecret = clientSecret.text!
+        if segue.destination is LoginViewController {
+            WallabagApi.configure(clientId: clientId.text!, clientSecret: clientSecret.text!)
         }
     }
 }

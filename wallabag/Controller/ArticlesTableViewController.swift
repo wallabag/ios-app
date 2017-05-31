@@ -8,27 +8,92 @@
 
 import UIKit
 import UserNotifications
+import WallabagKit
+import CoreData
+import CoreSpotlight
 
 final class ArticlesTableViewController: UITableViewController {
-
-    lazy var slideInTransitioningManager = SlideInPresentationManager()
+    
+    let sync = ArticleSync()
+    let searchController = UISearchController(searchResultsController: nil)
 
     var page: Int = 2
     var refreshing: Bool = false
-    var articlesManager: ArticleManager = ArticleManager()
+    var entries: [Entry] = []
+    var mode: Setting.RetrieveMode = Setting.getDefaultMode()
+    
+    @IBOutlet weak var menu: UIBarButtonItem!
+    @IBOutlet weak var add: UIBarButtonItem!
 
-    fileprivate func refreshTableView() {
+    @IBAction func disconnect(segue: UIStoryboardSegue) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        appDelegate.resetApplication()
+        appDelegate.window?.rootViewController = appDelegate.window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "home")
+    }
+
+    override func didMove(toParentViewController parent: UIViewController?) {
+        updateUi()
+    }
+
+    @IBAction func filterList(segue: UIStoryboardSegue) {
+        mode = Setting.RetrieveMode(rawValue: segue.identifier!)!
+        handleRefresh()
+    }
+
+    @IBAction func addLink(_ sender: UIBarButtonItem) {
+        let alertController = UIAlertController(title: "Add link", message: nil, preferredStyle: .alert)
+        alertController.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Url"
+        })
+        alertController.addAction(UIAlertAction(title: "Add", style: .default, handler: { _ in
+            if let textfield = alertController.textFields?.first?.text {
+                if let url = URL(string: textfield) {
+                    WallabagApi.addArticle(url) { article in
+                        self.sync.insert(article)
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        present(alertController, animated: true)
+    }
+
+    override func restoreUserActivityState(_ activity: NSUserActivity) {
+        if CSSearchableItemActionType == activity.activityType {
+            guard let userInfo = activity.userInfo,
+                let selectedEntry = userInfo[CSSearchableItemActivityIdentifier] as? String,
+                let selectedEntryId = Int(selectedEntry.components(separatedBy: ".").last!) else {
+                    return
+            }
+
+            let fetchRequest = Entry.fetchEntryRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", selectedEntryId as NSNumber)
+            let results = (CoreData.fetch(fetchRequest) as? [Entry]) ?? []
+            log.debug("Back from activity")
+
+            performSegue(withIdentifier: "readArticle", sender: results.first)
+        }
+    }
+
+    private func refreshTableView() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
-        self.refreshControl?.endRefreshing()
+        if refreshControl?.isRefreshing ?? false {
+            refreshControl?.endRefreshing()
+        }
     }
 
-    fileprivate func updateUi() {
+    private func updateUi() {
+        log.debug("Update ui")
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 70, height: 44))
         titleLabel.isUserInteractionEnabled = true
         titleLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.scrollTop)))
-        titleLabel.text = WallabagApi.mode.humainReadable()
+        titleLabel.text = mode.humainReadable()
         titleLabel.textColor = Setting.getTheme().color
         navigationItem.titleView = titleLabel
 
@@ -42,55 +107,27 @@ final class ArticlesTableViewController: UITableViewController {
         }
     }
 
-    @IBOutlet weak var menu: UIBarButtonItem!
-    @IBOutlet weak var add: UIBarButtonItem!
-    @IBAction func backFromParameter(segue: UIStoryboardSegue) {
-        updateUi()
-    }
-
-    @IBAction func unarchivedArticles(segue: UIStoryboardSegue) {
-        WallabagApi.mode = .unarchivedArticles
-        handleRefresh()
-    }
-
-    @IBAction func allArticles(segue: UIStoryboardSegue) {
-        WallabagApi.mode = .allArticles
-        handleRefresh()
-    }
-
-    @IBAction func archivedArticles(segue: UIStoryboardSegue) {
-        WallabagApi.mode = .archivedArticles
-        handleRefresh()
-    }
-
-    @IBAction func starredArticles(segue: UIStoryboardSegue) {
-        WallabagApi.mode = .starredArticles
-        handleRefresh()
-    }
-
-    @IBAction func addLink(_ sender: UIBarButtonItem) {
-        let alertController = UIAlertController(title: "Add link", message: nil, preferredStyle: .alert)
-        alertController.addTextField(configurationHandler: { textField in
-            textField.placeholder = "Url"
-        })
-        alertController.addAction(UIAlertAction(title: "Add", style: .default, handler: { _ in
-            if let textfield = alertController.textFields?.first?.text {
-                if let url = URL(string: textfield) {
-                    WallabagApi.addArticle(url) { article in
-                        self.articlesManager.insert(article: article)
-                        self.tableView.reloadData()
-                    }
-                }
-            }
-        }))
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-
-        present(alertController, animated: true)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self,
+                                       selector: #selector(managedObjectContextObjectsDidChange),
+                                       name: NSNotification.Name.NSManagedObjectContextObjectsDidChange,
+                                       object: CoreData.context
+        )
+
+        handleRefresh()
+
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
+    }
+
+    func managedObjectContextObjectsDidChange(notification: NSNotification) {
+        guard let _ = notification.userInfo else { return }
+        log.debug("managedObjectContextObjectsDidChange")
         handleRefresh()
     }
 
@@ -104,37 +141,41 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articlesManager.getArticles().count
+        return entries.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "articleIdentifier", for: indexPath) as? ArticleTableViewCell {
-            cell.present(articlesManager.getArticles()[indexPath.item])
-            return cell
-        } else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "articleIdentifier", for: indexPath) as? ArticleTableViewCell else {
             return UITableViewCell()
         }
+
+        cell.present(entries[indexPath.row])
+
+        return cell
     }
 
     func handleRefresh() {
         updateUi()
-        WallabagApi.retrieveArticle(page: 1) { articles in
-            self.articlesManager.setArticles(articles: articles)
-            self.page = 2
-            self.refreshTableView()
-        }
-    }
+        sync.sync()
+        log.debug("Handle refresh")
+        let fetchRequest = NSFetchRequest<Entry>(entityName: "Entry")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created_at", ascending: false)]
 
-    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        if scrollView == tableView && ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height - 100) && !refreshing {
-            refreshing = true
-            WallabagApi.retrieveArticle(page: page) { articles in
-                self.page += 1
-                self.refreshing = false
-                self.articlesManager.addArticles(articles: articles)
-                self.refreshTableView()
-            }
+        switch mode {
+        case .unarchivedArticles:
+            fetchRequest.predicate = NSPredicate(format: "is_archived == 0")
+            break
+        case .starredArticles:
+            fetchRequest.predicate = NSPredicate(format: "is_starred == 1")
+            break
+        case .archivedArticles:
+            fetchRequest.predicate = NSPredicate(format: "is_archived == 1")
+        default: break
+
         }
+
+        entries = (CoreData.fetch(fetchRequest) as? [Entry]) ?? []
+        refreshTableView()
     }
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -142,104 +183,99 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let article = self.articlesManager.getArticle(atIndex: indexPath.row)
-
-        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete", handler: { _, indexPath in
-            self.delete(article, indexPath: indexPath)
+        let entry = entries[indexPath.row]
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete", handler: { _, _ in
+            self.delete(entry)
         })
         deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.188235294, alpha: 1)
 
-        let starAction = UITableViewRowAction(style: .default, title: article.isStarred ? "Unstar" : "Star", handler: { _, indexPath in
+        let starAction = UITableViewRowAction(style: .default, title: entry.is_starred ? "Unstar" : "Star", handler: { _, _ in
             self.tableView.setEditing(false, animated: true)
-            WallabagApi.patchArticle(article, withParamaters: ["starred": (!article.isStarred).hashValue]) { article in
-                self.articlesManager.update(article: article, at: indexPath.row)
-                self.tableView.reloadRows(at: [indexPath], with: .automatic)
-            }
+            self.star(entry)
         })
         starAction.backgroundColor = #colorLiteral(red: 1, green: 0.584313725, blue: 0, alpha: 1)
 
-        let readAction = UITableViewRowAction(style: .default, title: article.isArchived ? "Unread" : "Read", handler: { _, indexPath in
+        let readAction = UITableViewRowAction(style: .default, title: entry.is_archived ? "Unread" : "Read", handler: { _, _ in
             self.tableView.setEditing(false, animated: true)
-            WallabagApi.patchArticle(article, withParamaters: ["archive": (!article.isArchived).hashValue]) { article in
-                self.articlesManager.update(article: article, at: indexPath.row)
-                self.tableView.reloadRows(at: [indexPath], with: .automatic)
-            }
+            self.read(entry)
         })
         readAction.backgroundColor = #colorLiteral(red: 0, green: 0.478431373, blue: 1, alpha: 1)
 
         return [deleteAction, starAction, readAction]
     }
 
-    func delete(_ article: Article, indexPath: IndexPath) {
-        WallabagApi.deleteArticle(article) {
-            self.articlesManager.removeArticle(atIndex: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .automatic)
-            self.refreshTableView()
-        }
-    }
-
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let controller = segue.destination
-
         if segue.identifier == "readArticle" {
-            if let cell = sender as? UITableViewCell {
-                let indexPath = tableView.indexPath(for: cell)
-                if let index = indexPath?.row {
-                    if let controller = controller as? ArticleViewController {
-                        controller.article = articlesManager.getArticle(atIndex: index)
-                        controller.index = indexPath
-                        controller.delegate = self
+            if let controller = segue.destination as? ArticleViewController {
+                controller.readHandler = { entry in
+                    self.read(entry)
+                }
+                controller.starHandler = { entry in
+                    self.star(entry)
+                }
+                controller.deleteHandler = { entry in
+                    self.delete(entry)
+                }
+
+                if let cell = sender as? UITableViewCell {
+                    let indexPath = tableView.indexPath(for: cell)
+                    if let index = indexPath?.row {
+                        controller.entry = entries[index]
                     }
                 }
+                if let entry = sender as? Entry {
+                    controller.entry = entry
+                }
             }
-        }
-
-        if segue.identifier == "menu" {
-            slideInTransitioningManager.direction = .left
-            slideInTransitioningManager.disableCompactHeight = false
-            controller.transitioningDelegate = slideInTransitioningManager
-            controller.modalPresentationStyle = .custom
-        }
-    }
-
-    func update(_ article: Article, atIndex index: IndexPath) {
-        defer {
-            refreshTableView()
-        }
-
-        switch WallabagApi.mode {
-        case .allArticles:
-            articlesManager.update(article: article, at: index.row)
-            return
-        case .archivedArticles:
-            if article.isArchived {
-                articlesManager.update(article: article, at: index.row)
-                return
-            }
-
-            articlesManager.removeArticle(atIndex: index.row)
-            return
-        case .unarchivedArticles:
-            if article.isArchived {
-                articlesManager.removeArticle(atIndex: index.row)
-                return
-            } 
-
-            articlesManager.update(article: article, at: index.row)
-            return
-        case .starredArticles:
-            if article.isStarred {
-                articlesManager.update(article: article, at: index.row)
-                return
-            } 
-
-            articlesManager.removeArticle(atIndex: index.row)
-            return
         }
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+
+    private func read(_ entry: Entry) {
+        entry.is_archived = !entry.is_archived
+        entry.updated_at = NSDate()
+        CoreData.saveContext()
+        WallabagApi.patchArticle(Int(entry.id), withParamaters: ["archive": (entry.is_archived).hashValue]) { _ in
+
+        }
+    }
+
+    private func star(_ entry: Entry) {
+        entry.is_starred = !entry.is_starred
+        entry.updated_at = NSDate()
+        CoreData.saveContext()
+        WallabagApi.patchArticle(Int(entry.id), withParamaters: ["starred": (entry.is_starred).hashValue]) { _ in
+        }
+    }
+
+    private func delete(_ entry: Entry) {
+        do {
+            sync.delete(entry: entry)
+            WallabagApi.deleteArticle(Int(entry.id)) {}
+            try CoreData.delete(entry)
+        } catch {
+        }
+    }
+}
+
+extension ArticlesTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if searchController.searchBar.text! == "" {
+            handleRefresh()
+            return
+        }
+        log.debug("search: " + searchController.searchBar.text!)
+        let fetchRequest = NSFetchRequest<Entry>(entityName: "Entry")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created_at", ascending: false)]
+        let predicateTitle = NSPredicate(format: "title CONTAINS[cd] %@", searchController.searchBar.text!)
+        let predicateContent = NSPredicate(format: "content CONTAINS[cd] %@", searchController.searchBar.text!)
+        fetchRequest.predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [predicateTitle, predicateContent])
+        entries = (CoreData.fetch(fetchRequest) as? [Entry]) ?? []
+
+        tableView.reloadData()
     }
 }

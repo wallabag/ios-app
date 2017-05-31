@@ -27,4 +27,8 @@ extension String {
 
         return first.lowercased() + String(characters.dropFirst())
     }
+
+    var withoutHTML: String {
+        return self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+    }
 }
