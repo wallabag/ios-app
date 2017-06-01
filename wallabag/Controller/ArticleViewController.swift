@@ -12,6 +12,7 @@ import WallabagKit
 
 final class ArticleViewController: UIViewController {
 
+    var lastOffsetY: CGFloat = 0
     var update: Bool = true
     var entry: Entry! {
         didSet {
@@ -65,6 +66,7 @@ final class ArticleViewController: UIViewController {
         navigationItem.title = entry.title
         updateUi()
         loadArticleContent()
+        contentWeb.scrollView.delegate = self
         contentWeb.backgroundColor = Setting.getTheme().backgroundColor
     }
 
@@ -90,5 +92,16 @@ final class ArticleViewController: UIViewController {
     private func updateUi() {
         readButton?.image = entry.is_archived ? #imageLiteral(resourceName: "readed") : #imageLiteral(resourceName: "unreaded")
         starButton?.image = entry.is_starred ? #imageLiteral(resourceName: "starred") : #imageLiteral(resourceName: "unstarred")
+    }
+}
+
+extension ArticleViewController: UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        lastOffsetY = scrollView.contentOffset.y
+    }
+
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        let hide = scrollView.contentOffset.y > self.lastOffsetY
+        self.navigationController?.setNavigationBarHidden(hide, animated: true)
     }
 }
