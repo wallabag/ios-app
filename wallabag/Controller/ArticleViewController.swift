@@ -23,10 +23,16 @@ final class ArticleViewController: UIViewController {
     var deleteHandler: ((_ entry: Entry) -> Void)?
     var readHandler: ((_ entry: Entry) -> Void)?
     var starHandler: ((_ entry: Entry) -> Void)?
+    var addHandler: (() -> Void)?
 
     @IBOutlet weak var contentWeb: UIWebView!
     @IBOutlet weak var readButton: UIBarButtonItem!
     @IBOutlet weak var starButton: UIBarButtonItem!
+
+    @IBAction func add(_ sender: Any) {
+        print("test")
+        addHandler?()
+    }
 
     @IBAction func read(_ sender: Any) {
         readHandler?(entry)

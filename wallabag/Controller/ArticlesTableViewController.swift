@@ -43,23 +43,7 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     @IBAction func addLink(_ sender: UIBarButtonItem) {
-        let alertController = UIAlertController(title: "Add link", message: nil, preferredStyle: .alert)
-        alertController.addTextField(configurationHandler: { textField in
-            textField.placeholder = "Url"
-        })
-        alertController.addAction(UIAlertAction(title: "Add", style: .default, handler: { _ in
-            if let textfield = alertController.textFields?.first?.text {
-                if let url = URL(string: textfield) {
-                    WallabagApi.addArticle(url) { article in
-                        self.sync.insert(article)
-                        self.tableView.reloadData()
-                    }
-                }
-            }
-        }))
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-
-        present(alertController, animated: true)
+        addArticle(self)
     }
 
     override func restoreUserActivityState(_ activity: NSUserActivity) {
@@ -217,6 +201,9 @@ final class ArticlesTableViewController: UITableViewController {
                 controller.deleteHandler = { entry in
                     self.delete(entry)
                 }
+                controller.addHandler = {
+                    self.addArticle(controller)
+                }
 
                 if let cell = sender as? UITableViewCell {
                     let indexPath = tableView.indexPath(for: cell)
@@ -259,6 +246,26 @@ final class ArticlesTableViewController: UITableViewController {
             try CoreData.delete(entry)
         } catch {
         }
+    }
+
+    private func addArticle(_ fromController: UIViewController) {
+        let alertController = UIAlertController(title: "Add link", message: nil, preferredStyle: .alert)
+        alertController.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Url"
+        })
+        alertController.addAction(UIAlertAction(title: "Add", style: .default, handler: { _ in
+            if let textfield = alertController.textFields?.first?.text {
+                if let url = URL(string: textfield) {
+                    WallabagApi.addArticle(url) { article in
+                        self.sync.insert(article)
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+        fromController.present(alertController, animated: true)
     }
 }
 
