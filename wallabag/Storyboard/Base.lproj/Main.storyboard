@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -512,11 +513,18 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="51o-Ow-BBE">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="YkI-7q-ROS">
-                            <connections>
-                                <action selector="shareMenu:" destination="zsG-x9-2za" id="xlP-XW-3Zb"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="TZ5-PW-hYk">
+                                <connections>
+                                    <action selector="add:" destination="zsG-x9-2za" id="HbR-Rr-oh7"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="action" id="YkI-7q-ROS">
+                                <connections>
+                                    <action selector="shareMenu:" destination="zsG-x9-2za" id="xlP-XW-3Zb"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
