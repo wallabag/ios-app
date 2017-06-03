@@ -10,7 +10,4 @@ import UIKit
 import WallabagKit
 
 final class HomeViewController: UIViewController {
-    @IBAction func openWallabagIt(_ sender: UIButton) {
-        UIApplication.shared.openURL(URL(string: "https://www.wallabag.it/en?pk_campaign=register&pk_kwd=wallabagapp")!)
-    }
 }

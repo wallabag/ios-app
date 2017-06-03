@@ -53,16 +53,6 @@
                                     <segue destination="LDR-tz-9ed" kind="show" id="Gj0-oO-eNh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2a9-yC-pw0">
-                                <rect key="frame" x="71" y="630" width="234" height="29"/>
-                                <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
-                                <state key="normal" title="Create account on wallabag.it">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="openWallabagIt:" destination="Vl8-yY-Bdt" eventType="touchUpInside" id="MrZ-vV-ujY"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -70,10 +60,8 @@
                             <constraint firstItem="K7r-Is-Qyw" firstAttribute="centerX" secondItem="jgR-CC-0zk" secondAttribute="centerX" id="5h3-fR-vgJ"/>
                             <constraint firstItem="Zn4-yG-cxW" firstAttribute="top" secondItem="FRs-RA-L1c" secondAttribute="bottom" constant="8" id="BwY-wA-FY9"/>
                             <constraint firstItem="Zn4-yG-cxW" firstAttribute="centerX" secondItem="jgR-CC-0zk" secondAttribute="centerX" id="GFn-ae-qJr"/>
-                            <constraint firstItem="2a9-yC-pw0" firstAttribute="centerX" secondItem="jgR-CC-0zk" secondAttribute="centerX" id="JD1-zV-bZz"/>
                             <constraint firstItem="FRs-RA-L1c" firstAttribute="top" secondItem="K7r-Is-Qyw" secondAttribute="bottom" constant="8" id="JWX-vu-NhE"/>
                             <constraint firstItem="K7r-Is-Qyw" firstAttribute="top" secondItem="8dj-Du-tEP" secondAttribute="bottom" constant="8" id="WiD-2X-fhA"/>
-                            <constraint firstItem="uNp-2q-j9F" firstAttribute="top" secondItem="2a9-yC-pw0" secondAttribute="bottom" constant="8" id="YaY-rR-Go3"/>
                             <constraint firstItem="FRs-RA-L1c" firstAttribute="trailing" secondItem="jgR-CC-0zk" secondAttribute="trailingMargin" id="xxp-3Q-Z9c"/>
                         </constraints>
                     </view>
@@ -603,7 +591,7 @@
             <objects>
                 <navigationController storyboardIdentifier="serverNavigation" automaticallyAdjustsScrollViewInsets="NO" id="LDR-tz-9ed" userLabel="Add server navigation" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x91-Lh-MNV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="x91-Lh-MNV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -781,7 +769,7 @@ This token are secret and can be found in your developer page, And create a new 
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8tH-nc-JLr" userLabel="Article Navigation" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dK2-gx-arx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dK2-gx-arx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -968,7 +956,7 @@ This token are secret and can be found in your developer page, And create a new 
         <scene sceneID="o2q-Hd-t7S">
             <objects>
                 <navigationController id="1X5-Uz-VZe" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="edy-e1-BkW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="edy-e1-BkW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
