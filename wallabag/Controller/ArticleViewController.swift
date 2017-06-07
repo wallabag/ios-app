@@ -72,8 +72,10 @@ final class ArticleViewController: UIViewController {
         navigationItem.title = entry.title
         updateUi()
         loadArticleContent()
+        contentWeb.delegate = self
         contentWeb.scrollView.delegate = self
         contentWeb.backgroundColor = Setting.getTheme().backgroundColor
+        print(entry)
     }
 
     private func loadArticleContent() {
@@ -101,6 +103,12 @@ final class ArticleViewController: UIViewController {
     }
 }
 
+extension ArticleViewController: UIWebViewDelegate {
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        webView.scrollView.setContentOffset(CGPoint(x: 0.0, y: Double(self.entry.screen_position)), animated: true)
+    }
+}
+
 extension ArticleViewController: UIScrollViewDelegate {
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         lastOffsetY = scrollView.contentOffset.y
@@ -109,5 +117,8 @@ extension ArticleViewController: UIScrollViewDelegate {
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
         let hide = scrollView.contentOffset.y > self.lastOffsetY
         self.navigationController?.setNavigationBarHidden(hide, animated: true)
+        entry.screen_position = Float(scrollView.contentOffset.y)
+
+        CoreData.saveContext()
     }
 }
