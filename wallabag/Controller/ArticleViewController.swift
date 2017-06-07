@@ -30,7 +30,6 @@ final class ArticleViewController: UIViewController {
     @IBOutlet weak var starButton: UIBarButtonItem!
 
     @IBAction func add(_ sender: Any) {
-        print("test")
         addHandler?()
     }
 
