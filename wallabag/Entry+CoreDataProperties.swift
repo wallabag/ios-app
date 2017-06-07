@@ -27,5 +27,5 @@ extension Entry {
     @NSManaged public var updated_at: NSDate?
     @NSManaged public var url: String?
     @NSManaged public var reading_time: Int64
-
+    @NSManaged public var screen_position: Float
 }

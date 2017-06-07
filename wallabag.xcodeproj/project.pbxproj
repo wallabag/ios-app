@@ -123,6 +123,7 @@
 		94D0C2FA2C870EE989B2406D /* Pods-wallabagTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests.release.xcconfig"; sourceTree = "<group>"; };
 		9B9EB64D938632DA7CDDFD2A /* Pods-wallabagUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9C0BF8B91EC723CF00CEBE93 /* ArticlesUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesUITests.swift; sourceTree = "<group>"; };
+		9C0C65961EE81E26008FFE4D /* wallabag2v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabag2v2.xcdatamodel; sourceTree = "<group>"; };
 		9C181B871DB8E27000D941EB /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
 		9C21927C1DBFF44700F628C2 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		9C298B121E0BF8F400B72503 /* ThemeChoiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeChoiceTableViewController.swift; sourceTree = "<group>"; };
@@ -1290,9 +1291,10 @@
 		9C7B79E21EBF7E37004559B1 /* wallabag2.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				9C0C65961EE81E26008FFE4D /* wallabag2v2.xcdatamodel */,
 				9C7B79E31EBF7E37004559B1 /* wallabag2.xcdatamodel */,
 			);
-			currentVersion = 9C7B79E31EBF7E37004559B1 /* wallabag2.xcdatamodel */;
+			currentVersion = 9C0C65961EE81E26008FFE4D /* wallabag2v2.xcdatamodel */;
 			path = wallabag2.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
