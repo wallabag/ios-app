@@ -13,7 +13,7 @@ import CoreData
 import CoreSpotlight
 
 final class ArticlesTableViewController: UITableViewController {
-    
+
     let sync = ArticleSync()
     let searchController = UISearchController(searchResultsController: nil)
 
@@ -21,7 +21,7 @@ final class ArticlesTableViewController: UITableViewController {
     var refreshing: Bool = false
     var entries: [Entry] = []
     var mode: Setting.RetrieveMode = Setting.getDefaultMode()
-    
+
     @IBOutlet weak var menu: UIBarButtonItem!
     @IBOutlet weak var add: UIBarButtonItem!
 
@@ -110,7 +110,7 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     func managedObjectContextObjectsDidChange(notification: NSNotification) {
-        guard let _ = notification.userInfo else { return }
+        if  notification.userInfo == nil { return }
         log.debug("managedObjectContextObjectsDidChange")
         handleRefresh()
     }

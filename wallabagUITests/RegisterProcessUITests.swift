@@ -59,7 +59,7 @@ class RegisterProcessUITests: XCTestCase {
         app.buttons["Register"].tap()
 
         XCTAssertFalse(app.alerts["Error"].exists)
-        
+
         let serverTextField = app.textFields["Server"]
         serverTextField.tap()
         serverTextField.typeText("wallabag.maxime.marinel.me")
