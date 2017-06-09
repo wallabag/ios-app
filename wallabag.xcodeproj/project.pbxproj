@@ -182,6 +182,9 @@
 		9CF1F2201DBE97D80086B98B /* ServerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerViewController.swift; sourceTree = "<group>"; };
 		9CF1F2221DBE9B800086B98B /* ClientIdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientIdViewController.swift; sourceTree = "<group>"; };
 		9CF1F2241DBE9D150086B98B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9CF4FECA1EEB2B9C00653B90 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		9CF4FECB1EEB2B9D00653B90 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		9CF4FECC1EEB2B9D00653B90 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = fr; path = fr.lproj/Localizable.plist; sourceTree = "<group>"; };
 		9CFEF3B31DD9EC5D00126D15 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		A6538EB964B457B5B3DC7B46 /* Pods-bagit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bagit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bagit/Pods-bagit.debug.xcconfig"; sourceTree = "<group>"; };
 		AFAE89D8A395291968A2E2A7 /* Pods_wallabag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -618,6 +621,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 9C987A3A1DB79826005515F4;
 			productRefGroup = 9C987A441DB79826005515F4 /* Products */;
@@ -968,6 +972,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9C987A4B1DB79826005515F4 /* Base */,
+				9CF4FECB1EEB2B9D00653B90 /* fr */,
 			);
 			name = Main.storyboard;
 			path = .;
@@ -977,6 +982,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9C987A531DB79826005515F4 /* Base */,
+				9CF4FECA1EEB2B9C00653B90 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			path = .;
@@ -986,6 +992,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9CE367AF1EEB2A0A0004F0A0 /* Base */,
+				9CF4FECC1EEB2B9D00653B90 /* fr */,
 			);
 			name = Localizable.plist;
 			sourceTree = "<group>";
