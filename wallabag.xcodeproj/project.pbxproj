@@ -185,6 +185,9 @@
 		9CF4FECA1EEB2B9C00653B90 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		9CF4FECB1EEB2B9D00653B90 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
 		9CF4FECC1EEB2B9D00653B90 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = fr; path = fr.lproj/Localizable.plist; sourceTree = "<group>"; };
+		9CF4FECD1EEB2C4300653B90 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		9CF4FECE1EEB2C4300653B90 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		9CF4FECF1EEB2C4300653B90 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = de; path = de.lproj/Localizable.plist; sourceTree = "<group>"; };
 		9CFEF3B31DD9EC5D00126D15 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		A6538EB964B457B5B3DC7B46 /* Pods-bagit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bagit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bagit/Pods-bagit.debug.xcconfig"; sourceTree = "<group>"; };
 		AFAE89D8A395291968A2E2A7 /* Pods_wallabag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -622,6 +625,7 @@
 				en,
 				Base,
 				fr,
+				de,
 			);
 			mainGroup = 9C987A3A1DB79826005515F4;
 			productRefGroup = 9C987A441DB79826005515F4 /* Products */;
@@ -973,6 +977,7 @@
 			children = (
 				9C987A4B1DB79826005515F4 /* Base */,
 				9CF4FECB1EEB2B9D00653B90 /* fr */,
+				9CF4FECE1EEB2C4300653B90 /* de */,
 			);
 			name = Main.storyboard;
 			path = .;
@@ -983,6 +988,7 @@
 			children = (
 				9C987A531DB79826005515F4 /* Base */,
 				9CF4FECA1EEB2B9C00653B90 /* fr */,
+				9CF4FECD1EEB2C4300653B90 /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			path = .;
@@ -993,6 +999,7 @@
 			children = (
 				9CE367AF1EEB2A0A0004F0A0 /* Base */,
 				9CF4FECC1EEB2B9D00653B90 /* fr */,
+				9CF4FECF1EEB2C4300653B90 /* de */,
 			);
 			name = Localizable.plist;
 			sourceTree = "<group>";
