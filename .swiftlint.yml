@@ -1,12 +1,11 @@
 excluded:
   - Pods
   - wallabag/Model/Server.swift
-  - wallabag/Lib/CoreData.swift
-  - wallabag/Entr*.swift
-  - wallabag/Entry+CoreDataProperties.swift
-  - wallabag/Entry+CoreDataClass.swift
+  - wallabag/Lib/CoreData.swift 
+  - wallabag/Entity/Entry+CoreDataProperties.swift
+  - wallabag/Entity/Entry+CoreDataClass.swift
 line_length: 300
-variable_name:
+identifier_name:
   excluded:
     - id
     - to
