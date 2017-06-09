@@ -24,8 +24,8 @@ final class LoginViewController: UIViewController {
             if success {
                 self.performSegue(withIdentifier: "toArticles", sender: nil)
             } else {
-                let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                let alert = UIAlertController(title: "Error".localized, message: error, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
                 self.present(alert, animated: false)
             }
 

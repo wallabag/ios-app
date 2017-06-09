@@ -23,8 +23,12 @@ final class ServerViewController: UIViewController {
             return true
         }
 
-        let alertController = UIAlertController(title: "Error", message: "Whoops looks like something went wrong. Check the url, don't forget http or https", preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        let alertController = UIAlertController(
+            title: "Error".localized,
+            message: "Whoops looks like something went wrong. Check the url, don't forget http or https".localized,
+            preferredStyle: .alert
+        )
+        alertController.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
 
         present(alertController, animated: true, completion: nil)
 

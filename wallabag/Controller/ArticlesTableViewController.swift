@@ -168,18 +168,18 @@ final class ArticlesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let entry = entries[indexPath.row]
-        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete", handler: { _, _ in
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete".localized, handler: { _, _ in
             self.delete(entry)
         })
         deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.188235294, alpha: 1)
 
-        let starAction = UITableViewRowAction(style: .default, title: entry.is_starred ? "Unstar" : "Star", handler: { _, _ in
+        let starAction = UITableViewRowAction(style: .default, title: entry.is_starred ? "Unstar".localized : "Star".localized, handler: { _, _ in
             self.tableView.setEditing(false, animated: true)
             self.star(entry)
         })
         starAction.backgroundColor = #colorLiteral(red: 1, green: 0.584313725, blue: 0, alpha: 1)
 
-        let readAction = UITableViewRowAction(style: .default, title: entry.is_archived ? "Unread" : "Read", handler: { _, _ in
+        let readAction = UITableViewRowAction(style: .default, title: entry.is_archived ? "Unread".localized : "Read".localized, handler: { _, _ in
             self.tableView.setEditing(false, animated: true)
             self.read(entry)
         })
@@ -249,11 +249,11 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     private func addArticle(_ fromController: UIViewController) {
-        let alertController = UIAlertController(title: "Add link", message: nil, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Add link".localized, message: nil, preferredStyle: .alert)
         alertController.addTextField(configurationHandler: { textField in
-            textField.placeholder = "Url"
+            textField.placeholder = "Url".localized
         })
-        alertController.addAction(UIAlertAction(title: "Add", style: .default, handler: { _ in
+        alertController.addAction(UIAlertAction(title: "Add".localized, style: .default, handler: { _ in
             if let textfield = alertController.textFields?.first?.text {
                 if let url = URL(string: textfield) {
                     WallabagApi.addArticle(url) { article in
@@ -263,7 +263,7 @@ final class ArticlesTableViewController: UITableViewController {
                 }
             }
         }))
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
 
         fromController.present(alertController, animated: true)
     }

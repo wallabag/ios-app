@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  wallabag
+
+  Created by maxime marinel on 09/06/2017.
+  Copyright © 2017 maxime marinel. All rights reserved.
+*/
+
+#Common
+"Error" = "Erreur";
+"Cancel" = "Annuler";
+
+#ArticleTableViewCell
+"Reading time %@" = "Temps de lecture %@";
+
+#AboutViewController
+"Version %@ build %@" = "Version %@ build %@";
+
+#ArticlesTableViewController
+"Delete" = "Supprimer";
+"Unstar" = "Unstar";
+"Star" = "Star";
+"Unread" = "Unread";
+"Read" = "Read";
+"Add link" = "Ajouter un lien";
+"Add" = "Ajouter";
+"Url" = "Adresse";
+
+#ServerViewController
+"Whoops looks like something went wrong. Check the url, don't forget http or https" = "Whoops looks like something went wrong. Check the url, don't forget http or https"
