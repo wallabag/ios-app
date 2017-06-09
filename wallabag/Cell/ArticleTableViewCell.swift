@@ -34,7 +34,8 @@ class ArticleTableViewCell: ThemedTableViewCell {
         }
 
         starred.image = entry.is_starred ? #imageLiteral(resourceName: "starred") : #imageLiteral(resourceName: "unstarred")
-        readingTime.text = "Reading time \(Int(entry.reading_time).readingTime)"
+
+        readingTime.text = String(format: "Reading time %@".localized, arguments: [Int(entry.reading_time).readingTime])
 
         guard let previewPicture = entry.preview_picture,
             let pictureURL = URL(string: previewPicture) else {

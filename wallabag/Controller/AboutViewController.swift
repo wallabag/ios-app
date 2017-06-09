@@ -19,7 +19,7 @@ class AboutViewController: UIViewController {
         let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? "0"
         let build = Bundle.main.infoDictionary!["CFBundleVersion"] as? String ?? "0"
 
-        versionText.text = String(format: "Version %@ build %@", arguments: [version, build])
+        versionText.text = String(format: "Version %@ build %@".localized, arguments: [version, build])
     }
 
 }

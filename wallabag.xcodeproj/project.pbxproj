@@ -46,7 +46,6 @@
 		9CC0D7211E22AB55002E4E94 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEF3B31DD9EC5D00126D15 /* SnapshotHelper.swift */; };
 		9CC378931EB0BB4100C89619 /* Pods_bagit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC378921EB0BB4100C89619 /* Pods_bagit.framework */; };
 		9CC4B0611DC5361000BC6830 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4B0601DC5361000BC6830 /* Dictionary.swift */; };
-		9CE367AE1EEB2A0A0004F0A0 /* Localizable.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CE367B01EEB2A0A0004F0A0 /* Localizable.plist */; };
 		9CE369741DE632030005E20E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE369731DE632030005E20E /* SettingsTableViewController.swift */; };
 		9CE369761DE63D030005E20E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE369751DE63D030005E20E /* Setting.swift */; };
 		9CE9F2061DE2151B002E06F5 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE9F2051DE2151B002E06F5 /* AboutViewController.swift */; };
@@ -56,6 +55,7 @@
 		9CF1F2211DBE97D80086B98B /* ServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F2201DBE97D80086B98B /* ServerViewController.swift */; };
 		9CF1F2231DBE9B800086B98B /* ClientIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F2221DBE9B800086B98B /* ClientIdViewController.swift */; };
 		9CF1F2251DBE9D150086B98B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F2241DBE9D150086B98B /* LoginViewController.swift */; };
+		9CF4FED21EEB2F7E00653B90 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CF4FED41EEB2F7E00653B90 /* Localizable.strings */; };
 		AEDD1E205C0DF01C54999C21 /* Pods_wallabag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAE89D8A395291968A2E2A7 /* Pods_wallabag.framework */; };
 		DB5193211F1DB976C3862849 /* Pods_wallabagUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3678DDB92217E137039674C2 /* Pods_wallabagUITests.framework */; };
 /* End PBXBuildFile section */
@@ -172,7 +172,6 @@
 		9CC378921EB0BB4100C89619 /* Pods_bagit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_bagit.framework; path = "../../Library/Developer/Xcode/DerivedData/wallabag-fcirammgjylpzjcvizhrpwjyvjmq/Build/Products/Debug-iphonesimulator/Pods_bagit.framework"; sourceTree = "<group>"; };
 		9CC4B0601DC5361000BC6830 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
-		9CE367AF1EEB2A0A0004F0A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Localizable.plist; sourceTree = "<group>"; };
 		9CE369731DE632030005E20E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		9CE369751DE63D030005E20E /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		9CE9F2051DE2151B002E06F5 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -184,10 +183,11 @@
 		9CF1F2241DBE9D150086B98B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9CF4FECA1EEB2B9C00653B90 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		9CF4FECB1EEB2B9D00653B90 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
-		9CF4FECC1EEB2B9D00653B90 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = fr; path = fr.lproj/Localizable.plist; sourceTree = "<group>"; };
 		9CF4FECD1EEB2C4300653B90 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		9CF4FECE1EEB2C4300653B90 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
-		9CF4FECF1EEB2C4300653B90 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = de; path = de.lproj/Localizable.plist; sourceTree = "<group>"; };
+		9CF4FED31EEB2F7E00653B90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9CF4FED61EEB2FB300653B90 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9CF4FED71EEB2FB500653B90 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9CFEF3B31DD9EC5D00126D15 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		A6538EB964B457B5B3DC7B46 /* Pods-bagit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bagit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bagit/Pods-bagit.debug.xcconfig"; sourceTree = "<group>"; };
 		AFAE89D8A395291968A2E2A7 /* Pods_wallabag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -396,7 +396,7 @@
 				9CBA6C6C1E17010E000B9AE6 /* wallabag.entitlements */,
 				9C987A4D1DB79826005515F4 /* wallabag.xcdatamodeld */,
 				9C7B79E21EBF7E37004559B1 /* wallabag2.xcdatamodeld */,
-				9CE367B01EEB2A0A0004F0A0 /* Localizable.plist */,
+				9CF4FED41EEB2F7E00653B90 /* Localizable.strings */,
 			);
 			path = wallabag;
 			sourceTree = "<group>";
@@ -649,6 +649,7 @@
 				9CF1F21E1DBE966B0086B98B /* UbuntuTitling-Bold.ttf in Resources */,
 				9CA232301DFECE74006B29B8 /* light.css in Resources */,
 				622923E91E10F8A5007B2307 /* dusk.css in Resources */,
+				9CF4FED21EEB2F7E00653B90 /* Localizable.strings in Resources */,
 				9C987A541DB79826005515F4 /* LaunchScreen.storyboard in Resources */,
 				9C77751D1DFB72AD00CB775F /* justify.css in Resources */,
 				9C4537921DD1236B00FF6CFE /* article.html in Resources */,
@@ -658,7 +659,6 @@
 				9C987A511DB79826005515F4 /* Assets.xcassets in Resources */,
 				9C987A4C1DB79826005515F4 /* Main.storyboard in Resources */,
 				9C4537931DD1236B00FF6CFE /* night.css in Resources */,
-				9CE367AE1EEB2A0A0004F0A0 /* Localizable.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -994,14 +994,14 @@
 			path = .;
 			sourceTree = "<group>";
 		};
-		9CE367B01EEB2A0A0004F0A0 /* Localizable.plist */ = {
+		9CF4FED41EEB2F7E00653B90 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9CE367AF1EEB2A0A0004F0A0 /* Base */,
-				9CF4FECC1EEB2B9D00653B90 /* fr */,
-				9CF4FECF1EEB2C4300653B90 /* de */,
+				9CF4FED31EEB2F7E00653B90 /* Base */,
+				9CF4FED61EEB2FB300653B90 /* fr */,
+				9CF4FED71EEB2FB500653B90 /* de */,
 			);
-			name = Localizable.plist;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
