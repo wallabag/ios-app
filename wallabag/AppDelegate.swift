@@ -109,7 +109,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func updateBadge() {
         if WallabagApi.isConfigured() {
             let sync = ArticleSync()
-            //sync.sync()
+            sync.sync()
         }
         log.info("Update badge")
         let request = Entry.fetchEntryRequest()
