@@ -8,6 +8,27 @@
 
 import Foundation
 
+private class Localizator {
+
+    static let sharedInstance = Localizator()
+
+    lazy var localizableDictionary: NSDictionary! = {
+        if let path = Bundle.main.path(forResource: "Localizable", ofType: "plist") {
+            return NSDictionary(contentsOfFile: path)
+        }
+        fatalError("Localizable file NOT found")
+    }()
+
+    func localize(string: String) -> String {
+        guard let localizedString = localizableDictionary.value(forKey: string) as? String else {
+            //assertionFailure("Localized string not found")
+            return string
+        }
+
+        return localizedString
+    }
+}
+
 extension String {
     var date: Date? {
         let dateFormatter = DateFormatter()
@@ -30,5 +51,9 @@ extension String {
 
     var withoutHTML: String {
         return self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+    }
+
+    var localized: String {
+        return Localizator.sharedInstance.localize(string: self)
     }
 }
