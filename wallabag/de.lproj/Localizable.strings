@@ -7,24 +7,24 @@
 */
 
 //Common
-"Error" = "Error";
-"Cancel" = "Cancel";
+"Error" = "Fehler";
+"Cancel" = "Abbrechen";
 
 //ArticleTableViewCell
-"Reading time %@" = "Reading time %@";
+"Reading time %@" = "Lesezeit %@";
 
 //AboutViewController
 "Version %@ build %@" = "Version %@ build %@";
 
 //ArticlesTableViewController
-"Delete" = "Delete";
-"Unstar" = "Unstar";
-"Star" = "Star";
-"Unread" = "Unread";
-"Read" = "Read";
-"Add link" = "Add link";
-"Add" = "Add";
+"Delete" = "Löschen";
+"Unstar" = "Defavorisieren";
+"Star" = "Favorisieren";
+"Unread" = "Ungelesen";
+"Read" = "Gelesen";
+"Add link" = "Link hinzufügen";
+"Add" = "Hinzufügen";
 "Url" = "Url";
 
 //ServerViewController
-"Whoops looks like something went wrong. Check the url, don't forget http or https" = "Whoops looks like something went wrong. Check the url, don't forget http or https";
+"Whoops looks like something went wrong. Check the url, don't forget http or https" = "Anscheinend ist etwas schiefgelaufen. Überprüfe die URL, vergiss nicht das https oder http.";
