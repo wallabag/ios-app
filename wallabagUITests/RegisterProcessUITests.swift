@@ -13,13 +13,18 @@ class RegisterProcessUITests: XCTestCase {
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
+        let app = XCUIApplication()
+        app.launchArguments = ["-inUITest",
+                               "-AppleLanguages",
+                               "(en)",
+                               "-AppleLocale",
+                               "en_EN",
+                               "RESET_APPLICATION"]
+        app.launch()
     }
 
     func testRegisteringSuccess() {
         let app = XCUIApplication()
-        app.launchArguments = ["RESET_APPLICATION"]
-        app.launch()
-
         let registerButton = app.buttons["Register"]
         XCTAssertTrue(registerButton.isEnabled)
 
@@ -53,9 +58,6 @@ class RegisterProcessUITests: XCTestCase {
 
     func testRegisteringURLFail() {
         let app = XCUIApplication()
-        app.launchArguments = ["RESET_APPLICATION"]
-        app.launch()
-
         app.buttons["Register"].tap()
 
         XCTAssertFalse(app.alerts["Error"].exists)
@@ -71,8 +73,6 @@ class RegisterProcessUITests: XCTestCase {
 
     func testRegisteringClientIdAndSecretFail() {
         let app = XCUIApplication()
-        app.launchArguments = ["RESET_APPLICATION"]
-        app.launch()
 
         let registerButton = app.buttons["Register"]
         XCTAssertTrue(registerButton.isEnabled)
