@@ -6,17 +6,17 @@
   Copyright © 2017 maxime marinel. All rights reserved.
 */
 
-#Common
+//Common
 "Error" = "Error";
 "Cancel" = "Cancel";
 
-#ArticleTableViewCell
+//ArticleTableViewCell
 "Reading time %@" = "Reading time %@";
 
-#AboutViewController
+//AboutViewController
 "Version %@ build %@" = "Version %@ build %@";
 
-#ArticlesTableViewController
+//ArticlesTableViewController
 "Delete" = "Delete";
 "Unstar" = "Unstar";
 "Star" = "Star";
@@ -26,5 +26,5 @@
 "Add" = "Add";
 "Url" = "Url";
 
-#ServerViewController
-"Whoops looks like something went wrong. Check the url, don't forget http or https" = "Whoops looks like something went wrong. Check the url, don't forget http or https"
+//ServerViewController
+"Whoops looks like something went wrong. Check the url, don't forget http or https" = "Whoops looks like something went wrong. Check the url, don't forget http or https";
