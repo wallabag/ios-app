@@ -1,5 +1,5 @@
-wallabag, a self hostable application for saving web pages
+wallabag, eine selbst-gehostete Anwendung für das Speichern von Webseiten
 
-Unlike other services, wallabag is free (as in freedom) and open source.
+Im Vergleich zu anderen Diensten ist wallabag frei (wie in Freiheit) und Open-Source.
 
-In order to use this app, you need a hosted wallabag instance. You can either install wallabag on your server/webspace or you can register at wallabag.it or framabag.org.
+Damit diese App genutzt werden kann, benötigst du eine gehostete wallabag-Instanz. Du kannst wallabag entweder auf deinem Server installieren oder dich auf wallabag.it oder framabag.org registrieren.
