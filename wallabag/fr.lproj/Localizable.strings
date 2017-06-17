@@ -18,13 +18,13 @@
 
 //ArticlesTableViewController
 "Delete" = "Supprimer";
-"Unstar" = "Unstar";
-"Star" = "Star";
-"Unread" = "Unread";
-"Read" = "Read";
+"Unstar" = "Retiré des favoris";
+"Star" = "Favoris";
+"Unread" = "Non lu";
+"Read" = "Lu";
 "Add link" = "Ajouter un lien";
 "Add" = "Ajouter";
 "Url" = "Adresse";
 
 //ServerViewController
-"Whoops looks like something went wrong. Check the url, don't forget http or https" = "Whoops looks like something went wrong. Check the url, don't forget http or https";
+"Whoops looks like something went wrong. Check the url, don't forget http or https" = "Oops, on dirait qu'il y a eu un problème. Vérifiez l'url, n'oubliez pas http ou https";
