@@ -25,6 +25,11 @@
 "Add link" = "Link hinzufügen";
 "Add" = "Hinzufügen";
 "Url" = "Url";
+"All articles" = "Alle Artikel";
+"Read articles" = "Gelesene Artikel";
+"Starred articles" = "Favorisierte Artikel";
+"Unread articles" = "Ungelesene Artikel";
+
 
 //ServerViewController
 "Whoops looks like something went wrong. Check the url, don't forget http or https" = "Anscheinend ist etwas schiefgelaufen. Überprüfe die URL, vergiss nicht das https oder http.";

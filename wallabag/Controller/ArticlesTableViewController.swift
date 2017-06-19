@@ -77,7 +77,7 @@ final class ArticlesTableViewController: UITableViewController {
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 70, height: 44))
         titleLabel.isUserInteractionEnabled = true
         titleLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.scrollTop)))
-        titleLabel.text = mode.humainReadable()
+        titleLabel.text = mode.humainReadable().localized
         titleLabel.textColor = Setting.getTheme().color
         navigationItem.titleView = titleLabel
 
