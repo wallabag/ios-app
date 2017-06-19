@@ -21,6 +21,7 @@ class TipViewController: UIViewController, SKProductsRequestDelegate, SKPaymentT
         }
     }
 
+    @IBOutlet weak var tipContent: UITextView!
     @IBOutlet weak var tipButton: UIButton!
     @IBAction func tip(_ sender: Any) {
         if transactionInProgress {
@@ -68,6 +69,9 @@ class TipViewController: UIViewController, SKProductsRequestDelegate, SKPaymentT
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        tipContent.text = "This application is developed on free time, it is free and will remain so. But you can contribute financially by making a donation whenever you want to support the project.".localized
+
         SKPaymentQueue.default().add(self)
         requestProductInfo()
     }

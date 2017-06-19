@@ -157,3 +157,6 @@
 
 /* Class = "UITableViewSection"; headerTitle = "Articles"; ObjectID = "wu1-pA-PCy"; */
 "wu1-pA-PCy.headerTitle" = "Artikel";
+
+/* Class = "UILabel"; text = "Tip"; ObjectID = "hwn-bm-Zgf"; */
+"hwn-bm-Zgf.text" = "Geschenk";

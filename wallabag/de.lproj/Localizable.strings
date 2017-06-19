@@ -33,3 +33,6 @@
 
 //ServerViewController
 "Whoops looks like something went wrong. Check the url, don't forget http or https" = "Anscheinend ist etwas schiefgelaufen. Überprüfe die URL, vergiss nicht das https oder http.";
+
+//TipViewController
+"This application is developed on free time, it is free and will remain so. But you can contribute financially by making a donation whenever you want to support the project." = "Diese Anwendung ist auf freie Zeit entwickelt, es ist kostenlos und wird so bleiben. Aber Sie können finanziell beitragen, indem Sie eine Spende machen, wann immer Sie das Projekt unterstützen möchte";
