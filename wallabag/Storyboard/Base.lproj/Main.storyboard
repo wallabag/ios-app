@@ -58,6 +58,16 @@
                                     <segue destination="LDR-tz-9ed" kind="show" id="Gj0-oO-eNh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2a9-yC-pw0">
+                                <rect key="frame" x="74.5" y="627" width="227" height="32"/>
+                                <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
+                                <state key="normal" title="Create account on wallabag.it">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="openWallabagIt:" destination="Vl8-yY-Bdt" eventType="touchUpInside" id="MrZ-vV-ujY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -929,28 +939,8 @@ This token are secret and can be found in your developer page, And create a new 
                                             <segue destination="cre-7a-Z1t" kind="show" id="luD-iN-k46"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="pO6-f6-PiT" style="IBUITableViewCellStyleDefault" id="ggB-CS-jug">
-                                        <rect key="frame" x="0.0" y="320" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ggB-CS-jug" id="yN5-Qf-hFl">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Disconnect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pO6-f6-PiT">
-                                                    <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="zHc-UW-rkn" kind="unwind" unwindAction="disconnectWithSegue:" id="7Jo-7A-h1h"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="hwn-bm-Zgf" style="IBUITableViewCellStyleDefault" id="iFn-Wh-myR">
-                                        <rect key="frame" x="0.0" y="364" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="320" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iFn-Wh-myR" id="L78-Pz-CkZ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -967,6 +957,26 @@ This token are secret and can be found in your developer page, And create a new 
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="4Nr-QO-Wak" kind="show" id="9a6-s0-ndN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="pO6-f6-PiT" style="IBUITableViewCellStyleDefault" id="ggB-CS-jug">
+                                        <rect key="frame" x="0.0" y="364" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ggB-CS-jug" id="yN5-Qf-hFl">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Disconnect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pO6-f6-PiT">
+                                                    <rect key="frame" x="16" y="0.0" width="344" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="zHc-UW-rkn" kind="unwind" unwindAction="disconnectWithSegue:" id="7Jo-7A-h1h"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
