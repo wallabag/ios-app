@@ -1,9 +1,9 @@
-Hello wallabag user!
-In this release we add some cool features:
-- Save read position on an article
-- You can now add an article from reading article page
-- Hide top menu when you read an article
-- We defer the request authorization for notification when your app is configured
-- French and german translation
+Hallo wallabag-Nutzer!
+In diesem Update haben wir neue coole Features hinzugefügt:
+- Leseposition zum Artikel wird gespeichert
+- Artikel können direkt aus der Leseansicht hinzugefügt werden
+- Oberes Menü kann beim Lesen versteckt werden
+- Verzögerte Anmelde-Anforderung während der App-Konfiguration
+- Französische und deutsche Übersetzung hinzugefügt
 
-Now you can reward the developer when ever you want.
+Nun kannst du auch den Entwickler belohnen, wann immer du möchtest.
