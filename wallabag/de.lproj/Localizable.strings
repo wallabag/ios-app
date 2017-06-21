@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  wallabag
+
+  Created by maxime marinel on 09/06/2017.
+  Copyright © 2017 maxime marinel. All rights reserved.
+*/
+
+//Common
+"Error" = "Fehler";
+"Cancel" = "Abbrechen";
+
+//ArticleTableViewCell
+"Reading time %@" = "Lesezeit %@";
+
+//AboutViewController
+"Version %@ build %@" = "Version %@ build %@";
+
+//ArticlesTableViewController
+"Delete" = "Löschen";
+"Unstar" = "Defavorisieren";
+"Star" = "Favorisieren";
+"Unread" = "Ungelesen";
+"Read" = "Gelesen";
+"Add link" = "Link hinzufügen";
+"Add" = "Hinzufügen";
+"Url" = "Url";
+"All articles" = "Alle Artikel";
+"Read articles" = "Gelesene Artikel";
+"Starred articles" = "Favorisierte Artikel";
+"Unread articles" = "Ungelesene Artikel";
+
+
+//ServerViewController
+"Whoops looks like something went wrong. Check the url, don't forget http or https" = "Anscheinend ist etwas schiefgelaufen. Überprüfe die URL, vergiss nicht das https oder http.";
+
+//TipViewController
+"This application is developed on free time, it is free and will remain so. But you can contribute financially by making a donation whenever you want to support the project." = "Diese Anwendung ist auf freie Zeit entwickelt, es ist kostenlos und wird so bleiben. Aber Sie können finanziell beitragen, indem Sie eine Spende machen, wann immer Sie das Projekt unterstützen möchte";

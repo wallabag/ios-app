@@ -46,10 +46,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.rootViewController = window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "home")
         } else {
             log.info("Wallabag api is configured")
+            requestBadge()
+            updateBadge()
         }
-
-        requestBadge()
-        updateBadge()
 
         NetworkActivityIndicatorManager.shared.isEnabled = true
         NetworkActivityIndicatorManager.shared.startDelay = 0.1
@@ -109,7 +108,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func updateBadge() {
         if WallabagApi.isConfigured() {
             let sync = ArticleSync()
-            //sync.sync()
+            sync.sync()
         }
         log.info("Update badge")
         let request = Entry.fetchEntryRequest()

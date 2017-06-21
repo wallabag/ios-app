@@ -1,5 +1,9 @@
-Bienvenue en version 2.0 !
-Cette version apporte le mode hors-ligne.
-Et vous pouvez maintenant rechercher vos articles dans l'application et depuis spotlight.
+Hello utilisateur de Wallabag!
+Dans cette version, nous avons ajoutés quelques fonctionnalités intéressantes:
+- Enregistrer la position de lecture sur un article
+- Vous pouvez maintenant ajouter un article depuis la page de lecture
+- Cacher le menu principal lorsque vous lisez un article
+- Nous reportons l'autorisation de la demande pour la notification lorsque votre application est configurée
+- traduction française et allemande
 
-Cela fait peu de nouveautés, mais nous avons profité de la 2.0 pour nettoyer beaucoup de code.
+Maintenant, vous pouvez récompenser le développeur quand vous voulez.

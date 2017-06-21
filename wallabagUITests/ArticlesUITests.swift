@@ -25,7 +25,12 @@ class ArticlesUITests: XCTestCase {
         XCUIApplication().launch()
 
         let app = XCUIApplication()
-        app.launchArguments = ["RESET_APPLICATION"]
+        app.launchArguments = ["-inUITest",
+                               "-AppleLanguages",
+                               "(en)",
+                               "-AppleLocale",
+                               "en_EN",
+                               "RESET_APPLICATION"]
         app.launch()
 
         let registerButton = app.buttons["Register"]

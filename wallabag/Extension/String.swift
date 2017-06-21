@@ -31,4 +31,8 @@ extension String {
     var withoutHTML: String {
         return self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
     }
+
+    var localized: String {
+        return NSLocalizedString(self, comment: "")
+    }
 }

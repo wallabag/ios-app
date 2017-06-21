@@ -13,7 +13,7 @@ import CoreData
 import CoreSpotlight
 
 final class ArticlesTableViewController: UITableViewController {
-    
+
     let sync = ArticleSync()
     let searchController = UISearchController(searchResultsController: nil)
 
@@ -21,7 +21,7 @@ final class ArticlesTableViewController: UITableViewController {
     var refreshing: Bool = false
     var entries: [Entry] = []
     var mode: Setting.RetrieveMode = Setting.getDefaultMode()
-    
+
     @IBOutlet weak var menu: UIBarButtonItem!
     @IBOutlet weak var add: UIBarButtonItem!
 
@@ -43,23 +43,7 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     @IBAction func addLink(_ sender: UIBarButtonItem) {
-        let alertController = UIAlertController(title: "Add link", message: nil, preferredStyle: .alert)
-        alertController.addTextField(configurationHandler: { textField in
-            textField.placeholder = "Url"
-        })
-        alertController.addAction(UIAlertAction(title: "Add", style: .default, handler: { _ in
-            if let textfield = alertController.textFields?.first?.text {
-                if let url = URL(string: textfield) {
-                    WallabagApi.addArticle(url) { article in
-                        self.sync.insert(article)
-                        self.tableView.reloadData()
-                    }
-                }
-            }
-        }))
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-
-        present(alertController, animated: true)
+        addArticle(self)
     }
 
     override func restoreUserActivityState(_ activity: NSUserActivity) {
@@ -93,7 +77,7 @@ final class ArticlesTableViewController: UITableViewController {
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 70, height: 44))
         titleLabel.isUserInteractionEnabled = true
         titleLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.scrollTop)))
-        titleLabel.text = mode.humainReadable()
+        titleLabel.text = mode.humainReadable().localized
         titleLabel.textColor = Setting.getTheme().color
         navigationItem.titleView = titleLabel
 
@@ -126,7 +110,7 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     func managedObjectContextObjectsDidChange(notification: NSNotification) {
-        guard let _ = notification.userInfo else { return }
+        if  notification.userInfo == nil { return }
         log.debug("managedObjectContextObjectsDidChange")
         handleRefresh()
     }
@@ -184,18 +168,18 @@ final class ArticlesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let entry = entries[indexPath.row]
-        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete", handler: { _, _ in
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete".localized, handler: { _, _ in
             self.delete(entry)
         })
         deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.188235294, alpha: 1)
 
-        let starAction = UITableViewRowAction(style: .default, title: entry.is_starred ? "Unstar" : "Star", handler: { _, _ in
+        let starAction = UITableViewRowAction(style: .default, title: entry.is_starred ? "Unstar".localized : "Star".localized, handler: { _, _ in
             self.tableView.setEditing(false, animated: true)
             self.star(entry)
         })
         starAction.backgroundColor = #colorLiteral(red: 1, green: 0.584313725, blue: 0, alpha: 1)
 
-        let readAction = UITableViewRowAction(style: .default, title: entry.is_archived ? "Unread" : "Read", handler: { _, _ in
+        let readAction = UITableViewRowAction(style: .default, title: entry.is_archived ? "Unread".localized : "Read".localized, handler: { _, _ in
             self.tableView.setEditing(false, animated: true)
             self.read(entry)
         })
@@ -216,6 +200,9 @@ final class ArticlesTableViewController: UITableViewController {
                 }
                 controller.deleteHandler = { entry in
                     self.delete(entry)
+                }
+                controller.addHandler = {
+                    self.addArticle(controller)
                 }
 
                 if let cell = sender as? UITableViewCell {
@@ -259,6 +246,26 @@ final class ArticlesTableViewController: UITableViewController {
             try CoreData.delete(entry)
         } catch {
         }
+    }
+
+    private func addArticle(_ fromController: UIViewController) {
+        let alertController = UIAlertController(title: "Add link".localized, message: nil, preferredStyle: .alert)
+        alertController.addTextField(configurationHandler: { textField in
+            textField.placeholder = "Url".localized
+        })
+        alertController.addAction(UIAlertAction(title: "Add".localized, style: .default, handler: { _ in
+            if let textfield = alertController.textFields?.first?.text {
+                if let url = URL(string: textfield) {
+                    WallabagApi.addArticle(url) { article in
+                        self.sync.insert(article)
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }))
+        alertController.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
+
+        fromController.present(alertController, animated: true)
     }
 }
 

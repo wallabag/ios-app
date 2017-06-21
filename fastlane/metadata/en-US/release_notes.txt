@@ -1,5 +1,9 @@
-Welcome to the v2 version!
-This release brings the offline mode.
-And you can now look for articles into the application and from spotlight.
+Hello wallabag user!
+In this release we add some cool features:
+- Save read position on an article
+- You can now add an article from reading article page
+- Hide top menu when you read an article
+- We defer the request authorization for notification when your app is configured
+- French and german translation
 
-No more changes, but in this release, we cleaned lots of technical stuff.
+Now you can reward the developer when ever you want.

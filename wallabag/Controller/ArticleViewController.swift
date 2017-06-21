@@ -12,6 +12,7 @@ import WallabagKit
 
 final class ArticleViewController: UIViewController {
 
+    var lastOffsetY: CGFloat = 0
     var update: Bool = true
     var entry: Entry! {
         didSet {
@@ -22,10 +23,15 @@ final class ArticleViewController: UIViewController {
     var deleteHandler: ((_ entry: Entry) -> Void)?
     var readHandler: ((_ entry: Entry) -> Void)?
     var starHandler: ((_ entry: Entry) -> Void)?
+    var addHandler: (() -> Void)?
 
     @IBOutlet weak var contentWeb: UIWebView!
     @IBOutlet weak var readButton: UIBarButtonItem!
     @IBOutlet weak var starButton: UIBarButtonItem!
+
+    @IBAction func add(_ sender: Any) {
+        addHandler?()
+    }
 
     @IBAction func read(_ sender: Any) {
         readHandler?(entry)
@@ -65,7 +71,10 @@ final class ArticleViewController: UIViewController {
         navigationItem.title = entry.title
         updateUi()
         loadArticleContent()
+        contentWeb.delegate = self
+        contentWeb.scrollView.delegate = self
         contentWeb.backgroundColor = Setting.getTheme().backgroundColor
+        print(entry)
     }
 
     private func loadArticleContent() {
@@ -90,5 +99,25 @@ final class ArticleViewController: UIViewController {
     private func updateUi() {
         readButton?.image = entry.is_archived ? #imageLiteral(resourceName: "readed") : #imageLiteral(resourceName: "unreaded")
         starButton?.image = entry.is_starred ? #imageLiteral(resourceName: "starred") : #imageLiteral(resourceName: "unstarred")
+    }
+}
+
+extension ArticleViewController: UIWebViewDelegate {
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        webView.scrollView.setContentOffset(CGPoint(x: 0.0, y: Double(self.entry.screen_position)), animated: true)
+    }
+}
+
+extension ArticleViewController: UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        lastOffsetY = scrollView.contentOffset.y
+    }
+
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        let hide = scrollView.contentOffset.y > self.lastOffsetY
+        self.navigationController?.setNavigationBarHidden(hide, animated: true)
+        entry.screen_position = Float(scrollView.contentOffset.y)
+
+        CoreData.saveContext()
     }
 }
