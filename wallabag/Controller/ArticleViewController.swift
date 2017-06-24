@@ -74,7 +74,6 @@ final class ArticleViewController: UIViewController {
         contentWeb.delegate = self
         contentWeb.scrollView.delegate = self
         contentWeb.backgroundColor = Setting.getTheme().backgroundColor
-        print(entry)
     }
 
     private func loadArticleContent() {
