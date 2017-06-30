@@ -18,7 +18,7 @@
 
 //ArticlesTableViewController
 "Delete" = "Supprimer";
-"Unstar" = "Retiré des favoris";
+"Unstar" = "Retirer\n des favoris";
 "Star" = "Favoris";
 "Unread" = "Non lu";
 "Read" = "Lu";
