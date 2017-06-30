@@ -114,9 +114,7 @@ extension ArticleViewController: UIScrollViewDelegate {
 
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
         let hide = scrollView.contentOffset.y > self.lastOffsetY
-        self.navigationController?.setNavigationBarHidden(hide, animated: true)
+        navigationController?.setNavigationBarHidden(hide, animated: true)
         entry.screen_position = Float(scrollView.contentOffset.y)
-
-        CoreData.saveContext()
     }
 }
