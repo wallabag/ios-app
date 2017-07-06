@@ -76,6 +76,11 @@ final class ArticleViewController: UIViewController {
         contentWeb.backgroundColor = Setting.getTheme().backgroundColor
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+
     private func loadArticleContent() {
         DispatchQueue.main.async { [unowned self] in
             self.contentWeb.loadHTMLString(self.contentForWebView(self.entry), baseURL: Bundle.main.bundleURL)
