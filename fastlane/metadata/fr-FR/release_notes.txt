@@ -1,9 +1,11 @@
-Hello utilisateur de Wallabag!
-Dans cette version, nous avons ajoutés quelques fonctionnalités intéressantes:
-- Enregistrer la position de lecture sur un article
-- Vous pouvez maintenant ajouter un article depuis la page de lecture
-- Cacher le menu principal lorsque vous lisez un article
-- Nous reportons l'autorisation de la demande pour la notification lorsque votre application est configurée
-- traduction française et allemande
+Hello wallabag user!
 
-Maintenant, vous pouvez récompenser le développeur quand vous voulez.
+In this release we fix some bugs:
+- Arrange Ipad UI
+- Badge always show
+- App freeze on article
+- Arrange text on swipe article
+- Top bar disappearing on the homepage 
+- Page Tip and About UI
+
+If you like our app, do not hesitate to add comments on the app store

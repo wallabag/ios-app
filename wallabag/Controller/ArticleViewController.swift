@@ -74,7 +74,11 @@ final class ArticleViewController: UIViewController {
         contentWeb.delegate = self
         contentWeb.scrollView.delegate = self
         contentWeb.backgroundColor = Setting.getTheme().backgroundColor
-        print(entry)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 
     private func loadArticleContent() {
@@ -115,9 +119,7 @@ extension ArticleViewController: UIScrollViewDelegate {
 
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
         let hide = scrollView.contentOffset.y > self.lastOffsetY
-        self.navigationController?.setNavigationBarHidden(hide, animated: true)
+        navigationController?.setNavigationBarHidden(hide, animated: true)
         entry.screen_position = Float(scrollView.contentOffset.y)
-
-        CoreData.saveContext()
     }
 }

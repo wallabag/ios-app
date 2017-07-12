@@ -132,6 +132,8 @@ struct ThemeManager {
         let toolbar = UIToolbar.appearance()
         toolbar.setBackgroundImage(theme.navigationBarBackground, forToolbarPosition: .any, barMetrics: .default)
 
+        UITextView.appearance().backgroundColor = Setting.getTheme().backgroundColor
+
         UIBarButtonItem.appearance().setTitleTextAttributes([
             NSFontAttributeName: UIFont(name: "UbuntuTitling-Bold", size: 15.0)!
             ], for: .normal)

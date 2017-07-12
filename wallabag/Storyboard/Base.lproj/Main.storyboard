@@ -31,7 +31,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-icon-black-no-bg" translatesAutoresizingMaskIntoConstraints="NO" id="K7r-Is-Qyw">
-                                <rect key="frame" x="88" y="28" width="200" height="200"/>
+                                <rect key="frame" x="87.5" y="28" width="200" height="200"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="AaF-Wi-Xdv"/>
@@ -48,24 +48,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn4-yG-cxW" userLabel="Add Server">
-                                <rect key="frame" x="156" y="294" width="64" height="29"/>
+                                <rect key="frame" x="155.5" y="294" width="64" height="29"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <state key="normal" title="Register">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="LDR-tz-9ed" kind="show" id="Gj0-oO-eNh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2a9-yC-pw0">
-                                <rect key="frame" x="74.5" y="627" width="227" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
-                                <state key="normal" title="Create account on wallabag.it">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="openWallabagIt:" destination="Vl8-yY-Bdt" eventType="touchUpInside" id="MrZ-vV-ujY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -319,38 +308,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wallabag v2 for iOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OmZ-lq-KqG">
-                                <rect key="frame" x="72.5" y="88" width="231.5" height="34"/>
+                                <rect key="frame" x="54.5" y="88" width="267" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="CMc-3o-0on"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="26"/>
+                                <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report issue:  https://github.com/wallabag/ios-app/issues" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROP-iA-4oU">
-                                <rect key="frame" x="49" y="317" width="277" height="33"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <rect key="frame" x="29.5" y="315" width="316.5" height="37.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0.0 build 14" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4F-5W-KZX">
-                                <rect key="frame" x="107" y="130" width="161" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="103" y="130" width="170" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Made by Maxime Marinel (@bourvill)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsy-Ao-UlA">
-                                <rect key="frame" x="75" y="630" width="226" height="17"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <rect key="frame" x="51" y="627" width="274" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qk9-mt-OdM">
-                                <rect key="frame" x="125" y="593" width="125" height="29"/>
+                                <rect key="frame" x="113" y="583" width="150" height="36"/>
                                 <attributedString key="attributedText">
                                     <fragment content="We use a cool icon of  https://icons8.com">
                                         <attributes>
-                                            <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
+                                            <font key="NSFont" size="15" name=".AppleSystemUIFont"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -613,7 +602,7 @@
             <objects>
                 <navigationController storyboardIdentifier="serverNavigation" automaticallyAdjustsScrollViewInsets="NO" id="LDR-tz-9ed" userLabel="Add server navigation" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="x91-Lh-MNV">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x91-Lh-MNV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -791,7 +780,7 @@ This token are secret and can be found in your developer page, And create a new 
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8tH-nc-JLr" userLabel="Article Navigation" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="dK2-gx-arx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dK2-gx-arx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1006,21 +995,24 @@ This token are secret and can be found in your developer page, And create a new 
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTk-p8-TZZ">
-                                <rect key="frame" x="16" y="72" width="343" height="259"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="249" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTk-p8-TZZ">
+                                <rect key="frame" x="16" y="72" width="343" height="543"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="W9X-V6-vlh"/>
-                                    <constraint firstAttribute="height" constant="259" id="wsd-v5-DmU"/>
-                                </constraints>
                                 <string key="text">This application is developed on free time, it is free and will remain so.
 But you can contribute financially by making a donation whenever you want to support the project.</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                </variation>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="IOC-eL-yrD">
-                                <rect key="frame" x="142" y="547" width="91" height="30"/>
+                                <rect key="frame" x="16" y="623" width="343" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Store loading"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="tip:" destination="4Nr-QO-Wak" eventType="touchUpInside" id="ws3-cj-z2j"/>
                                 </connections>
@@ -1028,11 +1020,14 @@ But you can contribute financially by making a donation whenever you want to sup
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4Iz-0L-Eb3" firstAttribute="top" secondItem="IOC-eL-yrD" secondAttribute="bottom" constant="90" id="95e-0x-QGQ"/>
-                            <constraint firstItem="vTk-p8-TZZ" firstAttribute="top" secondItem="AfS-MM-eew" secondAttribute="bottom" constant="8" id="S7a-oH-5kg"/>
-                            <constraint firstItem="vTk-p8-TZZ" firstAttribute="leading" secondItem="XPm-1d-Dbb" secondAttribute="leadingMargin" id="bQH-au-4Vi"/>
-                            <constraint firstItem="vTk-p8-TZZ" firstAttribute="trailing" secondItem="XPm-1d-Dbb" secondAttribute="trailingMargin" id="gdO-OJ-hsv"/>
+                            <constraint firstItem="4Iz-0L-Eb3" firstAttribute="top" secondItem="IOC-eL-yrD" secondAttribute="bottom" constant="8" id="95e-0x-QGQ"/>
+                            <constraint firstItem="vTk-p8-TZZ" firstAttribute="top" secondItem="AfS-MM-eew" secondAttribute="bottom" constant="8" id="GyO-5I-Gox"/>
+                            <constraint firstItem="IOC-eL-yrD" firstAttribute="top" secondItem="vTk-p8-TZZ" secondAttribute="bottom" constant="8" id="RH0-GW-i5u"/>
+                            <constraint firstItem="IOC-eL-yrD" firstAttribute="leading" secondItem="XPm-1d-Dbb" secondAttribute="leadingMargin" id="Wdy-Ce-3gy"/>
+                            <constraint firstItem="vTk-p8-TZZ" firstAttribute="trailing" secondItem="XPm-1d-Dbb" secondAttribute="trailingMargin" id="oNH-iz-WRF"/>
+                            <constraint firstItem="IOC-eL-yrD" firstAttribute="trailing" secondItem="XPm-1d-Dbb" secondAttribute="trailingMargin" id="pwI-fx-qW0"/>
                             <constraint firstItem="IOC-eL-yrD" firstAttribute="centerX" secondItem="XPm-1d-Dbb" secondAttribute="centerX" id="q38-d4-5rR"/>
+                            <constraint firstItem="vTk-p8-TZZ" firstAttribute="leading" secondItem="XPm-1d-Dbb" secondAttribute="leadingMargin" id="zOV-oz-dCT"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1048,7 +1043,7 @@ But you can contribute financially by making a donation whenever you want to sup
         <scene sceneID="o2q-Hd-t7S">
             <objects>
                 <navigationController id="1X5-Uz-VZe" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="edy-e1-BkW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="edy-e1-BkW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

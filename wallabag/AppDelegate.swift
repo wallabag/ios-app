@@ -106,10 +106,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func updateBadge() {
+        if !Setting.isBadgeEnable() {
+            UIApplication.shared.applicationIconBadgeNumber = 0
+            return
+        }
+
         if WallabagApi.isConfigured() {
             let sync = ArticleSync()
             sync.sync()
         }
+
         log.info("Update badge")
         let request = Entry.fetchEntryRequest()
         switch Setting.getDefaultMode() {

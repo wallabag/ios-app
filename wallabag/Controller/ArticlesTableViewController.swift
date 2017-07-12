@@ -21,6 +21,7 @@ final class ArticlesTableViewController: UITableViewController {
     var refreshing: Bool = false
     var entries: [Entry] = []
     var mode: Setting.RetrieveMode = Setting.getDefaultMode()
+    var handleRefreshEnabled: Bool = true
 
     @IBOutlet weak var menu: UIBarButtonItem!
     @IBOutlet weak var add: UIBarButtonItem!
@@ -101,16 +102,20 @@ final class ArticlesTableViewController: UITableViewController {
                                        object: CoreData.context
         )
 
-        handleRefresh()
-
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        handleRefreshEnabled = true
+
+        handleRefresh()
+    }
+
     func managedObjectContextObjectsDidChange(notification: NSNotification) {
-        if  notification.userInfo == nil { return }
+        if notification.userInfo == nil { return }
         log.debug("managedObjectContextObjectsDidChange")
         handleRefresh()
     }
@@ -139,6 +144,9 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     func handleRefresh() {
+        if !handleRefreshEnabled {
+            return
+        }
         updateUi()
         sync.sync()
         log.debug("Handle refresh")
@@ -191,6 +199,7 @@ final class ArticlesTableViewController: UITableViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "readArticle" {
+            handleRefreshEnabled = false
             if let controller = segue.destination as? ArticleViewController {
                 controller.readHandler = { entry in
                     self.read(entry)
