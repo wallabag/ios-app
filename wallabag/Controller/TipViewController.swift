@@ -70,9 +70,9 @@ class TipViewController: UIViewController, SKProductsRequestDelegate, SKPaymentT
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = Setting.getTheme().backgroundColor
+        view.backgroundColor = ThemeManager.manager.getBackgroundColor()
         tipContent.text = "This application is developed on free time, it is free and will remain so. But you can contribute financially by making a donation whenever you want to support the project.".localized
-        tipContent.textColor = Setting.getTheme().color
+        tipContent.textColor = ThemeManager.manager.getColor()
 
         SKPaymentQueue.default().add(self)
         requestProductInfo()

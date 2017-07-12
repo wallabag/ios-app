@@ -30,11 +30,11 @@ final class SettingsTableViewController: UITableViewController {
 
         justifySwitch.setOn(Setting.isJustifyArticle(), animated: false)
         badgeSwitch.setOn(Setting.isBadgeEnable(), animated: false)
-        currentThemeLabel.text = Setting.getTheme().rawValue.ucFirst
+        currentThemeLabel.text = Setting.getTheme().ucFirst
     }
 
     override func didMove(toParentViewController parent: UIViewController?) {
-        currentThemeLabel.text = Setting.getTheme().rawValue.ucFirst
+        currentThemeLabel.text = Setting.getTheme().ucFirst
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

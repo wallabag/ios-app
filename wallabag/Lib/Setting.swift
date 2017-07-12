@@ -73,17 +73,16 @@ class Setting {
         standard.set(value, forKey: Const.badge.rawValue)
     }
 
-    static func getTheme() -> ThemeManager.Theme {
+    static func getTheme() -> String {
         guard let value = standard.string(forKey: Const.articleTheme.rawValue) else {
-            return .white
+            return "white"
         }
 
-        return ThemeManager.Theme(rawValue: value) ?? .white
+        return value
     }
 
-    static func setTheme(value: ThemeManager.Theme) {
-        standard.set(value.rawValue, forKey: Const.articleTheme.rawValue)
-        ThemeManager.apply(theme: value)
+    static func setTheme(value: String) {
+        standard.set(value, forKey: Const.articleTheme.rawValue)
     }
 
     static func deleteServer() {
