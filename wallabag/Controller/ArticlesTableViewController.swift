@@ -79,16 +79,16 @@ final class ArticlesTableViewController: UITableViewController {
         titleLabel.isUserInteractionEnabled = true
         titleLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.scrollTop)))
         titleLabel.text = mode.humainReadable().localized
-        titleLabel.textColor = Setting.getTheme().color
+        titleLabel.textColor = ThemeManager.manager.getColor()
         navigationItem.titleView = titleLabel
 
-        navigationController?.navigationBar.setBackgroundImage(Setting.getTheme().navigationBarBackground, for: .default)
-        menu.tintColor = Setting.getTheme().tintColor
-        add.tintColor = Setting.getTheme().tintColor
+        navigationController?.navigationBar.setBackgroundImage(ThemeManager.manager.getNavigationBarBackground(), for: .default)
+        menu.tintColor = ThemeManager.manager.getTintColor()
+        add.tintColor = ThemeManager.manager.getTintColor()
 
-        tableView.backgroundColor = Setting.getTheme().backgroundColor
+        tableView.backgroundColor = ThemeManager.manager.getBackgroundColor()
         for row in 0 ... tableView.numberOfRows(inSection: 0) {
-            tableView.cellForRow(at: IndexPath(row: row, section: 0))?.backgroundColor = Setting.getTheme().backgroundColor
+            tableView.cellForRow(at: IndexPath(row: row, section: 0))?.backgroundColor = ThemeManager.manager.getBackgroundColor()
         }
     }
 

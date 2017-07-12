@@ -73,7 +73,7 @@ final class ArticleViewController: UIViewController {
         loadArticleContent()
         contentWeb.delegate = self
         contentWeb.scrollView.delegate = self
-        contentWeb.backgroundColor = Setting.getTheme().backgroundColor
+        contentWeb.backgroundColor = ThemeManager.manager.getBackgroundColor()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -90,11 +90,9 @@ final class ArticleViewController: UIViewController {
     func contentForWebView(_ entry: Entry) -> String {
         do {
             let html = try String(contentsOfFile: Bundle.main.path(forResource: "article", ofType: "html")!)
-
             let justify = Setting.isJustifyArticle() ? "justify.css" : ""
-            let theme = Setting.getTheme()
 
-            return String(format: html, arguments: [justify, theme.rawValue, entry.title!, entry.content!])
+            return String(format: html, arguments: [justify, Setting.getTheme(), entry.title!, entry.content!])
         } catch {
             fatalError("Unable to load article view")
         }

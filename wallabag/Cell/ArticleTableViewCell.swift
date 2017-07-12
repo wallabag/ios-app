@@ -48,10 +48,10 @@ class ArticleTableViewCell: ThemedTableViewCell {
 
     override func setupTheme() {
         super.setupTheme()
-        title?.textColor = Setting.getTheme().color
-        website?.textColor = Setting.getTheme().color
-        readingTime?.textColor = Setting.getTheme().color
-        readed?.tintColor = Setting.getTheme().tintColor
-        starred?.tintColor = Setting.getTheme().tintColor
+        title?.textColor = ThemeManager.manager.getColor()
+        website?.textColor = ThemeManager.manager.getColor()
+        readingTime?.textColor = ThemeManager.manager.getColor()
+        readed?.tintColor = ThemeManager.manager.getTintColor()
+        starred?.tintColor = ThemeManager.manager.getTintColor()
     }
 }

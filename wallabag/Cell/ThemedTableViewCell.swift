@@ -23,10 +23,10 @@ class ThemedTableViewCell: UITableViewCell {
      Apply the current theme to the cell
      */
     func setupTheme() {
-        backgroundColor = Setting.getTheme().backgroundColor
-        textLabel?.textColor = Setting.getTheme().color
+        backgroundColor = ThemeManager.manager.getBackgroundColor()
+        textLabel?.textColor = ThemeManager.manager.getColor()
 
         selectedBackgroundView = UIView()
-        selectedBackgroundView?.backgroundColor = Setting.getTheme().backgroundSelectedColor
+        selectedBackgroundView?.backgroundColor = ThemeManager.manager.getBackgroundSelectedColor()
     }
 }
