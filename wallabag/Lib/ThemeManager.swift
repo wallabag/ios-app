@@ -27,16 +27,6 @@ class ThemeManager {
     private var themes: [ThemeProtocol] = [White(), Light(), Dusk(), Night()]
     private var currentTheme: ThemeProtocol
 
-    // Add theme here and dont forget add in allThemes
-    /*enum Theme: String {
-        case white
-        case light
-        case dusk
-        case night
-
-        static let allThemes: [Theme] = [white, light, dusk, night]
-    }*/
-
     func apply(_ themeName: String) {
         updateCurrentTheme(themeName)
 
