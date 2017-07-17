@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NetworkActivityIndicatorManager.shared.isEnabled = true
         NetworkActivityIndicatorManager.shared.startDelay = 0.1
 
-        ThemeManager.apply(theme: Setting.getTheme())
+        ThemeManager.manager.apply(Setting.getTheme())
 
         return true
     }

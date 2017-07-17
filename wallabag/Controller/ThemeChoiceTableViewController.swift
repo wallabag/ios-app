@@ -9,23 +9,24 @@
 import UIKit
 
 final class ThemeChoiceTableViewController: UITableViewController {
+
+    var themes: [ThemeProtocol] = ThemeManager.manager.getThemes()
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ThemeManager.Theme.allThemes.count
+        return themes.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let theme: ThemeProtocol = themes[indexPath.row]
 
-        let theme: ThemeManager.Theme = ThemeManager.Theme.allThemes[indexPath.row]
+        cell.textLabel?.text = theme.name.ucFirst
 
-        cell.textLabel?.text = theme.rawValue.ucFirst
-
-        if theme == Setting.getTheme() {
+        if theme.name == Setting.getTheme() {
             cell.accessoryType = .checkmark
         }
 
@@ -39,9 +40,10 @@ final class ThemeChoiceTableViewController: UITableViewController {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         tableView.deselectRow(at: indexPath, animated: true)
 
-        let selectedTheme = ThemeManager.Theme.allThemes[indexPath.row]
+        let selectedTheme = themes[indexPath.row]
 
-        Setting.setTheme(value: selectedTheme)
+        Setting.setTheme(value: selectedTheme.name)
+        ThemeManager.manager.apply(selectedTheme.name)
 
         _ = navigationController?.popViewController(animated: true)
     }
