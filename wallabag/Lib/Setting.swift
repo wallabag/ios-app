@@ -40,6 +40,7 @@ class Setting {
         case justifyArticle
         case articleTheme
         case badge
+        case speechRate
     }
 
     static func getDefaultMode() -> RetrieveMode {
@@ -71,6 +72,17 @@ class Setting {
 
     static func setBadgeEnable(value: Bool) {
         standard.set(value, forKey: Const.badge.rawValue)
+    }
+
+    static func setSpeechRate(value: Float) {
+        standard.set(value, forKey: Const.speechRate.rawValue)
+    }
+
+    static func getSpeechRate() -> Float {
+        guard standard.value(forKey: Const.speechRate.rawValue) != nil else {
+            return 0.5
+        }
+        return standard.float(forKey: Const.speechRate.rawValue)
     }
 
     static func getTheme() -> String {

@@ -8,13 +8,19 @@
 
 import UIKit
 import WallabagKit
+import AVFoundation
 
 final class SettingsTableViewController: UITableViewController {
 
     @IBOutlet weak var currentThemeLabel: UILabel!
     @IBOutlet weak var justifySwitch: UISwitch!
     @IBOutlet weak var badgeSwitch: UISwitch!
+    @IBOutlet weak var speechRateSlider: UISlider!
 
+    @IBAction func speechRateChanged(_ sender: UISlider) {
+        Setting.setSpeechRate(value: sender.value)
+    }
+    
     @IBAction func justifySwitch(_ sender: UISwitch) {
         Setting.setJustifyArticle(value: sender.isOn)
     }
@@ -31,6 +37,10 @@ final class SettingsTableViewController: UITableViewController {
         justifySwitch.setOn(Setting.isJustifyArticle(), animated: false)
         badgeSwitch.setOn(Setting.isBadgeEnable(), animated: false)
         currentThemeLabel.text = Setting.getTheme().ucFirst
+
+        speechRateSlider.minimumValue = AVSpeechUtteranceMinimumSpeechRate
+        speechRateSlider.maximumValue = AVSpeechUtteranceMaximumSpeechRate
+        speechRateSlider.value = Setting.getSpeechRate()
     }
 
     override func didMove(toParentViewController parent: UIViewController?) {

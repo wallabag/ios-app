@@ -9,8 +9,11 @@
 import UIKit
 import TUSafariActivity
 import WallabagKit
+import AVFoundation
 
 final class ArticleViewController: UIViewController {
+
+    let speechSynthetizer: AVSpeechSynthesizer = AVSpeechSynthesizer()
 
     var lastOffsetY: CGFloat = 0
     var update: Bool = true
@@ -28,6 +31,7 @@ final class ArticleViewController: UIViewController {
     @IBOutlet weak var contentWeb: UIWebView!
     @IBOutlet weak var readButton: UIBarButtonItem!
     @IBOutlet weak var starButton: UIBarButtonItem!
+    @IBOutlet weak var speechButton: UIBarButtonItem!
 
     @IBAction func add(_ sender: Any) {
         addHandler?()
@@ -41,6 +45,18 @@ final class ArticleViewController: UIViewController {
     @IBAction func star(_ sender: Any) {
         starHandler?(entry)
         updateUi()
+    }
+
+    @IBAction func speech(_ sender: Any) {
+        if !speechSynthetizer.isSpeaking {
+            let utterance = AVSpeechUtterance(string: entry.content!.withoutHTML)
+            utterance.rate = Setting.getSpeechRate()
+            speechSynthetizer.speak(utterance)
+            speechButton.image = #imageLiteral(resourceName: "lipsfilled")
+        } else {
+            speechSynthetizer.stopSpeaking(at: .word)
+            speechButton.image = #imageLiteral(resourceName: "lips")
+        }
     }
 
     @IBAction func shareMenu(_ sender: UIBarButtonItem) {

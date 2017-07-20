@@ -163,3 +163,5 @@
 /* Class = "UITableViewController"; title = "Tip"; ObjectID = "4Nr-QO-Wak"; */
 "4Nr-QO-Wak.title" = "Don";
 
+/* Class = "UILabel"; text = "Rate"; ObjectID = "UuI-en-p7j"; */
+"UuI-en-p7j.text" = "Vitesse";
