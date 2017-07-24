@@ -51,6 +51,7 @@ final class ArticleViewController: UIViewController {
         if !speechSynthetizer.isSpeaking {
             let utterance = AVSpeechUtterance(string: entry.content!.withoutHTML)
             utterance.rate = Setting.getSpeechRate()
+            utterance.voice = Setting.getSpeechVoice()
             speechSynthetizer.speak(utterance)
             speechButton.image = #imageLiteral(resourceName: "lipsfilled")
         } else {
@@ -95,6 +96,7 @@ final class ArticleViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        speechSynthetizer.stopSpeaking(at: .immediate)
     }
 
     private func loadArticleContent() {

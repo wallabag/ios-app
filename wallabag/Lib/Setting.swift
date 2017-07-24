@@ -8,6 +8,7 @@
 
 import Foundation
 import WallabagKit
+import AVFoundation
 
 class Setting {
 
@@ -41,6 +42,7 @@ class Setting {
         case articleTheme
         case badge
         case speechRate
+        case speechVoice
     }
 
     static func getDefaultMode() -> RetrieveMode {
@@ -83,6 +85,14 @@ class Setting {
             return 0.5
         }
         return standard.float(forKey: Const.speechRate.rawValue)
+    }
+
+    static func getSpeechVoice() -> AVSpeechSynthesisVoice? {
+        return AVSpeechSynthesisVoice(language: standard.string(forKey: Const.speechVoice.rawValue) ?? "en-GB")
+    }
+
+    static func setSpeechVoice(language: String) {
+        standard.set(language, forKey: Const.speechVoice.rawValue)
     }
 
     static func getTheme() -> String {
