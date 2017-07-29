@@ -20,7 +20,7 @@ final class SettingsTableViewController: UITableViewController {
     @IBAction func speechRateChanged(_ sender: UISlider) {
         Setting.setSpeechRate(value: sender.value)
     }
-    
+
     @IBAction func justifySwitch(_ sender: UISwitch) {
         Setting.setJustifyArticle(value: sender.isOn)
     }

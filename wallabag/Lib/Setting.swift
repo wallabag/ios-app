@@ -88,11 +88,11 @@ class Setting {
     }
 
     static func getSpeechVoice() -> AVSpeechSynthesisVoice? {
-        return AVSpeechSynthesisVoice(language: standard.string(forKey: Const.speechVoice.rawValue) ?? "en-GB")
+        return AVSpeechSynthesisVoice(identifier: standard.string(forKey: Const.speechVoice.rawValue) ?? "com.apple.ttsbundle.Daniel-compact")
     }
 
-    static func setSpeechVoice(language: String) {
-        standard.set(language, forKey: Const.speechVoice.rawValue)
+    static func setSpeechVoice(identifier: String) {
+        standard.set(identifier, forKey: Const.speechVoice.rawValue)
     }
 
     static func getTheme() -> String {

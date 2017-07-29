@@ -27,7 +27,7 @@ final class VoiceChoiceTableViewController: UITableViewController {
 
         cell.textLabel?.text = "\(voice.name) (\(voice.language))"
 
-        if voice.language == Setting.getSpeechVoice()?.language {
+        if voice.identifier == Setting.getSpeechVoice()?.identifier {
             cell.accessoryType = .checkmark
         }
 
@@ -41,7 +41,7 @@ final class VoiceChoiceTableViewController: UITableViewController {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         tableView.deselectRow(at: indexPath, animated: true)
 
-        Setting.setSpeechVoice(language: voices[indexPath.row].language)
+        Setting.setSpeechVoice(identifier: voices[indexPath.row].identifier)
         _ = navigationController?.popViewController(animated: true)
     }
 }
