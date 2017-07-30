@@ -160,3 +160,6 @@
 
 /* Class = "UILabel"; text = "Tip"; ObjectID = "hwn-bm-Zgf"; */
 "hwn-bm-Zgf.text" = "Geschenk";
+
+/* Class = "UILabel"; text = "Rate"; ObjectID = "UuI-en-p7j"; */
+"UuI-en-p7j.text" = "Geschwindigkeit";
