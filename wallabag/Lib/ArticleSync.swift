@@ -19,7 +19,7 @@ class ArticleSync: NSObject {
     private var page = 1
 
     func sync() {
-        fetch()
+      //  fetch()
     }
 
     private func fetch(page: Int = 1) {
