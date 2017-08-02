@@ -14,8 +14,9 @@ import CoreSpotlight
 
 final class ArticlesTableViewController: UITableViewController {
 
-    //let sync = ArticleSync()
+    let sync = ArticleSync()
     let searchController = UISearchController(searchResultsController: nil)
+    var fetchResultsController: NSFetchedResultsController<Entry>!
 
     let titleLabel: UILabel = {
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 70, height: 44))
@@ -77,19 +78,11 @@ final class ArticlesTableViewController: UITableViewController {
             }
         }
     }
-    /*
-     private func refreshTableView() {
-     DispatchQueue.main.async {
-     self.tableView.reloadData()
-     }
-     if refreshControl?.isRefreshing ?? false {
-     refreshControl?.endRefreshing()
-     }
-     }
-*/
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        sync.sync()
         navigationItem.titleView = titleLabel
         do {
             fetchResultsController = fetchResultsControllerRequest(mode: Setting.getDefaultMode())
@@ -97,21 +90,20 @@ final class ArticlesTableViewController: UITableViewController {
         } catch {
 
         }
-        /*      refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
-         let notificationCenter = NotificationCenter.default
-         notificationCenter.addObserver(self,
-         selector: #selector(managedObjectContextObjectsDidChange),
-         name: NSNotification.Name.NSManagedObjectContextObjectsDidChange,
-         object: CoreData.context
-         )
-         */
+        refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
     }
 
-    var fetchResultsController: NSFetchedResultsController<Entry>!
+    func handleRefresh() {
+        sync.sync()
+        if refreshControl?.isRefreshing ?? false {
+            refreshControl?.endRefreshing()
+        }
+    }
 
     func fetchResultsControllerRequest(mode: Setting.RetrieveMode, textSearch: String? = nil, id: Int? = nil) ->  NSFetchedResultsController<Entry> {
         let fetchRequest = NSFetchRequest<Entry>(entityName: "Entry")
@@ -141,13 +133,7 @@ final class ArticlesTableViewController: UITableViewController {
 
         return fetchedResultsController
     }
-    /*
-     func managedObjectContextObjectsDidChange(notification: NSNotification) {
-     if notification.userInfo == nil { return }
-     log.debug("managedObjectContextObjectsDidChange")
-     handleRefresh()
-     }
-     */
+
     func scrollTop() {
         tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
@@ -228,28 +214,16 @@ final class ArticlesTableViewController: UITableViewController {
 
     private func read(_ entry: Entry) {
         entry.is_archived = !entry.is_archived
-        entry.updated_at = NSDate()
-        CoreData.saveContext()
-        //WallabagApi.patchArticle(Int(entry.id), withParamaters: ["archive": (entry.is_archived).hashValue]) { _ in
-
-        //}
+        sync.update(entry: entry)
     }
 
     private func star(_ entry: Entry) {
         entry.is_starred = !entry.is_starred
-        entry.updated_at = NSDate()
-        CoreData.saveContext()
-        //   WallabagApi.patchArticle(Int(entry.id), withParamaters: ["starred": (entry.is_starred).hashValue]) { _ in
-        //   }
+        sync.update(entry: entry)
     }
 
     private func delete(_ entry: Entry) {
-        do {
-            //sync.delete(entry: entry)
-            //WallabagApi.deleteArticle(Int(entry.id)) {}
-            try CoreData.delete(entry)
-        } catch {
-        }
+        sync.delete(entry: entry)
     }
 
     private func addArticle(_ fromController: UIViewController) {
@@ -260,10 +234,7 @@ final class ArticlesTableViewController: UITableViewController {
         alertController.addAction(UIAlertAction(title: "Add".localized, style: .default, handler: { _ in
             if let textfield = alertController.textFields?.first?.text {
                 if let url = URL(string: textfield) {
-                    WallabagApi.addArticle(url) { article in
-                        //self.sync.insert(article)
-                        //self.tableView.reloadData()
-                    }
+                    self.sync.add(url: url)
                 }
             }
         }))

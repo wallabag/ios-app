@@ -1,13 +1,13 @@
 PODS:
-  - Alamofire (4.4.0)
+  - Alamofire (4.5.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
-  - AlamofireNetworkActivityIndicator (2.1.0):
-    - Alamofire (~> 4.1)
-  - SideMenu (2.3.2)
-  - SwiftyBeaver (1.2.2)
+  - AlamofireNetworkActivityIndicator (2.2.0):
+    - Alamofire (~> 4.5)
+  - SideMenu (2.3.3)
+  - SwiftyBeaver (1.3.0)
   - TUSafariActivity (1.0.4)
-  - WallabagKit (0.1.2):
+  - WallabagKit (0.1.3):
     - Alamofire
 
 DEPENDENCIES:
@@ -20,13 +20,13 @@ DEPENDENCIES:
   - WallabagKit
 
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
-  AlamofireNetworkActivityIndicator: 4716f6554bdfb9c7cf13b1e0e3af21163129690a
-  SideMenu: 3fa07dd05d4bade2b6f9889fb1877e312e1ba319
-  SwiftyBeaver: 90a39e3dc5136b7285f2e4c870b107e3933b8b84
+  AlamofireNetworkActivityIndicator: 81e1630e7cfed22a4e4e82a174c59e651dc4f8ca
+  SideMenu: a447554ae5c982e8077666389e1c8b0c8656e065
+  SwiftyBeaver: d4b551ba34b4206c52cc4684ae90444b8aaa5afd
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
-  WallabagKit: f6c285143adf9d4c80f3705d425c20c217e3272f
+  WallabagKit: 636064b251850d1784ff0b022f0703a5b3ff2233
 
 PODFILE CHECKSUM: 6f769465ea8f6602d14e817c11be40a4f57d788b
 

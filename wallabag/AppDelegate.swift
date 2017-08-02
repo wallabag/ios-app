@@ -75,6 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         updateBadge()
+        CoreData.saveContext()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -109,11 +110,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if !Setting.isBadgeEnable() {
             UIApplication.shared.applicationIconBadgeNumber = 0
             return
-        }
-
-        if WallabagApi.isConfigured() {
-            let sync = ArticleSync()
-            sync.sync()
         }
 
         log.info("Update badge")
