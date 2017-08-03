@@ -96,6 +96,17 @@ final class ArticlesTableViewController: UITableViewController {
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
+
+        reloadUI()
+    }
+
+    private func reloadUI() {
+        tableView.backgroundColor = ThemeManager.manager.getBackgroundColor()
+        navigationController?.navigationBar.setBackgroundImage(ThemeManager.manager.getNavigationBarBackground(), for: .default)
+    }
+
+    override func didMove(toParentViewController parent: UIViewController?) {
+        reloadUI()
     }
 
     func handleRefresh() {
