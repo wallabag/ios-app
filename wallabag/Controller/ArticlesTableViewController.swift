@@ -14,7 +14,7 @@ import CoreSpotlight
 
 final class ArticlesTableViewController: UITableViewController {
 
-    let sync = ArticleSync()
+    let articleSync: ArticleSync = ArticleSync.sharedInstance
     let searchController = UISearchController(searchResultsController: nil)
     var fetchResultsController: NSFetchedResultsController<Entry>!
 
@@ -82,7 +82,7 @@ final class ArticlesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        sync.sync()
+        articleSync.sync()
         navigationItem.titleView = titleLabel
         do {
             fetchResultsController = fetchResultsControllerRequest(mode: Setting.getDefaultMode())
@@ -110,7 +110,7 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     func handleRefresh() {
-        sync.sync()
+        articleSync.sync()
         if refreshControl?.isRefreshing ?? false {
             refreshControl?.endRefreshing()
         }
@@ -225,16 +225,16 @@ final class ArticlesTableViewController: UITableViewController {
 
     private func read(_ entry: Entry) {
         entry.is_archived = !entry.is_archived
-        sync.update(entry: entry)
+        articleSync.update(entry: entry)
     }
 
     private func star(_ entry: Entry) {
         entry.is_starred = !entry.is_starred
-        sync.update(entry: entry)
+        articleSync.update(entry: entry)
     }
 
     private func delete(_ entry: Entry) {
-        sync.delete(entry: entry)
+        articleSync.delete(entry: entry)
     }
 
     private func addArticle(_ fromController: UIViewController) {
@@ -245,7 +245,7 @@ final class ArticlesTableViewController: UITableViewController {
         alertController.addAction(UIAlertAction(title: "Add".localized, style: .default, handler: { _ in
             if let textfield = alertController.textFields?.first?.text {
                 if let url = URL(string: textfield) {
-                    self.sync.add(url: url)
+                    self.articleSync.add(url: url)
                 }
             }
         }))

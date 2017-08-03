@@ -12,11 +12,26 @@ import CoreData
 import CoreSpotlight
 import MobileCoreServices
 
-final class ArticleSync: NSObject {
+final class ArticleSync {
     private let syncQueue = DispatchQueue(label: "fr.district-web.wallabag.articleSyncQueue", attributes: .concurrent)
     private let spotlightQueue = DispatchQueue(label: "fr.district-web.wallabag.spotlightQueue", qos: .background)
+    private let group = DispatchGroup()
+
+    private var isSyncing: Bool = false
+
+    static let sharedInstance: ArticleSync = ArticleSync()
+
+    private init() {
+
+    }
 
     func sync() {
+        if isSyncing {
+            return
+        }
+
+        group.enter()
+        isSyncing = true
         syncQueue.async(flags: .barrier) {
             WallabagApi.Entry.fetch(with: ["page": 1 ]) { results in
                 switch results {
@@ -30,7 +45,11 @@ final class ArticleSync: NSObject {
                     self.handle(result: data)
                 case .failure: break
                 }
+                self.group.leave()
             }
+        }
+        group.notify(queue: syncQueue) { [unowned self] in
+            self.isSyncing = false
         }
     }
 
