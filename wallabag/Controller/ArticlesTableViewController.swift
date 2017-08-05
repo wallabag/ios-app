@@ -51,7 +51,7 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     @IBAction func addLink(_ sender: UIBarButtonItem) {
-        addArticle(self)
+        addArticle()
     }
 
     override func restoreUserActivityState(_ activity: NSUserActivity) {
@@ -204,9 +204,8 @@ final class ArticlesTableViewController: UITableViewController {
                     self.delete(entry)
                 }
                 controller.addHandler = {
-                    self.addArticle(controller)
+                    self.addArticle()
                 }
-
                 if let cell = sender as? UITableViewCell {
                     if let indexPath = tableView.indexPath(for: cell) {
                         controller.entry = fetchResultsController.object(at: indexPath)
@@ -237,7 +236,7 @@ final class ArticlesTableViewController: UITableViewController {
         articleSync.delete(entry: entry)
     }
 
-    private func addArticle(_ fromController: UIViewController) {
+    private func addArticle() {
         let alertController = UIAlertController(title: "Add link".localized, message: nil, preferredStyle: .alert)
         alertController.addTextField(configurationHandler: { textField in
             textField.placeholder = "Url".localized
@@ -250,7 +249,7 @@ final class ArticlesTableViewController: UITableViewController {
             }
         }))
         alertController.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
-        fromController.present(alertController, animated: true)
+        present(alertController, animated: true)
     }
 }
 
