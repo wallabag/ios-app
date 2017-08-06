@@ -13,7 +13,7 @@ import CoreSpotlight
 import MobileCoreServices
 
 final class ArticleSync {
-    private let syncQueue = DispatchQueue(label: "fr.district-web.wallabag.articleSyncQueue", attributes: .concurrent)
+    private let syncQueue = DispatchQueue(label: "fr.district-web.wallabag.articleSyncQueue", qos: .background)
     private let spotlightQueue = DispatchQueue(label: "fr.district-web.wallabag.spotlightQueue", qos: .background)
     private let group = DispatchGroup()
 
@@ -32,35 +32,34 @@ final class ArticleSync {
 
         group.enter()
         isSyncing = true
-        syncQueue.async(flags: .barrier) {
-            WallabagApi.Entry.fetch(with: ["page": 1 ]) { results in
-                switch results {
-                case .success(let data):
-                    guard let page = data["pages"] as? Int else {
-                        return
-                    }
-                    for page in 2...page {
-                        self.fetch(page: page)
-                    }
-                    self.handle(result: data)
-                case .failure: break
+        WallabagApi.Entry.fetch(with: ["page": 1 ]) { results in
+            switch results {
+            case .success(let data):
+                guard let page = data["pages"] as? Int else {
+                    return
                 }
-                self.group.leave()
+                for page in 2...page {
+                    self.group.enter()
+                    self.fetch(page: page)
+                }
+                self.handle(result: data)
+            case .failure: break
             }
         }
+
         group.notify(queue: syncQueue) { [unowned self] in
             self.isSyncing = false
         }
     }
 
     private func fetch(page: Int) {
-        syncQueue.async {
-            WallabagApi.Entry.fetch(with: ["page": page ]) { results in
-                switch results {
-                case .success(let data):
+        WallabagApi.Entry.fetch(with: ["page": page ]) { results in
+            switch results {
+            case .success(let data):
+                self.syncQueue.async {
                     self.handle(result: data)
-                case .failure: break
                 }
+            case .failure: break
             }
         }
     }
@@ -73,13 +72,13 @@ final class ArticleSync {
                 fetchRequest.predicate = NSPredicate(format: "id == %@", article.id as NSNumber)
                 let results = (CoreData.fetch(fetchRequest) as? [Entry]) ?? []
                 if 0 == results.count {
-                    print("insert article")
                     self.insert(article)
                 } else {
                     self.update(entry: results.first!, from: article)
                 }
             }
         }
+        group.leave()
     }
 
     func insert(_ article: Article) {

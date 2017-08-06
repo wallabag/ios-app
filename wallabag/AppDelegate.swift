@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         log.addDestination(ConsoleDestination())
-        log.addDestination(FileDestination())
         log.addDestination(
             SBPlatformDestination(
                 appID: "WxjB1g",
@@ -62,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if WallabagApi.isConfigured() {
             guard let mainController = window?.rootViewController! as? UINavigationController,
                 let articlesTable = mainController.viewControllers.first as? ArticlesTableViewController else {
-                return false
+                    return false
             }
             articlesTable.restoreUserActivityState(userActivity)
             return true
