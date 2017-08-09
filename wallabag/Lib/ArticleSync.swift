@@ -17,6 +17,8 @@ final class ArticleSync {
     private let spotlightQueue = DispatchQueue(label: "fr.district-web.wallabag.spotlightQueue", qos: .background)
     private let group = DispatchGroup()
 
+    private var entries: [Entry] = []
+
     private var isSyncing: Bool = false
 
     static let sharedInstance: ArticleSync = ArticleSync()
@@ -29,6 +31,8 @@ final class ArticleSync {
         if isSyncing {
             return
         }
+
+        entries = (CoreData.fetch(Entry.fetchEntryRequest()) as? [Entry]) ?? []
 
         group.enter()
         isSyncing = true
@@ -49,6 +53,8 @@ final class ArticleSync {
 
         group.notify(queue: syncQueue) { [unowned self] in
             self.isSyncing = false
+            self.purge()
+            self.entries = []
         }
     }
 
@@ -68,17 +74,24 @@ final class ArticleSync {
         if let embedded = result["_embedded"] as? [String: Any] {
             for item in (embedded["items"] as? [[String: Any]])! {
                 let article = Article(fromDictionary: item)
-                let fetchRequest = Entry.fetchEntryRequest()
-                fetchRequest.predicate = NSPredicate(format: "id == %@", article.id as NSNumber)
-                let results = (CoreData.fetch(fetchRequest) as? [Entry]) ?? []
-                if 0 == results.count {
-                    self.insert(article)
+                if let entry = entries.first(where: { Int($0.id) == article.id }) {
+                    self.update(entry: entry, from: article)
                 } else {
-                    self.update(entry: results.first!, from: article)
+                    self.insert(article)
+                }
+
+                if let index = entries.index(where: { Int($0.id) == article.id }) {
+                    entries.remove(at: index)
                 }
             }
         }
         group.leave()
+    }
+
+    private func purge() {
+        for entry in entries {
+            delete(entry: entry, callServer: false)
+        }
     }
 
     func insert(_ article: Article) {
@@ -142,10 +155,12 @@ final class ArticleSync {
         }
     }
 
-    func delete(entry: Entry) {
+    func delete(entry: Entry, callServer: Bool = true) {
         log.info("Delete entry \(entry.id)")
         do {
-            WallabagApi.Entry.delete(id: Int(entry.id)) { _ in
+            if callServer {
+                WallabagApi.Entry.delete(id: Int(entry.id)) { _ in
+                }
             }
             try CoreData.delete(entry)
             spotlightQueue.async {
