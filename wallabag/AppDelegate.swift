@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         log.addDestination(ConsoleDestination())
-        log.addDestination(FileDestination())
         log.addDestination(
             SBPlatformDestination(
                 appID: "WxjB1g",
@@ -62,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if WallabagApi.isConfigured() {
             guard let mainController = window?.rootViewController! as? UINavigationController,
                 let articlesTable = mainController.viewControllers.first as? ArticlesTableViewController else {
-                return false
+                    return false
             }
             articlesTable.restoreUserActivityState(userActivity)
             return true
@@ -75,6 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         updateBadge()
+        CoreData.saveContext()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -109,11 +109,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if !Setting.isBadgeEnable() {
             UIApplication.shared.applicationIconBadgeNumber = 0
             return
-        }
-
-        if WallabagApi.isConfigured() {
-            let sync = ArticleSync()
-            sync.sync()
         }
 
         log.info("Update badge")

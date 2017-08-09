@@ -13,7 +13,7 @@ import AVFoundation
 
 final class ArticleViewController: UIViewController {
 
-    let speechSynthetizer: AVSpeechSynthesizer = AVSpeechSynthesizer()
+    lazy var speechSynthetizer: AVSpeechSynthesizer = AVSpeechSynthesizer()
 
     var lastOffsetY: CGFloat = 0
     var update: Bool = true
