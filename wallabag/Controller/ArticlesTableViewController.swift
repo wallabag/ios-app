@@ -16,7 +16,9 @@ final class ArticlesTableViewController: UITableViewController {
 
     let articleSync: ArticleSync = ArticleSync.sharedInstance
     let searchController = UISearchController(searchResultsController: nil)
+
     var fetchResultsController: NSFetchedResultsController<Entry>!
+    var mode: Setting.RetrieveMode = Setting.getDefaultMode()
 
     let titleLabel: UILabel = {
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 70, height: 44))
@@ -39,8 +41,12 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     @IBAction func filterList(segue: UIStoryboardSegue) {
+        mode = Setting.RetrieveMode(rawValue: segue.identifier!)!
+        filteringList()
+    }
+
+    func filteringList() {
         do {
-            let mode = Setting.RetrieveMode(rawValue: segue.identifier!)!
             fetchResultsController = fetchResultsControllerRequest(mode: mode)
             titleLabel.text = mode.humainReadable().localized
             try fetchResultsController.performFetch()
@@ -63,7 +69,6 @@ final class ArticlesTableViewController: UITableViewController {
             }
             log.debug("Back from activity")
             do {
-                let mode = Setting.getDefaultMode()
                 fetchResultsController = fetchResultsControllerRequest(mode: mode, textSearch: nil, id: selectedEntryId)
                 try fetchResultsController.performFetch()
                 tableView.reloadData()
@@ -85,7 +90,7 @@ final class ArticlesTableViewController: UITableViewController {
         articleSync.sync()
         navigationItem.titleView = titleLabel
         do {
-            fetchResultsController = fetchResultsControllerRequest(mode: Setting.getDefaultMode())
+            fetchResultsController = fetchResultsControllerRequest(mode: mode)
             try fetchResultsController.performFetch()
         } catch {
 
@@ -103,6 +108,7 @@ final class ArticlesTableViewController: UITableViewController {
     private func reloadUI() {
         tableView.backgroundColor = ThemeManager.manager.getBackgroundColor()
         navigationController?.navigationBar.setBackgroundImage(ThemeManager.manager.getNavigationBarBackground(), for: .default)
+        titleLabel.text = mode.humainReadable().localized
     }
 
     override func didMove(toParentViewController parent: UIViewController?) {
@@ -257,7 +263,7 @@ extension ArticlesTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         log.debug("search: " + searchController.searchBar.text!)
         do {
-            fetchResultsController = fetchResultsControllerRequest(mode: Setting.getDefaultMode(), textSearch: searchController.searchBar.text!)
+            fetchResultsController = fetchResultsControllerRequest(mode: mode, textSearch: searchController.searchBar.text!)
             try fetchResultsController.performFetch()
             tableView.reloadData()
         } catch {

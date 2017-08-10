@@ -54,6 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         ThemeManager.manager.apply(Setting.getTheme())
 
+        setupQuickAction()
+
         return true
     }
 
@@ -127,6 +129,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         UIApplication.shared.applicationIconBadgeNumber = ((CoreData.fetch(request) as? [Entry]) ?? []).count
+    }
+
+    private func setupQuickAction() {
+        if WallabagApi.isConfigured() {
+            let starredAction = UIApplicationShortcutItem(type: Setting.RetrieveMode.starredArticles.rawValue, localizedTitle: Setting.RetrieveMode.starredArticles.humainReadable().localized, localizedSubtitle: nil, icon: UIApplicationShortcutIcon(templateImageName: "starred"), userInfo: [:])
+            let unarchivedAction = UIApplicationShortcutItem(
+                type: Setting.RetrieveMode.unarchivedArticles.rawValue,
+                localizedTitle: Setting.RetrieveMode.unarchivedArticles.humainReadable().localized,
+                localizedSubtitle: nil,
+                icon: UIApplicationShortcutIcon(templateImageName: "unreaded"),
+                userInfo: [:]
+            )
+            let archivedAction = UIApplicationShortcutItem(type: Setting.RetrieveMode.archivedArticles.rawValue, localizedTitle: Setting.RetrieveMode.archivedArticles.humainReadable().localized, localizedSubtitle: nil, icon: UIApplicationShortcutIcon(templateImageName: "readed"), userInfo: [:])
+            UIApplication.shared.shortcutItems = [unarchivedAction, archivedAction, starredAction]
+        }
+    }
+
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        guard let navController = window!.rootViewController as? UINavigationController,
+            let rootController = navController.viewControllers.first as? ArticlesTableViewController else {
+                return
+        }
+        if let mode = Setting.RetrieveMode(rawValue: shortcutItem.type) {
+            rootController.mode = mode
+        }
     }
 
     func resetApplication() {
