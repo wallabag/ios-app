@@ -42,9 +42,11 @@ final class ArticleSync {
                 guard let page = data["pages"] as? Int else {
                     return
                 }
-                for page in 2...page {
-                    self.group.enter()
-                    self.fetch(page: page)
+                if page > 1 {
+                    for page in 2...page {
+                        self.group.enter()
+                        self.fetch(page: page)
+                    }
                 }
                 self.handle(result: data)
             case .failure: break
