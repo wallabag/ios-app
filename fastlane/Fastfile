@@ -11,8 +11,7 @@ platform :ios do
 
   desc "Runs all the tests"
   lane :test do
-    testlib
-    testui
+    scan(scheme: "wallabag")
   end
 
   lane :testlib do 
