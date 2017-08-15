@@ -123,6 +123,9 @@
 		6216651F1E0CFC2600438EE2 /* white.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = white.css; sourceTree = "<group>"; };
 		622923E81E10F8A5007B2307 /* dusk.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = dusk.css; sourceTree = "<group>"; };
 		7438BB540252BD33025E60F9 /* Pods-wallabagTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7E638ED11F433B170014860E /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		7E638ED21F433B180014860E /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Main.strings; sourceTree = "<group>"; };
+		7E638ED31F433B180014860E /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
 		94D0C2FA2C870EE989B2406D /* Pods-wallabagTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests.release.xcconfig"; sourceTree = "<group>"; };
 		9B9EB64D938632DA7CDDFD2A /* Pods-wallabagUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9C0BF8B91EC723CF00CEBE93 /* ArticlesUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesUITests.swift; sourceTree = "<group>"; };
@@ -636,6 +639,7 @@
 				Base,
 				fr,
 				de,
+				ro,
 			);
 			mainGroup = 9C987A3A1DB79826005515F4;
 			productRefGroup = 9C987A441DB79826005515F4 /* Products */;
@@ -989,6 +993,7 @@
 				9C987A4B1DB79826005515F4 /* Base */,
 				9CF4FECB1EEB2B9D00653B90 /* fr */,
 				9CF4FECE1EEB2C4300653B90 /* de */,
+				7E638ED21F433B180014860E /* ro */,
 			);
 			name = Main.storyboard;
 			path = .;
@@ -1000,6 +1005,7 @@
 				9C987A531DB79826005515F4 /* Base */,
 				9CF4FECA1EEB2B9C00653B90 /* fr */,
 				9CF4FECD1EEB2C4300653B90 /* de */,
+				7E638ED11F433B170014860E /* ro */,
 			);
 			name = LaunchScreen.storyboard;
 			path = .;
@@ -1011,6 +1017,7 @@
 				9CF4FED31EEB2F7E00653B90 /* Base */,
 				9CF4FED61EEB2FB300653B90 /* fr */,
 				9CF4FED71EEB2FB500653B90 /* de */,
+				7E638ED31F433B180014860E /* ro */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

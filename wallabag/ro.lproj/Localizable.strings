@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  wallabag
+
+  Created by maxime marinel on 09/06/2017.
+  Copyright © 2017 maxime marinel. All rights reserved.
+*/
+
+//Common
+"Error" = "Eroare";
+"Cancel" = "Cancel";
+
+//ArticleTableViewCell
+"Reading time %@" = "Timp de lectură %@";
+
+//AboutViewController
+"Version %@ build %@" = "Versiune %@ build %@";
+
+//ArticlesTableViewController
+"Delete" = "Șterge";
+"Unstar" = "UnFavorit";
+"Star" = "Favorit";
+"Unread" = "Necitite";
+"Read" = "Citite";
+"Add link" = "Adaugă link";
+"Add" = "Adaugă";
+"Url" = "Url";
+"All articles" = "Toate articolele";
+"Read articles" = "Articole citite";
+"Starred articles" = "Articole favorite";
+"Unread articles" = "Articole necitite";
+
+
+//ServerViewController
+"Whoops looks like something went wrong. Check the url, don't forget http or https" = "Uuups, se pare că ceva nu a funcționat. Verifică url-ul, nu uita http sau https";
+
+//TipViewController
+"This application is developed on free time, it is free and will remain so. But you can contribute financially by making a donation whenever you want to support the project." = "Această aplicație a fost dezvoltată în timpul liber și va rămane așa. Dar poți contribui financiar, făcând o donație oricând dorești să susții proiectul.";
