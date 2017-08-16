@@ -224,10 +224,6 @@ final class ArticlesTableViewController: UITableViewController {
         }
     }
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-
     private func read(_ entry: Entry) {
         entry.is_archived = !entry.is_archived
         articleSync.update(entry: entry)
