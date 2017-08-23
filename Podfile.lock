@@ -5,7 +5,7 @@ PODS:
   - AlamofireNetworkActivityIndicator (2.2.0):
     - Alamofire (~> 4.5)
   - SideMenu (2.3.3)
-  - SwiftyBeaver (1.3.0)
+  - SwiftyBeaver (1.4.0)
   - TUSafariActivity (1.0.4)
   - WallabagKit (0.1.3):
     - Alamofire
@@ -24,7 +24,7 @@ SPEC CHECKSUMS:
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   AlamofireNetworkActivityIndicator: 81e1630e7cfed22a4e4e82a174c59e651dc4f8ca
   SideMenu: a447554ae5c982e8077666389e1c8b0c8656e065
-  SwiftyBeaver: d4b551ba34b4206c52cc4684ae90444b8aaa5afd
+  SwiftyBeaver: 78d9186ce7595b4400ce01e5fd750d263e72dd7b
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
   WallabagKit: 636064b251850d1784ff0b022f0703a5b3ff2233
 
