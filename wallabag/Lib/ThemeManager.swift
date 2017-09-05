@@ -38,6 +38,9 @@ class ThemeManager {
 
         let uiBarButton = UIBarButtonItem.appearance()
         uiBarButton.tintColor = currentTheme.tintColor
+        uiBarButton.setTitleTextAttributes([
+            NSFontAttributeName: UIFont(name: "UbuntuTitling-Bold", size: 15.0)!
+            ], for: .normal)
 
         let uiLabel = UILabel.appearance()
         uiLabel.textColor = currentTheme.color
@@ -52,11 +55,18 @@ class ThemeManager {
 
         UITextView.appearance().backgroundColor = currentTheme.backgroundColor
 
-        UIBarButtonItem.appearance().setTitleTextAttributes([
-            NSFontAttributeName: UIFont(name: "UbuntuTitling-Bold", size: 15.0)!
-            ], for: .normal)
+        UITableView.appearance().backgroundColor = currentTheme.backgroundColor
+        UITableViewCell.appearance().backgroundColor = currentTheme.backgroundColor
 
         NotificationCenter.default.post(name: Notification.Name.themeUpdated, object: nil)
+
+        for window in UIApplication.shared.windows {
+            for view in window.subviews {
+                view.removeFromSuperview()
+                window.addSubview(view)
+            }
+            window.rootViewController?.setNeedsStatusBarAppearanceUpdate()
+        }
     }
 
     private func updateCurrentTheme(_ themeName: String) {

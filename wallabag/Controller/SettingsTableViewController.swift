@@ -41,10 +41,11 @@ final class SettingsTableViewController: UITableViewController {
         speechRateSlider.minimumValue = AVSpeechUtteranceMinimumSpeechRate
         speechRateSlider.maximumValue = AVSpeechUtteranceMaximumSpeechRate
         speechRateSlider.value = Setting.getSpeechRate()
-    }
 
-    override func didMove(toParentViewController parent: UIViewController?) {
-        currentThemeLabel.text = Setting.getTheme().ucFirst
+        NotificationCenter.default.addObserver(forName: Notification.Name.themeUpdated, object: nil, queue: nil) { _ in
+            self.tableView.reloadData()
+            self.currentThemeLabel.text = Setting.getTheme().ucFirst
+        }
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -59,6 +60,13 @@ final class SettingsTableViewController: UITableViewController {
             }
 
             tableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let header = view as? UITableViewHeaderFooterView {
+            header.backgroundView?.backgroundColor = ThemeManager.manager.getBackgroundSelectedColor()
+            header.textLabel?.textColor = ThemeManager.manager.getColor()
         }
     }
 

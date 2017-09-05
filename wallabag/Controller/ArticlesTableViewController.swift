@@ -106,8 +106,6 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     private func reloadUI() {
-        tableView.backgroundColor = ThemeManager.manager.getBackgroundColor()
-        navigationController?.navigationBar.setBackgroundImage(ThemeManager.manager.getNavigationBarBackground(), for: .default)
         titleLabel.text = mode.humainReadable().localized
     }
 
