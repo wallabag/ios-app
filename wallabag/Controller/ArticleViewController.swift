@@ -91,12 +91,15 @@ final class ArticleViewController: UIViewController {
         contentWeb.delegate = self
         contentWeb.scrollView.delegate = self
         contentWeb.backgroundColor = ThemeManager.manager.getBackgroundColor()
+
+        UIApplication.shared.isIdleTimerDisabled = true
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
         speechSynthetizer.stopSpeaking(at: .immediate)
+        UIApplication.shared.isIdleTimerDisabled = false
     }
 
     private func loadArticleContent() {
