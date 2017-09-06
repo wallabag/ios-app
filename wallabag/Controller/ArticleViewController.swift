@@ -15,7 +15,6 @@ final class ArticleViewController: UIViewController {
 
     lazy var speechSynthetizer: AVSpeechSynthesizer = AVSpeechSynthesizer()
 
-    var lastOffsetY: CGFloat = 0
     var update: Bool = true
     var entry: Entry! {
         didSet {
@@ -132,13 +131,7 @@ extension ArticleViewController: UIWebViewDelegate {
 }
 
 extension ArticleViewController: UIScrollViewDelegate {
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        lastOffsetY = scrollView.contentOffset.y
-    }
-
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-        let hide = scrollView.contentOffset.y > self.lastOffsetY
-        navigationController?.setNavigationBarHidden(hide, animated: true)
         entry.screen_position = Float(scrollView.contentOffset.y)
     }
 }

@@ -98,6 +98,10 @@ class ThemeManager {
     func getThemes() -> [ThemeProtocol] {
         return themes
     }
+
+    func getBarStyle() -> UIBarStyle {
+        return currentTheme.barStyle
+    }
 }
 
 extension Notification.Name {
