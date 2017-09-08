@@ -1,11 +1,18 @@
-Hello wallabag user!
+Hello les utilisateurs de wallabag!
 
-In this release we fix some bugs:
-- Arrange Ipad UI
-- Badge always show
-- App freeze on article
-- Arrange text on swipe article
-- Top bar disappearing on the homepage 
-- Page Tip and About UI
+J'ai travaillé dur sur cette version pour fournir une véritable application de lecture.
+Tous les articles sont maintenant synchronisés sur votre appareil.
 
-If you like our app, do not hesitate to add comments on the app store
+Vous pouvez maintenant essayer la synthèse vocale sur la vue des articles, ce n'est pas parfait mais c'est ici, profitez-en!
+
+Des homescreen action sont disponibles maintenant.
+
+J'ai retravaillé sur le thème, l'application essaie maintenant de suivre partout votre thème sélectionné.
+
+Maintenant, lorsque vous êtes sur l'article, votre appareil ne sera plus verrouillé.
+
+Un grand merci à 0wnrepo, il a ajouté la traduction roumaine! merci mec!
+
+Si vous aimez notre application, n'hésitez pas à ajouter des commentaires, écrire des critiques et donner un pourboire à l'application!
+
+Profitez de votre lecture!
