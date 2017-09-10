@@ -8,6 +8,7 @@
 
 import Foundation
 import WallabagKit
+import AVFoundation
 
 class Setting {
 
@@ -40,6 +41,8 @@ class Setting {
         case justifyArticle
         case articleTheme
         case badge
+        case speechRate
+        case speechVoice
     }
 
     static func getDefaultMode() -> RetrieveMode {
@@ -73,17 +76,35 @@ class Setting {
         standard.set(value, forKey: Const.badge.rawValue)
     }
 
-    static func getTheme() -> ThemeManager.Theme {
-        guard let value = standard.string(forKey: Const.articleTheme.rawValue) else {
-            return .white
-        }
-
-        return ThemeManager.Theme(rawValue: value) ?? .white
+    static func setSpeechRate(value: Float) {
+        standard.set(value, forKey: Const.speechRate.rawValue)
     }
 
-    static func setTheme(value: ThemeManager.Theme) {
-        standard.set(value.rawValue, forKey: Const.articleTheme.rawValue)
-        ThemeManager.apply(theme: value)
+    static func getSpeechRate() -> Float {
+        guard standard.value(forKey: Const.speechRate.rawValue) != nil else {
+            return 0.5
+        }
+        return standard.float(forKey: Const.speechRate.rawValue)
+    }
+
+    static func getSpeechVoice() -> AVSpeechSynthesisVoice? {
+        return AVSpeechSynthesisVoice(identifier: standard.string(forKey: Const.speechVoice.rawValue) ?? "com.apple.ttsbundle.Daniel-compact")
+    }
+
+    static func setSpeechVoice(identifier: String) {
+        standard.set(identifier, forKey: Const.speechVoice.rawValue)
+    }
+
+    static func getTheme() -> String {
+        guard let value = standard.string(forKey: Const.articleTheme.rawValue) else {
+            return "white"
+        }
+
+        return value
+    }
+
+    static func setTheme(value: String) {
+        standard.set(value, forKey: Const.articleTheme.rawValue)
     }
 
     static func deleteServer() {

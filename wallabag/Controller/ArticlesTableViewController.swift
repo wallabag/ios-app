@@ -14,14 +14,20 @@ import CoreSpotlight
 
 final class ArticlesTableViewController: UITableViewController {
 
-    let sync = ArticleSync()
+    let articleSync: ArticleSync = ArticleSync.sharedInstance
     let searchController = UISearchController(searchResultsController: nil)
 
-    var page: Int = 2
-    var refreshing: Bool = false
-    var entries: [Entry] = []
+    var fetchResultsController: NSFetchedResultsController<Entry>!
     var mode: Setting.RetrieveMode = Setting.getDefaultMode()
-    var handleRefreshEnabled: Bool = true
+
+    let titleLabel: UILabel = {
+        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 70, height: 44))
+        titleLabel.isUserInteractionEnabled = true
+        titleLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ArticlesTableViewController.scrollTop)))
+        titleLabel.text = Setting.getDefaultMode().humainReadable().localized
+        titleLabel.textColor = ThemeManager.manager.getColor()
+        return titleLabel
+    }()
 
     @IBOutlet weak var menu: UIBarButtonItem!
     @IBOutlet weak var add: UIBarButtonItem!
@@ -34,17 +40,24 @@ final class ArticlesTableViewController: UITableViewController {
         appDelegate.window?.rootViewController = appDelegate.window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "home")
     }
 
-    override func didMove(toParentViewController parent: UIViewController?) {
-        updateUi()
-    }
-
     @IBAction func filterList(segue: UIStoryboardSegue) {
         mode = Setting.RetrieveMode(rawValue: segue.identifier!)!
-        handleRefresh()
+        filteringList()
+    }
+
+    func filteringList() {
+        do {
+            fetchResultsController = fetchResultsControllerRequest(mode: mode)
+            titleLabel.text = mode.humainReadable().localized
+            try fetchResultsController.performFetch()
+            tableView.reloadData()
+        } catch {
+
+        }
     }
 
     @IBAction func addLink(_ sender: UIBarButtonItem) {
-        addArticle(self)
+        addArticle()
     }
 
     override func restoreUserActivityState(_ activity: NSUserActivity) {
@@ -54,70 +67,86 @@ final class ArticlesTableViewController: UITableViewController {
                 let selectedEntryId = Int(selectedEntry.components(separatedBy: ".").last!) else {
                     return
             }
-
-            let fetchRequest = Entry.fetchEntryRequest()
-            fetchRequest.predicate = NSPredicate(format: "id == %@", selectedEntryId as NSNumber)
-            let results = (CoreData.fetch(fetchRequest) as? [Entry]) ?? []
             log.debug("Back from activity")
+            do {
+                fetchResultsController = fetchResultsControllerRequest(mode: mode, textSearch: nil, id: selectedEntryId)
+                try fetchResultsController.performFetch()
+                tableView.reloadData()
+                if let entry = fetchResultsController.fetchedObjects?.first {
+                    performSegue(withIdentifier: "readArticle", sender: entry)
+                } else {
+                    log.error("article not found")
+                }
 
-            performSegue(withIdentifier: "readArticle", sender: results.first)
-        }
-    }
+            } catch {
 
-    private func refreshTableView() {
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-        if refreshControl?.isRefreshing ?? false {
-            refreshControl?.endRefreshing()
-        }
-    }
-
-    private func updateUi() {
-        log.debug("Update ui")
-        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 70, height: 44))
-        titleLabel.isUserInteractionEnabled = true
-        titleLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.scrollTop)))
-        titleLabel.text = mode.humainReadable().localized
-        titleLabel.textColor = Setting.getTheme().color
-        navigationItem.titleView = titleLabel
-
-        navigationController?.navigationBar.setBackgroundImage(Setting.getTheme().navigationBarBackground, for: .default)
-        menu.tintColor = Setting.getTheme().tintColor
-        add.tintColor = Setting.getTheme().tintColor
-
-        tableView.backgroundColor = Setting.getTheme().backgroundColor
-        for row in 0 ... tableView.numberOfRows(inSection: 0) {
-            tableView.cellForRow(at: IndexPath(row: row, section: 0))?.backgroundColor = Setting.getTheme().backgroundColor
+            }
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        articleSync.sync()
+        navigationItem.titleView = titleLabel
+        do {
+            fetchResultsController = fetchResultsControllerRequest(mode: mode)
+            try fetchResultsController.performFetch()
+        } catch {
+
+        }
         refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
-        let notificationCenter = NotificationCenter.default
-        notificationCenter.addObserver(self,
-                                       selector: #selector(managedObjectContextObjectsDidChange),
-                                       name: NSNotification.Name.NSManagedObjectContextObjectsDidChange,
-                                       object: CoreData.context
-        )
 
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
+
+        reloadUI()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        handleRefreshEnabled = true
-
-        handleRefresh()
+    private func reloadUI() {
+        titleLabel.text = mode.humainReadable().localized
     }
 
-    func managedObjectContextObjectsDidChange(notification: NSNotification) {
-        if notification.userInfo == nil { return }
-        log.debug("managedObjectContextObjectsDidChange")
-        handleRefresh()
+    override func didMove(toParentViewController parent: UIViewController?) {
+        reloadUI()
+    }
+
+    func handleRefresh() {
+        articleSync.sync()
+        if refreshControl?.isRefreshing ?? false {
+            refreshControl?.endRefreshing()
+        }
+    }
+
+    func fetchResultsControllerRequest(mode: Setting.RetrieveMode, textSearch: String? = nil, id: Int? = nil) ->  NSFetchedResultsController<Entry> {
+        let fetchRequest = NSFetchRequest<Entry>(entityName: "Entry")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created_at", ascending: false)]
+        if let id = id {
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as NSNumber)
+        } else if nil == textSearch || "" == textSearch {
+            switch mode {
+            case .unarchivedArticles:
+                fetchRequest.predicate = NSPredicate(format: "is_archived == 0")
+                break
+            case .starredArticles:
+                fetchRequest.predicate = NSPredicate(format: "is_starred == 1")
+                break
+            case .archivedArticles:
+                fetchRequest.predicate = NSPredicate(format: "is_archived == 1")
+            default: break
+            }
+        } else {
+            let predicateTitle = NSPredicate(format: "title CONTAINS[cd] %@", textSearch!)
+            let predicateContent = NSPredicate(format: "content CONTAINS[cd] %@", textSearch!)
+            fetchRequest.predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [predicateTitle, predicateContent])
+        }
+
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreData.context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController.delegate = self
+
+        return fetchedResultsController
     }
 
     func scrollTop() {
@@ -125,11 +154,8 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let entries = fetchResultsController.fetchedObjects else { return 0 }
         return entries.count
     }
 
@@ -138,36 +164,8 @@ final class ArticlesTableViewController: UITableViewController {
             return UITableViewCell()
         }
 
-        cell.present(entries[indexPath.row])
-
+        cell.present(fetchResultsController.object(at: indexPath))
         return cell
-    }
-
-    func handleRefresh() {
-        if !handleRefreshEnabled {
-            return
-        }
-        updateUi()
-        sync.sync()
-        log.debug("Handle refresh")
-        let fetchRequest = NSFetchRequest<Entry>(entityName: "Entry")
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created_at", ascending: false)]
-
-        switch mode {
-        case .unarchivedArticles:
-            fetchRequest.predicate = NSPredicate(format: "is_archived == 0")
-            break
-        case .starredArticles:
-            fetchRequest.predicate = NSPredicate(format: "is_starred == 1")
-            break
-        case .archivedArticles:
-            fetchRequest.predicate = NSPredicate(format: "is_archived == 1")
-        default: break
-
-        }
-
-        entries = (CoreData.fetch(fetchRequest) as? [Entry]) ?? []
-        refreshTableView()
     }
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -175,7 +173,7 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let entry = entries[indexPath.row]
+        let entry = fetchResultsController.object(at: indexPath)
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete".localized, handler: { _, _ in
             self.delete(entry)
         })
@@ -199,7 +197,6 @@ final class ArticlesTableViewController: UITableViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "readArticle" {
-            handleRefreshEnabled = false
             if let controller = segue.destination as? ArticleViewController {
                 controller.readHandler = { entry in
                     self.read(entry)
@@ -211,13 +208,11 @@ final class ArticlesTableViewController: UITableViewController {
                     self.delete(entry)
                 }
                 controller.addHandler = {
-                    self.addArticle(controller)
+                    self.addArticle()
                 }
-
                 if let cell = sender as? UITableViewCell {
-                    let indexPath = tableView.indexPath(for: cell)
-                    if let index = indexPath?.row {
-                        controller.entry = entries[index]
+                    if let indexPath = tableView.indexPath(for: cell) {
+                        controller.entry = fetchResultsController.object(at: indexPath)
                     }
                 }
                 if let entry = sender as? Entry {
@@ -227,37 +222,21 @@ final class ArticlesTableViewController: UITableViewController {
         }
     }
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-
     private func read(_ entry: Entry) {
         entry.is_archived = !entry.is_archived
-        entry.updated_at = NSDate()
-        CoreData.saveContext()
-        WallabagApi.patchArticle(Int(entry.id), withParamaters: ["archive": (entry.is_archived).hashValue]) { _ in
-
-        }
+        articleSync.update(entry: entry)
     }
 
     private func star(_ entry: Entry) {
         entry.is_starred = !entry.is_starred
-        entry.updated_at = NSDate()
-        CoreData.saveContext()
-        WallabagApi.patchArticle(Int(entry.id), withParamaters: ["starred": (entry.is_starred).hashValue]) { _ in
-        }
+        articleSync.update(entry: entry)
     }
 
     private func delete(_ entry: Entry) {
-        do {
-            sync.delete(entry: entry)
-            WallabagApi.deleteArticle(Int(entry.id)) {}
-            try CoreData.delete(entry)
-        } catch {
-        }
+        articleSync.delete(entry: entry)
     }
 
-    private func addArticle(_ fromController: UIViewController) {
+    private func addArticle() {
         let alertController = UIAlertController(title: "Add link".localized, message: nil, preferredStyle: .alert)
         alertController.addTextField(configurationHandler: { textField in
             textField.placeholder = "Url".localized
@@ -265,33 +244,55 @@ final class ArticlesTableViewController: UITableViewController {
         alertController.addAction(UIAlertAction(title: "Add".localized, style: .default, handler: { _ in
             if let textfield = alertController.textFields?.first?.text {
                 if let url = URL(string: textfield) {
-                    WallabagApi.addArticle(url) { article in
-                        self.sync.insert(article)
-                        self.tableView.reloadData()
-                    }
+                    self.articleSync.add(url: url)
                 }
             }
         }))
         alertController.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
-
-        fromController.present(alertController, animated: true)
+        present(alertController, animated: true)
     }
 }
 
 extension ArticlesTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        if searchController.searchBar.text! == "" {
-            handleRefresh()
-            return
-        }
         log.debug("search: " + searchController.searchBar.text!)
-        let fetchRequest = NSFetchRequest<Entry>(entityName: "Entry")
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created_at", ascending: false)]
-        let predicateTitle = NSPredicate(format: "title CONTAINS[cd] %@", searchController.searchBar.text!)
-        let predicateContent = NSPredicate(format: "content CONTAINS[cd] %@", searchController.searchBar.text!)
-        fetchRequest.predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [predicateTitle, predicateContent])
-        entries = (CoreData.fetch(fetchRequest) as? [Entry]) ?? []
+        do {
+            fetchResultsController = fetchResultsControllerRequest(mode: mode, textSearch: searchController.searchBar.text!)
+            try fetchResultsController.performFetch()
+            tableView.reloadData()
+        } catch {
 
-        tableView.reloadData()
+        }
+    }
+}
+
+extension ArticlesTableViewController: NSFetchedResultsControllerDelegate {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            if let indexPath = newIndexPath {
+                tableView.insertRows(at: [indexPath], with: .fade)
+            }
+            break
+        case .update:
+            if let indexPath = indexPath, let cell = tableView.cellForRow(at: indexPath) as? ArticleTableViewCell {
+                cell.present(fetchResultsController.object(at: indexPath))
+            }
+            break
+        case .delete:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            break
+        default: break
+        }
     }
 }

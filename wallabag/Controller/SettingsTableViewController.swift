@@ -8,12 +8,18 @@
 
 import UIKit
 import WallabagKit
+import AVFoundation
 
 final class SettingsTableViewController: UITableViewController {
 
     @IBOutlet weak var currentThemeLabel: UILabel!
     @IBOutlet weak var justifySwitch: UISwitch!
     @IBOutlet weak var badgeSwitch: UISwitch!
+    @IBOutlet weak var speechRateSlider: UISlider!
+
+    @IBAction func speechRateChanged(_ sender: UISlider) {
+        Setting.setSpeechRate(value: sender.value)
+    }
 
     @IBAction func justifySwitch(_ sender: UISwitch) {
         Setting.setJustifyArticle(value: sender.isOn)
@@ -30,11 +36,16 @@ final class SettingsTableViewController: UITableViewController {
 
         justifySwitch.setOn(Setting.isJustifyArticle(), animated: false)
         badgeSwitch.setOn(Setting.isBadgeEnable(), animated: false)
-        currentThemeLabel.text = Setting.getTheme().rawValue.ucFirst
-    }
+        currentThemeLabel.text = Setting.getTheme().ucFirst
 
-    override func didMove(toParentViewController parent: UIViewController?) {
-        currentThemeLabel.text = Setting.getTheme().rawValue.ucFirst
+        speechRateSlider.minimumValue = AVSpeechUtteranceMinimumSpeechRate
+        speechRateSlider.maximumValue = AVSpeechUtteranceMaximumSpeechRate
+        speechRateSlider.value = Setting.getSpeechRate()
+
+        NotificationCenter.default.addObserver(forName: Notification.Name.themeUpdated, object: nil, queue: nil) { _ in
+            self.tableView.reloadData()
+            self.currentThemeLabel.text = Setting.getTheme().ucFirst
+        }
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -49,6 +60,13 @@ final class SettingsTableViewController: UITableViewController {
             }
 
             tableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let header = view as? UITableViewHeaderFooterView {
+            header.backgroundView?.backgroundColor = ThemeManager.manager.getBackgroundSelectedColor()
+            header.textLabel?.textColor = ThemeManager.manager.getColor()
         }
     }
 

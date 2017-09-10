@@ -12,53 +12,98 @@ import CoreData
 import CoreSpotlight
 import MobileCoreServices
 
-class ArticleSync: NSObject {
-    private let syncQueue = DispatchQueue(label: "fr.district-web.wallabag.articleSyncQueue")
+final class ArticleSync {
+    private let syncQueue = DispatchQueue(label: "fr.district-web.wallabag.articleSyncQueue", qos: .background)
     private let spotlightQueue = DispatchQueue(label: "fr.district-web.wallabag.spotlightQueue", qos: .background)
+    private let group = DispatchGroup()
 
-    private var page = 1
+    private var entries: [Entry] = []
 
-    func sync() {
-        fetch()
+    private var isSyncing: Bool = false
+
+    static let sharedInstance: ArticleSync = ArticleSync()
+
+    private init() {
+
     }
 
-    private func fetch(page: Int = 1) {
-        syncQueue.async(execute: DispatchWorkItem {
-            log.debug("Article sync work on page \(page)")
-            WallabagApi.retrieveArticle(page: page) { (articles, _) in
-                for article in articles {
-                    let fetchRequest = Entry.fetchEntryRequest()
-                    fetchRequest.predicate = NSPredicate(format: "id == %@", article.id as NSNumber)
-                    let results = (CoreData.fetch(fetchRequest) as? [Entry]) ?? []
-                    if 0 == results.count {
-                        self.insert(article)
-                    } else {
-                        self.update(entry: results.first!, article: article)
+    func sync() {
+        if isSyncing {
+            return
+        }
+
+        entries = (CoreData.fetch(Entry.fetchEntryRequest()) as? [Entry]) ?? []
+
+        group.enter()
+        isSyncing = true
+        WallabagApi.Entry.fetch(with: ["page": 1 ]) { results in
+            switch results {
+            case .success(let data):
+                guard let page = data["pages"] as? Int else {
+                    return
+                }
+                if page > 1 {
+                    for page in 2...page {
+                        self.group.enter()
+                        self.fetch(page: page)
                     }
                 }
+                self.handle(result: data)
+            case .failure: break
+            }
+        }
 
-                if 0 != articles.count {
-                    self.page += 1
-                    self.fetch(page: self.page)
+        group.notify(queue: syncQueue) { [unowned self] in
+            self.isSyncing = false
+            self.purge()
+            self.entries = []
+        }
+    }
+
+    private func fetch(page: Int) {
+        WallabagApi.Entry.fetch(with: ["page": page ]) { results in
+            switch results {
+            case .success(let data):
+                self.syncQueue.async {
+                    self.handle(result: data)
+                }
+            case .failure: break
+            }
+        }
+    }
+
+    private func handle(result: [String:Any]) {
+        if let embedded = result["_embedded"] as? [String: Any] {
+            for item in (embedded["items"] as? [[String: Any]])! {
+                let article = Article(fromDictionary: item)
+                if let entry = entries.first(where: { Int($0.id) == article.id }) {
+                    self.update(entry: entry, from: article)
                 } else {
-                    self.syncQueue.async(execute: DispatchWorkItem {
-                        self.page = 1
-                    })
+                    self.insert(article)
                 }
 
-                CoreData.saveContext()
+                if let index = entries.index(where: { Int($0.id) == article.id }) {
+                    entries.remove(at: index)
+                }
             }
-        })
+        }
+        group.leave()
+    }
+
+    private func purge() {
+        for entry in entries {
+            delete(entry: entry, callServer: false)
+        }
     }
 
     func insert(_ article: Article) {
         let entityDescription = NSEntityDescription.entity(forEntityName: "Entry", in: CoreData.context)!
         let entry = Entry.init(entity: entityDescription, insertInto: CoreData.context)
         log.debug("Insert article \(article.id)")
-        setDataForEntry(entry: entry, article: article)
+        setDataFor(entry: entry, from: article)
     }
 
-    func setDataForEntry(entry: Entry, article: Article) {
+    private func setDataFor(entry: Entry, from article: Article) {
         entry.setValue(article.id, forKey: "id")
         entry.setValue(article.title, forKey: "title")
         entry.setValue(article.content, forKey: "content")
@@ -71,36 +116,80 @@ class ArticleSync: NSObject {
         entry.setValue(article.readingTime, forKey: "reading_time")
         entry.setValue(article.url, forKey: "url")
 
-        spotlightQueue.async {
-            self.index(entry: entry)
-        }
+        index(entry: entry)
+
+        CoreData.saveContext()
     }
 
-    func update(entry: Entry, article: Article) {
+    private func update(entry: Entry, from article: Article) {
         guard let entryUpdatedAt = entry.value(forKey: "updated_at") as? Date else {
             return
         }
 
         if entryUpdatedAt != article.updatedAt {
             log.debug("Update article \(article.id)")
-            setDataForEntry(entry: entry, article: article)
+            if article.updatedAt > entryUpdatedAt {
+                log.debug("Update entry from server \(article.id)")
+                setDataFor(entry: entry, from: article)
+            } else {
+                log.debug("Update article from entry \(article.id)")
+                update(entry: entry)
+            }
         }
     }
 
-    func delete(entry: Entry) {
-        CSSearchableIndex.default().deleteSearchableItems(withIdentifiers: [entry.spotlightIdentifier], completionHandler: nil)
+    func update(entry: Entry) {
+        // push data to server
+        entry.updated_at = NSDate()
+        CoreData.saveContext()
+        WallabagApi.Entry.update(id: Int(entry.id), with: [
+            "archive": (entry.is_archived).hashValue,
+            "starred": (entry.is_starred).hashValue
+            ]
+        ) { results in
+            switch results {
+            case .success(let data):
+                let article = Article(fromDictionary: data)
+                entry.setValue(article.updatedAt, forKey: "updated_at")
+                CoreData.saveContext()
+            case .failure: break
+            }
+        }
     }
 
-    func index(entry: Entry) {
-        log.debug("Spotlight entry \(entry.id)")
-        let searchableItem = CSSearchableItem(uniqueIdentifier: entry.spotlightIdentifier,
-                                              domainIdentifier: "entry",
-                                              attributeSet: entry.searchableItemAttributeSet
-        )
+    func delete(entry: Entry, callServer: Bool = true) {
+        log.info("Delete entry \(entry.id)")
+        do {
+            if callServer {
+                WallabagApi.Entry.delete(id: Int(entry.id)) { _ in
+                }
+            }
+            try CoreData.delete(entry)
+            spotlightQueue.async {
+                CSSearchableIndex.default().deleteSearchableItems(withIdentifiers: [entry.spotlightIdentifier], completionHandler: nil)
+            }
+        } catch {
+        }
+    }
 
-        CSSearchableIndex.default().indexSearchableItems([searchableItem]) { (error) -> Void in
-            if error != nil {
-                log.error(error!.localizedDescription)
+    func add(url: URL) {
+        WallabagApi.addArticle(url) { article in
+            self.insert(article)
+        }
+    }
+
+    private func index(entry: Entry) {
+        spotlightQueue.async {
+            log.debug("Spotlight entry \(entry.id)")
+            let searchableItem = CSSearchableItem(uniqueIdentifier: entry.spotlightIdentifier,
+                                                  domainIdentifier: "entry",
+                                                  attributeSet: entry.searchableItemAttributeSet
+            )
+
+            CSSearchableIndex.default().indexSearchableItems([searchableItem]) { (error) -> Void in
+                if error != nil {
+                    log.error(error!.localizedDescription)
+                }
             }
         }
     }

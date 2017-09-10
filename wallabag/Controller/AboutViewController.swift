@@ -14,7 +14,7 @@ class AboutViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = Setting.getTheme().backgroundColor
+        view.backgroundColor = ThemeManager.manager.getBackgroundColor()
 
         let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? "0"
         let build = Bundle.main.infoDictionary!["CFBundleVersion"] as? String ?? "0"

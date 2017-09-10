@@ -9,10 +9,12 @@
 import UIKit
 import TUSafariActivity
 import WallabagKit
+import AVFoundation
 
 final class ArticleViewController: UIViewController {
 
-    var lastOffsetY: CGFloat = 0
+    lazy var speechSynthetizer: AVSpeechSynthesizer = AVSpeechSynthesizer()
+
     var update: Bool = true
     var entry: Entry! {
         didSet {
@@ -28,6 +30,7 @@ final class ArticleViewController: UIViewController {
     @IBOutlet weak var contentWeb: UIWebView!
     @IBOutlet weak var readButton: UIBarButtonItem!
     @IBOutlet weak var starButton: UIBarButtonItem!
+    @IBOutlet weak var speechButton: UIBarButtonItem!
 
     @IBAction func add(_ sender: Any) {
         addHandler?()
@@ -41,6 +44,19 @@ final class ArticleViewController: UIViewController {
     @IBAction func star(_ sender: Any) {
         starHandler?(entry)
         updateUi()
+    }
+
+    @IBAction func speech(_ sender: Any) {
+        if !speechSynthetizer.isSpeaking {
+            let utterance = AVSpeechUtterance(string: entry.content!.withoutHTML)
+            utterance.rate = Setting.getSpeechRate()
+            utterance.voice = Setting.getSpeechVoice()
+            speechSynthetizer.speak(utterance)
+            speechButton.image = #imageLiteral(resourceName: "lipsfilled")
+        } else {
+            speechSynthetizer.stopSpeaking(at: .word)
+            speechButton.image = #imageLiteral(resourceName: "lips")
+        }
     }
 
     @IBAction func shareMenu(_ sender: UIBarButtonItem) {
@@ -73,12 +89,16 @@ final class ArticleViewController: UIViewController {
         loadArticleContent()
         contentWeb.delegate = self
         contentWeb.scrollView.delegate = self
-        contentWeb.backgroundColor = Setting.getTheme().backgroundColor
+        contentWeb.backgroundColor = ThemeManager.manager.getBackgroundColor()
+
+        UIApplication.shared.isIdleTimerDisabled = true
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        speechSynthetizer.stopSpeaking(at: .immediate)
+        UIApplication.shared.isIdleTimerDisabled = false
     }
 
     private func loadArticleContent() {
@@ -90,11 +110,9 @@ final class ArticleViewController: UIViewController {
     func contentForWebView(_ entry: Entry) -> String {
         do {
             let html = try String(contentsOfFile: Bundle.main.path(forResource: "article", ofType: "html")!)
-
             let justify = Setting.isJustifyArticle() ? "justify.css" : ""
-            let theme = Setting.getTheme()
 
-            return String(format: html, arguments: [justify, theme.rawValue, entry.title!, entry.content!])
+            return String(format: html, arguments: [justify, Setting.getTheme(), entry.title!, entry.content!])
         } catch {
             fatalError("Unable to load article view")
         }
@@ -113,13 +131,7 @@ extension ArticleViewController: UIWebViewDelegate {
 }
 
 extension ArticleViewController: UIScrollViewDelegate {
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        lastOffsetY = scrollView.contentOffset.y
-    }
-
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-        let hide = scrollView.contentOffset.y > self.lastOffsetY
-        navigationController?.setNavigationBarHidden(hide, animated: true)
         entry.screen_position = Float(scrollView.contentOffset.y)
     }
 }

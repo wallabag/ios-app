@@ -13,6 +13,6 @@ env:
 before_install:
   - gem install -N cocoapods -v 1.2.0
   - pod repo update > /dev/null
+  - gem update fastlane --no-ri --no-rdoc --no-document
 script:
-  - set -o pipefail
-  - xcodebuild test -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" ONLY_ACTIVE_ARCH=YES | xcpretty
+  - fastlane test

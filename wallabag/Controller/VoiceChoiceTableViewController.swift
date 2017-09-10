@@ -1,32 +1,29 @@
 //
-//  ThemeChoiceTableViewController.swift
+//  VoiceChoiceTableViewController.swift
 //  wallabag
 //
-//  Created by maxime marinel on 22/12/2016.
-//  Copyright © 2016 maxime marinel. All rights reserved.
+//  Created by maxime marinel on 24/07/2017.
+//  Copyright © 2017 maxime marinel. All rights reserved.
 //
 
 import UIKit
+import AVFoundation
 
-final class ThemeChoiceTableViewController: UITableViewController {
+final class VoiceChoiceTableViewController: UITableViewController {
 
-    var themes: [ThemeProtocol] = ThemeManager.manager.getThemes()
-    // MARK: - Table view data source
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+    let voices: [AVSpeechSynthesisVoice] = AVSpeechSynthesisVoice.speechVoices()
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return themes.count
+        return voices.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        let theme: ThemeProtocol = themes[indexPath.row]
+        let voice: AVSpeechSynthesisVoice = voices[indexPath.row]
 
-        cell.textLabel?.text = theme.name.ucFirst
+        cell.textLabel?.text = "\(voice.name) (\(voice.language))"
 
-        if theme.name == Setting.getTheme() {
+        if voice.identifier == Setting.getSpeechVoice()?.identifier {
             cell.accessoryType = .checkmark
         }
 
@@ -40,11 +37,7 @@ final class ThemeChoiceTableViewController: UITableViewController {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         tableView.deselectRow(at: indexPath, animated: true)
 
-        let selectedTheme = themes[indexPath.row]
-
-        Setting.setTheme(value: selectedTheme.name)
-        ThemeManager.manager.apply(selectedTheme.name)
-
+        Setting.setSpeechVoice(identifier: voices[indexPath.row].identifier)
         _ = navigationController?.popViewController(animated: true)
     }
 }

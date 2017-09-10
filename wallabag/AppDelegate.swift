@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         log.addDestination(ConsoleDestination())
-        log.addDestination(FileDestination())
         log.addDestination(
             SBPlatformDestination(
                 appID: "WxjB1g",
@@ -53,7 +52,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NetworkActivityIndicatorManager.shared.isEnabled = true
         NetworkActivityIndicatorManager.shared.startDelay = 0.1
 
-        ThemeManager.apply(theme: Setting.getTheme())
+        ThemeManager.manager.apply(Setting.getTheme())
+
+        setupQuickAction()
 
         return true
     }
@@ -62,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if WallabagApi.isConfigured() {
             guard let mainController = window?.rootViewController! as? UINavigationController,
                 let articlesTable = mainController.viewControllers.first as? ArticlesTableViewController else {
-                return false
+                    return false
             }
             articlesTable.restoreUserActivityState(userActivity)
             return true
@@ -75,6 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         updateBadge()
+        CoreData.saveContext()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -90,6 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Swift.Void) {
         if WallabagApi.isConfigured() {
+            ArticleSync.sharedInstance.sync()
             updateBadge()
             completionHandler(.newData)
         } else {
@@ -111,11 +114,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         }
 
-        if WallabagApi.isConfigured() {
-            let sync = ArticleSync()
-            sync.sync()
-        }
-
         log.info("Update badge")
         let request = Entry.fetchEntryRequest()
         switch Setting.getDefaultMode() {
@@ -131,6 +129,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         UIApplication.shared.applicationIconBadgeNumber = ((CoreData.fetch(request) as? [Entry]) ?? []).count
+    }
+
+    private func setupQuickAction() {
+        if WallabagApi.isConfigured() {
+            let starredAction = UIApplicationShortcutItem(type: Setting.RetrieveMode.starredArticles.rawValue, localizedTitle: Setting.RetrieveMode.starredArticles.humainReadable().localized, localizedSubtitle: nil, icon: UIApplicationShortcutIcon(templateImageName: "starred"), userInfo: [:])
+            let unarchivedAction = UIApplicationShortcutItem(
+                type: Setting.RetrieveMode.unarchivedArticles.rawValue,
+                localizedTitle: Setting.RetrieveMode.unarchivedArticles.humainReadable().localized,
+                localizedSubtitle: nil,
+                icon: UIApplicationShortcutIcon(templateImageName: "unreaded"),
+                userInfo: [:]
+            )
+            let archivedAction = UIApplicationShortcutItem(type: Setting.RetrieveMode.archivedArticles.rawValue, localizedTitle: Setting.RetrieveMode.archivedArticles.humainReadable().localized, localizedSubtitle: nil, icon: UIApplicationShortcutIcon(templateImageName: "readed"), userInfo: [:])
+            UIApplication.shared.shortcutItems = [unarchivedAction, archivedAction, starredAction]
+        }
+    }
+
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        guard let navController = window!.rootViewController as? UINavigationController,
+            let rootController = navController.viewControllers.first as? ArticlesTableViewController else {
+                return
+        }
+        if let mode = Setting.RetrieveMode(rawValue: shortcutItem.type) {
+            rootController.mode = mode
+        }
     }
 
     func resetApplication() {

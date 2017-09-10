@@ -43,10 +43,18 @@ class ShareViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         if WallabagApi.isConfigured() {
-            for item in (self.extensionContext?.inputItems as? [NSExtensionItem])! {
-                for attachements in (item.attachments as? [NSItemProvider])! {
-                    if attachements.hasItemConformingToTypeIdentifier("public.url") {
-                        attachements.loadItem(forTypeIdentifier: "public.url", options: nil, completionHandler: { (url, _) -> Void in
+            guard let items = extensionContext?.inputItems as? [NSExtensionItem] else {
+                self.extensionContext?.cancelRequest(withError: NSError())
+                return
+            }
+            for item in items {
+                guard let attachements = item.attachments as? [NSItemProvider] else {
+                    self.extensionContext?.cancelRequest(withError: NSError())
+                    return
+                }
+                for attachement in attachements {
+                    if attachement.hasItemConformingToTypeIdentifier("public.url") {
+                        attachement.loadItem(forTypeIdentifier: "public.url", options: nil, completionHandler: { (url, _) -> Void in
                             if let shareURL = url as? NSURL {
                                 WallabagApi.addArticle(shareURL as URL, completion: { _ in
                                     UIView.animate(withDuration: 1.0, animations: {
@@ -63,7 +71,7 @@ class ShareViewController: UIViewController {
                 }
             }
         } else {
-            // @todo handle no configured server or 4** response 
+            self.extensionContext?.cancelRequest(withError: NSError())
         }
     }
 }

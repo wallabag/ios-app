@@ -35,6 +35,16 @@ xcode-select --install
 fastlane ios test
 ```
 Runs all the tests
+### ios testlib
+```
+fastlane ios testlib
+```
+
+### ios testui
+```
+fastlane ios testui
+```
+
 ### ios beta
 ```
 fastlane ios beta
