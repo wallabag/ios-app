@@ -113,7 +113,7 @@ final class ArticlesTableViewController: UITableViewController {
         reloadUI()
     }
 
-    func handleRefresh() {
+    @objc func handleRefresh() {
         articleSync.sync()
         if refreshControl?.isRefreshing ?? false {
             refreshControl?.endRefreshing()
@@ -149,7 +149,7 @@ final class ArticlesTableViewController: UITableViewController {
         return fetchedResultsController
     }
 
-    func scrollTop() {
+    @objc func scrollTop() {
         tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
 
