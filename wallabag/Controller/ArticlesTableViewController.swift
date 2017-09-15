@@ -36,17 +36,6 @@ final class ArticlesTableViewController: UITableViewController {
         filteringList()
     }
 
-    func filteringList() {
-        do {
-            fetchResultsController = fetchResultsControllerRequest(mode: mode)
-            reloadUI()
-            try fetchResultsController.performFetch()
-            tableView.reloadData()
-        } catch {
-
-        }
-    }
-
     @IBAction func addLink(_ sender: UIBarButtonItem) {
         addArticle()
     }
@@ -100,10 +89,6 @@ final class ArticlesTableViewController: UITableViewController {
         }
 
         reloadUI()
-    }
-
-    private func reloadUI() {
-        title = mode.humainReadable().localized
     }
 
     override func didMove(toParentViewController parent: UIViewController?) {
@@ -215,6 +200,17 @@ final class ArticlesTableViewController: UITableViewController {
         }
     }
 
+    private func filteringList() {
+        do {
+            fetchResultsController = fetchResultsControllerRequest(mode: mode)
+            reloadUI()
+            try fetchResultsController.performFetch()
+            tableView.reloadData()
+        } catch {
+
+        }
+    }
+
     private func read(_ entry: Entry) {
         entry.is_archived = !entry.is_archived
         articleSync.update(entry: entry)
@@ -243,6 +239,10 @@ final class ArticlesTableViewController: UITableViewController {
         }))
         alertController.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
         present(alertController, animated: true)
+    }
+
+    private func reloadUI() {
+        title = mode.humainReadable().localized
     }
 }
 
