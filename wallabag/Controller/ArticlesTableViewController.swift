@@ -20,15 +20,6 @@ final class ArticlesTableViewController: UITableViewController {
     var fetchResultsController: NSFetchedResultsController<Entry>!
     var mode: Setting.RetrieveMode = Setting.getDefaultMode()
 
-    let titleLabel: UILabel = {
-        let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 70, height: 44))
-        titleLabel.isUserInteractionEnabled = true
-        titleLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ArticlesTableViewController.scrollTop)))
-        titleLabel.text = Setting.getDefaultMode().humainReadable().localized
-        titleLabel.textColor = ThemeManager.manager.getColor()
-        return titleLabel
-    }()
-
     @IBOutlet weak var menu: UIBarButtonItem!
     @IBOutlet weak var add: UIBarButtonItem!
 
@@ -48,7 +39,7 @@ final class ArticlesTableViewController: UITableViewController {
     func filteringList() {
         do {
             fetchResultsController = fetchResultsControllerRequest(mode: mode)
-            titleLabel.text = mode.humainReadable().localized
+            reloadUI()
             try fetchResultsController.performFetch()
             tableView.reloadData()
         } catch {
@@ -87,8 +78,8 @@ final class ArticlesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        articleSync.sync()
-        navigationItem.titleView = titleLabel
+        handleRefresh()
+
         do {
             fetchResultsController = fetchResultsControllerRequest(mode: mode)
             try fetchResultsController.performFetch()
@@ -100,13 +91,19 @@ final class ArticlesTableViewController: UITableViewController {
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
-        tableView.tableHeaderView = searchController.searchBar
+
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+            navigationItem.searchController = searchController
+        } else {
+            tableView.tableHeaderView = searchController.searchBar
+        }
 
         reloadUI()
     }
 
     private func reloadUI() {
-        titleLabel.text = mode.humainReadable().localized
+        title = mode.humainReadable().localized
     }
 
     override func didMove(toParentViewController parent: UIViewController?) {
@@ -147,10 +144,6 @@ final class ArticlesTableViewController: UITableViewController {
         fetchedResultsController.delegate = self
 
         return fetchedResultsController
-    }
-
-    @objc func scrollTop() {
-        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
     }
 
     // MARK: - Table view data source
