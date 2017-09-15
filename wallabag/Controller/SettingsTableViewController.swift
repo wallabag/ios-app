@@ -42,7 +42,7 @@ final class SettingsTableViewController: UITableViewController {
         speechRateSlider.maximumValue = AVSpeechUtteranceMaximumSpeechRate
         speechRateSlider.value = Setting.getSpeechRate()
 
-        NotificationCenter.default.addObserver(forName: Notification.Name.themeUpdated, object: nil, queue: nil) { _ in
+        _ = NotificationCenter.default.addObserver(forName: Notification.Name.themeUpdated, object: nil, queue: nil) { _ in
             self.tableView.reloadData()
             self.currentThemeLabel.text = Setting.getTheme().ucFirst
         }

@@ -1,7 +1,7 @@
 PODS:
-  - Alamofire (4.5.0)
-  - AlamofireImage (3.2.0):
-    - Alamofire (~> 4.1)
+  - Alamofire (4.5.1)
+  - AlamofireImage (3.3.0):
+    - Alamofire (~> 4.5)
   - AlamofireNetworkActivityIndicator (2.2.0):
     - Alamofire (~> 4.5)
   - SideMenu (2.3.3)
@@ -20,8 +20,8 @@ DEPENDENCIES:
   - WallabagKit
 
 SPEC CHECKSUMS:
-  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
   AlamofireNetworkActivityIndicator: 81e1630e7cfed22a4e4e82a174c59e651dc4f8ca
   SideMenu: a447554ae5c982e8077666389e1c8b0c8656e065
   SwiftyBeaver: 78d9186ce7595b4400ce01e5fd750d263e72dd7b
