@@ -27,3 +27,16 @@ target 'wallabagTests' do
     pod 'WallabagKit'
     #pod 'WallabagKit', :path => "../WallabagKit"
 end
+
+post_install do |installer|
+    # Your list of targets here.
+    myTargets = ['SideMenu']
+
+    installer.pods_project.targets.each do |target|
+        if myTargets.include? target.name
+            target.build_configurations.each do |config|
+                config.build_settings['SWIFT_VERSION'] = '3.2'
+            end
+        end
+    end
+end
