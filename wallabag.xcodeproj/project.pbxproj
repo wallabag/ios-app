@@ -780,7 +780,6 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
 				"${BUILT_PRODUCTS_DIR}/TUSafariActivity/TUSafariActivity.framework",
 				"${BUILT_PRODUCTS_DIR}/WallabagKit/WallabagKit.framework",
 			);
@@ -790,7 +789,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TUSafariActivity.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WallabagKit.framework",
 			);
@@ -1138,7 +1136,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1190,7 +1188,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1209,6 +1207,7 @@
 				CURRENT_PROJECT_VERSION = 68;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = wallabag/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1228,6 +1227,7 @@
 				CURRENT_PROJECT_VERSION = 68;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = wallabag/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1310,7 +1310,7 @@
 				CODE_SIGN_ENTITLEMENTS = bagit/bagit.entitlements;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = bagit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag.bagit";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1327,7 +1327,7 @@
 				CODE_SIGN_ENTITLEMENTS = bagit/bagit.entitlements;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = bagit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag.bagit";
 				PRODUCT_NAME = "$(TARGET_NAME)";

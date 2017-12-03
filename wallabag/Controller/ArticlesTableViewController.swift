@@ -47,7 +47,7 @@ final class ArticlesTableViewController: UITableViewController {
                 let selectedEntryId = Int(selectedEntry.components(separatedBy: ".").last!) else {
                     return
             }
-            log.debug("Back from activity")
+            NSLog("Back from activity")
             do {
                 fetchResultsController = fetchResultsControllerRequest(mode: mode, textSearch: nil, id: selectedEntryId)
                 try fetchResultsController.performFetch()
@@ -55,7 +55,7 @@ final class ArticlesTableViewController: UITableViewController {
                 if let entry = fetchResultsController.fetchedObjects?.first {
                     performSegue(withIdentifier: "readArticle", sender: entry)
                 } else {
-                    log.error("article not found")
+                    NSLog("article not found")
                 }
 
             } catch {
@@ -111,10 +111,8 @@ final class ArticlesTableViewController: UITableViewController {
             switch mode {
             case .unarchivedArticles:
                 fetchRequest.predicate = NSPredicate(format: "is_archived == 0")
-                break
             case .starredArticles:
                 fetchRequest.predicate = NSPredicate(format: "is_starred == 1")
-                break
             case .archivedArticles:
                 fetchRequest.predicate = NSPredicate(format: "is_archived == 1")
             default: break
@@ -248,7 +246,7 @@ final class ArticlesTableViewController: UITableViewController {
 
 extension ArticlesTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        log.debug("search: " + searchController.searchBar.text!)
+        NSLog("search: " + searchController.searchBar.text!)
         do {
             fetchResultsController = fetchResultsControllerRequest(mode: mode, textSearch: searchController.searchBar.text!)
             try fetchResultsController.performFetch()
@@ -274,17 +272,14 @@ extension ArticlesTableViewController: NSFetchedResultsControllerDelegate {
             if let indexPath = newIndexPath {
                 tableView.insertRows(at: [indexPath], with: .fade)
             }
-            break
         case .update:
             if let indexPath = indexPath, let cell = tableView.cellForRow(at: indexPath) as? ArticleTableViewCell {
                 cell.present(fetchResultsController.object(at: indexPath))
             }
-            break
         case .delete:
             if let indexPath = indexPath {
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
-            break
         default: break
         }
     }

@@ -3,18 +3,16 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'wallabag' do
-    pod 'Alamofire', '~> 4.0'
-    pod 'AlamofireImage', '~> 3.1'
+    pod 'Alamofire', '~> 4.5'
+    pod 'AlamofireImage', '~> 3.3'
+    pod 'AlamofireNetworkActivityIndicator', '~> 2.2'
     pod 'TUSafariActivity', '~> 1.0'
-    pod 'AlamofireNetworkActivityIndicator', '~> 2.0'
     pod 'WallabagKit'
     #pod 'WallabagKit', :path => "../WallabagKit"
-    pod 'SideMenu'
-    pod 'SwiftyBeaver'
+    pod 'SideMenu', '~> 3.1'
 
     target 'wallabagUITests' do
         inherit! :search_paths
-        # Pods for testing
     end
 end
 
@@ -29,7 +27,6 @@ target 'wallabagTests' do
 end
 
 post_install do |installer|
-    # Your list of targets here.
     myTargets = ['SideMenu']
 
     installer.pods_project.targets.each do |target|

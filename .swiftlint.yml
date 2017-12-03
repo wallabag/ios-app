@@ -4,6 +4,9 @@ excluded:
   - wallabag/Lib/CoreData.swift 
   - wallabag/Entity/Entry+CoreDataProperties.swift
   - wallabag/Entity/Entry+CoreDataClass.swift
+  - wallabagScreenshotUITests/SnapshotHelper.swift
+  - SnapshotHelper.swift
+  - fastlane/SnapshotHelper.swift
 line_length: 300
 identifier_name:
   excluded:

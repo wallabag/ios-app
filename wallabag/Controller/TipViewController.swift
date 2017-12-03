@@ -37,33 +37,33 @@ class TipViewController: UIViewController, SKProductsRequestDelegate, SKPaymentT
         for transaction in transactions {
             switch transaction.transactionState {
             case .purchased:
-                log.info("Transaction completed successfully.")
+                NSLog("Transaction completed successfully.")
                 SKPaymentQueue.default().finishTransaction(transaction)
                 transactionInProgress = false
                 tipButton.titleLabel?.text = "Thank you!!!"
             case .failed:
-                log.error("Transaction error")
+                NSLog("Transaction error")
                 SKPaymentQueue.default().finishTransaction(transaction)
                 transactionInProgress = false
             case .deferred:
-                log.debug("Transaction deferred")
+                NSLog("Transaction deferred")
             case .purchasing:
-                log.debug("Transaction purchasing")
+                NSLog("Transaction purchasing")
             case .restored:
-                log.debug("Transaction restored")
+                NSLog("Transaction restored")
             }
         }
     }
 
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
-        log.debug("Request product")
+        NSLog("Request product")
         if response.products.count != 0 {
             if let _product = response.products.first {
                 product = _product
             }
         } else {
-            log.error("There are no products.")
-            log.debug(response.invalidProductIdentifiers.description)
+            NSLog("There are no products.")
+            NSLog(response.invalidProductIdentifiers.description)
         }
     }
 
@@ -80,12 +80,12 @@ class TipViewController: UIViewController, SKProductsRequestDelegate, SKPaymentT
 
     private func requestProductInfo() {
         if SKPaymentQueue.canMakePayments() {
-            log.debug("Can make paiement")
+            NSLog("Can make paiement")
             let productRequest  = SKProductsRequest(productIdentifiers: productIDs)
             productRequest.delegate = self
             productRequest.start()
         } else {
-            log.error("Cannot perfom In App Purchases")
+            NSLog("Cannot perfom In App Purchases")
         }
     }
 }

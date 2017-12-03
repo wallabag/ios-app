@@ -72,7 +72,7 @@ final class ArticleSync {
         }
     }
 
-    private func handle(result: [String:Any]) {
+    private func handle(result: [String: Any]) {
         if let embedded = result["_embedded"] as? [String: Any] {
             for item in (embedded["items"] as? [[String: Any]])! {
                 let article = Article(fromDictionary: item)
@@ -99,7 +99,7 @@ final class ArticleSync {
     func insert(_ article: Article) {
         let entityDescription = NSEntityDescription.entity(forEntityName: "Entry", in: CoreData.context)!
         let entry = Entry.init(entity: entityDescription, insertInto: CoreData.context)
-        log.debug("Insert article \(article.id)")
+        NSLog("Insert article \(article.id)")
         setDataFor(entry: entry, from: article)
     }
 
@@ -127,12 +127,12 @@ final class ArticleSync {
         }
 
         if entryUpdatedAt != article.updatedAt {
-            log.debug("Update article \(article.id)")
+            NSLog("Update article \(article.id)")
             if article.updatedAt > entryUpdatedAt {
-                log.debug("Update entry from server \(article.id)")
+                NSLog("Update entry from server \(article.id)")
                 setDataFor(entry: entry, from: article)
             } else {
-                log.debug("Update article from entry \(article.id)")
+                NSLog("Update article from entry \(article.id)")
                 update(entry: entry)
             }
         }
@@ -158,7 +158,7 @@ final class ArticleSync {
     }
 
     func delete(entry: Entry, callServer: Bool = true) {
-        log.info("Delete entry \(entry.id)")
+        NSLog("Delete entry \(entry.id)")
         do {
             if callServer {
                 WallabagApi.Entry.delete(id: Int(entry.id)) { _ in
@@ -180,7 +180,7 @@ final class ArticleSync {
 
     private func index(entry: Entry) {
         spotlightQueue.async {
-            log.debug("Spotlight entry \(entry.id)")
+            NSLog("Spotlight entry \(entry.id)")
             let searchableItem = CSSearchableItem(uniqueIdentifier: entry.spotlightIdentifier,
                                                   domainIdentifier: "entry",
                                                   attributeSet: entry.searchableItemAttributeSet
@@ -188,7 +188,7 @@ final class ArticleSync {
 
             CSSearchableIndex.default().indexSearchableItems([searchableItem]) { (error) -> Void in
                 if error != nil {
-                    log.error(error!.localizedDescription)
+                    NSLog(error!.localizedDescription)
                 }
             }
         }

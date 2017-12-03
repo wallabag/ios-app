@@ -9,10 +9,7 @@
 import UIKit
 import WallabagKit
 import AlamofireNetworkActivityIndicator
-import SwiftyBeaver
 import CoreSpotlight
-
-let log = SwiftyBeaver.self
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,14 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        log.addDestination(ConsoleDestination())
-        log.addDestination(
-            SBPlatformDestination(
-                appID: "WxjB1g",
-                appSecret: "rEwZssKhfnrcjniafpwjhmvtgcvuhCc6",
-                encryptionKey: "j9tol59uyjd3w8okmhcKffggumkxlohi"
-            )
-        )
         CoreData.containerName = "wallabag2"
 
         let args = ProcessInfo.processInfo.arguments
@@ -37,14 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         WallabagApi.init(userStorage: UserDefaults(suiteName: "group.wallabag.share_extension")!)
 
-        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        log.debug(urls[urls.count-1] as URL)
-
         if !WallabagApi.isConfigured() {
-            log.info("Wallabag api is not configured")
+            NSLog("Wallabag api is not configured")
             window?.rootViewController = window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "home")
         } else {
-            log.info("Wallabag api is configured")
+            NSLog("Wallabag api is configured")
             requestBadge()
             updateBadge()
         }
@@ -114,15 +100,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         }
 
-        log.info("Update badge")
+        NSLog("Update badge")
         let request = Entry.fetchEntryRequest()
         switch Setting.getDefaultMode() {
         case .unarchivedArticles:
             request.predicate = NSPredicate(format: "is_archived == 0")
-            break
         case .starredArticles:
             request.predicate = NSPredicate(format: "is_starred == 1")
-            break
         case .archivedArticles:
             request.predicate = NSPredicate(format: "is_archived == 1")
         default: break
