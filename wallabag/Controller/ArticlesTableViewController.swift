@@ -8,7 +8,6 @@
 
 import UIKit
 import UserNotifications
-import WallabagKit
 import CoreData
 import CoreSpotlight
 

@@ -128,4 +128,68 @@ class Setting {
         shared.removeSuite(named: sharedDomain)
         shared.removePersistentDomain(forName: sharedDomain)
     }
+
+    public static func set(host: String) {
+        shared.set(host, forKey: "host")
+    }
+
+    public static func getHost() -> String? {
+        return shared.string(forKey: "host")
+    }
+
+    public static func set(token: String) {
+        shared.set(token, forKey: "token")
+    }
+
+    public static func getToken() -> String? {
+        return shared.string(forKey: "token")
+    }
+
+    public static func set(refreshToken: String) {
+        shared.set(refreshToken, forKey: "refreshToken")
+    }
+
+    public static func getRefreshToken() -> String? {
+        return shared.string(forKey: "refreshToken")
+    }
+
+    public static func set(clientId: String) {
+        shared.set(clientId, forKey: "clientId")
+    }
+
+    public static func getClientId() -> String? {
+        return shared.string(forKey: "clientId")
+    }
+
+    public static func set(clientSecret: String) {
+        shared.set(clientSecret, forKey: "clientSecret")
+    }
+
+    public static func getClientSecret() -> String? {
+        return shared.string(forKey: "clientSecret")
+    }
+
+    public static func set(username: String) {
+        shared.set(username, forKey: "username")
+    }
+
+    public static func getUsername() -> String? {
+        return shared.string(forKey: "username")
+    }
+
+    public static func set(password: String) {
+        shared.set(password, forKey: "password")
+    }
+
+    public static func getPassword() -> String? {
+        return shared.string(forKey: "password")
+    }
+
+    public static func set(wallabagConfigured: Bool) {
+        shared.set(wallabagConfigured, forKey: "wallabagConfigured")
+    }
+
+    public static func isWallabagConfigured() -> Bool {
+        return shared.bool(forKey: "wallabagConfigured")
+    }
 }

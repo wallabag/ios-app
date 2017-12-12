@@ -17,12 +17,27 @@ final class LoginViewController: UIViewController {
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
 
+    override func viewDidLoad() {
+        username.text = "wallabag"
+        password.text = "wallabag"
+    }
+
     @IBAction func login(_ sender: UIButton) {
         sender.isEnabled = false
 
-        WallabagApi.requestToken(username: username.text!, password: password.text!) { success, error in
+        Setting.set(username: username.text!)
+        Setting.set(password: password.text!)
+
+        Setting.set(wallabagConfigured: true)
+
+        performSegue(withIdentifier: "toArticles", sender: nil)
+
+        //let session = WallabagSessionManager(host: Setting.getHost()!, username: Setting.getUsername()!, password: Setting.getPassword()!, clientId: Setting.getClientId()!, clientSecret: Setting.getClientSecret()!)
+
+
+        /*WallabagApi.requestToken(username: username.text!, password: password.text!) { success, error in
             if success {
-                self.performSegue(withIdentifier: "toArticles", sender: nil)
+
             } else {
                 let alert = UIAlertController(title: "Error".localized, message: error, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
@@ -30,6 +45,6 @@ final class LoginViewController: UIViewController {
             }
 
             sender.isEnabled = true
-        }
+        }*/
     }
 }

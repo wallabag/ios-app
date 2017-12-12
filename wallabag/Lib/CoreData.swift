@@ -88,9 +88,9 @@ final class CoreData: NSObject {
         return fetch(request)
     }
 
-    static func delete(_ object: NSManagedObject) throws {
+    static func delete(_ object: NSManagedObject) {
         context.delete(object)
-        try save()
+        saveContext()
     }
 
     static func deleteAll(_ entity: String) {

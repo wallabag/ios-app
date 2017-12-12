@@ -15,18 +15,17 @@ final class ClientIdViewController: UIViewController {
     @IBOutlet weak var clientSecret: UITextField!
 
     @IBAction func openMyInstance(_ sender: Any) {
-        UIApplication.shared.openURL(URL(string: WallabagApi.getHost()! + "/developer")!)
+        UIApplication.shared.openURL(URL(string: Setting.getHost()! + "/developer")!)
     }
 
     override func viewDidLoad() {
-        clientId.text = WallabagApi.getClientId()
-        clientSecret.text = WallabagApi.getClientSecret()
+        clientId.text = Setting.getClientId()
+        clientSecret.text = Setting.getClientSecret()
     }
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is LoginViewController {
-            WallabagApi.configure(clientId: clientId.text!, clientSecret: clientSecret.text!)
-        }
+        Setting.set(clientId: clientId.text!)
+        Setting.set(clientSecret: clientSecret.text!)
     }
 }

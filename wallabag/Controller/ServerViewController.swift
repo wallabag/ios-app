@@ -14,12 +14,12 @@ final class ServerViewController: UIViewController {
     @IBOutlet weak var server: UITextField!
 
     override func viewDidLoad() {
-        server.text = WallabagApi.getHost()
+        server.text = Setting.getHost()
     }
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if validateServer(string: server.text!) {
-            WallabagApi.configure(host: server.text!)
+            Setting.set(host: server.text!)
             return true
         }
 
@@ -41,8 +41,7 @@ final class ServerViewController: UIViewController {
 
         do {
             let regex = try NSRegularExpression(pattern: "(http|https)://", options: [])
-
-            return 1 == regex.matches(in: string, options: [], range: NSRange(location: 0, length: string.characters.count)).count
+            return 1 == regex.matches(in: string, options: [], range: NSRange(location: 0, length: string.count)).count
         } catch {
             return false
         }

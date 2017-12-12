@@ -36,13 +36,13 @@ class ShareViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        WallabagApi.init(userStorage: UserDefaults(suiteName: "group.wallabag.share_extension")!)
+        //WallabagApi.init(userStorage: UserDefaults(suiteName: "group.wallabag.share_extension")!)
         view.addSubview(backView)
         view.addSubview(notificationView)
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        if WallabagApi.isConfigured() {
+        /*if WallabagApi.isConfigured() {
             guard let items = extensionContext?.inputItems as? [NSExtensionItem] else {
                 self.extensionContext?.cancelRequest(withError: NSError())
                 return
@@ -72,6 +72,6 @@ class ShareViewController: UIViewController {
             }
         } else {
             self.extensionContext?.cancelRequest(withError: NSError())
-        }
+        }*/
     }
 }

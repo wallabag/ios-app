@@ -24,9 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             resetApplication()
         }
 
-        WallabagApi.init(userStorage: UserDefaults(suiteName: "group.wallabag.share_extension")!)
-
-        if !WallabagApi.isConfigured() {
+        if !Setting.isWallabagConfigured() {
             NSLog("Wallabag api is not configured")
             window?.rootViewController = window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "home")
         } else {
@@ -46,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
-        if WallabagApi.isConfigured() {
+        if Setting.isWallabagConfigured() {
             guard let mainController = window?.rootViewController! as? UINavigationController,
                 let articlesTable = mainController.viewControllers.first as? ArticlesTableViewController else {
                     return false
@@ -77,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Swift.Void) {
-        if WallabagApi.isConfigured() {
+        if Setting.isWallabagConfigured() {
             ArticleSync.sharedInstance.sync()
             updateBadge()
             completionHandler(.newData)
@@ -116,7 +114,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func setupQuickAction() {
-        if WallabagApi.isConfigured() {
+        if Setting.isWallabagConfigured() {
             let starredAction = UIApplicationShortcutItem(type: Setting.RetrieveMode.starredArticles.rawValue, localizedTitle: Setting.RetrieveMode.starredArticles.humainReadable().localized, localizedSubtitle: nil, icon: UIApplicationShortcutIcon(templateImageName: "starred"), userInfo: [:])
             let unarchivedAction = UIApplicationShortcutItem(
                 type: Setting.RetrieveMode.unarchivedArticles.rawValue,
