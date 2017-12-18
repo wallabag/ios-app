@@ -17,15 +17,15 @@ extension String {
     }
 
     var ucFirst: String {
-        let first = String(self.characters.prefix(1))
+        let first = String(self.prefix(1))
 
-        return first.uppercased() + String(characters.dropFirst())
+        return first.uppercased() + String(self.dropFirst())
     }
 
     var lcFirst: String {
-        let first = String(self.characters.prefix(1))
+        let first = String(self.prefix(1))
 
-        return first.lowercased() + String(characters.dropFirst())
+        return first.lowercased() + String(self.dropFirst())
     }
 
     var withoutHTML: String {

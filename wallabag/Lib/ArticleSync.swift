@@ -18,54 +18,61 @@ final class ArticleSync {
     private let group = DispatchGroup()
 
     private var entries: [Entry] = []
-
     private var isSyncing: Bool = false
+    private var page = 1
 
     static let sharedInstance: ArticleSync = ArticleSync()
-
-    var wallabagApi: WallabagApi = {
-        return WallabagApi(host: Setting.getHost()!,
-                           username: Setting.getUsername()!,
-                           password: Setting.getPassword()!,
-                           clientId: Setting.getClientId()!,
-                           clientSecret: Setting.getClientSecret()!)
-    }()
-
-    var page = 1
+    var wallabagApi: WallabagApi?
 
     private init() {}
 
-    func sync() {
-        if isSyncing {
-            return
-        }
+    func initSession() {
+        wallabagApi = WallabagApi(host: Setting.getHost()!,
+                    username: Setting.getUsername()!,
+                    password: Setting.getPassword(username: Setting.getUsername()!)!,
+                    clientId: Setting.getClientId()!,
+                    clientSecret: Setting.getClientSecret()!)
+    }
+
+    func sync(completion: @escaping () -> Void) {
         entries = (CoreData.fetch(Entry.fetchEntryRequest()) as? [Entry]) ?? []
-        isSyncing = true
+        let totalEntries = entries.count
 
-        self.fetch(page: 1)
+        self.group.enter()
 
-        group.notify(queue: syncQueue) { [unowned self] in
-            CoreData.saveContext()
-            self.purge()
+        self.fetch(page: self.page) {
+            completion()
+        }
+
+        group.notify(queue: syncQueue) {
+            self.syncQueue.async {
+                CoreData.saveContext()
+                if self.entries.count != totalEntries {
+                    self.purge()
+                }
+            }
             self.page = 1
             self.isSyncing = false
         }
     }
 
-    private func fetch(page: Int) {
-        self.group.enter()
-        wallabagApi.entry(parameters: ["page": page, "perPage": 10]) { result in
+    private func fetch(page: Int, completionError: @escaping () -> Void ) {
+        wallabagApi?.entry(parameters: ["page": page]) { result in
             switch result {
             case .success(let entries):
-                self.handle(result: entries)
                 if 0 != entries.count {
+                    self.handle(result: entries)
                     self.page += 1
-                    self.fetch(page: self.page)
+                    self.fetch(page: self.page) { }
+                } else {
+                    self.group.leave()
                 }
-            case .error:
-                NSLog("error")
+            case .error(let error):
+                self.group.leave()
+                if error == .invalidAuth {
+                    completionError()
+                }
             }
-            self.group.leave()
         }
     }
 
@@ -132,7 +139,7 @@ final class ArticleSync {
     func update(entry: Entry) {
         // push data to server
         entry.updated_at = NSDate()
-        wallabagApi.entry(update: Int(entry.id), parameters: [
+        wallabagApi?.entry(update: Int(entry.id), parameters: [
             "archive": (entry.is_archived).hashValue,
             "starred": (entry.is_starred).hashValue
             ]
@@ -148,7 +155,7 @@ final class ArticleSync {
     func delete(entry: Entry, callServer: Bool = true) {
         NSLog("Delete entry \(entry.id)")
         if callServer {
-            wallabagApi.entry(delete: Int(entry.id)) { _ in
+            wallabagApi?.entry(delete: Int(entry.id)) { _ in
             }
         }
         CoreData.delete(entry)
@@ -158,7 +165,7 @@ final class ArticleSync {
     }
 
     func add(url: URL) {
-        wallabagApi.entry(add: url) { result in
+        wallabagApi?.entry(add: url) { result in
             switch result {
             case .success(let wallabagEntry):
                 self.insert(wallabagEntry)

@@ -36,13 +36,12 @@ class ShareViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //WallabagApi.init(userStorage: UserDefaults(suiteName: "group.wallabag.share_extension")!)
         view.addSubview(backView)
         view.addSubview(notificationView)
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        /*if WallabagApi.isConfigured() {
+        if Setting.isWallabagConfigured() {
             guard let items = extensionContext?.inputItems as? [NSExtensionItem] else {
                 self.extensionContext?.cancelRequest(withError: NSError())
                 return
@@ -56,13 +55,18 @@ class ShareViewController: UIViewController {
                     if attachement.hasItemConformingToTypeIdentifier("public.url") {
                         attachement.loadItem(forTypeIdentifier: "public.url", options: nil, completionHandler: { (url, _) -> Void in
                             if let shareURL = url as? NSURL {
-                                WallabagApi.addArticle(shareURL as URL, completion: { _ in
-                                    UIView.animate(withDuration: 1.0, animations: {
-                                        self.notificationView.alpha = 0.0
-                                    }, completion: { _ in
-                                        self.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
-                                    })
-                                })
+                                WallabagApi(host: Setting.getHost()!,
+                                            username: Setting.getUsername()!,
+                                            password: Setting.getPassword(username: Setting.getUsername()!)!,
+                                            clientId: Setting.getClientId()!,
+                                            clientSecret: Setting.getClientSecret()!)
+                                    .entry(add: shareURL as URL) { _ in
+                                        UIView.animate(withDuration: 1.0, animations: {
+                                            self.notificationView.alpha = 0.0
+                                        }, completion: { _ in
+                                            self.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
+                                        })
+                                }
                             } else {
                                 self.extensionContext?.cancelRequest(withError: NSError())
                             }
@@ -72,6 +76,6 @@ class ShareViewController: UIViewController {
             }
         } else {
             self.extensionContext?.cancelRequest(withError: NSError())
-        }*/
+        }
     }
 }

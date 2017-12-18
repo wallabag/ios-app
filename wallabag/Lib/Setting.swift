@@ -115,6 +115,7 @@ class Setting {
         shared.removeObject(forKey: "password")
         shared.removeObject(forKey: "token")
         shared.removeObject(forKey: "refreshToken")
+        shared.removeObject(forKey: "wallabagConfigured")
         shared.synchronize()
     }
 
@@ -177,12 +178,22 @@ class Setting {
         return shared.string(forKey: "username")
     }
 
-    public static func set(password: String) {
-        shared.set(password, forKey: "password")
+    public static func set(password: String, username: String) {
+        let keychain = KeychainPasswordItem(service: "wallabag", account: username)
+        do {
+            try keychain.savePassword(password)
+        } catch {
+            fatalError()
+        }
     }
 
-    public static func getPassword() -> String? {
-        return shared.string(forKey: "password")
+    public static func getPassword(username: String) -> String? {
+        let keychain = KeychainPasswordItem(service: "wallabag", account: username)
+        do {
+            return try keychain.readPassword()
+        } catch {
+            return ""
+        }
     }
 
     public static func set(wallabagConfigured: Bool) {

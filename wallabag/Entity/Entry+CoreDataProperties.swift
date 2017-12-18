@@ -9,7 +9,6 @@
 import Foundation
 import CoreData
 
-
 extension Entry {
 
     @nonobjc public class func fetchEntryRequest() -> NSFetchRequest<Entry> {

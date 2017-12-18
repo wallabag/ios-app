@@ -29,13 +29,12 @@ final class ServerViewController: UIViewController {
             preferredStyle: .alert
         )
         alertController.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
-
         present(alertController, animated: true, completion: nil)
 
         return false
     }
 
-    func validateServer(string: String) -> Bool {
+    private func validateServer(string: String) -> Bool {
         guard let url = URL(string: string) else { return false }
         if !UIApplication.shared.canOpenURL(url) { return false }
 

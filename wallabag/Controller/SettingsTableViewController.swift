@@ -70,7 +70,7 @@ final class SettingsTableViewController: UITableViewController {
         }
     }
 
-    fileprivate func prepareDefaultList() {
+    private func prepareDefaultList() {
         for row in 0 ... tableView.numberOfRows(inSection: 0) {
             if let cell = tableView.cellForRow(at: IndexPath(row: row, section: 0)) {
                 if Setting.RetrieveMode(rawValue: cell.reuseIdentifier!)! == Setting.getDefaultMode() {

@@ -19,7 +19,6 @@ public class Entry: NSManagedObject {
 
     var searchableItemAttributeSet: CSSearchableItemAttributeSet {
         let searchableItemAttributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeText as String)
-
         searchableItemAttributeSet.title = title
         searchableItemAttributeSet.contentDescription = content?.withoutHTML
 

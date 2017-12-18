@@ -24,11 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             resetApplication()
         }
 
-        if !Setting.isWallabagConfigured() {
-            NSLog("Wallabag api is not configured")
-            window?.rootViewController = window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "home")
-        } else {
+        if Setting.isWallabagConfigured() {
             NSLog("Wallabag api is configured")
+            window?.rootViewController = window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "articlesNavigation")
             requestBadge()
             updateBadge()
         }
@@ -76,7 +74,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Swift.Void) {
         if Setting.isWallabagConfigured() {
-            ArticleSync.sharedInstance.sync()
+            ArticleSync.sharedInstance.sync {
+
+            }
             updateBadge()
             completionHandler(.newData)
         } else {

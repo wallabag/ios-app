@@ -87,7 +87,6 @@ final class ArticleViewController: UIViewController {
         navigationItem.title = entry.title
         updateUi()
         loadArticleContent()
-        contentWeb.delegate = self
         contentWeb.scrollView.delegate = self
         contentWeb.backgroundColor = ThemeManager.manager.getBackgroundColor()
 

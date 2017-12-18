@@ -11,10 +11,13 @@ import WallabagKit
 
 final class HomeViewController: UIViewController {
 
+    @IBAction func authError(segue: UIStoryboardSegue) {
+        Setting.set(wallabagConfigured: false)
+    }
+
     override func viewDidLoad() {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(self.resetApp))
         gesture.numberOfTapsRequired = 10
-
         view.addGestureRecognizer(gesture)
     }
 

@@ -65,15 +65,12 @@ final class ArticlesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        articleSync.initSession()
         handleRefresh()
 
-        do {
-            fetchResultsController = fetchResultsControllerRequest(mode: mode)
-            try fetchResultsController.performFetch()
-        } catch {
+        fetchResultsController = fetchResultsControllerRequest(mode: mode)
+        try? fetchResultsController.performFetch()
 
-        }
         refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
 
         searchController.searchResultsUpdater = self
@@ -94,10 +91,22 @@ final class ArticlesTableViewController: UITableViewController {
         reloadUI()
     }
 
+    private func authError() {
+        Setting.set(wallabagConfigured: false)
+        let alert = UIAlertController(title: "Error", message: "Authentification error", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .destructive) { _ in
+            let homeController = self.storyboard?.instantiateInitialViewController()
+            self.present(homeController!, animated: false)
+        })
+        present(alert, animated: true)
+    }
+
     @objc func handleRefresh() {
-        articleSync.sync()
         if refreshControl?.isRefreshing ?? false {
             refreshControl?.endRefreshing()
+        }
+        articleSync.sync {
+            self.authError()
         }
     }
 
@@ -171,41 +180,35 @@ final class ArticlesTableViewController: UITableViewController {
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "readArticle" {
-            if let controller = segue.destination as? ArticleViewController {
-                controller.readHandler = { entry in
-                    self.read(entry)
-                }
-                controller.starHandler = { entry in
-                    self.star(entry)
-                }
-                controller.deleteHandler = { entry in
-                    self.delete(entry)
-                }
-                controller.addHandler = {
-                    self.addArticle()
-                }
-                if let cell = sender as? UITableViewCell {
-                    if let indexPath = tableView.indexPath(for: cell) {
-                        controller.entry = fetchResultsController.object(at: indexPath)
-                    }
-                }
-                if let entry = sender as? Entry {
-                    controller.entry = entry
-                }
+        if segue.identifier == "readArticle",
+            let controller = segue.destination as? ArticleViewController {
+            controller.readHandler = { entry in
+                self.read(entry)
+            }
+            controller.starHandler = { entry in
+                self.star(entry)
+            }
+            controller.deleteHandler = { entry in
+                self.delete(entry)
+            }
+            controller.addHandler = {
+                self.addArticle()
+            }
+            if let cell = sender as? UITableViewCell,
+                let indexPath = tableView.indexPath(for: cell) {
+                controller.entry = fetchResultsController.object(at: indexPath)
+            }
+            if let entry = sender as? Entry {
+                controller.entry = entry
             }
         }
     }
 
     private func filteringList() {
-        do {
-            fetchResultsController = fetchResultsControllerRequest(mode: mode)
-            reloadUI()
-            try fetchResultsController.performFetch()
-            tableView.reloadData()
-        } catch {
-
-        }
+        fetchResultsController = fetchResultsControllerRequest(mode: mode)
+        reloadUI()
+        try? fetchResultsController.performFetch()
+        tableView.reloadData()
     }
 
     private func read(_ entry: Entry) {
@@ -246,13 +249,9 @@ final class ArticlesTableViewController: UITableViewController {
 extension ArticlesTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         NSLog("search: " + searchController.searchBar.text!)
-        do {
-            fetchResultsController = fetchResultsControllerRequest(mode: mode, textSearch: searchController.searchBar.text!)
-            try fetchResultsController.performFetch()
-            tableView.reloadData()
-        } catch {
-
-        }
+        fetchResultsController = fetchResultsControllerRequest(mode: mode, textSearch: searchController.searchBar.text!)
+        try? fetchResultsController.performFetch()
+        tableView.reloadData()
     }
 }
 
