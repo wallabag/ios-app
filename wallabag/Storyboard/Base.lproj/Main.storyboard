@@ -1068,7 +1068,7 @@ But you can contribute financially by making a donation whenever you want to sup
                                 </variation>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="IOC-eL-yrD">
-                                <rect key="frame" x="16" y="623" width="343" height="36"/>
+                                <rect key="frame" x="130" y="623" width="115" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Store loading"/>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -1084,9 +1084,7 @@ But you can contribute financially by making a donation whenever you want to sup
                             <constraint firstItem="4Iz-0L-Eb3" firstAttribute="top" secondItem="IOC-eL-yrD" secondAttribute="bottom" constant="8" id="95e-0x-QGQ"/>
                             <constraint firstItem="vTk-p8-TZZ" firstAttribute="top" secondItem="AfS-MM-eew" secondAttribute="bottom" constant="8" id="GyO-5I-Gox"/>
                             <constraint firstItem="IOC-eL-yrD" firstAttribute="top" secondItem="vTk-p8-TZZ" secondAttribute="bottom" constant="8" id="RH0-GW-i5u"/>
-                            <constraint firstItem="IOC-eL-yrD" firstAttribute="leading" secondItem="XPm-1d-Dbb" secondAttribute="leadingMargin" id="Wdy-Ce-3gy"/>
                             <constraint firstItem="vTk-p8-TZZ" firstAttribute="trailing" secondItem="XPm-1d-Dbb" secondAttribute="trailingMargin" id="oNH-iz-WRF"/>
-                            <constraint firstItem="IOC-eL-yrD" firstAttribute="trailing" secondItem="XPm-1d-Dbb" secondAttribute="trailingMargin" id="pwI-fx-qW0"/>
                             <constraint firstItem="IOC-eL-yrD" firstAttribute="centerX" secondItem="XPm-1d-Dbb" secondAttribute="centerX" id="q38-d4-5rR"/>
                             <constraint firstItem="vTk-p8-TZZ" firstAttribute="leading" secondItem="XPm-1d-Dbb" secondAttribute="leadingMargin" id="zOV-oz-dCT"/>
                         </constraints>
