@@ -179,7 +179,7 @@ class Setting {
     }
 
     public static func set(password: String, username: String) {
-        let keychain = KeychainPasswordItem(service: "wallabag", account: username)
+        let keychain = KeychainPasswordItem(service: "wallabag", account: username, accessGroup: sharedDomain)
         do {
             try keychain.savePassword(password)
         } catch {
@@ -188,7 +188,7 @@ class Setting {
     }
 
     public static func getPassword(username: String) -> String? {
-        let keychain = KeychainPasswordItem(service: "wallabag", account: username)
+        let keychain = KeychainPasswordItem(service: "wallabag", account: username, accessGroup: sharedDomain)
         do {
             return try keychain.readPassword()
         } catch {

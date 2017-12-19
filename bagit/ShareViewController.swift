@@ -13,6 +13,8 @@ import WallabagKit
 @objc(ShareViewController)
 class ShareViewController: UIViewController {
 
+    lazy var extError = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "App maybe not configured"])
+
     lazy var notificationView: UIView = {
         let notification = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         notification.backgroundColor = .white
@@ -43,12 +45,12 @@ class ShareViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         if Setting.isWallabagConfigured() {
             guard let items = extensionContext?.inputItems as? [NSExtensionItem] else {
-                self.extensionContext?.cancelRequest(withError: NSError())
+                self.extensionContext?.cancelRequest(withError: extError)
                 return
             }
             for item in items {
                 guard let attachements = item.attachments as? [NSItemProvider] else {
-                    self.extensionContext?.cancelRequest(withError: NSError())
+                    self.extensionContext?.cancelRequest(withError: extError)
                     return
                 }
                 for attachement in attachements {
@@ -60,22 +62,39 @@ class ShareViewController: UIViewController {
                                             password: Setting.getPassword(username: Setting.getUsername()!)!,
                                             clientId: Setting.getClientId()!,
                                             clientSecret: Setting.getClientSecret()!)
-                                    .entry(add: shareURL as URL) { _ in
-                                        UIView.animate(withDuration: 1.0, animations: {
-                                            self.notificationView.alpha = 0.0
-                                        }, completion: { _ in
-                                            self.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
-                                        })
+                                    .entry(add: shareURL as URL) { result in
+                                        switch result {
+                                        case .success:
+                                            self.clearView()
+                                        case .error:
+                                            self.clearView(withError: true)
+                                        }
                                 }
                             } else {
-                                self.extensionContext?.cancelRequest(withError: NSError())
+                                self.clearView(withError: true)
                             }
                         })
                     }
                 }
             }
         } else {
-            self.extensionContext?.cancelRequest(withError: NSError())
+            self.clearView(withError: true)
         }
+    }
+
+    private func clearView(withError: Bool = false) {
+        UIView.animate(withDuration: 1.0, animations: {
+            self.notificationView.alpha = 0.0
+        }, completion: { _ in
+            if withError {
+                let alertController = UIAlertController(title: "Error", message: "Please open app and try to add manually your url", preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "Ok", style: .cancel) { _ in
+                    self.extensionContext?.cancelRequest(withError: self.extError)
+                })
+                self.present(alertController, animated: true)
+            } else {
+                self.extensionContext?.completeRequest(returningItems: [], completionHandler: nil)
+            }
+        })
     }
 }
