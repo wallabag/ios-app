@@ -1,18 +1,3 @@
-Hello wallabag user!
+Hello wallabag users!
 
-I worked hard on this release to provide a real read it later app.
-All articles are now synced to your device.
-
-You can now try the speech synthesis on article view, it's not perfect but it's here, enjoy!
-
-I add home screen action.
-
-I've reworked on the theme, the app is now trying to follow your selected theme everywhere.
-
-Now when your are on article view your device won't be lock
-
-Special thank to 0wnrepo, he added Romanian Localization! thanks dude!
-
-If you like our app, do not hesitate to add comments on the app store, write review, and tip in app!
-
-Enjoy your read!
+Small fix for synchronization issues
