@@ -14,12 +14,12 @@ import MobileCoreServices
 
 final class ArticleSync {
     private let syncQueue = DispatchQueue(label: "fr.district-web.wallabag.articleSyncQueue", qos: .background)
+    private let operationQueue = OperationQueue()
     private let spotlightQueue = DispatchQueue(label: "fr.district-web.wallabag.spotlightQueue", qos: .background)
     private let group = DispatchGroup()
 
     private var entries: [Entry] = []
     private var isSyncing: Bool = false
-    private var page = 1
 
     static let sharedInstance: ArticleSync = ArticleSync()
     var wallabagApi: WallabagApi?
@@ -35,48 +35,47 @@ final class ArticleSync {
     }
 
     func sync(completion: @escaping () -> Void) {
+        if isSyncing {
+            return
+        }
+        isSyncing = true
         entries = (CoreData.fetch(Entry.fetchEntryRequest()) as? [Entry]) ?? []
         let totalEntries = entries.count
 
-        self.group.enter()
+        group.enter()
 
-        self.fetch(page: self.page) {
-            completion()
+        wallabagApi?.entry(parameters: ["page": 1]) { result in
+            switch result {
+            case .success(let collection):
+                self.handle(result: collection.items)
+
+                for page in 2...collection.last {
+                    self.group.enter()
+
+                    let syncOperation = SyncOperation(articleSync: self, page: page)
+                    syncOperation.completionBlock = {
+                        self.group.leave()
+                    }
+                    self.operationQueue.addOperation(syncOperation)
+                }
+            case .error(let error):
+                if error == .invalidAuth {
+                    completion()
+                }
+            }
+            self.group.leave()
         }
 
         group.notify(queue: syncQueue) {
-            self.syncQueue.async {
-                CoreData.saveContext()
-                if self.entries.count != totalEntries {
-                    self.purge()
-                }
+            if self.entries.count != totalEntries {
+               self.purge()
             }
-            self.page = 1
+            CoreData.saveContext()
             self.isSyncing = false
         }
     }
 
-    private func fetch(page: Int, completionError: @escaping () -> Void ) {
-        wallabagApi?.entry(parameters: ["page": page]) { result in
-            switch result {
-            case .success(let entries):
-                if 0 != entries.count {
-                    self.handle(result: entries)
-                    self.page += 1
-                    self.fetch(page: self.page) { }
-                } else {
-                    self.group.leave()
-                }
-            case .error(let error):
-                self.group.leave()
-                if error == .invalidAuth {
-                    completionError()
-                }
-            }
-        }
-    }
-
-    private func handle(result: [WallabagEntry]) {
+    func handle(result: [WallabagEntry]) {
         for wallabagEntry in result {
             if let entry = entries.first(where: { Int($0.id) == wallabagEntry.id }) {
                 self.update(entry: entry, from: wallabagEntry)
@@ -96,11 +95,11 @@ final class ArticleSync {
         }
     }
 
-    func insert(_ article: WallabagEntry) {
+    func insert(_ wallabagEntry: WallabagEntry) {
         let entityDescription = NSEntityDescription.entity(forEntityName: "Entry", in: CoreData.context)!
         let entry = Entry.init(entity: entityDescription, insertInto: CoreData.context)
-        NSLog("Insert article \(article.id)")
-        setDataFor(entry: entry, from: article)
+        NSLog("Insert article \(wallabagEntry.id)")
+        setDataFor(entry: entry, from: wallabagEntry)
     }
 
     private func setDataFor(entry: Entry, from article: WallabagEntry) {
@@ -182,7 +181,6 @@ final class ArticleSync {
                                                   domainIdentifier: "entry",
                                                   attributeSet: entry.searchableItemAttributeSet
             )
-
             CSSearchableIndex.default().indexSearchableItems([searchableItem]) { (error) -> Void in
                 if error != nil {
                     NSLog(error!.localizedDescription)

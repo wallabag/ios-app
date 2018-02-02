@@ -90,7 +90,6 @@ final class CoreData: NSObject {
 
     static func delete(_ object: NSManagedObject) {
         context.delete(object)
-        saveContext()
     }
 
     static func deleteAll(_ entity: String) {
