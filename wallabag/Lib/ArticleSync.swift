@@ -9,19 +9,18 @@
 import Foundation
 import WallabagKit
 import CoreData
-import CoreSpotlight
-import MobileCoreServices
 
 final class ArticleSync {
     private let syncQueue = DispatchQueue(label: "fr.district-web.wallabag.articleSyncQueue", qos: .background)
     private let operationQueue = OperationQueue()
-    private let spotlightQueue = DispatchQueue(label: "fr.district-web.wallabag.spotlightQueue", qos: .background)
     private let group = DispatchGroup()
+    private let spotlightObserver = SpotlightObserver()
 
     private var entries: [Entry] = []
     private var isSyncing: Bool = false
 
     static let sharedInstance: ArticleSync = ArticleSync()
+
     var wallabagApi: WallabagApi?
 
     private init() {}
@@ -99,23 +98,7 @@ final class ArticleSync {
         let entityDescription = NSEntityDescription.entity(forEntityName: "Entry", in: CoreData.context)!
         let entry = Entry.init(entity: entityDescription, insertInto: CoreData.context)
         NSLog("Insert article \(wallabagEntry.id)")
-        setDataFor(entry: entry, from: wallabagEntry)
-    }
-
-    private func setDataFor(entry: Entry, from article: WallabagEntry) {
-        entry.setValue(article.id, forKey: "id")
-        entry.setValue(article.title, forKey: "title")
-        entry.setValue(article.content, forKey: "content")
-        entry.setValue(article.createdAt, forKey: "created_at")
-        entry.setValue(article.updatedAt, forKey: "updated_at")
-        entry.setValue(article.isStarred, forKey: "is_starred")
-        entry.setValue(article.isArchived, forKey: "is_archived")
-        entry.setValue(article.previewPicture, forKey: "preview_picture")
-        entry.setValue(article.domainName, forKey: "domain_name")
-        entry.setValue(article.readingTime, forKey: "reading_time")
-        entry.setValue(article.url, forKey: "url")
-
-        index(entry: entry)
+        entry.hydrate(from: wallabagEntry)
     }
 
     private func update(entry: Entry, from article: WallabagEntry) {
@@ -127,7 +110,7 @@ final class ArticleSync {
             NSLog("Update article \(article.id)")
             if article.updatedAt > entryUpdatedAt {
                 NSLog("Update entry from server \(article.id)")
-                setDataFor(entry: entry, from: article)
+                entry.hydrate(from: article)
             } else {
                 NSLog("Update article from entry \(article.id)")
                 update(entry: entry)
@@ -158,9 +141,6 @@ final class ArticleSync {
             }
         }
         CoreData.delete(entry)
-        spotlightQueue.async {
-            CSSearchableIndex.default().deleteSearchableItems(withIdentifiers: [entry.spotlightIdentifier], completionHandler: nil)
-        }
     }
 
     func add(url: URL) {
@@ -170,21 +150,6 @@ final class ArticleSync {
                 self.insert(wallabagEntry)
             case .error:
                 break
-            }
-        }
-    }
-
-    private func index(entry: Entry) {
-        spotlightQueue.async {
-            NSLog("Spotlight entry \(entry.id)")
-            let searchableItem = CSSearchableItem(uniqueIdentifier: entry.spotlightIdentifier,
-                                                  domainIdentifier: "entry",
-                                                  attributeSet: entry.searchableItemAttributeSet
-            )
-            CSSearchableIndex.default().indexSearchableItems([searchableItem]) { (error) -> Void in
-                if error != nil {
-                    NSLog(error!.localizedDescription)
-                }
             }
         }
     }

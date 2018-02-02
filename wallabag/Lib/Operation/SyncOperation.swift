@@ -19,7 +19,7 @@ class SyncOperation: Operation {
     override var isAsynchronous: Bool { return true }
     override var isExecuting: Bool { return state == .executing }
     override var isFinished: Bool { return state == .finished }
-    
+
     var state = State.ready {
         willSet {
             willChangeValue(forKey: state.keyPath)

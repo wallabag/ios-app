@@ -47,6 +47,7 @@
 		9C987A511DB79826005515F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A501DB79826005515F4 /* Assets.xcassets */; };
 		9C987A541DB79826005515F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A521DB79826005515F4 /* LaunchScreen.storyboard */; };
 		9CA232301DFECE74006B29B8 /* light.css in Resources */ = {isa = PBXBuildFile; fileRef = 9CA2322F1DFECE74006B29B8 /* light.css */; };
+		9CA83A002025068E0080E44A /* SpotlightObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA839FF2025068E0080E44A /* SpotlightObserver.swift */; };
 		9CA9659B1F16B68B009C6377 /* White.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA9659A1F16B68B009C6377 /* White.swift */; };
 		9CA9659D1F16B6B9009C6377 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA9659C1F16B6B9009C6377 /* Light.swift */; };
 		9CA9659F1F16B71E009C6377 /* Dusk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA9659E1F16B71E009C6377 /* Dusk.swift */; };
@@ -179,6 +180,7 @@
 		9C987A651DB79826005515F4 /* wallabagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C987A6B1DB79826005515F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CA2322F1DFECE74006B29B8 /* light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = light.css; sourceTree = "<group>"; };
+		9CA839FF2025068E0080E44A /* SpotlightObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightObserver.swift; sourceTree = "<group>"; };
 		9CA9659A1F16B68B009C6377 /* White.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = White.swift; sourceTree = "<group>"; };
 		9CA9659C1F16B6B9009C6377 /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
 		9CA9659E1F16B71E009C6377 /* Dusk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dusk.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 				9CE369751DE63D030005E20E /* Setting.swift */,
 				9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */,
 				097585091FE53E0B0089825B /* KeychainPasswordItem.swift */,
+				9CA839FF2025068E0080E44A /* SpotlightObserver.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -972,6 +975,7 @@
 				9CE369741DE632030005E20E /* SettingsTableViewController.swift in Sources */,
 				9CA9659B1F16B68B009C6377 /* White.swift in Sources */,
 				9CA9659F1F16B71E009C6377 /* Dusk.swift in Sources */,
+				9CA83A002025068E0080E44A /* SpotlightObserver.swift in Sources */,
 				0975850A1FE53E0B0089825B /* KeychainPasswordItem.swift in Sources */,
 				9C914A4A1EBD1D6000973BA6 /* CoreData.swift in Sources */,
 				9C4BFBE01EC08EF200B75EFB /* Entry+CoreDataClass.swift in Sources */,

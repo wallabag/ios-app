@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import WallabagKit
 
 extension Entry {
 
@@ -27,4 +28,18 @@ extension Entry {
     @NSManaged public var url: String?
     @NSManaged public var reading_time: Int64
     @NSManaged public var screen_position: Float
+
+    func hydrate(from article: WallabagEntry) {
+        setValue(article.id, forKey: "id")
+        setValue(article.title, forKey: "title")
+        setValue(article.content, forKey: "content")
+        setValue(article.createdAt, forKey: "created_at")
+        setValue(article.updatedAt, forKey: "updated_at")
+        setValue(article.isStarred, forKey: "is_starred")
+        setValue(article.isArchived, forKey: "is_archived")
+        setValue(article.previewPicture, forKey: "preview_picture")
+        setValue(article.domainName, forKey: "domain_name")
+        setValue(article.readingTime, forKey: "reading_time")
+        setValue(article.url, forKey: "url")
+    }
 }
