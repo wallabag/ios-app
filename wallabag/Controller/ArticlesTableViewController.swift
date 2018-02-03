@@ -128,15 +128,7 @@ final class ArticlesTableViewController: UITableViewController {
         if let id = id {
             fetchRequest.predicate = NSPredicate(format: "id == %@", id as NSNumber)
         } else if nil == textSearch || "" == textSearch {
-            switch mode {
-            case .unarchivedArticles:
-                fetchRequest.predicate = NSPredicate(format: "is_archived == 0")
-            case .starredArticles:
-                fetchRequest.predicate = NSPredicate(format: "is_starred == 1")
-            case .archivedArticles:
-                fetchRequest.predicate = NSPredicate(format: "is_archived == 1")
-            default: break
-            }
+            fetchRequest.predicate = mode.predicate()
         } else {
             let predicateTitle = NSPredicate(format: "title CONTAINS[cd] %@", textSearch!)
             let predicateContent = NSPredicate(format: "content CONTAINS[cd] %@", textSearch!)

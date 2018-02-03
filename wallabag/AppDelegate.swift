@@ -105,15 +105,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         NSLog("Update badge")
         let request = Entry.fetchEntryRequest()
-        switch Setting.getDefaultMode() {
-        case .unarchivedArticles:
-            request.predicate = NSPredicate(format: "is_archived == 0")
-        case .starredArticles:
-            request.predicate = NSPredicate(format: "is_starred == 1")
-        case .archivedArticles:
-            request.predicate = NSPredicate(format: "is_archived == 1")
-        default: break
-        }
+        request.predicate = Setting.getDefaultMode().predicate()
 
         DispatchQueue.main.async {
             UIApplication.shared.applicationIconBadgeNumber = ((CoreData.fetch(request) as? [Entry]) ?? []).count

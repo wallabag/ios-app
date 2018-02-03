@@ -22,7 +22,7 @@ class Setting {
         case unarchivedArticles
         case starredArticles
 
-        public func humainReadable() -> String {
+        func humainReadable() -> String {
             switch self {
             case .allArticles:
                 return "All articles"
@@ -32,6 +32,19 @@ class Setting {
                 return "Starred articles"
             case .unarchivedArticles:
                 return "Unread articles"
+            }
+        }
+
+        func predicate() -> NSPredicate {
+            switch self {
+            case .unarchivedArticles:
+                return NSPredicate(format: "is_archived == 0")
+            case .starredArticles:
+                return NSPredicate(format: "is_starred == 1")
+            case .archivedArticles:
+                return NSPredicate(format: "is_archived == 1")
+            case .allArticles:
+                return NSPredicate(value: true)
             }
         }
     }
