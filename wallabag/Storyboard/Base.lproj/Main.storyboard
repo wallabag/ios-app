@@ -428,9 +428,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <progressView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" id="d1h-km-bYa">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="3"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </progressView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="articleIdentifier" rowHeight="100" id="BOk-fg-qmd" customClass="ArticleTableViewCell" customModule="wallabag" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="30" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BOk-fg-qmd" id="Gj3-Gv-99G">
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="99.5"/>
@@ -506,6 +510,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
+                        <outlet property="progressView" destination="d1h-km-bYa" id="EIx-YZ-Fat"/>
                         <segue destination="dap-gp-nIP" kind="unwind" identifier="authError" unwindAction="authErrorWithSegue:" id="8wT-4a-Gfb"/>
                     </connections>
                 </tableViewController>

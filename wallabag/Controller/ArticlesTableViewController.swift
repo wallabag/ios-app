@@ -19,6 +19,8 @@ final class ArticlesTableViewController: UITableViewController {
     var fetchResultsController: NSFetchedResultsController<Entry>!
     var mode: Setting.RetrieveMode = Setting.getDefaultMode()
 
+    @IBOutlet var progressView: UIProgressView!
+
     @IBAction func disconnect(segue: UIStoryboardSegue) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
@@ -62,6 +64,7 @@ final class ArticlesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        progressView.isHidden = true
         articleSync.initSession()
         handleRefresh()
 
@@ -103,7 +106,17 @@ final class ArticlesTableViewController: UITableViewController {
             refreshControl?.endRefreshing()
         }
         articleSync.sync { state in
-            if state == .error {
+            switch state {
+            case .running:
+                DispatchQueue.main.async {
+                    self.progressView.isHidden = false
+                    self.progressView.progress = Float(self.articleSync.pageCompleted / self.articleSync.maxPage)
+                }
+            case .finished:
+                DispatchQueue.main.async {
+                    self.progressView.isHidden = true
+                }
+            case .error:
                 self.authError()
             }
         }

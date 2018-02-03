@@ -25,6 +25,8 @@ final class ArticleSync {
 
     var wallabagApi: WallabagApi?
     var state: State = .finished
+    var pageCompleted: Int = 1
+    var maxPage: Int = 1
 
     private init() {}
 
@@ -51,6 +53,7 @@ final class ArticleSync {
             switch result {
             case .success(let collection):
                 self.handle(result: collection.items)
+                self.maxPage = collection.last
                 completion(.running)
 
                 for page in 2...collection.last {
@@ -58,6 +61,7 @@ final class ArticleSync {
 
                     let syncOperation = SyncOperation(articleSync: self, page: page)
                     syncOperation.completionBlock = {
+                        self.pageCompleted += 1
                         completion(.running)
                         self.group.leave()
                     }
@@ -77,6 +81,7 @@ final class ArticleSync {
             }
             CoreData.saveContext()
             self.state = .finished
+            self.pageCompleted = 1
             completion(.finished)
         }
     }
