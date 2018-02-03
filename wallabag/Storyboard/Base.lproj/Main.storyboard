@@ -506,7 +506,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
                     <connections>
-                        <outlet property="add" destination="3Vd-Vr-Rri" id="FI4-CG-JYV"/>
                         <segue destination="dap-gp-nIP" kind="unwind" identifier="authError" unwindAction="authErrorWithSegue:" id="8wT-4a-Gfb"/>
                     </connections>
                 </tableViewController>

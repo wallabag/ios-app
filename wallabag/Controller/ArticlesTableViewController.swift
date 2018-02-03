@@ -19,8 +19,6 @@ final class ArticlesTableViewController: UITableViewController {
     var fetchResultsController: NSFetchedResultsController<Entry>!
     var mode: Setting.RetrieveMode = Setting.getDefaultMode()
 
-    @IBOutlet weak var add: UIBarButtonItem!
-
     @IBAction func disconnect(segue: UIStoryboardSegue) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
