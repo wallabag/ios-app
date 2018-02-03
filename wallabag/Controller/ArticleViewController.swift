@@ -15,7 +15,6 @@ final class ArticleViewController: UIViewController {
 
     lazy var speechSynthetizer: AVSpeechSynthesizer = AVSpeechSynthesizer()
 
-    var update: Bool = true
     var entry: Entry! {
         didSet {
             updateUi()
@@ -60,23 +59,21 @@ final class ArticleViewController: UIViewController {
     }
 
     @IBAction func shareMenu(_ sender: UIBarButtonItem) {
-        let activity = TUSafariActivity()
-        let shareController = UIActivityViewController(activityItems: [URL(string: entry.url!) as Any], applicationActivities: [activity])
+        let shareController = UIActivityViewController(activityItems: [URL(string: entry.url!) as Any], applicationActivities: [TUSafariActivity()])
         shareController.excludedActivityTypes = [.airDrop, .addToReadingList, .copyToPasteboard]
-
         shareController.popoverPresentationController?.barButtonItem = sender
 
         present(shareController, animated: true)
     }
 
     @IBAction func deleteArticle(_ sender: UIBarButtonItem) {
-        let alert = UIAlertController(title: "Delete", message: "Are you sure?", preferredStyle: .actionSheet)
-        let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { _ in
+        let alert = UIAlertController(title: "Delete".localized, message: "Are you sure?".localized, preferredStyle: .alert)
+        let deleteAction = UIAlertAction(title: "Delete".localized, style: .destructive, handler: { _ in
             self.deleteHandler?(self.entry)
             _ = self.navigationController?.popToRootViewController(animated: true)
         })
         alert.addAction(deleteAction)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel))
         alert.popoverPresentationController?.barButtonItem = sender
 
         present(alert, animated: true)

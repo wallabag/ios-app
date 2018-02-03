@@ -9,6 +9,7 @@
 //Common
 "Error" = "Erreur";
 "Cancel" = "Annuler";
+"Are you sure?" = "Etes vous sûr?";
 
 //ArticleTableViewCell
 "Reading time %@" = "Temps de lecture %@";
