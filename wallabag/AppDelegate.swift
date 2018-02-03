@@ -77,11 +77,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Swift.Void) {
         if Setting.isWallabagConfigured() {
-            ArticleSync.sharedInstance.sync {
-
+            ArticleSync.sharedInstance.sync { state in
+                if state == .finished {
+                    CoreData.saveContext()
+                    self.updateBadge()
+                    completionHandler(.newData)
+                }
             }
-            updateBadge()
-            completionHandler(.newData)
         } else {
             completionHandler(.noData)
         }
@@ -89,7 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func requestBadge() {
         if Setting.isBadgeEnable() {
-            UIApplication.shared.setMinimumBackgroundFetchInterval(3600.0)
+            UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
             let settings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
             UIApplication.shared.registerUserNotificationSettings(settings)
         }
@@ -113,7 +115,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         default: break
         }
 
-        UIApplication.shared.applicationIconBadgeNumber = ((CoreData.fetch(request) as? [Entry]) ?? []).count
+        DispatchQueue.main.async {
+            UIApplication.shared.applicationIconBadgeNumber = ((CoreData.fetch(request) as? [Entry]) ?? []).count
+        }
     }
 
     private func setupQuickAction() {

@@ -11,17 +11,20 @@ import WallabagKit
 import CoreData
 
 final class ArticleSync {
+    enum State {
+        case finished, running, error
+    }
     private let syncQueue = DispatchQueue(label: "fr.district-web.wallabag.articleSyncQueue", qos: .background)
     private let operationQueue = OperationQueue()
     private let group = DispatchGroup()
     private let spotlightObserver = SpotlightObserver()
 
     private var entries: [Entry] = []
-    private var isSyncing: Bool = false
 
     static let sharedInstance: ArticleSync = ArticleSync()
 
     var wallabagApi: WallabagApi?
+    var state: State = .finished
 
     private init() {}
 
@@ -33,11 +36,12 @@ final class ArticleSync {
                     clientSecret: Setting.getClientSecret()!)
     }
 
-    func sync(completion: @escaping () -> Void) {
-        if isSyncing {
+    func sync(completion: @escaping (State) -> Void) {
+        if state == .running {
             return
         }
-        isSyncing = true
+        state = .running
+
         entries = (CoreData.fetch(Entry.fetchEntryRequest()) as? [Entry]) ?? []
         let totalEntries = entries.count
 
@@ -47,19 +51,21 @@ final class ArticleSync {
             switch result {
             case .success(let collection):
                 self.handle(result: collection.items)
+                completion(.running)
 
                 for page in 2...collection.last {
                     self.group.enter()
 
                     let syncOperation = SyncOperation(articleSync: self, page: page)
                     syncOperation.completionBlock = {
+                        completion(.running)
                         self.group.leave()
                     }
                     self.operationQueue.addOperation(syncOperation)
                 }
             case .error(let error):
                 if error == .invalidAuth {
-                    completion()
+                    completion(.error)
                 }
             }
             self.group.leave()
@@ -70,7 +76,8 @@ final class ArticleSync {
                self.purge()
             }
             CoreData.saveContext()
-            self.isSyncing = false
+            self.state = .finished
+            completion(.finished)
         }
     }
 

@@ -105,8 +105,10 @@ final class ArticlesTableViewController: UITableViewController {
         if refreshControl?.isRefreshing ?? false {
             refreshControl?.endRefreshing()
         }
-        articleSync.sync {
-            self.authError()
+        articleSync.sync { state in
+            if state == .error {
+                self.authError()
+            }
         }
     }
 
