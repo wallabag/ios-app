@@ -10,6 +10,7 @@
 "Error" = "Erreur";
 "Cancel" = "Annuler";
 "Are you sure?" = "Etes vous sûr?";
+"Authentication error" = "Erreur d'authentification";
 
 //ArticleTableViewCell
 "Reading time %@" = "Temps de lecture %@";

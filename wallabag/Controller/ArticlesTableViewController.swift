@@ -90,8 +90,8 @@ final class ArticlesTableViewController: UITableViewController {
 
     private func authError() {
         Setting.set(wallabagConfigured: false)
-        let alert = UIAlertController(title: "Error", message: "Authentification error", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .destructive) { _ in
+        let alert = UIAlertController(title: "Error".localized, message: "Authentication error".localized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok".localized, style: .destructive) { _ in
             let homeController = self.storyboard?.instantiateInitialViewController()
             self.present(homeController!, animated: false)
         })
