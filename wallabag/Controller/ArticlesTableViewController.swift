@@ -19,7 +19,6 @@ final class ArticlesTableViewController: UITableViewController {
     var fetchResultsController: NSFetchedResultsController<Entry>!
     var mode: Setting.RetrieveMode = Setting.getDefaultMode()
 
-    @IBOutlet weak var menu: UIBarButtonItem!
     @IBOutlet weak var add: UIBarButtonItem!
 
     @IBAction func disconnect(segue: UIStoryboardSegue) {
