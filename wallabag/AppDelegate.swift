@@ -56,18 +56,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return false
     }
 
-    func applicationWillResignActive(_ application: UIApplication) {
-    }
-
     func applicationDidEnterBackground(_ application: UIApplication) {
         updateBadge()
         CoreData.saveContext()
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
