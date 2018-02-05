@@ -595,6 +595,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="contentWeb" destination="vxC-9m-osy" id="hEI-YH-oMy"/>
+                        <outlet property="deleteButton" destination="IC0-DD-8KU" id="Kct-QB-Efq"/>
                         <outlet property="readButton" destination="X3k-oF-ZXC" id="hnK-8N-UcN"/>
                         <outlet property="speechButton" destination="3vd-F9-MfW" id="qky-Bl-1uV"/>
                         <outlet property="starButton" destination="VcU-fa-V5f" id="YqQ-L0-xvZ"/>

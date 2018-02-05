@@ -30,6 +30,7 @@ final class ArticleViewController: UIViewController {
     @IBOutlet weak var readButton: UIBarButtonItem!
     @IBOutlet weak var starButton: UIBarButtonItem!
     @IBOutlet weak var speechButton: UIBarButtonItem!
+    @IBOutlet weak var deleteButton: UIBarButtonItem!
 
     @IBAction func add(_ sender: Any) {
         addHandler?()
@@ -83,6 +84,7 @@ final class ArticleViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = entry.title
         updateUi()
+        setupAccessibilityLabel()
         loadArticleContent()
         contentWeb.scrollView.delegate = self
         contentWeb.backgroundColor = ThemeManager.manager.getBackgroundColor()
@@ -133,5 +135,14 @@ extension ArticleViewController: UIWebViewDelegate {
 extension ArticleViewController: UIScrollViewDelegate {
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
         entry.screen_position = Float(scrollView.contentOffset.y)
+    }
+}
+
+extension ArticleViewController {
+    private func setupAccessibilityLabel() {
+        readButton.accessibilityLabel = "Read".localized
+        starButton.accessibilityLabel = "Star".localized
+        speechButton.accessibilityLabel = "Speech".localized
+        deleteButton.accessibilityLabel = "Delete".localized
     }
 }
