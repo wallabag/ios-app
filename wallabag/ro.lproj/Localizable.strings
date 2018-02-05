@@ -9,6 +9,7 @@
 //Common
 "Error" = "Eroare";
 "Cancel" = "Cancel";
+"Disconnect" = "Deconectare";
 
 //ArticleTableViewCell
 "Reading time %@" = "Timp de lectură %@";

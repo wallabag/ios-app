@@ -25,8 +25,16 @@ final class ArticlesTableViewController: UITableViewController {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
-        appDelegate.resetApplication()
-        appDelegate.window?.rootViewController = appDelegate.window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "home")
+        let alert = UIAlertController(title: "Disconnect".localized, message: "Are you sure?".localized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Disconnect".localized, style: .destructive) { _ in
+            appDelegate.resetApplication()
+            appDelegate.window?.rootViewController = appDelegate.window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "home")
+
+        })
+        alert.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel))
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+            appDelegate.window?.rootViewController?.present(alert, animated: false)
+        })
     }
 
     @IBAction func filterList(segue: UIStoryboardSegue) {

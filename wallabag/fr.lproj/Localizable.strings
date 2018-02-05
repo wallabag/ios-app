@@ -11,6 +11,7 @@
 "Cancel" = "Annuler";
 "Are you sure?" = "Etes vous sûr?";
 "Authentication error" = "Erreur d'authentification";
+"Disconnect" = "Déconnecter";
 
 //ArticleTableViewCell
 "Reading time %@" = "Temps de lecture %@";
