@@ -13,6 +13,7 @@ final class ClientIdViewController: UIViewController {
 
     @IBOutlet weak var clientId: UITextField!
     @IBOutlet weak var clientSecret: UITextField!
+    @IBOutlet weak var helpTextView: UITextView!
 
     @IBAction func openMyInstance(_ sender: Any) {
         UIApplication.shared.openURL(URL(string: Setting.getHost()! + "/developer")!)
@@ -21,6 +22,7 @@ final class ClientIdViewController: UIViewController {
     override func viewDidLoad() {
         clientId.text = Setting.getClientId()
         clientSecret.text = Setting.getClientSecret()
+        helpTextView.text = "Well, now the client_id and client_secret. This token are secret and can be found in your developer page, And create a new client or use an already existing token".localized
     }
 
     // MARK: - Navigation

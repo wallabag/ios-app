@@ -30,6 +30,9 @@
 "Starred articles" = "Articole favorite";
 "Unread articles" = "Articole necitite";
 
+//ClientIdViewController
+"Well, now the client_id and client_secret. This token are secret and can be found in your developer page, And create a new client or use an already existing token" = "Acum client_id-ul și client_secret-ul.\n\nAceste token-uri sunt secrete și se pot găsi în pagina ta de developer, Poți crea un nou client sau folosi un token existent";
+
 //ServerViewController
 "Whoops looks like something went wrong. Check the url, don't forget http or https" = "Uuups, se pare că ceva nu a funcționat. Verifică url-ul, nu uita http sau https";
 

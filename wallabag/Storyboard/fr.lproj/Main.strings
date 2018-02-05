@@ -20,9 +20,6 @@
 /* Class = "UIButton"; normalTitle = "Open my developer page"; ObjectID = "AM9-CO-l8h"; */
 "AM9-CO-l8h.normalTitle" = "Ouvrir ma page de développeur";
 
-/* Class = "UITextView"; text = "Well, now the client_id and client_secret.\n\nThis token are secret and can be found in your developer page, And create a new client or use an already existing token"; ObjectID = "Bkh-cz-HgQ"; */
-"Bkh-cz-HgQ.text" = "Bien, maintenant le client_id et client_secret.\n\nCes jetons sont secrets et peuvent être trouvées dans votre page développeur, Vous pouvez créer un nouveau ou utiliser un existant";
-
 /* Class = "UITextField"; placeholder = "Username"; ObjectID = "C1D-rB-gOJ"; */
 "C1D-rB-gOJ.placeholder" = "Login";
 

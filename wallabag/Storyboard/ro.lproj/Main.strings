@@ -23,9 +23,6 @@
 /* Class = "UIButton"; normalTitle = "Open my developer page"; ObjectID = "AM9-CO-l8h"; */
 "AM9-CO-l8h.normalTitle" = "Deschide-mi pagina de developer";
 
-/* Class = "UITextView"; text = "Well, now the client_id and client_secret.\n\nThis token are secret and can be found in your developer page, And create a new client or use an already existing token"; ObjectID = "Bkh-cz-HgQ"; */
-"Bkh-cz-HgQ.text" = "Acum client_id-ul și client_secret-ul.\n\nAceste token-uri sunt secrete și se pot găsi în pagina ta de developer, Poți crea un nou client sau folosi un token existent";
-
 /* Class = "UITextField"; placeholder = "Username"; ObjectID = "C1D-rB-gOJ"; */
 "C1D-rB-gOJ.placeholder" = "Username";
 

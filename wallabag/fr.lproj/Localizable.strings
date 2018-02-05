@@ -32,6 +32,9 @@
 "Starred articles" = "Articles favoris";
 "Unread articles" = "Articles non lus";
 
+//ClientIdViewController
+"Well, now the client_id and client_secret. This token are secret and can be found in your developer page, And create a new client or use an already existing token" = "Bien, maintenant le clientId et clientSecret.\n\nCes jetons sont secrets et peuvent être trouvées dans votre page développeur, Vous pouvez créer un nouveau jeton ou utiliser un existant";
+
 //ServerViewController
 "Whoops looks like something went wrong. Check the url, don't forget http or https" = "Oops, on dirait qu'il y a eu un problème. Vérifiez l'url, n'oubliez pas http ou https";
 

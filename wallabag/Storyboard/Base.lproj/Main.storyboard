@@ -721,20 +721,16 @@
                                     <segue destination="kUA-VQ-mVR" kind="show" id="GaS-kf-QlA"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bkh-cz-HgQ">
-                                <rect key="frame" x="16" y="235" width="343" height="100"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bkh-cz-HgQ">
+                                <rect key="frame" x="16" y="235" width="343" height="97.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="dHB-wO-nIM"/>
-                                </constraints>
                                 <string key="text">Well, now the client_id and client_secret.
-
 This token are secret and can be found in your developer page, And create a new client or use an already existing token</string>
-                                <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="14"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AM9-CO-l8h">
-                                <rect key="frame" x="91" y="343" width="193" height="29"/>
+                                <rect key="frame" x="91" y="340.5" width="193" height="29"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <state key="normal" title="Open my developer page"/>
                                 <connections>
@@ -766,6 +762,7 @@ This token are secret and can be found in your developer page, And create a new 
                     <connections>
                         <outlet property="clientId" destination="dsM-5G-HXR" id="hz2-AJ-9dh"/>
                         <outlet property="clientSecret" destination="iBk-4L-sqH" id="W9C-0n-Ppo"/>
+                        <outlet property="helpTextView" destination="Bkh-cz-HgQ" id="ARU-su-Hsq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckr-j6-LHz" userLabel="First Responder" sceneMemberID="firstResponder"/>
