@@ -110,7 +110,7 @@ class Setting {
 
     static func getTheme() -> String {
         guard let value = standard.string(forKey: Const.articleTheme.rawValue) else {
-            return "white"
+            return White().name
         }
 
         return value
