@@ -63,7 +63,6 @@ final class ArticlesTableViewController: UITableViewController {
                 } else {
                     NSLog("article not found")
                 }
-
             } catch {
 
             }
@@ -118,7 +117,7 @@ final class ArticlesTableViewController: UITableViewController {
             case .running:
                 DispatchQueue.main.async {
                     self.progressView.isHidden = false
-                    self.progressView.progress = Float(self.articleSync.pageCompleted / self.articleSync.maxPage)
+                    self.progressView.progress = Float(self.articleSync.pageCompleted) / Float(self.articleSync.maxPage)
                 }
             case .finished:
                 DispatchQueue.main.async {
