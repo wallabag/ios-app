@@ -31,7 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSLog("Wallabag api is configured")
             window?.rootViewController = window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "articlesNavigation")
             requestBadge()
-            updateBadge()
         }
 
         NetworkActivityIndicatorManager.shared.isEnabled = true

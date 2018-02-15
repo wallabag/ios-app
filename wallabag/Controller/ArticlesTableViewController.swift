@@ -76,6 +76,7 @@ final class ArticlesTableViewController: UITableViewController {
         handleRefresh()
 
         fetchResultsController = fetchResultsControllerRequest(mode: mode)
+
         try? fetchResultsController.performFetch()
 
         refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
@@ -132,6 +133,7 @@ final class ArticlesTableViewController: UITableViewController {
     func fetchResultsControllerRequest(mode: Setting.RetrieveMode, textSearch: String? = nil, id: Int? = nil) ->  NSFetchedResultsController<Entry> {
         let fetchRequest = NSFetchRequest<Entry>(entityName: "Entry")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created_at", ascending: false)]
+        fetchRequest.fetchBatchSize = 100
         if let id = id {
             fetchRequest.predicate = NSPredicate(format: "id == %@", id as NSNumber)
         } else if nil == textSearch || "" == textSearch {
@@ -158,7 +160,6 @@ final class ArticlesTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "articleIdentifier", for: indexPath) as? ArticleTableViewCell else {
             return UITableViewCell()
         }
-
         cell.present(fetchResultsController.object(at: indexPath))
         return cell
     }
