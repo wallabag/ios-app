@@ -10,6 +10,7 @@ import UIKit
 import WallabagKit
 import AlamofireNetworkActivityIndicator
 import CoreSpotlight
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -79,8 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func requestBadge() {
         if Setting.isBadgeEnable() {
             UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
-            let settings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-            UIApplication.shared.registerUserNotificationSettings(settings)
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in }
         }
     }
 
