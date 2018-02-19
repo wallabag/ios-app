@@ -44,7 +44,7 @@ final class ArticleSync {
         }
         state = .running
 
-        entries = (CoreData.fetch(Entry.fetchEntryRequest()) as? [Entry]) ?? []
+        entries = (CoreData.shared.fetch(Entry.fetchEntryRequest()) as? [Entry]) ?? []
         let totalEntries = entries.count
 
         group.enter()
@@ -79,7 +79,6 @@ final class ArticleSync {
             if self.entries.count != totalEntries {
                self.purge()
             }
-            CoreData.saveContext()
             self.state = .finished
             self.pageCompleted = 1
             completion(.finished)
@@ -107,10 +106,14 @@ final class ArticleSync {
     }
 
     func insert(_ wallabagEntry: WallabagEntry) {
-        let entityDescription = NSEntityDescription.entity(forEntityName: "Entry", in: CoreData.context)!
-        let entry = Entry.init(entity: entityDescription, insertInto: CoreData.context)
-        NSLog("Insert article \(wallabagEntry.id)")
-        entry.hydrate(from: wallabagEntry)
+        CoreData.shared.performBackgroundTask { context in
+            let entry = Entry(context: context)
+            NSLog("Insert article \(wallabagEntry.id)")
+            entry.hydrate(from: wallabagEntry)
+
+            try? context.save()
+
+        }
     }
 
     private func update(entry: Entry, from article: WallabagEntry) {
@@ -152,7 +155,7 @@ final class ArticleSync {
             wallabagApi?.entry(delete: Int(entry.id)) { _ in
             }
         }
-        CoreData.delete(entry)
+        //CoreData.delete(entry)
     }
 
     func add(url: URL) {

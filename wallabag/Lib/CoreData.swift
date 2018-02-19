@@ -9,100 +9,50 @@
 import Foundation
 import CoreData
 
-final class CoreData: NSObject {
+final class CoreData {
 
     static var containerName: String?
+    static let shared: CoreData = CoreData()
+    var errorHandler: (Error) -> Void = {_ in }
 
-    @available(iOS 10.0, *)
-    static var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: containerName!)
-        container.loadPersistentStores { _, error in
-            if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+    lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: CoreData.containerName!)
+        container.loadPersistentStores(completionHandler: { [weak self](storeDescription, error) in
+            if let error = error {
+                NSLog("CoreData error \(error), \(error._userInfo)")
+                self?.errorHandler(error)
             }
-        }
+        })
+        container.viewContext.automaticallyMergesChangesFromParent = true
+        container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
         return container
     }()
 
-    @available(iOS 9.0, *)
-    private static var managedObjectContext: NSManagedObjectContext = {
-        let coordinator = persistentStoreCoordinator
-        var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        managedObjectContext.persistentStoreCoordinator = coordinator
-        return managedObjectContext
+    lazy var viewContext: NSManagedObjectContext = {
+        return self.persistentContainer.viewContext
     }()
 
-    @available(iOS 9.0, *)
-    static var applicationDocumentsDirectory: URL = {
-        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return urls[urls.count - 1]
+    lazy var backgroundContext: NSManagedObjectContext = {
+        return self.persistentContainer.newBackgroundContext()
     }()
 
-    @available(iOS 9.0, *)
-    static var managedObjectModel: NSManagedObjectModel = {
-        let modelURL = Bundle.main.url(forResource: containerName!, withExtension: "momd")!
-        return NSManagedObjectModel(contentsOf: modelURL)!
-    }()
-
-    @available(iOS 9.0, *)
-    static var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
-        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
-        let url = applicationDocumentsDirectory.appendingPathComponent(containerName! + ".sqlite")
-        let options = [NSMigratePersistentStoresAutomaticallyOption: true, NSInferMappingModelAutomaticallyOption: true]
-        var failureReason = "There was an error creating or loading the application's saved data."
-        do {
-            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: options)
-        } catch {
-            var dict = [String: AnyObject]()
-            dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data" as AnyObject?
-            dict[NSLocalizedFailureReasonErrorKey] = failureReason as AnyObject?
-
-            dict[NSUnderlyingErrorKey] = error as NSError
-            let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
-            NSLog("Unresolved error \(wrappedError), \(wrappedError.userInfo)")
-            abort()
-        }
-
-        return coordinator
-    }()
-
-    static var context: NSManagedObjectContext {
-        if #available(iOS 10.0, *) {
-            return persistentContainer.viewContext
-        } else {
-            return managedObjectContext
+    func performForegroundTask(_ block: @escaping (NSManagedObjectContext) -> Void) {
+        self.viewContext.perform {
+            block(self.viewContext)
         }
     }
 
-    static func save() throws {
-        try context.save()
+    func performBackgroundTask(_ block: @escaping (NSManagedObjectContext) -> Void) {
+        self.persistentContainer.performBackgroundTask(block)
     }
 
-    static func fetch(_ request: NSPersistentStoreRequest) -> [NSManagedObject] {
-        let result = try! context.fetch(request as! NSFetchRequest<NSFetchRequestResult>)
+    func fetch(_ request: NSPersistentStoreRequest) -> [NSManagedObject] {
+        let result = try! viewContext.fetch(request as! NSFetchRequest<NSFetchRequestResult>)
         return result as! [NSManagedObject]
     }
 
-    static func findAll(_ entity: String) -> [NSManagedObject] {
+    func deleteAll(_ entity: String) {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
-        return fetch(request)
-    }
-
-    static func delete(_ object: NSManagedObject) {
-        context.delete(object)
-    }
-
-    static func deleteAll(_ entity: String) {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
-        try! context.execute(NSBatchDeleteRequest(fetchRequest: request))
-    }
-
-    static func saveContext() {
-        do {
-            try save()
-        } catch {
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-        }
+        try! viewContext.execute(NSBatchDeleteRequest(fetchRequest: request))
     }
 }

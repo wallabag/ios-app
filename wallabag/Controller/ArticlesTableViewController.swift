@@ -131,6 +131,7 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     func fetchResultsControllerRequest(mode: Setting.RetrieveMode, textSearch: String? = nil, id: Int? = nil) ->  NSFetchedResultsController<Entry> {
+
         let fetchRequest = NSFetchRequest<Entry>(entityName: "Entry")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created_at", ascending: false)]
         fetchRequest.fetchBatchSize = 100
@@ -144,7 +145,7 @@ final class ArticlesTableViewController: UITableViewController {
             fetchRequest.predicate = NSCompoundPredicate(orPredicateWithSubpredicates: [predicateTitle, predicateContent])
         }
 
-        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreData.context, sectionNameKeyPath: nil, cacheName: nil)
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreData.shared.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultsController.delegate = self
 
         return fetchedResultsController

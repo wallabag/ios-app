@@ -57,19 +57,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         updateBadge()
-        CoreData.saveContext()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
         updateBadge()
-        CoreData.saveContext()
     }
 
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Swift.Void) {
         if Setting.isWallabagConfigured() {
             ArticleSync.sharedInstance.sync { state in
                 if state == .finished {
-                    CoreData.saveContext()
                     self.updateBadge()
                     completionHandler(.newData)
                 }
@@ -98,7 +95,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         request.predicate = Setting.getDefaultMode().predicate()
 
         DispatchQueue.main.async {
-            UIApplication.shared.applicationIconBadgeNumber = ((CoreData.fetch(request) as? [Entry]) ?? []).count
+            UIApplication.shared.applicationIconBadgeNumber = ((CoreData.shared.fetch(request) as? [Entry]) ?? []).count
         }
     }
 
@@ -129,6 +126,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func resetApplication() {
         Setting.purge()
-        CoreData.deleteAll("Entry")
+        CoreData.shared.deleteAll("Entry")
     }
 }
