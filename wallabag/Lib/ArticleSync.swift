@@ -44,7 +44,7 @@ final class ArticleSync {
         }
         state = .running
 
-        entries = (CoreData.shared.fetch(Entry.fetchEntryRequest()) as? [Entry]) ?? []
+        entries = (try? CoreData.shared.backgroundContext.fetch(Entry.fetchEntryRequest())) ?? []
         let totalEntries = entries.count
 
         group.enter()

@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if Setting.isWallabagConfigured() {
             NSLog("Wallabag api is configured")
             window?.rootViewController = window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "articlesNavigation")
+            UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
             requestBadge()
         }
 
@@ -79,7 +80,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func requestBadge() {
         if Setting.isBadgeEnable() {
-            UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in }
         }
     }
