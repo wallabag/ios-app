@@ -46,8 +46,11 @@ final class CoreData {
     }
 
     func fetch<T>(_ request: NSFetchRequest<T>) -> [T] {
-        let result = try! viewContext.fetch(request)
-        return result
+        return (try? viewContext.fetch(request)) ?? []
+    }
+
+    func backgroundFetch<T>(_ request: NSFetchRequest<T>) -> [T] {
+        return (try? backgroundContext.fetch(request)) ?? []
     }
 
     func deleteAll(_ entity: String) {
