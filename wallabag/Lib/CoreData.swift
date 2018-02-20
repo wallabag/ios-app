@@ -19,7 +19,6 @@ final class CoreData {
         let container = NSPersistentContainer(name: CoreData.containerName!)
         container.loadPersistentStores(completionHandler: { [weak self](storeDescription, error) in
             if let error = error {
-                NSLog("CoreData error \(error), \(error._userInfo)")
                 self?.errorHandler(error)
             }
         })
@@ -46,9 +45,9 @@ final class CoreData {
         self.persistentContainer.performBackgroundTask(block)
     }
 
-    func fetch(_ request: NSPersistentStoreRequest) -> [NSManagedObject] {
-        let result = try! viewContext.fetch(request as! NSFetchRequest<NSFetchRequestResult>)
-        return result as! [NSManagedObject]
+    func fetch<T>(_ request: NSFetchRequest<T>) -> [T] {
+        let result = try! viewContext.fetch(request)
+        return result
     }
 
     func deleteAll(_ entity: String) {

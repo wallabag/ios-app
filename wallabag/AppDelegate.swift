@@ -46,15 +46,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
-        if Setting.isWallabagConfigured() {
-            guard let mainController = window?.rootViewController! as? UINavigationController,
-                let articlesTable = mainController.viewControllers.first as? ArticlesTableViewController else {
-                    return false
-            }
-            articlesTable.restoreUserActivityState(userActivity)
-            return true
+        guard Setting.isWallabagConfigured(),
+            let mainController = window?.rootViewController! as? UINavigationController,
+            let articlesTable = mainController.viewControllers.first as? ArticlesTableViewController else {
+                return false
         }
-        return false
+        articlesTable.restoreUserActivityState(userActivity)
+        return true
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -95,7 +93,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         request.predicate = Setting.getDefaultMode().predicate()
 
         DispatchQueue.main.async {
-            UIApplication.shared.applicationIconBadgeNumber = ((CoreData.shared.fetch(request) as? [Entry]) ?? []).count
+            UIApplication.shared.applicationIconBadgeNumber = CoreData.shared.fetch(request).count
         }
     }
 
