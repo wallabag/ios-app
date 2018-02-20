@@ -73,7 +73,6 @@ final class ArticlesTableViewController: UITableViewController {
         super.viewDidLoad()
         progressView.isHidden = true
         articleSync.initSession()
-        handleRefresh()
 
         fetchResultsController = fetchResultsControllerRequest(mode: mode)
 
@@ -93,6 +92,9 @@ final class ArticlesTableViewController: UITableViewController {
         }
 
         reloadUI()
+        DispatchQueue.global(qos: .background).async {
+            self.handleRefresh()
+        }
     }
 
     override func didMove(toParentViewController parent: UIViewController?) {
@@ -110,9 +112,12 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     @objc func handleRefresh() {
-        if refreshControl?.isRefreshing ?? false {
-            refreshControl?.endRefreshing()
+        DispatchQueue.main.async {
+            if self.refreshControl?.isRefreshing ?? false {
+                self.refreshControl?.endRefreshing()
+            }
         }
+
         articleSync.sync { state in
             switch state {
             case .running:
@@ -132,9 +137,9 @@ final class ArticlesTableViewController: UITableViewController {
 
     func fetchResultsControllerRequest(mode: Setting.RetrieveMode, textSearch: String? = nil, id: Int? = nil) ->  NSFetchedResultsController<Entry> {
 
-        let fetchRequest = NSFetchRequest<Entry>(entityName: "Entry")
+        let fetchRequest = Entry.fetchEntryRequest()
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "created_at", ascending: false)]
-        fetchRequest.fetchBatchSize = 100
+        fetchRequest.fetchBatchSize = 20
         if let id = id {
             fetchRequest.predicate = NSPredicate(format: "id == %@", id as NSNumber)
         } else if nil == textSearch || "" == textSearch {
