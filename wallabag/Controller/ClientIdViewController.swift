@@ -16,7 +16,7 @@ final class ClientIdViewController: UIViewController {
     @IBOutlet weak var helpTextView: UITextView!
 
     @IBAction func openMyInstance(_ sender: Any) {
-        UIApplication.shared.openURL(URL(string: Setting.getHost()! + "/developer")!)
+        UIApplication.shared.open(URL(string: Setting.getHost()! + "/developer")!, options: [:], completionHandler: nil)
     }
 
     override func viewDidLoad() {
