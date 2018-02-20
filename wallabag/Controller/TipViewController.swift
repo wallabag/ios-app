@@ -57,10 +57,10 @@ class TipViewController: UIViewController, SKProductsRequestDelegate, SKPaymentT
 
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         NSLog("Request product")
-        if response.products.count != 0 {
-            if let _product = response.products.first {
+        if response.products.count != 0,
+            let _product = response.products.first {
                 product = _product
-            }
+                tipButton.isEnabled = true
         } else {
             NSLog("There are no products.")
             NSLog(response.invalidProductIdentifiers.description)
@@ -75,6 +75,7 @@ class TipViewController: UIViewController, SKProductsRequestDelegate, SKPaymentT
         tipContent.textColor = ThemeManager.manager.getColor()
 
         SKPaymentQueue.default().add(self)
+        tipButton.isEnabled = false
         requestProductInfo()
     }
 
