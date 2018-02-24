@@ -12,7 +12,7 @@ final class SpotlightObserver {
     private let spotlightQueue = DispatchQueue(label: "fr.district-web.wallabag.spotlightQueue", qos: .background)
 
     init() {
-        //NotificationCenter.default.addObserver(self, selector: #selector(objectDidChange), name: NSNotification.Name.NSManagedObjectContextObjectsDidChange, object: CoreData.context)
+        NotificationCenter.default.addObserver(self, selector: #selector(objectDidChange), name: NSNotification.Name.NSManagedObjectContextObjectsDidChange, object: CoreData.shared.viewContext)
     }
 
     @objc func objectDidChange(notification: Notification) {

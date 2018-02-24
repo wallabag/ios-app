@@ -53,7 +53,7 @@ class SyncOperation: Operation {
             state = .finished
         } else {
             state = .executing
-            articleSync.wallabagApi?.entry(parameters: ["page": page]) { result in
+            articleSync.wallabagApi?.entry(parameters: ["page": page, "order": "asc"]) { result in
                 switch result {
                 case .success(let collection):
                     self.articleSync.handle(result: collection.items)

@@ -75,7 +75,6 @@ final class ArticlesTableViewController: UITableViewController {
         articleSync.initSession()
 
         fetchResultsController = fetchResultsControllerRequest(mode: mode)
-
         try? fetchResultsController.performFetch()
 
         refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
@@ -286,7 +285,7 @@ extension ArticlesTableViewController: NSFetchedResultsControllerDelegate {
         switch type {
         case .insert:
             if let indexPath = newIndexPath {
-                tableView.insertRows(at: [indexPath], with: .fade)
+                tableView.insertRows(at: [indexPath], with: .none)
             }
         case .update:
             if let indexPath = indexPath, let cell = tableView.cellForRow(at: indexPath) as? ArticleTableViewCell {

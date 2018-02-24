@@ -15,10 +15,13 @@ final class ArticleSync {
         case finished, running, error
     }
     private let syncQueue = DispatchQueue(label: "fr.district-web.wallabag.articleSyncQueue", qos: .background)
-    private let operationQueue = OperationQueue()
+    private var operationQueue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.qualityOfService = .background
+        return queue
+    }()
     private let group = DispatchGroup()
     private let spotlightObserver = SpotlightObserver()
-
     private var entries: [Entry] = []
 
     static let sharedInstance: ArticleSync = ArticleSync()
@@ -31,11 +34,13 @@ final class ArticleSync {
     private init() {}
 
     func initSession() {
-        wallabagApi = WallabagApi(host: Setting.getHost()!,
-                    username: Setting.getUsername()!,
-                    password: Setting.getPassword(username: Setting.getUsername()!)!,
-                    clientId: Setting.getClientId()!,
-                    clientSecret: Setting.getClientSecret()!)
+        wallabagApi = WallabagApi(
+            host: Setting.getHost()!,
+            username: Setting.getUsername()!,
+            password: Setting.getPassword(username: Setting.getUsername()!)!,
+            clientId: Setting.getClientId()!,
+            clientSecret: Setting.getClientSecret()!
+        )
     }
 
     func sync(completion: @escaping (State) -> Void) {
@@ -44,12 +49,12 @@ final class ArticleSync {
         }
         state = .running
 
-        entries = CoreData.shared.backgroundFetch(Entry.fetchEntryRequest())
+        entries = CoreData.shared.fetch(Entry.fetchEntryRequest())
         let totalEntries = entries.count
 
         group.enter()
 
-        wallabagApi?.entry(parameters: ["page": 1]) { result in
+        wallabagApi?.entry(parameters: ["page": 1, "order": "asc"]) { result in
             switch result {
             case .success(let collection):
                 self.handle(result: collection.items)
@@ -63,7 +68,7 @@ final class ArticleSync {
                     syncOperation.completionBlock = {
                         self.pageCompleted += 1
                         completion(.running)
-                        self.group.leave()
+
                     }
                     self.operationQueue.addOperation(syncOperation)
                 }
@@ -72,12 +77,12 @@ final class ArticleSync {
                     completion(.error)
                 }
             }
-            self.group.leave()
+
         }
 
         group.notify(queue: syncQueue) {
             if self.entries.count != totalEntries {
-               self.purge()
+                self.purge()
             }
             self.state = .finished
             self.pageCompleted = 1
@@ -86,16 +91,20 @@ final class ArticleSync {
     }
 
     func handle(result: [WallabagEntry]) {
-        for wallabagEntry in result {
-            if let entry = entries.first(where: { Int($0.id) == wallabagEntry.id }) {
-                self.update(entry: entry, from: wallabagEntry)
-            } else {
-                self.insert(wallabagEntry)
-            }
+        CoreData.shared.performBackgroundTask { context in
+            for wallabagEntry in result {
+                if let entry = self.entries.first(where: { Int($0.id) == wallabagEntry.id }) {
+                    self.update(entry: entry, from: wallabagEntry)
+                } else {
+                    self.insert(wallabagEntry, context: context)
+                }
 
-            if let index = entries.index(where: { Int($0.id) == wallabagEntry.id }) {
-                entries.remove(at: index)
+                if let index = self.entries.index(where: { Int($0.id) == wallabagEntry.id }) {
+                    self.entries.remove(at: index)
+                }
             }
+            try? context.save()
+            self.group.leave()
         }
     }
 
@@ -105,15 +114,10 @@ final class ArticleSync {
         }
     }
 
-    func insert(_ wallabagEntry: WallabagEntry) {
-        CoreData.shared.performBackgroundTask { context in
-            let entry = Entry(context: context)
-            NSLog("Insert article \(wallabagEntry.id)")
-            entry.hydrate(from: wallabagEntry)
-
-            try? context.save()
-
-        }
+    func insert(_ wallabagEntry: WallabagEntry, context: NSManagedObjectContext) {
+        let entry = Entry(context: context)
+        NSLog("Insert article \(wallabagEntry.id)")
+        entry.hydrate(from: wallabagEntry)
     }
 
     private func update(entry: Entry, from article: WallabagEntry) {
@@ -155,14 +159,14 @@ final class ArticleSync {
             wallabagApi?.entry(delete: Int(entry.id)) { _ in
             }
         }
-        //CoreData.delete(entry)
+        CoreData.shared.delete(entry)
     }
 
     func add(url: URL) {
         wallabagApi?.entry(add: url) { result in
             switch result {
             case .success(let wallabagEntry):
-                self.insert(wallabagEntry)
+                self.insert(wallabagEntry, context: CoreData.shared.viewContext)
             case .error:
                 break
             }

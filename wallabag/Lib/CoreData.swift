@@ -23,7 +23,6 @@ final class CoreData {
             }
         })
         container.viewContext.automaticallyMergesChangesFromParent = true
-        container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
         return container
     }()
 
@@ -56,5 +55,9 @@ final class CoreData {
     func deleteAll(_ entity: String) {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
         try! viewContext.execute(NSBatchDeleteRequest(fetchRequest: request))
+    }
+
+    func delete(_ entity: NSManagedObject) {
+        viewContext.delete(entity)
     }
 }

@@ -56,11 +56,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
+        try? CoreData.shared.viewContext.save()
         updateBadge()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
+        try? CoreData.shared.viewContext.save()
         updateBadge()
+
     }
 
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Swift.Void) {
