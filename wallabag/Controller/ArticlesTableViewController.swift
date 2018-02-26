@@ -74,6 +74,8 @@ final class ArticlesTableViewController: UITableViewController {
         progressView.isHidden = true
         articleSync.initSession()
 
+        NotificationCenter.default.addObserver(self, selector: #selector(pasteBoardAction), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+
         fetchResultsController = fetchResultsControllerRequest(mode: mode)
         try? fetchResultsController.performFetch()
 
@@ -108,6 +110,21 @@ final class ArticlesTableViewController: UITableViewController {
             self.present(homeController!, animated: false)
         })
         present(alert, animated: true)
+    }
+
+    @objc func pasteBoardAction() {
+        let previousPasteBoardUrl = UserDefaults.standard.string(forKey: "previousPasteBoardUrl")
+        guard let pasteBoardUrl = UIPasteboard.general.url,
+            pasteBoardUrl.absoluteString != previousPasteBoardUrl else {
+            return
+        }
+        UserDefaults.standard.set(pasteBoardUrl.absoluteString, forKey: "previousPasteBoardUrl")
+        let alertController = UIAlertController(title: "PasteBoard", message: pasteBoardUrl.absoluteString, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Add", style: .default) { _ in
+            self.articleSync.add(url: pasteBoardUrl)
+        })
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .destructive))
+        present(alertController, animated: true)
     }
 
     @objc func handleRefresh() {
