@@ -10,6 +10,7 @@ target 'wallabag' do
     #pod 'WallabagKit'
     pod 'WallabagKit', :path => "../WallabagKit"
     pod 'SideMenu', '~> 3.1'
+    pod 'RealmSwift'
 
     target 'wallabagUITests' do
         inherit! :search_paths

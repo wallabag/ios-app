@@ -9,6 +9,7 @@
 import Foundation
 import WallabagKit
 import CoreData
+import RealmSwift
 
 final class ArticleSync {
     enum State {
@@ -21,8 +22,8 @@ final class ArticleSync {
         return queue
     }()
     private let group = DispatchGroup()
-    private let spotlightObserver = SpotlightObserver()
-    private var entries: [Entry] = []
+
+    let realm = try! Realm()
 
     static let sharedInstance: ArticleSync = ArticleSync()
 
@@ -30,6 +31,8 @@ final class ArticleSync {
     var state: State = .finished
     var pageCompleted: Int = 1
     var maxPage: Int = 1
+
+    var entriesSynced: [Int] = []
 
     private init() {}
 
@@ -49,9 +52,6 @@ final class ArticleSync {
         }
         state = .running
 
-        entries = CoreData.shared.fetch(Entry.fetchEntryRequest())
-        let totalEntries = entries.count
-
         group.enter()
 
         wallabagApi?.entry(parameters: ["page": 1, "order": "asc"]) { result in
@@ -68,7 +68,7 @@ final class ArticleSync {
                     syncOperation.completionBlock = {
                         self.pageCompleted += 1
                         completion(.running)
-
+                        self.group.leave()
                     }
                     self.operationQueue.addOperation(syncOperation)
                 }
@@ -77,57 +77,54 @@ final class ArticleSync {
                     completion(.error)
                 }
             }
-
+            self.group.leave()
         }
 
         group.notify(queue: syncQueue) {
-            if self.entries.count != totalEntries {
-                self.purge()
-            }
             self.state = .finished
             self.pageCompleted = 1
             completion(.finished)
+            self.purge()
         }
     }
 
     func handle(result: [WallabagEntry]) {
-        CoreData.shared.performBackgroundTask { context in
+        DispatchQueue.global(qos: .background).async {
+            let realm = try! Realm()
+
+            realm.beginWrite()
             for wallabagEntry in result {
-                if let entry = self.entries.first(where: { Int($0.id) == wallabagEntry.id }) {
+                self.entriesSynced.append(wallabagEntry.id)
+                if let entry = realm.object(ofType: Entry.self, forPrimaryKey: wallabagEntry.id) {
                     self.update(entry: entry, from: wallabagEntry)
                 } else {
-                    self.insert(wallabagEntry, context: context)
-                }
-
-                if let index = self.entries.index(where: { Int($0.id) == wallabagEntry.id }) {
-                    self.entries.remove(at: index)
+                    self.insert(wallabagEntry, realm)
                 }
             }
-            try? context.save()
-            self.group.leave()
+            try? realm.commitWrite()
         }
     }
 
     private func purge() {
-        for entry in entries {
-            delete(entry: entry, callServer: false)
+        let realmPurge = try! Realm()
+        try! realmPurge.write {
+            let entries = realmPurge.objects(Entry.self).filter("NOT (id IN %@)", entriesSynced)
+            realmPurge.delete(entries)
         }
     }
 
-    func insert(_ wallabagEntry: WallabagEntry, context: NSManagedObjectContext) {
-        let entry = Entry(context: context)
+    func insert(_ wallabagEntry: WallabagEntry, _ realm: Realm) {
+        let entry = Entry()
         NSLog("Insert article \(wallabagEntry.id)")
         entry.hydrate(from: wallabagEntry)
+        realm.add(entry)
+        spotLightIndex(entry)
     }
 
     private func update(entry: Entry, from article: WallabagEntry) {
-        guard let entryUpdatedAt = entry.value(forKey: "updated_at") as? Date else {
-            return
-        }
-
-        if entryUpdatedAt != article.updatedAt {
+        if entry.updatedAtDate != article.updatedAt {
             NSLog("Update article \(article.id)")
-            if article.updatedAt > entryUpdatedAt {
+            if article.updatedAt > entry.updatedAtDate {
                 NSLog("Update entry from server \(article.id)")
                 entry.hydrate(from: article)
             } else {
@@ -137,17 +134,24 @@ final class ArticleSync {
         }
     }
 
+    /**
+     * Push data to server
+     */
     func update(entry: Entry) {
-        // push data to server
-        entry.updated_at = NSDate()
+        let entryRef = ThreadSafeReference(to: entry)
         wallabagApi?.entry(update: Int(entry.id), parameters: [
-            "archive": (entry.is_archived).hashValue,
-            "starred": (entry.is_starred).hashValue
+            "archive": (entry.isArchived).hashValue,
+            "starred": (entry.isStarred).hashValue
             ]
         ) { results in
             switch results {
             case .success(let wallabagEntry):
-                entry.setValue(wallabagEntry.updatedAt, forKey: "updated_at")
+                let realm = try! Realm()
+                let entry = realm.resolve(entryRef)!
+                try? realm.write {
+                    entry.setValue(wallabagEntry.updatedAt, forKey: "updatedAt")
+                }
+                break
             case .error: break
             }
         }
@@ -159,14 +163,19 @@ final class ArticleSync {
             wallabagApi?.entry(delete: Int(entry.id)) { _ in
             }
         }
-        CoreData.shared.delete(entry)
+        try! realm.write {
+            spotLightDelete(entry)
+            realm.delete(entry)
+        }
     }
 
     func add(url: URL) {
         wallabagApi?.entry(add: url) { result in
             switch result {
             case .success(let wallabagEntry):
-                self.insert(wallabagEntry, context: CoreData.shared.viewContext)
+                try! self.realm.write {
+                    self.insert(wallabagEntry, self.realm)
+                }
             case .error:
                 break
             }

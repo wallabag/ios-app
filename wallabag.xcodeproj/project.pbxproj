@@ -28,9 +28,9 @@
 		9C4537931DD1236B00FF6CFE /* night.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C45378F1DD1236B00FF6CFE /* night.css */; };
 		9C4537941DD1236B00FF6CFE /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C4537901DD1236B00FF6CFE /* main.css */; };
 		9C4537951DD1236B00FF6CFE /* ratatouille.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C4537911DD1236B00FF6CFE /* ratatouille.css */; };
-		9C4BFBE01EC08EF200B75EFB /* Entry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4BFBDE1EC08EF200B75EFB /* Entry+CoreDataClass.swift */; };
-		9C4BFBE11EC08EF200B75EFB /* Entry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4BFBDF1EC08EF200B75EFB /* Entry+CoreDataProperties.swift */; };
 		9C5145251EEF2EE5005C40B4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5145241EEF2EE5005C40B4 /* StoreKit.framework */; };
+		9C6245D120458C83008B3550 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6245D020458C83008B3550 /* Entry.swift */; };
+		9C6245D32045CFDC008B3550 /* EntryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6245D22045CFDC008B3550 /* EntryExtension.swift */; };
 		9C65DEB11DC5EE85002CA068 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C65DEB01DC5EE85002CA068 /* Int.swift */; };
 		9C75961C1DBB567E0096614B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75961B1DBB567E0096614B /* String.swift */; };
 		9C75961E1DBD59330096614B /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75961D1DBD59330096614B /* ArticleViewController.swift */; };
@@ -41,7 +41,6 @@
 		9C8311861E06F56C004ACD5D /* ThemedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8311851E06F56C004ACD5D /* ThemedTableViewCell.swift */; };
 		9C8B20A21F2612BA0084BBAA /* VoiceChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8B20A11F2612BA0084BBAA /* VoiceChoiceTableViewController.swift */; };
 		9C9034881E5A26D90074540B /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */; };
-		9C914A4A1EBD1D6000973BA6 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C914A491EBD1D6000973BA6 /* CoreData.swift */; };
 		9C987A471DB79826005515F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C987A461DB79826005515F4 /* AppDelegate.swift */; };
 		9C987A4C1DB79826005515F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A4A1DB79826005515F4 /* Main.storyboard */; };
 		9C987A4F1DB79826005515F4 /* wallabag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C987A4D1DB79826005515F4 /* wallabag.xcdatamodeld */; };
@@ -154,9 +153,9 @@
 		9C45378F1DD1236B00FF6CFE /* night.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = night.css; sourceTree = "<group>"; };
 		9C4537901DD1236B00FF6CFE /* main.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
 		9C4537911DD1236B00FF6CFE /* ratatouille.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ratatouille.css; sourceTree = "<group>"; };
-		9C4BFBDE1EC08EF200B75EFB /* Entry+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataClass.swift"; sourceTree = "<group>"; };
-		9C4BFBDF1EC08EF200B75EFB /* Entry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Entry+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		9C5145241EEF2EE5005C40B4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		9C6245D020458C83008B3550 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		9C6245D22045CFDC008B3550 /* EntryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryExtension.swift; sourceTree = "<group>"; };
 		9C65DEB01DC5EE85002CA068 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		9C6C88881EAEA8F20078C491 /* WallabagKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WallabagKit.framework; path = "../../Library/Developer/Xcode/DerivedData/wallabag-fcirammgjylpzjcvizhrpwjyvjmq/Build/Products/Debug-iphonesimulator/WallabagKit/WallabagKit.framework"; sourceTree = "<group>"; };
 		9C75961B1DBB567E0096614B /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -168,7 +167,6 @@
 		9C80E8512013BCBE007208B0 /* SyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncOperation.swift; sourceTree = "<group>"; };
 		9C8311851E06F56C004ACD5D /* ThemedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemedTableViewCell.swift; sourceTree = "<group>"; };
 		9C8B20A11F2612BA0084BBAA /* VoiceChoiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceChoiceTableViewController.swift; sourceTree = "<group>"; };
-		9C914A491EBD1D6000973BA6 /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		9C987A431DB79826005515F4 /* wallabag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wallabag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C987A461DB79826005515F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C987A4B1DB79826005515F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -307,7 +305,6 @@
 				9C4D5AE220245CEB005778E4 /* Operation */,
 				9CA965991F16B669009C6377 /* Theme */,
 				9C7B79E51EBF8070004559B1 /* ArticleSync.swift */,
-				9C914A491EBD1D6000973BA6 /* CoreData.swift */,
 				9CE369751DE63D030005E20E /* Setting.swift */,
 				9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */,
 				097585091FE53E0B0089825B /* KeychainPasswordItem.swift */,
@@ -497,8 +494,8 @@
 		9CE367AA1EEB148E0004F0A0 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				9C4BFBDE1EC08EF200B75EFB /* Entry+CoreDataClass.swift */,
-				9C4BFBDF1EC08EF200B75EFB /* Entry+CoreDataProperties.swift */,
+				9C6245D020458C83008B3550 /* Entry.swift */,
+				9C6245D22045CFDC008B3550 /* EntryExtension.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -800,6 +797,8 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/TUSafariActivity/TUSafariActivity.framework",
 				"${BUILT_PRODUCTS_DIR}/WallabagKit/WallabagKit.framework",
@@ -809,6 +808,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TUSafariActivity.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WallabagKit.framework",
@@ -978,11 +979,9 @@
 				9CA9659B1F16B68B009C6377 /* White.swift in Sources */,
 				9CA9659F1F16B71E009C6377 /* Dusk.swift in Sources */,
 				9CA83A002025068E0080E44A /* SpotlightObserver.swift in Sources */,
+				9C6245D120458C83008B3550 /* Entry.swift in Sources */,
 				0975850A1FE53E0B0089825B /* KeychainPasswordItem.swift in Sources */,
-				9C914A4A1EBD1D6000973BA6 /* CoreData.swift in Sources */,
-				9C4BFBE01EC08EF200B75EFB /* Entry+CoreDataClass.swift in Sources */,
 				9CA965A11F16B729009C6377 /* Night.swift in Sources */,
-				9C4BFBE11EC08EF200B75EFB /* Entry+CoreDataProperties.swift in Sources */,
 				9C181B881DB8E27000D941EB /* ArticlesTableViewController.swift in Sources */,
 				9C75961E1DBD59330096614B /* ArticleViewController.swift in Sources */,
 				9C7B79E41EBF7E37004559B1 /* wallabag2.xcdatamodeld in Sources */,
@@ -996,6 +995,7 @@
 				9CF1F21C1DBE943C0086B98B /* HomeViewController.swift in Sources */,
 				9C8311861E06F56C004ACD5D /* ThemedTableViewCell.swift in Sources */,
 				9C75961C1DBB567E0096614B /* String.swift in Sources */,
+				9C6245D32045CFDC008B3550 /* EntryExtension.swift in Sources */,
 				9CC4B0611DC5361000BC6830 /* Dictionary.swift in Sources */,
 				9CA9659D1F16B6B9009C6377 /* Light.swift in Sources */,
 				9C65DEB11DC5EE85002CA068 /* Int.swift in Sources */,
@@ -1230,7 +1230,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = wallabag/wallabag.entitlements;
-				CURRENT_PROJECT_VERSION = 83;
+				CURRENT_PROJECT_VERSION = 88;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = wallabag/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1250,7 +1250,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = wallabag/wallabag.entitlements;
-				CURRENT_PROJECT_VERSION = 83;
+				CURRENT_PROJECT_VERSION = 88;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = wallabag/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;

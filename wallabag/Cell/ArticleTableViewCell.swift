@@ -23,9 +23,9 @@ class ArticleTableViewCell: ThemedTableViewCell {
         setupTheme()
 
         title.text = entry.title
-        website.text = entry.domain_name
+        website.text = entry.domainName
 
-        if !entry.is_archived {
+        if !entry.isArchived {
             title.font = UIFont.boldSystemFont(ofSize: 16.0)
             readed.image = #imageLiteral(resourceName: "unreaded")
         } else {
@@ -33,11 +33,11 @@ class ArticleTableViewCell: ThemedTableViewCell {
             readed.image = #imageLiteral(resourceName: "readed")
         }
 
-        starred.image = entry.is_starred ? #imageLiteral(resourceName: "starred") : #imageLiteral(resourceName: "unstarred")
+        starred.image = entry.isStarred ? #imageLiteral(resourceName: "starred") : #imageLiteral(resourceName: "unstarred")
 
-        readingTime.text = String(format: "Reading time %@".localized, arguments: [Int(entry.reading_time).readingTime])
+        readingTime.text = String(format: "Reading time %@".localized, arguments: [Int(entry.readingTime).readingTime])
 
-        if let previewPicture = entry.preview_picture,
+        if let previewPicture = entry.previewPicture,
             let pictureURL = URL(string: previewPicture) {
             previewImage.af_setImage(withURL: pictureURL)
         } else {

@@ -38,11 +38,11 @@ class Setting {
         func predicate() -> NSPredicate {
             switch self {
             case .unarchivedArticles:
-                return NSPredicate(format: "is_archived == 0")
+                return NSPredicate(format: "isArchived == 0")
             case .starredArticles:
-                return NSPredicate(format: "is_starred == 1")
+                return NSPredicate(format: "isStarred == 1")
             case .archivedArticles:
-                return NSPredicate(format: "is_archived == 1")
+                return NSPredicate(format: "isArchived == 1")
             case .allArticles:
                 return NSPredicate(value: true)
             }

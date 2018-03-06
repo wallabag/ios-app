@@ -3,6 +3,8 @@ excluded:
   - wallabag/Model/Server.swift
   - wallabag/Lib/CoreData.swift 
   - wallabag/Entity/Entry+CoreDataProperties.swift
+  - wallabag/Controller/ArticlesTableViewController.swift
+  - wallabag/Lib/ArticleSync.swift
   - wallabag/Entity/Entry+CoreDataClass.swift
   - wallabagScreenshotUITests/SnapshotHelper.swift
   - SnapshotHelper.swift

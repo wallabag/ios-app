@@ -10,6 +10,7 @@ import UIKit
 import TUSafariActivity
 import WallabagKit
 import AVFoundation
+import RealmSwift
 
 final class ArticleViewController: UIViewController {
 
@@ -121,20 +122,22 @@ final class ArticleViewController: UIViewController {
     }
 
     private func updateUi() {
-        readButton?.image = entry.is_archived ? #imageLiteral(resourceName: "readed") : #imageLiteral(resourceName: "unreaded")
-        starButton?.image = entry.is_starred ? #imageLiteral(resourceName: "starred") : #imageLiteral(resourceName: "unstarred")
+        readButton?.image = entry.isArchived ? #imageLiteral(resourceName: "readed") : #imageLiteral(resourceName: "unreaded")
+        starButton?.image = entry.isStarred ? #imageLiteral(resourceName: "starred") : #imageLiteral(resourceName: "unstarred")
     }
 }
 
 extension ArticleViewController: UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
-        webView.scrollView.setContentOffset(CGPoint(x: 0.0, y: Double(self.entry.screen_position)), animated: true)
+        webView.scrollView.setContentOffset(CGPoint(x: 0.0, y: Double(self.entry.screenPosition)), animated: true)
     }
 }
 
 extension ArticleViewController: UIScrollViewDelegate {
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-        entry.screen_position = Float(scrollView.contentOffset.y)
+        try? Realm().write {
+            entry.screenPosition = Float(scrollView.contentOffset.y)
+        }
     }
 }
 

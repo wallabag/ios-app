@@ -1,18 +1,16 @@
 //
-//  Entry+CoreDataClass.swift
+//  EntryExtension.swift
 //  wallabag
 //
-//  Created by maxime marinel on 08/05/2017.
-//  Copyright © 2017 maxime marinel. All rights reserved.
+//  Created by maxime marinel on 27/02/2018.
+//  Copyright © 2018 maxime marinel. All rights reserved.
 //
 
 import Foundation
-import CoreData
 import CoreSpotlight
 import MobileCoreServices
 
-@objc(Entry)
-public class Entry: NSManagedObject {
+extension Entry {
     var spotlightIdentifier: String {
         return "\(Bundle.main.bundleIdentifier!).spotlight.\(Int(id))"
     }

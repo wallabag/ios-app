@@ -11,6 +11,7 @@ import WallabagKit
 import AlamofireNetworkActivityIndicator
 import CoreSpotlight
 import UserNotifications
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,10 +19,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        CoreData.containerName = "wallabag2"
 
-        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        print(urls[urls.count-1] as URL)
+        print("[LOG] Realm path" + (Realm.Configuration.defaultConfiguration.fileURL?.description)!)
+
+        do {
+            _ = try Realm()
+        } catch {
+            fatalError("real error")
+        }
+
+        try? Realm().write {
+            //try? Realm().deleteAll()
+        }
 
         let args = ProcessInfo.processInfo.arguments
         if args.contains("RESET_APPLICATION") {
@@ -56,12 +65,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        try? CoreData.shared.viewContext.save()
         updateBadge()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        try? CoreData.shared.viewContext.save()
         updateBadge()
 
     }
@@ -91,13 +98,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         }
 
-        NSLog("Update badge")
-        let request = Entry.fetchEntryRequest()
-        request.predicate = Setting.getDefaultMode().predicate()
-
-        DispatchQueue.main.async {
-            UIApplication.shared.applicationIconBadgeNumber = CoreData.shared.fetch(request).count
-        }
+        let entries = try? Realm().objects(Entry.self).filter(Setting.getDefaultMode().predicate())
+        UIApplication.shared.applicationIconBadgeNumber = entries?.count ?? 0
     }
 
     private func setupQuickAction() {
@@ -127,6 +129,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func resetApplication() {
         Setting.purge()
-        CoreData.shared.deleteAll("Entry")
+        try? Realm().write {
+            try? Realm().deleteAll()
+        }
     }
 }
