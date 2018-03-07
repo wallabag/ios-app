@@ -54,7 +54,7 @@ final class ArticleSync {
 
         group.enter()
 
-        wallabagApi?.entry(parameters: ["page": 1, "order": "asc"]) { result in
+        wallabagApi?.entry(parameters: ["page": 1]) { result in
             switch result {
             case .success(let collection):
                 self.handle(result: collection.items)
@@ -84,7 +84,9 @@ final class ArticleSync {
             self.state = .finished
             self.pageCompleted = 1
             completion(.finished)
-            self.purge()
+            if 0 != self.entriesSynced.count {
+                self.purge()
+            }
         }
     }
 

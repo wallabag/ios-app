@@ -28,6 +28,10 @@ final class Entry: Object {
         return "id"
     }
 
+    override class func indexedProperties() -> [String] {
+        return ["title", "content", "isArchived", "isStarred"]
+    }
+
     var updatedAtDate: Date {
         return updatedAt as Date!
     }

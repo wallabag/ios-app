@@ -28,10 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             fatalError("real error")
         }
 
-        try? Realm().write {
-            //try? Realm().deleteAll()
-        }
-
         let args = ProcessInfo.processInfo.arguments
         if args.contains("RESET_APPLICATION") {
             resetApplication()

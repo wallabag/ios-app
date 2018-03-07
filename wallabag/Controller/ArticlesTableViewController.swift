@@ -26,6 +26,7 @@ final class ArticlesTableViewController: UITableViewController {
     }()
     var results: Results<Entry>?
     var notificationToken: NotificationToken?
+    var searchTimer: Timer?
 
     var mode: Setting.RetrieveMode = Setting.getDefaultMode()
 
@@ -85,12 +86,12 @@ final class ArticlesTableViewController: UITableViewController {
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
 
-//        if #available(iOS 11.0, *) {
-//            navigationController?.navigationBar.prefersLargeTitles = true
-//            navigationItem.searchController = searchController
-//        } else {
-//            tableView.tableHeaderView = searchController.searchBar
-//        }
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+            navigationItem.searchController = searchController
+        } else {
+            tableView.tableHeaderView = searchController.searchBar
+        }
 
         filteringList()
         reloadUI()
@@ -228,7 +229,7 @@ final class ArticlesTableViewController: UITableViewController {
             self.results = self.realm.objects(Entry.self).filter(self.mode.predicate())
         }
 
-        self.results = self.results?.sorted(byKeyPath: "createdAt", ascending: false)
+        self.results = self.results?.sorted(byKeyPath: "id", ascending: false)
 
         self.notificationToken = self.results?.observe { (changes: RealmCollectionChange) in
             switch changes {
@@ -291,21 +292,68 @@ final class ArticlesTableViewController: UITableViewController {
 }
 
 extension ArticlesTableViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        NSLog("search: " + searchController.searchBar.text!)
-        let textSearch = searchController.searchBar.text!
-        if ("" == textSearch) {
+    @objc func deferSearch(timer: Timer) {
+        guard let searchText = timer.userInfo as? String else {
             return
         }
-        let predicateTitle = NSPredicate(format: "title CONTAINS[cd] %@", textSearch)
-        let predicateContent = NSPredicate(format: "content CONTAINS[cd] %@", textSearch)
+
+        let predicateTitle = NSPredicate(format: "title CONTAINS[cd] %@", searchText)
+        let predicateContent = NSPredicate(format: "content CONTAINS[cd] %@", searchText)
         let predicateCompound =  NSCompoundPredicate(orPredicateWithSubpredicates: [predicateTitle, predicateContent])
 
         filteringList(predicateCompound)
-        //self.notificationToken?.invalidate()
+
+        searchController.searchBar.isLoading = false
+
+    }
+    func updateSearchResults(for searchController: UISearchController) {
+        NSLog("search: " + searchController.searchBar.text!)
+        let searchText = searchController.searchBar.text!
+        if ("" == searchText) {
+            return
+        }
+
+        searchController.searchBar.isLoading = true
+
+        searchTimer?.invalidate()
+
+        searchTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(deferSearch), userInfo: searchText, repeats: false)
+    }
+}
 
 
-        //self.results = try! self.realm.objects(Entry.self).filter(predicateCompound).sorted(byKeyPath: "createdAt", ascending: false)
-       //self.tableView.reloadData()
+
+extension UISearchBar {
+
+    public var textField: UITextField? {
+        let subViews = subviews.flatMap { $0.subviews }
+        guard let textField = (subViews.filter { $0 is UITextField }).first as? UITextField else {
+            return nil
+        }
+        return textField
+    }
+
+    public var activityIndicator: UIActivityIndicatorView? {
+        return textField?.leftView?.subviews.flatMap{ $0 as? UIActivityIndicatorView }.first
+    }
+
+    var isLoading: Bool {
+        get {
+            return activityIndicator != nil
+        } set {
+            if newValue {
+                if activityIndicator == nil {
+                    let newActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+                    newActivityIndicator.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+                    newActivityIndicator.startAnimating()
+                    newActivityIndicator.backgroundColor = self.backgroundColor
+                    textField?.leftView?.addSubview(newActivityIndicator)
+                    let leftViewSize = textField?.leftView?.frame.size ?? CGSize.zero
+                    newActivityIndicator.center = CGPoint(x: leftViewSize.width/2, y: leftViewSize.height/2)
+                }
+            } else {
+                activityIndicator?.removeFromSuperview()
+            }
+        }
     }
 }
