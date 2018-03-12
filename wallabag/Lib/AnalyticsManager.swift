@@ -29,16 +29,18 @@ class AnalyticsManager {
     enum AnalyticsEvent {
         var category: String {
             switch self {
-            case .synthesis(_), .shareArticle:
+            case .synthesis, .shareArticle, .tip:
                 return "User Interaction"
             }
         }
         var action: String {
             switch self {
-            case .synthesis(_):
+            case .synthesis:
                 return "Use Synthesis"
             case .shareArticle:
                 return "Use share menu"
+            case .tip:
+                return "Tip button pressed"
             }
         }
         var label: String {
@@ -54,13 +56,14 @@ class AnalyticsManager {
             switch self {
             case .synthesis(let state):
                 return state ? 1 : 0
-            case .shareArticle:
+            case .shareArticle, .tip:
                 return 1
             }
         }
 
         case synthesis(state: Bool)
         case shareArticle
+        case tip
     }
 
     lazy var tracker: GAITracker = {
@@ -69,7 +72,7 @@ class AnalyticsManager {
         }
         return gai.defaultTracker
     }()
-    
+
     func sendScreenViewed(_ event: AnalyticsViewEvent) {
         tracker.set(kGAIScreenName, value: event.name)
         guard let builder = GAIDictionaryBuilder.createScreenView(),

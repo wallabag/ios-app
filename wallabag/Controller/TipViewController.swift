@@ -32,6 +32,7 @@ class TipViewController: UIViewController, SKProductsRequestDelegate, SKPaymentT
         let payment = SKPayment(product: product!)
         SKPaymentQueue.default().add(payment)
         self.transactionInProgress = true
+        analytics.send(.tip)
     }
 
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
