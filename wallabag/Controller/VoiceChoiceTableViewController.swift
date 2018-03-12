@@ -11,7 +11,12 @@ import AVFoundation
 
 final class VoiceChoiceTableViewController: UITableViewController {
 
+    let analytics = AnalyticsManager()
     let voices: [AVSpeechSynthesisVoice] = AVSpeechSynthesisVoice.speechVoices()
+
+    override func viewDidLoad() {
+        analytics.sendScreenViewed(.voiceChoiseView)
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return voices.count

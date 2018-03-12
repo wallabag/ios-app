@@ -22,6 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         print("[LOG] Realm path" + (Realm.Configuration.defaultConfiguration.fileURL?.description)!)
 
+        guard let gai = GAI.sharedInstance() else {
+            assert(false, "Google Analytics not configured correctly")
+        }
+        gai.tracker(withTrackingId: "UA-115437094-1")
+        gai.trackUncaughtExceptions = true
+
         do {
             _ = try Realm()
         } catch {

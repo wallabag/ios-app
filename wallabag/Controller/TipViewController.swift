@@ -10,6 +10,7 @@ import UIKit
 import StoreKit
 
 class TipViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
+    let analytics = AnalyticsManager()
     var transactionInProgress = false
     var productIDs: Set<String> = ["tips1"]
     var product: SKProduct? {
@@ -69,6 +70,7 @@ class TipViewController: UIViewController, SKProductsRequestDelegate, SKPaymentT
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        analytics.sendScreenViewed(.tipView)
 
         view.backgroundColor = ThemeManager.manager.getBackgroundColor()
         tipContent.text = "This application is developed on free time, it is free and will remain so. But you can contribute financially by making a donation whenever you want to support the project.".localized

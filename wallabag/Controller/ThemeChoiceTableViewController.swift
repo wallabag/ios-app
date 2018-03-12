@@ -10,7 +10,12 @@ import UIKit
 
 final class ThemeChoiceTableViewController: UITableViewController {
 
+    let analytics = AnalyticsManager()
     var themes: [ThemeProtocol] = ThemeManager.manager.getThemes()
+
+    override func viewDidLoad() {
+        analytics.sendScreenViewed(.themeChoiceView)
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return themes.count

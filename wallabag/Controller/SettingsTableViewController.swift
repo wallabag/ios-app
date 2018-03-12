@@ -12,6 +12,8 @@ import AVFoundation
 
 final class SettingsTableViewController: UITableViewController {
 
+    let analytics = AnalyticsManager()
+
     @IBOutlet weak var currentThemeLabel: UILabel!
     @IBOutlet weak var justifySwitch: UISwitch!
     @IBOutlet weak var badgeSwitch: UISwitch!
@@ -30,6 +32,7 @@ final class SettingsTableViewController: UITableViewController {
     }
 
     override func viewDidLoad() {
+        analytics.sendScreenViewed(.settingView)
         super.viewDidLoad()
 
         prepareDefaultList()

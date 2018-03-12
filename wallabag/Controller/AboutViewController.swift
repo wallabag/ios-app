@@ -12,8 +12,11 @@ class AboutViewController: UIViewController {
 
     @IBOutlet weak var versionText: UILabel!
 
+    let analytics = AnalyticsManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        analytics.sendScreenViewed(.aboutView)
         view.backgroundColor = ThemeManager.manager.getBackgroundColor()
 
         let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? "0"

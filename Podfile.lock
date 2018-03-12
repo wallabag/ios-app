@@ -4,6 +4,7 @@ PODS:
     - Alamofire (~> 4.5)
   - AlamofireNetworkActivityIndicator (2.2.0):
     - Alamofire (~> 4.5)
+  - GoogleAnalytics (3.17.0)
   - Realm (3.1.1):
     - Realm/Headers (= 3.1.1)
   - Realm/Headers (3.1.1)
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - Alamofire (~> 4.5)
   - AlamofireImage (~> 3.3)
   - AlamofireNetworkActivityIndicator (~> 2.2)
+  - GoogleAnalytics
   - RealmSwift
   - SideMenu (~> 3.1)
   - TUSafariActivity (~> 1.0)
@@ -31,12 +33,13 @@ SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
   AlamofireNetworkActivityIndicator: 81e1630e7cfed22a4e4e82a174c59e651dc4f8ca
+  GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
   Realm: 42d1c38a5b1bbcc828b48a7ce702cb86fc68adf4
   RealmSwift: d31937ca6a6ee54acde64ec839523c0a3c04924b
   SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
   WallabagKit: fc8861a34e8334a1e65b3904cd3387c7a4e6d5c6
 
-PODFILE CHECKSUM: c0567a223e31dbfa109f70e5e5c54316f95f46e8
+PODFILE CHECKSUM: 0adb40bcb4009aaa4825af5a4093271cf96870b8
 
 COCOAPODS: 1.3.1

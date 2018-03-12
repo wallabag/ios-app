@@ -11,9 +11,12 @@ import WallabagKit
 
 final class ServerViewController: UIViewController {
 
+    let analytics = AnalyticsManager()
+
     @IBOutlet weak var server: UITextField!
 
     override func viewDidLoad() {
+        analytics.sendScreenViewed(.serverView)
         server.text = Setting.getHost()
     }
 

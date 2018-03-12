@@ -15,6 +15,7 @@ import RealmSwift
 final class ArticleViewController: UIViewController {
 
     lazy var speechSynthetizer: AVSpeechSynthesizer = AVSpeechSynthesizer()
+    let analytics = AnalyticsManager()
 
     var entry: Entry! {
         didSet {
@@ -54,9 +55,11 @@ final class ArticleViewController: UIViewController {
             utterance.voice = Setting.getSpeechVoice()
             speechSynthetizer.speak(utterance)
             speechButton.image = #imageLiteral(resourceName: "lipsfilled")
+            analytics.send(.synthesis(state: true))
         } else {
             speechSynthetizer.stopSpeaking(at: .word)
             speechButton.image = #imageLiteral(resourceName: "lips")
+            analytics.send(.synthesis(state: false))
         }
     }
 
@@ -65,6 +68,7 @@ final class ArticleViewController: UIViewController {
         shareController.excludedActivityTypes = [.airDrop, .addToReadingList, .copyToPasteboard]
         shareController.popoverPresentationController?.barButtonItem = sender
 
+        analytics.send(.shareArticle)
         present(shareController, animated: true)
     }
 
@@ -83,6 +87,7 @@ final class ArticleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        analytics.sendScreenViewed(.articleView)
         navigationItem.title = entry.title
         updateUi()
         setupAccessibilityLabel()

@@ -11,6 +11,7 @@ import WallabagKit
 
 final class LoginViewController: UIViewController {
 
+    let analytics = AnalyticsManager()
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
 
@@ -25,6 +26,7 @@ final class LoginViewController: UIViewController {
     }
 
     override func viewDidLoad() {
+        analytics.sendScreenViewed(.loginView)
         username.text = Setting.getUsername()
     }
 }

@@ -16,6 +16,7 @@ final class ArticlesTableViewController: UITableViewController {
 
     let articleSync: ArticleSync = ArticleSync.sharedInstance
     let searchController = UISearchController(searchResultsController: nil)
+    let analytics = AnalyticsManager()
 
     lazy var realm: Realm = {
         do {
@@ -75,6 +76,7 @@ final class ArticlesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        analytics.sendScreenViewed(.articlesView)
         progressView.isHidden = true
         articleSync.initSession()
 

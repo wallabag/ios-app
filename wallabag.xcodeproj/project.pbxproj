@@ -52,6 +52,8 @@
 		9CA9659D1F16B6B9009C6377 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA9659C1F16B6B9009C6377 /* Light.swift */; };
 		9CA9659F1F16B71E009C6377 /* Dusk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA9659E1F16B71E009C6377 /* Dusk.swift */; };
 		9CA965A11F16B729009C6377 /* Night.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA965A01F16B729009C6377 /* Night.swift */; };
+		9CB41252205661FF00A71989 /* Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB41251205661FF00A71989 /* Bridge.m */; };
+		9CB412542056635100A71989 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB412532056635100A71989 /* AnalyticsManager.swift */; };
 		9CBA6C601E16FC2B000B9AE6 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBA6C5F1E16FC2B000B9AE6 /* ShareViewController.swift */; };
 		9CBA6C671E16FC2B000B9AE6 /* bagit.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9CBA6C5D1E16FC2B000B9AE6 /* bagit.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9CC0D71A1E22AB15002E4E94 /* wallabagScreenshotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0D7191E22AB15002E4E94 /* wallabagScreenshotUITests.swift */; };
@@ -184,6 +186,9 @@
 		9CA9659C1F16B6B9009C6377 /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
 		9CA9659E1F16B71E009C6377 /* Dusk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dusk.swift; sourceTree = "<group>"; };
 		9CA965A01F16B729009C6377 /* Night.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Night.swift; sourceTree = "<group>"; };
+		9CB41250205661FE00A71989 /* wallabag-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wallabag-Bridging-Header.h"; sourceTree = "<group>"; };
+		9CB41251205661FF00A71989 /* Bridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bridge.m; sourceTree = "<group>"; };
+		9CB412532056635100A71989 /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		9CBA6C5D1E16FC2B000B9AE6 /* bagit.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = bagit.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CBA6C5F1E16FC2B000B9AE6 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		9CBA6C641E16FC2B000B9AE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -309,6 +314,9 @@
 				9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */,
 				097585091FE53E0B0089825B /* KeychainPasswordItem.swift */,
 				9CA839FF2025068E0080E44A /* SpotlightObserver.swift */,
+				9CB41251205661FF00A71989 /* Bridge.m */,
+				9CB41250205661FE00A71989 /* wallabag-Bridging-Header.h */,
+				9CB412532056635100A71989 /* AnalyticsManager.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -627,7 +635,7 @@
 					9C987A421DB79826005515F4 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = G97URPCGB8;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -989,6 +997,7 @@
 				9CF1F2211DBE97D80086B98B /* ServerViewController.swift in Sources */,
 				9CE369761DE63D030005E20E /* Setting.swift in Sources */,
 				9C7B79E61EBF8070004559B1 /* ArticleSync.swift in Sources */,
+				9CB41252205661FF00A71989 /* Bridge.m in Sources */,
 				9C8B20A21F2612BA0084BBAA /* VoiceChoiceTableViewController.swift in Sources */,
 				9C9034881E5A26D90074540B /* ThemeManager.swift in Sources */,
 				9CE9F2061DE2151B002E06F5 /* AboutViewController.swift in Sources */,
@@ -1002,6 +1011,7 @@
 				9C80E8522013BCBE007208B0 /* SyncOperation.swift in Sources */,
 				9C298B131E0BF8F400B72503 /* ThemeChoiceTableViewController.swift in Sources */,
 				9C987A471DB79826005515F4 /* AppDelegate.swift in Sources */,
+				9CB412542056635100A71989 /* AnalyticsManager.swift in Sources */,
 				9C25C9B81EEC99D700B97F6D /* TipViewController.swift in Sources */,
 				9C987A4F1DB79826005515F4 /* wallabag.xcdatamodeld in Sources */,
 			);
@@ -1229,6 +1239,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = wallabag/wallabag.entitlements;
 				CURRENT_PROJECT_VERSION = 88;
 				DEVELOPMENT_TEAM = G97URPCGB8;
@@ -1237,6 +1248,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "wallabag/Lib/wallabag-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1249,6 +1262,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = wallabag/wallabag.entitlements;
 				CURRENT_PROJECT_VERSION = 88;
 				DEVELOPMENT_TEAM = G97URPCGB8;
@@ -1257,6 +1271,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "wallabag/Lib/wallabag-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
