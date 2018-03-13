@@ -70,10 +70,7 @@ class AnalyticsManager {
     }
 
     lazy var tracker: GAITracker = {
-        guard let gai = GAI.sharedInstance() else {
-            assert(false, "Google Analytics not configured correctly")
-        }
-        return gai.defaultTracker
+        return GAI.sharedInstance().defaultTracker
     }()
 
     func sendScreenViewed(_ event: AnalyticsViewEvent) {
