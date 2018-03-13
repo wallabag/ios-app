@@ -61,8 +61,8 @@ class TipViewController: UIViewController, SKProductsRequestDelegate, SKPaymentT
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         NSLog("Request product")
         if response.products.count != 0,
-            let _product = response.products.first {
-                product = _product
+            let firstproduct = response.products.first {
+                product = firstproduct
                 tipButton.isEnabled = true
         } else {
             NSLog("There are no products.")
