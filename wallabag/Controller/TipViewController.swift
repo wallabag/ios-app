@@ -43,6 +43,7 @@ class TipViewController: UIViewController, SKProductsRequestDelegate, SKPaymentT
                 SKPaymentQueue.default().finishTransaction(transaction)
                 transactionInProgress = false
                 tipButton.titleLabel?.text = "Thank you!!!"
+                analytics.send(.tipPurchased)
             case .failed:
                 NSLog("Transaction error")
                 SKPaymentQueue.default().finishTransaction(transaction)

@@ -29,7 +29,7 @@ class AnalyticsManager {
     enum AnalyticsEvent {
         var category: String {
             switch self {
-            case .synthesis, .shareArticle, .tip:
+            case .synthesis, .shareArticle, .tip, .tipPurchased:
                 return "User Interaction"
             }
         }
@@ -41,6 +41,8 @@ class AnalyticsManager {
                 return "Use share menu"
             case .tip:
                 return "Tip button pressed"
+            case .tipPurchased:
+                return "Tip purchased"
             }
         }
         var label: String {
@@ -56,7 +58,7 @@ class AnalyticsManager {
             switch self {
             case .synthesis(let state):
                 return state ? 1 : 0
-            case .shareArticle, .tip:
+            case .shareArticle, .tip, .tipPurchased:
                 return 1
             }
         }
@@ -64,6 +66,7 @@ class AnalyticsManager {
         case synthesis(state: Bool)
         case shareArticle
         case tip
+        case tipPurchased
     }
 
     lazy var tracker: GAITracker = {
