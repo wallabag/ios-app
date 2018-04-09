@@ -75,8 +75,8 @@ class WallabagKit {
         }
     }
 
-    public func entry(add url: URL, completion: @escaping (WallabagKitResponse<WallabagKitEntry>) -> Void) {
-        sessionManager.request("\(host!)/api/entries", method: .post, parameters: ["url": url.absoluteString]).validate().responseData { response in
+    public func entry(add url: URL, queue: DispatchQueue?,  completion: @escaping (WallabagKitResponse<WallabagKitEntry>) -> Void) {
+        sessionManager.request("\(host!)/api/entries", method: .post, parameters: ["url": url.absoluteString]).validate().responseData(queue: queue) { response in
             switch response.result {
             case .success(let data):
                 let result = try! JSONDecoder().decode(WallabagKitEntry.self, from: data)

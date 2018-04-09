@@ -163,14 +163,13 @@ final class ArticleSync {
     }
 
     func add(url: URL) {
-        WallabagKit.instance.entry(add: url) { response in
+        WallabagKit.instance.entry(add: url, queue: syncQueue) { response in
             switch response {
             case .success(let entry):
-                break
-                /*try! self.realm.write {
-                    //@todo insert entry
-                    //self.insert(entry, self.realm)
-                }*/
+                let realm = try! Realm()
+                try! realm.write {
+                    self.insert(entry, realm)
+                }
             case .error:
                 break
             }
