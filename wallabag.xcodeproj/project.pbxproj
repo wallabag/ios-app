@@ -47,6 +47,7 @@
 		9C987A511DB79826005515F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A501DB79826005515F4 /* Assets.xcassets */; };
 		9C987A541DB79826005515F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A521DB79826005515F4 /* LaunchScreen.storyboard */; };
 		9CA232301DFECE74006B29B8 /* light.css in Resources */ = {isa = PBXBuildFile; fileRef = 9CA2322F1DFECE74006B29B8 /* light.css */; };
+		9CA273312058430000B0A269 /* WallabagKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA273302058430000B0A269 /* WallabagKit.swift */; };
 		9CA83A002025068E0080E44A /* SpotlightObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA839FF2025068E0080E44A /* SpotlightObserver.swift */; };
 		9CA9659B1F16B68B009C6377 /* White.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA9659A1F16B68B009C6377 /* White.swift */; };
 		9CA9659D1F16B6B9009C6377 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA9659C1F16B6B9009C6377 /* Light.swift */; };
@@ -181,6 +182,7 @@
 		9C987A651DB79826005515F4 /* wallabagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C987A6B1DB79826005515F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CA2322F1DFECE74006B29B8 /* light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = light.css; sourceTree = "<group>"; };
+		9CA273302058430000B0A269 /* WallabagKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKit.swift; sourceTree = "<group>"; };
 		9CA839FF2025068E0080E44A /* SpotlightObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightObserver.swift; sourceTree = "<group>"; };
 		9CA9659A1F16B68B009C6377 /* White.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = White.swift; sourceTree = "<group>"; };
 		9CA9659C1F16B6B9009C6377 /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 				9CB41251205661FF00A71989 /* Bridge.m */,
 				9CB41250205661FE00A71989 /* wallabag-Bridging-Header.h */,
 				9CB412532056635100A71989 /* AnalyticsManager.swift */,
+				9CA273302058430000B0A269 /* WallabagKit.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -1004,6 +1007,7 @@
 				9CF1F21C1DBE943C0086B98B /* HomeViewController.swift in Sources */,
 				9C8311861E06F56C004ACD5D /* ThemedTableViewCell.swift in Sources */,
 				9C75961C1DBB567E0096614B /* String.swift in Sources */,
+				9CA273312058430000B0A269 /* WallabagKit.swift in Sources */,
 				9C6245D32045CFDC008B3550 /* EntryExtension.swift in Sources */,
 				9CC4B0611DC5361000BC6830 /* Dictionary.swift in Sources */,
 				9CA9659D1F16B6B9009C6377 /* Light.swift in Sources */,

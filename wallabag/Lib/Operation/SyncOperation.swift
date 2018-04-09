@@ -33,10 +33,12 @@ class SyncOperation: Operation {
 
     let articleSync: ArticleSync
     let page: Int
+    let queue: DispatchQueue
 
-    init(articleSync: ArticleSync, page: Int) {
+    init(articleSync: ArticleSync, page: Int, queue: DispatchQueue) {
         self.articleSync = articleSync
         self.page = page
+        self.queue = queue
     }
 
     override func start() {
@@ -53,14 +55,15 @@ class SyncOperation: Operation {
             state = .finished
         } else {
             state = .executing
-            articleSync.wallabagApi?.entry(parameters: ["page": page]) { result in
-                switch result {
+            WallabagKit.instance.entry(parameters: ["page": page], queue: queue) { response in
+                switch response {
                 case .success(let collection):
                     self.articleSync.handle(result: collection.items)
-                    self.state = .finished
                 case .error:
-                    self.state = .finished
+                    //@todo handle error
+                    break
                 }
+                self.state = .finished
             }
         }
     }

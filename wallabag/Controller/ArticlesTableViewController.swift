@@ -78,7 +78,6 @@ final class ArticlesTableViewController: UITableViewController {
         super.viewDidLoad()
         analytics.sendScreenViewed(.articlesView)
         progressView.isHidden = true
-        articleSync.initSession()
 
         NotificationCenter.default.addObserver(self, selector: #selector(pasteBoardAction), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
 
@@ -99,7 +98,7 @@ final class ArticlesTableViewController: UITableViewController {
         reloadUI()
 
         DispatchQueue.global(qos: .background).async {
-            self.handleRefresh()
+            // self.handleRefresh()
         }
     }
 
@@ -278,11 +277,11 @@ final class ArticlesTableViewController: UITableViewController {
             textField.placeholder = "Url".localized
         })
         alertController.addAction(UIAlertAction(title: "Add".localized, style: .default, handler: { _ in
-            if let textfield = alertController.textFields?.first?.text {
-                if let url = URL(string: textfield) {
-                    self.articleSync.add(url: url)
-                }
+            if let textfield = alertController.textFields?.first?.text,
+                let url = URL(string: textfield) {
+                self.articleSync.add(url: url)
             }
+
         }))
         alertController.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
         present(alertController, animated: true)
@@ -326,7 +325,6 @@ extension ArticlesTableViewController: UISearchResultsUpdating {
 
 
 extension UISearchBar {
-
     public var textField: UITextField? {
         let subViews = subviews.flatMap { $0.subviews }
         guard let textField = (subViews.filter { $0 is UITextField }).first as? UITextField else {

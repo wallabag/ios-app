@@ -23,11 +23,8 @@ final class ArticleSync {
     }()
     private let group = DispatchGroup()
 
-    let realm = try! Realm()
-
     static let sharedInstance: ArticleSync = ArticleSync()
 
-    var wallabagApi: WallabagApi?
     var state: State = .finished
     var pageCompleted: Int = 1
     var maxPage: Int = 1
@@ -36,16 +33,6 @@ final class ArticleSync {
 
     private init() {}
 
-    func initSession() {
-        wallabagApi = WallabagApi(
-            host: Setting.getHost()!,
-            username: Setting.getUsername()!,
-            password: Setting.getPassword(username: Setting.getUsername()!)!,
-            clientId: Setting.getClientId()!,
-            clientSecret: Setting.getClientSecret()!
-        )
-    }
-
     func sync(completion: @escaping (State) -> Void) {
         if state == .running {
             return
@@ -53,18 +40,16 @@ final class ArticleSync {
         state = .running
 
         group.enter()
-
-        wallabagApi?.entry(parameters: ["page": 1]) { result in
-            switch result {
+        WallabagKit.instance.entry(parameters: ["page": 1], queue: syncQueue) { response in
+            switch response {
             case .success(let collection):
-                self.handle(result: collection.items)
-                self.maxPage = collection.last
+                self.maxPage = collection.pages
                 completion(.running)
+                self.handle(result: collection.items)
 
-                for page in 2...collection.last {
+                for page in 2...self.maxPage {
                     self.group.enter()
-
-                    let syncOperation = SyncOperation(articleSync: self, page: page)
+                    let syncOperation = SyncOperation(articleSync: self, page: page, queue: self.syncQueue)
                     syncOperation.completionBlock = {
                         self.pageCompleted += 1
                         completion(.running)
@@ -72,10 +57,9 @@ final class ArticleSync {
                     }
                     self.operationQueue.addOperation(syncOperation)
                 }
-            case .error(let error):
-                if error == .invalidAuth {
-                    completion(.error)
-                }
+                break
+            case .error:
+                break
             }
             self.group.leave()
         }
@@ -84,14 +68,21 @@ final class ArticleSync {
             self.state = .finished
             self.pageCompleted = 1
             completion(.finished)
-            if 0 != self.entriesSynced.count {
+            /*if 0 != self.entriesSynced.count {
                 self.purge()
-            }
+            }*/
         }
     }
 
-    func handle(result: [WallabagEntry]) {
-        DispatchQueue.global(qos: .background).async {
+    func handle(result: [WallabagKitEntry]) {
+        let realm = try! Realm()
+        realm.beginWrite()
+        for wallabagEntry in result {
+            insert(wallabagEntry, realm)
+        }
+        try? realm.commitWrite()
+
+        /*DispatchQueue.global(qos: .background).async {
             let realm = try! Realm()
 
             realm.beginWrite()
@@ -104,7 +95,7 @@ final class ArticleSync {
                 }
             }
             try? realm.commitWrite()
-        }
+        }*/
     }
 
     private func purge() {
@@ -115,16 +106,16 @@ final class ArticleSync {
         }
     }
 
-    func insert(_ wallabagEntry: WallabagEntry, _ realm: Realm) {
+    func insert(_ wallabagEntry: WallabagKitEntry, _ realm: Realm) {
         let entry = Entry()
         NSLog("Insert article \(wallabagEntry.id)")
         entry.hydrate(from: wallabagEntry)
         realm.add(entry)
-        spotLightIndex(entry)
+        //spotLightIndex(entry)
     }
 
     private func update(entry: Entry, from article: WallabagEntry) {
-        if entry.updatedAtDate != article.updatedAt {
+        /*if entry.updatedAtDate != article.updatedAt {
             NSLog("Update article \(article.id)")
             if article.updatedAt > entry.updatedAtDate {
                 NSLog("Update entry from server \(article.id)")
@@ -133,15 +124,15 @@ final class ArticleSync {
                 NSLog("Update article from entry \(article.id)")
                 update(entry: entry)
             }
-        }
+        }*/
     }
 
     /**
      * Push data to server
      */
     func update(entry: Entry) {
-        let entryRef = ThreadSafeReference(to: entry)
-        wallabagApi?.entry(update: Int(entry.id), parameters: [
+        //let entryRef = ThreadSafeReference(to: entry)
+        /*wallabagApi?.entry(update: Int(entry.id), parameters: [
             "archive": (entry.isArchived).hashValue,
             "starred": (entry.isStarred).hashValue
             ]
@@ -156,28 +147,30 @@ final class ArticleSync {
                 break
             case .error: break
             }
-        }
+        }*/
     }
 
     func delete(entry: Entry, callServer: Bool = true) {
         NSLog("Delete entry \(entry.id)")
         if callServer {
-            wallabagApi?.entry(delete: Int(entry.id)) { _ in
-            }
+            /*wallabagApi?.entry(delete: Int(entry.id)) { _ in
+            }*/
         }
-        try! realm.write {
+        /*try! realm.write {
             spotLightDelete(entry)
             realm.delete(entry)
-        }
+        }*/
     }
 
     func add(url: URL) {
-        wallabagApi?.entry(add: url) { result in
-            switch result {
-            case .success(let wallabagEntry):
-                try! self.realm.write {
-                    self.insert(wallabagEntry, self.realm)
-                }
+        WallabagKit.instance.entry(add: url) { response in
+            switch response {
+            case .success(let entry):
+                break
+                /*try! self.realm.write {
+                    //@todo insert entry
+                    //self.insert(entry, self.realm)
+                }*/
             case .error:
                 break
             }

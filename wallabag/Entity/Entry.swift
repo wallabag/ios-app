@@ -19,7 +19,7 @@ final class Entry: Object {
     @objc dynamic public var isStarred: Bool = false
     @objc dynamic public var previewPicture: String?
     @objc dynamic public var title: String?
-    @objc dynamic public var updatedAt: NSDate?
+    @objc dynamic public var updatedAt: Date?
     @objc dynamic public var url: String?
     @objc dynamic public var readingTime: Int = 0
     @objc dynamic public var screenPosition: Float = 0.0
@@ -30,10 +30,6 @@ final class Entry: Object {
 
     override class func indexedProperties() -> [String] {
         return ["title", "content", "isArchived", "isStarred"]
-    }
-
-    var updatedAtDate: Date {
-        return updatedAt as Date!
     }
 
     func hydrate(from article: WallabagEntry) {
@@ -50,5 +46,21 @@ final class Entry: Object {
         setValue(article.domainName, forKey: "domainName")
         setValue(article.readingTime, forKey: "readingTime")
         setValue(article.url, forKey: "url")
+    }
+
+    func hydrate(from article: WallabagKitEntry) {
+        if 0 == id {
+            setValue(article.id, forKey: "id")
+        }
+        title = article.title
+        content = article.content
+        createdAt = Date()
+        updatedAt = Date()
+        domainName = article.domainName
+        isArchived = article.isArchived == 1
+        isStarred = article.isStarred == 1
+        previewPicture = article.previewPicture
+        url = article.url
+        readingTime = article.readingTime ?? 0
     }
 }

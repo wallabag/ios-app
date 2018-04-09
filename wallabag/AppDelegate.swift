@@ -22,13 +22,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         print("[LOG] Realm path" + (Realm.Configuration.defaultConfiguration.fileURL?.description)!)
 
+        NetworkActivityIndicatorManager.shared.isEnabled = true
+        NetworkActivityIndicatorManager.shared.startDelay = 0.1
+        ThemeManager.manager.apply(Setting.getTheme())
+
         let gai = GAI.sharedInstance()
-        gai?.tracker(withTrackingId: "UA-115437094-1")
+        _ = gai?.tracker(withTrackingId: "UA-115437094-1")
         gai?.trackUncaughtExceptions = true
 
         let config = Realm.Configuration(
             schemaVersion: 1,
-            migrationBlock: { migration, oldSchemaVersion in
+            migrationBlock: { _, _ in
         })
 
         Realm.Configuration.defaultConfiguration = config
@@ -38,26 +42,58 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             fatalError("real error")
         }
+        try? Realm().write {
+            try? Realm().deleteAll()
+        }
 
         let args = ProcessInfo.processInfo.arguments
         if args.contains("RESET_APPLICATION") {
             resetApplication()
         }
 
-        if Setting.isWallabagConfigured() {
+        if Setting.isWallabagConfigured(),
+            let host = Setting.getHost(),
+            let clientId = Setting.getClientId(),
+            let clientSecret = Setting.getClientSecret(),
+            let username = Setting.getUsername(),
+            let password = Setting.getPassword(username: username){
             NSLog("Wallabag api is configured")
+            WallabagKit.instance.host = host
+            WallabagKit.instance.clientID = clientId
+            WallabagKit.instance.clientSecret = clientSecret
+            WallabagKit.instance.requestAuth(username: username, password: password) { auth in
+                switch auth {
+                case .success(let data):
+                    Setting.set(token: data.accessToken)
+                    Setting.set(refreshToken: data.refreshToken)
+                case .error:
+                    break
+                }
+
+            }
             window?.rootViewController = window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "articlesNavigation")
             UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
             requestBadge()
         }
 
-        NetworkActivityIndicatorManager.shared.isEnabled = true
-        NetworkActivityIndicatorManager.shared.startDelay = 0.1
-
-        ThemeManager.manager.apply(Setting.getTheme())
-
         setupQuickAction()
 
+
+/*
+        WallabagKit.instance.requestAuth(username: Setting.getUsername()!, password: Setting.getPassword(username: Setting.getUsername()!)!) { auth in
+            switch auth {
+            case .success(_):
+                WallabagKit.instance.queue = queue
+
+                WallabagKit.instance.entry { result in
+                    print(result)
+                }
+
+            case .error(let error):
+                print(error)
+
+            }
+        }*/
         return true
     }
 
