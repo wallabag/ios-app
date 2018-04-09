@@ -86,6 +86,14 @@ class WallabagKit {
             }
         }
     }
+
+    public func entry(delete id: Int, completion: @escaping () -> Void) {
+        sessionManager.request("\(host!)/api/entries/\(id)", method: .delete)
+            .validate()
+            .responseData { _ in
+            completion()
+        }
+    }
 }
 
 struct WallabagKitEntry: Codable {

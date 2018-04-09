@@ -97,9 +97,7 @@ final class ArticlesTableViewController: UITableViewController {
         filteringList()
         reloadUI()
 
-        DispatchQueue.global(qos: .background).async {
-            // self.handleRefresh()
-        }
+//        self.handleRefresh()
     }
 
     override func didMove(toParentViewController parent: UIViewController?) {
@@ -137,6 +135,8 @@ final class ArticlesTableViewController: UITableViewController {
                 self.refreshControl?.endRefreshing()
             }
         }
+
+        self.refreshControl?.beginRefreshing()
 
         articleSync.sync { state in
             switch state {
