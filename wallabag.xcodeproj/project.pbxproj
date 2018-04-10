@@ -61,6 +61,7 @@
 		9CC0D7211E22AB55002E4E94 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEF3B31DD9EC5D00126D15 /* SnapshotHelper.swift */; };
 		9CC378931EB0BB4100C89619 /* Pods_bagit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC378921EB0BB4100C89619 /* Pods_bagit.framework */; };
 		9CC4B0611DC5361000BC6830 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4B0601DC5361000BC6830 /* Dictionary.swift */; };
+		9CD48FB7207C9356001AA042 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD48FB6207C9356001AA042 /* Date.swift */; };
 		9CE369741DE632030005E20E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE369731DE632030005E20E /* SettingsTableViewController.swift */; };
 		9CE369761DE63D030005E20E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE369751DE63D030005E20E /* Setting.swift */; };
 		9CE9F2061DE2151B002E06F5 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE9F2051DE2151B002E06F5 /* AboutViewController.swift */; };
@@ -203,6 +204,7 @@
 		9CC378921EB0BB4100C89619 /* Pods_bagit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_bagit.framework; path = "../../Library/Developer/Xcode/DerivedData/wallabag-fcirammgjylpzjcvizhrpwjyvjmq/Build/Products/Debug-iphonesimulator/Pods_bagit.framework"; sourceTree = "<group>"; };
 		9CC4B0601DC5361000BC6830 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		9CD48FB6207C9356001AA042 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		9CE369731DE632030005E20E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		9CE369751DE63D030005E20E /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		9CE9F2051DE2151B002E06F5 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 				9CC4B0601DC5361000BC6830 /* Dictionary.swift */,
 				9C65DEB01DC5EE85002CA068 /* Int.swift */,
 				9C75961B1DBB567E0096614B /* String.swift */,
+				9CD48FB6207C9356001AA042 /* Date.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1000,6 +1003,7 @@
 				9CF1F2211DBE97D80086B98B /* ServerViewController.swift in Sources */,
 				9CE369761DE63D030005E20E /* Setting.swift in Sources */,
 				9C7B79E61EBF8070004559B1 /* ArticleSync.swift in Sources */,
+				9CD48FB7207C9356001AA042 /* Date.swift in Sources */,
 				9CB41252205661FF00A71989 /* Bridge.m in Sources */,
 				9C8B20A21F2612BA0084BBAA /* VoiceChoiceTableViewController.swift in Sources */,
 				9C9034881E5A26D90074540B /* ThemeManager.swift in Sources */,

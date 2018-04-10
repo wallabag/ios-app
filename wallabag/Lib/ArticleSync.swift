@@ -131,23 +131,27 @@ final class ArticleSync {
      * Push data to server
      */
     func update(entry: Entry) {
-        //let entryRef = ThreadSafeReference(to: entry)
-        /*wallabagApi?.entry(update: Int(entry.id), parameters: [
-         "archive": (entry.isArchived).hashValue,
-         "starred": (entry.isStarred).hashValue
-         ]
-         ) { results in
-         switch results {
-         case .success(let wallabagEntry):
-         let realm = try! Realm()
-         let entry = realm.resolve(entryRef)!
-         try? realm.write {
-         entry.setValue(wallabagEntry.updatedAt, forKey: "updatedAt")
-         }
-         break
-         case .error: break
-         }
-         }*/
+        let entryRef = ThreadSafeReference(to: entry)
+        WallabagKit.instance.entry(
+            update: entry.id,
+            parameters: [
+                "archive": entry.isArchived.hashValue,
+                "starred": entry.isStarred.hashValue
+            ],
+            queue: syncQueue) { response in
+                switch response {
+                case .success(let entryFromServer):
+                    let realm = try! Realm()
+                    if let entry = realm.resolve(entryRef) {
+                        try! realm.write {
+                            entry.updatedAt = Date.fromISOString(entryFromServer.updatedAt)
+                        }
+                    }
+                    break
+                case .error:
+                    break
+                }
+        }
     }
 
     func delete(entry: Entry, callServer: Bool = true) {

@@ -68,7 +68,7 @@ class WallabagKit {
                 case .success(let data):
                     let result = try! JSONDecoder().decode(WallabagKitCollection<WallabagKitEntry>.self, from: data)
                     completion(.success(result))
-                case .failure(_):
+                case .failure:
                     //completion(.error)
                     break
                 }
@@ -92,6 +92,20 @@ class WallabagKit {
             .validate()
             .responseData { _ in
             completion()
+        }
+    }
+
+    public func entry(update id: Int, parameters: Parameters = [:], queue: DispatchQueue?, completion: @escaping (WallabagKitResponse<WallabagKitEntry>) -> Void) {
+        sessionManager.request("\(host!)/api/entries/\(id)", method: .patch, parameters: parameters)
+            .validate().responseData(queue: queue) { response in
+            switch response.result {
+            case .success(let data):
+                let result = try! JSONDecoder().decode(WallabagKitEntry.self, from: data)
+                completion(.success(result))
+                break
+            case .failure:
+                break
+            }
         }
     }
 }
