@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let clientId = Setting.getClientId(),
             let clientSecret = Setting.getClientSecret(),
             let username = Setting.getUsername(),
-            let password = Setting.getPassword(username: username){
+            let password = Setting.getPassword(username: username) {
             NSLog("Wallabag api is configured")
             WallabagKit.instance.host = host
             WallabagKit.instance.clientID = clientId
@@ -74,7 +74,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         setupQuickAction()
-
 
 /*
         WallabagKit.instance.requestAuth(username: Setting.getUsername()!, password: Setting.getPassword(username: Setting.getUsername()!)!) { auth in
