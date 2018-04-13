@@ -58,6 +58,7 @@ final class ArticleSync {
                 }
                 break
             case .error:
+                print("error")
                 break
             }
             self.group.leave()

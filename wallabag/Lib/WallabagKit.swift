@@ -73,10 +73,20 @@ class WallabagKit {
                 case .success(let data):
                     let result = try! JSONDecoder().decode(WallabagKitCollection<WallabagKitEntry>.self, from: data)
                     completion(.success(result))
-                case .failure:
+                case .failure(let error):
+                    completion(.error())
+                    print(error)
+                    debugPrint(error)
+
+                    print("test")
                     //completion(.error)
                     break
                 }
+        }
+        sessionManager.request("\(host!)/api/entries", parameters: parameters)
+            .validate()
+            .responseJSON { response in
+                debugPrint(response)
         }
     }
 
@@ -195,7 +205,7 @@ enum WallabagKitCollectionResponse<T: Decodable> {
 
 enum WallabagAuth {
     case success(WallabagAuthSuccess)
-    case error(WallabagError)
+    case error(WallabagAuthError)
 }
 
 struct WallabagAuthSuccess: Codable {
@@ -212,7 +222,7 @@ struct WallabagAuthSuccess: Codable {
     }
 }
 
-struct WallabagError: Codable {
+struct WallabagAuthError: Codable {
     let error: String
     let description: String
     enum CodingKeys: String, CodingKey {
