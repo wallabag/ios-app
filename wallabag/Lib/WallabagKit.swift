@@ -50,7 +50,7 @@ class WallabagKit {
                 switch response.result {
                 case .success(let data):
                     if 400 == response.response?.statusCode {
-                        let result = try! JSONDecoder().decode(WallabagError.self, from: data)
+                        let result = try! JSONDecoder().decode(WallabagAuthError.self, from: data)
                         completion(.error(result))
                     } else {
                         let result = try! JSONDecoder().decode(WallabagAuthSuccess.self, from: data)
@@ -74,19 +74,8 @@ class WallabagKit {
                     let result = try! JSONDecoder().decode(WallabagKitCollection<WallabagKitEntry>.self, from: data)
                     completion(.success(result))
                 case .failure(let error):
-                    completion(.error())
-                    print(error)
-                    debugPrint(error)
-
-                    print("test")
-                    //completion(.error)
-                    break
+                    completion(.error(error))
                 }
-        }
-        sessionManager.request("\(host!)/api/entries", parameters: parameters)
-            .validate()
-            .responseJSON { response in
-                debugPrint(response)
         }
     }
 
@@ -195,12 +184,12 @@ struct WallabagKitCollection<T: Decodable>: Decodable {
 
 enum WallabagKitResponse<T: Decodable> {
     case success(T)
-    case error(WallabagError)
+    case error(Error)
 }
 
 enum WallabagKitCollectionResponse<T: Decodable> {
     case success(WallabagKitCollection<T>)
-    case error(WallabagError)
+    case error(Error)
 }
 
 enum WallabagAuth {
