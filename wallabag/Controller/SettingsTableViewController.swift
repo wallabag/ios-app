@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import WallabagKit
 import AVFoundation
 
 final class SettingsTableViewController: UITableViewController {

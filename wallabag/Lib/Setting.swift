@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import WallabagKit
 import AVFoundation
 
 class Setting {

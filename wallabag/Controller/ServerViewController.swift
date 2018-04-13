@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import WallabagKit
 
 final class ServerViewController: UIViewController {
 

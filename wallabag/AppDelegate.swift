@@ -75,21 +75,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         setupQuickAction()
 
-/*
-        WallabagKit.instance.requestAuth(username: Setting.getUsername()!, password: Setting.getPassword(username: Setting.getUsername()!)!) { auth in
-            switch auth {
-            case .success(_):
-                WallabagKit.instance.queue = queue
-
-                WallabagKit.instance.entry { result in
-                    print(result)
-                }
-
-            case .error(let error):
-                print(error)
-
-            }
-        }*/
         return true
     }
 

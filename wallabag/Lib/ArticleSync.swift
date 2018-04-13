@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import WallabagKit
 import CoreData
 import RealmSwift
 
