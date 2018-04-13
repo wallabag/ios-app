@@ -56,19 +56,29 @@ class ShareViewController: UIViewController {
                 for attachement in attachements {
                     if attachement.hasItemConformingToTypeIdentifier("public.url") {
                         attachement.loadItem(forTypeIdentifier: "public.url", options: nil, completionHandler: { (url, _) -> Void in
-                            if let shareURL = url as? NSURL {
-                                WallabagApi(host: Setting.getHost()!,
-                                            username: Setting.getUsername()!,
-                                            password: Setting.getPassword(username: Setting.getUsername()!)!,
-                                            clientId: Setting.getClientId()!,
-                                            clientSecret: Setting.getClientSecret()!)
-                                    .entry(add: shareURL as URL) { result in
-                                        switch result {
-                                        case .success:
-                                            self.clearView()
-                                        case .error:
-                                            self.clearView(withError: true)
+                            if let shareURL = url as? NSURL,
+                                let host = Setting.getHost(),
+                                let username = Setting.getUsername(),
+                                let password = Setting.getPassword(username: username),
+                                let clientId = Setting.getClientId(),
+                                let clientSecret = Setting.getClientSecret() {
+                                WallabagKit.instance.host = host
+                                WallabagKit.instance.clientID = clientId
+                                WallabagKit.instance.clientSecret = clientSecret
+                                WallabagKit.instance.requestAuth(username: username, password: password) { auth in
+                                    switch auth {
+                                    case .success:
+                                        WallabagKit.instance.entry(add: shareURL as URL, queue: nil) { response in
+                                            switch response {
+                                            case .success:
+                                                self.clearView()
+                                            default:
+                                                self.clearView(withError: true)
+                                            }
                                         }
+                                    default:
+                                        self.clearView(withError: true)
+                                    }
                                 }
                             } else {
                                 self.clearView(withError: true)
