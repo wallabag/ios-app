@@ -97,7 +97,7 @@ final class ArticlesTableViewController: UITableViewController {
         filteringList()
         reloadUI()
 
-//        self.handleRefresh()
+        NotificationCenter.default.addObserver(self, selector: #selector(handleRefresh), name: .wallabagkitAuthSuccess, object: nil)
     }
 
     override func didMove(toParentViewController parent: UIViewController?) {
@@ -130,27 +130,29 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     @objc func handleRefresh() {
-        DispatchQueue.main.async {
-            if self.refreshControl?.isRefreshing ?? false {
-                self.refreshControl?.endRefreshing()
+        if nil != WallabagKit.instance.accessToken {
+            DispatchQueue.main.async {
+                if self.refreshControl?.isRefreshing ?? false {
+                    self.refreshControl?.endRefreshing()
+                }
             }
-        }
 
-        self.refreshControl?.beginRefreshing()
+            self.refreshControl?.beginRefreshing()
 
-        articleSync.sync { state in
-            switch state {
-            case .running:
-                DispatchQueue.main.async {
-                    self.progressView.isHidden = false
-                    self.progressView.progress = Float(self.articleSync.pageCompleted) / Float(self.articleSync.maxPage)
+            articleSync.sync { state in
+                switch state {
+                case .running:
+                    DispatchQueue.main.async {
+                        self.progressView.isHidden = false
+                        self.progressView.progress = Float(self.articleSync.pageCompleted) / Float(self.articleSync.maxPage)
+                    }
+                case .finished:
+                    DispatchQueue.main.async {
+                        self.progressView.isHidden = true
+                    }
+                case .error:
+                    self.authError()
                 }
-            case .finished:
-                DispatchQueue.main.async {
-                    self.progressView.isHidden = true
-                }
-            case .error:
-                self.authError()
             }
         }
     }

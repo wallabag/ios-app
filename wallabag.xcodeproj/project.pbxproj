@@ -37,6 +37,7 @@
 		9C77751D1DFB72AD00CB775F /* justify.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C77751C1DFB72AD00CB775F /* justify.css */; };
 		9C7B79E41EBF7E37004559B1 /* wallabag2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B79E21EBF7E37004559B1 /* wallabag2.xcdatamodeld */; };
 		9C7B79E61EBF8070004559B1 /* ArticleSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B79E51EBF8070004559B1 /* ArticleSync.swift */; };
+		9C7DC1D8207F32D7007648CF /* WallabagKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA273302058430000B0A269 /* WallabagKit.swift */; };
 		9C80E8522013BCBE007208B0 /* SyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C80E8512013BCBE007208B0 /* SyncOperation.swift */; };
 		9C8311861E06F56C004ACD5D /* ThemedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8311851E06F56C004ACD5D /* ThemedTableViewCell.swift */; };
 		9C8B20A21F2612BA0084BBAA /* VoiceChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8B20A11F2612BA0084BBAA /* VoiceChoiceTableViewController.swift */; };
@@ -1051,6 +1052,7 @@
 				0975850B1FE5533C0089825B /* Setting.swift in Sources */,
 				9CBA6C601E16FC2B000B9AE6 /* ShareViewController.swift in Sources */,
 				0975850C1FE5535A0089825B /* KeychainPasswordItem.swift in Sources */,
+				9C7DC1D8207F32D7007648CF /* WallabagKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

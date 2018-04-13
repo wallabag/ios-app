@@ -32,30 +32,14 @@ final class Entry: Object {
         return ["title", "content", "isArchived", "isStarred"]
     }
 
-    func hydrate(from article: WallabagEntry) {
-        if 0 == id {
-            setValue(article.id, forKey: "id")
-        }
-        setValue(article.title, forKey: "title")
-        setValue(article.content, forKey: "content")
-        setValue(article.createdAt, forKey: "createdAt")
-        setValue(article.updatedAt, forKey: "updatedAt")
-        setValue(article.isStarred, forKey: "isStarred")
-        setValue(article.isArchived, forKey: "isArchived")
-        setValue(article.previewPicture, forKey: "previewPicture")
-        setValue(article.domainName, forKey: "domainName")
-        setValue(article.readingTime, forKey: "readingTime")
-        setValue(article.url, forKey: "url")
-    }
-
     func hydrate(from article: WallabagKitEntry) {
         if 0 == id {
             setValue(article.id, forKey: "id")
         }
         title = article.title
         content = article.content
-        createdAt = Date()
-        updatedAt = Date()
+        createdAt = Date.fromISOString(article.createdAt)
+        updatedAt = Date.fromISOString(article.updatedAt)
         domainName = article.domainName
         isArchived = article.isArchived == 1
         isStarred = article.isStarred == 1

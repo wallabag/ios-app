@@ -22,7 +22,26 @@ final class LoginViewController: UIViewController {
         Setting.set(password: password.text!, username: username.text!)
         Setting.set(wallabagConfigured: true)
 
-        performSegue(withIdentifier: "toArticles", sender: nil)
+        if let host = Setting.getHost(),
+            let clientId = Setting.getClientId(),
+            let clientSecret = Setting.getClientSecret(),
+            let username = Setting.getUsername(),
+            let password = Setting.getPassword(username: username) {
+            WallabagKit.instance.host = host
+            WallabagKit.instance.clientID = clientId
+            WallabagKit.instance.clientSecret = clientSecret
+            WallabagKit.instance.requestAuth(username: username, password: password) { response in
+                switch response {
+                case .success:
+                    self.performSegue(withIdentifier: "toArticles", sender: nil)
+                default:
+                    //error
+                    break
+                }
+            }
+        } else {
+            //errot
+        }
     }
 
     override func viewDidLoad() {

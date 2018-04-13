@@ -9,6 +9,10 @@
 import Foundation
 import Alamofire
 
+extension NSNotification.Name {
+    static let wallabagkitAuthSuccess = NSNotification.Name("wallabagkit.auth.success")
+}
+
 class WallabagKit {
     static var instance = WallabagKit()
     var host: String?
@@ -52,6 +56,7 @@ class WallabagKit {
                         let result = try! JSONDecoder().decode(WallabagAuthSuccess.self, from: data)
                         self.accessToken = result.accessToken
                         completion(.success(result))
+                        NotificationCenter.default.post(name: .wallabagkitAuthSuccess, object: nil)
                     }
                 default:
                     print(response)
