@@ -9,7 +9,7 @@
 import UIKit
 import StoreKit
 
-class TipViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
+final class TipViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
     let analytics = AnalyticsManager()
     var transactionInProgress = false
     var productIDs: Set<String> = ["tips1"]

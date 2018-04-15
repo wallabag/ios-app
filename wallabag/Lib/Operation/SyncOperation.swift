@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SyncOperation: Operation {
+final class SyncOperation: Operation {
     enum State: String {
         case ready = "Ready"
         case executing = "Executing"

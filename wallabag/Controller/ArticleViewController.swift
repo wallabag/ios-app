@@ -8,7 +8,6 @@
 
 import UIKit
 import TUSafariActivity
-import WallabagKit
 import AVFoundation
 import RealmSwift
 

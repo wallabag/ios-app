@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AboutViewController: UIViewController {
+final class AboutViewController: UIViewController {
 
     @IBOutlet weak var versionText: UILabel!
 
@@ -24,5 +24,4 @@ class AboutViewController: UIViewController {
 
         versionText.text = String(format: "Version %@ build %@".localized, arguments: [version, build])
     }
-
 }

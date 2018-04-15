@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import CoreData
+import CoreSpotlight
 import RealmSwift
 
 final class ArticleSync {
@@ -108,6 +108,16 @@ final class ArticleSync {
         NSLog("Insert article \(wallabagEntry.id)")
         entry.hydrate(from: wallabagEntry)
         realm.add(entry)
+
+        let searchableItem = CSSearchableItem(uniqueIdentifier: entry.spotlightIdentifier,
+                                              domainIdentifier: "entry",
+                                              attributeSet: entry.searchableItemAttributeSet
+        )
+        CSSearchableIndex.default().indexSearchableItems([searchableItem]) { (error) -> Void in
+            if error != nil {
+                NSLog(error!.localizedDescription)
+            }
+        }
     }
 
     private func update(entry: Entry, from article: WallabagKitEntry) {
@@ -155,6 +165,7 @@ final class ArticleSync {
         }
         let realm = try! Realm()
         try! realm.write {
+            CSSearchableIndex.default().deleteSearchableItems(withIdentifiers: [entry.spotlightIdentifier], completionHandler: nil)
             realm.delete(entry)
         }
     }
