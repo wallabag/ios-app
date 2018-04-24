@@ -46,6 +46,7 @@ final class ArticleSync {
                 completion(.running)
                 self.handle(result: collection.items)
 
+                if self.maxPage > 1 {
                 for page in 2...self.maxPage {
                     self.group.enter()
                     let syncOperation = SyncOperation(articleSync: self, page: page, queue: self.syncQueue)
@@ -56,7 +57,7 @@ final class ArticleSync {
                     }
                     self.operationQueue.addOperation(syncOperation)
                 }
-                break
+                }
             case .error:
                 if let username = Setting.getUsername(),
                     let password = Setting.getPassword(username: username) {

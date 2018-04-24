@@ -306,9 +306,10 @@ extension ArticlesTableViewController: UISearchResultsUpdating {
 
         filteringList(predicateCompound)
 
-        searchController.searchBar.isLoading = false
+        //searchController.searchBar.isLoading = false
 
     }
+
     func updateSearchResults(for searchController: UISearchController) {
         NSLog("search: " + searchController.searchBar.text!)
         let searchText = searchController.searchBar.text!
@@ -316,15 +317,13 @@ extension ArticlesTableViewController: UISearchResultsUpdating {
             return
         }
 
-        searchController.searchBar.isLoading = true
+        //searchController.searchBar.isLoading = true
 
         searchTimer?.invalidate()
 
-        searchTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(deferSearch), userInfo: searchText, repeats: false)
+        searchTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(deferSearch), userInfo: searchText, repeats: false)
     }
 }
-
-
 
 extension UISearchBar {
     public var textField: UITextField? {
@@ -335,11 +334,11 @@ extension UISearchBar {
         return textField
     }
 
-    public var activityIndicator: UIActivityIndicatorView? {
+    /*public var activityIndicator: UIActivityIndicatorView? {
         return textField?.leftView?.subviews.flatMap{ $0 as? UIActivityIndicatorView }.first
-    }
+    }*/
 
-    var isLoading: Bool {
+    /*var isLoading: Bool {
         get {
             return activityIndicator != nil
         } set {
@@ -357,5 +356,5 @@ extension UISearchBar {
                 activityIndicator?.removeFromSuperview()
             }
         }
-    }
+    }*/
 }

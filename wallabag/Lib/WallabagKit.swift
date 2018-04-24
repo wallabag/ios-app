@@ -59,7 +59,6 @@ class WallabagKit {
                         NotificationCenter.default.post(name: .wallabagkitAuthSuccess, object: nil)
                     }
                 default:
-                    print(response)
                     break
                 }
             })
@@ -130,7 +129,7 @@ struct WallabagKitEntry: Codable {
     let readingTime: Int?
     let domainName: String?
     let previewPicture: String?
-    let isPublic: Int?
+//    let isPublic: Int
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -148,7 +147,7 @@ struct WallabagKitEntry: Codable {
         case readingTime = "reading_time"
         case domainName = "domain_name"
         case previewPicture = "preview_picture"
-        case isPublic = "is_public"
+//        case isPublic = "is_public"
     }
 }
 
