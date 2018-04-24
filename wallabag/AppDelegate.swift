@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import WallabagKit
 import AlamofireNetworkActivityIndicator
 import CoreSpotlight
 import UserNotifications

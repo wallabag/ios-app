@@ -12,8 +12,6 @@ PODS:
     - Realm (= 3.1.1)
   - SideMenu (3.1.5)
   - TUSafariActivity (1.0.4)
-  - WallabagKit (0.2.0):
-    - Alamofire
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
@@ -23,11 +21,6 @@ DEPENDENCIES:
   - RealmSwift
   - SideMenu (~> 3.1)
   - TUSafariActivity (~> 1.0)
-  - WallabagKit (from `../WallabagKit`)
-
-EXTERNAL SOURCES:
-  WallabagKit:
-    :path: ../WallabagKit
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
@@ -38,8 +31,7 @@ SPEC CHECKSUMS:
   RealmSwift: d31937ca6a6ee54acde64ec839523c0a3c04924b
   SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
-  WallabagKit: b6446ae3d364a0f5c71832779d5d7f240ea46c84
 
-PODFILE CHECKSUM: 0adb40bcb4009aaa4825af5a4093271cf96870b8
+PODFILE CHECKSUM: 8dc67605b9564ccb30e9be92e7f9a2200bf8c447
 
 COCOAPODS: 1.4.0
