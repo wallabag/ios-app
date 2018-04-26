@@ -19,7 +19,6 @@ final class LoginViewController: UIViewController {
 
         Setting.set(username: username.text!)
         Setting.set(password: password.text!, username: username.text!)
-        Setting.set(wallabagConfigured: true)
 
         if let host = Setting.getHost(),
             let clientId = Setting.getClientId(),
@@ -32,14 +31,29 @@ final class LoginViewController: UIViewController {
             WallabagKit.instance.requestAuth(username: username, password: password) { response in
                 switch response {
                 case .success:
+                    Setting.set(wallabagConfigured: true)
                     self.performSegue(withIdentifier: "toArticles", sender: nil)
-                default:
-                    //error
-                    break
+                case .error(let error):
+                    Setting.set(wallabagConfigured: false)
+                    let alertController = UIAlertController(
+                        title: error.error,
+                        message: error.description.localized,
+                        preferredStyle: .alert
+                    )
+                    alertController.addAction(UIAlertAction(title: "ok".localized, style: .cancel))
+                    self.present(alertController, animated: true, completion: nil)
+                    sender.isEnabled = true
                 }
             }
         } else {
-            //errot
+            //error
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if "toArticles" == segue.identifier,
+            let controller = segue.destination as? ArticlesTableViewController {
+            controller.handleRefresh()
         }
     }
 

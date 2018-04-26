@@ -29,7 +29,11 @@ final class ArticlesTableViewController: UITableViewController {
     var notificationToken: NotificationToken?
     var searchTimer: Timer?
 
-    var mode: Setting.RetrieveMode = Setting.getDefaultMode()
+    var mode: Setting.RetrieveMode = Setting.getDefaultMode() {
+        didSet {
+            filteringList()
+        }
+    }
 
     @IBOutlet var progressView: UIProgressView!
 
@@ -51,7 +55,6 @@ final class ArticlesTableViewController: UITableViewController {
 
     @IBAction func filterList(segue: UIStoryboardSegue) {
         mode = Setting.RetrieveMode(rawValue: segue.identifier!)!
-        filteringList()
     }
 
     @IBAction func addLink(_ sender: UIBarButtonItem) {
@@ -307,7 +310,6 @@ extension ArticlesTableViewController: UISearchResultsUpdating {
         filteringList(predicateCompound)
 
         //searchController.searchBar.isLoading = false
-
     }
 
     func updateSearchResults(for searchController: UISearchController) {
