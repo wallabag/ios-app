@@ -59,9 +59,11 @@ final class ArticleSync {
                 }
                 }
             case .error:
+                print("error")
                 if let username = Setting.getUsername(),
                     let password = Setting.getPassword(username: username) {
                     WallabagKit.instance.requestAuth(username: username, password: password) { response in
+                        print(response)
                         completion(.finished)
                     }
                 }

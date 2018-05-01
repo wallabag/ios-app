@@ -1,10 +1,11 @@
-Hello wallabag users!
+Hello to you,
 
-I have rework the sync task, you have now a progress information.
+First of all I want to apologize for the long time with sync bugs.
 
-Add confirm on disconnect action
-Add accessibility label for action on article view
+This version brings a correction of the synchronization and a better stability of the connection.
 
-Fix missing translation
-Fix minor cropping issue with icon of share extension
+Also if your clipboard contains an url the application will suggest you to add it.
 
+
+
+I hope that this version will give you full satisfaction.

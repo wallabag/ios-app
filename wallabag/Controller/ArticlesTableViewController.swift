@@ -82,7 +82,7 @@ final class ArticlesTableViewController: UITableViewController {
         analytics.sendScreenViewed(.articlesView)
         progressView.isHidden = true
 
-        NotificationCenter.default.addObserver(self, selector: #selector(pasteBoardAction), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(pasteBoardAction), name: .UIApplicationDidBecomeActive, object: nil)
 
         refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
 
@@ -101,15 +101,20 @@ final class ArticlesTableViewController: UITableViewController {
         reloadUI()
 
         NotificationCenter.default.addObserver(self, selector: #selector(handleRefresh), name: .wallabagkitAuthSuccess, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(authError), name: .wallabagkitAuthError, object: nil)
     }
 
     override func didMove(toParentViewController parent: UIViewController?) {
         reloadUI()
     }
 
-    private func authError() {
+    @objc private func authError(_ notification: NSNotification) {
+        var message = "Authentication error".localized
+        if let notif = notification.object as? WallabagAuthError {
+            message =  notif.description
+        }
         Setting.set(wallabagConfigured: false)
-        let alert = UIAlertController(title: "Error".localized, message: "Authentication error".localized, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Error".localized, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok".localized, style: .destructive) { _ in
             let homeController = self.storyboard?.instantiateInitialViewController()
             self.present(homeController!, animated: false)
@@ -154,7 +159,7 @@ final class ArticlesTableViewController: UITableViewController {
                         self.progressView.isHidden = true
                     }
                 case .error:
-                    self.authError()
+                    break
                 }
             }
         }

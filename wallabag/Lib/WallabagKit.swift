@@ -11,6 +11,7 @@ import Alamofire
 
 extension NSNotification.Name {
     static let wallabagkitAuthSuccess = NSNotification.Name("wallabagkit.auth.success")
+    static let wallabagkitAuthError = NSNotification.Name("wallabagkit.auth.error")
 }
 
 class WallabagKit {
@@ -52,6 +53,7 @@ class WallabagKit {
                     if 400 == response.response?.statusCode {
                         let result = try! JSONDecoder().decode(WallabagAuthError.self, from: data)
                         completion(.error(result))
+                        NotificationCenter.default.post(name: .wallabagkitAuthError, object: result)
                     } else {
                         let result = try! JSONDecoder().decode(WallabagAuthSuccess.self, from: data)
                         self.accessToken = result.accessToken
@@ -66,7 +68,7 @@ class WallabagKit {
 
     func entry(parameters: Parameters = [:], queue: DispatchQueue?, completion: @escaping (WallabagKitCollectionResponse<WallabagKitEntry>) -> Void) {
         sessionManager.request("\(host!)/api/entries", parameters: parameters)
-            .validate()
+            .validate(statusCode: 200..<500)
             .responseData(queue: queue) { response in
                 switch response.result {
                 case .success(let data):

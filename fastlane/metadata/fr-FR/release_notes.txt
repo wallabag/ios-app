@@ -1,3 +1,11 @@
-Hello wallabag users!
+Bonjour à vous,
 
-Small fix for synchronization issues
+Tout dabord je tiens à m'excuser pour la longue periode avec les bugs de synchronisation.
+
+Cette version aporte une correction de la synchronisation et une meilleur stabilité de la connexion.
+
+Egalement si votre presse papier contient une url l'application vous suggerera de l'ajouter.
+
+
+
+J'espere que cette version vous donnera pleinement satisfaction.
