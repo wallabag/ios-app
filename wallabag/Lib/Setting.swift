@@ -147,7 +147,12 @@ class Setting {
     }
 
     public static func getHost() -> String? {
-        return shared.string(forKey: "host")
+        guard let host = shared.string(forKey: "host") else {return nil}
+        if "/" == host.suffix(1) {
+            return String(host.dropLast())
+        }
+
+        return host
     }
 
     public static func set(token: String) {

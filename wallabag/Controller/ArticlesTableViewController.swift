@@ -68,7 +68,7 @@ final class ArticlesTableViewController: UITableViewController {
                 let selectedEntryId = Int(selectedEntry.components(separatedBy: ".").last!) else {
                     return
             }
-            NSLog("Back from activity")
+            Log("Back from activity")
 
             guard let entry = realm.object(ofType: Entry.self, forPrimaryKey: selectedEntryId) else {
                 return
@@ -318,7 +318,7 @@ extension ArticlesTableViewController: UISearchResultsUpdating {
     }
 
     func updateSearchResults(for searchController: UISearchController) {
-        NSLog("search: " + searchController.searchBar.text!)
+        Log("search: " + searchController.searchBar.text!)
         let searchText = searchController.searchBar.text!
         if ("" == searchText) {
             return

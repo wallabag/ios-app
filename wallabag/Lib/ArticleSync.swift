@@ -108,7 +108,7 @@ final class ArticleSync {
 
     func insert(_ wallabagEntry: WallabagKitEntry, _ realm: Realm) {
         let entry = Entry()
-        NSLog("Insert article \(wallabagEntry.id)")
+        Log("Insert article \(wallabagEntry.id)")
         entry.hydrate(from: wallabagEntry)
         realm.add(entry)
 
@@ -118,7 +118,7 @@ final class ArticleSync {
         )
         CSSearchableIndex.default().indexSearchableItems([searchableItem]) { (error) -> Void in
             if error != nil {
-                NSLog(error!.localizedDescription)
+                Log(error!.localizedDescription)
             }
         }
     }
@@ -162,7 +162,7 @@ final class ArticleSync {
     }
 
     func delete(entry: Entry, callServer: Bool = true) {
-        NSLog("Delete entry \(entry.id)")
+        Log("Delete entry \(entry.id)")
         if callServer {
             WallabagKit.instance.entry(delete: entry.id) {}
         }

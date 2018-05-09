@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        print("[LOG] Realm path" + (Realm.Configuration.defaultConfiguration.fileURL?.description)!)
+        Log("[LOG] Realm path" + (Realm.Configuration.defaultConfiguration.fileURL?.description)!)
 
         NetworkActivityIndicatorManager.shared.isEnabled = true
         NetworkActivityIndicatorManager.shared.startDelay = 0.1
@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let clientSecret = Setting.getClientSecret(),
             let username = Setting.getUsername(),
             let password = Setting.getPassword(username: username) {
-            NSLog("Wallabag api is configured")
+            Log("Wallabag api is configured")
             WallabagKit.instance.host = host
             WallabagKit.instance.clientID = clientId
             WallabagKit.instance.clientSecret = clientSecret

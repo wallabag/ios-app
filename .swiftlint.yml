@@ -6,6 +6,7 @@ excluded:
   - wallabag/Controller/ArticlesTableViewController.swift
   - wallabag/Lib/ArticleSync.swift
   - wallabag/Entity/Entry+CoreDataClass.swift
+  - wallabag/Lib/Utils.swift
   - wallabagScreenshotUITests/SnapshotHelper.swift
   - SnapshotHelper.swift
   - fastlane/SnapshotHelper.swift
