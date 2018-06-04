@@ -14,10 +14,10 @@ final class ArticleSync {
     enum State {
         case finished, running, error
     }
-    private let syncQueue = DispatchQueue(label: "fr.district-web.wallabag.articleSyncQueue", qos: .background)
+    private let syncQueue = DispatchQueue(label: "fr.district-web.wallabag.articleSyncQueue", qos: .utility)
     private var operationQueue: OperationQueue = {
         let queue = OperationQueue()
-        queue.qualityOfService = .background
+        queue.qualityOfService = .utility
         return queue
     }()
     private let group = DispatchGroup()

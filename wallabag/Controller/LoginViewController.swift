@@ -43,6 +43,8 @@ final class LoginViewController: UIViewController {
                     alertController.addAction(UIAlertAction(title: "ok".localized, style: .cancel))
                     self.present(alertController, animated: true, completion: nil)
                     sender.isEnabled = true
+                case .invalidParameter, .unexpectedError:
+                    break
                 }
             }
         } else {

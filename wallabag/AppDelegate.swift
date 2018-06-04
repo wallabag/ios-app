@@ -62,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 case .success(let data):
                     Setting.set(token: data.accessToken)
                     Setting.set(refreshToken: data.refreshToken)
-                case .error:
+                case .error, .invalidParameter, .unexpectedError:
                     break
                 }
 
@@ -96,7 +96,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Swift.Void) {
-        if Setting.isWallabagConfigured() {
+        /*if Setting.isWallabagConfigured() {
             ArticleSync.sharedInstance.sync { state in
                 if state == .finished {
                     self.updateBadge()
@@ -105,7 +105,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         } else {
             completionHandler(.noData)
-        }
+        }*/
     }
 
     private func requestBadge() {

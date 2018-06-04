@@ -14,14 +14,18 @@ target 'wallabag' do
     target 'wallabagUITests' do
         inherit! :search_paths
     end
+
+    target 'wallabagTests' do
+        inherit! :search_paths
+        pod 'Mockingjay'
+    end
 end
 
 target 'bagit' do
     pod 'Alamofire', '~> 4.5'
 end
 
-target 'wallabagTests' do
-end
+
 
 post_install do |installer|
     myTargets = ['SideMenu']

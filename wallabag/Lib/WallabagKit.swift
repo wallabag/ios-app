@@ -15,6 +15,7 @@ extension NSNotification.Name {
 }
 
 class WallabagKit {
+    @available(*, deprecated:1.0, message:"no longer supported.")
     static var instance = WallabagKit()
     var host: String?
     var clientID: String?
@@ -27,15 +28,21 @@ class WallabagKit {
         }
     }
     var sessionManager: SessionManager = SessionManager()
-    private init() {
 
+    init(host: String, clientID: String, clientSecret: String) {
+        self.host = host
+        self.clientID = clientID
+        self.clientSecret = clientSecret
     }
 
+    init() {}
+    
     func requestAuth(username: String, password: String, completion: @escaping (WallabagAuth) -> Void) {
         guard let host = self.host,
             let clientID = self.clientID,
             let clientSecret = self.clientSecret else {
-            return //Todo error
+                completion(.invalidParameter)
+            return
         }
 
         let parameters = [
@@ -47,7 +54,7 @@ class WallabagKit {
         ]
 
         Alamofire.request("\(host)/oauth/v2/token", method: .post, parameters: parameters)
-            .responseData(completionHandler: { response in
+            .responseData { response in
                 switch response.result {
                 case .success(let data):
                     if 400 == response.response?.statusCode {
@@ -55,15 +62,19 @@ class WallabagKit {
                         completion(.error(result))
                         NotificationCenter.default.post(name: .wallabagkitAuthError, object: result)
                     } else {
-                        let result = try! JSONDecoder().decode(WallabagAuthSuccess.self, from: data)
+                        guard let result = try? JSONDecoder().decode(WallabagAuthSuccess.self, from: data) else {
+                            completion(.unexpectedError)
+                            return
+                        }
                         self.accessToken = result.accessToken
                         completion(.success(result))
                         NotificationCenter.default.post(name: .wallabagkitAuthSuccess, object: nil)
                     }
                 default:
+                    completion(.unexpectedError)
                     break
                 }
-            })
+            }
     }
 
     func entry(parameters: Parameters = [:], queue: DispatchQueue?, completion: @escaping (WallabagKitCollectionResponse<WallabagKitEntry>) -> Void) {
@@ -107,7 +118,6 @@ class WallabagKit {
             case .success(let data):
                 let result = try! JSONDecoder().decode(WallabagKitEntry.self, from: data)
                 completion(.success(result))
-                break
             case .failure:
                 break
             }
@@ -196,6 +206,8 @@ enum WallabagKitCollectionResponse<T: Decodable> {
 enum WallabagAuth {
     case success(WallabagAuthSuccess)
     case error(WallabagAuthError)
+    case invalidParameter
+    case unexpectedError
 }
 
 struct WallabagAuthSuccess: Codable {
@@ -231,4 +243,14 @@ class TokenAdapter: RequestAdapter {
         urlRequest.setValue("Bearer " + accessToken, forHTTPHeaderField: "Authorization")
         return urlRequest
     }
+}
+
+protocol WallabagNetworkRequest {
+    func requestAuth(
+        _ url: URL,
+        method: HTTPMethod,
+        parameters: [String: Any]?,
+        headers: [String: String]?,
+        completion: @escaping () -> Void)
+        -> Void
 }
