@@ -15,4 +15,4 @@ before_install:
   - pod repo update > /dev/null
   - gem update fastlane --no-ri --no-rdoc --no-document
 script:
-  - fastlane test
+  - fastlane ios testlib
