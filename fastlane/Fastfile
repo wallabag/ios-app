@@ -1,6 +1,6 @@
 # This is the minimum version number required.
 # Update this, if you use features of a newer version
-fastlane_version "2.0"
+fastlane_version "2.96.1"
 
 default_platform :ios
 
@@ -27,7 +27,7 @@ platform :ios do
   lane :beta do
     increment_build_number
     gym(scheme: "wallabag")
-    pilot
+    pilot(skip_waiting_for_build_processing: true)
   end
 
   lane :screenshot do
@@ -41,15 +41,5 @@ platform :ios do
   desc "Deploy a new version to the App Store"
   lane :release do
     deliver(skip_binary_upload: true, force: true, automatic_release: true)
-  end
-
-  after_all do |lane|
-    
-  end
-  error do |lane, exception|
-    # slack(
-    #   message: exception.message,
-    #   success: false
-    # )
   end
 end

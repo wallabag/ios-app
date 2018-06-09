@@ -61,13 +61,11 @@ class ShareViewController: UIViewController {
                                 let password = Setting.getPassword(username: username),
                                 let clientId = Setting.getClientId(),
                                 let clientSecret = Setting.getClientSecret() {
-                                WallabagKit.instance.host = host
-                                WallabagKit.instance.clientID = clientId
-                                WallabagKit.instance.clientSecret = clientSecret
-                                WallabagKit.instance.requestAuth(username: username, password: password) { auth in
+                                let kit = WallabagKit(host: host, clientID: clientId, clientSecret: clientSecret)
+                                kit.requestAuth(username: username, password: password) { [unowned self] auth in
                                     switch auth {
                                     case .success:
-                                        WallabagKit.instance.entry(add: shareURL as URL, queue: nil) { response in
+                                        kit.entry(add: shareURL as URL, queue: nil) { [unowned self] response in
                                             switch response {
                                             case .success:
                                                 self.clearView()

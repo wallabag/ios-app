@@ -15,19 +15,18 @@ extension NSNotification.Name {
 }
 
 class WallabagKit {
-    @available(*, deprecated:1.0, message:"no longer supported.")
-    static var instance = WallabagKit()
+
     var host: String?
     var clientID: String?
     var clientSecret: String?
     var accessToken: String? {
         didSet {
             if let accessToken = accessToken {
-                self.sessionManager.adapter = TokenAdapter(accessToken: accessToken)
+                WallabagKit.sessionManager.adapter = TokenAdapter(accessToken: accessToken)
             }
         }
     }
-    var sessionManager: SessionManager = SessionManager()
+    static let sessionManager: SessionManager = SessionManager()
 
     init(host: String, clientID: String, clientSecret: String) {
         self.host = host
@@ -36,7 +35,7 @@ class WallabagKit {
     }
 
     init() {}
-    
+
     func requestAuth(username: String, password: String, completion: @escaping (WallabagAuth) -> Void) {
         guard let host = self.host,
             let clientID = self.clientID,
@@ -58,7 +57,10 @@ class WallabagKit {
                 switch response.result {
                 case .success(let data):
                     if 400 == response.response?.statusCode {
-                        let result = try! JSONDecoder().decode(WallabagAuthError.self, from: data)
+                        guard let result = try? JSONDecoder().decode(WallabagAuthError.self, from: data) else {
+                            completion(.unexpectedError)
+                            return
+                        }
                         completion(.error(result))
                         NotificationCenter.default.post(name: .wallabagkitAuthError, object: result)
                     } else {
@@ -72,18 +74,20 @@ class WallabagKit {
                     }
                 default:
                     completion(.unexpectedError)
-                    break
                 }
             }
     }
 
     func entry(parameters: Parameters = [:], queue: DispatchQueue?, completion: @escaping (WallabagKitCollectionResponse<WallabagKitEntry>) -> Void) {
-        sessionManager.request("\(host!)/api/entries", parameters: parameters)
+        WallabagKit.sessionManager.request("\(host!)/api/entries", parameters: parameters)
             .validate(statusCode: 200..<500)
             .responseData(queue: queue) { response in
                 switch response.result {
                 case .success(let data):
-                    let result = try! JSONDecoder().decode(WallabagKitCollection<WallabagKitEntry>.self, from: data)
+                    guard let result = try? JSONDecoder().decode(WallabagKitCollection<WallabagKitEntry>.self, from: data) else {
+                        completion(.error(WallabagError.invalidJSON))
+                        return
+                    }
                     completion(.success(result))
                 case .failure(let error):
                     completion(.error(error))
@@ -92,19 +96,22 @@ class WallabagKit {
     }
 
     public func entry(add url: URL, queue: DispatchQueue?, completion: @escaping (WallabagKitResponse<WallabagKitEntry>) -> Void) {
-        sessionManager.request("\(host!)/api/entries", method: .post, parameters: ["url": url.absoluteString]).validate().responseData(queue: queue) { response in
+        WallabagKit.sessionManager.request("\(host!)/api/entries", method: .post, parameters: ["url": url.absoluteString]).responseData(queue: queue) { response in
             switch response.result {
             case .success(let data):
-                let result = try! JSONDecoder().decode(WallabagKitEntry.self, from: data)
+                guard let result = try? JSONDecoder().decode(WallabagKitEntry.self, from: data) else {
+                    completion(.error(WallabagError.invalidJSON))
+                    return
+                }
                 completion(.success(result))
             case .failure:
-                break
+                completion(.error(WallabagError.unexpectedError))
             }
         }
     }
 
     public func entry(delete id: Int, completion: @escaping () -> Void) {
-        sessionManager.request("\(host!)/api/entries/\(id)", method: .delete)
+        WallabagKit.sessionManager.request("\(host!)/api/entries/\(id)", method: .delete)
             .validate()
             .responseData { _ in
             completion()
@@ -112,14 +119,17 @@ class WallabagKit {
     }
 
     public func entry(update id: Int, parameters: Parameters = [:], queue: DispatchQueue?, completion: @escaping (WallabagKitResponse<WallabagKitEntry>) -> Void) {
-        sessionManager.request("\(host!)/api/entries/\(id)", method: .patch, parameters: parameters)
+        WallabagKit.sessionManager.request("\(host!)/api/entries/\(id)", method: .patch, parameters: parameters)
             .validate().responseData(queue: queue) { response in
             switch response.result {
             case .success(let data):
-                let result = try! JSONDecoder().decode(WallabagKitEntry.self, from: data)
+                guard let result = try? JSONDecoder().decode(WallabagKitEntry.self, from: data) else {
+                    completion(.error(WallabagError.invalidJSON))
+                    return
+                }
                 completion(.success(result))
             case .failure:
-                break
+                completion(.error(WallabagError.unexpectedError))
             }
         }
     }
@@ -203,6 +213,11 @@ enum WallabagKitCollectionResponse<T: Decodable> {
     case error(Error)
 }
 
+enum WallabagError: Error {
+    case invalidJSON
+    case unexpectedError
+}
+
 enum WallabagAuth {
     case success(WallabagAuthSuccess)
     case error(WallabagAuthError)
@@ -243,14 +258,4 @@ class TokenAdapter: RequestAdapter {
         urlRequest.setValue("Bearer " + accessToken, forHTTPHeaderField: "Authorization")
         return urlRequest
     }
-}
-
-protocol WallabagNetworkRequest {
-    func requestAuth(
-        _ url: URL,
-        method: HTTPMethod,
-        parameters: [String: Any]?,
-        headers: [String: String]?,
-        completion: @escaping () -> Void)
-        -> Void
 }

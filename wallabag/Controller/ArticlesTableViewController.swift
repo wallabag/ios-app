@@ -14,6 +14,7 @@ import RealmSwift
 
 final class ArticlesTableViewController: UITableViewController {
 
+
     let articleSync: ArticleSync = ArticleSync.sharedInstance
     let searchController = UISearchController(searchResultsController: nil)
     let analytics = AnalyticsManager()
@@ -28,6 +29,7 @@ final class ArticlesTableViewController: UITableViewController {
     var results: Results<Entry>?
     var notificationToken: NotificationToken?
     var searchTimer: Timer?
+    var wallabagkit: WallabagKit!
 
     var mode: Setting.RetrieveMode = Setting.getDefaultMode() {
         didSet {
@@ -138,7 +140,7 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     @objc func handleRefresh() {
-        if nil != WallabagKit.instance.accessToken {
+        if nil != wallabagkit.accessToken {
             DispatchQueue.main.async {
                 if self.refreshControl?.isRefreshing ?? false {
                     self.refreshControl?.endRefreshing()

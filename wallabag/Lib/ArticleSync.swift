@@ -27,7 +27,7 @@ final class ArticleSync {
     var state: State = .finished
     var pageCompleted: Int = 1
     var maxPage: Int = 1
-
+    var wallabagKit: WallabagKit!
     var entriesSynced: [Int] = []
 
     private init() {}
@@ -39,7 +39,7 @@ final class ArticleSync {
         state = .running
 
         group.enter()
-        WallabagKit.instance.entry(parameters: ["page": 1], queue: syncQueue) { response in
+        wallabagKit.entry(parameters: ["page": 1], queue: syncQueue) { response in
             switch response {
             case .success(let collection):
                 self.maxPage = collection.pages
@@ -49,7 +49,7 @@ final class ArticleSync {
                 if self.maxPage > 1 {
                 for page in 2...self.maxPage {
                     self.group.enter()
-                    let syncOperation = SyncOperation(articleSync: self, page: page, queue: self.syncQueue)
+                    let syncOperation = SyncOperation(articleSync: self, page: page, queue: self.syncQueue, wallabagKit: self.wallabagKit)
                     syncOperation.completionBlock = {
                         self.pageCompleted += 1
                         completion(.running)
@@ -62,7 +62,7 @@ final class ArticleSync {
                 print("error")
                 if let username = Setting.getUsername(),
                     let password = Setting.getPassword(username: username) {
-                    WallabagKit.instance.requestAuth(username: username, password: password) { response in
+                    self.wallabagKit.requestAuth(username: username, password: password) { response in
                         print(response)
                         completion(.finished)
                     }
@@ -139,7 +139,7 @@ final class ArticleSync {
      */
     func update(entry: Entry) {
         let entryRef = ThreadSafeReference(to: entry)
-        WallabagKit.instance.entry(
+        wallabagKit.entry(
             update: entry.id,
             parameters: [
                 "archive": entry.isArchived.hashValue,
@@ -164,7 +164,7 @@ final class ArticleSync {
     func delete(entry: Entry, callServer: Bool = true) {
         Log("Delete entry \(entry.id)")
         if callServer {
-            WallabagKit.instance.entry(delete: entry.id) {}
+            wallabagKit.entry(delete: entry.id) {}
         }
         let realm = try! Realm()
         try! realm.write {
@@ -174,7 +174,7 @@ final class ArticleSync {
     }
 
     func add(url: URL) {
-        WallabagKit.instance.entry(add: url, queue: syncQueue) { response in
+        wallabagKit.entry(add: url, queue: syncQueue) { response in
             switch response {
             case .success(let entry):
                 let realm = try! Realm()

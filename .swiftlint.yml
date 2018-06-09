@@ -1,5 +1,6 @@
 excluded:
   - Pods
+  - wallabagTests
   - wallabag/Model/Server.swift
   - wallabag/Lib/CoreData.swift 
   - wallabag/Entity/Entry+CoreDataProperties.swift

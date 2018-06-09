@@ -143,12 +143,16 @@ class Setting {
     }
 
     public static func set(host: String) {
-        shared.set(host, forKey: "host")
+        shared.set("/" == host.suffix(1) ? host.dropLast() : host, forKey: "host")
     }
 
+    /**
+     * - Todo: remove clean host on read on next release
+     */
     public static func getHost() -> String? {
         guard let host = shared.string(forKey: "host") else {return nil}
         if "/" == host.suffix(1) {
+            set(host: String(host.dropLast()))
             return String(host.dropLast())
         }
 

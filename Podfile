@@ -13,6 +13,7 @@ target 'wallabag' do
     
     target 'wallabagUITests' do
         inherit! :search_paths
+        pod 'Mockingjay'
     end
 
     target 'wallabagTests' do

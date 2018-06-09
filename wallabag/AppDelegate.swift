@@ -54,10 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let username = Setting.getUsername(),
             let password = Setting.getPassword(username: username) {
             Log("Wallabag api is configured")
-            WallabagKit.instance.host = host
-            WallabagKit.instance.clientID = clientId
-            WallabagKit.instance.clientSecret = clientSecret
-            WallabagKit.instance.requestAuth(username: username, password: password) { auth in
+            let kit = WallabagKit(host: host, clientID: clientId, clientSecret: clientSecret)
+            kit.requestAuth(username: username, password: password) { auth in
                 switch auth {
                 case .success(let data):
                     Setting.set(token: data.accessToken)
@@ -67,7 +65,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
 
             }
-            window?.rootViewController = window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "articlesNavigation")
+            let navController = window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "articlesNavigation") as? UINavigationController
+
+            let controller = navController?.viewControllers.first as! ArticlesTableViewController
+            controller.wallabagkit = kit
+
+            ArticleSync.sharedInstance.wallabagKit = kit
+
+            window?.rootViewController = navController
             UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
             requestBadge()
         }
@@ -85,6 +90,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         articlesTable.restoreUserActivityState(userActivity)
         return true
+    }
+
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        //Refresh token quick fix
+        if Setting.isWallabagConfigured(),
+            let host = Setting.getHost(),
+            let clientId = Setting.getClientId(),
+            let clientSecret = Setting.getClientSecret(),
+            let username = Setting.getUsername(),
+            let password = Setting.getPassword(username: username) {
+            let kit = WallabagKit(host: host, clientID: clientId, clientSecret: clientSecret)
+            kit.requestAuth(username: username, password: password) { auth in
+                switch auth {
+                case .success(let data):
+                    Setting.set(token: data.accessToken)
+                    Setting.set(refreshToken: data.refreshToken)
+                case .error, .invalidParameter, .unexpectedError:
+                    break
+                }
+
+            }
+        }
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {

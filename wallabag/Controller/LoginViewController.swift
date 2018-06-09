@@ -11,6 +11,7 @@ import UIKit
 final class LoginViewController: UIViewController {
 
     let analytics = AnalyticsManager()
+    var kit: WallabagKit!
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
 
@@ -25,10 +26,8 @@ final class LoginViewController: UIViewController {
             let clientSecret = Setting.getClientSecret(),
             let username = Setting.getUsername(),
             let password = Setting.getPassword(username: username) {
-            WallabagKit.instance.host = host
-            WallabagKit.instance.clientID = clientId
-            WallabagKit.instance.clientSecret = clientSecret
-            WallabagKit.instance.requestAuth(username: username, password: password) { response in
+            kit = WallabagKit(host: host, clientID: clientId, clientSecret: clientSecret)
+            kit.requestAuth(username: username, password: password) { response in
                 switch response {
                 case .success:
                     Setting.set(wallabagConfigured: true)
@@ -54,7 +53,9 @@ final class LoginViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if "toArticles" == segue.identifier,
-            let controller = segue.destination as? ArticlesTableViewController {
+            let navController = segue.destination as? UINavigationController,
+            let controller = navController.viewControllers.first as? ArticlesTableViewController {
+            controller.wallabagkit = kit
             controller.handleRefresh()
         }
     }

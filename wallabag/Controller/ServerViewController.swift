@@ -37,8 +37,10 @@ final class ServerViewController: UIViewController {
     }
 
     private func validateServer(string: String) -> Bool {
-        guard let url = URL(string: string) else { return false }
-        if !UIApplication.shared.canOpenURL(url) { return false }
+        guard let url = URL(string: string),
+            UIApplication.shared.canOpenURL(url) else {
+                return false
+        }
 
         do {
             let regex = try NSRegularExpression(pattern: "(http|https)://", options: [])
