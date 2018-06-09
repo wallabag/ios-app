@@ -15,6 +15,33 @@
 		622923E91E10F8A5007B2307 /* dusk.css in Resources */ = {isa = PBXBuildFile; fileRef = 622923E81E10F8A5007B2307 /* dusk.css */; };
 		94E4BE19881745BDBEBA546F /* Pods_bagit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96F6D5610DD6249AEA66D5F /* Pods_bagit.framework */; };
 		9C0BF8BA1EC723CF00CEBE93 /* ArticlesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0BF8B91EC723CF00CEBE93 /* ArticlesUITests.swift */; };
+		9C174B9620CBD78800AD8A09 /* NSNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174B9520CBD78800AD8A09 /* NSNotification.swift */; };
+		9C174B9820CBD7B700AD8A09 /* WallabagKitEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174B9720CBD7B700AD8A09 /* WallabagKitEntry.swift */; };
+		9C174B9A20CBD8E400AD8A09 /* WallabagKitCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174B9920CBD8E400AD8A09 /* WallabagKitCollection.swift */; };
+		9C174B9C20CBD92200AD8A09 /* WallabagKitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174B9B20CBD92200AD8A09 /* WallabagKitResponse.swift */; };
+		9C174B9E20CBD93700AD8A09 /* WallabagKitCollectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174B9D20CBD93700AD8A09 /* WallabagKitCollectionResponse.swift */; };
+		9C174BA020CBD95000AD8A09 /* WallabagError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174B9F20CBD95000AD8A09 /* WallabagError.swift */; };
+		9C174BA220CBD99E00AD8A09 /* WallabagAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BA120CBD99E00AD8A09 /* WallabagAuth.swift */; };
+		9C174BA420CBD9C400AD8A09 /* WallabagAuthSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BA320CBD9C400AD8A09 /* WallabagAuthSuccess.swift */; };
+		9C174BA620CBD9DB00AD8A09 /* WallabagAuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BA520CBD9DB00AD8A09 /* WallabagAuthError.swift */; };
+		9C174BA820CBD9F000AD8A09 /* TokenAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BA720CBD9F000AD8A09 /* TokenAdapter.swift */; };
+		9C174BA920CBDA6200AD8A09 /* NSNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174B9520CBD78800AD8A09 /* NSNotification.swift */; };
+		9C174BAA20CBDA6500AD8A09 /* WallabagKitEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174B9720CBD7B700AD8A09 /* WallabagKitEntry.swift */; };
+		9C174BAB20CBDA6800AD8A09 /* WallabagKitCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174B9920CBD8E400AD8A09 /* WallabagKitCollection.swift */; };
+		9C174BAC20CBDA6A00AD8A09 /* WallabagKitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174B9B20CBD92200AD8A09 /* WallabagKitResponse.swift */; };
+		9C174BAD20CBDA6D00AD8A09 /* WallabagKitCollectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174B9D20CBD93700AD8A09 /* WallabagKitCollectionResponse.swift */; };
+		9C174BAE20CBDA6F00AD8A09 /* WallabagError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174B9F20CBD95000AD8A09 /* WallabagError.swift */; };
+		9C174BAF20CBDA7200AD8A09 /* WallabagAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BA120CBD99E00AD8A09 /* WallabagAuth.swift */; };
+		9C174BB020CBDA7500AD8A09 /* WallabagAuthSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BA320CBD9C400AD8A09 /* WallabagAuthSuccess.swift */; };
+		9C174BB120CBDA7700AD8A09 /* WallabagAuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BA520CBD9DB00AD8A09 /* WallabagAuthError.swift */; };
+		9C174BB220CBDA7A00AD8A09 /* TokenAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BA720CBD9F000AD8A09 /* TokenAdapter.swift */; };
+		9C174BB720CBDB6500AD8A09 /* TokenAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BB620CBDB6500AD8A09 /* TokenAdapterTests.swift */; };
+		9C174BB920CBDEF600AD8A09 /* WallabagAuthErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BB820CBDEF600AD8A09 /* WallabagAuthErrorTests.swift */; };
+		9C174BBB20CBDF5A00AD8A09 /* XCTExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BBA20CBDF5A00AD8A09 /* XCTExtension.swift */; };
+		9C174BBD20CBE4E700AD8A09 /* WallabagAuthSuccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BBC20CBE4E700AD8A09 /* WallabagAuthSuccessTests.swift */; };
+		9C174BBF20CBE8C400AD8A09 /* WallabagKitCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BBE20CBE8C400AD8A09 /* WallabagKitCollectionTests.swift */; };
+		9C174BC120CBE8DD00AD8A09 /* EmptyCollection.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C174BC020CBE8DD00AD8A09 /* EmptyCollection.json */; };
+		9C174BC320CBED9600AD8A09 /* EntriesCollection.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C174BC220CBED9600AD8A09 /* EntriesCollection.json */; };
 		9C17868120C1656E00F0F2EA /* WallabagKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C17868020C1656E00F0F2EA /* WallabagKitTests.swift */; };
 		9C181B881DB8E27000D941EB /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C181B871DB8E27000D941EB /* ArticlesTableViewController.swift */; };
 		9C1AA3BB20C2C12A0023B367 /* AuthSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C1AA3BA20C2C12A0023B367 /* AuthSuccess.json */; };
@@ -149,6 +176,23 @@
 		9B9EB64D938632DA7CDDFD2A /* Pods-wallabagUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9C0BF8B91EC723CF00CEBE93 /* ArticlesUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesUITests.swift; sourceTree = "<group>"; };
 		9C0C65961EE81E26008FFE4D /* wallabag2v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabag2v2.xcdatamodel; sourceTree = "<group>"; };
+		9C174B9520CBD78800AD8A09 /* NSNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotification.swift; sourceTree = "<group>"; };
+		9C174B9720CBD7B700AD8A09 /* WallabagKitEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitEntry.swift; sourceTree = "<group>"; };
+		9C174B9920CBD8E400AD8A09 /* WallabagKitCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitCollection.swift; sourceTree = "<group>"; };
+		9C174B9B20CBD92200AD8A09 /* WallabagKitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitResponse.swift; sourceTree = "<group>"; };
+		9C174B9D20CBD93700AD8A09 /* WallabagKitCollectionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitCollectionResponse.swift; sourceTree = "<group>"; };
+		9C174B9F20CBD95000AD8A09 /* WallabagError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagError.swift; sourceTree = "<group>"; };
+		9C174BA120CBD99E00AD8A09 /* WallabagAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuth.swift; sourceTree = "<group>"; };
+		9C174BA320CBD9C400AD8A09 /* WallabagAuthSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuthSuccess.swift; sourceTree = "<group>"; };
+		9C174BA520CBD9DB00AD8A09 /* WallabagAuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuthError.swift; sourceTree = "<group>"; };
+		9C174BA720CBD9F000AD8A09 /* TokenAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAdapter.swift; sourceTree = "<group>"; };
+		9C174BB620CBDB6500AD8A09 /* TokenAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAdapterTests.swift; sourceTree = "<group>"; };
+		9C174BB820CBDEF600AD8A09 /* WallabagAuthErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuthErrorTests.swift; sourceTree = "<group>"; };
+		9C174BBA20CBDF5A00AD8A09 /* XCTExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTExtension.swift; sourceTree = "<group>"; };
+		9C174BBC20CBE4E700AD8A09 /* WallabagAuthSuccessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuthSuccessTests.swift; sourceTree = "<group>"; };
+		9C174BBE20CBE8C400AD8A09 /* WallabagKitCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitCollectionTests.swift; sourceTree = "<group>"; };
+		9C174BC020CBE8DD00AD8A09 /* EmptyCollection.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EmptyCollection.json; sourceTree = "<group>"; };
+		9C174BC220CBED9600AD8A09 /* EntriesCollection.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EntriesCollection.json; sourceTree = "<group>"; };
 		9C17868020C1656E00F0F2EA /* WallabagKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitTests.swift; sourceTree = "<group>"; };
 		9C181B871DB8E27000D941EB /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
 		9C1AA3BA20C2C12A0023B367 /* AuthSuccess.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AuthSuccess.json; sourceTree = "<group>"; };
@@ -315,10 +359,39 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		9C17867F20C1655100F0F2EA /* Lib */ = {
+		9C174B9420CBD75E00AD8A09 /* WallabagKit */ = {
+			isa = PBXGroup;
+			children = (
+				9CA273302058430000B0A269 /* WallabagKit.swift */,
+				9C174B9520CBD78800AD8A09 /* NSNotification.swift */,
+				9C174B9720CBD7B700AD8A09 /* WallabagKitEntry.swift */,
+				9C174B9920CBD8E400AD8A09 /* WallabagKitCollection.swift */,
+				9C174B9B20CBD92200AD8A09 /* WallabagKitResponse.swift */,
+				9C174B9D20CBD93700AD8A09 /* WallabagKitCollectionResponse.swift */,
+				9C174B9F20CBD95000AD8A09 /* WallabagError.swift */,
+				9C174BA120CBD99E00AD8A09 /* WallabagAuth.swift */,
+				9C174BA320CBD9C400AD8A09 /* WallabagAuthSuccess.swift */,
+				9C174BA520CBD9DB00AD8A09 /* WallabagAuthError.swift */,
+				9C174BA720CBD9F000AD8A09 /* TokenAdapter.swift */,
+			);
+			path = WallabagKit;
+			sourceTree = "<group>";
+		};
+		9C174BB320CBDB3400AD8A09 /* WallabagKit */ = {
 			isa = PBXGroup;
 			children = (
 				9C17868020C1656E00F0F2EA /* WallabagKitTests.swift */,
+				9C174BB620CBDB6500AD8A09 /* TokenAdapterTests.swift */,
+				9C174BB820CBDEF600AD8A09 /* WallabagAuthErrorTests.swift */,
+				9C174BBC20CBE4E700AD8A09 /* WallabagAuthSuccessTests.swift */,
+				9C174BBE20CBE8C400AD8A09 /* WallabagKitCollectionTests.swift */,
+			);
+			path = WallabagKit;
+			sourceTree = "<group>";
+		};
+		9C17867F20C1655100F0F2EA /* Lib */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -335,7 +408,6 @@
 				9CB41251205661FF00A71989 /* Bridge.m */,
 				9CB41250205661FE00A71989 /* wallabag-Bridging-Header.h */,
 				9CB412532056635100A71989 /* AnalyticsManager.swift */,
-				9CA273302058430000B0A269 /* WallabagKit.swift */,
 				9CCB702E20998E5D004776B7 /* Utils.swift */,
 			);
 			path = Lib;
@@ -364,6 +436,8 @@
 			children = (
 				9C1AA3BA20C2C12A0023B367 /* AuthSuccess.json */,
 				9C1AA3BC20C2C7C60023B367 /* AuthWrongPassword.json */,
+				9C174BC020CBE8DD00AD8A09 /* EmptyCollection.json */,
+				9C174BC220CBED9600AD8A09 /* EntriesCollection.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -459,6 +533,7 @@
 		9C987A451DB79826005515F4 /* wallabag */ = {
 			isa = PBXGroup;
 			children = (
+				9C174B9420CBD75E00AD8A09 /* WallabagKit */,
 				9C2A2DAC1DD4A6D900EDA4E8 /* Cell */,
 				9C181B841DB8D47C00D941EB /* Controller */,
 				9CE367AA1EEB148E0004F0A0 /* Entity */,
@@ -481,10 +556,12 @@
 		9C987A5D1DB79826005515F4 /* wallabagTests */ = {
 			isa = PBXGroup;
 			children = (
+				9C174BB320CBDB3400AD8A09 /* WallabagKit */,
 				9C1AA3B920C2C1160023B367 /* JSON */,
 				9C17867F20C1655100F0F2EA /* Lib */,
 				9C2A2DAD1DD4A81000EDA4E8 /* Extension */,
 				9C987A601DB79826005515F4 /* Info.plist */,
+				9C174BBA20CBDF5A00AD8A09 /* XCTExtension.swift */,
 			);
 			path = wallabagTests;
 			sourceTree = "<group>";
@@ -765,6 +842,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C174BC120CBE8DD00AD8A09 /* EmptyCollection.json in Resources */,
+				9C174BC320CBED9600AD8A09 /* EntriesCollection.json in Resources */,
 				9C1AA3BD20C2C7C60023B367 /* AuthWrongPassword.json in Resources */,
 				9C1AA3BB20C2C12A0023B367 /* AuthSuccess.json in Resources */,
 			);
@@ -1020,6 +1099,7 @@
 			files = (
 				9C21927D1DBFF44700F628C2 /* ArticleTableViewCell.swift in Sources */,
 				9CF1F2251DBE9D150086B98B /* LoginViewController.swift in Sources */,
+				9C174BA220CBD99E00AD8A09 /* WallabagAuth.swift in Sources */,
 				9CE369741DE632030005E20E /* SettingsTableViewController.swift in Sources */,
 				9CA9659B1F16B68B009C6377 /* White.swift in Sources */,
 				9CA9659F1F16B71E009C6377 /* Dusk.swift in Sources */,
@@ -1037,22 +1117,31 @@
 				9CD48FB7207C9356001AA042 /* Date.swift in Sources */,
 				9CB41252205661FF00A71989 /* Bridge.m in Sources */,
 				9C8B20A21F2612BA0084BBAA /* VoiceChoiceTableViewController.swift in Sources */,
+				9C174B9A20CBD8E400AD8A09 /* WallabagKitCollection.swift in Sources */,
 				9C9034881E5A26D90074540B /* ThemeManager.swift in Sources */,
 				9CE9F2061DE2151B002E06F5 /* AboutViewController.swift in Sources */,
 				9CF1F21C1DBE943C0086B98B /* HomeViewController.swift in Sources */,
+				9C174BA820CBD9F000AD8A09 /* TokenAdapter.swift in Sources */,
 				9C8311861E06F56C004ACD5D /* ThemedTableViewCell.swift in Sources */,
+				9C174BA620CBD9DB00AD8A09 /* WallabagAuthError.swift in Sources */,
 				9C75961C1DBB567E0096614B /* String.swift in Sources */,
 				9CA273312058430000B0A269 /* WallabagKit.swift in Sources */,
+				9C174B9620CBD78800AD8A09 /* NSNotification.swift in Sources */,
 				9C6245D32045CFDC008B3550 /* EntryExtension.swift in Sources */,
 				9CC4B0611DC5361000BC6830 /* Dictionary.swift in Sources */,
 				9CA9659D1F16B6B9009C6377 /* Light.swift in Sources */,
+				9C174B9C20CBD92200AD8A09 /* WallabagKitResponse.swift in Sources */,
+				9C174BA420CBD9C400AD8A09 /* WallabagAuthSuccess.swift in Sources */,
+				9C174BA020CBD95000AD8A09 /* WallabagError.swift in Sources */,
 				9C65DEB11DC5EE85002CA068 /* Int.swift in Sources */,
 				9C80E8522013BCBE007208B0 /* SyncOperation.swift in Sources */,
 				9C298B131E0BF8F400B72503 /* ThemeChoiceTableViewController.swift in Sources */,
 				9C987A471DB79826005515F4 /* AppDelegate.swift in Sources */,
 				9CB412542056635100A71989 /* AnalyticsManager.swift in Sources */,
+				9C174B9E20CBD93700AD8A09 /* WallabagKitCollectionResponse.swift in Sources */,
 				9C25C9B81EEC99D700B97F6D /* TipViewController.swift in Sources */,
 				9C987A4F1DB79826005515F4 /* wallabag.xcdatamodeld in Sources */,
+				9C174B9820CBD7B700AD8A09 /* WallabagKitEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1061,9 +1150,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C2A2DB21DD4A96B00EDA4E8 /* IntTests.swift in Sources */,
+				9C174BB720CBDB6500AD8A09 /* TokenAdapterTests.swift in Sources */,
+				9C174BBD20CBE4E700AD8A09 /* WallabagAuthSuccessTests.swift in Sources */,
+				9C174BBF20CBE8C400AD8A09 /* WallabagKitCollectionTests.swift in Sources */,
 				9C2A2DB41DD4AA1D00EDA4E8 /* StringTests.swift in Sources */,
+				9C174BB920CBDEF600AD8A09 /* WallabagAuthErrorTests.swift in Sources */,
 				9C2A2DAF1DD4A82A00EDA4E8 /* DictionaryTests.swift in Sources */,
 				9C17868120C1656E00F0F2EA /* WallabagKitTests.swift in Sources */,
+				9C174BBB20CBDF5A00AD8A09 /* XCTExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1084,6 +1178,16 @@
 				9CBA6C601E16FC2B000B9AE6 /* ShareViewController.swift in Sources */,
 				0975850C1FE5535A0089825B /* KeychainPasswordItem.swift in Sources */,
 				9C7DC1D8207F32D7007648CF /* WallabagKit.swift in Sources */,
+				9C174BAB20CBDA6800AD8A09 /* WallabagKitCollection.swift in Sources */,
+				9C174BB220CBDA7A00AD8A09 /* TokenAdapter.swift in Sources */,
+				9C174BAA20CBDA6500AD8A09 /* WallabagKitEntry.swift in Sources */,
+				9C174BAD20CBDA6D00AD8A09 /* WallabagKitCollectionResponse.swift in Sources */,
+				9C174BB120CBDA7700AD8A09 /* WallabagAuthError.swift in Sources */,
+				9C174BAE20CBDA6F00AD8A09 /* WallabagError.swift in Sources */,
+				9C174BAF20CBDA7200AD8A09 /* WallabagAuth.swift in Sources */,
+				9C174BAC20CBDA6A00AD8A09 /* WallabagKitResponse.swift in Sources */,
+				9C174BB020CBDA7500AD8A09 /* WallabagAuthSuccess.swift in Sources */,
+				9C174BA920CBDA6200AD8A09 /* NSNotification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

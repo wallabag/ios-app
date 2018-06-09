@@ -1,0 +1,20 @@
+{
+"page": 1,
+"limit": 30,
+"pages": 1,
+"total": 0,
+"_links": {
+"self": {
+"href": "https://app.wallabag.it/api/entries?sort=created&order=desc&tags=&since=0&page=1&perPage=30"
+},
+"first": {
+"href": "https://app.wallabag.it/api/entries?sort=created&order=desc&tags=&since=0&page=1&perPage=30"
+},
+"last": {
+"href": "https://app.wallabag.it/api/entries?sort=created&order=desc&tags=&since=0&page=1&perPage=30"
+}
+},
+"_embedded": {
+"items": []
+}
+}
