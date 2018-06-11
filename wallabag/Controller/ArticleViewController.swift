@@ -90,7 +90,7 @@ final class ArticleViewController: UIViewController {
         navigationItem.title = entry.title
         updateUi()
         setupAccessibilityLabel()
-        loadArticleContent()
+        contentWeb.load(entry: entry)
         contentWeb.scrollView.delegate = self
         contentWeb.backgroundColor = ThemeManager.manager.getBackgroundColor()
 
@@ -106,23 +106,6 @@ final class ArticleViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
         speechSynthetizer.stopSpeaking(at: .immediate)
         UIApplication.shared.isIdleTimerDisabled = false
-    }
-
-    private func loadArticleContent() {
-        DispatchQueue.main.async { [unowned self] in
-            self.contentWeb.loadHTMLString(self.contentForWebView(self.entry), baseURL: Bundle.main.bundleURL)
-        }
-    }
-
-    func contentForWebView(_ entry: Entry) -> String {
-        do {
-            let html = try String(contentsOfFile: Bundle.main.path(forResource: "article", ofType: "html")!)
-            let justify = Setting.isJustifyArticle() ? "justify.css" : ""
-
-            return String(format: html, arguments: [justify, Setting.getTheme(), entry.title!, entry.content!])
-        } catch {
-            fatalError("Unable to load article view")
-        }
     }
 
     private func updateUi() {

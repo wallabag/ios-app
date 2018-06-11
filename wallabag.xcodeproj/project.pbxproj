@@ -94,6 +94,7 @@
 		9CC4B0611DC5361000BC6830 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4B0601DC5361000BC6830 /* Dictionary.swift */; };
 		9CCB702F20998E5D004776B7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCB702E20998E5D004776B7 /* Utils.swift */; };
 		9CD48FB7207C9356001AA042 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD48FB6207C9356001AA042 /* Date.swift */; };
+		9CDB880720CE485E008A21E3 /* UIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB880620CE485E008A21E3 /* UIWebView.swift */; };
 		9CE369741DE632030005E20E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE369731DE632030005E20E /* SettingsTableViewController.swift */; };
 		9CE369761DE63D030005E20E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE369751DE63D030005E20E /* Setting.swift */; };
 		9CE9F2061DE2151B002E06F5 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE9F2051DE2151B002E06F5 /* AboutViewController.swift */; };
@@ -258,6 +259,7 @@
 		9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		9CCB702E20998E5D004776B7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		9CD48FB6207C9356001AA042 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		9CDB880620CE485E008A21E3 /* UIWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWebView.swift; sourceTree = "<group>"; };
 		9CE369731DE632030005E20E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		9CE369751DE63D030005E20E /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		9CE9F2051DE2151B002E06F5 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -503,6 +505,7 @@
 				9C65DEB01DC5EE85002CA068 /* Int.swift */,
 				9C75961B1DBB567E0096614B /* String.swift */,
 				9CD48FB6207C9356001AA042 /* Date.swift */,
+				9CDB880620CE485E008A21E3 /* UIWebView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1110,6 +1113,7 @@
 				9C6245D120458C83008B3550 /* Entry.swift in Sources */,
 				0975850A1FE53E0B0089825B /* KeychainPasswordItem.swift in Sources */,
 				9CA965A11F16B729009C6377 /* Night.swift in Sources */,
+				9CDB880720CE485E008A21E3 /* UIWebView.swift in Sources */,
 				9C181B881DB8E27000D941EB /* ArticlesTableViewController.swift in Sources */,
 				9C75961E1DBD59330096614B /* ArticleViewController.swift in Sources */,
 				9CCB702F20998E5D004776B7 /* Utils.swift in Sources */,
