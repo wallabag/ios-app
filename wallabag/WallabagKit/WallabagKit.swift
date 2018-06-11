@@ -9,7 +9,16 @@
 import Foundation
 import Alamofire
 
-class WallabagKit {
+protocol WallabagKitProtocol {
+    var accessToken: String? { get }
+    func requestAuth(username: String, password: String, completion: @escaping (WallabagAuth) -> Void)
+    func entry(parameters: Parameters, queue: DispatchQueue?, completion: @escaping (WallabagKitCollectionResponse<WallabagKitEntry>) -> Void)
+    func entry(add url: URL, queue: DispatchQueue?, completion: @escaping (WallabagKitResponse<WallabagKitEntry>) -> Void)
+    func entry(delete id: Int, completion: @escaping () -> Void)
+    func entry(update id: Int, parameters: Parameters, queue: DispatchQueue?, completion: @escaping (WallabagKitResponse<WallabagKitEntry>) -> Void)
+}
+
+class WallabagKit: WallabagKitProtocol {
 
     var host: String?
     var clientID: String?

@@ -14,8 +14,6 @@ import RealmSwift
 
 final class ArticlesTableViewController: UITableViewController {
 
-
-    let articleSync: ArticleSync = ArticleSync.sharedInstance
     let searchController = UISearchController(searchResultsController: nil)
     let analytics = AnalyticsManager()
 
@@ -29,7 +27,8 @@ final class ArticlesTableViewController: UITableViewController {
     var results: Results<Entry>?
     var notificationToken: NotificationToken?
     var searchTimer: Timer?
-    var wallabagkit: WallabagKit!
+    var wallabagkit: WallabagKitProtocol!
+    var entryController: EntryController!
 
     var mode: Setting.RetrieveMode = Setting.getDefaultMode() {
         didSet {
@@ -83,6 +82,7 @@ final class ArticlesTableViewController: UITableViewController {
         super.viewDidLoad()
         analytics.sendScreenViewed(.articlesView)
         progressView.isHidden = true
+        entryController = EntryController(wallabagKit: wallabagkit)
 
         NotificationCenter.default.addObserver(self, selector: #selector(pasteBoardAction), name: .UIApplicationDidBecomeActive, object: nil)
 
@@ -132,7 +132,7 @@ final class ArticlesTableViewController: UITableViewController {
         Setting.set(previousPasteBoardUrl: pasteBoardUrl.absoluteString)
         let alertController = UIAlertController(title: "PasteBoard", message: pasteBoardUrl.absoluteString, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Add", style: .default) { _ in
-            self.articleSync.add(url: pasteBoardUrl)
+            self.entryController.add(url: pasteBoardUrl)
         })
         alertController.addAction(UIAlertAction(title: "Cancel", style: .destructive))
         present(alertController, animated: true)
@@ -148,12 +148,12 @@ final class ArticlesTableViewController: UITableViewController {
 
             self.refreshControl?.beginRefreshing()
 
-            articleSync.sync { state in
+            entryController.sync { state in
                 switch state {
                 case .running:
                     DispatchQueue.main.async {
                         self.progressView.isHidden = false
-                        self.progressView.progress = Float(self.articleSync.pageCompleted) / Float(self.articleSync.maxPage)
+                        self.progressView.progress = Float(self.entryController.pageCompleted) / Float(self.entryController.maxPage)
                     }
                 case .finished:
                     DispatchQueue.main.async {
@@ -268,18 +268,18 @@ final class ArticlesTableViewController: UITableViewController {
         try! realm.write {
             entry.isArchived = !entry.isArchived
         }
-        articleSync.update(entry: entry)
+        entryController.update(entry: entry)
     }
 
     private func star(_ entry: Entry) {
         try! realm.write {
             entry.isStarred = !entry.isStarred
         }
-        articleSync.update(entry: entry)
+        entryController.update(entry: entry)
     }
 
     private func delete(_ entry: Entry) {
-        articleSync.delete(entry: entry)
+        entryController.delete(entry: entry)
     }
 
     private func addArticle() {
@@ -290,7 +290,7 @@ final class ArticlesTableViewController: UITableViewController {
         alertController.addAction(UIAlertAction(title: "Add".localized, style: .default, handler: { _ in
             if let textfield = alertController.textFields?.first?.text,
                 let url = URL(string: textfield) {
-                self.articleSync.add(url: url)
+                self.entryController.add(url: url)
             }
 
         }))
@@ -314,8 +314,6 @@ extension ArticlesTableViewController: UISearchResultsUpdating {
         let predicateCompound =  NSCompoundPredicate(orPredicateWithSubpredicates: [predicateTitle, predicateContent])
 
         filteringList(predicateCompound)
-
-        //searchController.searchBar.isLoading = false
     }
 
     func updateSearchResults(for searchController: UISearchController) {
@@ -325,10 +323,7 @@ extension ArticlesTableViewController: UISearchResultsUpdating {
             return
         }
 
-        //searchController.searchBar.isLoading = true
-
         searchTimer?.invalidate()
-
         searchTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(deferSearch), userInfo: searchText, repeats: false)
     }
 }
@@ -341,28 +336,4 @@ extension UISearchBar {
         }
         return textField
     }
-
-    /*public var activityIndicator: UIActivityIndicatorView? {
-        return textField?.leftView?.subviews.flatMap{ $0 as? UIActivityIndicatorView }.first
-    }*/
-
-    /*var isLoading: Bool {
-        get {
-            return activityIndicator != nil
-        } set {
-            if newValue {
-                if activityIndicator == nil {
-                    let newActivityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-                    newActivityIndicator.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
-                    newActivityIndicator.startAnimating()
-                    newActivityIndicator.backgroundColor = self.backgroundColor
-                    textField?.leftView?.addSubview(newActivityIndicator)
-                    let leftViewSize = textField?.leftView?.frame.size ?? CGSize.zero
-                    newActivityIndicator.center = CGPoint(x: leftViewSize.width/2, y: leftViewSize.height/2)
-                }
-            } else {
-                activityIndicator?.removeFromSuperview()
-            }
-        }
-    }*/
 }

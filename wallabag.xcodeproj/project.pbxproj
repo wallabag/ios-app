@@ -67,7 +67,7 @@
 		9C76B6E720CD1AC60054F02C /* Entry.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C76B6E620CD1AC60054F02C /* Entry.json */; };
 		9C77751D1DFB72AD00CB775F /* justify.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C77751C1DFB72AD00CB775F /* justify.css */; };
 		9C7B79E41EBF7E37004559B1 /* wallabag2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B79E21EBF7E37004559B1 /* wallabag2.xcdatamodeld */; };
-		9C7B79E61EBF8070004559B1 /* ArticleSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B79E51EBF8070004559B1 /* ArticleSync.swift */; };
+		9C7B79E61EBF8070004559B1 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B79E51EBF8070004559B1 /* EntryController.swift */; };
 		9C7DC1D8207F32D7007648CF /* WallabagKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA273302058430000B0A269 /* WallabagKit.swift */; };
 		9C80E8522013BCBE007208B0 /* SyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C80E8512013BCBE007208B0 /* SyncOperation.swift */; };
 		9C8311861E06F56C004ACD5D /* ThemedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8311851E06F56C004ACD5D /* ThemedTableViewCell.swift */; };
@@ -221,7 +221,7 @@
 		9C76B6E620CD1AC60054F02C /* Entry.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Entry.json; sourceTree = "<group>"; };
 		9C77751C1DFB72AD00CB775F /* justify.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = justify.css; sourceTree = "<group>"; };
 		9C7B79E31EBF7E37004559B1 /* wallabag2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabag2.xcdatamodel; sourceTree = "<group>"; };
-		9C7B79E51EBF8070004559B1 /* ArticleSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleSync.swift; sourceTree = "<group>"; };
+		9C7B79E51EBF8070004559B1 /* EntryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 		9C80E8512013BCBE007208B0 /* SyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncOperation.swift; sourceTree = "<group>"; };
 		9C8311851E06F56C004ACD5D /* ThemedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemedTableViewCell.swift; sourceTree = "<group>"; };
 		9C8B20A11F2612BA0084BBAA /* VoiceChoiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceChoiceTableViewController.swift; sourceTree = "<group>"; };
@@ -405,7 +405,7 @@
 			children = (
 				9C4D5AE220245CEB005778E4 /* Operation */,
 				9CA965991F16B669009C6377 /* Theme */,
-				9C7B79E51EBF8070004559B1 /* ArticleSync.swift */,
+				9C7B79E51EBF8070004559B1 /* EntryController.swift */,
 				9CE369751DE63D030005E20E /* Setting.swift */,
 				9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */,
 				097585091FE53E0B0089825B /* KeychainPasswordItem.swift */,
@@ -1121,7 +1121,7 @@
 				9CF1F2231DBE9B800086B98B /* ClientIdViewController.swift in Sources */,
 				9CF1F2211DBE97D80086B98B /* ServerViewController.swift in Sources */,
 				9CE369761DE63D030005E20E /* Setting.swift in Sources */,
-				9C7B79E61EBF8070004559B1 /* ArticleSync.swift in Sources */,
+				9C7B79E61EBF8070004559B1 /* EntryController.swift in Sources */,
 				9CD48FB7207C9356001AA042 /* Date.swift in Sources */,
 				9CB41252205661FF00A71989 /* Bridge.m in Sources */,
 				9C8B20A21F2612BA0084BBAA /* VoiceChoiceTableViewController.swift in Sources */,

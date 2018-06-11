@@ -19,28 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        Log("[LOG] Realm path" + (Realm.Configuration.defaultConfiguration.fileURL?.description)!)
-
-        NetworkActivityIndicatorManager.shared.isEnabled = true
-        NetworkActivityIndicatorManager.shared.startDelay = 0.1
         ThemeManager.manager.apply(Setting.getTheme())
 
-        let gai = GAI.sharedInstance()
-        _ = gai?.tracker(withTrackingId: "UA-115437094-1")
-        gai?.trackUncaughtExceptions = true
-
-        let config = Realm.Configuration(
-            schemaVersion: 1,
-            migrationBlock: { _, _ in
-        })
-
-        Realm.Configuration.defaultConfiguration = config
-
-        do {
-            _ = try Realm()
-        } catch {
-            fatalError("real error")
-        }
+        configureNetworkIndicator()
+        configureGA()
+        configureRealm()
 
         let args = ProcessInfo.processInfo.arguments
         if args.contains("RESET_APPLICATION") {
@@ -67,10 +50,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             let navController = window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "articlesNavigation") as? UINavigationController
 
-            let controller = navController?.viewControllers.first as! ArticlesTableViewController
+            guard let controller = navController?.viewControllers.first as? ArticlesTableViewController else {
+                fatalError("Wrong root nav controller")
+            }
             controller.wallabagkit = kit
-
-            ArticleSync.sharedInstance.wallabagKit = kit
 
             window?.rootViewController = navController
             UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
@@ -80,6 +63,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupQuickAction()
 
         return true
+    }
+
+    private func configureGA() {
+        let gai = GAI.sharedInstance()
+        _ = gai?.tracker(withTrackingId: "UA-115437094-1")
+        gai?.trackUncaughtExceptions = true
+    }
+
+    private func configureRealm() {
+        Log("[LOG] Realm path" + (Realm.Configuration.defaultConfiguration.fileURL?.description)!)
+        let config = Realm.Configuration(
+            schemaVersion: 1,
+            migrationBlock: { _, _ in
+        })
+
+        Realm.Configuration.defaultConfiguration = config
+
+        do {
+            _ = try Realm()
+        } catch {
+            fatalError("real error")
+        }
+    }
+
+    private func configureNetworkIndicator() {
+        NetworkActivityIndicatorManager.shared.isEnabled = true
+        NetworkActivityIndicatorManager.shared.startDelay = 0.1
     }
 
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
@@ -124,15 +134,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Swift.Void) {
         /*if Setting.isWallabagConfigured() {
-            ArticleSync.sharedInstance.sync { state in
-                if state == .finished {
-                    self.updateBadge()
-                    completionHandler(.newData)
-                }
-            }
-        } else {
-            completionHandler(.noData)
-        }*/
+         ArticleSync.sharedInstance.sync { state in
+         if state == .finished {
+         self.updateBadge()
+         completionHandler(.newData)
+         }
+         }
+         } else {
+         completionHandler(.noData)
+         }*/
     }
 
     private func requestBadge() {

@@ -11,7 +11,7 @@ import Alamofire
 
 class TokenAdapter: RequestAdapter {
     let accessToken: String
-    
+
     init(accessToken: String) {
         self.accessToken = accessToken
     }

@@ -10,7 +10,7 @@ import Foundation
 import CoreSpotlight
 import RealmSwift
 
-final class ArticleSync {
+final class EntryController {
     enum State {
         case finished, running, error
     }
@@ -22,15 +22,15 @@ final class ArticleSync {
     }()
     private let group = DispatchGroup()
 
-    static let sharedInstance: ArticleSync = ArticleSync()
-
     var state: State = .finished
     var pageCompleted: Int = 1
     var maxPage: Int = 1
-    var wallabagKit: WallabagKit!
+    let wallabagKit: WallabagKitProtocol
     var entriesSynced: [Int] = []
 
-    private init() {}
+    init(wallabagKit: WallabagKitProtocol) {
+        self.wallabagKit = wallabagKit
+    }
 
     func sync(completion: @escaping (State) -> Void) {
         if state == .running {
@@ -47,19 +47,18 @@ final class ArticleSync {
                 self.handle(result: collection.items)
 
                 if self.maxPage > 1 {
-                for page in 2...self.maxPage {
-                    self.group.enter()
-                    let syncOperation = SyncOperation(articleSync: self, page: page, queue: self.syncQueue, wallabagKit: self.wallabagKit)
-                    syncOperation.completionBlock = {
-                        self.pageCompleted += 1
-                        completion(.running)
-                        self.group.leave()
+                    for page in 2...self.maxPage {
+                        self.group.enter()
+                        let syncOperation = SyncOperation(entryController: self, page: page, queue: self.syncQueue, wallabagKit: self.wallabagKit)
+                        syncOperation.completionBlock = {
+                            self.pageCompleted += 1
+                            completion(.running)
+                            self.group.leave()
+                        }
+                        self.operationQueue.addOperation(syncOperation)
                     }
-                    self.operationQueue.addOperation(syncOperation)
-                }
                 }
             case .error:
-                print("error")
                 if let username = Setting.getUsername(),
                     let password = Setting.getPassword(username: username) {
                     self.wallabagKit.requestAuth(username: username, password: password) { response in
@@ -67,7 +66,6 @@ final class ArticleSync {
                         completion(.finished)
                     }
                 }
-                break
             }
             self.group.leave()
         }
@@ -85,24 +83,32 @@ final class ArticleSync {
     }
 
     func handle(result: [WallabagKitEntry]) {
-        let realm = try! Realm()
-        realm.beginWrite()
-        for wallabagEntry in result {
-            entriesSynced.append(wallabagEntry.id)
-            if let entry = realm.object(ofType: Entry.self, forPrimaryKey: wallabagEntry.id) {
-                self.update(entry: entry, from: wallabagEntry)
-            } else {
-                self.insert(wallabagEntry, realm)
+        do {
+            let realm = try Realm()
+            realm.beginWrite()
+            for wallabagEntry in result {
+                entriesSynced.append(wallabagEntry.id)
+                if let entry = realm.object(ofType: Entry.self, forPrimaryKey: wallabagEntry.id) {
+                    self.update(entry: entry, from: wallabagEntry)
+                } else {
+                    self.insert(wallabagEntry, realm)
+                }
             }
+            try realm.commitWrite()
+        } catch _ {
+
         }
-        try? realm.commitWrite()
     }
 
     private func purge() {
-        let realmPurge = try! Realm()
-        try! realmPurge.write {
-            let entries = realmPurge.objects(Entry.self).filter("NOT (id IN %@)", entriesSynced)
-            realmPurge.delete(entries)
+        do {
+            let realmPurge = try Realm()
+            try realmPurge.write {
+                let entries = realmPurge.objects(Entry.self).filter("NOT (id IN %@)", entriesSynced)
+                realmPurge.delete(entries)
+            }
+        } catch _ {
+
         }
     }
 
@@ -148,13 +154,16 @@ final class ArticleSync {
             queue: syncQueue) { response in
                 switch response {
                 case .success(let entryFromServer):
-                    let realm = try! Realm()
-                    if let entry = realm.resolve(entryRef) {
-                        try! realm.write {
-                            entry.updatedAt = Date.fromISOString(entryFromServer.updatedAt)
+                    do {
+                        let realm = try Realm()
+                        if let entry = realm.resolve(entryRef) {
+                            try realm.write {
+                                entry.updatedAt = Date.fromISOString(entryFromServer.updatedAt)
+                            }
                         }
+                    } catch _ {
+
                     }
-                    break
                 case .error:
                     break
                 }
@@ -162,14 +171,20 @@ final class ArticleSync {
     }
 
     func delete(entry: Entry, callServer: Bool = true) {
+        defer {
+            CSSearchableIndex.default().deleteSearchableItems(withIdentifiers: [entry.spotlightIdentifier], completionHandler: nil)
+        }
         Log("Delete entry \(entry.id)")
         if callServer {
             wallabagKit.entry(delete: entry.id) {}
         }
-        let realm = try! Realm()
-        try! realm.write {
-            CSSearchableIndex.default().deleteSearchableItems(withIdentifiers: [entry.spotlightIdentifier], completionHandler: nil)
-            realm.delete(entry)
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.delete(entry)
+            }
+        } catch _ {
+
         }
     }
 
@@ -177,9 +192,13 @@ final class ArticleSync {
         wallabagKit.entry(add: url, queue: syncQueue) { response in
             switch response {
             case .success(let entry):
-                let realm = try! Realm()
-                try! realm.write {
-                    self.insert(entry, realm)
+                do {
+                    let realm = try Realm()
+                    try realm.write {
+                        self.insert(entry, realm)
+                    }
+                } catch _ {
+
                 }
             case .error:
                 break

@@ -31,13 +31,13 @@ final class SyncOperation: Operation {
         }
     }
 
-    let articleSync: ArticleSync
+    let entryController: EntryController
     let page: Int
     let queue: DispatchQueue
-    let wallabagKit: WallabagKit
+    let wallabagKit: WallabagKitProtocol
 
-    init(articleSync: ArticleSync, page: Int, queue: DispatchQueue, wallabagKit: WallabagKit) {
-        self.articleSync = articleSync
+    init(entryController: EntryController, page: Int, queue: DispatchQueue, wallabagKit: WallabagKitProtocol) {
+        self.entryController = entryController
         self.page = page
         self.queue = queue
         self.wallabagKit = wallabagKit
@@ -60,7 +60,7 @@ final class SyncOperation: Operation {
             wallabagKit.entry(parameters: ["page": page], queue: queue) { response in
                 switch response {
                 case .success(let collection):
-                    self.articleSync.handle(result: collection.items)
+                    self.entryController.handle(result: collection.items)
                 case .error:
                     //@todo handle error
                     break
