@@ -224,4 +224,12 @@ class Setting {
     public static func isWallabagConfigured() -> Bool {
         return shared.bool(forKey: "wallabagConfigured")
     }
+
+    public static func set(previousPasteBoardUrl: String) {
+        shared.set(previousPasteBoardUrl, forKey: "previousPasteBoardUrl")
+    }
+
+    public static func getPreviousPasteBoardUrl() -> String? {
+        return shared.string(forKey: "previousPasteBoardUrl")
+    }
 }

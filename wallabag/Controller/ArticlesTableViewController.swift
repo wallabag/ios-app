@@ -125,12 +125,11 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     @objc func pasteBoardAction() {
-        let previousPasteBoardUrl = UserDefaults.standard.string(forKey: "previousPasteBoardUrl")
         guard let pasteBoardUrl = UIPasteboard.general.url,
-            pasteBoardUrl.absoluteString != previousPasteBoardUrl else {
+            pasteBoardUrl.absoluteString != Setting.getPreviousPasteBoardUrl() else {
                 return
         }
-        UserDefaults.standard.set(pasteBoardUrl.absoluteString, forKey: "previousPasteBoardUrl")
+        Setting.set(previousPasteBoardUrl: pasteBoardUrl.absoluteString)
         let alertController = UIAlertController(title: "PasteBoard", message: pasteBoardUrl.absoluteString, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Add", style: .default) { _ in
             self.articleSync.add(url: pasteBoardUrl)

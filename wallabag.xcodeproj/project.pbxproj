@@ -64,6 +64,7 @@
 		9C65DEB11DC5EE85002CA068 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C65DEB01DC5EE85002CA068 /* Int.swift */; };
 		9C75961C1DBB567E0096614B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75961B1DBB567E0096614B /* String.swift */; };
 		9C75961E1DBD59330096614B /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75961D1DBD59330096614B /* ArticleViewController.swift */; };
+		9C76B6E720CD1AC60054F02C /* Entry.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C76B6E620CD1AC60054F02C /* Entry.json */; };
 		9C77751D1DFB72AD00CB775F /* justify.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C77751C1DFB72AD00CB775F /* justify.css */; };
 		9C7B79E41EBF7E37004559B1 /* wallabag2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B79E21EBF7E37004559B1 /* wallabag2.xcdatamodeld */; };
 		9C7B79E61EBF8070004559B1 /* ArticleSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B79E51EBF8070004559B1 /* ArticleSync.swift */; };
@@ -216,6 +217,7 @@
 		9C75961B1DBB567E0096614B /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		9C75961D1DBD59330096614B /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		9C75DD9CC88FFD838573A351 /* Pods_wallabagTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C76B6E620CD1AC60054F02C /* Entry.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Entry.json; sourceTree = "<group>"; };
 		9C77751C1DFB72AD00CB775F /* justify.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = justify.css; sourceTree = "<group>"; };
 		9C7B79E31EBF7E37004559B1 /* wallabag2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabag2.xcdatamodel; sourceTree = "<group>"; };
 		9C7B79E51EBF8070004559B1 /* ArticleSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleSync.swift; sourceTree = "<group>"; };
@@ -438,6 +440,7 @@
 				9C1AA3BC20C2C7C60023B367 /* AuthWrongPassword.json */,
 				9C174BC020CBE8DD00AD8A09 /* EmptyCollection.json */,
 				9C174BC220CBED9600AD8A09 /* EntriesCollection.json */,
+				9C76B6E620CD1AC60054F02C /* Entry.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -845,6 +848,7 @@
 				9C174BC120CBE8DD00AD8A09 /* EmptyCollection.json in Resources */,
 				9C174BC320CBED9600AD8A09 /* EntriesCollection.json in Resources */,
 				9C1AA3BD20C2C7C60023B367 /* AuthWrongPassword.json in Resources */,
+				9C76B6E720CD1AC60054F02C /* Entry.json in Resources */,
 				9C1AA3BB20C2C12A0023B367 /* AuthSuccess.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1390,7 +1394,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = wallabag/wallabag.entitlements;
-				CURRENT_PROJECT_VERSION = 103;
+				CURRENT_PROJECT_VERSION = 104;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = wallabag/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1413,7 +1417,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = wallabag/wallabag.entitlements;
-				CURRENT_PROJECT_VERSION = 103;
+				CURRENT_PROJECT_VERSION = 104;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = wallabag/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
