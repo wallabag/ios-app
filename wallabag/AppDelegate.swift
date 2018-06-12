@@ -24,11 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configureNetworkIndicator()
         configureGA()
         configureRealm()
-
-        let args = ProcessInfo.processInfo.arguments
-        if args.contains("RESET_APPLICATION") {
-            resetApplication()
-        }
+        handleArgs()
 
         if Setting.isWallabagConfigured(),
             let host = Setting.getHost(),
@@ -46,7 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 case .error, .invalidParameter, .unexpectedError:
                     break
                 }
-
             }
             let navController = window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "articlesNavigation") as? UINavigationController
 
@@ -54,15 +49,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Wrong root nav controller")
             }
             controller.wallabagkit = kit
-
             window?.rootViewController = navController
-            UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+            //UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
             requestBadge()
         }
 
         setupQuickAction()
 
         return true
+    }
+
+    private func handleArgs() {
+        let args = ProcessInfo.processInfo.arguments
+        if args.contains("RESET_APPLICATION") {
+            resetApplication()
+        }
     }
 
     private func configureGA() {
@@ -104,7 +105,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         //Refresh token quick fix
-        if Setting.isWallabagConfigured(),
+        /*if Setting.isWallabagConfigured(),
             let host = Setting.getHost(),
             let clientId = Setting.getClientId(),
             let clientSecret = Setting.getClientSecret(),
@@ -121,7 +122,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
 
             }
-        }
+        }*/
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
