@@ -188,19 +188,31 @@ final class ArticlesTableViewController: UITableViewController {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete".localized, handler: { _, _ in
             self.delete(entry)
         })
-        deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.188235294, alpha: 1)
+        if #available(iOS 11.0, *) {
+            deleteAction.backgroundColor = UIColor(named: "DeleteColor")
+        } else {
+            deleteAction.backgroundColor = #colorLiteral(red: 1, green: 0.231372549, blue: 0.188235294, alpha: 1)
+        }
 
         let starAction = UITableViewRowAction(style: .default, title: entry.isStarred ? "Unstar".localized : "Star".localized, handler: { _, _ in
             self.tableView.setEditing(false, animated: true)
             self.star(entry)
         })
-        starAction.backgroundColor = #colorLiteral(red: 1, green: 0.584313725, blue: 0, alpha: 1)
+        if #available(iOS 11.0, *) {
+            starAction.backgroundColor = UIColor(named: "StarColor")
+        } else {
+            starAction.backgroundColor = #colorLiteral(red: 1, green: 0.584313725, blue: 0, alpha: 1)
+        }
 
         let readAction = UITableViewRowAction(style: .default, title: entry.isArchived ? "Unread".localized : "Read".localized, handler: { _, _ in
             self.tableView.setEditing(false, animated: true)
             self.read(entry)
         })
-        readAction.backgroundColor = #colorLiteral(red: 0, green: 0.478431373, blue: 1, alpha: 1)
+        if #available(iOS 11.0, *) {
+            readAction.backgroundColor = UIColor(named: "ReadColor")
+        } else {
+            readAction.backgroundColor = #colorLiteral(red: 0, green: 0.478431373, blue: 1, alpha: 1)
+        }
 
         return [deleteAction, starAction, readAction]
     }
