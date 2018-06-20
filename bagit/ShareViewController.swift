@@ -31,7 +31,7 @@ class ShareViewController: UIViewController {
     lazy var backView: UIView = {
         let back = UIView(frame: self.view.frame)
         back.backgroundColor = .gray
-        back.alpha = 0.6
+        back.alpha = 0.0
         return back
     }()
 
@@ -39,54 +39,61 @@ class ShareViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(backView)
         view.addSubview(notificationView)
+        UIView.animate(withDuration: 0.3) { [unowned self] in
+            self.backView.alpha = 0.6
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        if Setting.isWallabagConfigured() {
-            guard let items = extensionContext?.inputItems as? [NSExtensionItem] else {
-                self.extensionContext?.cancelRequest(withError: extError)
-                return
-            }
-            for item in items {
-                guard let attachements = item.attachments as? [NSItemProvider] else {
-                    self.extensionContext?.cancelRequest(withError: extError)
-                    return
-                }
-                for attachement in attachements {
-                    if attachement.hasItemConformingToTypeIdentifier("public.url") {
-                        attachement.loadItem(forTypeIdentifier: "public.url", options: nil, completionHandler: { (url, _) -> Void in
-                            if let shareURL = url as? NSURL,
-                                let host = Setting.getHost(),
-                                let username = Setting.getUsername(),
-                                let password = Setting.getPassword(username: username),
-                                let clientId = Setting.getClientId(),
-                                let clientSecret = Setting.getClientSecret() {
-                                let kit = WallabagKit(host: host, clientID: clientId, clientSecret: clientSecret)
-                                kit.requestAuth(username: username, password: password) { [unowned self] auth in
-                                    switch auth {
+        if Setting.isWallabagConfigured(),
+            let host = Setting.getHost(),
+            let username = Setting.getUsername(),
+            let password = Setting.getPassword(username: username),
+            let clientId = Setting.getClientId(),
+            let clientSecret = Setting.getClientSecret(),
+            let attachements = getAttachements() {
+
+            let kit = WallabagKit(host: host, clientID: clientId, clientSecret: clientSecret)
+            kit.requestAuth(username: username, password: password) { [unowned self] auth in
+                switch auth {
+                case .success:
+                    for attachement in attachements {
+                        attachement.loadItem(forTypeIdentifier: "public.url", options: nil) { (url, _) -> Void in
+                            if let shareURL = url as? NSURL {
+                                kit.entry(add: shareURL as URL, queue: nil) { [unowned self] response in
+                                    switch response {
                                     case .success:
-                                        kit.entry(add: shareURL as URL, queue: nil) { [unowned self] response in
-                                            switch response {
-                                            case .success:
-                                                self.clearView()
-                                            default:
-                                                self.clearView(withError: true)
-                                            }
-                                        }
+                                        self.clearView()
                                     default:
                                         self.clearView(withError: true)
                                     }
                                 }
-                            } else {
-                                self.clearView(withError: true)
                             }
-                        })
+                        }
+                    }
+                default:
+                    self.clearView(withError: true)
+                }
+            }
+        }
+    }
+
+    private func getAttachements() -> [NSItemProvider]? {
+        var att: [NSItemProvider] = []
+        guard let items = extensionContext?.inputItems as? [NSExtensionItem] else {
+            return nil
+        }
+        for item in items where ((item.attachments as? [NSItemProvider]) != nil) {
+            if let attachements = item.attachments as? [NSItemProvider] {
+                for attachement in attachements {
+                    if attachement.hasItemConformingToTypeIdentifier("public.url") {
+                        att.append(attachement)
                     }
                 }
             }
-        } else {
-            self.clearView(withError: true)
         }
+
+        return att
     }
 
     private func clearView(withError: Bool = false) {

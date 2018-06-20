@@ -17,6 +17,7 @@ final class EntryController {
     private let syncQueue = DispatchQueue(label: "fr.district-web.wallabag.articleSyncQueue", qos: .utility)
     private var operationQueue: OperationQueue = {
         let queue = OperationQueue()
+        queue.name = "Sync operation queue"
         queue.qualityOfService = .utility
         return queue
     }()
@@ -171,14 +172,12 @@ final class EntryController {
     }
 
     func delete(entry: Entry, callServer: Bool = true) {
-        defer {
-            CSSearchableIndex.default().deleteSearchableItems(withIdentifiers: [entry.spotlightIdentifier], completionHandler: nil)
-        }
         Log("Delete entry \(entry.id)")
         if callServer {
             wallabagKit.entry(delete: entry.id) {}
         }
         do {
+            CSSearchableIndex.default().deleteSearchableItems(withIdentifiers: [entry.spotlightIdentifier], completionHandler: nil)
             let realm = try Realm()
             try realm.write {
                 realm.delete(entry)

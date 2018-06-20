@@ -13,7 +13,7 @@ target 'wallabag' do
     
     target 'wallabagUITests' do
         inherit! :search_paths
-        pod 'Mockingjay'
+        pod 'Swifter', '~> 1.3.3'
     end
 
     target 'wallabagTests' do
@@ -29,7 +29,7 @@ end
 
 
 post_install do |installer|
-    myTargets = ['SideMenu']
+    myTargets = ['SideMenu', 'Swifter']
 
     installer.pods_project.targets.each do |target|
         if myTargets.include? target.name
