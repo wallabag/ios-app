@@ -66,7 +66,6 @@
 		9C75961E1DBD59330096614B /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75961D1DBD59330096614B /* ArticleViewController.swift */; };
 		9C76B6E720CD1AC60054F02C /* Entry.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C76B6E620CD1AC60054F02C /* Entry.json */; };
 		9C77751D1DFB72AD00CB775F /* justify.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C77751C1DFB72AD00CB775F /* justify.css */; };
-		9C7B79E41EBF7E37004559B1 /* wallabag2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B79E21EBF7E37004559B1 /* wallabag2.xcdatamodeld */; };
 		9C7B79E61EBF8070004559B1 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B79E51EBF8070004559B1 /* EntryController.swift */; };
 		9C7DC1D8207F32D7007648CF /* WallabagKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA273302058430000B0A269 /* WallabagKit.swift */; };
 		9C80E8522013BCBE007208B0 /* SyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C80E8512013BCBE007208B0 /* SyncOperation.swift */; };
@@ -75,7 +74,6 @@
 		9C9034881E5A26D90074540B /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */; };
 		9C987A471DB79826005515F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C987A461DB79826005515F4 /* AppDelegate.swift */; };
 		9C987A4C1DB79826005515F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A4A1DB79826005515F4 /* Main.storyboard */; };
-		9C987A4F1DB79826005515F4 /* wallabag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C987A4D1DB79826005515F4 /* wallabag.xcdatamodeld */; };
 		9C987A511DB79826005515F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A501DB79826005515F4 /* Assets.xcassets */; };
 		9C987A541DB79826005515F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A521DB79826005515F4 /* LaunchScreen.storyboard */; };
 		9CA232301DFECE74006B29B8 /* light.css in Resources */ = {isa = PBXBuildFile; fileRef = 9CA2322F1DFECE74006B29B8 /* light.css */; };
@@ -177,7 +175,6 @@
 		94D0C2FA2C870EE989B2406D /* Pods-wallabagTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests.release.xcconfig"; sourceTree = "<group>"; };
 		9B9EB64D938632DA7CDDFD2A /* Pods-wallabagUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9C0BF8B91EC723CF00CEBE93 /* ArticlesUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesUITests.swift; sourceTree = "<group>"; };
-		9C0C65961EE81E26008FFE4D /* wallabag2v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabag2v2.xcdatamodel; sourceTree = "<group>"; };
 		9C174B9520CBD78800AD8A09 /* NSNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotification.swift; sourceTree = "<group>"; };
 		9C174B9720CBD7B700AD8A09 /* WallabagKitEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitEntry.swift; sourceTree = "<group>"; };
 		9C174B9920CBD8E400AD8A09 /* WallabagKitCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitCollection.swift; sourceTree = "<group>"; };
@@ -220,7 +217,6 @@
 		9C75DD9CC88FFD838573A351 /* Pods_wallabagTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C76B6E620CD1AC60054F02C /* Entry.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Entry.json; sourceTree = "<group>"; };
 		9C77751C1DFB72AD00CB775F /* justify.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = justify.css; sourceTree = "<group>"; };
-		9C7B79E31EBF7E37004559B1 /* wallabag2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabag2.xcdatamodel; sourceTree = "<group>"; };
 		9C7B79E51EBF8070004559B1 /* EntryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
 		9C80E8512013BCBE007208B0 /* SyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncOperation.swift; sourceTree = "<group>"; };
 		9C8311851E06F56C004ACD5D /* ThemedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemedTableViewCell.swift; sourceTree = "<group>"; };
@@ -228,7 +224,6 @@
 		9C987A431DB79826005515F4 /* wallabag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wallabag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C987A461DB79826005515F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C987A4B1DB79826005515F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9C987A4E1DB79826005515F4 /* wallabag.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabag.xcdatamodel; sourceTree = "<group>"; };
 		9C987A501DB79826005515F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9C987A531DB79826005515F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C987A551DB79826005515F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -552,8 +547,6 @@
 				9C987A501DB79826005515F4 /* Assets.xcassets */,
 				9C987A551DB79826005515F4 /* Info.plist */,
 				9CBA6C6C1E17010E000B9AE6 /* wallabag.entitlements */,
-				9C987A4D1DB79826005515F4 /* wallabag.xcdatamodeld */,
-				9C7B79E21EBF7E37004559B1 /* wallabag2.xcdatamodeld */,
 				9CF4FED41EEB2F7E00653B90 /* Localizable.strings */,
 			);
 			path = wallabag;
@@ -1115,7 +1108,6 @@
 				9C181B881DB8E27000D941EB /* ArticlesTableViewController.swift in Sources */,
 				9C75961E1DBD59330096614B /* ArticleViewController.swift in Sources */,
 				9CCB702F20998E5D004776B7 /* Utils.swift in Sources */,
-				9C7B79E41EBF7E37004559B1 /* wallabag2.xcdatamodeld in Sources */,
 				9CF1F2231DBE9B800086B98B /* ClientIdViewController.swift in Sources */,
 				9CF1F2211DBE97D80086B98B /* ServerViewController.swift in Sources */,
 				9CE369761DE63D030005E20E /* Setting.swift in Sources */,
@@ -1146,7 +1138,6 @@
 				9CB412542056635100A71989 /* AnalyticsManager.swift in Sources */,
 				9C174B9E20CBD93700AD8A09 /* WallabagKitCollectionResponse.swift in Sources */,
 				9C25C9B81EEC99D700B97F6D /* TipViewController.swift in Sources */,
-				9C987A4F1DB79826005515F4 /* wallabag.xcdatamodeld in Sources */,
 				9C174B9820CBD7B700AD8A09 /* WallabagKitEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1627,30 +1618,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		9C7B79E21EBF7E37004559B1 /* wallabag2.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				9C7B79E31EBF7E37004559B1 /* wallabag2.xcdatamodel */,
-				9C0C65961EE81E26008FFE4D /* wallabag2v2.xcdatamodel */,
-			);
-			currentVersion = 9C0C65961EE81E26008FFE4D /* wallabag2v2.xcdatamodel */;
-			path = wallabag2.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		9C987A4D1DB79826005515F4 /* wallabag.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				9C987A4E1DB79826005515F4 /* wallabag.xcdatamodel */,
-			);
-			currentVersion = 9C987A4E1DB79826005515F4 /* wallabag.xcdatamodel */;
-			path = wallabag.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 9C987A3B1DB79826005515F4 /* Project object */;
 }

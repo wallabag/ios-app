@@ -8,7 +8,6 @@
 
 import XCTest
 
-
 class ArticlesUITests: XCTestCase {
 
     private func addArticle() {

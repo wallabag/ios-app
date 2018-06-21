@@ -1,11 +1,1 @@
-Hello to you,
-
-First of all I want to apologize for the long time with sync bugs.
-
-This version brings a correction of the synchronization and a better stability of the connection.
-
-Also if your clipboard contains an url the application will suggest you to add it.
-
-
-
-I hope that this version will give you full satisfaction.
+Trying to fo fix some issues.
