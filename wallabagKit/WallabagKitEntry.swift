@@ -8,22 +8,22 @@
 
 import Foundation
 
-struct WallabagKitEntry: Codable {
-    let id: Int
-    let userId: Int?
-    let uid: String?
-    let title: String?
-    let url: String?
-    let isArchived: Int
-    let isStarred: Int
-    let content: String?
-    let createdAt: String
-    let updatedAt: String
-    let mimetype: String?
-    let language: String?
-    let readingTime: Int?
-    let domainName: String?
-    let previewPicture: String?
+public struct WallabagKitEntry: Codable {
+    public let id: Int
+    public let userId: Int?
+    public let uid: String?
+    public let title: String?
+    public let url: String?
+    public let isArchived: Int
+    public let isStarred: Int
+    public let content: String?
+    public let createdAt: String
+    public let updatedAt: String
+    public let mimetype: String?
+    public let language: String?
+    public let readingTime: Int?
+    public let domainName: String?
+    public let previewPicture: String?
     //    let isPublic: Int
 
     enum CodingKeys: String, CodingKey {

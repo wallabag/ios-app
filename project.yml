@@ -1,0 +1,41 @@
+name: wallabag
+targets:
+  wallabag:
+    type: application
+    platform: iOS
+    deploymentTarget: "11.0"
+    sources: [wallabag]
+    dependencies:
+      - target: bagit
+      - framework: WallabagCommon
+      - framework: WallabagKit
+    settings:
+      SWIFT_OBJC_BRIDGING_HEADER: "wallabag/Lib/wallabag-Bridging-Header.h"
+  bagit:
+    type: app-extension
+    platform: iOS
+    deploymentTarget: "11.0"
+    sources: bagit
+    dependencies:
+      - framework: WallabagCommon
+      - framework: WallabagKit
+  wallabagUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    deploymentTarget: "11.0"
+    sources: [wallabagUITests]
+  wallabagTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "11.0"
+    sources: [wallabagTests]
+  WallabagCommon:
+    type: framework
+    platform: iOS
+    deploymentTarget: "11.0"
+    sources: [wallabagCommon]
+  WallabagKit:
+    type: framework
+    platform: iOS
+    deploymentTarget: "11.0"
+    sources: [wallabagKit]

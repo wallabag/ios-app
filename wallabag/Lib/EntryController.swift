@@ -9,6 +9,8 @@
 import Foundation
 import CoreSpotlight
 import RealmSwift
+import WallabagKit
+import WallabagCommon
 
 final class EntryController {
     enum State {

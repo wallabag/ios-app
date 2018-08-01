@@ -9,19 +9,19 @@
 import Foundation
 import AVFoundation
 
-class Setting {
+public class Setting {
 
     static let sharedDomain = "group.wallabag.share_extension"
     static var standard = UserDefaults.standard
     static var shared = UserDefaults(suiteName: sharedDomain)!
 
-    enum RetrieveMode: String {
+    public enum RetrieveMode: String {
         case allArticles
         case archivedArticles
         case unarchivedArticles
         case starredArticles
 
-        func humainReadable() -> String {
+        public func humainReadable() -> String {
             switch self {
             case .allArticles:
                 return "All articles"
@@ -34,7 +34,7 @@ class Setting {
             }
         }
 
-        func predicate() -> NSPredicate {
+        public func predicate() -> NSPredicate {
             switch self {
             case .unarchivedArticles:
                 return NSPredicate(format: "isArchived == 0")
@@ -48,7 +48,7 @@ class Setting {
         }
     }
 
-    enum Const: String {
+    public enum Const: String {
         case defaultMode
         case justifyArticle
         case articleTheme
@@ -57,26 +57,26 @@ class Setting {
         case speechVoice
     }
 
-    static func getDefaultMode() -> RetrieveMode {
+    public static func getDefaultMode() -> RetrieveMode {
         guard let value = standard.string(forKey: Const.defaultMode.rawValue) else {
             return .allArticles
         }
         return RetrieveMode(rawValue: value)!
     }
 
-    static func setDefaultMode(mode: RetrieveMode) {
+    public static func setDefaultMode(mode: RetrieveMode) {
         standard.set(mode.rawValue, forKey: Const.defaultMode.rawValue)
     }
 
-    static func isJustifyArticle() -> Bool {
+    public static func isJustifyArticle() -> Bool {
         return standard.bool(forKey: Const.justifyArticle.rawValue)
     }
 
-    static func setJustifyArticle(value: Bool) {
+    public static func setJustifyArticle(value: Bool) {
         standard.set(value, forKey: Const.justifyArticle.rawValue)
     }
 
-    static func isBadgeEnable() -> Bool {
+    public static func isBadgeEnable() -> Bool {
         //enabled by default
         if nil == standard.object(forKey: Const.badge.rawValue) {
             return true
@@ -84,30 +84,30 @@ class Setting {
         return standard.bool(forKey: Const.badge.rawValue)
     }
 
-    static func setBadgeEnable(value: Bool) {
+    public static func setBadgeEnable(value: Bool) {
         standard.set(value, forKey: Const.badge.rawValue)
     }
 
-    static func setSpeechRate(value: Float) {
+    public static func setSpeechRate(value: Float) {
         standard.set(value, forKey: Const.speechRate.rawValue)
     }
 
-    static func getSpeechRate() -> Float {
+    public static func getSpeechRate() -> Float {
         guard standard.value(forKey: Const.speechRate.rawValue) != nil else {
             return 0.5
         }
         return standard.float(forKey: Const.speechRate.rawValue)
     }
 
-    static func getSpeechVoice() -> AVSpeechSynthesisVoice? {
+    public static func getSpeechVoice() -> AVSpeechSynthesisVoice? {
         return AVSpeechSynthesisVoice(identifier: standard.string(forKey: Const.speechVoice.rawValue) ?? "com.apple.ttsbundle.Daniel-compact")
     }
 
-    static func setSpeechVoice(identifier: String) {
+    public static func setSpeechVoice(identifier: String) {
         standard.set(identifier, forKey: Const.speechVoice.rawValue)
     }
 
-    static func getTheme() -> String {
+    public static func getTheme() -> String {
         guard let value = standard.string(forKey: Const.articleTheme.rawValue) else {
             return "white"
         }
@@ -115,11 +115,11 @@ class Setting {
         return value
     }
 
-    static func setTheme(value: String) {
+    public static func setTheme(value: String) {
         standard.set(value, forKey: Const.articleTheme.rawValue)
     }
 
-    static func deleteServer() {
+    public static func deleteServer() {
         shared.removeObject(forKey: "host")
         shared.removeObject(forKey: "clientId")
         shared.removeObject(forKey: "clientSecret")
@@ -131,7 +131,7 @@ class Setting {
         shared.synchronize()
     }
 
-    static func purge() {
+    public static func purge() {
         defer {
             standard.synchronize()
             shared.synchronize()

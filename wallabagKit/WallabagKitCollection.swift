@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct WallabagKitCollection<T: Decodable>: Decodable {
-    let limit: Int
-    let page: Int
-    let pages: Int
-    let total: Int
-    let items: [T]
+public struct WallabagKitCollection<T: Decodable>: Decodable {
+    public let limit: Int
+    public let page: Int
+    public let pages: Int
+    public let total: Int
+    public let items: [T]
 
     enum CodingKeys: String, CodingKey {
         case limit
@@ -27,7 +27,7 @@ struct WallabagKitCollection<T: Decodable>: Decodable {
         case items
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let embeddedContainer = try container.nestedContainer(keyedBy: EmbeddedItems.self, forKey: .embedded)
         limit = try container.decode(Int.self, forKey: .limit)

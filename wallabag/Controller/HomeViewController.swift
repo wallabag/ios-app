@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WallabagCommon
 
 final class HomeViewController: UIViewController {
 

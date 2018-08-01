@@ -26,6 +26,10 @@ target 'bagit' do
     pod 'Alamofire', '~> 4.5'
 end
 
+target 'WallabagKit' do
+    pod 'Alamofire', '~> 4.5'
+end
+
 
 
 post_install do |installer|

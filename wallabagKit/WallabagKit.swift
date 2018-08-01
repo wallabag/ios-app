@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-protocol WallabagKitProtocol {
+public protocol WallabagKitProtocol {
     var accessToken: String? { get }
     func requestAuth(username: String, password: String, completion: @escaping (WallabagAuth) -> Void)
     func entry(parameters: Parameters, queue: DispatchQueue?, completion: @escaping (WallabagKitCollectionResponse<WallabagKitEntry>) -> Void)
@@ -18,12 +18,12 @@ protocol WallabagKitProtocol {
     func entry(update id: Int, parameters: Parameters, queue: DispatchQueue?, completion: @escaping (WallabagKitResponse<WallabagKitEntry>) -> Void)
 }
 
-class WallabagKit: WallabagKitProtocol {
+public class WallabagKit: WallabagKitProtocol {
 
     var host: String?
     var clientID: String?
     var clientSecret: String?
-    var accessToken: String? {
+    public var accessToken: String? {
         didSet {
             if let accessToken = accessToken {
                 WallabagKit.sessionManager.adapter = TokenAdapter(accessToken: accessToken)
@@ -32,7 +32,7 @@ class WallabagKit: WallabagKitProtocol {
     }
     static let sessionManager: SessionManager = SessionManager()
 
-    init(host: String, clientID: String, clientSecret: String) {
+    public init(host: String, clientID: String, clientSecret: String) {
         self.host = host
         self.clientID = clientID
         self.clientSecret = clientSecret
@@ -40,7 +40,7 @@ class WallabagKit: WallabagKitProtocol {
 
     init() {}
 
-    func requestAuth(username: String, password: String, completion: @escaping (WallabagAuth) -> Void) {
+    public func requestAuth(username: String, password: String, completion: @escaping (WallabagAuth) -> Void) {
         guard let host = self.host,
             let clientID = self.clientID,
             let clientSecret = self.clientSecret else {
@@ -82,7 +82,7 @@ class WallabagKit: WallabagKitProtocol {
         }
     }
 
-    func entry(parameters: Parameters = [:], queue: DispatchQueue?, completion: @escaping (WallabagKitCollectionResponse<WallabagKitEntry>) -> Void) {
+    public func entry(parameters: Parameters = [:], queue: DispatchQueue?, completion: @escaping (WallabagKitCollectionResponse<WallabagKitEntry>) -> Void) {
         WallabagKit.sessionManager.request("\(host!)/api/entries", parameters: parameters)
             .validate(statusCode: 200..<500)
             .responseData(queue: queue) { response in

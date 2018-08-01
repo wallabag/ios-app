@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct WallabagAuthError: Codable {
-    let error: String
-    let description: String
+public struct WallabagAuthError: Codable {
+    public let error: String
+    public let description: String
     enum CodingKeys: String, CodingKey {
         case error
         case description = "error_description"

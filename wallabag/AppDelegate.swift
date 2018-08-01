@@ -11,6 +11,8 @@ import AlamofireNetworkActivityIndicator
 import CoreSpotlight
 import UserNotifications
 import RealmSwift
+import WallabagCommon
+import WallabagKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

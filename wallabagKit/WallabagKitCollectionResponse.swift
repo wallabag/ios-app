@@ -1,5 +1,5 @@
 //
-//  WallabagKitResponse.swift
+//  WallabagKitCollectionResponse.swift
 //  wallabag
 //
 //  Created by maxime marinel on 09/06/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum WallabagKitResponse<T: Decodable> {
-    case success(T)
+public enum WallabagKitCollectionResponse<T: Decodable> {
+    case success(WallabagKitCollection<T>)
     case error(Error)
 }

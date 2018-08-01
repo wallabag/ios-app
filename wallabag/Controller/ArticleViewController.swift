@@ -10,6 +10,7 @@ import UIKit
 import TUSafariActivity
 import AVFoundation
 import RealmSwift
+import WallabagCommon
 
 final class ArticleViewController: UIViewController {
 

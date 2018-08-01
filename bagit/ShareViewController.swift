@@ -8,6 +8,8 @@
 
 import UIKit
 import Social
+import WallabagCommon
+import WallabagKit
 
 @objc(ShareViewController)
 class ShareViewController: UIViewController {

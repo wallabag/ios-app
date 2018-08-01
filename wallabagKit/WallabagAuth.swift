@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum WallabagAuth {
+public enum WallabagAuth {
     case success(WallabagAuthSuccess)
     case error(WallabagAuthError)
     case invalidParameter

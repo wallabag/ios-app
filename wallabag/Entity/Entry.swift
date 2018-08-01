@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import WallabagKit
 
 final class Entry: Object {
     @objc dynamic public var content: String?

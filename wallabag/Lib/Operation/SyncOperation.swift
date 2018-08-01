@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WallabagKit
 
 final class SyncOperation: Operation {
     enum State: String {

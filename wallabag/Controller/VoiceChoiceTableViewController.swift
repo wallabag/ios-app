@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import WallabagCommon
 
 final class VoiceChoiceTableViewController: UITableViewController {
 

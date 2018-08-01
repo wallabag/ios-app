@@ -11,6 +11,8 @@ import UserNotifications
 import CoreData
 import CoreSpotlight
 import RealmSwift
+import WallabagKit
+import WallabagCommon
 
 final class ArticlesTableViewController: UITableViewController {
 

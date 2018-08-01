@@ -7,893 +7,797 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01971931BCF414226F407E96 /* Pods_wallabagTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C75DD9CC88FFD838573A351 /* Pods_wallabagTests.framework */; };
-		0975850A1FE53E0B0089825B /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097585091FE53E0B0089825B /* KeychainPasswordItem.swift */; };
-		0975850B1FE5533C0089825B /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE369751DE63D030005E20E /* Setting.swift */; };
-		0975850C1FE5535A0089825B /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097585091FE53E0B0089825B /* KeychainPasswordItem.swift */; };
-		621665201E0CFC2600438EE2 /* white.css in Resources */ = {isa = PBXBuildFile; fileRef = 6216651F1E0CFC2600438EE2 /* white.css */; };
-		622923E91E10F8A5007B2307 /* dusk.css in Resources */ = {isa = PBXBuildFile; fileRef = 622923E81E10F8A5007B2307 /* dusk.css */; };
-		94E4BE19881745BDBEBA546F /* Pods_bagit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96F6D5610DD6249AEA66D5F /* Pods_bagit.framework */; };
-		9C0BF8BA1EC723CF00CEBE93 /* ArticlesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0BF8B91EC723CF00CEBE93 /* ArticlesUITests.swift */; };
-		9C174B9620CBD78800AD8A09 /* NSNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174B9520CBD78800AD8A09 /* NSNotification.swift */; };
-		9C174B9820CBD7B700AD8A09 /* WallabagKitEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174B9720CBD7B700AD8A09 /* WallabagKitEntry.swift */; };
-		9C174B9A20CBD8E400AD8A09 /* WallabagKitCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174B9920CBD8E400AD8A09 /* WallabagKitCollection.swift */; };
-		9C174B9C20CBD92200AD8A09 /* WallabagKitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174B9B20CBD92200AD8A09 /* WallabagKitResponse.swift */; };
-		9C174B9E20CBD93700AD8A09 /* WallabagKitCollectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174B9D20CBD93700AD8A09 /* WallabagKitCollectionResponse.swift */; };
-		9C174BA020CBD95000AD8A09 /* WallabagError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174B9F20CBD95000AD8A09 /* WallabagError.swift */; };
-		9C174BA220CBD99E00AD8A09 /* WallabagAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BA120CBD99E00AD8A09 /* WallabagAuth.swift */; };
-		9C174BA420CBD9C400AD8A09 /* WallabagAuthSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BA320CBD9C400AD8A09 /* WallabagAuthSuccess.swift */; };
-		9C174BA620CBD9DB00AD8A09 /* WallabagAuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BA520CBD9DB00AD8A09 /* WallabagAuthError.swift */; };
-		9C174BA820CBD9F000AD8A09 /* TokenAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BA720CBD9F000AD8A09 /* TokenAdapter.swift */; };
-		9C174BA920CBDA6200AD8A09 /* NSNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174B9520CBD78800AD8A09 /* NSNotification.swift */; };
-		9C174BAA20CBDA6500AD8A09 /* WallabagKitEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174B9720CBD7B700AD8A09 /* WallabagKitEntry.swift */; };
-		9C174BAB20CBDA6800AD8A09 /* WallabagKitCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174B9920CBD8E400AD8A09 /* WallabagKitCollection.swift */; };
-		9C174BAC20CBDA6A00AD8A09 /* WallabagKitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174B9B20CBD92200AD8A09 /* WallabagKitResponse.swift */; };
-		9C174BAD20CBDA6D00AD8A09 /* WallabagKitCollectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174B9D20CBD93700AD8A09 /* WallabagKitCollectionResponse.swift */; };
-		9C174BAE20CBDA6F00AD8A09 /* WallabagError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174B9F20CBD95000AD8A09 /* WallabagError.swift */; };
-		9C174BAF20CBDA7200AD8A09 /* WallabagAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BA120CBD99E00AD8A09 /* WallabagAuth.swift */; };
-		9C174BB020CBDA7500AD8A09 /* WallabagAuthSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BA320CBD9C400AD8A09 /* WallabagAuthSuccess.swift */; };
-		9C174BB120CBDA7700AD8A09 /* WallabagAuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BA520CBD9DB00AD8A09 /* WallabagAuthError.swift */; };
-		9C174BB220CBDA7A00AD8A09 /* TokenAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BA720CBD9F000AD8A09 /* TokenAdapter.swift */; };
-		9C174BB720CBDB6500AD8A09 /* TokenAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BB620CBDB6500AD8A09 /* TokenAdapterTests.swift */; };
-		9C174BB920CBDEF600AD8A09 /* WallabagAuthErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BB820CBDEF600AD8A09 /* WallabagAuthErrorTests.swift */; };
-		9C174BBB20CBDF5A00AD8A09 /* XCTExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BBA20CBDF5A00AD8A09 /* XCTExtension.swift */; };
-		9C174BBD20CBE4E700AD8A09 /* WallabagAuthSuccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BBC20CBE4E700AD8A09 /* WallabagAuthSuccessTests.swift */; };
-		9C174BBF20CBE8C400AD8A09 /* WallabagKitCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C174BBE20CBE8C400AD8A09 /* WallabagKitCollectionTests.swift */; };
-		9C174BC120CBE8DD00AD8A09 /* EmptyCollection.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C174BC020CBE8DD00AD8A09 /* EmptyCollection.json */; };
-		9C174BC320CBED9600AD8A09 /* EntriesCollection.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C174BC220CBED9600AD8A09 /* EntriesCollection.json */; };
-		9C17868120C1656E00F0F2EA /* WallabagKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C17868020C1656E00F0F2EA /* WallabagKitTests.swift */; };
-		9C181B881DB8E27000D941EB /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C181B871DB8E27000D941EB /* ArticlesTableViewController.swift */; };
-		9C1AA3BB20C2C12A0023B367 /* AuthSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C1AA3BA20C2C12A0023B367 /* AuthSuccess.json */; };
-		9C1AA3BD20C2C7C60023B367 /* AuthWrongPassword.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C1AA3BC20C2C7C60023B367 /* AuthWrongPassword.json */; };
-		9C21927D1DBFF44700F628C2 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C21927C1DBFF44700F628C2 /* ArticleTableViewCell.swift */; };
-		9C25C9B81EEC99D700B97F6D /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C25C9B71EEC99D700B97F6D /* TipViewController.swift */; };
-		9C298B131E0BF8F400B72503 /* ThemeChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C298B121E0BF8F400B72503 /* ThemeChoiceTableViewController.swift */; };
-		9C2A2DAF1DD4A82A00EDA4E8 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2A2DAE1DD4A82A00EDA4E8 /* DictionaryTests.swift */; };
-		9C2A2DB21DD4A96B00EDA4E8 /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2A2DB11DD4A96B00EDA4E8 /* IntTests.swift */; };
-		9C2A2DB41DD4AA1D00EDA4E8 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2A2DB31DD4AA1D00EDA4E8 /* StringTests.swift */; };
-		9C39B5C52027AAC400CA6B36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A501DB79826005515F4 /* Assets.xcassets */; };
-		9C431D561E63094B0009439C /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C431D551E63094B0009439C /* Media.xcassets */; };
-		9C4537921DD1236B00FF6CFE /* article.html in Resources */ = {isa = PBXBuildFile; fileRef = 9C45378E1DD1236B00FF6CFE /* article.html */; };
-		9C4537931DD1236B00FF6CFE /* night.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C45378F1DD1236B00FF6CFE /* night.css */; };
-		9C4537941DD1236B00FF6CFE /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C4537901DD1236B00FF6CFE /* main.css */; };
-		9C4537951DD1236B00FF6CFE /* ratatouille.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C4537911DD1236B00FF6CFE /* ratatouille.css */; };
-		9C5145251EEF2EE5005C40B4 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5145241EEF2EE5005C40B4 /* StoreKit.framework */; };
-		9C6245D120458C83008B3550 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6245D020458C83008B3550 /* Entry.swift */; };
-		9C6245D32045CFDC008B3550 /* EntryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6245D22045CFDC008B3550 /* EntryExtension.swift */; };
-		9C65DEB11DC5EE85002CA068 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C65DEB01DC5EE85002CA068 /* Int.swift */; };
-		9C75961C1DBB567E0096614B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75961B1DBB567E0096614B /* String.swift */; };
-		9C75961E1DBD59330096614B /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75961D1DBD59330096614B /* ArticleViewController.swift */; };
-		9C76B6E720CD1AC60054F02C /* Entry.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C76B6E620CD1AC60054F02C /* Entry.json */; };
-		9C77751D1DFB72AD00CB775F /* justify.css in Resources */ = {isa = PBXBuildFile; fileRef = 9C77751C1DFB72AD00CB775F /* justify.css */; };
-		9C7B79E61EBF8070004559B1 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7B79E51EBF8070004559B1 /* EntryController.swift */; };
-		9C7DC1D8207F32D7007648CF /* WallabagKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA273302058430000B0A269 /* WallabagKit.swift */; };
-		9C80E8522013BCBE007208B0 /* SyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C80E8512013BCBE007208B0 /* SyncOperation.swift */; };
-		9C8311861E06F56C004ACD5D /* ThemedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8311851E06F56C004ACD5D /* ThemedTableViewCell.swift */; };
-		9C8B20A21F2612BA0084BBAA /* VoiceChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8B20A11F2612BA0084BBAA /* VoiceChoiceTableViewController.swift */; };
-		9C9034881E5A26D90074540B /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */; };
-		9C987A471DB79826005515F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C987A461DB79826005515F4 /* AppDelegate.swift */; };
-		9C987A4C1DB79826005515F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A4A1DB79826005515F4 /* Main.storyboard */; };
-		9C987A511DB79826005515F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A501DB79826005515F4 /* Assets.xcassets */; };
-		9C987A541DB79826005515F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A521DB79826005515F4 /* LaunchScreen.storyboard */; };
-		9CA232301DFECE74006B29B8 /* light.css in Resources */ = {isa = PBXBuildFile; fileRef = 9CA2322F1DFECE74006B29B8 /* light.css */; };
-		9CA273312058430000B0A269 /* WallabagKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA273302058430000B0A269 /* WallabagKit.swift */; };
-		9CA9659B1F16B68B009C6377 /* White.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA9659A1F16B68B009C6377 /* White.swift */; };
-		9CA9659D1F16B6B9009C6377 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA9659C1F16B6B9009C6377 /* Light.swift */; };
-		9CA9659F1F16B71E009C6377 /* Dusk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA9659E1F16B71E009C6377 /* Dusk.swift */; };
-		9CA965A11F16B729009C6377 /* Night.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA965A01F16B729009C6377 /* Night.swift */; };
-		9CB41252205661FF00A71989 /* Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB41251205661FF00A71989 /* Bridge.m */; };
-		9CB412542056635100A71989 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB412532056635100A71989 /* AnalyticsManager.swift */; };
-		9CBA6C601E16FC2B000B9AE6 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBA6C5F1E16FC2B000B9AE6 /* ShareViewController.swift */; };
-		9CBA6C671E16FC2B000B9AE6 /* bagit.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9CBA6C5D1E16FC2B000B9AE6 /* bagit.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		9CC0D71A1E22AB15002E4E94 /* wallabagScreenshotUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC0D7191E22AB15002E4E94 /* wallabagScreenshotUITests.swift */; };
-		9CC0D7211E22AB55002E4E94 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEF3B31DD9EC5D00126D15 /* SnapshotHelper.swift */; };
-		9CC378931EB0BB4100C89619 /* Pods_bagit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC378921EB0BB4100C89619 /* Pods_bagit.framework */; };
-		9CC4B0611DC5361000BC6830 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC4B0601DC5361000BC6830 /* Dictionary.swift */; };
-		9CCB702F20998E5D004776B7 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCB702E20998E5D004776B7 /* Utils.swift */; };
-		9CD48FB7207C9356001AA042 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD48FB6207C9356001AA042 /* Date.swift */; };
-		9CDB880720CE485E008A21E3 /* UIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDB880620CE485E008A21E3 /* UIWebView.swift */; };
-		9CE369741DE632030005E20E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE369731DE632030005E20E /* SettingsTableViewController.swift */; };
-		9CE369761DE63D030005E20E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE369751DE63D030005E20E /* Setting.swift */; };
-		9CE9F2061DE2151B002E06F5 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE9F2051DE2151B002E06F5 /* AboutViewController.swift */; };
-		9CEC09001E1BC069002DC81D /* RegisterProcessUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEC08FF1E1BC069002DC81D /* RegisterProcessUITests.swift */; };
-		9CF1F21C1DBE943C0086B98B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F21B1DBE943C0086B98B /* HomeViewController.swift */; };
-		9CF1F21E1DBE966B0086B98B /* UbuntuTitling-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9CF1F21D1DBE96210086B98B /* UbuntuTitling-Bold.ttf */; };
-		9CF1F2211DBE97D80086B98B /* ServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F2201DBE97D80086B98B /* ServerViewController.swift */; };
-		9CF1F2231DBE9B800086B98B /* ClientIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F2221DBE9B800086B98B /* ClientIdViewController.swift */; };
-		9CF1F2251DBE9D150086B98B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1F2241DBE9D150086B98B /* LoginViewController.swift */; };
-		9CF4FED21EEB2F7E00653B90 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CF4FED41EEB2F7E00653B90 /* Localizable.strings */; };
-		AEDD1E205C0DF01C54999C21 /* Pods_wallabag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFAE89D8A395291968A2E2A7 /* Pods_wallabag.framework */; };
-		DB5193211F1DB976C3862849 /* Pods_wallabagUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3678DDB92217E137039674C2 /* Pods_wallabagUITests.framework */; };
+		0D7020DA61E05A0474BACF86 /* Pods_bagit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86BA3177064A18D2AE1B2C9C /* Pods_bagit.framework */; };
+		4172775DDC3A2C01B9C2FF5E /* Pods_wallabagTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7499E6A40B459B94005A33FF /* Pods_wallabagTests.framework */; };
+		747DE9D46B6BF16F5EDDE1C9 /* Pods_wallabag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C02F1C867303E1091C42DA /* Pods_wallabag.framework */; };
+		BF_103141175892 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_887755528747 /* Int.swift */; };
+		BF_141068039592 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_182379398345 /* Utils.swift */; };
+		BF_163729320785 /* EmptyCollection.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_729857078213 /* EmptyCollection.json */; };
+		BF_176701664767 /* UIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_842249404772 /* UIWebView.swift */; };
+		BF_180926988233 /* Dusk.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_472367051097 /* Dusk.swift */; };
+		BF_210260382470 /* WallabagKitCollectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_696558863916 /* WallabagKitCollectionResponse.swift */; };
+		BF_217142973695 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_656994299549 /* Setting.swift */; };
+		BF_227928424987 /* EntryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_416370408888 /* EntryExtension.swift */; };
+		BF_228003251157 /* Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = FR_656718704392 /* Bridge.m */; };
+		BF_229399365559 /* article.html in Resources */ = {isa = PBXBuildFile; fileRef = FR_252102216061 /* article.html */; };
+		BF_253492997768 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_614276753573 /* HomeViewController.swift */; };
+		BF_265189340335 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_292339550230 /* ArticleViewController.swift */; };
+		BF_265794208086 /* bagit.appex in CopyFiles */ = {isa = PBXBuildFile; fileRef = FR_479946182768 /* bagit.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BF_271878237220 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_125217934004 /* AnalyticsManager.swift */; };
+		BF_275298352095 /* Night.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_321876133126 /* Night.swift */; };
+		BF_277296153245 /* light.css in Resources */ = {isa = PBXBuildFile; fileRef = FR_903743593476 /* light.css */; };
+		BF_282567572079 /* WallabagAuthErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_347627474181 /* WallabagAuthErrorTests.swift */; };
+		BF_291749533174 /* WallabagAuthSuccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_349732200902 /* WallabagAuthSuccessTests.swift */; };
+		BF_315618503812 /* wallabag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = VG_473240302263 /* wallabag.xcdatamodeld */; };
+		BF_316834744207 /* NSNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_198348143950 /* NSNotification.swift */; };
+		BF_320199735377 /* WallabagAuthSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_242669192089 /* WallabagAuthSuccess.swift */; };
+		BF_320277757240 /* VoiceChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_471636325598 /* VoiceChoiceTableViewController.swift */; };
+		BF_320695280918 /* dusk.css in Resources */ = {isa = PBXBuildFile; fileRef = FR_370382527049 /* dusk.css */; };
+		BF_324437836784 /* ServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_317258379241 /* ServerViewController.swift */; };
+		BF_332901584992 /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = FR_367822628227 /* main.css */; };
+		BF_336057409229 /* WallabagAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_100900530836 /* WallabagAuth.swift */; };
+		BF_350118289219 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = VG_103912532373 /* Main.storyboard */; };
+		BF_356327948355 /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_169684549055 /* ArticlesTableViewController.swift */; };
+		BF_357593386018 /* ClientIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_591508781071 /* ClientIdViewController.swift */; };
+		BF_357813038602 /* SyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_143097765679 /* SyncOperation.swift */; };
+		BF_370512689802 /* AuthSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_773180623049 /* AuthSuccess.json */; };
+		BF_373969074458 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FR_901888859280 /* Media.xcassets */; };
+		BF_377663780436 /* RegisterProcessUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_239512968119 /* RegisterProcessUITests.swift */; };
+		BF_384818812782 /* ArticlesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_727918086115 /* ArticlesUITests.swift */; };
+		BF_407424821465 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_405382569402 /* Date.swift */; };
+		BF_408690461477 /* WallabagCommon in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_386902854729-1 /* WallabagCommon */; };
+		BF_418698870743 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_867201661917 /* String.swift */; };
+		BF_445050910391 /* WallabagAuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_574048205943 /* WallabagAuthError.swift */; };
+		BF_489434077138 /* justify.css in Resources */ = {isa = PBXBuildFile; fileRef = FR_859957173671 /* justify.css */; };
+		BF_489641615581 /* WallabagKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_431267044511 /* WallabagKitTests.swift */; };
+		BF_500985621954 /* ThemedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_253095659307 /* ThemedTableViewCell.swift */; };
+		BF_515686573645 /* white.css in Resources */ = {isa = PBXBuildFile; fileRef = FR_707820535594 /* white.css */; };
+		BF_535754439733 /* WallabagKitCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_257672620109 /* WallabagKitCollection.swift */; };
+		BF_537423187412 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = VG_907984366336 /* LaunchScreen.storyboard */; };
+		BF_550393006361 /* TokenAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_170802807770 /* TokenAdapterTests.swift */; };
+		BF_552527648440 /* WallabagKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_796577238580 /* WallabagKit.swift */; };
+		BF_553749545632 /* WallabagKitEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_608695995153 /* WallabagKitEntry.swift */; };
+		BF_560947075628 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_163798763929 /* LoginViewController.swift */; };
+		BF_595853176380 /* UbuntuTitling-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FR_189441853101 /* UbuntuTitling-Bold.ttf */; };
+		BF_598440666690 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_914949420297 /* KeychainPasswordItem.swift */; };
+		BF_604404752324 /* WallabagCommon in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_386902854729-1 /* WallabagCommon */; };
+		BF_604404752324-1 /* WallabagCommon in CopyFiles */ = {isa = PBXBuildFile; fileRef = FR_386902854729-1 /* WallabagCommon */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF_611944693165 /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_416979964322-1 /* WallabagKit */; };
+		BF_612459313954 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_618907829414 /* AboutViewController.swift */; };
+		BF_613587147738 /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_416979964322-1 /* WallabagKit */; };
+		BF_613587147738-1 /* WallabagKit in CopyFiles */ = {isa = PBXBuildFile; fileRef = FR_416979964322-1 /* WallabagKit */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF_613670022727 /* XCTExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_211460243031 /* XCTExtension.swift */; };
+		BF_615716435662 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_633259069415 /* StringTests.swift */; };
+		BF_640708102559 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_299577518904 /* EntryController.swift */; };
+		BF_650384412607 /* Localizable.plist in Resources */ = {isa = PBXBuildFile; fileRef = FR_709620225957 /* Localizable.plist */; };
+		BF_664917146771 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_483420598246 /* ArticleTableViewCell.swift */; };
+		BF_672186298460 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_362021847681 /* TipViewController.swift */; };
+		BF_676563806213 /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_718118344765 /* IntTests.swift */; };
+		BF_682468634297 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_808284200295 /* Entry.swift */; };
+		BF_691035147888 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FR_145830167213 /* Assets.xcassets */; };
+		BF_691461020575 /* EntriesCollection.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_921529186704 /* EntriesCollection.json */; };
+		BF_696465330107 /* wallabag2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = VG_222024961528 /* wallabag2.xcdatamodeld */; };
+		BF_720442855285 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_270058888992 /* ShareViewController.swift */; };
+		BF_739696867228 /* night.css in Resources */ = {isa = PBXBuildFile; fileRef = FR_305051511570 /* night.css */; };
+		BF_754180149222 /* White.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_724497187570 /* White.swift */; };
+		BF_755680492144 /* AuthWrongPassword.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_360979711967 /* AuthWrongPassword.json */; };
+		BF_769713477281 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_686354446382 /* Dictionary.swift */; };
+		BF_786084879913 /* ThemeChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_313288938230 /* ThemeChoiceTableViewController.swift */; };
+		BF_789070881536 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = VG_903045337291 /* Localizable.strings */; };
+		BF_806862810684 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_680311626630 /* ThemeManager.swift */; };
+		BF_826115267149 /* Entry.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_312783760065 /* Entry.json */; };
+		BF_832519215907 /* WallabagError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_663352049454 /* WallabagError.swift */; };
+		BF_837621937461 /* WallabagKitCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_152062374098 /* WallabagKitCollectionTests.swift */; };
+		BF_840769457642 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_443119967895 /* AppDelegate.swift */; };
+		BF_861032203442 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_406821136104 /* DictionaryTests.swift */; };
+		BF_864072021205 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_463421260943 /* SettingsTableViewController.swift */; };
+		BF_874553318132 /* TokenAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_492638859278 /* TokenAdapter.swift */; };
+		BF_878244943288 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_329978501910 /* Light.swift */; };
+		BF_883921211404 /* ratatouille.css in Resources */ = {isa = PBXBuildFile; fileRef = FR_258356001597 /* ratatouille.css */; };
+		BF_921222279082 /* WallabagKitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_778015578057 /* WallabagKitResponse.swift */; };
+		D1E2CBF8E3355933CA6B1C49 /* Pods_WallabagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC66D25D94D3CF08EF5117F /* Pods_WallabagKit.framework */; };
+		DA102632657642DFE2122E1D /* Pods_wallabagUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7BC1D7F49825A5B25B0546 /* Pods_wallabagUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		9C987A5B1DB79826005515F4 /* PBXContainerItemProxy */ = {
+		CIP_36577000250 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 9C987A3B1DB79826005515F4 /* Project object */;
+			containerPortal = P_3132699255720 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 9C987A421DB79826005515F4;
-			remoteInfo = wallabag;
-		};
-		9C987A661DB79826005515F4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9C987A3B1DB79826005515F4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9C987A421DB79826005515F4;
-			remoteInfo = wallabag;
-		};
-		9CBA6C651E16FC2B000B9AE6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9C987A3B1DB79826005515F4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9CBA6C5C1E16FC2B000B9AE6;
+			remoteGlobalIDString = NT_479946182768;
 			remoteInfo = bagit;
-		};
-		9CBA6C711E1703E1000B9AE6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9C987A3B1DB79826005515F4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9C987A421DB79826005515F4;
-			remoteInfo = wallabag;
-		};
-		9CC0D71C1E22AB15002E4E94 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9C987A3B1DB79826005515F4 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 9C987A421DB79826005515F4;
-			remoteInfo = wallabag;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		9CBA6C6B1E16FC2B000B9AE6 /* Embed App Extensions */ = {
+		CFBP_4724151697 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				9CBA6C671E16FC2B000B9AE6 /* bagit.appex in Embed App Extensions */,
+				BF_265794208086 /* bagit.appex in CopyFiles */,
 			);
-			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFBP_8543264970 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BF_604404752324-1 /* WallabagCommon in CopyFiles */,
+				BF_613587147738-1 /* WallabagKit in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		081F547345F9E70248A02531 /* Pods-bagit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bagit.release.xcconfig"; path = "Pods/Target Support Files/Pods-bagit/Pods-bagit.release.xcconfig"; sourceTree = "<group>"; };
-		097585091FE53E0B0089825B /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
-		1EA9F29E7C865EE08172FE69 /* Pods-wallabag-bagit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag-bagit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabag-bagit/Pods-wallabag-bagit.debug.xcconfig"; sourceTree = "<group>"; };
-		33649D7F894D49168B9683D2 /* Pods-wallabagUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		3678DDB92217E137039674C2 /* Pods_wallabagUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		50A74F0181E01BFFEA22A662 /* Pods_wallabag_bagit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabag_bagit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6216651F1E0CFC2600438EE2 /* white.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = white.css; sourceTree = "<group>"; };
-		622923E81E10F8A5007B2307 /* dusk.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = dusk.css; sourceTree = "<group>"; };
-		7438BB540252BD33025E60F9 /* Pods-wallabagTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests.debug.xcconfig"; sourceTree = "<group>"; };
-		7E638ED11F433B170014860E /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		7E638ED21F433B180014860E /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Main.strings; sourceTree = "<group>"; };
-		7E638ED31F433B180014860E /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
-		94D0C2FA2C870EE989B2406D /* Pods-wallabagTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests.release.xcconfig"; sourceTree = "<group>"; };
-		9B9EB64D938632DA7CDDFD2A /* Pods-wallabagUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests.release.xcconfig"; sourceTree = "<group>"; };
-		9C0BF8B91EC723CF00CEBE93 /* ArticlesUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesUITests.swift; sourceTree = "<group>"; };
-		9C174B9520CBD78800AD8A09 /* NSNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotification.swift; sourceTree = "<group>"; };
-		9C174B9720CBD7B700AD8A09 /* WallabagKitEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitEntry.swift; sourceTree = "<group>"; };
-		9C174B9920CBD8E400AD8A09 /* WallabagKitCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitCollection.swift; sourceTree = "<group>"; };
-		9C174B9B20CBD92200AD8A09 /* WallabagKitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitResponse.swift; sourceTree = "<group>"; };
-		9C174B9D20CBD93700AD8A09 /* WallabagKitCollectionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitCollectionResponse.swift; sourceTree = "<group>"; };
-		9C174B9F20CBD95000AD8A09 /* WallabagError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagError.swift; sourceTree = "<group>"; };
-		9C174BA120CBD99E00AD8A09 /* WallabagAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuth.swift; sourceTree = "<group>"; };
-		9C174BA320CBD9C400AD8A09 /* WallabagAuthSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuthSuccess.swift; sourceTree = "<group>"; };
-		9C174BA520CBD9DB00AD8A09 /* WallabagAuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuthError.swift; sourceTree = "<group>"; };
-		9C174BA720CBD9F000AD8A09 /* TokenAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAdapter.swift; sourceTree = "<group>"; };
-		9C174BB620CBDB6500AD8A09 /* TokenAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAdapterTests.swift; sourceTree = "<group>"; };
-		9C174BB820CBDEF600AD8A09 /* WallabagAuthErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuthErrorTests.swift; sourceTree = "<group>"; };
-		9C174BBA20CBDF5A00AD8A09 /* XCTExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTExtension.swift; sourceTree = "<group>"; };
-		9C174BBC20CBE4E700AD8A09 /* WallabagAuthSuccessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuthSuccessTests.swift; sourceTree = "<group>"; };
-		9C174BBE20CBE8C400AD8A09 /* WallabagKitCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitCollectionTests.swift; sourceTree = "<group>"; };
-		9C174BC020CBE8DD00AD8A09 /* EmptyCollection.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EmptyCollection.json; sourceTree = "<group>"; };
-		9C174BC220CBED9600AD8A09 /* EntriesCollection.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EntriesCollection.json; sourceTree = "<group>"; };
-		9C17868020C1656E00F0F2EA /* WallabagKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitTests.swift; sourceTree = "<group>"; };
-		9C181B871DB8E27000D941EB /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
-		9C1AA3BA20C2C12A0023B367 /* AuthSuccess.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AuthSuccess.json; sourceTree = "<group>"; };
-		9C1AA3BC20C2C7C60023B367 /* AuthWrongPassword.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AuthWrongPassword.json; sourceTree = "<group>"; };
-		9C21927C1DBFF44700F628C2 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
-		9C25C9B71EEC99D700B97F6D /* TipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
-		9C298B121E0BF8F400B72503 /* ThemeChoiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeChoiceTableViewController.swift; sourceTree = "<group>"; };
-		9C2A2DAE1DD4A82A00EDA4E8 /* DictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
-		9C2A2DB11DD4A96B00EDA4E8 /* IntTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
-		9C2A2DB31DD4AA1D00EDA4E8 /* StringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
-		9C431D551E63094B0009439C /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		9C45378E1DD1236B00FF6CFE /* article.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = article.html; sourceTree = "<group>"; };
-		9C45378F1DD1236B00FF6CFE /* night.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = night.css; sourceTree = "<group>"; };
-		9C4537901DD1236B00FF6CFE /* main.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
-		9C4537911DD1236B00FF6CFE /* ratatouille.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ratatouille.css; sourceTree = "<group>"; };
-		9C5145241EEF2EE5005C40B4 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		9C6245D020458C83008B3550 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
-		9C6245D22045CFDC008B3550 /* EntryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryExtension.swift; sourceTree = "<group>"; };
-		9C65DEB01DC5EE85002CA068 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
-		9C6C88881EAEA8F20078C491 /* WallabagKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WallabagKit.framework; path = "../../Library/Developer/Xcode/DerivedData/wallabag-fcirammgjylpzjcvizhrpwjyvjmq/Build/Products/Debug-iphonesimulator/WallabagKit/WallabagKit.framework"; sourceTree = "<group>"; };
-		9C75961B1DBB567E0096614B /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		9C75961D1DBD59330096614B /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
-		9C75DD9CC88FFD838573A351 /* Pods_wallabagTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C76B6E620CD1AC60054F02C /* Entry.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Entry.json; sourceTree = "<group>"; };
-		9C77751C1DFB72AD00CB775F /* justify.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = justify.css; sourceTree = "<group>"; };
-		9C7B79E51EBF8070004559B1 /* EntryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
-		9C80E8512013BCBE007208B0 /* SyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncOperation.swift; sourceTree = "<group>"; };
-		9C8311851E06F56C004ACD5D /* ThemedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemedTableViewCell.swift; sourceTree = "<group>"; };
-		9C8B20A11F2612BA0084BBAA /* VoiceChoiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceChoiceTableViewController.swift; sourceTree = "<group>"; };
-		9C987A431DB79826005515F4 /* wallabag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wallabag.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C987A461DB79826005515F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9C987A4B1DB79826005515F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9C987A501DB79826005515F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9C987A531DB79826005515F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9C987A551DB79826005515F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C987A5A1DB79826005515F4 /* wallabagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C987A601DB79826005515F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9C987A651DB79826005515F4 /* wallabagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C987A6B1DB79826005515F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9CA2322F1DFECE74006B29B8 /* light.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = light.css; sourceTree = "<group>"; };
-		9CA273302058430000B0A269 /* WallabagKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKit.swift; sourceTree = "<group>"; };
-		9CA9659A1F16B68B009C6377 /* White.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = White.swift; sourceTree = "<group>"; };
-		9CA9659C1F16B6B9009C6377 /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
-		9CA9659E1F16B71E009C6377 /* Dusk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dusk.swift; sourceTree = "<group>"; };
-		9CA965A01F16B729009C6377 /* Night.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Night.swift; sourceTree = "<group>"; };
-		9CB41250205661FE00A71989 /* wallabag-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wallabag-Bridging-Header.h"; sourceTree = "<group>"; };
-		9CB41251205661FF00A71989 /* Bridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bridge.m; sourceTree = "<group>"; };
-		9CB412532056635100A71989 /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
-		9CBA6C5D1E16FC2B000B9AE6 /* bagit.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = bagit.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		9CBA6C5F1E16FC2B000B9AE6 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
-		9CBA6C641E16FC2B000B9AE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9CBA6C6C1E17010E000B9AE6 /* wallabag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wallabag.entitlements; sourceTree = "<group>"; };
-		9CBA6C6D1E17011C000B9AE6 /* bagit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bagit.entitlements; sourceTree = "<group>"; };
-		9CBA6C6F1E1703A3000B9AE6 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/wallabag-fcirammgjylpzjcvizhrpwjyvjmq/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
-		9CC0D7171E22AB15002E4E94 /* wallabagScreenshotUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagScreenshotUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9CC0D7191E22AB15002E4E94 /* wallabagScreenshotUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wallabagScreenshotUITests.swift; sourceTree = "<group>"; };
-		9CC0D71B1E22AB15002E4E94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9CC378921EB0BB4100C89619 /* Pods_bagit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_bagit.framework; path = "../../Library/Developer/Xcode/DerivedData/wallabag-fcirammgjylpzjcvizhrpwjyvjmq/Build/Products/Debug-iphonesimulator/Pods_bagit.framework"; sourceTree = "<group>"; };
-		9CC4B0601DC5361000BC6830 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
-		9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
-		9CCB702E20998E5D004776B7 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		9CD48FB6207C9356001AA042 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		9CDB880620CE485E008A21E3 /* UIWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWebView.swift; sourceTree = "<group>"; };
-		9CE369731DE632030005E20E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		9CE369751DE63D030005E20E /* Setting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
-		9CE9F2051DE2151B002E06F5 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		9CEC08FF1E1BC069002DC81D /* RegisterProcessUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterProcessUITests.swift; sourceTree = "<group>"; };
-		9CF1F21B1DBE943C0086B98B /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		9CF1F21D1DBE96210086B98B /* UbuntuTitling-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UbuntuTitling-Bold.ttf"; sourceTree = "<group>"; };
-		9CF1F2201DBE97D80086B98B /* ServerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerViewController.swift; sourceTree = "<group>"; };
-		9CF1F2221DBE9B800086B98B /* ClientIdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientIdViewController.swift; sourceTree = "<group>"; };
-		9CF1F2241DBE9D150086B98B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		9CF4FECA1EEB2B9C00653B90 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		9CF4FECB1EEB2B9D00653B90 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
-		9CF4FECD1EEB2C4300653B90 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		9CF4FECE1EEB2C4300653B90 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
-		9CF4FED31EEB2F7E00653B90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		9CF4FED61EEB2FB300653B90 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		9CF4FED71EEB2FB500653B90 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		9CFEF3B31DD9EC5D00126D15 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
-		A6538EB964B457B5B3DC7B46 /* Pods-bagit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bagit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bagit/Pods-bagit.debug.xcconfig"; sourceTree = "<group>"; };
-		AFAE89D8A395291968A2E2A7 /* Pods_wallabag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B96F6D5610DD6249AEA66D5F /* Pods_bagit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bagit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C5054CFAAEF931DD2335077B /* Pods-wallabag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabag/Pods-wallabag.debug.xcconfig"; sourceTree = "<group>"; };
-		CC20A18D953EAE5A218FF6BB /* Pods-wallabag-bagit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag-bagit.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabag-bagit/Pods-wallabag-bagit.release.xcconfig"; sourceTree = "<group>"; };
-		D492A4BFBC05746741AD48FD /* Pods-wallabag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabag/Pods-wallabag.release.xcconfig"; sourceTree = "<group>"; };
+		03181D748C2E6EB3561168F5 /* Pods-WallabagKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WallabagKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WallabagKit/Pods-WallabagKit.debug.xcconfig"; sourceTree = "<group>"; };
+		0E96BEE44B1A7AFC254E01A8 /* Pods-WallabagKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WallabagKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-WallabagKit/Pods-WallabagKit.release.xcconfig"; sourceTree = "<group>"; };
+		23A000126938E88842E142F8 /* Pods-wallabagUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests.release.xcconfig"; sourceTree = "<group>"; };
+		54C148C3316EB1C49252D154 /* Pods-wallabagTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests.release.xcconfig"; sourceTree = "<group>"; };
+		71C02F1C867303E1091C42DA /* Pods_wallabag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72BF6BBB17DC0439F7F1CEA0 /* Pods-bagit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bagit.release.xcconfig"; path = "Pods/Target Support Files/Pods-bagit/Pods-bagit.release.xcconfig"; sourceTree = "<group>"; };
+		7499E6A40B459B94005A33FF /* Pods_wallabagTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86BA3177064A18D2AE1B2C9C /* Pods_bagit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bagit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAA715E605EA46AEC6F01B9A /* Pods-bagit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bagit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bagit/Pods-bagit.debug.xcconfig"; sourceTree = "<group>"; };
+		AE54AA40535BB0C2BF9F924C /* Pods-wallabagUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BD4D5DEFC8A32FE10EE7B6A5 /* Pods-wallabagTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CAC66D25D94D3CF08EF5117F /* Pods_WallabagKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WallabagKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D66AA2D7612E6E483B9C2F23 /* Pods-wallabag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabag/Pods-wallabag.release.xcconfig"; sourceTree = "<group>"; };
+		ED7BC1D7F49825A5B25B0546 /* Pods_wallabagUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD43E4814D07040FE2DD72B8 /* Pods-wallabag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabag/Pods-wallabag.debug.xcconfig"; sourceTree = "<group>"; };
+		FR_100900530836 /* WallabagAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuth.swift; sourceTree = "<group>"; };
+		FR_103912532373 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FR_104102971227 /* bagit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bagit.entitlements; sourceTree = "<group>"; };
+		FR_118520138818 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FR_125217934004 /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
+		FR_128924593603 /* wallabag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wallabag.entitlements; sourceTree = "<group>"; };
+		FR_143097765679 /* SyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncOperation.swift; sourceTree = "<group>"; };
+		FR_145830167213 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FR_152062374098 /* WallabagKitCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitCollectionTests.swift; sourceTree = "<group>"; };
+		FR_154121947263 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FR_162147566250 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FR_163798763929 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FR_168291122420 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FR_169684549055 /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
+		FR_170802807770 /* TokenAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAdapterTests.swift; sourceTree = "<group>"; };
+		FR_182379398345 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		FR_189441853101 /* UbuntuTitling-Bold.ttf */ = {isa = PBXFileReference; path = "UbuntuTitling-Bold.ttf"; sourceTree = "<group>"; };
+		FR_198348143950 /* NSNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotification.swift; sourceTree = "<group>"; };
+		FR_211460243031 /* XCTExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTExtension.swift; sourceTree = "<group>"; };
+		FR_239512968119 /* RegisterProcessUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProcessUITests.swift; sourceTree = "<group>"; };
+		FR_242669192089 /* WallabagAuthSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuthSuccess.swift; sourceTree = "<group>"; };
+		FR_252102216061 /* article.html */ = {isa = PBXFileReference; path = article.html; sourceTree = "<group>"; };
+		FR_253095659307 /* ThemedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedTableViewCell.swift; sourceTree = "<group>"; };
+		FR_257672620109 /* WallabagKitCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitCollection.swift; sourceTree = "<group>"; };
+		FR_258356001597 /* ratatouille.css */ = {isa = PBXFileReference; path = ratatouille.css; sourceTree = "<group>"; };
+		FR_270058888992 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		FR_281348000776 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FR_292339550230 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		FR_299577518904 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
+		FR_305051511570 /* night.css */ = {isa = PBXFileReference; path = night.css; sourceTree = "<group>"; };
+		FR_312783760065 /* Entry.json */ = {isa = PBXFileReference; path = Entry.json; sourceTree = "<group>"; };
+		FR_313269925572 /* wallabag.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = wallabag.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_313288938230 /* ThemeChoiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeChoiceTableViewController.swift; sourceTree = "<group>"; };
+		FR_315679525372 /* wallabag2v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabag2v2.xcdatamodel; sourceTree = "<group>"; };
+		FR_317258379241 /* ServerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerViewController.swift; sourceTree = "<group>"; };
+		FR_321876133126 /* Night.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Night.swift; sourceTree = "<group>"; };
+		FR_325232856956 /* wallabagTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = wallabagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_329978501910 /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
+		FR_345388335045 /* wallabag-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wallabag-Bridging-Header.h"; sourceTree = "<group>"; };
+		FR_347627474181 /* WallabagAuthErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuthErrorTests.swift; sourceTree = "<group>"; };
+		FR_349732200902 /* WallabagAuthSuccessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuthSuccessTests.swift; sourceTree = "<group>"; };
+		FR_360979711967 /* AuthWrongPassword.json */ = {isa = PBXFileReference; path = AuthWrongPassword.json; sourceTree = "<group>"; };
+		FR_361581023947 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FR_362021847681 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
+		FR_367822628227 /* main.css */ = {isa = PBXFileReference; path = main.css; sourceTree = "<group>"; };
+		FR_370382527049 /* dusk.css */ = {isa = PBXFileReference; path = dusk.css; sourceTree = "<group>"; };
+		FR_371695168859 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		FR_386902854729 /* WallabagCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WallabagCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_386902854729-1 /* WallabagCommon */ = {isa = PBXFileReference; path = WallabagCommon; sourceTree = "<group>"; };
+		FR_405382569402 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		FR_406821136104 /* DictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
+		FR_416370408888 /* EntryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryExtension.swift; sourceTree = "<group>"; };
+		FR_416979964322 /* WallabagKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WallabagKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_416979964322-1 /* WallabagKit */ = {isa = PBXFileReference; path = WallabagKit; sourceTree = "<group>"; };
+		FR_431267044511 /* WallabagKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitTests.swift; sourceTree = "<group>"; };
+		FR_443119967895 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FR_448371498427 /* wallabagUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = wallabagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_463421260943 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		FR_471636325598 /* VoiceChoiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceChoiceTableViewController.swift; sourceTree = "<group>"; };
+		FR_472367051097 /* Dusk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dusk.swift; sourceTree = "<group>"; };
+		FR_479946182768 /* bagit.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = bagit.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_483420598246 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		FR_492638859278 /* TokenAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAdapter.swift; sourceTree = "<group>"; };
+		FR_513159211924 /* wallabag2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabag2.xcdatamodel; sourceTree = "<group>"; };
+		FR_557142985887 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FR_574048205943 /* WallabagAuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuthError.swift; sourceTree = "<group>"; };
+		FR_581575078753 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FR_591508781071 /* ClientIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientIdViewController.swift; sourceTree = "<group>"; };
+		FR_595568042366 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FR_608695995153 /* WallabagKitEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitEntry.swift; sourceTree = "<group>"; };
+		FR_614276753573 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FR_618907829414 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		FR_633259069415 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
+		FR_646240505027 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		FR_651182863708 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FR_656718704392 /* Bridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bridge.m; sourceTree = "<group>"; };
+		FR_656994299549 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		FR_663352049454 /* WallabagError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagError.swift; sourceTree = "<group>"; };
+		FR_680311626630 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		FR_686354446382 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		FR_696558863916 /* WallabagKitCollectionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitCollectionResponse.swift; sourceTree = "<group>"; };
+		FR_707820535594 /* white.css */ = {isa = PBXFileReference; path = white.css; sourceTree = "<group>"; };
+		FR_709620225957 /* Localizable.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Localizable.plist; sourceTree = "<group>"; };
+		FR_718118344765 /* IntTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
+		FR_724497187570 /* White.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = White.swift; sourceTree = "<group>"; };
+		FR_727918086115 /* ArticlesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesUITests.swift; sourceTree = "<group>"; };
+		FR_729857078213 /* EmptyCollection.json */ = {isa = PBXFileReference; path = EmptyCollection.json; sourceTree = "<group>"; };
+		FR_773180623049 /* AuthSuccess.json */ = {isa = PBXFileReference; path = AuthSuccess.json; sourceTree = "<group>"; };
+		FR_778015578057 /* WallabagKitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitResponse.swift; sourceTree = "<group>"; };
+		FR_796577238580 /* WallabagKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKit.swift; sourceTree = "<group>"; };
+		FR_808284200295 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		FR_842249404772 /* UIWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWebView.swift; sourceTree = "<group>"; };
+		FR_848499139002 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Main.strings; sourceTree = "<group>"; };
+		FR_859957173671 /* justify.css */ = {isa = PBXFileReference; path = justify.css; sourceTree = "<group>"; };
+		FR_867201661917 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		FR_887755528747 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		FR_894525354742 /* wallabag.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabag.xcdatamodel; sourceTree = "<group>"; };
+		FR_901888859280 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		FR_903045337291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FR_903743593476 /* light.css */ = {isa = PBXFileReference; path = light.css; sourceTree = "<group>"; };
+		FR_907984366336 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FR_914949420297 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
+		FR_921529186704 /* EntriesCollection.json */ = {isa = PBXFileReference; path = EntriesCollection.json; sourceTree = "<group>"; };
+		FR_989994563791 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9C987A401DB79826005515F4 /* Frameworks */ = {
+		0E17B71B1B5E9545FD70B4A1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEDD1E205C0DF01C54999C21 /* Pods_wallabag.framework in Frameworks */,
-				9C5145251EEF2EE5005C40B4 /* StoreKit.framework in Frameworks */,
+				4172775DDC3A2C01B9C2FF5E /* Pods_wallabagTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C987A571DB79826005515F4 /* Frameworks */ = {
+		4F6C166F2115E0FE48026C81 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01971931BCF414226F407E96 /* Pods_wallabagTests.framework in Frameworks */,
+				D1E2CBF8E3355933CA6B1C49 /* Pods_WallabagKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C987A621DB79826005515F4 /* Frameworks */ = {
+		5EAB3976B2145919BB344EB3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB5193211F1DB976C3862849 /* Pods_wallabagUITests.framework in Frameworks */,
+				DA102632657642DFE2122E1D /* Pods_wallabagUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9CBA6C5A1E16FC2B000B9AE6 /* Frameworks */ = {
+		D325AEF9885AA8868C3CFA44 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CC378931EB0BB4100C89619 /* Pods_bagit.framework in Frameworks */,
-				94E4BE19881745BDBEBA546F /* Pods_bagit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9CC0D7141E22AB15002E4E94 /* Frameworks */ = {
+		FBP_31326992557 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF_604404752324 /* WallabagCommon in Frameworks */,
+				BF_613587147738 /* WallabagKit in Frameworks */,
+				747DE9D46B6BF16F5EDDE1C9 /* Pods_wallabag.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBP_47994618276 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF_408690461477 /* WallabagCommon in Frameworks */,
+				BF_611944693165 /* WallabagKit in Frameworks */,
+				0D7020DA61E05A0474BACF86 /* Pods_bagit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		37E0BE100D92CFD90F2A6716 /* Frameworks */ = {
+		030F148D0803DBAC8079B7CD /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9C5145241EEF2EE5005C40B4 /* StoreKit.framework */,
-				9CC378921EB0BB4100C89619 /* Pods_bagit.framework */,
-				9C6C88881EAEA8F20078C491 /* WallabagKit.framework */,
-				9CBA6C6F1E1703A3000B9AE6 /* Alamofire.framework */,
-				AFAE89D8A395291968A2E2A7 /* Pods_wallabag.framework */,
-				9C75DD9CC88FFD838573A351 /* Pods_wallabagTests.framework */,
-				3678DDB92217E137039674C2 /* Pods_wallabagUITests.framework */,
-				B96F6D5610DD6249AEA66D5F /* Pods_bagit.framework */,
-				50A74F0181E01BFFEA22A662 /* Pods_wallabag_bagit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5364F96E2A5E5163C06314B9 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C5054CFAAEF931DD2335077B /* Pods-wallabag.debug.xcconfig */,
-				D492A4BFBC05746741AD48FD /* Pods-wallabag.release.xcconfig */,
-				7438BB540252BD33025E60F9 /* Pods-wallabagTests.debug.xcconfig */,
-				94D0C2FA2C870EE989B2406D /* Pods-wallabagTests.release.xcconfig */,
-				33649D7F894D49168B9683D2 /* Pods-wallabagUITests.debug.xcconfig */,
-				9B9EB64D938632DA7CDDFD2A /* Pods-wallabagUITests.release.xcconfig */,
-				A6538EB964B457B5B3DC7B46 /* Pods-bagit.debug.xcconfig */,
-				081F547345F9E70248A02531 /* Pods-bagit.release.xcconfig */,
-				1EA9F29E7C865EE08172FE69 /* Pods-wallabag-bagit.debug.xcconfig */,
-				CC20A18D953EAE5A218FF6BB /* Pods-wallabag-bagit.release.xcconfig */,
+				03181D748C2E6EB3561168F5 /* Pods-WallabagKit.debug.xcconfig */,
+				0E96BEE44B1A7AFC254E01A8 /* Pods-WallabagKit.release.xcconfig */,
+				AAA715E605EA46AEC6F01B9A /* Pods-bagit.debug.xcconfig */,
+				72BF6BBB17DC0439F7F1CEA0 /* Pods-bagit.release.xcconfig */,
+				FD43E4814D07040FE2DD72B8 /* Pods-wallabag.debug.xcconfig */,
+				D66AA2D7612E6E483B9C2F23 /* Pods-wallabag.release.xcconfig */,
+				BD4D5DEFC8A32FE10EE7B6A5 /* Pods-wallabagTests.debug.xcconfig */,
+				54C148C3316EB1C49252D154 /* Pods-wallabagTests.release.xcconfig */,
+				AE54AA40535BB0C2BF9F924C /* Pods-wallabagUITests.debug.xcconfig */,
+				23A000126938E88842E142F8 /* Pods-wallabagUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		9C174B9420CBD75E00AD8A09 /* WallabagKit */ = {
+		G_1064785368475 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				9CA273302058430000B0A269 /* WallabagKit.swift */,
-				9C174B9520CBD78800AD8A09 /* NSNotification.swift */,
-				9C174B9720CBD7B700AD8A09 /* WallabagKitEntry.swift */,
-				9C174B9920CBD8E400AD8A09 /* WallabagKitCollection.swift */,
-				9C174B9B20CBD92200AD8A09 /* WallabagKitResponse.swift */,
-				9C174B9D20CBD93700AD8A09 /* WallabagKitCollectionResponse.swift */,
-				9C174B9F20CBD95000AD8A09 /* WallabagError.swift */,
-				9C174BA120CBD99E00AD8A09 /* WallabagAuth.swift */,
-				9C174BA320CBD9C400AD8A09 /* WallabagAuthSuccess.swift */,
-				9C174BA520CBD9DB00AD8A09 /* WallabagAuthError.swift */,
-				9C174BA720CBD9F000AD8A09 /* TokenAdapter.swift */,
-			);
-			path = WallabagKit;
-			sourceTree = "<group>";
-		};
-		9C174BB320CBDB3400AD8A09 /* WallabagKit */ = {
-			isa = PBXGroup;
-			children = (
-				9C17868020C1656E00F0F2EA /* WallabagKitTests.swift */,
-				9C174BB620CBDB6500AD8A09 /* TokenAdapterTests.swift */,
-				9C174BB820CBDEF600AD8A09 /* WallabagAuthErrorTests.swift */,
-				9C174BBC20CBE4E700AD8A09 /* WallabagAuthSuccessTests.swift */,
-				9C174BBE20CBE8C400AD8A09 /* WallabagKitCollectionTests.swift */,
-			);
-			path = WallabagKit;
-			sourceTree = "<group>";
-		};
-		9C17867F20C1655100F0F2EA /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Lib;
-			sourceTree = "<group>";
-		};
-		9C181B831DB8D47600D941EB /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-				9C4D5AE220245CEB005778E4 /* Operation */,
-				9CA965991F16B669009C6377 /* Theme */,
-				9C7B79E51EBF8070004559B1 /* EntryController.swift */,
-				9CE369751DE63D030005E20E /* Setting.swift */,
-				9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */,
-				097585091FE53E0B0089825B /* KeychainPasswordItem.swift */,
-				9CB41251205661FF00A71989 /* Bridge.m */,
-				9CB41250205661FE00A71989 /* wallabag-Bridging-Header.h */,
-				9CB412532056635100A71989 /* AnalyticsManager.swift */,
-				9CCB702E20998E5D004776B7 /* Utils.swift */,
-			);
-			path = Lib;
-			sourceTree = "<group>";
-		};
-		9C181B841DB8D47C00D941EB /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				9CE9F2051DE2151B002E06F5 /* AboutViewController.swift */,
-				9C75961D1DBD59330096614B /* ArticleViewController.swift */,
-				9C181B871DB8E27000D941EB /* ArticlesTableViewController.swift */,
-				9CF1F2221DBE9B800086B98B /* ClientIdViewController.swift */,
-				9CF1F21B1DBE943C0086B98B /* HomeViewController.swift */,
-				9CF1F2241DBE9D150086B98B /* LoginViewController.swift */,
-				9CF1F2201DBE97D80086B98B /* ServerViewController.swift */,
-				9CE369731DE632030005E20E /* SettingsTableViewController.swift */,
-				9C298B121E0BF8F400B72503 /* ThemeChoiceTableViewController.swift */,
-				9C25C9B71EEC99D700B97F6D /* TipViewController.swift */,
-				9C8B20A11F2612BA0084BBAA /* VoiceChoiceTableViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		9C1AA3B920C2C1160023B367 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				9C1AA3BA20C2C12A0023B367 /* AuthSuccess.json */,
-				9C1AA3BC20C2C7C60023B367 /* AuthWrongPassword.json */,
-				9C174BC020CBE8DD00AD8A09 /* EmptyCollection.json */,
-				9C174BC220CBED9600AD8A09 /* EntriesCollection.json */,
-				9C76B6E620CD1AC60054F02C /* Entry.json */,
+				FR_773180623049 /* AuthSuccess.json */,
+				FR_360979711967 /* AuthWrongPassword.json */,
+				FR_729857078213 /* EmptyCollection.json */,
+				FR_921529186704 /* EntriesCollection.json */,
+				FR_312783760065 /* Entry.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
 		};
-		9C2A2DAC1DD4A6D900EDA4E8 /* Cell */ = {
+		G_1952740716080 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9C21927C1DBFF44700F628C2 /* ArticleTableViewCell.swift */,
-				9C8311851E06F56C004ACD5D /* ThemedTableViewCell.swift */,
+				FR_386902854729-1 /* WallabagCommon */,
+				FR_416979964322-1 /* WallabagKit */,
+				CAC66D25D94D3CF08EF5117F /* Pods_WallabagKit.framework */,
+				86BA3177064A18D2AE1B2C9C /* Pods_bagit.framework */,
+				71C02F1C867303E1091C42DA /* Pods_wallabag.framework */,
+				7499E6A40B459B94005A33FF /* Pods_wallabagTests.framework */,
+				ED7BC1D7F49825A5B25B0546 /* Pods_wallabagUITests.framework */,
 			);
-			path = Cell;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9C2A2DAD1DD4A81000EDA4E8 /* Extension */ = {
+		G_2086725614769 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				9C2A2DAE1DD4A82A00EDA4E8 /* DictionaryTests.swift */,
-				9C2A2DB11DD4A96B00EDA4E8 /* IntTests.swift */,
-				9C2A2DB31DD4AA1D00EDA4E8 /* StringTests.swift */,
+				G_4972070595476 /* Operation */,
+				G_8617776982752 /* Theme */,
+				FR_125217934004 /* AnalyticsManager.swift */,
+				FR_656718704392 /* Bridge.m */,
+				FR_299577518904 /* EntryController.swift */,
+				FR_680311626630 /* ThemeManager.swift */,
+				FR_182379398345 /* Utils.swift */,
+				FR_345388335045 /* wallabag-Bridging-Header.h */,
 			);
-			path = Extension;
+			path = Lib;
 			sourceTree = "<group>";
 		};
-		9C380A1B1DD2683400E07CE7 /* Storyboard */ = {
+		G_2550260809643 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				9C987A521DB79826005515F4 /* LaunchScreen.storyboard */,
-				9C987A4A1DB79826005515F4 /* Main.storyboard */,
+				VG_907984366336 /* LaunchScreen.storyboard */,
+				VG_103912532373 /* Main.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
-		9C45378D1DD122FA00FF6CFE /* html-ressources */ = {
+		G_2637924613314 /* html-ressources */ = {
 			isa = PBXGroup;
 			children = (
-				9C45378E1DD1236B00FF6CFE /* article.html */,
-				622923E81E10F8A5007B2307 /* dusk.css */,
-				9C77751C1DFB72AD00CB775F /* justify.css */,
-				9CA2322F1DFECE74006B29B8 /* light.css */,
-				9C4537901DD1236B00FF6CFE /* main.css */,
-				9C45378F1DD1236B00FF6CFE /* night.css */,
-				9C4537911DD1236B00FF6CFE /* ratatouille.css */,
-				6216651F1E0CFC2600438EE2 /* white.css */,
+				FR_252102216061 /* article.html */,
+				FR_370382527049 /* dusk.css */,
+				FR_859957173671 /* justify.css */,
+				FR_903743593476 /* light.css */,
+				FR_367822628227 /* main.css */,
+				FR_305051511570 /* night.css */,
+				FR_258356001597 /* ratatouille.css */,
+				FR_707820535594 /* white.css */,
 			);
 			path = "html-ressources";
 			sourceTree = "<group>";
 		};
-		9C4D5AE220245CEB005778E4 /* Operation */ = {
+		G_2891769159851 /* wallabagCommon */ = {
 			isa = PBXGroup;
 			children = (
-				9C80E8512013BCBE007208B0 /* SyncOperation.swift */,
+				FR_914949420297 /* KeychainPasswordItem.swift */,
+				FR_656994299549 /* Setting.swift */,
 			);
-			path = Operation;
+			path = wallabagCommon;
 			sourceTree = "<group>";
 		};
-		9C75961A1DBB56730096614B /* Extension */ = {
+		G_3132699255720 /* wallabag */ = {
 			isa = PBXGroup;
 			children = (
-				9CC4B0601DC5361000BC6830 /* Dictionary.swift */,
-				9C65DEB01DC5EE85002CA068 /* Int.swift */,
-				9C75961B1DBB567E0096614B /* String.swift */,
-				9CD48FB6207C9356001AA042 /* Date.swift */,
-				9CDB880620CE485E008A21E3 /* UIWebView.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
-		9C987A3A1DB79826005515F4 = {
-			isa = PBXGroup;
-			children = (
-				37E0BE100D92CFD90F2A6716 /* Frameworks */,
-				5364F96E2A5E5163C06314B9 /* Pods */,
-				9C987A441DB79826005515F4 /* Products */,
-				9CBA6C5E1E16FC2B000B9AE6 /* bagit */,
-				9C987A451DB79826005515F4 /* wallabag */,
-				9CC0D7181E22AB15002E4E94 /* wallabagScreenshotUITests */,
-				9C987A5D1DB79826005515F4 /* wallabagTests */,
-				9C987A681DB79826005515F4 /* wallabagUITests */,
-			);
-			sourceTree = "<group>";
-		};
-		9C987A441DB79826005515F4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9C987A431DB79826005515F4 /* wallabag.app */,
-				9C987A5A1DB79826005515F4 /* wallabagTests.xctest */,
-				9C987A651DB79826005515F4 /* wallabagUITests.xctest */,
-				9CBA6C5D1E16FC2B000B9AE6 /* bagit.appex */,
-				9CC0D7171E22AB15002E4E94 /* wallabagScreenshotUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		9C987A451DB79826005515F4 /* wallabag */ = {
-			isa = PBXGroup;
-			children = (
-				9C174B9420CBD75E00AD8A09 /* WallabagKit */,
-				9C2A2DAC1DD4A6D900EDA4E8 /* Cell */,
-				9C181B841DB8D47C00D941EB /* Controller */,
-				9CE367AA1EEB148E0004F0A0 /* Entity */,
-				9C75961A1DBB56730096614B /* Extension */,
-				9CF1F21F1DBE96740086B98B /* Fonts */,
-				9C181B831DB8D47600D941EB /* Lib */,
-				9C380A1B1DD2683400E07CE7 /* Storyboard */,
-				9C45378D1DD122FA00FF6CFE /* html-ressources */,
-				9C987A461DB79826005515F4 /* AppDelegate.swift */,
-				9C987A501DB79826005515F4 /* Assets.xcassets */,
-				9C987A551DB79826005515F4 /* Info.plist */,
-				9CBA6C6C1E17010E000B9AE6 /* wallabag.entitlements */,
-				9CF4FED41EEB2F7E00653B90 /* Localizable.strings */,
+				G_3253058439314 /* Cell */,
+				G_3456610068941 /* Controller */,
+				G_5042654703519 /* Entity */,
+				G_8446400546164 /* Extension */,
+				G_3262136917308 /* Fonts */,
+				G_2086725614769 /* Lib */,
+				G_2550260809643 /* Storyboard */,
+				G_2637924613314 /* html-ressources */,
+				FR_443119967895 /* AppDelegate.swift */,
+				FR_145830167213 /* Assets.xcassets */,
+				FR_162147566250 /* Info.plist */,
+				FR_709620225957 /* Localizable.plist */,
+				VG_903045337291 /* Localizable.strings */,
+				FR_128924593603 /* wallabag.entitlements */,
+				VG_473240302263 /* wallabag.xcdatamodeld */,
+				VG_222024961528 /* wallabag2.xcdatamodeld */,
 			);
 			path = wallabag;
 			sourceTree = "<group>";
 		};
-		9C987A5D1DB79826005515F4 /* wallabagTests */ = {
+		G_3252328569564 /* wallabagTests */ = {
 			isa = PBXGroup;
 			children = (
-				9C174BB320CBDB3400AD8A09 /* WallabagKit */,
-				9C1AA3B920C2C1160023B367 /* JSON */,
-				9C17867F20C1655100F0F2EA /* Lib */,
-				9C2A2DAD1DD4A81000EDA4E8 /* Extension */,
-				9C987A601DB79826005515F4 /* Info.plist */,
-				9C174BBA20CBDF5A00AD8A09 /* XCTExtension.swift */,
+				G_7556878747194 /* Extension */,
+				G_1064785368475 /* JSON */,
+				G_8557968733733 /* WallabagKit */,
+				FR_118520138818 /* Info.plist */,
+				FR_211460243031 /* XCTExtension.swift */,
 			);
 			path = wallabagTests;
 			sourceTree = "<group>";
 		};
-		9C987A681DB79826005515F4 /* wallabagUITests */ = {
+		G_3253058439314 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				9C0BF8B91EC723CF00CEBE93 /* ArticlesUITests.swift */,
-				9C987A6B1DB79826005515F4 /* Info.plist */,
-				9CEC08FF1E1BC069002DC81D /* RegisterProcessUITests.swift */,
+				FR_483420598246 /* ArticleTableViewCell.swift */,
+				FR_253095659307 /* ThemedTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		G_3262136917308 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FR_189441853101 /* UbuntuTitling-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		G_3456610068941 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FR_618907829414 /* AboutViewController.swift */,
+				FR_292339550230 /* ArticleViewController.swift */,
+				FR_169684549055 /* ArticlesTableViewController.swift */,
+				FR_591508781071 /* ClientIdViewController.swift */,
+				FR_614276753573 /* HomeViewController.swift */,
+				FR_163798763929 /* LoginViewController.swift */,
+				FR_317258379241 /* ServerViewController.swift */,
+				FR_463421260943 /* SettingsTableViewController.swift */,
+				FR_313288938230 /* ThemeChoiceTableViewController.swift */,
+				FR_362021847681 /* TipViewController.swift */,
+				FR_471636325598 /* VoiceChoiceTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		G_4483714984275 /* wallabagUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FR_727918086115 /* ArticlesUITests.swift */,
+				FR_281348000776 /* Info.plist */,
+				FR_239512968119 /* RegisterProcessUITests.swift */,
 			);
 			path = wallabagUITests;
 			sourceTree = "<group>";
 		};
-		9CA965991F16B669009C6377 /* Theme */ = {
+		G_4799461827687 /* bagit */ = {
 			isa = PBXGroup;
 			children = (
-				9CA9659C1F16B6B9009C6377 /* Light.swift */,
-				9CA9659E1F16B71E009C6377 /* Dusk.swift */,
-				9CA965A01F16B729009C6377 /* Night.swift */,
-				9CA9659A1F16B68B009C6377 /* White.swift */,
-			);
-			path = Theme;
-			sourceTree = "<group>";
-		};
-		9CBA6C5E1E16FC2B000B9AE6 /* bagit */ = {
-			isa = PBXGroup;
-			children = (
-				9CBA6C641E16FC2B000B9AE6 /* Info.plist */,
-				9C431D551E63094B0009439C /* Media.xcassets */,
-				9CBA6C5F1E16FC2B000B9AE6 /* ShareViewController.swift */,
-				9CBA6C6D1E17011C000B9AE6 /* bagit.entitlements */,
+				FR_581575078753 /* Info.plist */,
+				FR_901888859280 /* Media.xcassets */,
+				FR_270058888992 /* ShareViewController.swift */,
+				FR_104102971227 /* bagit.entitlements */,
 			);
 			path = bagit;
 			sourceTree = "<group>";
 		};
-		9CC0D7181E22AB15002E4E94 /* wallabagScreenshotUITests */ = {
+		G_4972070595476 /* Operation */ = {
 			isa = PBXGroup;
 			children = (
-				9CC0D71B1E22AB15002E4E94 /* Info.plist */,
-				9CFEF3B31DD9EC5D00126D15 /* SnapshotHelper.swift */,
-				9CC0D7191E22AB15002E4E94 /* wallabagScreenshotUITests.swift */,
+				FR_143097765679 /* SyncOperation.swift */,
 			);
-			path = wallabagScreenshotUITests;
+			path = Operation;
 			sourceTree = "<group>";
 		};
-		9CE367AA1EEB148E0004F0A0 /* Entity */ = {
+		G_5042654703519 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				9C6245D020458C83008B3550 /* Entry.swift */,
-				9C6245D22045CFDC008B3550 /* EntryExtension.swift */,
+				FR_808284200295 /* Entry.swift */,
+				FR_416370408888 /* EntryExtension.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
 		};
-		9CF1F21F1DBE96740086B98B /* Fonts */ = {
+		G_5192167972112 /* wallabagKit */ = {
 			isa = PBXGroup;
 			children = (
-				9CF1F21D1DBE96210086B98B /* UbuntuTitling-Bold.ttf */,
+				FR_198348143950 /* NSNotification.swift */,
+				FR_492638859278 /* TokenAdapter.swift */,
+				FR_100900530836 /* WallabagAuth.swift */,
+				FR_574048205943 /* WallabagAuthError.swift */,
+				FR_242669192089 /* WallabagAuthSuccess.swift */,
+				FR_663352049454 /* WallabagError.swift */,
+				FR_796577238580 /* WallabagKit.swift */,
+				FR_257672620109 /* WallabagKitCollection.swift */,
+				FR_696558863916 /* WallabagKitCollectionResponse.swift */,
+				FR_608695995153 /* WallabagKitEntry.swift */,
+				FR_778015578057 /* WallabagKitResponse.swift */,
 			);
-			path = Fonts;
+			path = wallabagKit;
+			sourceTree = "<group>";
+		};
+		G_7556878747194 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FR_406821136104 /* DictionaryTests.swift */,
+				FR_718118344765 /* IntTests.swift */,
+				FR_633259069415 /* StringTests.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		G_8446400546164 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FR_405382569402 /* Date.swift */,
+				FR_686354446382 /* Dictionary.swift */,
+				FR_887755528747 /* Int.swift */,
+				FR_867201661917 /* String.swift */,
+				FR_842249404772 /* UIWebView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		G_8448771205358 = {
+			isa = PBXGroup;
+			children = (
+				G_1952740716080 /* Frameworks */,
+				G_8620238527590 /* Products */,
+				G_4799461827687 /* bagit */,
+				G_3132699255720 /* wallabag */,
+				G_2891769159851 /* wallabagCommon */,
+				G_5192167972112 /* wallabagKit */,
+				G_3252328569564 /* wallabagTests */,
+				G_4483714984275 /* wallabagUITests */,
+				030F148D0803DBAC8079B7CD /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		G_8557968733733 /* WallabagKit */ = {
+			isa = PBXGroup;
+			children = (
+				FR_170802807770 /* TokenAdapterTests.swift */,
+				FR_347627474181 /* WallabagAuthErrorTests.swift */,
+				FR_349732200902 /* WallabagAuthSuccessTests.swift */,
+				FR_152062374098 /* WallabagKitCollectionTests.swift */,
+				FR_431267044511 /* WallabagKitTests.swift */,
+			);
+			path = WallabagKit;
+			sourceTree = "<group>";
+		};
+		G_8617776982752 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				FR_472367051097 /* Dusk.swift */,
+				FR_329978501910 /* Light.swift */,
+				FR_321876133126 /* Night.swift */,
+				FR_724497187570 /* White.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		G_8620238527590 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FR_386902854729 /* WallabagCommon.framework */,
+				FR_416979964322 /* WallabagKit.framework */,
+				FR_479946182768 /* bagit.appex */,
+				FR_313269925572 /* wallabag.app */,
+				FR_325232856956 /* wallabagTests.xctest */,
+				FR_448371498427 /* wallabagUITests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9C987A421DB79826005515F4 /* wallabag */ = {
+		NT_313269925572 /* wallabag */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C987A6E1DB79826005515F4 /* Build configuration list for PBXNativeTarget "wallabag" */;
+			buildConfigurationList = CL_313269925572-1 /* Build configuration list for PBXNativeTarget "wallabag" */;
 			buildPhases = (
-				675CB1B13E826E9746D3DE45 /* [CP] Check Pods Manifest.lock */,
-				9C32BF121E369FBB00199DF2 /* ShellScript */,
-				9C987A3F1DB79826005515F4 /* Sources */,
-				9C987A401DB79826005515F4 /* Frameworks */,
-				9C987A411DB79826005515F4 /* Resources */,
-				1DF9979C51B322B7FE60E0F4 /* [CP] Embed Pods Frameworks */,
-				C63B0385014D4D2A027B3CAF /* [CP] Copy Pods Resources */,
-				9CBA6C6B1E16FC2B000B9AE6 /* Embed App Extensions */,
+				3C635BA88626661E089683D1 /* [CP] Check Pods Manifest.lock */,
+				SBP_31326992557 /* Sources */,
+				RBP_31326992557 /* Resources */,
+				FBP_31326992557 /* Frameworks */,
+				CFBP_4724151697 /* CopyFiles */,
+				CFBP_8543264970 /* CopyFiles */,
+				BC23206D46EA0523A7BDA722 /* [CP] Embed Pods Frameworks */,
+				D37D321C4DC79FD722AE2345 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9CBA6C661E16FC2B000B9AE6 /* PBXTargetDependency */,
+				TD_532218558659 /* PBXTargetDependency */,
 			);
 			name = wallabag;
 			productName = wallabag;
-			productReference = 9C987A431DB79826005515F4 /* wallabag.app */;
+			productReference = FR_313269925572 /* wallabag.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9C987A591DB79826005515F4 /* wallabagTests */ = {
+		NT_325232856956 /* wallabagTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C987A711DB79826005515F4 /* Build configuration list for PBXNativeTarget "wallabagTests" */;
+			buildConfigurationList = CL_325232856956 /* Build configuration list for PBXNativeTarget "wallabagTests" */;
 			buildPhases = (
-				C30604D19CABD26626D9E3A3 /* [CP] Check Pods Manifest.lock */,
-				9C987A561DB79826005515F4 /* Sources */,
-				9C987A571DB79826005515F4 /* Frameworks */,
-				9C987A581DB79826005515F4 /* Resources */,
-				4CACE93B269608251D35CE2C /* [CP] Embed Pods Frameworks */,
-				1CF7950C44CB289C35D29924 /* [CP] Copy Pods Resources */,
+				F366D5AB277A9C3165D08FB0 /* [CP] Check Pods Manifest.lock */,
+				SBP_32523285695 /* Sources */,
+				RBP_32523285695 /* Resources */,
+				0E17B71B1B5E9545FD70B4A1 /* Frameworks */,
+				600B0D3FFF5FC89C0D3F75E0 /* [CP] Embed Pods Frameworks */,
+				1DDF5E4F820F8920A091CD46 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9C987A5C1DB79826005515F4 /* PBXTargetDependency */,
 			);
 			name = wallabagTests;
 			productName = wallabagTests;
-			productReference = 9C987A5A1DB79826005515F4 /* wallabagTests.xctest */;
+			productReference = FR_325232856956 /* wallabagTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9C987A641DB79826005515F4 /* wallabagUITests */ = {
+		NT_386902854729 /* WallabagCommon */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9C987A741DB79826005515F4 /* Build configuration list for PBXNativeTarget "wallabagUITests" */;
+			buildConfigurationList = CL_386902854729 /* Build configuration list for PBXNativeTarget "WallabagCommon" */;
 			buildPhases = (
-				BDE3CDF5182757371AC5B97E /* [CP] Check Pods Manifest.lock */,
-				9C987A611DB79826005515F4 /* Sources */,
-				9C987A621DB79826005515F4 /* Frameworks */,
-				9C987A631DB79826005515F4 /* Resources */,
-				F2C3071BD713B0BBD1EA4C02 /* [CP] Embed Pods Frameworks */,
-				4F23E533812D555DCA923625 /* [CP] Copy Pods Resources */,
+				SBP_38690285472 /* Sources */,
+				D325AEF9885AA8868C3CFA44 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9C987A671DB79826005515F4 /* PBXTargetDependency */,
+			);
+			name = WallabagCommon;
+			productName = WallabagCommon;
+			productReference = FR_386902854729 /* WallabagCommon.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		NT_416979964322 /* WallabagKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CL_416979964322 /* Build configuration list for PBXNativeTarget "WallabagKit" */;
+			buildPhases = (
+				7BEC04DB020A91DEA94F1D67 /* [CP] Check Pods Manifest.lock */,
+				SBP_41697996432 /* Sources */,
+				4F6C166F2115E0FE48026C81 /* Frameworks */,
+				A65D7A0049E89359BDB8683A /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WallabagKit;
+			productName = WallabagKit;
+			productReference = FR_416979964322 /* WallabagKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		NT_448371498427 /* wallabagUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CL_448371498427 /* Build configuration list for PBXNativeTarget "wallabagUITests" */;
+			buildPhases = (
+				91ACBFDCE7C5A4370B60EF80 /* [CP] Check Pods Manifest.lock */,
+				SBP_44837149842 /* Sources */,
+				5EAB3976B2145919BB344EB3 /* Frameworks */,
+				EEB9786D8BC85E434E0A7CAB /* [CP] Embed Pods Frameworks */,
+				9D5D51A528A069ABF1057CDA /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
 			);
 			name = wallabagUITests;
 			productName = wallabagUITests;
-			productReference = 9C987A651DB79826005515F4 /* wallabagUITests.xctest */;
+			productReference = FR_448371498427 /* wallabagUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		9CBA6C5C1E16FC2B000B9AE6 /* bagit */ = {
+		NT_479946182768 /* bagit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9CBA6C6A1E16FC2B000B9AE6 /* Build configuration list for PBXNativeTarget "bagit" */;
+			buildConfigurationList = CL_479946182768 /* Build configuration list for PBXNativeTarget "bagit" */;
 			buildPhases = (
-				1064727F3787E02D9CFA3173 /* [CP] Check Pods Manifest.lock */,
-				9CBA6C591E16FC2B000B9AE6 /* Sources */,
-				9CBA6C5A1E16FC2B000B9AE6 /* Frameworks */,
-				9CBA6C5B1E16FC2B000B9AE6 /* Resources */,
-				C232E5C2161397CCEC0196CF /* [CP] Copy Pods Resources */,
+				BCE25F1796D07BA40E4B272C /* [CP] Check Pods Manifest.lock */,
+				SBP_47994618276 /* Sources */,
+				RBP_47994618276 /* Resources */,
+				FBP_47994618276 /* Frameworks */,
+				8F366F128230F299952C79D7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				9CBA6C721E1703E1000B9AE6 /* PBXTargetDependency */,
 			);
 			name = bagit;
 			productName = bagit;
-			productReference = 9CBA6C5D1E16FC2B000B9AE6 /* bagit.appex */;
+			productReference = FR_479946182768 /* bagit.appex */;
 			productType = "com.apple.product-type.app-extension";
-		};
-		9CC0D7161E22AB15002E4E94 /* wallabagScreenshotUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9CC0D7201E22AB15002E4E94 /* Build configuration list for PBXNativeTarget "wallabagScreenshotUITests" */;
-			buildPhases = (
-				9CC0D7131E22AB15002E4E94 /* Sources */,
-				9CC0D7141E22AB15002E4E94 /* Frameworks */,
-				9CC0D7151E22AB15002E4E94 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9CC0D71D1E22AB15002E4E94 /* PBXTargetDependency */,
-			);
-			name = wallabagScreenshotUITests;
-			productName = wallabagScreenshotUITests;
-			productReference = 9CC0D7171E22AB15002E4E94 /* wallabagScreenshotUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9C987A3B1DB79826005515F4 /* Project object */ = {
+		P_3132699255720 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = "maxime marinel";
-				TargetAttributes = {
-					9C987A421DB79826005515F4 = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = G97URPCGB8;
-						LastSwiftMigration = 0920;
-						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-							com.apple.BackgroundModes = {
-								enabled = 1;
-							};
-							com.apple.InAppPurchase = {
-								enabled = 1;
-							};
-						};
-					};
-					9C987A591DB79826005515F4 = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = G97URPCGB8;
-						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 9C987A421DB79826005515F4;
-					};
-					9C987A641DB79826005515F4 = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = G97URPCGB8;
-						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 9C987A421DB79826005515F4;
-					};
-					9CBA6C5C1E16FC2B000B9AE6 = {
-						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = G97URPCGB8;
-						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
-					};
-					9CC0D7161E22AB15002E4E94 = {
-						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = G97URPCGB8;
-						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 9C987A421DB79826005515F4;
-					};
-				};
+				LastUpgradeCheck = 0930;
 			};
-			buildConfigurationList = 9C987A3E1DB79826005515F4 /* Build configuration list for PBXProject "wallabag" */;
+			buildConfigurationList = CL_313269925572 /* Build configuration list for PBXProject "wallabag" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
-				fr,
 				de,
+				en,
+				fr,
 				ro,
 			);
-			mainGroup = 9C987A3A1DB79826005515F4;
-			productRefGroup = 9C987A441DB79826005515F4 /* Products */;
+			mainGroup = G_8448771205358;
+			productRefGroup = G_8620238527590 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9C987A421DB79826005515F4 /* wallabag */,
-				9CBA6C5C1E16FC2B000B9AE6 /* bagit */,
-				9C987A591DB79826005515F4 /* wallabagTests */,
-				9C987A641DB79826005515F4 /* wallabagUITests */,
-				9CC0D7161E22AB15002E4E94 /* wallabagScreenshotUITests */,
+				NT_386902854729 /* WallabagCommon */,
+				NT_416979964322 /* WallabagKit */,
+				NT_479946182768 /* bagit */,
+				NT_313269925572 /* wallabag */,
+				NT_325232856956 /* wallabagTests */,
+				NT_448371498427 /* wallabagUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9C987A411DB79826005515F4 /* Resources */ = {
+		RBP_31326992557 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CF1F21E1DBE966B0086B98B /* UbuntuTitling-Bold.ttf in Resources */,
-				9CA232301DFECE74006B29B8 /* light.css in Resources */,
-				622923E91E10F8A5007B2307 /* dusk.css in Resources */,
-				9CF4FED21EEB2F7E00653B90 /* Localizable.strings in Resources */,
-				9C987A541DB79826005515F4 /* LaunchScreen.storyboard in Resources */,
-				9C77751D1DFB72AD00CB775F /* justify.css in Resources */,
-				9C4537921DD1236B00FF6CFE /* article.html in Resources */,
-				9C4537941DD1236B00FF6CFE /* main.css in Resources */,
-				9C4537951DD1236B00FF6CFE /* ratatouille.css in Resources */,
-				621665201E0CFC2600438EE2 /* white.css in Resources */,
-				9C987A511DB79826005515F4 /* Assets.xcassets in Resources */,
-				9C987A4C1DB79826005515F4 /* Main.storyboard in Resources */,
-				9C4537931DD1236B00FF6CFE /* night.css in Resources */,
+				BF_691035147888 /* Assets.xcassets in Resources */,
+				BF_537423187412 /* LaunchScreen.storyboard in Resources */,
+				BF_650384412607 /* Localizable.plist in Resources */,
+				BF_789070881536 /* Localizable.strings in Resources */,
+				BF_350118289219 /* Main.storyboard in Resources */,
+				BF_595853176380 /* UbuntuTitling-Bold.ttf in Resources */,
+				BF_229399365559 /* article.html in Resources */,
+				BF_320695280918 /* dusk.css in Resources */,
+				BF_489434077138 /* justify.css in Resources */,
+				BF_277296153245 /* light.css in Resources */,
+				BF_332901584992 /* main.css in Resources */,
+				BF_739696867228 /* night.css in Resources */,
+				BF_883921211404 /* ratatouille.css in Resources */,
+				BF_515686573645 /* white.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C987A581DB79826005515F4 /* Resources */ = {
+		RBP_32523285695 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C174BC120CBE8DD00AD8A09 /* EmptyCollection.json in Resources */,
-				9C174BC320CBED9600AD8A09 /* EntriesCollection.json in Resources */,
-				9C1AA3BD20C2C7C60023B367 /* AuthWrongPassword.json in Resources */,
-				9C76B6E720CD1AC60054F02C /* Entry.json in Resources */,
-				9C1AA3BB20C2C12A0023B367 /* AuthSuccess.json in Resources */,
+				BF_370512689802 /* AuthSuccess.json in Resources */,
+				BF_755680492144 /* AuthWrongPassword.json in Resources */,
+				BF_163729320785 /* EmptyCollection.json in Resources */,
+				BF_691461020575 /* EntriesCollection.json in Resources */,
+				BF_826115267149 /* Entry.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C987A631DB79826005515F4 /* Resources */ = {
+		RBP_47994618276 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9CBA6C5B1E16FC2B000B9AE6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9C39B5C52027AAC400CA6B36 /* Assets.xcassets in Resources */,
-				9C431D561E63094B0009439C /* Media.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9CC0D7151E22AB15002E4E94 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				BF_373969074458 /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1064727F3787E02D9CFA3173 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-bagit-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1CF7950C44CB289C35D29924 /* [CP] Copy Pods Resources */ = {
+		1DDF5E4F820F8920A091CD46 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -908,7 +812,126 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1DF9979C51B322B7FE60E0F4 /* [CP] Embed Pods Frameworks */ = {
+		3C635BA88626661E089683D1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-wallabag-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		600B0D3FFF5FC89C0D3F75E0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Mockingjay/Mockingjay.framework",
+				"${BUILT_PRODUCTS_DIR}/URITemplate/URITemplate.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mockingjay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/URITemplate.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BEC04DB020A91DEA94F1D67 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WallabagKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F366F128230F299952C79D7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bagit/Pods-bagit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91ACBFDCE7C5A4370B60EF80 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-wallabagUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D5D51A528A069ABF1057CDA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A65D7A0049E89359BDB8683A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WallabagKit/Pods-WallabagKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC23206D46EA0523A7BDA722 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -938,42 +961,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wallabag/Pods-wallabag-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4CACE93B269608251D35CE2C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Mockingjay/Mockingjay.framework",
-				"${BUILT_PRODUCTS_DIR}/URITemplate/URITemplate.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mockingjay.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/URITemplate.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4F23E533812D555DCA923625 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		675CB1B13E826E9746D3DE45 /* [CP] Check Pods Manifest.lock */ = {
+		BCE25F1796D07BA40E4B272C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -984,78 +972,14 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-wallabag-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-bagit-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9C32BF121E369FBB00199DF2 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
-		};
-		BDE3CDF5182757371AC5B97E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-wallabagUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C232E5C2161397CCEC0196CF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bagit/Pods-bagit-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C30604D19CABD26626D9E3A3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-wallabagTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C63B0385014D4D2A027B3CAF /* [CP] Copy Pods Resources */ = {
+		D37D321C4DC79FD722AE2345 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1070,7 +994,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wallabag/Pods-wallabag-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F2C3071BD713B0BBD1EA4C02 /* [CP] Embed Pods Frameworks */ = {
+		EEB9786D8BC85E434E0A7CAB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1088,191 +1012,279 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F366D5AB277A9C3165D08FB0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-wallabagTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9C987A3F1DB79826005515F4 /* Sources */ = {
+		SBP_31326992557 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C21927D1DBFF44700F628C2 /* ArticleTableViewCell.swift in Sources */,
-				9CF1F2251DBE9D150086B98B /* LoginViewController.swift in Sources */,
-				9C174BA220CBD99E00AD8A09 /* WallabagAuth.swift in Sources */,
-				9CE369741DE632030005E20E /* SettingsTableViewController.swift in Sources */,
-				9CA9659B1F16B68B009C6377 /* White.swift in Sources */,
-				9CA9659F1F16B71E009C6377 /* Dusk.swift in Sources */,
-				9C6245D120458C83008B3550 /* Entry.swift in Sources */,
-				0975850A1FE53E0B0089825B /* KeychainPasswordItem.swift in Sources */,
-				9CA965A11F16B729009C6377 /* Night.swift in Sources */,
-				9CDB880720CE485E008A21E3 /* UIWebView.swift in Sources */,
-				9C181B881DB8E27000D941EB /* ArticlesTableViewController.swift in Sources */,
-				9C75961E1DBD59330096614B /* ArticleViewController.swift in Sources */,
-				9CCB702F20998E5D004776B7 /* Utils.swift in Sources */,
-				9CF1F2231DBE9B800086B98B /* ClientIdViewController.swift in Sources */,
-				9CF1F2211DBE97D80086B98B /* ServerViewController.swift in Sources */,
-				9CE369761DE63D030005E20E /* Setting.swift in Sources */,
-				9C7B79E61EBF8070004559B1 /* EntryController.swift in Sources */,
-				9CD48FB7207C9356001AA042 /* Date.swift in Sources */,
-				9CB41252205661FF00A71989 /* Bridge.m in Sources */,
-				9C8B20A21F2612BA0084BBAA /* VoiceChoiceTableViewController.swift in Sources */,
-				9C174B9A20CBD8E400AD8A09 /* WallabagKitCollection.swift in Sources */,
-				9C9034881E5A26D90074540B /* ThemeManager.swift in Sources */,
-				9CE9F2061DE2151B002E06F5 /* AboutViewController.swift in Sources */,
-				9CF1F21C1DBE943C0086B98B /* HomeViewController.swift in Sources */,
-				9C174BA820CBD9F000AD8A09 /* TokenAdapter.swift in Sources */,
-				9C8311861E06F56C004ACD5D /* ThemedTableViewCell.swift in Sources */,
-				9C174BA620CBD9DB00AD8A09 /* WallabagAuthError.swift in Sources */,
-				9C75961C1DBB567E0096614B /* String.swift in Sources */,
-				9CA273312058430000B0A269 /* WallabagKit.swift in Sources */,
-				9C174B9620CBD78800AD8A09 /* NSNotification.swift in Sources */,
-				9C6245D32045CFDC008B3550 /* EntryExtension.swift in Sources */,
-				9CC4B0611DC5361000BC6830 /* Dictionary.swift in Sources */,
-				9CA9659D1F16B6B9009C6377 /* Light.swift in Sources */,
-				9C174B9C20CBD92200AD8A09 /* WallabagKitResponse.swift in Sources */,
-				9C174BA420CBD9C400AD8A09 /* WallabagAuthSuccess.swift in Sources */,
-				9C174BA020CBD95000AD8A09 /* WallabagError.swift in Sources */,
-				9C65DEB11DC5EE85002CA068 /* Int.swift in Sources */,
-				9C80E8522013BCBE007208B0 /* SyncOperation.swift in Sources */,
-				9C298B131E0BF8F400B72503 /* ThemeChoiceTableViewController.swift in Sources */,
-				9C987A471DB79826005515F4 /* AppDelegate.swift in Sources */,
-				9CB412542056635100A71989 /* AnalyticsManager.swift in Sources */,
-				9C174B9E20CBD93700AD8A09 /* WallabagKitCollectionResponse.swift in Sources */,
-				9C25C9B81EEC99D700B97F6D /* TipViewController.swift in Sources */,
-				9C174B9820CBD7B700AD8A09 /* WallabagKitEntry.swift in Sources */,
+				BF_612459313954 /* AboutViewController.swift in Sources */,
+				BF_271878237220 /* AnalyticsManager.swift in Sources */,
+				BF_840769457642 /* AppDelegate.swift in Sources */,
+				BF_664917146771 /* ArticleTableViewCell.swift in Sources */,
+				BF_265189340335 /* ArticleViewController.swift in Sources */,
+				BF_356327948355 /* ArticlesTableViewController.swift in Sources */,
+				BF_228003251157 /* Bridge.m in Sources */,
+				BF_357593386018 /* ClientIdViewController.swift in Sources */,
+				BF_407424821465 /* Date.swift in Sources */,
+				BF_769713477281 /* Dictionary.swift in Sources */,
+				BF_180926988233 /* Dusk.swift in Sources */,
+				BF_682468634297 /* Entry.swift in Sources */,
+				BF_640708102559 /* EntryController.swift in Sources */,
+				BF_227928424987 /* EntryExtension.swift in Sources */,
+				BF_253492997768 /* HomeViewController.swift in Sources */,
+				BF_103141175892 /* Int.swift in Sources */,
+				BF_878244943288 /* Light.swift in Sources */,
+				BF_560947075628 /* LoginViewController.swift in Sources */,
+				BF_275298352095 /* Night.swift in Sources */,
+				BF_324437836784 /* ServerViewController.swift in Sources */,
+				BF_864072021205 /* SettingsTableViewController.swift in Sources */,
+				BF_418698870743 /* String.swift in Sources */,
+				BF_357813038602 /* SyncOperation.swift in Sources */,
+				BF_786084879913 /* ThemeChoiceTableViewController.swift in Sources */,
+				BF_806862810684 /* ThemeManager.swift in Sources */,
+				BF_500985621954 /* ThemedTableViewCell.swift in Sources */,
+				BF_672186298460 /* TipViewController.swift in Sources */,
+				BF_176701664767 /* UIWebView.swift in Sources */,
+				BF_141068039592 /* Utils.swift in Sources */,
+				BF_320277757240 /* VoiceChoiceTableViewController.swift in Sources */,
+				BF_754180149222 /* White.swift in Sources */,
+				BF_315618503812 /* wallabag.xcdatamodeld in Sources */,
+				BF_696465330107 /* wallabag2.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C987A561DB79826005515F4 /* Sources */ = {
+		SBP_32523285695 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C2A2DB21DD4A96B00EDA4E8 /* IntTests.swift in Sources */,
-				9C174BB720CBDB6500AD8A09 /* TokenAdapterTests.swift in Sources */,
-				9C174BBD20CBE4E700AD8A09 /* WallabagAuthSuccessTests.swift in Sources */,
-				9C174BBF20CBE8C400AD8A09 /* WallabagKitCollectionTests.swift in Sources */,
-				9C2A2DB41DD4AA1D00EDA4E8 /* StringTests.swift in Sources */,
-				9C174BB920CBDEF600AD8A09 /* WallabagAuthErrorTests.swift in Sources */,
-				9C2A2DAF1DD4A82A00EDA4E8 /* DictionaryTests.swift in Sources */,
-				9C17868120C1656E00F0F2EA /* WallabagKitTests.swift in Sources */,
-				9C174BBB20CBDF5A00AD8A09 /* XCTExtension.swift in Sources */,
+				BF_861032203442 /* DictionaryTests.swift in Sources */,
+				BF_676563806213 /* IntTests.swift in Sources */,
+				BF_615716435662 /* StringTests.swift in Sources */,
+				BF_550393006361 /* TokenAdapterTests.swift in Sources */,
+				BF_282567572079 /* WallabagAuthErrorTests.swift in Sources */,
+				BF_291749533174 /* WallabagAuthSuccessTests.swift in Sources */,
+				BF_837621937461 /* WallabagKitCollectionTests.swift in Sources */,
+				BF_489641615581 /* WallabagKitTests.swift in Sources */,
+				BF_613670022727 /* XCTExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C987A611DB79826005515F4 /* Sources */ = {
+		SBP_38690285472 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C0BF8BA1EC723CF00CEBE93 /* ArticlesUITests.swift in Sources */,
-				9CEC09001E1BC069002DC81D /* RegisterProcessUITests.swift in Sources */,
+				BF_598440666690 /* KeychainPasswordItem.swift in Sources */,
+				BF_217142973695 /* Setting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9CBA6C591E16FC2B000B9AE6 /* Sources */ = {
+		SBP_41697996432 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0975850B1FE5533C0089825B /* Setting.swift in Sources */,
-				9CBA6C601E16FC2B000B9AE6 /* ShareViewController.swift in Sources */,
-				0975850C1FE5535A0089825B /* KeychainPasswordItem.swift in Sources */,
-				9C7DC1D8207F32D7007648CF /* WallabagKit.swift in Sources */,
-				9C174BAB20CBDA6800AD8A09 /* WallabagKitCollection.swift in Sources */,
-				9C174BB220CBDA7A00AD8A09 /* TokenAdapter.swift in Sources */,
-				9C174BAA20CBDA6500AD8A09 /* WallabagKitEntry.swift in Sources */,
-				9C174BAD20CBDA6D00AD8A09 /* WallabagKitCollectionResponse.swift in Sources */,
-				9C174BB120CBDA7700AD8A09 /* WallabagAuthError.swift in Sources */,
-				9C174BAE20CBDA6F00AD8A09 /* WallabagError.swift in Sources */,
-				9C174BAF20CBDA7200AD8A09 /* WallabagAuth.swift in Sources */,
-				9C174BAC20CBDA6A00AD8A09 /* WallabagKitResponse.swift in Sources */,
-				9C174BB020CBDA7500AD8A09 /* WallabagAuthSuccess.swift in Sources */,
-				9C174BA920CBDA6200AD8A09 /* NSNotification.swift in Sources */,
+				BF_316834744207 /* NSNotification.swift in Sources */,
+				BF_874553318132 /* TokenAdapter.swift in Sources */,
+				BF_336057409229 /* WallabagAuth.swift in Sources */,
+				BF_445050910391 /* WallabagAuthError.swift in Sources */,
+				BF_320199735377 /* WallabagAuthSuccess.swift in Sources */,
+				BF_832519215907 /* WallabagError.swift in Sources */,
+				BF_552527648440 /* WallabagKit.swift in Sources */,
+				BF_535754439733 /* WallabagKitCollection.swift in Sources */,
+				BF_210260382470 /* WallabagKitCollectionResponse.swift in Sources */,
+				BF_553749545632 /* WallabagKitEntry.swift in Sources */,
+				BF_921222279082 /* WallabagKitResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9CC0D7131E22AB15002E4E94 /* Sources */ = {
+		SBP_44837149842 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CC0D71A1E22AB15002E4E94 /* wallabagScreenshotUITests.swift in Sources */,
-				9CC0D7211E22AB55002E4E94 /* SnapshotHelper.swift in Sources */,
+				BF_384818812782 /* ArticlesUITests.swift in Sources */,
+				BF_377663780436 /* RegisterProcessUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		SBP_47994618276 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF_720442855285 /* ShareViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		9C987A5C1DB79826005515F4 /* PBXTargetDependency */ = {
+		TD_532218558659 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9C987A421DB79826005515F4 /* wallabag */;
-			targetProxy = 9C987A5B1DB79826005515F4 /* PBXContainerItemProxy */;
-		};
-		9C987A671DB79826005515F4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9C987A421DB79826005515F4 /* wallabag */;
-			targetProxy = 9C987A661DB79826005515F4 /* PBXContainerItemProxy */;
-		};
-		9CBA6C661E16FC2B000B9AE6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9CBA6C5C1E16FC2B000B9AE6 /* bagit */;
-			targetProxy = 9CBA6C651E16FC2B000B9AE6 /* PBXContainerItemProxy */;
-		};
-		9CBA6C721E1703E1000B9AE6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9C987A421DB79826005515F4 /* wallabag */;
-			targetProxy = 9CBA6C711E1703E1000B9AE6 /* PBXContainerItemProxy */;
-		};
-		9CC0D71D1E22AB15002E4E94 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 9C987A421DB79826005515F4 /* wallabag */;
-			targetProxy = 9CC0D71C1E22AB15002E4E94 /* PBXContainerItemProxy */;
+			target = NT_479946182768 /* bagit */;
+			targetProxy = CIP_36577000250 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9C987A4A1DB79826005515F4 /* Main.storyboard */ = {
+		VG_103912532373 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9C987A4B1DB79826005515F4 /* Base */,
-				9CF4FECB1EEB2B9D00653B90 /* fr */,
-				9CF4FECE1EEB2C4300653B90 /* de */,
-				7E638ED21F433B180014860E /* ro */,
+				FR_103912532373 /* Base */,
+				FR_371695168859 /* de */,
+				FR_646240505027 /* fr */,
+				FR_848499139002 /* ro */,
 			);
 			name = Main.storyboard;
-			path = .;
 			sourceTree = "<group>";
 		};
-		9C987A521DB79826005515F4 /* LaunchScreen.storyboard */ = {
+		VG_903045337291 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9C987A531DB79826005515F4 /* Base */,
-				9CF4FECA1EEB2B9C00653B90 /* fr */,
-				9CF4FECD1EEB2C4300653B90 /* de */,
-				7E638ED11F433B170014860E /* ro */,
-			);
-			name = LaunchScreen.storyboard;
-			path = .;
-			sourceTree = "<group>";
-		};
-		9CF4FED41EEB2F7E00653B90 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9CF4FED31EEB2F7E00653B90 /* Base */,
-				9CF4FED61EEB2FB300653B90 /* fr */,
-				9CF4FED71EEB2FB500653B90 /* de */,
-				7E638ED31F433B180014860E /* ro */,
+				FR_903045337291 /* Base */,
+				FR_595568042366 /* de */,
+				FR_361581023947 /* en */,
+				FR_557142985887 /* fr */,
+				FR_154121947263 /* ro */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		VG_907984366336 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FR_907984366336 /* Base */,
+				FR_651182863708 /* de */,
+				FR_168291122420 /* fr */,
+				FR_989994563791 /* ro */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		9C987A6C1DB79826005515F4 /* Debug */ = {
+		BC_107711665862 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD43E4814D07040FE2DD72B8 /* Pods-wallabag.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = wallabag/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "wallabag/Lib/wallabag-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BC_162666627335 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E96BEE44B1A7AFC254E01A8 /* Pods-WallabagKit.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		BC_193824684480 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE54AA40535BB0C2BF9F924C /* Pods-wallabagUITests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = wallabagUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BC_361949606250 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D66AA2D7612E6E483B9C2F23 /* Pods-wallabag.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = wallabag/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "wallabag/Lib/wallabag-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BC_386837522257 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAA715E605EA46AEC6F01B9A /* Pods-bagit.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = bagit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BC_450700665721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03181D748C2E6EB3561168F5 /* Pods-WallabagKit.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		BC_479945831424 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1294,21 +1306,20 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
 					"$(inherited)",
+					"DEBUG=1",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -1316,23 +1327,111 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		BC_591139791567 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72BF6BBB17DC0439F7F1CEA0 /* Pods-bagit.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = bagit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BC_622408190692 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD4D5DEFC8A32FE10EE7B6A5 /* Pods-wallabagTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = wallabagTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		9C987A6D1DB79826005515F4 /* Release */ = {
+		BC_651812168736 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		BC_730873572254 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54C148C3316EB1C49252D154 /* Pods-wallabagTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = wallabagTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BC_755793314141 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		BC_857257558457 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23A000126938E88842E142F8 /* Pods-wallabagUITests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = wallabagUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BC_881114754245 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -1354,15 +1453,14 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -1370,254 +1468,104 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		9C987A6F1DB79826005515F4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C5054CFAAEF931DD2335077B /* Pods-wallabag.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = wallabag/wallabag.entitlements;
-				CURRENT_PROJECT_VERSION = 114;
-				DEVELOPMENT_TEAM = G97URPCGB8;
-				INFOPLIST_FILE = wallabag/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "wallabag/Lib/wallabag-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				VERSIONING_SYSTEM = "apple-generic";
-			};
-			name = Debug;
-		};
-		9C987A701DB79826005515F4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D492A4BFBC05746741AD48FD /* Pods-wallabag.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = wallabag/wallabag.entitlements;
-				CURRENT_PROJECT_VERSION = 114;
-				DEVELOPMENT_TEAM = G97URPCGB8;
-				INFOPLIST_FILE = wallabag/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "wallabag/Lib/wallabag-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				VERSIONING_SYSTEM = "apple-generic";
-			};
-			name = Release;
-		};
-		9C987A721DB79826005515F4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7438BB540252BD33025E60F9 /* Pods-wallabagTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = G97URPCGB8;
-				INFOPLIST_FILE = wallabagTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabagTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "wallabag/Lib/wallabag-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wallabag.app/wallabag";
-			};
-			name = Debug;
-		};
-		9C987A731DB79826005515F4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 94D0C2FA2C870EE989B2406D /* Pods-wallabagTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = G97URPCGB8;
-				INFOPLIST_FILE = wallabagTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabagTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "wallabag/Lib/wallabag-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wallabag.app/wallabag";
-			};
-			name = Release;
-		};
-		9C987A751DB79826005515F4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33649D7F894D49168B9683D2 /* Pods-wallabagUITests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				DEVELOPMENT_TEAM = G97URPCGB8;
-				INFOPLIST_FILE = wallabagUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabagUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = wallabag;
-			};
-			name = Debug;
-		};
-		9C987A761DB79826005515F4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B9EB64D938632DA7CDDFD2A /* Pods-wallabagUITests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				DEVELOPMENT_TEAM = G97URPCGB8;
-				INFOPLIST_FILE = wallabagUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabagUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = wallabag;
-			};
-			name = Release;
-		};
-		9CBA6C681E16FC2B000B9AE6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A6538EB964B457B5B3DC7B46 /* Pods-bagit.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = bagit/bagit.entitlements;
-				DEVELOPMENT_TEAM = G97URPCGB8;
-				INFOPLIST_FILE = bagit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag.bagit";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-			};
-			name = Debug;
-		};
-		9CBA6C691E16FC2B000B9AE6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 081F547345F9E70248A02531 /* Pods-bagit.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = bagit/bagit.entitlements;
-				DEVELOPMENT_TEAM = G97URPCGB8;
-				INFOPLIST_FILE = bagit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag.bagit";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
-		9CC0D71E1E22AB15002E4E94 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				DEVELOPMENT_TEAM = G97URPCGB8;
-				INFOPLIST_FILE = wallabagScreenshotUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabagScreenshotUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = wallabag;
-			};
-			name = Debug;
-		};
-		9CC0D71F1E22AB15002E4E94 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				DEVELOPMENT_TEAM = G97URPCGB8;
-				INFOPLIST_FILE = wallabagScreenshotUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabagScreenshotUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = wallabag;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9C987A3E1DB79826005515F4 /* Build configuration list for PBXProject "wallabag" */ = {
+		CL_313269925572 /* Build configuration list for PBXProject "wallabag" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9C987A6C1DB79826005515F4 /* Debug */,
-				9C987A6D1DB79826005515F4 /* Release */,
+				BC_479945831424 /* Debug */,
+				BC_881114754245 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		9C987A6E1DB79826005515F4 /* Build configuration list for PBXNativeTarget "wallabag" */ = {
+		CL_313269925572-1 /* Build configuration list for PBXNativeTarget "wallabag" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9C987A6F1DB79826005515F4 /* Debug */,
-				9C987A701DB79826005515F4 /* Release */,
+				BC_107711665862 /* Debug */,
+				BC_361949606250 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "";
 		};
-		9C987A711DB79826005515F4 /* Build configuration list for PBXNativeTarget "wallabagTests" */ = {
+		CL_325232856956 /* Build configuration list for PBXNativeTarget "wallabagTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9C987A721DB79826005515F4 /* Debug */,
-				9C987A731DB79826005515F4 /* Release */,
+				BC_622408190692 /* Debug */,
+				BC_730873572254 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "";
 		};
-		9C987A741DB79826005515F4 /* Build configuration list for PBXNativeTarget "wallabagUITests" */ = {
+		CL_386902854729 /* Build configuration list for PBXNativeTarget "WallabagCommon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9C987A751DB79826005515F4 /* Debug */,
-				9C987A761DB79826005515F4 /* Release */,
+				BC_651812168736 /* Debug */,
+				BC_755793314141 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "";
 		};
-		9CBA6C6A1E16FC2B000B9AE6 /* Build configuration list for PBXNativeTarget "bagit" */ = {
+		CL_416979964322 /* Build configuration list for PBXNativeTarget "WallabagKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9CBA6C681E16FC2B000B9AE6 /* Debug */,
-				9CBA6C691E16FC2B000B9AE6 /* Release */,
+				BC_450700665721 /* Debug */,
+				BC_162666627335 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "";
 		};
-		9CC0D7201E22AB15002E4E94 /* Build configuration list for PBXNativeTarget "wallabagScreenshotUITests" */ = {
+		CL_448371498427 /* Build configuration list for PBXNativeTarget "wallabagUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9CC0D71E1E22AB15002E4E94 /* Debug */,
-				9CC0D71F1E22AB15002E4E94 /* Release */,
+				BC_193824684480 /* Debug */,
+				BC_857257558457 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "";
+		};
+		CL_479946182768 /* Build configuration list for PBXNativeTarget "bagit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC_386837522257 /* Debug */,
+				BC_591139791567 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "";
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		VG_222024961528 /* wallabag2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FR_513159211924 /* wallabag2.xcdatamodel */,
+				FR_315679525372 /* wallabag2v2.xcdatamodel */,
+			);
+			currentVersion = FR_513159211924 /* wallabag2.xcdatamodel */;
+			path = wallabag2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		VG_473240302263 /* wallabag.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FR_894525354742 /* wallabag.xcdatamodel */,
+			);
+			currentVersion = FR_894525354742 /* wallabag.xcdatamodel */;
+			path = wallabag.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
-	rootObject = 9C987A3B1DB79826005515F4 /* Project object */;
+	rootObject = P_3132699255720 /* Project object */;
 }
