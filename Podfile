@@ -27,11 +27,10 @@ target 'WallabagKit' do
     inherit! :search_paths
     pod 'Alamofire', '~> 4.5'
 end
-#target 'bagit' do
-#    pod 'Alamofire', '~> 4.5'
-#    target 'WallabagKit'
-#    target 'WallabagCommon'
-#end
+
+target 'bagit' do
+    pod 'Alamofire', '~> 4.5'
+end
 
 post_install do |installer|
     myTargets = ['SideMenu', 'Swifter']
