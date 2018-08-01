@@ -15,6 +15,7 @@ targets:
     settings:
       SWIFT_OBJC_BRIDGING_HEADER: "wallabag/Lib/wallabag-Bridging-Header.h"
       ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES: $(inherited)
+      CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED: YES
   bagit:
     type: app-extension
     platform: iOS
