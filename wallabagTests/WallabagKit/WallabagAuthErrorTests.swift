@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import wallabag
+@testable import WallabagKit
 
 class WallabagAuthErrorTests: XCTestCase {
     func testDecodeAuthErrorWrongPassword() {

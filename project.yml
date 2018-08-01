@@ -1,7 +1,9 @@
 name: wallabag
+options:
+  bundleIdPrefix: "fr.district-web"
 settings:
   DEVELOPMENT_TEAM: G97URPCGB8
-  PRODUCT_BUNDLE_IDENTIFIER: fr.district-web.wallabag
+#  PRODUCT_BUNDLE_IDENTIFIER: fr.district-web.wallabag
 targets:
   wallabag:
     type: application
@@ -21,16 +23,27 @@ targets:
     platform: iOS
     deploymentTarget: "11.0"
     sources: bagit
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: "fr.district-web.wallabag"
+    options:
+      bundleIdPrefix: "fr.district-web.wallabag"
+    dependencies:
+      - target: WallabagCommon
+      - target: WallabagKit
   wallabagUITests:
     type: bundle.ui-testing
     platform: iOS
     deploymentTarget: "11.0"
     sources: [wallabagUITests]
+    dependencies:
+      - target: wallabag
   wallabagTests:
     type: bundle.unit-test
     platform: iOS
     deploymentTarget: "11.0"
     sources: [wallabagTests]
+    dependencies:
+      - target: wallabag
   WallabagCommon:
     type: framework
     platform: iOS

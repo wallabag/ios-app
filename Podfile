@@ -12,11 +12,10 @@ target 'wallabag' do
     pod 'RealmSwift'
     pod 'GoogleAnalytics'
     
-    target 'wallabagUITests' do
-        inherit! :search_paths
-        pod 'Swifter', '~> 1.3.3'
-    end
-
+    #    target 'wallabagUITests' do
+    #   inherit! :search_paths
+    #   pod 'Swifter', '~> 1.3.3'
+    #end
     target 'wallabagTests' do
         inherit! :search_paths
         pod 'Mockingjay'

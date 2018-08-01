@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import wallabag
+@testable import WallabagKit
 
 class WallabagKitCollectionTests: XCTestCase {
     func testDecodeEmptyCollectionOfWallabagEntry() {
