@@ -1,4 +1,7 @@
 name: wallabag
+settings:
+  DEVELOPMENT_TEAM: G97URPCGB8
+  PRODUCT_BUNDLE_IDENTIFIER: fr.district-web.wallabag
 targets:
   wallabag:
     type: application
@@ -7,8 +10,8 @@ targets:
     sources: [wallabag]
     dependencies:
       - target: bagit
-      - framework: WallabagCommon
-      - framework: WallabagKit
+      - target: WallabagCommon
+      - target: WallabagKit
     settings:
       SWIFT_OBJC_BRIDGING_HEADER: "wallabag/Lib/wallabag-Bridging-Header.h"
   bagit:
@@ -16,9 +19,6 @@ targets:
     platform: iOS
     deploymentTarget: "11.0"
     sources: bagit
-    dependencies:
-      - framework: WallabagCommon
-      - framework: WallabagKit
   wallabagUITests:
     type: bundle.ui-testing
     platform: iOS

@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D7020DA61E05A0474BACF86 /* Pods_bagit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86BA3177064A18D2AE1B2C9C /* Pods_bagit.framework */; };
-		4172775DDC3A2C01B9C2FF5E /* Pods_wallabagTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7499E6A40B459B94005A33FF /* Pods_wallabagTests.framework */; };
-		747DE9D46B6BF16F5EDDE1C9 /* Pods_wallabag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C02F1C867303E1091C42DA /* Pods_wallabag.framework */; };
+		01BD67D7426B5D17CDC17C8A /* Pods_wallabag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA2DC17EC8E48DF6CDC7BFF /* Pods_wallabag.framework */; };
+		A906B25F0DAEDF3A496C0F1A /* Pods_wallabagUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA93D0CB83605625129C010E /* Pods_wallabagUITests.framework */; };
+		A9D69148C7DC297B948C6387 /* Pods_WallabagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D39331381D07CCF907C33F1 /* Pods_WallabagKit.framework */; };
 		BF_103141175892 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_887755528747 /* Int.swift */; };
 		BF_141068039592 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_182379398345 /* Utils.swift */; };
 		BF_163729320785 /* EmptyCollection.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_729857078213 /* EmptyCollection.json */; };
 		BF_176701664767 /* UIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_842249404772 /* UIWebView.swift */; };
 		BF_180926988233 /* Dusk.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_472367051097 /* Dusk.swift */; };
+		BF_204518086014 /* WallabagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_416979964322 /* WallabagKit.framework */; };
 		BF_210260382470 /* WallabagKitCollectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_696558863916 /* WallabagKitCollectionResponse.swift */; };
 		BF_217142973695 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_656994299549 /* Setting.swift */; };
 		BF_227928424987 /* EntryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_416370408888 /* EntryExtension.swift */; };
@@ -45,7 +46,7 @@
 		BF_377663780436 /* RegisterProcessUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_239512968119 /* RegisterProcessUITests.swift */; };
 		BF_384818812782 /* ArticlesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_727918086115 /* ArticlesUITests.swift */; };
 		BF_407424821465 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_405382569402 /* Date.swift */; };
-		BF_408690461477 /* WallabagCommon in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_386902854729-1 /* WallabagCommon */; };
+		BF_408863389725 /* WallabagCommon.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FR_386902854729 /* WallabagCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF_418698870743 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_867201661917 /* String.swift */; };
 		BF_445050910391 /* WallabagAuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_574048205943 /* WallabagAuthError.swift */; };
 		BF_489434077138 /* justify.css in Resources */ = {isa = PBXBuildFile; fileRef = FR_859957173671 /* justify.css */; };
@@ -60,12 +61,7 @@
 		BF_560947075628 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_163798763929 /* LoginViewController.swift */; };
 		BF_595853176380 /* UbuntuTitling-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FR_189441853101 /* UbuntuTitling-Bold.ttf */; };
 		BF_598440666690 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_914949420297 /* KeychainPasswordItem.swift */; };
-		BF_604404752324 /* WallabagCommon in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_386902854729-1 /* WallabagCommon */; };
-		BF_604404752324-1 /* WallabagCommon in CopyFiles */ = {isa = PBXBuildFile; fileRef = FR_386902854729-1 /* WallabagCommon */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BF_611944693165 /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_416979964322-1 /* WallabagKit */; };
 		BF_612459313954 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_618907829414 /* AboutViewController.swift */; };
-		BF_613587147738 /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_416979964322-1 /* WallabagKit */; };
-		BF_613587147738-1 /* WallabagKit in CopyFiles */ = {isa = PBXBuildFile; fileRef = FR_416979964322-1 /* WallabagKit */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF_613670022727 /* XCTExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_211460243031 /* XCTExtension.swift */; };
 		BF_615716435662 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_633259069415 /* StringTests.swift */; };
 		BF_640708102559 /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_299577518904 /* EntryController.swift */; };
@@ -85,6 +81,7 @@
 		BF_786084879913 /* ThemeChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_313288938230 /* ThemeChoiceTableViewController.swift */; };
 		BF_789070881536 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = VG_903045337291 /* Localizable.strings */; };
 		BF_806862810684 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_680311626630 /* ThemeManager.swift */; };
+		BF_820548980262 /* WallabagCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_386902854729 /* WallabagCommon.framework */; };
 		BF_826115267149 /* Entry.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_312783760065 /* Entry.json */; };
 		BF_832519215907 /* WallabagError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_663352049454 /* WallabagError.swift */; };
 		BF_837621937461 /* WallabagKitCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_152062374098 /* WallabagKitCollectionTests.swift */; };
@@ -94,9 +91,9 @@
 		BF_874553318132 /* TokenAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_492638859278 /* TokenAdapter.swift */; };
 		BF_878244943288 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_329978501910 /* Light.swift */; };
 		BF_883921211404 /* ratatouille.css in Resources */ = {isa = PBXBuildFile; fileRef = FR_258356001597 /* ratatouille.css */; };
+		BF_919251214666 /* WallabagKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FR_416979964322 /* WallabagKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF_921222279082 /* WallabagKitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_778015578057 /* WallabagKitResponse.swift */; };
-		D1E2CBF8E3355933CA6B1C49 /* Pods_WallabagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAC66D25D94D3CF08EF5117F /* Pods_WallabagKit.framework */; };
-		DA102632657642DFE2122E1D /* Pods_wallabagUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7BC1D7F49825A5B25B0546 /* Pods_wallabagUITests.framework */; };
+		F49247C03C56AD31E6929560 /* Pods_wallabagTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D80A5A4F61AF6BC52734C6F2 /* Pods_wallabagTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +103,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = NT_479946182768;
 			remoteInfo = bagit;
+		};
+		CIP_43868538224 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = P_3132699255720 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = NT_416979964322;
+			remoteInfo = WallabagKit;
+		};
+		CIP_91918928809 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = P_3132699255720 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = NT_386902854729;
+			remoteInfo = WallabagCommon;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -126,33 +137,31 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BF_604404752324-1 /* WallabagCommon in CopyFiles */,
-				BF_613587147738-1 /* WallabagKit in CopyFiles */,
+				BF_408863389725 /* WallabagCommon.framework in CopyFiles */,
+				BF_919251214666 /* WallabagKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		03181D748C2E6EB3561168F5 /* Pods-WallabagKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WallabagKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WallabagKit/Pods-WallabagKit.debug.xcconfig"; sourceTree = "<group>"; };
-		0E96BEE44B1A7AFC254E01A8 /* Pods-WallabagKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WallabagKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-WallabagKit/Pods-WallabagKit.release.xcconfig"; sourceTree = "<group>"; };
-		23A000126938E88842E142F8 /* Pods-wallabagUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests.release.xcconfig"; sourceTree = "<group>"; };
-		54C148C3316EB1C49252D154 /* Pods-wallabagTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests.release.xcconfig"; sourceTree = "<group>"; };
-		71C02F1C867303E1091C42DA /* Pods_wallabag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		72BF6BBB17DC0439F7F1CEA0 /* Pods-bagit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bagit.release.xcconfig"; path = "Pods/Target Support Files/Pods-bagit/Pods-bagit.release.xcconfig"; sourceTree = "<group>"; };
-		7499E6A40B459B94005A33FF /* Pods_wallabagTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		86BA3177064A18D2AE1B2C9C /* Pods_bagit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bagit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AAA715E605EA46AEC6F01B9A /* Pods-bagit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bagit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bagit/Pods-bagit.debug.xcconfig"; sourceTree = "<group>"; };
-		AE54AA40535BB0C2BF9F924C /* Pods-wallabagUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		BD4D5DEFC8A32FE10EE7B6A5 /* Pods-wallabagTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests.debug.xcconfig"; sourceTree = "<group>"; };
-		CAC66D25D94D3CF08EF5117F /* Pods_WallabagKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WallabagKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D66AA2D7612E6E483B9C2F23 /* Pods-wallabag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabag/Pods-wallabag.release.xcconfig"; sourceTree = "<group>"; };
-		ED7BC1D7F49825A5B25B0546 /* Pods_wallabagUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD43E4814D07040FE2DD72B8 /* Pods-wallabag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabag/Pods-wallabag.debug.xcconfig"; sourceTree = "<group>"; };
+		07BEB122AF4B154EABF4D3BA /* Pods-wallabagTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0CBEC6709647EAC93FE47903 /* Pods-WallabagKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WallabagKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-WallabagKit/Pods-WallabagKit.release.xcconfig"; sourceTree = "<group>"; };
+		4F48B1F30DA83939D935EAD3 /* Pods-wallabagUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5D39331381D07CCF907C33F1 /* Pods_WallabagKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WallabagKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7687A9B325F967A280F8CB3F /* Pods-wallabagTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests.release.xcconfig"; sourceTree = "<group>"; };
+		86DD1BAD365C439CF74AF59D /* Pods-WallabagKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WallabagKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WallabagKit/Pods-WallabagKit.debug.xcconfig"; sourceTree = "<group>"; };
+		9C1AE8863B99BC7AA467AE1A /* Pods-wallabag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wallabag/Pods-wallabag.debug.xcconfig"; sourceTree = "<group>"; };
+		ACA2DC17EC8E48DF6CDC7BFF /* Pods_wallabag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2E1F44E3C7C43939891782F /* Pods-wallabag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabag/Pods-wallabag.release.xcconfig"; sourceTree = "<group>"; };
+		D80A5A4F61AF6BC52734C6F2 /* Pods_wallabagTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA93D0CB83605625129C010E /* Pods_wallabagUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA9752F31305AFDD2620CEEC /* Pods-wallabagUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FR_100900530836 /* WallabagAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuth.swift; sourceTree = "<group>"; };
 		FR_103912532373 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FR_104102971227 /* bagit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bagit.entitlements; sourceTree = "<group>"; };
 		FR_118520138818 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FR_119473437156 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FR_125217934004 /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		FR_128924593603 /* wallabag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wallabag.entitlements; sourceTree = "<group>"; };
 		FR_143097765679 /* SyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncOperation.swift; sourceTree = "<group>"; };
@@ -165,21 +174,22 @@
 		FR_169684549055 /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
 		FR_170802807770 /* TokenAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAdapterTests.swift; sourceTree = "<group>"; };
 		FR_182379398345 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		FR_189441853101 /* UbuntuTitling-Bold.ttf */ = {isa = PBXFileReference; path = "UbuntuTitling-Bold.ttf"; sourceTree = "<group>"; };
+		FR_189441853101 /* UbuntuTitling-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UbuntuTitling-Bold.ttf"; sourceTree = "<group>"; };
+		FR_191859876576 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FR_198348143950 /* NSNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotification.swift; sourceTree = "<group>"; };
 		FR_211460243031 /* XCTExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTExtension.swift; sourceTree = "<group>"; };
 		FR_239512968119 /* RegisterProcessUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProcessUITests.swift; sourceTree = "<group>"; };
 		FR_242669192089 /* WallabagAuthSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuthSuccess.swift; sourceTree = "<group>"; };
-		FR_252102216061 /* article.html */ = {isa = PBXFileReference; path = article.html; sourceTree = "<group>"; };
+		FR_252102216061 /* article.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = article.html; sourceTree = "<group>"; };
 		FR_253095659307 /* ThemedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedTableViewCell.swift; sourceTree = "<group>"; };
 		FR_257672620109 /* WallabagKitCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitCollection.swift; sourceTree = "<group>"; };
-		FR_258356001597 /* ratatouille.css */ = {isa = PBXFileReference; path = ratatouille.css; sourceTree = "<group>"; };
+		FR_258356001597 /* ratatouille.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = ratatouille.css; sourceTree = "<group>"; };
 		FR_270058888992 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		FR_281348000776 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FR_292339550230 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		FR_299577518904 /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
-		FR_305051511570 /* night.css */ = {isa = PBXFileReference; path = night.css; sourceTree = "<group>"; };
-		FR_312783760065 /* Entry.json */ = {isa = PBXFileReference; path = Entry.json; sourceTree = "<group>"; };
+		FR_305051511570 /* night.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = night.css; sourceTree = "<group>"; };
+		FR_312783760065 /* Entry.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Entry.json; sourceTree = "<group>"; };
 		FR_313269925572 /* wallabag.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = wallabag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FR_313288938230 /* ThemeChoiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeChoiceTableViewController.swift; sourceTree = "<group>"; };
 		FR_315679525372 /* wallabag2v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabag2v2.xcdatamodel; sourceTree = "<group>"; };
@@ -190,26 +200,24 @@
 		FR_345388335045 /* wallabag-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wallabag-Bridging-Header.h"; sourceTree = "<group>"; };
 		FR_347627474181 /* WallabagAuthErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuthErrorTests.swift; sourceTree = "<group>"; };
 		FR_349732200902 /* WallabagAuthSuccessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuthSuccessTests.swift; sourceTree = "<group>"; };
-		FR_360979711967 /* AuthWrongPassword.json */ = {isa = PBXFileReference; path = AuthWrongPassword.json; sourceTree = "<group>"; };
+		FR_360979711967 /* AuthWrongPassword.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AuthWrongPassword.json; sourceTree = "<group>"; };
 		FR_361581023947 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FR_362021847681 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
-		FR_367822628227 /* main.css */ = {isa = PBXFileReference; path = main.css; sourceTree = "<group>"; };
-		FR_370382527049 /* dusk.css */ = {isa = PBXFileReference; path = dusk.css; sourceTree = "<group>"; };
+		FR_367822628227 /* main.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
+		FR_370382527049 /* dusk.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = dusk.css; sourceTree = "<group>"; };
 		FR_371695168859 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
 		FR_386902854729 /* WallabagCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WallabagCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FR_386902854729-1 /* WallabagCommon */ = {isa = PBXFileReference; path = WallabagCommon; sourceTree = "<group>"; };
 		FR_405382569402 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		FR_406821136104 /* DictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
 		FR_416370408888 /* EntryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryExtension.swift; sourceTree = "<group>"; };
 		FR_416979964322 /* WallabagKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WallabagKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FR_416979964322-1 /* WallabagKit */ = {isa = PBXFileReference; path = WallabagKit; sourceTree = "<group>"; };
 		FR_431267044511 /* WallabagKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitTests.swift; sourceTree = "<group>"; };
 		FR_443119967895 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FR_448371498427 /* wallabagUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = wallabagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FR_463421260943 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		FR_471636325598 /* VoiceChoiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceChoiceTableViewController.swift; sourceTree = "<group>"; };
 		FR_472367051097 /* Dusk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dusk.swift; sourceTree = "<group>"; };
-		FR_479946182768 /* bagit.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = bagit.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_479946182768 /* bagit.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = bagit.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		FR_483420598246 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		FR_492638859278 /* TokenAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAdapter.swift; sourceTree = "<group>"; };
 		FR_513159211924 /* wallabag2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabag2.xcdatamodel; sourceTree = "<group>"; };
@@ -230,57 +238,64 @@
 		FR_680311626630 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		FR_686354446382 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		FR_696558863916 /* WallabagKitCollectionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitCollectionResponse.swift; sourceTree = "<group>"; };
-		FR_707820535594 /* white.css */ = {isa = PBXFileReference; path = white.css; sourceTree = "<group>"; };
+		FR_707820535594 /* white.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = white.css; sourceTree = "<group>"; };
 		FR_709620225957 /* Localizable.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Localizable.plist; sourceTree = "<group>"; };
 		FR_718118344765 /* IntTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
 		FR_724497187570 /* White.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = White.swift; sourceTree = "<group>"; };
 		FR_727918086115 /* ArticlesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesUITests.swift; sourceTree = "<group>"; };
-		FR_729857078213 /* EmptyCollection.json */ = {isa = PBXFileReference; path = EmptyCollection.json; sourceTree = "<group>"; };
-		FR_773180623049 /* AuthSuccess.json */ = {isa = PBXFileReference; path = AuthSuccess.json; sourceTree = "<group>"; };
+		FR_729857078213 /* EmptyCollection.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EmptyCollection.json; sourceTree = "<group>"; };
+		FR_773180623049 /* AuthSuccess.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AuthSuccess.json; sourceTree = "<group>"; };
 		FR_778015578057 /* WallabagKitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitResponse.swift; sourceTree = "<group>"; };
 		FR_796577238580 /* WallabagKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKit.swift; sourceTree = "<group>"; };
 		FR_808284200295 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		FR_842249404772 /* UIWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWebView.swift; sourceTree = "<group>"; };
 		FR_848499139002 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Main.strings; sourceTree = "<group>"; };
-		FR_859957173671 /* justify.css */ = {isa = PBXFileReference; path = justify.css; sourceTree = "<group>"; };
+		FR_859957173671 /* justify.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = justify.css; sourceTree = "<group>"; };
 		FR_867201661917 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		FR_887755528747 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		FR_894525354742 /* wallabag.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabag.xcdatamodel; sourceTree = "<group>"; };
 		FR_901888859280 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		FR_903045337291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		FR_903743593476 /* light.css */ = {isa = PBXFileReference; path = light.css; sourceTree = "<group>"; };
+		FR_903743593476 /* light.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = light.css; sourceTree = "<group>"; };
 		FR_907984366336 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FR_914949420297 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
-		FR_921529186704 /* EntriesCollection.json */ = {isa = PBXFileReference; path = EntriesCollection.json; sourceTree = "<group>"; };
+		FR_921529186704 /* EntriesCollection.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EntriesCollection.json; sourceTree = "<group>"; };
 		FR_989994563791 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0E17B71B1B5E9545FD70B4A1 /* Frameworks */ = {
+		10F6FF224D298ED850B5AFBB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4172775DDC3A2C01B9C2FF5E /* Pods_wallabagTests.framework in Frameworks */,
+				A906B25F0DAEDF3A496C0F1A /* Pods_wallabagUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4F6C166F2115E0FE48026C81 /* Frameworks */ = {
+		2582342CEC6E96DD756BCD34 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1E2CBF8E3355933CA6B1C49 /* Pods_WallabagKit.framework in Frameworks */,
+				F49247C03C56AD31E6929560 /* Pods_wallabagTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5EAB3976B2145919BB344EB3 /* Frameworks */ = {
+		5032C774A4EB626ADFC34474 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA102632657642DFE2122E1D /* Pods_wallabagUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D325AEF9885AA8868C3CFA44 /* Frameworks */ = {
+		7AFA3CE3EA2D29D2C2411F7D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9D69148C7DC297B948C6387 /* Pods_WallabagKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3C47924B61BC29453095ACC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -291,40 +306,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF_604404752324 /* WallabagCommon in Frameworks */,
-				BF_613587147738 /* WallabagKit in Frameworks */,
-				747DE9D46B6BF16F5EDDE1C9 /* Pods_wallabag.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FBP_47994618276 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BF_408690461477 /* WallabagCommon in Frameworks */,
-				BF_611944693165 /* WallabagKit in Frameworks */,
-				0D7020DA61E05A0474BACF86 /* Pods_bagit.framework in Frameworks */,
+				BF_820548980262 /* WallabagCommon.framework in Frameworks */,
+				BF_204518086014 /* WallabagKit.framework in Frameworks */,
+				01BD67D7426B5D17CDC17C8A /* Pods_wallabag.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		030F148D0803DBAC8079B7CD /* Pods */ = {
+		3CB34FAC122ECB6F6613D278 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				03181D748C2E6EB3561168F5 /* Pods-WallabagKit.debug.xcconfig */,
-				0E96BEE44B1A7AFC254E01A8 /* Pods-WallabagKit.release.xcconfig */,
-				AAA715E605EA46AEC6F01B9A /* Pods-bagit.debug.xcconfig */,
-				72BF6BBB17DC0439F7F1CEA0 /* Pods-bagit.release.xcconfig */,
-				FD43E4814D07040FE2DD72B8 /* Pods-wallabag.debug.xcconfig */,
-				D66AA2D7612E6E483B9C2F23 /* Pods-wallabag.release.xcconfig */,
-				BD4D5DEFC8A32FE10EE7B6A5 /* Pods-wallabagTests.debug.xcconfig */,
-				54C148C3316EB1C49252D154 /* Pods-wallabagTests.release.xcconfig */,
-				AE54AA40535BB0C2BF9F924C /* Pods-wallabagUITests.debug.xcconfig */,
-				23A000126938E88842E142F8 /* Pods-wallabagUITests.release.xcconfig */,
+				86DD1BAD365C439CF74AF59D /* Pods-WallabagKit.debug.xcconfig */,
+				0CBEC6709647EAC93FE47903 /* Pods-WallabagKit.release.xcconfig */,
+				9C1AE8863B99BC7AA467AE1A /* Pods-wallabag.debug.xcconfig */,
+				D2E1F44E3C7C43939891782F /* Pods-wallabag.release.xcconfig */,
+				07BEB122AF4B154EABF4D3BA /* Pods-wallabagTests.debug.xcconfig */,
+				7687A9B325F967A280F8CB3F /* Pods-wallabagTests.release.xcconfig */,
+				4F48B1F30DA83939D935EAD3 /* Pods-wallabagUITests.debug.xcconfig */,
+				FA9752F31305AFDD2620CEEC /* Pods-wallabagUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BD4B2E72C791210C28A67B80 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D39331381D07CCF907C33F1 /* Pods_WallabagKit.framework */,
+				ACA2DC17EC8E48DF6CDC7BFF /* Pods_wallabag.framework */,
+				D80A5A4F61AF6BC52734C6F2 /* Pods_wallabagTests.framework */,
+				FA93D0CB83605625129C010E /* Pods_wallabagUITests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		G_1064785368475 /* JSON */ = {
@@ -337,20 +351,6 @@
 				FR_312783760065 /* Entry.json */,
 			);
 			path = JSON;
-			sourceTree = "<group>";
-		};
-		G_1952740716080 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FR_386902854729-1 /* WallabagCommon */,
-				FR_416979964322-1 /* WallabagKit */,
-				CAC66D25D94D3CF08EF5117F /* Pods_WallabagKit.framework */,
-				86BA3177064A18D2AE1B2C9C /* Pods_bagit.framework */,
-				71C02F1C867303E1091C42DA /* Pods_wallabag.framework */,
-				7499E6A40B459B94005A33FF /* Pods_wallabagTests.framework */,
-				ED7BC1D7F49825A5B25B0546 /* Pods_wallabagUITests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		G_2086725614769 /* Lib */ = {
@@ -395,6 +395,7 @@
 		G_2891769159851 /* wallabagCommon */ = {
 			isa = PBXGroup;
 			children = (
+				FR_119473437156 /* Info.plist */,
 				FR_914949420297 /* KeychainPasswordItem.swift */,
 				FR_656994299549 /* Setting.swift */,
 			);
@@ -512,6 +513,7 @@
 		G_5192167972112 /* wallabagKit */ = {
 			isa = PBXGroup;
 			children = (
+				FR_191859876576 /* Info.plist */,
 				FR_198348143950 /* NSNotification.swift */,
 				FR_492638859278 /* TokenAdapter.swift */,
 				FR_100900530836 /* WallabagAuth.swift */,
@@ -552,7 +554,6 @@
 		G_8448771205358 = {
 			isa = PBXGroup;
 			children = (
-				G_1952740716080 /* Frameworks */,
 				G_8620238527590 /* Products */,
 				G_4799461827687 /* bagit */,
 				G_3132699255720 /* wallabag */,
@@ -560,7 +561,8 @@
 				G_5192167972112 /* wallabagKit */,
 				G_3252328569564 /* wallabagTests */,
 				G_4483714984275 /* wallabagUITests */,
-				030F148D0803DBAC8079B7CD /* Pods */,
+				3CB34FAC122ECB6F6613D278 /* Pods */,
+				BD4B2E72C791210C28A67B80 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -607,19 +609,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CL_313269925572-1 /* Build configuration list for PBXNativeTarget "wallabag" */;
 			buildPhases = (
-				3C635BA88626661E089683D1 /* [CP] Check Pods Manifest.lock */,
+				B79853EDB2B551BA44422111 /* [CP] Check Pods Manifest.lock */,
 				SBP_31326992557 /* Sources */,
 				RBP_31326992557 /* Resources */,
 				FBP_31326992557 /* Frameworks */,
 				CFBP_4724151697 /* CopyFiles */,
 				CFBP_8543264970 /* CopyFiles */,
-				BC23206D46EA0523A7BDA722 /* [CP] Embed Pods Frameworks */,
-				D37D321C4DC79FD722AE2345 /* [CP] Copy Pods Resources */,
+				C9C8FE7672932F4E7CBA2CA2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				TD_532218558659 /* PBXTargetDependency */,
+				TD_321515529049 /* PBXTargetDependency */,
+				TD_677444467528 /* PBXTargetDependency */,
 			);
 			name = wallabag;
 			productName = wallabag;
@@ -630,12 +633,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CL_325232856956 /* Build configuration list for PBXNativeTarget "wallabagTests" */;
 			buildPhases = (
-				F366D5AB277A9C3165D08FB0 /* [CP] Check Pods Manifest.lock */,
+				4C8EE2E065280F9C4F5BA14C /* [CP] Check Pods Manifest.lock */,
 				SBP_32523285695 /* Sources */,
 				RBP_32523285695 /* Resources */,
-				0E17B71B1B5E9545FD70B4A1 /* Frameworks */,
-				600B0D3FFF5FC89C0D3F75E0 /* [CP] Embed Pods Frameworks */,
-				1DDF5E4F820F8920A091CD46 /* [CP] Copy Pods Resources */,
+				2582342CEC6E96DD756BCD34 /* Frameworks */,
+				33335B799E0AE619EC5FE570 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -651,7 +653,7 @@
 			buildConfigurationList = CL_386902854729 /* Build configuration list for PBXNativeTarget "WallabagCommon" */;
 			buildPhases = (
 				SBP_38690285472 /* Sources */,
-				D325AEF9885AA8868C3CFA44 /* Frameworks */,
+				5032C774A4EB626ADFC34474 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -666,10 +668,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CL_416979964322 /* Build configuration list for PBXNativeTarget "WallabagKit" */;
 			buildPhases = (
-				7BEC04DB020A91DEA94F1D67 /* [CP] Check Pods Manifest.lock */,
+				563D66BF8FE712DA7A8FC9FB /* [CP] Check Pods Manifest.lock */,
 				SBP_41697996432 /* Sources */,
-				4F6C166F2115E0FE48026C81 /* Frameworks */,
-				A65D7A0049E89359BDB8683A /* [CP] Copy Pods Resources */,
+				7AFA3CE3EA2D29D2C2411F7D /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -684,11 +685,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CL_448371498427 /* Build configuration list for PBXNativeTarget "wallabagUITests" */;
 			buildPhases = (
-				91ACBFDCE7C5A4370B60EF80 /* [CP] Check Pods Manifest.lock */,
+				E7E29966B8C7DD12725C64DE /* [CP] Check Pods Manifest.lock */,
 				SBP_44837149842 /* Sources */,
-				5EAB3976B2145919BB344EB3 /* Frameworks */,
-				EEB9786D8BC85E434E0A7CAB /* [CP] Embed Pods Frameworks */,
-				9D5D51A528A069ABF1057CDA /* [CP] Copy Pods Resources */,
+				10F6FF224D298ED850B5AFBB /* Frameworks */,
+				92EC7360EB7CE6264EA1B873 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -703,11 +703,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CL_479946182768 /* Build configuration list for PBXNativeTarget "bagit" */;
 			buildPhases = (
-				BCE25F1796D07BA40E4B272C /* [CP] Check Pods Manifest.lock */,
 				SBP_47994618276 /* Sources */,
 				RBP_47994618276 /* Resources */,
-				FBP_47994618276 /* Frameworks */,
-				8F366F128230F299952C79D7 /* [CP] Copy Pods Resources */,
+				B3C47924B61BC29453095ACC /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -725,6 +723,26 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0930;
+				TargetAttributes = {
+					NT_313269925572 = {
+						DevelopmentTeam = G97URPCGB8;
+					};
+					NT_325232856956 = {
+						DevelopmentTeam = G97URPCGB8;
+					};
+					NT_386902854729 = {
+						DevelopmentTeam = G97URPCGB8;
+					};
+					NT_416979964322 = {
+						DevelopmentTeam = G97URPCGB8;
+					};
+					NT_448371498427 = {
+						DevelopmentTeam = G97URPCGB8;
+					};
+					NT_479946182768 = {
+						DevelopmentTeam = G97URPCGB8;
+					};
+				};
 			};
 			buildConfigurationList = CL_313269925572 /* Build configuration list for PBXProject "wallabag" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -797,40 +815,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1DDF5E4F820F8920A091CD46 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3C635BA88626661E089683D1 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-wallabag-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		600B0D3FFF5FC89C0D3F75E0 /* [CP] Embed Pods Frameworks */ = {
+		33335B799E0AE619EC5FE570 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -850,7 +835,25 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7BEC04DB020A91DEA94F1D67 /* [CP] Check Pods Manifest.lock */ = {
+		4C8EE2E065280F9C4F5BA14C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-wallabagTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		563D66BF8FE712DA7A8FC9FB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -868,22 +871,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8F366F128230F299952C79D7 /* [CP] Copy Pods Resources */ = {
+		92EC7360EB7CE6264EA1B873 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Swifter/Swifter.framework",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swifter.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bagit/Pods-bagit-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		91ACBFDCE7C5A4370B60EF80 /* [CP] Check Pods Manifest.lock */ = {
+		B79853EDB2B551BA44422111 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -894,44 +900,14 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-wallabagUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-wallabag-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9D5D51A528A069ABF1057CDA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A65D7A0049E89359BDB8683A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WallabagKit/Pods-WallabagKit-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BC23206D46EA0523A7BDA722 /* [CP] Embed Pods Frameworks */ = {
+		C9C8FE7672932F4E7CBA2CA2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -961,7 +937,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wallabag/Pods-wallabag-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BCE25F1796D07BA40E4B272C /* [CP] Check Pods Manifest.lock */ = {
+		E7E29966B8C7DD12725C64DE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -972,58 +948,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-bagit-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D37D321C4DC79FD722AE2345 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wallabag/Pods-wallabag-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EEB9786D8BC85E434E0A7CAB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Swifter/Swifter.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swifter.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F366D5AB277A9C3165D08FB0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-wallabagTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-wallabagUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1136,10 +1061,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		TD_321515529049 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = NT_386902854729 /* WallabagCommon */;
+			targetProxy = CIP_91918928809 /* PBXContainerItemProxy */;
+		};
 		TD_532218558659 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = NT_479946182768 /* bagit */;
 			targetProxy = CIP_36577000250 /* PBXContainerItemProxy */;
+		};
+		TD_677444467528 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = NT_416979964322 /* WallabagKit */;
+			targetProxy = CIP_43868538224 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1183,7 +1118,7 @@
 /* Begin XCBuildConfiguration section */
 		BC_107711665862 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD43E4814D07040FE2DD72B8 /* Pods-wallabag.debug.xcconfig */;
+			baseConfigurationReference = 9C1AE8863B99BC7AA467AE1A /* Pods-wallabag.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1199,7 +1134,7 @@
 		};
 		BC_162666627335 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E96BEE44B1A7AFC254E01A8 /* Pods-WallabagKit.release.xcconfig */;
+			baseConfigurationReference = 0CBEC6709647EAC93FE47903 /* Pods-WallabagKit.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1207,6 +1142,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = wallabagKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1219,7 +1155,7 @@
 		};
 		BC_193824684480 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE54AA40535BB0C2BF9F924C /* Pods-wallabagUITests.debug.xcconfig */;
+			baseConfigurationReference = 4F48B1F30DA83939D935EAD3 /* Pods-wallabagUITests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = wallabagUITests/Info.plist;
@@ -1232,7 +1168,7 @@
 		};
 		BC_361949606250 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D66AA2D7612E6E483B9C2F23 /* Pods-wallabag.release.xcconfig */;
+			baseConfigurationReference = D2E1F44E3C7C43939891782F /* Pods-wallabag.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1248,7 +1184,6 @@
 		};
 		BC_386837522257 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AAA715E605EA46AEC6F01B9A /* Pods-bagit.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = bagit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1260,7 +1195,7 @@
 		};
 		BC_450700665721 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03181D748C2E6EB3561168F5 /* Pods-WallabagKit.debug.xcconfig */;
+			baseConfigurationReference = 86DD1BAD365C439CF74AF59D /* Pods-WallabagKit.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1268,6 +1203,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = wallabagKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1311,6 +1247,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = G97URPCGB8;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1329,6 +1266,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1338,7 +1276,6 @@
 		};
 		BC_591139791567 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72BF6BBB17DC0439F7F1CEA0 /* Pods-bagit.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = bagit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1350,7 +1287,7 @@
 		};
 		BC_622408190692 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD4D5DEFC8A32FE10EE7B6A5 /* Pods-wallabagTests.debug.xcconfig */;
+			baseConfigurationReference = 07BEB122AF4B154EABF4D3BA /* Pods-wallabagTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = wallabagTests/Info.plist;
@@ -1370,6 +1307,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = wallabagCommon/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1382,7 +1320,7 @@
 		};
 		BC_730873572254 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54C148C3316EB1C49252D154 /* Pods-wallabagTests.release.xcconfig */;
+			baseConfigurationReference = 7687A9B325F967A280F8CB3F /* Pods-wallabagTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = wallabagTests/Info.plist;
@@ -1402,6 +1340,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = wallabagCommon/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1414,7 +1353,7 @@
 		};
 		BC_857257558457 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23A000126938E88842E142F8 /* Pods-wallabagUITests.release.xcconfig */;
+			baseConfigurationReference = FA9752F31305AFDD2620CEEC /* Pods-wallabagUITests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = wallabagUITests/Info.plist;
@@ -1458,6 +1397,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = G97URPCGB8;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1468,6 +1408,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.0;

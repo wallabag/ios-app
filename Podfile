@@ -3,6 +3,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'wallabag' do
+    inherit! :search_paths
     pod 'Alamofire', '~> 4.5'
     pod 'AlamofireImage', '~> 3.3'
     pod 'AlamofireNetworkActivityIndicator', '~> 2.2'
@@ -22,15 +23,15 @@ target 'wallabag' do
     end
 end
 
-target 'bagit' do
-    pod 'Alamofire', '~> 4.5'
-end
-
 target 'WallabagKit' do
+    inherit! :search_paths
     pod 'Alamofire', '~> 4.5'
 end
-
-
+#target 'bagit' do
+#    pod 'Alamofire', '~> 4.5'
+#    target 'WallabagKit'
+#    target 'WallabagCommon'
+#end
 
 post_install do |installer|
     myTargets = ['SideMenu', 'Swifter']

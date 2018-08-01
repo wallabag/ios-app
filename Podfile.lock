@@ -33,6 +33,20 @@ DEPENDENCIES:
   - Swifter (~> 1.3.3)
   - TUSafariActivity (~> 1.0)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
+    - AlamofireNetworkActivityIndicator
+    - GoogleAnalytics
+    - Mockingjay
+    - Realm
+    - RealmSwift
+    - SideMenu
+    - Swifter
+    - TUSafariActivity
+    - URITemplate
+
 SPEC CHECKSUMS:
   Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
@@ -46,6 +60,6 @@ SPEC CHECKSUMS:
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
   URITemplate: ace0c4c46dcf8afe6e89b4060621852886b15c3b
 
-PODFILE CHECKSUM: a83d5c323a819622f255940b7098ab930faa9977
+PODFILE CHECKSUM: 318f053e80c046afeeef19b5ea80a5e06e0231a9
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
