@@ -71,3 +71,4 @@ fastlane/metadata/trade_representative_contact_information
 
 *.cer
 *.mobileprovision
+wallabag.xcodeproj

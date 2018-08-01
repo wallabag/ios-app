@@ -14,6 +14,7 @@ targets:
       - target: WallabagKit
     settings:
       SWIFT_OBJC_BRIDGING_HEADER: "wallabag/Lib/wallabag-Bridging-Header.h"
+      ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES: $(inherited)
   bagit:
     type: app-extension
     platform: iOS
