@@ -3,7 +3,9 @@ options:
   bundleIdPrefix: "fr.district-web"
 settings:
   DEVELOPMENT_TEAM: G97URPCGB8
-#  PRODUCT_BUNDLE_IDENTIFIER: fr.district-web.wallabag
+configFiles:
+  Debug: configs/Debug.xcconfig
+  Release: configs/Release.xcconfig
 targets:
   wallabag:
     type: application
@@ -14,17 +16,19 @@ targets:
       - target: bagit
       - target: WallabagCommon
       - target: WallabagKit
-    settings:
-      SWIFT_OBJC_BRIDGING_HEADER: "wallabag/Lib/wallabag-Bridging-Header.h"
-      ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES: $(inherited)
-      CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED: YES
+    configFiles:
+      Debug: configs/wallabag-Debug.xcconfig
+      Release: configs/wallabag-Release.xcconfig
   bagit:
     type: app-extension
     platform: iOS
     deploymentTarget: "11.0"
-    sources: bagit
-    settings:
-      PRODUCT_BUNDLE_IDENTIFIER: "fr.district-web.wallabag"
+    sources: 
+      - bagit
+      - wallabag/Assets.xcassets
+    configFiles:
+      Debug: configs/bagit-Debug.xcconfig
+      Release: configs/bagit-Release.xcconfig
     options:
       bundleIdPrefix: "fr.district-web.wallabag"
     dependencies:
@@ -37,10 +41,15 @@ targets:
     sources: [wallabagUITests]
     dependencies:
       - target: wallabag
+    configFiles:
+      Debug: configs/wallabagUITests-Debug.xcconfig
+      Release: configs/wallabagUITests-Release.xcconfig
   wallabagTests:
     type: bundle.unit-test
     platform: iOS
-    deploymentTarget: "11.0"
+    configFiles:
+      Debug: configs/wallabagTests-Debug.xcconfig
+      Release: configs/wallabagTests-Release.xcconfig
     sources: [wallabagTests]
     dependencies:
       - target: wallabag
@@ -54,3 +63,10 @@ targets:
     platform: iOS
     deploymentTarget: "11.0"
     sources: [wallabagKit]
+schemes:
+  WallabagTest:
+    build:
+      targets:
+        wallabag: all
+    test:
+      targets: [wallabagTests]

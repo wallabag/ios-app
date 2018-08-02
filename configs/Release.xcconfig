@@ -1,0 +1,8 @@
+// Generated using xcconfig-extractor 0.4.0 by Toshihiro Suzuki - https://github.com/toshi0383/xcconfig-extractor
+#include "Base.xcconfig"
+DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
+ENABLE_NS_ASSERTIONS = NO
+VALIDATE_PRODUCT = YES
+MTL_ENABLE_DEBUG_INFO = NO
+SWIFT_OPTIMIZATION_LEVEL = -Owholemodule
+

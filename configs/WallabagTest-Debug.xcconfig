@@ -1,0 +1,2 @@
+#include "Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests.debug.xcconfig"
+TEST_HOST = $(BUILT_PRODUCTS_DIR)/wallabag.app/wallabag

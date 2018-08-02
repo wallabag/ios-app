@@ -1,0 +1,9 @@
+// Generated using xcconfig-extractor 0.4.0 by Toshihiro Suzuki - https://github.com/toshi0383/xcconfig-extractor
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks @executable_path/../../Frameworks
+CODE_SIGN_ENTITLEMENTS = bagit/bagit.entitlements
+SKIP_INSTALL = YES
+INFOPLIST_FILE = bagit/Info.plist
+IPHONEOS_DEPLOYMENT_TARGET = 10.0
+PRODUCT_BUNDLE_IDENTIFIER = fr.district-web.wallabag.bagit
+ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon
+

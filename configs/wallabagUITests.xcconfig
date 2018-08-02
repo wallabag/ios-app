@@ -1,0 +1,7 @@
+// Generated using xcconfig-extractor 0.4.0 by Toshihiro Suzuki - https://github.com/toshi0383/xcconfig-extractor
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = $(inherited)
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks @loader_path/Frameworks
+TEST_TARGET_NAME = wallabag
+INFOPLIST_FILE = wallabagUITests/Info.plist
+PRODUCT_BUNDLE_IDENTIFIER = fr.district-web.wallabagUITests
+

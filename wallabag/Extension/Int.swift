@@ -6,7 +6,7 @@
 //  Copyright © 2016 maxime marinel. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 extension Int {
     var readingTime: String {

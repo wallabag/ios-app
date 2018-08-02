@@ -1,0 +1,9 @@
+// Generated using xcconfig-extractor 0.4.0 by Toshihiro Suzuki - https://github.com/toshi0383/xcconfig-extractor
+ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = $(inherited)
+LD_RUNPATH_SEARCH_PATHS = $(inherited) @executable_path/Frameworks @loader_path/Frameworks
+TEST_HOST = $(BUILT_PRODUCTS_DIR)/wallabag.app/wallabag
+INFOPLIST_FILE = wallabagTests/Info.plist
+SWIFT_OBJC_BRIDGING_HEADER = wallabag/Lib/wallabag-Bridging-Header.h
+BUNDLE_LOADER = $(TEST_HOST)
+PRODUCT_BUNDLE_IDENTIFIER = fr.district-web.wallabagTests
+
