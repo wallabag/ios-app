@@ -94,7 +94,7 @@ public class Setting {
 
     public static func getSpeechRate() -> Float {
         guard standard.value(forKey: Const.speechRate.rawValue) != nil else {
-            return 0.5
+            return AVSpeechUtteranceDefaultSpeechRate
         }
         return standard.float(forKey: Const.speechRate.rawValue)
     }
