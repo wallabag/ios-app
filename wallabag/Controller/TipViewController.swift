@@ -9,10 +9,11 @@
 import UIKit
 import StoreKit
 
-final class TipViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
+final class TipViewController: UIViewController, SKPaymentTransactionObserver, SKProductsRequestDelegate {
     let analytics = AnalyticsManager()
     var transactionInProgress = false
     var productIDs: Set<String> = ["tips1"]
+    let store: WallabagStore = WallabagStore()
     var product: SKProduct? {
         didSet {
             let formatter = NumberFormatter()

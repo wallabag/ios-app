@@ -8,14 +8,16 @@
 
 import UIKit
 import TUSafariActivity
-import AVFoundation
 import RealmSwift
 import WallabagCommon
 
-final class ArticleViewController: UIViewController {
+protocol ArticleViewControllerProtocol {
+    var entry: Entry! { get set }
+}
 
-    lazy var speechSynthetizer: AVSpeechSynthesizer = AVSpeechSynthesizer()
+final class ArticleViewController: UIViewController, ArticleViewControllerProtocol {
     let analytics = AnalyticsManager()
+    var podcastController: PodcastViewController?
 
     var entry: Entry! {
         didSet {
@@ -48,19 +50,19 @@ final class ArticleViewController: UIViewController {
         updateUi()
     }
 
-    @IBAction func speech(_ sender: Any) {
-        if !speechSynthetizer.isSpeaking {
-            let utterance = AVSpeechUtterance(string: entry.content!.withoutHTML)
-            utterance.rate = Setting.getSpeechRate()
-            utterance.voice = Setting.getSpeechVoice()
-            speechSynthetizer.speak(utterance)
-            speechButton.image = #imageLiteral(resourceName: "lipsfilled")
-            analytics.send(.synthesis(state: true))
-        } else {
-            speechSynthetizer.stopSpeaking(at: .word)
-            speechButton.image = #imageLiteral(resourceName: "lips")
-            analytics.send(.synthesis(state: false))
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? PodcastViewController {
+            controller.entry = entry
+            podcastController = controller
+            Log("prepare podcast view")
         }
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        podcastController?.toggle()
+    }
+
+    @IBAction func speech(_ sender: Any) {
+        podcastController?.toggle()
     }
 
     @IBAction func shareMenu(_ sender: UIBarButtonItem) {
@@ -105,7 +107,6 @@ final class ArticleViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(false, animated: animated)
-        speechSynthetizer.stopSpeaking(at: .immediate)
         UIApplication.shared.isIdleTimerDisabled = false
     }
 

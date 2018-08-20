@@ -37,12 +37,7 @@ class ArticleTableViewCell: ThemedTableViewCell {
 
         readingTime.text = String(format: "Reading time %@".localized, arguments: [Int(entry.readingTime).readingTime])
 
-        if let previewPicture = entry.previewPicture,
-            let pictureURL = URL(string: previewPicture) {
-            previewImage.af_setImage(withURL: pictureURL)
-        } else {
-            previewImage.image = #imageLiteral(resourceName: "logo-icon-black-no-bg")
-        }
+        previewImage.display(entry: entry)
     }
 
     override func setupTheme() {

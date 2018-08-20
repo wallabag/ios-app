@@ -32,6 +32,10 @@ extension String {
         return self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
     }
 
+    var speakable: [String] {
+        return self.replacingOccurrences(of: "<p[^>]+>", with: "<p>", options: .regularExpression, range: nil).components(separatedBy: "<p>").filter { $0.count > 0 }
+    }
+
     var localized: String {
         return NSLocalizedString(self, comment: "")
     }

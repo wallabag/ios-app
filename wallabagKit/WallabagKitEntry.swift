@@ -24,7 +24,6 @@ public struct WallabagKitEntry: Codable {
     public let readingTime: Int?
     public let domainName: String?
     public let previewPicture: String?
-    //    let isPublic: Int
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -42,6 +41,5 @@ public struct WallabagKitEntry: Codable {
         case readingTime = "reading_time"
         case domainName = "domain_name"
         case previewPicture = "preview_picture"
-        //        case isPublic = "is_public"
     }
 }
