@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+        Setting.syncSettingsApp()
+
         ThemeManager.manager.apply(Setting.getTheme())
 
         configureNetworkIndicator()
@@ -67,6 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func configureGA() {
+        guard Setting.isTrackingEnabled() else { Log("GAI disabled"); return }
         let gai = GAI.sharedInstance()
         _ = gai?.tracker(withTrackingId: "UA-115437094-1")
         gai?.trackUncaughtExceptions = true

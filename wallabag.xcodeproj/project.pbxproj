@@ -71,6 +71,7 @@
 		9C80E8522013BCBE007208B0 /* SyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C80E8512013BCBE007208B0 /* SyncOperation.swift */; };
 		9C8311861E06F56C004ACD5D /* ThemedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8311851E06F56C004ACD5D /* ThemedTableViewCell.swift */; };
 		9C8B20A21F2612BA0084BBAA /* VoiceChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8B20A11F2612BA0084BBAA /* VoiceChoiceTableViewController.swift */; };
+		9C8F8603212A9374009DD0E8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9C8F8602212A9374009DD0E8 /* Settings.bundle */; };
 		9C9034881E5A26D90074540B /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCAC4001E0176CF002C6A66 /* ThemeManager.swift */; };
 		9C987A471DB79826005515F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C987A461DB79826005515F4 /* AppDelegate.swift */; };
 		9C987A4C1DB79826005515F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C987A4A1DB79826005515F4 /* Main.storyboard */; };
@@ -221,6 +222,7 @@
 		9C80E8512013BCBE007208B0 /* SyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncOperation.swift; sourceTree = "<group>"; };
 		9C8311851E06F56C004ACD5D /* ThemedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemedTableViewCell.swift; sourceTree = "<group>"; };
 		9C8B20A11F2612BA0084BBAA /* VoiceChoiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceChoiceTableViewController.swift; sourceTree = "<group>"; };
+		9C8F8602212A9374009DD0E8 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9C987A431DB79826005515F4 /* wallabag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wallabag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C987A461DB79826005515F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9C987A4B1DB79826005515F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -548,6 +550,7 @@
 				9C987A551DB79826005515F4 /* Info.plist */,
 				9CBA6C6C1E17010E000B9AE6 /* wallabag.entitlements */,
 				9CF4FED41EEB2F7E00653B90 /* Localizable.strings */,
+				9C8F8602212A9374009DD0E8 /* Settings.bundle */,
 			);
 			path = wallabag;
 			sourceTree = "<group>";
@@ -637,7 +640,6 @@
 				9C987A401DB79826005515F4 /* Frameworks */,
 				9C987A411DB79826005515F4 /* Resources */,
 				1DF9979C51B322B7FE60E0F4 /* [CP] Embed Pods Frameworks */,
-				C63B0385014D4D2A027B3CAF /* [CP] Copy Pods Resources */,
 				9CBA6C6B1E16FC2B000B9AE6 /* Embed App Extensions */,
 			);
 			buildRules = (
@@ -659,7 +661,6 @@
 				9C987A571DB79826005515F4 /* Frameworks */,
 				9C987A581DB79826005515F4 /* Resources */,
 				4CACE93B269608251D35CE2C /* [CP] Embed Pods Frameworks */,
-				1CF7950C44CB289C35D29924 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -680,7 +681,6 @@
 				9C987A621DB79826005515F4 /* Frameworks */,
 				9C987A631DB79826005515F4 /* Resources */,
 				F2C3071BD713B0BBD1EA4C02 /* [CP] Embed Pods Frameworks */,
-				4F23E533812D555DCA923625 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -700,7 +700,6 @@
 				9CBA6C591E16FC2B000B9AE6 /* Sources */,
 				9CBA6C5A1E16FC2B000B9AE6 /* Frameworks */,
 				9CBA6C5B1E16FC2B000B9AE6 /* Resources */,
-				C232E5C2161397CCEC0196CF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -827,6 +826,7 @@
 				9CF4FED21EEB2F7E00653B90 /* Localizable.strings in Resources */,
 				9C987A541DB79826005515F4 /* LaunchScreen.storyboard in Resources */,
 				9C77751D1DFB72AD00CB775F /* justify.css in Resources */,
+				9C8F8603212A9374009DD0E8 /* Settings.bundle in Resources */,
 				9C4537921DD1236B00FF6CFE /* article.html in Resources */,
 				9C4537941DD1236B00FF6CFE /* main.css in Resources */,
 				9C4537951DD1236B00FF6CFE /* ratatouille.css in Resources */,
@@ -893,21 +893,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1CF7950C44CB289C35D29924 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		1DF9979C51B322B7FE60E0F4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -956,21 +941,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wallabagTests/Pods-wallabagTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4F23E533812D555DCA923625 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		675CB1B13E826E9746D3DE45 /* [CP] Check Pods Manifest.lock */ = {
@@ -1022,21 +992,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C232E5C2161397CCEC0196CF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bagit/Pods-bagit-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C30604D19CABD26626D9E3A3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1053,21 +1008,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C63B0385014D4D2A027B3CAF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wallabag/Pods-wallabag-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F2C3071BD713B0BBD1EA4C02 /* [CP] Embed Pods Frameworks */ = {

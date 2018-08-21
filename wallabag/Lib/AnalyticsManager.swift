@@ -74,15 +74,19 @@ class AnalyticsManager {
     }()
 
     func sendScreenViewed(_ event: AnalyticsViewEvent) {
+        guard Setting.isTrackingEnabled(),
+        let builder = GAIDictionaryBuilder.createScreenView(),
+            let build = builder.build() as [NSObject: AnyObject]?
+             else { return }
         tracker.set(kGAIScreenName, value: event.name)
-        guard let builder = GAIDictionaryBuilder.createScreenView(),
-            let build = builder.build() as [NSObject: AnyObject]? else { return }
         tracker.send(build)
     }
 
     func send(_ event: AnalyticsEvent) {
-        guard let builder = GAIDictionaryBuilder.createEvent(withCategory: event.category, action: event.action, label: event.label, value: event.value),
-            let build = builder.build() as [NSObject: AnyObject]? else { return }
+        guard Setting.isTrackingEnabled(),
+        let builder = GAIDictionaryBuilder.createEvent(withCategory: event.category, action: event.action, label: event.label, value: event.value),
+            let build = builder.build() as [NSObject: AnyObject]?
+         else { return }
         tracker.send(build)
     }
 }

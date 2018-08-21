@@ -217,6 +217,10 @@ class Setting {
         }
     }
 
+    public static func isTrackingEnabled() -> Bool {
+        return standard.bool(forKey: "gai_enabled")
+    }
+
     public static func set(wallabagConfigured: Bool) {
         shared.set(wallabagConfigured, forKey: "wallabagConfigured")
     }
@@ -231,5 +235,22 @@ class Setting {
 
     public static func getPreviousPasteBoardUrl() -> String? {
         return shared.string(forKey: "previousPasteBoardUrl")
+    }
+
+    public static func syncSettingsApp() {
+        if let settingsURL = Bundle.main.url(forResource: "Root", withExtension: "plist", subdirectory: "Settings.bundle"),
+            let settings = NSDictionary(contentsOf: settingsURL),
+            let preferences = settings["PreferenceSpecifiers"] as? [NSDictionary] {
+
+            var defaultsToRegister = [String: AnyObject]()
+            for prefSpecification in preferences {
+                if let key = prefSpecification["Key"] as? String,
+                    let value = prefSpecification["DefaultValue"] {
+                    defaultsToRegister[key] = value as AnyObject
+                }
+            }
+            standard.register(defaults: defaultsToRegister)
+        }
+        standard.synchronize()
     }
 }
