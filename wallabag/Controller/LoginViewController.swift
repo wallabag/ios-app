@@ -57,8 +57,8 @@ final class LoginViewController: UIViewController {
         if "toArticles" == segue.identifier,
             let navController = segue.destination as? UINavigationController,
             let controller = navController.viewControllers.first as? ArticlesTableViewController {
-            controller.wallabagkit = kit
-            controller.handleRefresh()
+            //controller.wallabagkit = kit
+            //controller.handleRefresh()
         }
     }
 

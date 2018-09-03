@@ -21,14 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        ThemeManager.manager.apply(Setting.getTheme())
+        //ThemeManager.manager.apply(Setting.getTheme())
 
         configureNetworkIndicator()
         configureGA()
         configureRealm()
         handleArgs()
 
-        if Setting.isWallabagConfigured(),
+        /*if Setting.isWallabagConfigured(),
             let host = Setting.getHost(),
             let clientId = Setting.getClientId(),
             let clientSecret = Setting.getClientSecret(),
@@ -57,6 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         setupQuickAction()
+ */
 
         return true
     }

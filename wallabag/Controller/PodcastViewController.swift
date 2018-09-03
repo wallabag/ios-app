@@ -61,11 +61,7 @@ class PodcastViewController: UIViewController {
         thumb.display(entry: entry, withShadow: true)
         slider.prepare()
         view.layer.cornerRadius = 20
-        if #available(iOS 11.0, *) {
-            view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        } else {
-            // Fallback on earlier versions
-        }
+        view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         view.layer.shadowPath = UIBezierPath(roundedRect: view.bounds, cornerRadius: view.layer.cornerRadius).cgPath
         view.layer.shadowColor = UIColor.black.cgColor
         self.view.layer.shadowOpacity = 0.5

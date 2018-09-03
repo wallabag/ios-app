@@ -111,7 +111,7 @@ final class WallabagStore: NSObject {
                         }
                     }
 
-                    currentSubscription = subscriptions.filter { $0.isActive }.first
+                    //currentSubscription = subscriptions.filter { $0.isActive }.first
                     //paidSubscriptions = subscriptions
                 } else {
                     //paidSubscriptions = []

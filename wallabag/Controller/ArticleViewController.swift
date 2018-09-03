@@ -98,10 +98,8 @@ final class ArticleViewController: UIViewController, ArticleViewControllerProtoc
         contentWeb.backgroundColor = ThemeManager.manager.getBackgroundColor()
 
         UIApplication.shared.isIdleTimerDisabled = true
-
-        if #available(iOS 11.0, *) {
-            navigationItem.largeTitleDisplayMode = .never
-        }
+        
+        navigationItem.largeTitleDisplayMode = .never
     }
 
     override func viewWillDisappear(_ animated: Bool) {
