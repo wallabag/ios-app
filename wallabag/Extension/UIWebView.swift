@@ -11,8 +11,9 @@ import WallabagCommon
 
 extension UIWebView {
     func load(entry: Entry) {
-        DispatchQueue.main.async { [unowned self] in
-            self.loadHTMLString(self.contentForWebView(entry), baseURL: Bundle.main.bundleURL)
+        DispatchQueue.main.async { [weak self] in
+            guard let content = self?.contentForWebView(entry) else {return}
+            self?.loadHTMLString(content, baseURL: Bundle.main.bundleURL)
         }
     }
 
@@ -20,9 +21,9 @@ extension UIWebView {
         let setting = WallabagSetting()
         do {
             let html = try String(contentsOfFile: Bundle.main.path(forResource: "article", ofType: "html")!)
-            let justify = (setting.get(for: .justifyArticle) ?? false) ? "justify.css" : ""
+            let justify = setting.get(for: .justifyArticle) ? "justify.css" : ""
 
-            return String(format: html, arguments: [justify, setting.get(for: .theme) ?? "", entry.title!, entry.content!])
+            return String(format: html, arguments: [justify, setting.get(for: .theme), entry.title!, entry.content!])
         } catch {
             fatalError("Unable to load article view")
         }
