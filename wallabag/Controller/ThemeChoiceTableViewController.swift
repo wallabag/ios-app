@@ -12,6 +12,7 @@ import WallabagCommon
 final class ThemeChoiceTableViewController: UITableViewController {
 
     let analytics = AnalyticsManager()
+    let setting = WallabagSetting()
     var themes: [ThemeProtocol] = ThemeManager.manager.getThemes()
 
     override func viewDidLoad() {
@@ -28,7 +29,7 @@ final class ThemeChoiceTableViewController: UITableViewController {
 
         cell.textLabel?.text = theme.name.ucFirst
 
-        if theme.name == Setting.getTheme() {
+        if theme.name == setting.get(for: .theme) {
             cell.accessoryType = .checkmark
         }
 
@@ -44,7 +45,7 @@ final class ThemeChoiceTableViewController: UITableViewController {
 
         let selectedTheme = themes[indexPath.row]
 
-        Setting.setTheme(value: selectedTheme.name)
+        setting.set(selectedTheme.name, for: .theme)
         ThemeManager.manager.apply(selectedTheme.name)
 
         _ = navigationController?.popViewController(animated: true)

@@ -52,17 +52,17 @@ final class ArticleViewController: UIViewController, ArticleViewControllerProtoc
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let controller = segue.destination as? PodcastViewController {
-            controller.entry = entry
+            //controller.entry = entry
             podcastController = controller
             Log("prepare podcast view")
         }
     }
     override func viewDidAppear(_ animated: Bool) {
-        podcastController?.toggle()
+        //podcastController?.toggle()
     }
 
     @IBAction func speech(_ sender: Any) {
-        podcastController?.toggle()
+        //podcastController?.toggle()
     }
 
     @IBAction func shareMenu(_ sender: UIBarButtonItem) {

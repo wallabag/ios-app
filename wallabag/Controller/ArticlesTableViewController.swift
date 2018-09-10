@@ -18,6 +18,7 @@ final class ArticlesTableViewController: UITableViewController {
 
     let searchController = UISearchController(searchResultsController: nil)
     let analytics = AnalyticsManager()
+    let setting = WallabagSetting()
 
     lazy var realm: Realm = {
         do {
@@ -29,8 +30,7 @@ final class ArticlesTableViewController: UITableViewController {
     var results: Results<Entry>?
     var notificationToken: NotificationToken?
     var searchTimer: Timer?
-
-    var mode: Setting.RetrieveMode = Setting.getDefaultMode() {
+    var mode: RetrieveMode = .allArticles {
         didSet {
             filteringList()
         }
@@ -55,7 +55,7 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     @IBAction func filterList(segue: UIStoryboardSegue) {
-        mode = Setting.RetrieveMode(rawValue: segue.identifier!)!
+        mode = RetrieveMode(rawValue: segue.identifier!)!
     }
 
     @IBAction func addLink(_ sender: UIBarButtonItem) {
@@ -80,6 +80,8 @@ final class ArticlesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.mode = RetrieveMode(rawValue: setting.get(for: .defaultMode)) ?? .allArticles
+
         analytics.sendScreenViewed(.articlesView)
         progressView.isHidden = true
 

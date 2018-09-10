@@ -12,9 +12,10 @@ import WallabagCommon
 final class HomeViewController: UIViewController {
 
     let analytics = AnalyticsManager()
+    let setting = WallabagSetting()
 
     @IBAction func authError(segue: UIStoryboardSegue) {
-        Setting.set(wallabagConfigured: false)
+        setting.set(false, for: .wallabagIsConfigured)
     }
 
     override func viewDidLoad() {

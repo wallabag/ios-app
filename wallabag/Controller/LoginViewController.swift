@@ -13,6 +13,7 @@ import WallabagCommon
 final class LoginViewController: UIViewController {
 
     let analytics = AnalyticsManager()
+    let setting = WallabagSetting()
     var kit: WallabagKit!
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -20,9 +21,10 @@ final class LoginViewController: UIViewController {
     @IBAction func login(_ sender: UIButton) {
         sender.isEnabled = false
 
-        Setting.set(username: username.text!)
-        Setting.set(password: password.text!, username: username.text!)
+        setting.set(username.text!, for: .username)
+        setting.set(password: password.text!, username: username.text!)
 
+        /*
         if let host = Setting.getHost(),
             let clientId = Setting.getClientId(),
             let clientSecret = Setting.getClientSecret(),
@@ -50,7 +52,7 @@ final class LoginViewController: UIViewController {
             }
         } else {
             //error
-        }
+        }*/
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -64,6 +66,6 @@ final class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         analytics.sendScreenViewed(.loginView)
-        username.text = Setting.getUsername()
+        username.text = setting.get(for: .username)
     }
 }

@@ -18,11 +18,11 @@ import WallabagKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let setting: Setting = WallabagSetting()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        //ThemeManager.manager.apply(Setting.getTheme())
-
+        configureTheme()
         configureNetworkIndicator()
         configureGA()
         configureRealm()
@@ -62,6 +62,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    private func configureTheme() {
+        ThemeManager.manager.apply(setting.get(for: .theme))
+    }
+
     private func handleArgs() {
         let args = ProcessInfo.processInfo.arguments
         if args.contains("RESET_APPLICATION") {
@@ -97,7 +101,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([Any]?) -> Void) -> Bool {
-        guard Setting.isWallabagConfigured(),
+        guard
             let mainController = window?.rootViewController! as? UINavigationController,
             let articlesTable = mainController.viewControllers.first as? ArticlesTableViewController else {
                 return false
@@ -150,23 +154,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func requestBadge() {
-        if Setting.isBadgeEnable() {
+        if setting.get(for: .badgeEnabled) ?? false {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in }
         }
     }
 
     private func updateBadge() {
-        if !Setting.isBadgeEnable() {
+        /*if !Setting.isBadgeEnable() {
             UIApplication.shared.applicationIconBadgeNumber = 0
             return
         }
 
         let entries = try? Realm().objects(Entry.self).filter(Setting.getDefaultMode().predicate())
-        UIApplication.shared.applicationIconBadgeNumber = entries?.count ?? 0
+        UIApplication.shared.applicationIconBadgeNumber = entries?.count ?? 0*/
     }
 
     private func setupQuickAction() {
-        if Setting.isWallabagConfigured() {
+        /*if setting.get(for: .wallabagIsConfigured) ?? false {
             let starredAction = UIApplicationShortcutItem(type: Setting.RetrieveMode.starredArticles.rawValue, localizedTitle: Setting.RetrieveMode.starredArticles.humainReadable().localized, localizedSubtitle: nil, icon: UIApplicationShortcutIcon(templateImageName: "starred"), userInfo: [:])
             let unarchivedAction = UIApplicationShortcutItem(
                 type: Setting.RetrieveMode.unarchivedArticles.rawValue,
@@ -177,7 +181,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             )
             let archivedAction = UIApplicationShortcutItem(type: Setting.RetrieveMode.archivedArticles.rawValue, localizedTitle: Setting.RetrieveMode.archivedArticles.humainReadable().localized, localizedSubtitle: nil, icon: UIApplicationShortcutIcon(templateImageName: "readed"), userInfo: [:])
             UIApplication.shared.shortcutItems = [unarchivedAction, archivedAction, starredAction]
-        }
+        }*/
     }
 
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
@@ -185,15 +189,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let rootController = navController.viewControllers.first as? ArticlesTableViewController else {
                 return
         }
-        if let mode = Setting.RetrieveMode(rawValue: shortcutItem.type) {
+        /*if let mode = Setting.RetrieveMode(rawValue: shortcutItem.type) {
             rootController.mode = mode
-        }
+        }*/
     }
 
     func resetApplication() {
-        Setting.purge()
+        /*Setting.purge()
         try? Realm().write {
             try? Realm().deleteAll()
-        }
+        }*/
     }
 }

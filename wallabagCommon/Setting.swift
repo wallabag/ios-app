@@ -9,197 +9,55 @@
 import Foundation
 import AVFoundation
 
+public class SettingKeys {}
+
+public final class SettingKey<SettingType>: SettingKeys {
+    let key: String
+    let defaultParameter: SettingType
+    public init(_ key: String, _ defaultParameter: SettingType) {
+        self.key = key
+        self.defaultParameter = defaultParameter
+    }
+}
+
 public class Setting {
+    let defaults: UserDefaults
 
-    static let sharedDomain = "group.wallabag.share_extension"
-    static var standard = UserDefaults.standard
-    static var shared = UserDefaults(suiteName: sharedDomain)!
+    init(_ defaults: UserDefaults) {
+        self.defaults = defaults
+    }
 
-    public enum RetrieveMode: String {
-        case allArticles
-        case archivedArticles
-        case unarchivedArticles
-        case starredArticles
-
-        public func humainReadable() -> String {
-            switch self {
-            case .allArticles:
-                return "All articles"
-            case .archivedArticles:
-                return "Read articles"
-            case .starredArticles:
-                return "Starred articles"
-            case .unarchivedArticles:
-                return "Unread articles"
-            }
+    public func get<ValueType>(for key: SettingKey<ValueType>) -> ValueType {
+        guard let value = defaults.value(forKey: key.key) as? ValueType else {
+            return key.defaultParameter
         }
-
-        public func predicate() -> NSPredicate {
-            switch self {
-            case .unarchivedArticles:
-                return NSPredicate(format: "isArchived == 0")
-            case .starredArticles:
-                return NSPredicate(format: "isStarred == 1")
-            case .archivedArticles:
-                return NSPredicate(format: "isArchived == 1")
-            case .allArticles:
-                return NSPredicate(value: true)
-            }
-        }
-    }
-
-    public enum Const: String {
-        case defaultMode
-        case justifyArticle
-        case articleTheme
-        case badge
-        case speechRate
-        case speechVoice
-    }
-
-    public static func getDefaultMode() -> RetrieveMode {
-        guard let value = standard.string(forKey: Const.defaultMode.rawValue) else {
-            return .allArticles
-        }
-        return RetrieveMode(rawValue: value)!
-    }
-
-    public static func setDefaultMode(mode: RetrieveMode) {
-        standard.set(mode.rawValue, forKey: Const.defaultMode.rawValue)
-    }
-
-    public static func isJustifyArticle() -> Bool {
-        return standard.bool(forKey: Const.justifyArticle.rawValue)
-    }
-
-    public static func setJustifyArticle(value: Bool) {
-        standard.set(value, forKey: Const.justifyArticle.rawValue)
-    }
-
-    public static func isBadgeEnable() -> Bool {
-        //enabled by default
-        if nil == standard.object(forKey: Const.badge.rawValue) {
-            return true
-        }
-        return standard.bool(forKey: Const.badge.rawValue)
-    }
-
-    public static func setBadgeEnable(value: Bool) {
-        standard.set(value, forKey: Const.badge.rawValue)
-    }
-
-    public static func setSpeechRate(value: Float) {
-        standard.set(value, forKey: Const.speechRate.rawValue)
-    }
-
-    public static func getSpeechRate() -> Float {
-        guard standard.value(forKey: Const.speechRate.rawValue) != nil else {
-            return AVSpeechUtteranceDefaultSpeechRate
-        }
-        return standard.float(forKey: Const.speechRate.rawValue)
-    }
-
-    public static func getSpeechVoice() -> AVSpeechSynthesisVoice? {
-        return AVSpeechSynthesisVoice(identifier: standard.string(forKey: Const.speechVoice.rawValue) ?? "com.apple.ttsbundle.Daniel-compact")
-    }
-
-    public static func setSpeechVoice(identifier: String) {
-        standard.set(identifier, forKey: Const.speechVoice.rawValue)
-    }
-
-    public static func getTheme() -> String {
-        guard let value = standard.string(forKey: Const.articleTheme.rawValue) else {
-            return "white"
-        }
-
         return value
     }
 
-    public static func setTheme(value: String) {
-        standard.set(value, forKey: Const.articleTheme.rawValue)
+    public func set<ValueType>(_ value: ValueType, for key: SettingKey<ValueType>) {
+        defaults.set(value, forKey: key.key)
+        defaults.synchronize()
     }
+}
 
-    public static func deleteServer() {
-        shared.removeObject(forKey: "host")
-        shared.removeObject(forKey: "clientId")
-        shared.removeObject(forKey: "clientSecret")
-        shared.removeObject(forKey: "username")
-        shared.removeObject(forKey: "password")
-        shared.removeObject(forKey: "token")
-        shared.removeObject(forKey: "refreshToken")
-        shared.removeObject(forKey: "wallabagConfigured")
-        shared.synchronize()
+public class WallabagSetting: Setting {
+    let sharedDomain = "group.wallabag.share_extension"
+    public init() {
+        super.init(UserDefaults(suiteName: sharedDomain)!)
     }
-
-    public static func purge() {
-        defer {
-            standard.synchronize()
-            shared.synchronize()
+    public func getPassword() -> String? {
+        guard "" != get(for: .username) else {
+            return nil
         }
-        standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
-        deleteServer()
-        shared.removeSuite(named: sharedDomain)
-        shared.removePersistentDomain(forName: sharedDomain)
-    }
-
-    public static func set(host: String) {
-        shared.set("/" == host.suffix(1) ? host.dropLast() : host, forKey: "host")
-    }
-
-    /**
-     * - Todo: remove clean host on read on next release
-     */
-    public static func getHost() -> String? {
-        guard let host = shared.string(forKey: "host") else {return nil}
-        if "/" == host.suffix(1) {
-            set(host: String(host.dropLast()))
-            return String(host.dropLast())
+        let keychain = KeychainPasswordItem(service: "wallabag", account: get(for: .username), accessGroup: sharedDomain)
+        do {
+            return try keychain.readPassword()
+        } catch {
+            return nil
         }
-
-        return host
     }
 
-    public static func set(token: String) {
-        shared.set(token, forKey: "token")
-    }
-
-    public static func getToken() -> String? {
-        return shared.string(forKey: "token")
-    }
-
-    public static func set(refreshToken: String) {
-        shared.set(refreshToken, forKey: "refreshToken")
-    }
-
-    public static func getRefreshToken() -> String? {
-        return shared.string(forKey: "refreshToken")
-    }
-
-    public static func set(clientId: String) {
-        shared.set(clientId, forKey: "clientId")
-    }
-
-    public static func getClientId() -> String? {
-        return shared.string(forKey: "clientId")
-    }
-
-    public static func set(clientSecret: String) {
-        shared.set(clientSecret, forKey: "clientSecret")
-    }
-
-    public static func getClientSecret() -> String? {
-        return shared.string(forKey: "clientSecret")
-    }
-
-    public static func set(username: String) {
-        shared.set(username, forKey: "username")
-    }
-
-    public static func getUsername() -> String? {
-        return shared.string(forKey: "username")
-    }
-
-    public static func set(password: String, username: String) {
+    public func set(password: String, username: String) {
         let keychain = KeychainPasswordItem(service: "wallabag", account: username, accessGroup: sharedDomain)
         do {
             try keychain.savePassword(password)
@@ -208,28 +66,22 @@ public class Setting {
         }
     }
 
-    public static func getPassword(username: String) -> String? {
-        let keychain = KeychainPasswordItem(service: "wallabag", account: username, accessGroup: sharedDomain)
-        do {
-            return try keychain.readPassword()
-        } catch {
-            return ""
-        }
+    public func getSpeechVoice() -> AVSpeechSynthesisVoice? {
+        return AVSpeechSynthesisVoice(identifier: get(for: .speechVoice))
     }
+}
 
-    public static func set(wallabagConfigured: Bool) {
-        shared.set(wallabagConfigured, forKey: "wallabagConfigured")
-    }
-
-    public static func isWallabagConfigured() -> Bool {
-        return shared.bool(forKey: "wallabagConfigured")
-    }
-
-    public static func set(previousPasteBoardUrl: String) {
-        shared.set(previousPasteBoardUrl, forKey: "previousPasteBoardUrl")
-    }
-
-    public static func getPreviousPasteBoardUrl() -> String? {
-        return shared.string(forKey: "previousPasteBoardUrl")
-    }
+public extension SettingKeys {
+    public static let wallabagIsConfigured = SettingKey<Bool>("wallabagConfigured", false)
+    public static let host = SettingKey<String>("host", "")
+    public static let username = SettingKey<String>("username", "")
+    public static let clientId = SettingKey<String>("clientId", "")
+    public static let clientSecret = SettingKey<String>("clientSecret", "")
+    public static let speechVoice = SettingKey<String>("speechVoice", "com.apple.ttsbundle.Daniel-compact")
+    public static let badgeEnabled = SettingKey<Bool>("badge", true)
+    public static let defaultMode = SettingKey<String>("defaultMode", "allArticles")
+    public static let previousPasteBoardUrl = SettingKey<String>("previousPasteBoardUrl", "")
+    public static let speechRate = SettingKey<Float>("speechRate", AVSpeechUtteranceDefaultSpeechRate)
+    public static let justifyArticle = SettingKey<Bool>("justifyArticle", true)
+    public static let theme = SettingKey<String>("theme", "white")
 }

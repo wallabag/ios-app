@@ -11,7 +11,17 @@ import WallabagCommon
 import StoreKit
 
 class PodcastViewController: UIViewController {
-    enum viewState {
+    @IBOutlet var playButton: UIButton!
+    @IBOutlet var slider: UIPodcastSlider!
+    @IBOutlet var thumb: UIImageView!
+
+    private var currentUtteranceIndex: Int = 0 {
+        didSet {
+            slider.value = Float(currentUtteranceIndex)
+        }
+    }
+
+    /*enum viewState {
         case show
         case hidden
     }
@@ -19,18 +29,10 @@ class PodcastViewController: UIViewController {
     private let analytics = AnalyticsManager()
     private var speecher: AVSpeechSynthesizer = AVSpeechSynthesizer()
     private var utterances: [AVSpeechUtterance] = []
-    private var currentUtteranceIndex: Int = 0 {
-        didSet {
-            slider.value = Float(currentUtteranceIndex)
-        }
-    }
+
     weak var entry: Entry!
 
     var isPaid: Bool = false
-
-    @IBOutlet var playButton: UIButton!
-    @IBOutlet var slider: UIPodcastSlider!
-    @IBOutlet var thumb: UIImageView!
 
     @IBAction func playPressed(_ sender: UIButton) {
         Log("Play pressed")
@@ -130,12 +132,12 @@ class PodcastViewController: UIViewController {
         },  completion: {(_ completed: Bool) -> Void in
             self.view.isHidden = true
         })
-    }
+    }*/
 }
 
 extension PodcastViewController: AVSpeechSynthesizerDelegate {
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance) {
-        currentUtteranceIndex = utterances.index(of: utterance) ?? 0
+        //currentUtteranceIndutteranceances.index(of: utterance) ?? 0
     }
 
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {

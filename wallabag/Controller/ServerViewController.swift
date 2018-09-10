@@ -12,17 +12,18 @@ import WallabagCommon
 final class ServerViewController: UIViewController {
 
     let analytics = AnalyticsManager()
+    let setting = WallabagSetting()
 
     @IBOutlet weak var server: UITextField!
 
     override func viewDidLoad() {
         analytics.sendScreenViewed(.serverView)
-        server.text = Setting.getHost()
+        server.text = setting.get(for: .host)
     }
 
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if validateServer(string: server.text!) {
-            Setting.set(host: server.text!)
+            setting.set(server.text!, for: .host)
             return true
         }
 

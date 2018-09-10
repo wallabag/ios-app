@@ -600,7 +600,7 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WsA-Va-DgB">
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WsA-Va-DgB">
                                 <rect key="frame" x="0.0" y="220" width="375" height="403"/>
                                 <connections>
                                     <segue destination="Qo1-bX-YK8" kind="embed" id="gwI-f4-xly"/>

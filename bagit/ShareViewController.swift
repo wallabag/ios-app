@@ -13,6 +13,7 @@ import WallabagKit
 
 @objc(ShareViewController)
 class ShareViewController: UIViewController {
+    let setting = WallabagSetting()
 
     lazy var extError = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "App maybe not configured"])
 
@@ -47,14 +48,15 @@ class ShareViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        if Setting.isWallabagConfigured(),
-            let host = Setting.getHost(),
-            let username = Setting.getUsername(),
-            let password = Setting.getPassword(username: username),
-            let clientId = Setting.getClientId(),
-            let clientSecret = Setting.getClientSecret(),
-            let attachements = getAttachements() {
 
+        if setting.get(for: .wallabagIsConfigured),
+           /* let host = setting.get(for: .host),
+            let username = setting.get(for: .username),
+            let password = setting.getPassword(),
+            let clientId = setting.get(for: .clientId),
+            let clientSecret = setting.get(for: .clientSecret),*/
+            let attachements = getAttachements() {
+/*
             let kit = WallabagKit(host: host, clientID: clientId, clientSecret: clientSecret)
             kit.requestAuth(username: username, password: password) { [unowned self] auth in
                 switch auth {
@@ -76,7 +78,7 @@ class ShareViewController: UIViewController {
                 default:
                     self.clearView(withError: true)
                 }
-            }
+            }*/
         }
     }
 

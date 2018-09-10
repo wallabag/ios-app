@@ -29,6 +29,7 @@ final class EntryController {
     var pageCompleted: Int = 1
     var maxPage: Int = 1
     let wallabagKit: WallabagKitProtocol
+    let setting = WallabagSetting()
     var entriesSynced: [Int] = []
 
     init(wallabagKit: WallabagKitProtocol) {
@@ -62,13 +63,14 @@ final class EntryController {
                     }
                 }
             case .error:
-                if let username = Setting.getUsername(),
-                    let password = Setting.getPassword(username: username) {
+                /*if let username = self.setting.get(for: .username),
+                    let password = self.setting.getPassword() {
                     self.wallabagKit.requestAuth(username: username, password: password) { response in
                         print(response)
                         completion(.finished)
                     }
-                }
+                }*/
+                break
             }
             self.group.leave()
         }
