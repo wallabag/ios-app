@@ -72,7 +72,7 @@ public class WallabagSetting: Setting {
 }
 
 public extension SettingKeys {
-    public static let wallabagIsConfigured = SettingKey<Bool>("wallabagConfigured", false)
+    public static let wallabagIsConfigured = SettingKey<Bool>("wallabagConfiguredV3", false)
     public static let host = SettingKey<String>("host", "")
     public static let username = SettingKey<String>("username", "")
     public static let clientId = SettingKey<String>("clientId", "")

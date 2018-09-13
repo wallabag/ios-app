@@ -98,7 +98,7 @@ final class ArticleViewController: UIViewController, ArticleViewControllerProtoc
         contentWeb.backgroundColor = ThemeManager.manager.getBackgroundColor()
 
         UIApplication.shared.isIdleTimerDisabled = true
-        
+
         navigationItem.largeTitleDisplayMode = .never
     }
 

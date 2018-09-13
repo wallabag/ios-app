@@ -38,6 +38,18 @@ public class WallabagKit: WallabagKitProtocol {
         self.clientSecret = clientSecret
     }
 
+    static public func getVersion(from host: String, completion: @escaping (WallabagVersion) -> Void) {
+        Alamofire.request("\(host)/api/version", method: .get)
+            .responseString { response in
+                guard let body = response.result.value else { completion(WallabagVersion(version: "unknown"))
+                    return
+                }
+
+                let version = WallabagVersion(version: body)
+                completion(version)
+        }
+    }
+
     init() {}
 
     public func requestAuth(username: String, password: String, completion: @escaping (WallabagAuth) -> Void) {

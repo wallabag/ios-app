@@ -38,7 +38,7 @@ final class SettingsTableViewController: UITableViewController {
 
         prepareDefaultList()
 
-        justifySwitch.setOn(setting.get(for: .justifyArticle) , animated: false)
+        justifySwitch.setOn(setting.get(for: .justifyArticle), animated: false)
         badgeSwitch.setOn(setting.get(for: .badgeEnabled), animated: false)
         currentThemeLabel.text = setting.get(for: .theme).ucFirst
 

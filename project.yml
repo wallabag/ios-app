@@ -3,6 +3,7 @@ options:
   bundleIdPrefix: "fr.district-web"
 settings:
   DEVELOPMENT_TEAM: G97URPCGB8
+  IPHONEOS_DEPLOYMENT_TARGET: 11.0
 configFiles:
   Debug: configs/Debug.xcconfig
   Release: configs/Release.xcconfig
@@ -37,7 +38,6 @@ targets:
   wallabagUITests:
     type: bundle.ui-testing
     platform: iOS
-    deploymentTarget: "11.0"
     sources: [wallabagUITests]
     dependencies:
       - target: wallabag
@@ -56,12 +56,10 @@ targets:
   WallabagCommon:
     type: framework
     platform: iOS
-    deploymentTarget: "11.0"
     sources: [wallabagCommon]
   WallabagKit:
     type: framework
     platform: iOS
-    deploymentTarget: "11.0"
     sources: [wallabagKit]
 schemes:
   WallabagTest:

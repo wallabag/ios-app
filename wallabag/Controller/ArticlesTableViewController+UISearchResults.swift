@@ -23,7 +23,7 @@ extension ArticlesTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         Log("search: " + searchController.searchBar.text!)
         let searchText = searchController.searchBar.text!
-        if ("" == searchText) {
+        if "" == searchText {
             return
         }
 

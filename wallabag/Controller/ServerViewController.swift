@@ -8,6 +8,7 @@
 
 import UIKit
 import WallabagCommon
+import WallabagKit
 
 final class ServerViewController: UIViewController {
 
@@ -21,34 +22,39 @@ final class ServerViewController: UIViewController {
         server.text = setting.get(for: .host)
     }
 
-    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if validateServer(string: server.text!) {
-            setting.set(server.text!, for: .host)
-            return true
+    @IBAction func nextPressed(_ sender: UIButton) {
+        sender.isEnabled = false
+        validateServer(string: server.text!) { [unowned self] isValid, _ in
+            if isValid {
+                self.setting.set(self.server.text!, for: .host)
+                self.performSegue(withIdentifier: "toClientId", sender: nil)
+            } else {
+                let alertController = UIAlertController(
+                    title: "Error".localized,
+                    message: "Whoops looks like something went wrong. Check the url, don't forget http or https".localized,
+                    preferredStyle: .alert
+                )
+                alertController.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+            }
         }
-
-        let alertController = UIAlertController(
-            title: "Error".localized,
-            message: "Whoops looks like something went wrong. Check the url, don't forget http or https".localized,
-            preferredStyle: .alert
-        )
-        alertController.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
-        present(alertController, animated: true, completion: nil)
-
-        return false
     }
 
-    private func validateServer(string: String) -> Bool {
-        guard let url = URL(string: string),
-            UIApplication.shared.canOpenURL(url) else {
-                return false
-        }
-
+    private func validateServer(string: String, completion: @escaping (Bool, WallabagVersion?) -> Void ) {
         do {
             let regex = try NSRegularExpression(pattern: "(http|https)://", options: [])
-            return 1 == regex.matches(in: string, options: [], range: NSRange(location: 0, length: string.count)).count
+            guard let url = URL(string: string),
+                UIApplication.shared.canOpenURL(url),
+                1 == regex.matches(in: string, options: [], range: NSRange(location: 0, length: string.count)).count else {
+                    completion(false, nil)
+                    return
+            }
+
+            WallabagKit.getVersion(from: string) { version in
+                completion(version.supportedVersion != .unsupported, version)
+            }
         } catch {
-            return false
+            completion(false, nil)
         }
     }
 }

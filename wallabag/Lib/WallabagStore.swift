@@ -22,7 +22,7 @@ final class WallabagStore: NSObject {
     static let purchaseSuccessfulNotification = Notification.Name("SubscriptionServiceRestoreSuccessfulNotification")
 
     static let shared = WallabagStore()
-    
+
     var hasReceiptData: Bool {
         uploadReceipt()
         return loadReceipt() != nil
@@ -97,7 +97,7 @@ final class WallabagStore: NSObject {
         request.httpMethod = "POST"
         request.httpBody = bodyData
 
-        let task = URLSession.shared.dataTask(with: request) { (responseData, response, error) in
+        let task = URLSession.shared.dataTask(with: request) { (responseData, _, error) in
             if let error = error {
                 print(error)
                 //completion(.failure(.other(error)))
@@ -116,8 +116,6 @@ final class WallabagStore: NSObject {
                 } else {
                     //paidSubscriptions = []
                 }
-
-
 
                 //let session = Session(receiptData: data, parsedReceipt: json)
                 //self.sessions[session.id] = session

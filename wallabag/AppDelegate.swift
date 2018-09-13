@@ -28,6 +28,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configureRealm()
         handleArgs()
 
+        if WallabagState.shared.currentState == .missingConfiguration {
+            let homeController = window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "home") as? HomeViewController
+            window?.rootViewController = homeController
+        }
+
+        Log(WallabagState.shared.currentState)
+
         /*if Setting.isWallabagConfigured(),
             let host = Setting.getHost(),
             let clientId = Setting.getClientId(),

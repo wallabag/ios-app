@@ -2,7 +2,6 @@
 
 import UIKit
 
-
 class SettingKeys {
     static let test = SettingKey<String>("test")
 }
