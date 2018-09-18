@@ -28,6 +28,9 @@ final class LoginViewController: UIViewController {
         kit.requestAuth(
             username: username.text!,
             password: password.text!) { [unowned self] response in
+                defer {
+                    sender.isEnabled = true
+                }
                 switch response {
                 case .success:
                     self.setting.set(true, for: .wallabagIsConfigured)
@@ -46,7 +49,6 @@ final class LoginViewController: UIViewController {
                     )
                     alertController.addAction(UIAlertAction(title: "ok".localized, style: .cancel))
                     self.present(alertController, animated: true, completion: nil)
-                    sender.isEnabled = true
                 case .invalidParameter, .unexpectedError:
                     self.setting.set(false, for: .wallabagIsConfigured)
                     let alertController = UIAlertController(
@@ -56,7 +58,6 @@ final class LoginViewController: UIViewController {
                     )
                     alertController.addAction(UIAlertAction(title: "ok".localized, style: .cancel))
                     self.present(alertController, animated: true, completion: nil)
-                    sender.isEnabled = true
                 }
         }
     }

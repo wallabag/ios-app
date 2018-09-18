@@ -86,7 +86,7 @@ final class WallabagStore: NSObject {
     }
 
     private func upload(receipt data: Data, completion: @escaping UploadReceiptCompletion) {
-        let body = [
+        /*let body = [
             "receipt-data": data.base64EncodedString(),
             "password": "65bdeeb88cfb488d8f4d5a4786afa936"
         ]
@@ -124,7 +124,7 @@ final class WallabagStore: NSObject {
             }
         }
 
-        task.resume()
+        task.resume()*/
     }
 
     private func loadReceipt() -> Data? {

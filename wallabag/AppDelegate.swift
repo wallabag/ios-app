@@ -13,6 +13,8 @@ import UserNotifications
 import RealmSwift
 import WallabagCommon
 import WallabagKit
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let setting: Setting = WallabagSetting()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        Fabric.with([Crashlytics.self])
 
         configureTheme()
         configureNetworkIndicator()

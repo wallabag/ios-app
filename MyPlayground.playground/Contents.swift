@@ -7,9 +7,9 @@ class SettingKeys {
 }
 
 class SettingKey<ValueType: Codable>: SettingKeys {
-    let _key: String
+    let key: String
     init(_ key: String) {
-        _key = key
+        self.key = key
     }
 }
 

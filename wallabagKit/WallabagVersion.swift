@@ -9,8 +9,8 @@ import Foundation
 
 public struct WallabagVersion {
     public enum SupportedVersion: String {
-        case v2_3_3 = "\"2.3.3\""
-        case v2_3_2 = "\"2.3.2\""
+        case v2dot3dot3 = "\"2.3.3\""
+        case v2dot3dot2 = "\"2.3.2\""
         case unsupported
     }
 

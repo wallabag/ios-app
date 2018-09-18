@@ -11,6 +11,8 @@ target 'wallabag' do
     pod 'SideMenu', '~> 3.1'
     pod 'RealmSwift'
     pod 'GoogleAnalytics'
+    pod 'Fabric'
+    pod 'Crashlytics'
     
     #    target 'wallabagUITests' do
     #   inherit! :search_paths

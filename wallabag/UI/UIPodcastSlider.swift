@@ -13,7 +13,7 @@ class UIPodcastSlider: UISlider {
     }
 
     func displayTick(tick: Int) {
-        let x = Int(frame.size.width)
+        /*let x = Int(frame.size.width)
         let tickWith = x / tick
         var xPos = frame.origin.x
         //let pos = CGRect(x: 0, y: -(frame.size.height / 2), width: frame.size.width, height: frame.size.height)
@@ -26,7 +26,7 @@ class UIPodcastSlider: UISlider {
             xPos += CGFloat(tickWith)
             insertSubview(ticker, belowSubview: self)
         }
-
+*/
         //insertSubview(tickView, belowSubview: self)
     }
 }

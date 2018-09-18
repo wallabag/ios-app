@@ -11,6 +11,7 @@ excluded:
   - wallabagScreenshotUITests/SnapshotHelper.swift
   - SnapshotHelper.swift
   - fastlane/SnapshotHelper.swift
+  - MyPlayground.playground
 line_length: 300
 identifier_name:
   excluded:

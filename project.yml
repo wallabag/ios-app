@@ -20,6 +20,12 @@ targets:
     configFiles:
       Debug: configs/wallabag-Debug.xcconfig
       Release: configs/wallabag-Release.xcconfig
+    postbuildScripts:
+      - script: swiftlint
+        name: Swiftlint
+      - script: |
+                "${PODS_ROOT}/Fabric/run" 0207ff96630ec7ce562a1b658bd7bd2a0f8024a3 e655dde9ee1422229d8c0589d0596ba3c3e0641d994a75ea76a048cb981288bb
+        name: fabricio
   bagit:
     type: app-extension
     platform: iOS
