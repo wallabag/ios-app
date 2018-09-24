@@ -38,10 +38,16 @@ public class Setting {
         defaults.set(value, forKey: key.key)
         defaults.synchronize()
     }
+
+    public func reset(suiteName: String) {
+        defaults.removeSuite(named: suiteName)
+        defaults.removePersistentDomain(forName: suiteName)
+        defaults.synchronize()
+    }
 }
 
 public class WallabagSetting: Setting {
-    let sharedDomain = "group.wallabag.share_extension"
+    public let sharedDomain = "group.wallabag.share_extension"
     public init() {
         super.init(UserDefaults(suiteName: sharedDomain)!)
     }

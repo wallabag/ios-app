@@ -20,7 +20,7 @@ import Crashlytics
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let setting: Setting = WallabagSetting()
+    let setting: WallabagSetting = WallabagSetting()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
@@ -81,7 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func handleArgs() {
         let args = ProcessInfo.processInfo.arguments
-        if args.contains("RESET_APPLICATION") {
+        if args.contains("-reset") {
             resetApplication()
         }
     }
@@ -95,7 +95,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func configureRealm() {
         Log("[LOG] Realm path" + (Realm.Configuration.defaultConfiguration.fileURL?.description)!)
         let config = Realm.Configuration(
-            schemaVersion: 1,
+            schemaVersion: 2,
             migrationBlock: { _, _ in
         })
 
@@ -167,7 +167,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func requestBadge() {
-        if setting.get(for: .badgeEnabled) ?? false {
+        if setting.get(for: .badgeEnabled) {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in }
         }
     }
@@ -208,9 +208,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func resetApplication() {
-        /*Setting.purge()
+        setting.reset(suiteName: setting.sharedDomain)
         try? Realm().write {
             try? Realm().deleteAll()
-        }*/
+        }
     }
 }

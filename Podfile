@@ -4,20 +4,19 @@ use_frameworks!
 
 target 'wallabag' do
     inherit! :search_paths
-    pod 'Alamofire', '~> 4.5'
-    pod 'AlamofireImage', '~> 3.3'
+    pod 'Alamofire', '~> 4.7'
+    pod 'AlamofireImage', '~> 3.4'
     pod 'AlamofireNetworkActivityIndicator', '~> 2.2'
     pod 'TUSafariActivity', '~> 1.0'
-    pod 'SideMenu', '~> 3.1'
+    pod 'SideMenu'
     pod 'RealmSwift'
     pod 'GoogleAnalytics'
     pod 'Fabric'
     pod 'Crashlytics'
     
-    #    target 'wallabagUITests' do
-    #   inherit! :search_paths
-    #   pod 'Swifter', '~> 1.3.3'
-    #end
+    target 'wallabagUITests' do
+       inherit! :search_paths
+    end
     target 'wallabagTests' do
         inherit! :search_paths
         pod 'Mockingjay'
@@ -26,24 +25,34 @@ end
 
 target 'WallabagKit' do
     inherit! :search_paths
-    pod 'Alamofire', '~> 4.5'
+    pod 'Alamofire', '~> 4.7'
 end
 
 target 'bagit' do
-    pod 'Alamofire', '~> 4.5'
+    pod 'Alamofire', '~> 4.7'
 end
 
 post_install do |installer|
-    myTargets = ['SideMenu', 'Swifter']
-
+        myTargets = ['SideMenu']
+    
     installer.pods_project.targets.each do |target|
         if myTargets.include? target.name
             target.build_configurations.each do |config|
                 config.build_settings['SWIFT_VERSION'] = '3.2'
             end
-        else 
+        else
             target.build_configurations.each do |config|
                 config.build_settings['SWIFT_VERSION'] = '4.1'
+            end
+        end
+    end
+    installer.pods_project.targets.each do |target|
+        shamelist = ['SideMenu']
+        if shamelist.include? target.name
+            target.build_configurations.each do |config|
+                config.build_settings['CLANG_WARN_STRICT_PROTOTYPES'] = 'NO'
+                config.build_settings['CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF'] = 'NO'
+                config.build_settings['CLANG_WARN_UNGUARDED_AVAILABILITY'] = 'NO'
             end
         end
     end

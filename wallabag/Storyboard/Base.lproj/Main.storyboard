@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8tH-nc-JLr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8tH-nc-JLr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -46,6 +45,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn4-yG-cxW" userLabel="Add Server">
                                 <rect key="frame" x="155.5" y="294" width="64" height="29"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Home.Register.Button"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <state key="normal" title="Register">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -162,7 +162,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QNI-iO-q9h">
-                                                    <rect key="frame" x="318" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="318" y="6.5" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="justifySwitch:" destination="cre-7a-Z1t" eventType="valueChanged" id="Ba9-qU-MLO"/>
                                                     </connections>
@@ -217,7 +217,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Crn-AO-baC">
-                                                    <rect key="frame" x="318" y="6" width="51" height="31"/>
+                                                    <rect key="frame" x="318" y="6.5" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="badgeSwitch:" destination="cre-7a-Z1t" eventType="valueChanged" id="NNc-N7-cQ3"/>
                                                     </connections>
@@ -354,7 +354,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wallabag v2 for iOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OmZ-lq-KqG">
-                                <rect key="frame" x="54.5" y="88" width="267" height="34"/>
+                                <rect key="frame" x="54" y="88" width="267" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="CMc-3o-0on"/>
                                 </constraints>
@@ -369,19 +369,19 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0.0 build 14" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4F-5W-KZX">
-                                <rect key="frame" x="103" y="130" width="170" height="21.5"/>
+                                <rect key="frame" x="102.5" y="130" width="170" height="21.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Made by Maxime Marinel (@bourvill)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsy-Ao-UlA">
-                                <rect key="frame" x="51" y="627" width="274" height="20"/>
+                                <rect key="frame" x="50.5" y="627" width="274" height="20"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qk9-mt-OdM">
-                                <rect key="frame" x="113" y="583" width="150" height="36"/>
+                                <rect key="frame" x="112.5" y="583" width="150" height="36"/>
                                 <attributedString key="attributedText">
                                     <fragment content="We use a cool icon of  https://icons8.com">
                                         <attributes>
@@ -664,6 +664,7 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Server" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eWS-vU-XLm">
                                 <rect key="frame" x="16" y="122" width="343" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Server.Server.TextField"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="URL"/>
@@ -679,6 +680,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teE-c3-any">
                                 <rect key="frame" x="169" y="160" width="37" height="29"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Server.Next.Button"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
@@ -749,18 +751,21 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ClientId" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dsM-5G-HXR">
                                 <rect key="frame" x="16" y="122" width="343" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ClientId.ClientId.TextField"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ClientSecret" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iBk-4L-sqH">
                                 <rect key="frame" x="16" y="160" width="343" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ClientId.ClientSecret.TextField"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mDJ-gL-tA5">
                                 <rect key="frame" x="169" y="198" width="37" height="29"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ClientId.Next.Button"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
@@ -829,12 +834,14 @@ This token are secret and can be found in your developer page, And create a new 
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C1D-rB-gOJ">
                                 <rect key="frame" x="16" y="122" width="343" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Login.Username.TextField"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UQC-pk-uO1">
                                 <rect key="frame" x="16" y="160" width="343" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Login.Password.TextField"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
@@ -850,6 +857,7 @@ This token are secret and can be found in your developer page, And create a new 
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2e6-On-1Cd">
                                 <rect key="frame" x="169" y="198" width="37" height="29"/>
+                                <accessibility key="accessibilityConfiguration" identifier="Login.Next.Button"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
@@ -1234,7 +1242,7 @@ But you can contribute financially by making a donation whenever you want to sup
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owP-3Q-5Ls">
-                                <rect key="frame" x="163" y="334" width="48" height="48"/>
+                                <rect key="frame" x="163.5" y="334" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="A4d-t9-nJY"/>
                                     <constraint firstAttribute="width" constant="48" id="cTh-nD-oah"/>
@@ -1249,14 +1257,14 @@ But you can contribute financially by making a donation whenever you want to sup
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </slider>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E0y-5P-r3n">
-                                <rect key="frame" x="87" y="32" width="200" height="200"/>
+                                <rect key="frame" x="87.5" y="32" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="QIk-Gb-WQa"/>
                                     <constraint firstAttribute="height" constant="200" id="qhf-aV-SPU"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oef-BU-hAl">
-                                <rect key="frame" x="231" y="342" width="32" height="32"/>
+                                <rect key="frame" x="231.5" y="342" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="YEA-PS-NmU"/>
                                     <constraint firstAttribute="height" constant="32" id="vDl-zm-wSW"/>

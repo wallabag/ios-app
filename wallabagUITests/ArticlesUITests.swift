@@ -8,7 +8,7 @@
 
 import XCTest
 
-class ArticlesUITests: XCTestCase {
+/*class ArticlesUITests: XCTestCase {
 
     private func addArticle() {
         let app = XCUIApplication()
@@ -95,3 +95,4 @@ class ArticlesUITests: XCTestCase {
         XCTAssertTrue(cell.buttons["Star"].exists)
     }
 }
+*/
