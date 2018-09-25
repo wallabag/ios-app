@@ -31,17 +31,9 @@ final class SyncOperation: Operation {
             didChangeValue(forKey: oldValue.keyPath)
         }
     }
+    let entries: WallabagKitCollection<WallabagKitEntry>
+    init(entries: WallabagKitCollection<WallabagKitEntry>) {
 
-    let entryController: EntryController
-    let page: Int
-    let queue: DispatchQueue
-    let wallabagKit: WallabagKitProtocol
-
-    init(entryController: EntryController, page: Int, queue: DispatchQueue, wallabagKit: WallabagKitProtocol) {
-        self.entryController = entryController
-        self.page = page
-        self.queue = queue
-        self.wallabagKit = wallabagKit
     }
 
     override func start() {

@@ -9,6 +9,10 @@ import Foundation
 import WallabagCommon
 import WallabagKit
 
+extension Notification.Name {
+    static let wallabagStateChanged = Notification.Name("wallabag.state.changed")
+}
+
 class WallabagState {
     enum State {
         case missingConfiguration
@@ -22,7 +26,8 @@ class WallabagState {
     static let shared = WallabagState()
     var currentState: State {
         didSet {
-            Log("Update state")
+            Log("Update state with \(currentState)")
+            NotificationCenter.default.post(name: .wallabagStateChanged, object: nil)
         }
     }
     private init() {
@@ -42,9 +47,18 @@ class WallabagState {
                 switch auth {
                 case .success:
                    self?.currentState = .connected
-                case .error, .invalidParameter, .unexpectedError:
+                case .error(let error):
+                    Log(error)
+                    self?.currentState = .error
+                case  .invalidParameter, .unexpectedError:
                     self?.currentState = .error
                 }
         }
+    }
+
+    func sync() {
+        guard let kit = kit, currentState == .connected else { return }
+        let sync = WallabagSyncing(kit: kit)
+        sync.sync()
     }
 }

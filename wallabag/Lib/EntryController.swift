@@ -53,13 +53,13 @@ final class EntryController {
                 if self.maxPage > 1 {
                     for page in 2...self.maxPage {
                         self.group.enter()
-                        let syncOperation = SyncOperation(entryController: self, page: page, queue: self.syncQueue, wallabagKit: self.wallabagKit)
+                        /*let syncOperation = SyncOperation(entryController: self, page: page, queue: self.syncQueue, wallabagKit: self.wallabagKit)
                         syncOperation.completionBlock = {
                             self.pageCompleted += 1
                             completion(.running)
                             self.group.leave()
                         }
-                        self.operationQueue.addOperation(syncOperation)
+                        self.operationQueue.addOperation(syncOperation)*/
                     }
                 }
             case .error:
