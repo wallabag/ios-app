@@ -13,8 +13,7 @@ extension Notification.Name {
     static let wallabagStateChanged = Notification.Name("wallabag.state.changed")
 }
 
-#warning("@TODO rename to WallabagSession")
-class WallabagState {
+class WallabagSession {
     enum State {
         case missingConfiguration
         case error
@@ -25,7 +24,7 @@ class WallabagState {
     private let setting = WallabagSetting()
     private var kit: WallabagKit?
     private var wallabagSync: WallabagSyncing?
-    static let shared = WallabagState()
+    static let shared = WallabagSession()
     var currentState: State {
         didSet {
             Log("Update state with \(currentState)")

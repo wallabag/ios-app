@@ -102,7 +102,7 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     @objc func handleRefresh() {
-        WallabagState.shared.sync { [weak self] in
+        WallabagSession.shared.sync { [weak self] in
             DispatchQueue.main.async {
                 self?.tableView.refreshControl?.endRefreshing()
             }

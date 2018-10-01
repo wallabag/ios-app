@@ -31,15 +31,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configureRealm()
         handleArgs()
 
-        Log(WallabagState.shared.currentState)
+        Log(WallabagSession.shared.currentState)
 
-        guard WallabagState.shared.currentState != .missingConfiguration  else {
+        guard WallabagSession.shared.currentState != .missingConfiguration  else {
             let homeController = window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "home") as? HomeViewController
             window?.rootViewController = homeController
             return true
         }
 
-        WallabagState.shared.startSession()
+        WallabagSession.shared.startSession()
 
         /*if Setting.isWallabagConfigured(),
             let host = Setting.getHost(),
