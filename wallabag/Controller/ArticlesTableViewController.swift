@@ -97,13 +97,16 @@ final class ArticlesTableViewController: UITableViewController {
         filteringList()
         reloadUI()
 
-
         tableView.refreshControl = UIRefreshControl()
         tableView.refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
     }
 
     @objc func handleRefresh() {
-        WallabagState.shared.sync()
+        WallabagState.shared.sync { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.refreshControl?.endRefreshing()
+            }
+        }
         Log("handle refresh")
     }
 

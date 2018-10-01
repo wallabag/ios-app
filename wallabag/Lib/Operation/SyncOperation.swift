@@ -8,6 +8,8 @@
 
 import Foundation
 import WallabagKit
+import RealmSwift
+import CoreSpotlight
 
 final class SyncOperation: Operation {
     enum State: String {
@@ -32,8 +34,11 @@ final class SyncOperation: Operation {
         }
     }
     let entries: WallabagKitCollection<WallabagKitEntry>
-    init(entries: WallabagKitCollection<WallabagKitEntry>) {
+    let kit: WallabagKitProtocol
 
+    init(entries: WallabagKitCollection<WallabagKitEntry>, kit: WallabagKitProtocol) {
+        self.entries = entries
+        self.kit = kit
     }
 
     override func start() {
@@ -50,16 +55,63 @@ final class SyncOperation: Operation {
             state = .finished
         } else {
             state = .executing
-            wallabagKit.entry(parameters: ["page": page], queue: queue) { response in
-                switch response {
-                case .success(let collection):
-                    self.entryController.handle(result: collection.items)
-                case .error:
-                    //@todo handle error
-                    break
-                }
-                self.state = .finished
+            defer {
+                state = .finished
             }
+            do {
+                let realm = try Realm()
+                realm.beginWrite()
+                for wallabagEntry in entries.items {
+                    if let entry = realm.object(ofType: Entry.self, forPrimaryKey: wallabagEntry.id) {
+                        self.update(entry: entry, from: wallabagEntry)
+                    } else {
+                        self.insert(wallabagEntry, realm)
+                    }
+                }
+                try realm.commitWrite()
+            } catch _ {
+                Log("error")
+            }
+        }
+    }
+
+    private func insert(_ wallabagEntry: WallabagKitEntry, _ realm: Realm) {
+        let entry = Entry()
+        Log("Insert article \(wallabagEntry.id)")
+        entry.hydrate(from: wallabagEntry)
+        realm.add(entry)
+
+        #warning("@TODO move spotlight to an observer")
+        let searchableItem = CSSearchableItem(uniqueIdentifier: entry.spotlightIdentifier,
+                                              domainIdentifier: "entry",
+                                              attributeSet: entry.searchableItemAttributeSet
+        )
+        CSSearchableIndex.default().indexSearchableItems([searchableItem]) { (error) -> Void in
+            if error != nil {
+                Log(error!.localizedDescription)
+            }
+        }
+    }
+
+    private func update(entry: Entry, from article: WallabagKitEntry) {
+        let articleUpdatedAt = Date.fromISOString(article.updatedAt)!
+        if entry.updatedAt != articleUpdatedAt {
+            if articleUpdatedAt > entry.updatedAt! {
+                entry.hydrate(from: article)
+            } else {
+                update(entry: entry)
+            }
+        }
+    }
+
+    private func update(entry: Entry) {
+        kit.entry(
+            update: entry.id,
+            parameters: [
+                "archive": entry.isArchived.hashValue,
+                "starred": entry.isStarred.hashValue
+        ], queue: nil) { _ in
+            Log("Update from local to server")
         }
     }
 }
