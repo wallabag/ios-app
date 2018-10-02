@@ -40,37 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         WallabagSession.shared.startSession()
-
-        /*if Setting.isWallabagConfigured(),
-            let host = Setting.getHost(),
-            let clientId = Setting.getClientId(),
-            let clientSecret = Setting.getClientSecret(),
-            let username = Setting.getUsername(),
-            let password = Setting.getPassword(username: username) {
-            Log("Wallabag api is configured")
-            let kit = WallabagKit(host: host, clientID: clientId, clientSecret: clientSecret)
-            kit.requestAuth(username: username, password: password) { auth in
-                switch auth {
-                case .success(let data):
-                    Setting.set(token: data.accessToken)
-                    Setting.set(refreshToken: data.refreshToken)
-                case .error, .invalidParameter, .unexpectedError:
-                    break
-                }
-            }
-            let navController = window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "articlesNavigation") as? UINavigationController
-
-            guard let controller = navController?.viewControllers.first as? ArticlesTableViewController else {
-                fatalError("Wrong root nav controller")
-            }
-            controller.wallabagkit = kit
-            window?.rootViewController = navController
-            //UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
-            requestBadge()
-        }
-
         setupQuickAction()
- */
+        requestBadge()
 
         return true
     }
@@ -126,23 +97,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillEnterForeground(_ application: UIApplication) {
         //Refresh token quick fix
         /*if Setting.isWallabagConfigured(),
-            let host = Setting.getHost(),
-            let clientId = Setting.getClientId(),
-            let clientSecret = Setting.getClientSecret(),
-            let username = Setting.getUsername(),
-            let password = Setting.getPassword(username: username) {
-            let kit = WallabagKit(host: host, clientID: clientId, clientSecret: clientSecret)
-            kit.requestAuth(username: username, password: password) { auth in
-                switch auth {
-                case .success(let data):
-                    Setting.set(token: data.accessToken)
-                    Setting.set(refreshToken: data.refreshToken)
-                case .error, .invalidParameter, .unexpectedError:
-                    break
-                }
+         let host = Setting.getHost(),
+         let clientId = Setting.getClientId(),
+         let clientSecret = Setting.getClientSecret(),
+         let username = Setting.getUsername(),
+         let password = Setting.getPassword(username: username) {
+         let kit = WallabagKit(host: host, clientID: clientId, clientSecret: clientSecret)
+         kit.requestAuth(username: username, password: password) { auth in
+         switch auth {
+         case .success(let data):
+         Setting.set(token: data.accessToken)
+         Setting.set(refreshToken: data.refreshToken)
+         case .error, .invalidParameter, .unexpectedError:
+         break
+         }
 
-            }
-        }*/
+         }
+         }*/
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -173,28 +144,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func updateBadge() {
-        /*if !Setting.isBadgeEnable() {
+        if !setting.get(for: .badgeEnabled) {
             UIApplication.shared.applicationIconBadgeNumber = 0
             return
         }
 
-        let entries = try? Realm().objects(Entry.self).filter(Setting.getDefaultMode().predicate())
-        UIApplication.shared.applicationIconBadgeNumber = entries?.count ?? 0*/
+        guard let mode = RetrieveMode(rawValue: setting.get(for: .defaultMode)) else {
+            Log("Erreur retrieve mode")
+            return
+        }
+        let entries = try? Realm().objects(Entry.self).filter(mode.predicate())
+        UIApplication.shared.applicationIconBadgeNumber = entries?.count ?? 0
     }
 
     private func setupQuickAction() {
-        /*if setting.get(for: .wallabagIsConfigured) ?? false {
-            let starredAction = UIApplicationShortcutItem(type: Setting.RetrieveMode.starredArticles.rawValue, localizedTitle: Setting.RetrieveMode.starredArticles.humainReadable().localized, localizedSubtitle: nil, icon: UIApplicationShortcutIcon(templateImageName: "starred"), userInfo: [:])
+        if setting.get(for: .wallabagIsConfigured) {
+            let starredAction = UIApplicationShortcutItem(type: RetrieveMode.starredArticles.rawValue, localizedTitle: RetrieveMode.starredArticles.humainReadable().localized, localizedSubtitle: nil, icon: UIApplicationShortcutIcon(templateImageName: "starred"), userInfo: [:])
             let unarchivedAction = UIApplicationShortcutItem(
-                type: Setting.RetrieveMode.unarchivedArticles.rawValue,
-                localizedTitle: Setting.RetrieveMode.unarchivedArticles.humainReadable().localized,
+                type: RetrieveMode.unarchivedArticles.rawValue,
+                localizedTitle: RetrieveMode.unarchivedArticles.humainReadable().localized,
                 localizedSubtitle: nil,
                 icon: UIApplicationShortcutIcon(templateImageName: "unreaded"),
                 userInfo: [:]
             )
-            let archivedAction = UIApplicationShortcutItem(type: Setting.RetrieveMode.archivedArticles.rawValue, localizedTitle: Setting.RetrieveMode.archivedArticles.humainReadable().localized, localizedSubtitle: nil, icon: UIApplicationShortcutIcon(templateImageName: "readed"), userInfo: [:])
+            let archivedAction = UIApplicationShortcutItem(type: RetrieveMode.archivedArticles.rawValue, localizedTitle: RetrieveMode.archivedArticles.humainReadable().localized, localizedSubtitle: nil, icon: UIApplicationShortcutIcon(templateImageName: "readed"), userInfo: [:])
             UIApplication.shared.shortcutItems = [unarchivedAction, archivedAction, starredAction]
-        }*/
+        }
     }
 
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
@@ -202,9 +177,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let rootController = navController.viewControllers.first as? ArticlesTableViewController else {
                 return
         }
-        /*if let mode = Setting.RetrieveMode(rawValue: shortcutItem.type) {
+        if let mode = RetrieveMode(rawValue: shortcutItem.type) {
             rootController.mode = mode
-        }*/
+        }
     }
 
     func resetApplication() {

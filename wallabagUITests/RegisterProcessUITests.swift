@@ -104,7 +104,9 @@ class RegisterProcessUITests: XCTestCase {
         passwordSecureTextField.typeText("dev")
         app.buttons["Login.Next.Button"].tap()
 
-        XCTAssertEqual(1, app.tables.count)
+        _ = app.tables.firstMatch.waitForExistence(timeout: 5.0)
+
+        XCTAssertTrue(app.tables.firstMatch.exists)
         XCTAssertTrue(app.navigationBars["All articles"].exists)
     }
 }
