@@ -22,7 +22,7 @@ class WallabagSession {
         case fetching
     }
     private let setting = WallabagSetting()
-    private var kit: WallabagKit?
+    var kit: WallabagKit?
     private var wallabagSync: WallabagSyncing?
     static let shared = WallabagSession()
     var currentState: State {
@@ -58,10 +58,10 @@ class WallabagSession {
         wallabagSync = WallabagSyncing(kit: kit)
     }
 
-    func sync(completion: @escaping () -> Void) {
+    /*func sync(completion: @escaping () -> Void) {
         guard let kit = kit, currentState == .connected else { return }
         wallabagSync?.sync {
             completion()
         }
-    }
+    }*/
 }

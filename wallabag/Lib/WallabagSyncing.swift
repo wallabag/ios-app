@@ -20,6 +20,7 @@ class WallabagSyncing {
     }()
     private let group = DispatchGroup()
     private var entriesSynced: [Int] = []
+    var progress: ((Int, Int) -> Void)?
 
     init(kit: WallabagKitProtocol) {
         self.kit = kit
@@ -42,8 +43,6 @@ class WallabagSyncing {
         kit.entry(parameters: ["page": page], queue: dispatchQueue) { [unowned self] response in
             switch response {
             case .success(let entries):
-                Log("success \(page)/\(entries.pages)")
-
                 self.entriesSynced = entries.items.map({$0.id})
 
                 let syncOperation = SyncOperation(entries: entries, kit: self.kit)
@@ -52,8 +51,8 @@ class WallabagSyncing {
                     self.fetchEntry(page: page + 1)
                 }
                 syncOperation.completionBlock = {
-                    #warning("@TODO add progress")
                     self.group.leave()
+                    self.progress?(page, entries.pages)
                 }
             case .error:
                 Log("Fetch error")

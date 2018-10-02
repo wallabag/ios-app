@@ -19,6 +19,7 @@ final class ArticlesTableViewController: UITableViewController {
     let searchController = UISearchController(searchResultsController: nil)
     let analytics = AnalyticsManager()
     let setting = WallabagSetting()
+    var wallabagSync: WallabagSyncing!
 
     lazy var realm: Realm = {
         do {
@@ -80,10 +81,18 @@ final class ArticlesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        wallabagSync = WallabagSyncing(kit: WallabagSession.shared.kit!)
+        wallabagSync.progress = { currentPage, maxPage in
+            DispatchQueue.main.async {[weak self] in
+                self?.progressView.progress = Float(currentPage) / Float(maxPage)
+            }
+            Log("Progress \(currentPage)/\(maxPage)")
+        }
         self.mode = RetrieveMode(rawValue: setting.get(for: .defaultMode)) ?? .allArticles
 
         analytics.sendScreenViewed(.articlesView)
         progressView.isHidden = true
+
 
         NotificationCenter.default.addObserver(self, selector: #selector(pasteBoardAction), name: .UIApplicationDidBecomeActive, object: nil)
 
@@ -102,9 +111,11 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     @objc func handleRefresh() {
-        WallabagSession.shared.sync { [weak self] in
+        progressView.isHidden = false
+        wallabagSync.sync { [weak self] in
             DispatchQueue.main.async {
                 self?.tableView.refreshControl?.endRefreshing()
+                self?.progressView.isHidden = true
             }
         }
         Log("handle refresh")
@@ -234,6 +245,7 @@ final class ArticlesTableViewController: UITableViewController {
         alertController.addAction(UIAlertAction(title: "Add".localized, style: .default, handler: { _ in
             if let textfield = alertController.textFields?.first?.text,
                 let url = URL(string: textfield) {
+                
                 //self.entryController.add(url: url)
             }
 
