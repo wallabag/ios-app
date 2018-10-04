@@ -8,6 +8,7 @@
 import Foundation
 import WallabagCommon
 import WallabagKit
+import RealmSwift
 
 extension Notification.Name {
     static let wallabagStateChanged = Notification.Name("wallabag.state.changed")
@@ -47,7 +48,7 @@ class WallabagSession {
             password: password) { [weak self] auth in
                 switch auth {
                 case .success:
-                   self?.currentState = .connected
+                    self?.currentState = .connected
                 case .error(let error):
                     Log(error)
                     self?.currentState = .error
@@ -58,10 +59,49 @@ class WallabagSession {
         wallabagSync = WallabagSyncing(kit: kit)
     }
 
-    /*func sync(completion: @escaping () -> Void) {
+    func add(_ url: URL) {
         guard let kit = kit, currentState == .connected else { return }
-        wallabagSync?.sync {
-            completion()
+        kit.entry(add: url, queue: .main) { response in
+            switch response {
+            case .success(let wallabagEntry):
+                do {
+                    let realm = try Realm()
+                    try realm.write {
+                        let entry = Entry()
+                        entry.hydrate(from: wallabagEntry)
+                        realm.add(entry)
+                    }
+                } catch _ {
+
+                }
+            case .error:
+                break
+            }
         }
-    }*/
+    }
+
+    func delete(_ entry: Entry) {
+        guard let kit = kit, currentState == .connected else { return }
+        kit.entry(delete: entry.id) {
+            do {
+                let realm = try Realm()
+                try realm.write {
+                    realm.delete(entry)
+                }
+            } catch {
+
+            }
+        }
+    }
+
+    func update(_ entry: Entry) {
+        guard let kit = kit, currentState == .connected else { return }
+        kit.entry(
+            update: entry.id,
+            parameters: [
+                "archive": entry.isArchived.int,
+                "starred": entry.isStarred.int
+            ],
+            queue: .main) { _ in }
+    }
 }

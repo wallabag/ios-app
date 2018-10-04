@@ -223,18 +223,18 @@ final class ArticlesTableViewController: UITableViewController {
         try! realm.write {
             entry.isArchived = !entry.isArchived
         }
-        //entryController.update(entry: entry)
+        WallabagSession.shared.update(entry)
     }
 
     private func star(_ entry: Entry) {
         try! realm.write {
             entry.isStarred = !entry.isStarred
         }
-        //entryController.update(entry: entry)
+        WallabagSession.shared.update(entry)
     }
 
     private func delete(_ entry: Entry) {
-        //entryController.delete(entry: entry)
+        WallabagSession.shared.delete(entry)
     }
 
     private func addArticle() {
@@ -245,10 +245,8 @@ final class ArticlesTableViewController: UITableViewController {
         alertController.addAction(UIAlertAction(title: "Add".localized, style: .default, handler: { _ in
             if let textfield = alertController.textFields?.first?.text,
                 let url = URL(string: textfield) {
-                
-                //self.entryController.add(url: url)
+                WallabagSession.shared.add(url)
             }
-
         }))
         alertController.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
         present(alertController, animated: true)

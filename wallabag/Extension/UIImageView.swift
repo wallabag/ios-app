@@ -17,7 +17,6 @@ extension UIImageView {
         }
 
         af_setImage(withURL: pictureURL) { [weak self] newImage in
-            Log(newImage.error)
             if newImage.error == nil && withShadow {
                 guard let view = self else { return }
                 view.layer.shadowPath = UIBezierPath(roundedRect: view.bounds, cornerRadius: view.layer.cornerRadius).cgPath
