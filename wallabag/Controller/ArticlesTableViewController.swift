@@ -94,7 +94,7 @@ final class ArticlesTableViewController: UITableViewController {
         progressView.isHidden = true
 
 
-        NotificationCenter.default.addObserver(self, selector: #selector(pasteBoardAction), name: .UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(pasteBoardAction), name: UIApplication.didBecomeActiveNotification, object: nil)
 
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
