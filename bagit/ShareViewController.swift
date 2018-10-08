@@ -87,15 +87,15 @@ class ShareViewController: UIViewController {
         guard let items = extensionContext?.inputItems as? [NSExtensionItem] else {
             return nil
         }
-        for item in items where ((item.attachments as? [NSItemProvider]) != nil) {
-            if let attachements = item.attachments as? [NSItemProvider] {
-                for attachement in attachements {
+        #warning("@TODO rework nsitemprovider")
+       /*for item in items {
+                for attachement in item.attachements {
                     if attachement.hasItemConformingToTypeIdentifier("public.url") {
                         att.append(attachement)
                     }
                 }
             }
-        }
+*/
 
         return att
     }
