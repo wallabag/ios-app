@@ -48,17 +48,9 @@ class ShareViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-
-        if setting.get(for: .wallabagIsConfigured),
-           /* let host = setting.get(for: .host),
-            let username = setting.get(for: .username),
-            let password = setting.getPassword(),
-            let clientId = setting.get(for: .clientId),
-            let clientSecret = setting.get(for: .clientSecret),*/
-            let attachements = getAttachements() {
-/*
-            let kit = WallabagKit(host: host, clientID: clientId, clientSecret: clientSecret)
-            kit.requestAuth(username: username, password: password) { [unowned self] auth in
+        if setting.get(for: .wallabagIsConfigured), let attachements = getAttachements() {
+            let kit = WallabagKit(host: setting.get(for: .host), clientID: setting.get(for: .clientId), clientSecret: setting.get(for: .clientSecret))
+            kit.requestAuth(username: setting.get(for: .username), password: setting.getPassword()!) { [unowned self] auth in
                 switch auth {
                 case .success:
                     for attachement in attachements {
@@ -78,7 +70,7 @@ class ShareViewController: UIViewController {
                 default:
                     self.clearView(withError: true)
                 }
-            }*/
+            }
         }
     }
 
@@ -87,16 +79,11 @@ class ShareViewController: UIViewController {
         guard let items = extensionContext?.inputItems as? [NSExtensionItem] else {
             return nil
         }
-        #warning("@TODO rework nsitemprovider")
-       /*for item in items {
-                for attachement in item.attachements {
-                    if attachement.hasItemConformingToTypeIdentifier("public.url") {
-                        att.append(attachement)
-                    }
-                }
+        for item in items {
+            for attachement in item.attachments ?? [] where attachement.hasItemConformingToTypeIdentifier("public.url") {
+                att.append(attachement)
             }
-*/
-
+        }
         return att
     }
 
