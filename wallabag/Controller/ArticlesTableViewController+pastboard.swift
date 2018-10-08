@@ -18,7 +18,8 @@ extension ArticlesTableViewController {
 
         let alertController = UIAlertController(title: "PasteBoard", message: pasteBoardUrl.absoluteString, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Add", style: .default) { _ in
-            //self.entryController.add(url: pasteBoardUrl)
+            #warning("@TODO move add to ArticlesTableViewController")
+            WallabagSession.shared.add(pasteBoardUrl)
         })
         alertController.addAction(UIAlertAction(title: "Cancel", style: .destructive))
         present(alertController, animated: true)
