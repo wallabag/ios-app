@@ -17,13 +17,14 @@ extension UIWebView {
         }
     }
 
-    func contentForWebView(_ entry: Entry) -> String {
+    func contentForWebView(_ entry: Entry) -> String? {
         let setting = WallabagSetting()
         do {
+            guard let content = entry.content, let title = entry.title else { return nil }
             let html = try String(contentsOfFile: Bundle.main.path(forResource: "article", ofType: "html")!)
             let justify = setting.get(for: .justifyArticle) ? "justify.css" : ""
 
-            return String(format: html, arguments: [justify, setting.get(for: .theme), entry.title!, entry.content!])
+            return String(format: html, arguments: [justify, setting.get(for: .theme), title, content])
         } catch {
             fatalError("Unable to load article view")
         }
