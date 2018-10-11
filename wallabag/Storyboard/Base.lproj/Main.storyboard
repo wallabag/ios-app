@@ -573,6 +573,12 @@
                                     <outlet property="delegate" destination="zsG-x9-2za" id="Sxm-qs-ywQ"/>
                                 </connections>
                             </webView>
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WsA-Va-DgB" userLabel="PodcastView">
+                                <rect key="frame" x="0.0" y="220" width="375" height="403"/>
+                                <connections>
+                                    <segue destination="Qo1-bX-YK8" kind="embed" id="gwI-f4-xly"/>
+                                </connections>
+                            </containerView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmR-l8-ha4">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
@@ -600,12 +606,6 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WsA-Va-DgB">
-                                <rect key="frame" x="0.0" y="220" width="375" height="403"/>
-                                <connections>
-                                    <segue destination="Qo1-bX-YK8" kind="embed" id="gwI-f4-xly"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -641,6 +641,7 @@
                     <connections>
                         <outlet property="contentWeb" destination="vxC-9m-osy" id="hEI-YH-oMy"/>
                         <outlet property="deleteButton" destination="IC0-DD-8KU" id="Kct-QB-Efq"/>
+                        <outlet property="podcastView" destination="WsA-Va-DgB" id="Mui-8F-1tQ"/>
                         <outlet property="readButton" destination="X3k-oF-ZXC" id="hnK-8N-UcN"/>
                         <outlet property="speechButton" destination="3vd-F9-MfW" id="qky-Bl-1uV"/>
                         <outlet property="starButton" destination="VcU-fa-V5f" id="YqQ-L0-xvZ"/>
@@ -1302,8 +1303,8 @@ But you can contribute financially by making a donation whenever you want to sup
     <resources>
         <image name="lips" width="22" height="8"/>
         <image name="logo-icon-black-no-bg" width="200" height="200"/>
-        <image name="next" width="128" height="128"/>
-        <image name="play" width="128" height="128"/>
+        <image name="next" width="102.40000152587891" height="102.40000152587891"/>
+        <image name="play" width="102.40000152587891" height="102.40000152587891"/>
         <image name="readed" width="22" height="22"/>
         <image name="starred" width="22" height="22"/>
         <image name="trash" width="22" height="22"/>

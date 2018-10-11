@@ -21,12 +21,8 @@ class PodcastViewController: UIViewController {
         }
     }
 
-    /*enum viewState {
-        case show
-        case hidden
-    }
-    private var state: viewState = .show
     private let analytics = AnalyticsManager()
+    private let setting = WallabagSetting()
     private var speecher: AVSpeechSynthesizer = AVSpeechSynthesizer()
     private var utterances: [AVSpeechUtterance] = []
 
@@ -85,15 +81,15 @@ class PodcastViewController: UIViewController {
             for paragraph in content.speakable {
                 let utterance = AVSpeechUtterance(string: paragraph.withoutHTML)
                 utterance.postUtteranceDelay = 0.4
-                utterance.rate = Setting.getSpeechRate()
-                utterance.voice = Setting.getSpeechVoice()
+                utterance.rate = setting.get(for: .speechRate)
+                utterance.voice = setting.getSpeechVoice()
                 utterances.append(utterance)
             }
             //slider.displayTick(tick: utterances.count)
         } else {
             let utterance = AVSpeechUtterance(string: content.withoutHTML)
-            utterance.rate = Setting.getSpeechRate()
-            utterance.voice = Setting.getSpeechVoice()
+            utterance.rate = setting.get(for: .speechRate)
+            utterance.voice = setting.getSpeechVoice()
             utterances.append(utterance)
         }
 
@@ -103,36 +99,6 @@ class PodcastViewController: UIViewController {
 
         return utterances
     }
-
-    func toggle() {
-        if state == .hidden {
-            state = .show
-            animShow()
-        } else {
-            state = .hidden
-            animHide()
-        }
-    }
-
-    private func animShow(){
-        UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseIn],
-                       animations: {
-                        self.view.center.y -= self.view.bounds.height
-                        self.view.layoutIfNeeded()
-        }, completion: nil)
-        self.view.isHidden = false
-    }
-
-    private func animHide(){
-        UIView.animate(withDuration: 0.5, delay: 0, options: [.curveLinear],
-                       animations: {
-                        self.view.center.y += self.view.bounds.height
-                        self.view.layoutIfNeeded()
-
-        },  completion: {(_ completed: Bool) -> Void in
-            self.view.isHidden = true
-        })
-    }*/
 }
 
 extension PodcastViewController: AVSpeechSynthesizerDelegate {
