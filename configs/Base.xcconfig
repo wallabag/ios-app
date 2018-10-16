@@ -1,6 +1,6 @@
 // Generated using xcconfig-extractor 0.4.0 by Toshihiro Suzuki - https://github.com/toshi0383/xcconfig-extractor
 SWIFT_SWIFT3_OBJC_INFERENCE = Default
-SWIFT_VERSION = 4.1
+SWIFT_VERSION = 4.2
 DEVELOPMENT_TEAM = G97URPCGB8
 PRODUCT_NAME = $(TARGET_NAME)
 CLANG_WARN_STRICT_PROTOTYPES = YES
