@@ -93,8 +93,8 @@ final class ArticlesTableViewController: UITableViewController {
         analytics.sendScreenViewed(.articlesView)
         progressView.isHidden = true
 
-
         NotificationCenter.default.addObserver(self, selector: #selector(pasteBoardAction), name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleRefresh), name: .wallabagStateChanged, object: nil)
 
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false

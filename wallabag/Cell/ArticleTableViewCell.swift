@@ -10,7 +10,7 @@ import UIKit
 import AlamofireImage
 import CoreData
 
-class ArticleTableViewCell: ThemedTableViewCell {
+final class ArticleTableViewCell: ThemedTableViewCell {
 
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var website: UILabel!

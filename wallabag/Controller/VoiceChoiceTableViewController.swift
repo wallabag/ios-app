@@ -12,6 +12,7 @@ import WallabagCommon
 
 final class VoiceChoiceTableViewController: UITableViewController {
 
+    let setting = WallabagSetting()
     let analytics = AnalyticsManager()
     let voices: [AVSpeechSynthesisVoice] = AVSpeechSynthesisVoice.speechVoices()
 
@@ -29,9 +30,9 @@ final class VoiceChoiceTableViewController: UITableViewController {
 
         cell.textLabel?.text = "\(voice.name) (\(voice.language))"
 
-        /*if voice.identifier == Setting.getSpeechVoice()?.identifier {
+        if voice.identifier == setting.getSpeechVoice()?.identifier {
             cell.accessoryType = .checkmark
-        }*/
+        }
 
         return cell
     }
@@ -43,7 +44,7 @@ final class VoiceChoiceTableViewController: UITableViewController {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         tableView.deselectRow(at: indexPath, animated: true)
 
-        //Setting.setSpeechVoice(identifier: voices[indexPath.row].identifier)
+        setting.set(voices[indexPath.row].identifier, for: .speechVoice)
         _ = navigationController?.popViewController(animated: true)
     }
 }
