@@ -31,7 +31,6 @@ class WallabagSyncing {
         fetchEntry(page: 1)
         group.notify(queue: dispatchQueue) { [unowned self] in
             Log("Sync terminated")
-            debugPrint(self.entriesSynced)
             self.purge()
             completion()
         }
@@ -43,7 +42,7 @@ class WallabagSyncing {
         kit.entry(parameters: ["page": page], queue: dispatchQueue) { [unowned self] response in
             switch response {
             case .success(let entries):
-                self.entriesSynced = entries.items.map({$0.id})
+                entries.items.forEach({self.entriesSynced.append($0.id)})
 
                 let syncOperation = SyncOperation(entries: entries, kit: self.kit)
                 self.operationQueue.addOperation(syncOperation)
