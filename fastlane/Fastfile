@@ -5,27 +5,26 @@ fastlane_version "2.96.1"
 default_platform :ios
 
 platform :ios do
-  before_all do
-    cocoapods
-  end
-
   desc "Runs all the tests"
   lane :test do
+    cocoapods
     scan(scheme: "wallabag")
   end
 
   lane :testlib do 
+    cocoapods
     scan(scheme: "WallabagTest")
   end
 
   lane :testui do 
+    cocoapods
     scan(scheme: "WallabagTestUi")
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
-
+    cocoapods
     increment_build_number
     gym(scheme: "wallabag")
     pilot(skip_waiting_for_build_processing: true)
@@ -34,10 +33,10 @@ platform :ios do
     build_number = Actions.lane_context[Actions::SharedValues::BUILD_NUMBER]
     add_git_tag(tag: "build-#{build_number}")
     push_to_git_remote
-
   end
 
   lane :screenshot do
+    cocoapods
     snapshot(scheme: "wallabagScreenshot")
   end
 
