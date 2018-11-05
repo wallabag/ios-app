@@ -33,26 +33,16 @@ target 'bagit' do
 end
 
 post_install do |installer|
-        myTargets = ['SideMenu']
+    myTargets = ['SideMenu']
     
     installer.pods_project.targets.each do |target|
         if myTargets.include? target.name
             target.build_configurations.each do |config|
-                config.build_settings['SWIFT_VERSION'] = '3.2'
+                config.build_settings['SWIFT_VERSION'] = '4.2'
             end
         else
             target.build_configurations.each do |config|
                 config.build_settings['SWIFT_VERSION'] = '4.1'
-            end
-        end
-    end
-    installer.pods_project.targets.each do |target|
-        shamelist = ['SideMenu']
-        if shamelist.include? target.name
-            target.build_configurations.each do |config|
-                config.build_settings['CLANG_WARN_STRICT_PROTOTYPES'] = 'NO'
-                config.build_settings['CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF'] = 'NO'
-                config.build_settings['CLANG_WARN_UNGUARDED_AVAILABILITY'] = 'NO'
             end
         end
     end

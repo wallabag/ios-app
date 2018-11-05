@@ -62,7 +62,6 @@ final class ArticleViewController: UIViewController, ArticleViewControllerProtoc
     @IBOutlet weak var deleteButton: UIBarButtonItem!
     @IBOutlet weak var podcastView: UIView!
 
-
     @IBAction func add(_ sender: Any) {
         addHandler?()
     }

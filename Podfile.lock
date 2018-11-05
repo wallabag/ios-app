@@ -4,9 +4,9 @@ PODS:
     - Alamofire (~> 4.7)
   - AlamofireNetworkActivityIndicator (2.3.0):
     - Alamofire (~> 4.7)
-  - Crashlytics (3.10.7):
-    - Fabric (~> 1.7.11)
-  - Fabric (1.7.11)
+  - Crashlytics (3.11.1):
+    - Fabric (~> 1.8.1)
+  - Fabric (1.8.2)
   - GoogleAnalytics (3.17.0)
   - Mockingjay (2.0.1):
     - Mockingjay/Core (= 2.0.1)
@@ -15,12 +15,12 @@ PODS:
     - URITemplate (~> 2.0)
   - Mockingjay/XCTest (2.0.1):
     - Mockingjay/Core
-  - Realm (3.9.0):
-    - Realm/Headers (= 3.9.0)
-  - Realm/Headers (3.9.0)
-  - RealmSwift (3.9.0):
-    - Realm (= 3.9.0)
-  - SideMenu (4.0.0)
+  - Realm (3.11.1):
+    - Realm/Headers (= 3.11.1)
+  - Realm/Headers (3.11.1)
+  - RealmSwift (3.11.1):
+    - Realm (= 3.11.1)
+  - SideMenu (5.0.2)
   - TUSafariActivity (1.0.4)
   - URITemplate (2.0.3)
 
@@ -55,16 +55,16 @@ SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AlamofireImage: 78d67ccbb763d87ba44b21583d2153500a195630
   AlamofireNetworkActivityIndicator: 18346ff6d770d9513d0ac6f2d99706f40f93dbaa
-  Crashlytics: ccaac42660eb9351b9960c0d66106b0bcf99f4fa
-  Fabric: f233c9492b3bbc1f04e3882986740f7988a58edb
+  Crashlytics: ca7ab4bc304aa216bdc2e4c1a96389ee77252203
+  Fabric: d2b22f443ba195d8a7cc204da230977c72733b40
   GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
   Mockingjay: 11a621880d2887f1775bdcf824341eb68f218450
-  Realm: 3d36f208bf3aff8335dc3298742140182bde4edb
-  RealmSwift: aa4d11917bfcfaa3ed51f219102a487ecd895447
-  SideMenu: 70ee5657df63ec3382660ec4ef470bf1cf5db07d
+  Realm: 037c5919b9ceb59d6beed5d3b031096856b119b3
+  RealmSwift: c9580133e73ef40ed340401af2dbc9a5790dfea7
+  SideMenu: e5094f0b2e7d9609e100a90ae69025abd994f882
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
   URITemplate: ace0c4c46dcf8afe6e89b4060621852886b15c3b
 
-PODFILE CHECKSUM: 53b75c48d7989cdaa0b9d66789d1002712296312
+PODFILE CHECKSUM: 30609e5869d902f669110e93d2f0186a1ca80a00
 
 COCOAPODS: 1.5.3
