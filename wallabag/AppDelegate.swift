@@ -43,7 +43,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupQuickAction()
         requestBadge()
 
+        sendUsageVersion()
+
         return true
+    }
+
+    private func sendUsageVersion() {
+        WallabagKit.getVersion(from: setting.get(for: .host)) { version in
+            Answers.logCustomEvent(withName: "Server version", customAttributes: ["server_version": version.version])
+        }
     }
 
     private func configureTheme() {

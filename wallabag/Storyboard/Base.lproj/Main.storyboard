@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.30.1" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8tH-nc-JLr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8tH-nc-JLr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.19.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -268,7 +268,7 @@
                                         <rect key="frame" x="0.0" y="631.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xQw-6I-CZu" id="JQd-KS-aCF">
-                                            <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Voice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJZ-4l-0Le">
@@ -353,19 +353,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wallabag v2 for iOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OmZ-lq-KqG">
-                                <rect key="frame" x="54" y="88" width="267" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallabag Reader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OmZ-lq-KqG">
+                                <rect key="frame" x="72.5" y="88" width="230" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="CMc-3o-0on"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="30"/>
                                 <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report issue:  https://github.com/wallabag/ios-app/issues" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROP-iA-4oU">
-                                <rect key="frame" x="29.5" y="315" width="316.5" height="37.5"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.0.0 build 14" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4F-5W-KZX">
@@ -392,18 +386,25 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Td2-rf-4Mi">
+                                <rect key="frame" x="149" y="318.5" width="77" height="30"/>
+                                <state key="normal" title="Report bug"/>
+                                <connections>
+                                    <action selector="reportBug:" destination="Y2L-5Y-ZRb" eventType="touchUpInside" id="Mwg-Kt-IsX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Td2-rf-4Mi" firstAttribute="centerX" secondItem="XKI-Xm-XQo" secondAttribute="centerX" id="6am-9F-15w"/>
                             <constraint firstItem="qk9-mt-OdM" firstAttribute="centerX" secondItem="XKI-Xm-XQo" secondAttribute="centerX" id="AO0-9k-JGk"/>
                             <constraint firstItem="wsy-Ao-UlA" firstAttribute="centerX" secondItem="XKI-Xm-XQo" secondAttribute="centerX" id="BU7-MP-UK6"/>
-                            <constraint firstItem="ROP-iA-4oU" firstAttribute="centerX" secondItem="XKI-Xm-XQo" secondAttribute="centerX" id="HrJ-vh-pOu"/>
                             <constraint firstItem="p4F-5W-KZX" firstAttribute="centerX" secondItem="XKI-Xm-XQo" secondAttribute="centerX" id="Sax-sT-cq1"/>
                             <constraint firstItem="p4F-5W-KZX" firstAttribute="top" secondItem="OmZ-lq-KqG" secondAttribute="bottom" constant="8" id="Y5i-ga-fI1"/>
                             <constraint firstItem="OmZ-lq-KqG" firstAttribute="centerX" secondItem="XKI-Xm-XQo" secondAttribute="centerX" id="amn-hj-Y0i"/>
                             <constraint firstItem="xz0-RO-cpu" firstAttribute="top" secondItem="wsy-Ao-UlA" secondAttribute="bottom" constant="20" id="dgi-Gt-HnR"/>
                             <constraint firstItem="OmZ-lq-KqG" firstAttribute="top" secondItem="acV-B0-1hz" secondAttribute="bottom" constant="24" id="ljO-q6-Omk"/>
-                            <constraint firstItem="ROP-iA-4oU" firstAttribute="centerY" secondItem="XKI-Xm-XQo" secondAttribute="centerY" id="qN1-py-CPU"/>
+                            <constraint firstItem="Td2-rf-4Mi" firstAttribute="centerY" secondItem="XKI-Xm-XQo" secondAttribute="centerY" id="rJi-em-8yP"/>
                             <constraint firstItem="wsy-Ao-UlA" firstAttribute="top" secondItem="qk9-mt-OdM" secondAttribute="bottom" constant="8" id="szJ-fC-Qck"/>
                         </constraints>
                     </view>
@@ -857,7 +858,7 @@ This token are secret and can be found in your developer page, And create a new 
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2e6-On-1Cd">
-                                <rect key="frame" x="169" y="198" width="37" height="29"/>
+                                <rect key="frame" x="169.5" y="198" width="36" height="32"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Login.Next.Button"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <state key="normal" title="Next"/>
