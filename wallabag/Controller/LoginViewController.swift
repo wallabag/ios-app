@@ -40,6 +40,7 @@ final class LoginViewController: UIViewController {
                         username: self.username.text!
                     )
                     self.performSegue(withIdentifier: "toArticles", sender: nil)
+                    WallabagSession.shared.kit = kit
                 case .error(let error):
                     self.setting.set(false, for: .wallabagIsConfigured)
                     let alertController = UIAlertController(
