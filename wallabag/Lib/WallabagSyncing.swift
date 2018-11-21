@@ -39,23 +39,24 @@ class WallabagSyncing {
     private func fetchEntry(page: Int) {
         group.enter()
         Log("fetch \(page)")
+
         kit.entry(parameters: ["page": page], queue: dispatchQueue) { [unowned self] response in
+            let syncOperation = SyncOperation(kit: self.kit)
+            syncOperation.completionBlock = {
+                self.group.leave()
+            }
             switch response {
             case .success(let entries):
+                syncOperation.setEntries(entries)
                 entries.items.forEach({self.entriesSynced.append($0.id)})
-
-                let syncOperation = SyncOperation(entries: entries, kit: self.kit)
-                self.operationQueue.addOperation(syncOperation)
                 if page < entries.pages {
                     self.fetchEntry(page: page + 1)
                 }
-                syncOperation.completionBlock = {
-                    self.group.leave()
                     self.progress?(page, entries.pages)
-                }
             case .error:
                 Log("Fetch error")
             }
+            self.operationQueue.addOperation(syncOperation)
         }
     }
 

@@ -33,12 +33,15 @@ final class SyncOperation: Operation {
             didChangeValue(forKey: oldValue.keyPath)
         }
     }
-    let entries: WallabagKitCollection<WallabagKitEntry>
+    var entries: WallabagKitCollection<WallabagKitEntry>?
     let kit: WallabagKitProtocol
 
-    init(entries: WallabagKitCollection<WallabagKitEntry>, kit: WallabagKitProtocol) {
-        self.entries = entries
+    init(kit: WallabagKitProtocol) {
         self.kit = kit
+    }
+
+    func setEntries(_ entries: WallabagKitCollection<WallabagKitEntry>) {
+        self.entries = entries
     }
 
     override func start() {
@@ -59,9 +62,10 @@ final class SyncOperation: Operation {
                 state = .finished
             }
             do {
+                guard let entries = entries?.items else { return }
                 let realm = try Realm()
                 realm.beginWrite()
-                for wallabagEntry in entries.items {
+                for wallabagEntry in entries {
                     if let entry = realm.object(ofType: Entry.self, forPrimaryKey: wallabagEntry.id) {
                         self.update(entry: entry, from: wallabagEntry)
                     } else {
