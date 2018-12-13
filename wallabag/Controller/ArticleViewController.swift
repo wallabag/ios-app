@@ -84,11 +84,15 @@ final class ArticleViewController: UIViewController, ArticleViewControllerProtoc
         }
     }
     override func viewDidAppear(_ animated: Bool) {
-        podcastViewState = .hidden
+        //podcastViewState = .hidden
+        podcastView.isHidden = true
     }
 
     @IBAction func speech(_ sender: Any) {
-        podcastViewState = podcastViewState == .show ? .hidden : .show
+        //podcastViewState = podcastViewState == .show ? .hidden : .show
+        if let podcastController = podcastController {
+            podcastController.playPressed(podcastController.playButton)
+        }
     }
 
     @IBAction func shareMenu(_ sender: UIBarButtonItem) {
