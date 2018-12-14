@@ -34,7 +34,7 @@ final class ArticleViewController: UIViewController, ArticleViewControllerProtoc
         case show
         case hidden
     }
-    var podcastViewState: PodcastViewState = .show {
+    var podcastViewState: PodcastViewState = .hidden {
         didSet {
             if podcastViewState == .show {
                 UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseIn],
@@ -84,8 +84,7 @@ final class ArticleViewController: UIViewController, ArticleViewControllerProtoc
         }
     }
     override func viewDidAppear(_ animated: Bool) {
-        //podcastViewState = .hidden
-        podcastView.isHidden = true
+        podcastViewState = .hidden
     }
 
     @IBAction func speech(_ sender: Any) {

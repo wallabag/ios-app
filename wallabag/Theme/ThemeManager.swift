@@ -8,23 +8,13 @@
 
 import UIKit
 
-protocol ThemeProtocol {
-    var name: String {get}
-    var color: UIColor {get}
-    var tintColor: UIColor {get}
-    var barStyle: UIBarStyle {get}
-    var backgroundColor: UIColor {get}
-    var navigationBarBackground: UIImage? {get}
-    var backgroundSelectedColor: UIColor {get}
-}
-
 class ThemeManager {
     static let manager = ThemeManager()
     private init() {
         currentTheme = White()
     }
 
-    private var themes: [ThemeProtocol] = [White(), Light(), Dusk(), Night()]
+    private var themes: [ThemeProtocol] = [White(), Light(), Dusk(), Night(), Black()]
     private var currentTheme: ThemeProtocol
 
     func apply(_ themeName: String) {

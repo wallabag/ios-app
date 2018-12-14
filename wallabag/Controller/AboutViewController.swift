@@ -13,7 +13,7 @@ final class AboutViewController: UIViewController {
     @IBOutlet weak var versionText: UILabel!
 
     @IBAction func reportBug(_ sender: Any) {
-        
+
     }
 
     let analytics = AnalyticsManager()

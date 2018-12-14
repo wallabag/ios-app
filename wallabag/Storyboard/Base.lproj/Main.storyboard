@@ -44,7 +44,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn4-yG-cxW" userLabel="Add Server">
-                                <rect key="frame" x="155.5" y="294" width="64" height="29"/>
+                                <rect key="frame" x="156" y="294" width="63" height="32"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Home.Register.Button"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <state key="normal" title="Register">
@@ -574,7 +574,7 @@
                                     <outlet property="delegate" destination="zsG-x9-2za" id="Sxm-qs-ywQ"/>
                                 </connections>
                             </webView>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WsA-Va-DgB" userLabel="PodcastView">
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WsA-Va-DgB" userLabel="PodcastView">
                                 <rect key="frame" x="0.0" y="220" width="375" height="403"/>
                                 <connections>
                                     <segue destination="Qo1-bX-YK8" kind="embed" id="gwI-f4-xly"/>
@@ -858,7 +858,7 @@ This token are secret and can be found in your developer page, And create a new 
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2e6-On-1Cd">
-                                <rect key="frame" x="169.5" y="198" width="36" height="32"/>
+                                <rect key="frame" x="169" y="198" width="37" height="29"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Login.Next.Button"/>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <state key="normal" title="Next"/>
@@ -1046,28 +1046,8 @@ This token are secret and can be found in your developer page, And create a new 
                                             <segue destination="cre-7a-Z1t" kind="show" id="luD-iN-k46"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Ujj-se-Ad0" style="IBUITableViewCellStyleDefault" id="Jlz-IK-cxG">
-                                        <rect key="frame" x="0.0" y="320" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jlz-IK-cxG" id="vmh-Fj-BiJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subscriptions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ujj-se-Ad0">
-                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="B9h-vi-Sne" kind="show" id="jUp-0j-ixB"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="hwn-bm-Zgf" style="IBUITableViewCellStyleDefault" id="iFn-Wh-myR">
-                                        <rect key="frame" x="0.0" y="364" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="320" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iFn-Wh-myR" id="L78-Pz-CkZ">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -1087,7 +1067,7 @@ This token are secret and can be found in your developer page, And create a new 
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="pO6-f6-PiT" style="IBUITableViewCellStyleDefault" id="ggB-CS-jug">
-                                        <rect key="frame" x="0.0" y="408" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="364" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ggB-CS-jug" id="yN5-Qf-hFl">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>

@@ -31,7 +31,7 @@ platform :ios do
     commit_version_bump(message: 'Build Version Bump by fastlane', force: true)
     
     build_number = Actions.lane_context[Actions::SharedValues::BUILD_NUMBER]
-    add_git_tag(tag: "build-#{build_number}")
+    add_git_tag(tag: "build-#{build_number}", force: true)
     push_to_git_remote
   end
 
