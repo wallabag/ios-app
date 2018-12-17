@@ -49,8 +49,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func sendUsageVersion() {
-        WallabagKit.getVersion(from: setting.get(for: .host)) { version in
+        WallabagKit.getVersion(from: setting.get(for: .host)) { [unowned self] version in
             Answers.logCustomEvent(withName: "Server version", customAttributes: ["server_version": version.version])
+
+            if version.supportedVersion == .unsupported {
+                Log("Unsupporterd version")
+                let alert = UIAlertController(title: "Unsupported version", message: "It looks like you are using an unsupported server version. Use the application with caution.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+
+                self.window?.rootViewController?.present(alert, animated: true, completion: nil)
+            }
         }
     }
 
