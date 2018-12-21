@@ -24,9 +24,9 @@ final class ServerViewController: UIViewController {
 
     @IBAction func nextPressed(_ sender: UIButton) {
         sender.isEnabled = false
+        self.setting.set(self.server.text!, for: .host)
         validateServer(string: server.text!) { [unowned self] isValid, _ in
             if isValid {
-                self.setting.set(self.server.text!, for: .host)
                 self.performSegue(withIdentifier: "toClientId", sender: nil)
             } else {
                 let alertController = UIAlertController(
@@ -49,7 +49,6 @@ final class ServerViewController: UIViewController {
                     completion(false, nil)
                     return
             }
-
             WallabagKit.getVersion(from: string) { version in
                 completion(version.supportedVersion != .unsupported, version)
             }
