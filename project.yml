@@ -68,6 +68,10 @@ targets:
     platform: iOS
     sources: [wallabagKit]
 schemes:
+  wallabag:
+    build:
+      targets:
+        wallabag: all
   WallabagTest:
     build:
       targets:
