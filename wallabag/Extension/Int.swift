@@ -10,9 +10,12 @@ import Foundation
 
 extension Int {
     var readingTime: String {
-        let date = NSDate(timeIntervalSince1970: TimeInterval(self * 60))
+        let date = Date(timeIntervalSince1970: TimeInterval(self * 60))
         let dayTimePeriodFormatter = DateFormatter()
-        dayTimePeriodFormatter.dateFormat = "mm:ss"
+        dayTimePeriodFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        //dayTimePeriodFormatter.locale = Locale(identifier: "en_US_POSIX")
+        //dayTimePeriodFormatter.calendar = Calendar(identifier: .iso8601)
+        dayTimePeriodFormatter.dateFormat = "HH:mm:ss"
 
         return dayTimePeriodFormatter.string(from: date as Date)
     }

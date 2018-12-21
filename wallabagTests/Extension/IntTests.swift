@@ -12,7 +12,8 @@ import XCTest
 class IntTests: XCTestCase {
 
     func testReadingTime() {
-        XCTAssertEqual("01:00", 1.readingTime)
-        XCTAssertEqual("02:00", 2.readingTime)
+        XCTAssertEqual("00:01:00", 1.readingTime)
+        XCTAssertEqual("00:02:00", 2.readingTime)
+        XCTAssertEqual("01:01:00", 61.readingTime)
     }
 }
