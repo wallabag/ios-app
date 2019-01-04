@@ -100,6 +100,11 @@ final class SyncOperation: Operation {
     private func update(entry: Entry, from article: WallabagKitEntry) {
         let articleUpdatedAt = Date.fromISOString(article.updatedAt) ?? Date()
         if entry.updatedAt != articleUpdatedAt {
+            if articleUpdatedAt > entry.updatedAt! {
+                entry.hydrate(from: article)
+            } else {
+                update(entry: entry)
+            }
             entry.hydrate(from: article)
         } else {
             update(entry: entry)
