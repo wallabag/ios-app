@@ -1,1 +1,3 @@
-Bug fix and new Dark theme.
+Fixing major issues with article sync.
+
+Sorry for the inconvenience.

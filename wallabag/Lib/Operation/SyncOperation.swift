@@ -98,7 +98,8 @@ final class SyncOperation: Operation {
     }
 
     private func update(entry: Entry, from article: WallabagKitEntry) {
-        let articleUpdatedAt = Date.fromISOString(article.updatedAt) ?? Date()
+        #warning("@TODO handle article without updated date needed")
+        if let articleUpdatedAt = Date.fromISOString(article.updatedAt) {
         if entry.updatedAt != articleUpdatedAt {
             if articleUpdatedAt > entry.updatedAt! {
                 entry.hydrate(from: article)
@@ -106,17 +107,16 @@ final class SyncOperation: Operation {
                 update(entry: entry)
             }
             entry.hydrate(from: article)
-        } else {
-            update(entry: entry)
         }
+    }
     }
 
     private func update(entry: Entry) {
         kit.entry(
             update: entry.id,
             parameters: [
-                "archive": entry.isArchived.hashValue,
-                "starred": entry.isStarred.hashValue
+                "archive": entry.isArchived.int,
+                "starred": entry.isStarred.int
         ], queue: nil) { _ in
             Log("Update from local to server")
         }
