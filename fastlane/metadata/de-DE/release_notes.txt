@@ -1,3 +1,1 @@
-Fixing major issues with article sync.
-
-Sorry for the inconvenience.
+Support 2.3.6 server version
