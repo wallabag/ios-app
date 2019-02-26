@@ -1,0 +1,1331 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BF_00D91E5F9A9D166BC797C715B7F35902 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_315AD6439BE85BB13FC17E766770E347 /* TipViewController.swift */; };
+		BF_047B132AA818924F42C07857A48D5648 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_250D2539097D8AD4F65F91206902AF43 /* AnalyticsManager.swift */; };
+		BF_0576133F70765A88C0F8BD8FC41C19EE /* article.html in Resources */ = {isa = PBXBuildFile; fileRef = FR_317F9C93FC0631DF00AB2E1FAEF90DD8 /* article.html */; };
+		BF_0705B526CC56B92C6135AB3CEAB62908 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_748B8A6308E71467419C89AF0B8851D9 /* ArticleTableViewCell.swift */; };
+		BF_0958BD47C0A373C73825495FA643F41D /* UbuntuTitling-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FR_1DE9D932C526142E220FFC665A0EC101 /* UbuntuTitling-Bold.ttf */; };
+		BF_1409F149805969A9DBDDEE90D29E68DE /* WallabagCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_82E6C4DE6233AF1C7AC8D97E23DDE0F5 /* WallabagCommon.framework */; };
+		BF_16EC634D0D63828D6202CCABA3D1AD41 /* White.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_DA09BB346347C06FFAD641070BE2A9FD /* White.swift */; };
+		BF_16FBEE28F3FDAA53565923290DA21840 /* WallabagAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_E776B6F65D97A6E9F1F6FF526198278E /* WallabagAuth.swift */; };
+		BF_1A5195CA8D30551EC224B3121FBFC1F4 /* white.css in Resources */ = {isa = PBXBuildFile; fileRef = FR_E41029877586205F3E830CC9AFE0F388 /* white.css */; };
+		BF_1CE07035053A5DB167C27DA29AC0FC70 /* SyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_EB94C29743AD862E9F49EBC1F0D0F02E /* SyncOperation.swift */; };
+		BF_1D1FBDA14845DDF75F10B4FA61AFBDA5 /* VoiceChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_AE53A3DB97F325B6D9DB02AFB1731782 /* VoiceChoiceTableViewController.swift */; };
+		BF_1DBCBFC32B6F4A8E0AB791304B1B5225 /* ArticlesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_C3C4233F888858AE47654B49C6B3D482 /* ArticlesUITests.swift */; };
+		BF_1DE4ED4D6E3A2B33C04E95951D2AD25C /* light.css in Resources */ = {isa = PBXBuildFile; fileRef = FR_961F3C1FF1B21F7C50102EC1F49BBBD1 /* light.css */; };
+		BF_1E5922FFFB75D12639D9E575600F6CC2 /* Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = FR_59D833DA3B62EC2460F61AED1FC045C5 /* Bridge.m */; };
+		BF_20305CD3F44AD3F0A300A08D28D4712F /* EntriesCollection.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_89CBFB2A6488E68DF37E66008BC3A23A /* EntriesCollection.json */; };
+		BF_218B02857CD5370E001E1DEDBCD9DA81 /* XCTExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_C9900CB03BB06DCC825054DAFDE4D907 /* XCTExtension.swift */; };
+		BF_27B3C5BB859104CEF0AB1D52843622B4 /* UIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_3996D9FD806100BF0335AAE1A4EE148E /* UIWebView.swift */; };
+		BF_28D11B569BD97D0663CF4229C773A732 /* WallabagSyncing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_D555C88886417F7FFACF8E780E3AD81F /* WallabagSyncing.swift */; };
+		BF_2B92FCD9D4DF3C35C6CEAE0D4A46F98F /* bagit.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FR_A558DD3F249C938DA7F179688063D500 /* bagit.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BF_330993596D71B361978BE9F6CC8CE80C /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_F7BDFB5A5171A43D14D5E7009B3AF255 /* Dictionary.swift */; };
+		BF_3405357D2A8A06979EC0F11E7AEEBCF2 /* ratatouille.css in Resources */ = {isa = PBXBuildFile; fileRef = FR_C6ACC6D258ADB3D12E651FB3A8EA41AA /* ratatouille.css */; };
+		BF_35848BB94A3F0CDC92714E6B0DF3D7B9 /* WallabagKitEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_FB57B50C0018C70024665EF4B6003B02 /* WallabagKitEntry.swift */; };
+		BF_37983FE718ADC942C53B1B1D6B7325C0 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_748A54FFB777972CBC13D57DA248E216 /* SettingsTableViewController.swift */; };
+		BF_38E2D165C7E2E8A343AA0CEACA342310 /* black.css in Resources */ = {isa = PBXBuildFile; fileRef = FR_0499A5EA97C3340763652A3DED80B81F /* black.css */; };
+		BF_39F871EE675DC699FB335EC1E12564C3 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_EAD3D12A2FA96A8314701F1BD7EBF6EC /* Light.swift */; };
+		BF_3C34FF37F2AAB722ED3278184555355B /* WallabagAuthSuccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_709ED9B3B72198FF7033B14173B6DE6E /* WallabagAuthSuccessTests.swift */; };
+		BF_3D48DCA00E8CF928EC9C14036EEFD36B /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FR_B59475CCE7E9CDF9B6B6C979AF3EBC87 /* Media.xcassets */; };
+		BF_3DBF7C7BDA9E629B717DCD93B144C785 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_9E9BE38AB90AD883FD5021F11A8FAA93 /* Setting.swift */; };
+		BF_3F1D949902F6926241CB902FE1EADEB3 /* WallabagCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_82E6C4DE6233AF1C7AC8D97E23DDE0F5 /* WallabagCommon.framework */; };
+		BF_410C8342258361866BCC68C2408CF424 /* ArticlesTableViewController+pastboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_54B1532FB2199D5A7368CCEB6B21DBD3 /* ArticlesTableViewController+pastboard.swift */; };
+		BF_42EE562310F74101FFA47579EB427A90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = VG_6CD892D2BBF5FE25B74443256D4272AA /* Main.storyboard */; };
+		BF_438D847CFB746FE9075482EC514F7DF6 /* NSNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_E5D0C792EF4BAB178E7682B261515B9F /* NSNotification.swift */; };
+		BF_4C392115E51DA700BB8909B337B31EDB /* WallabagKitCollectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_12B18233ADE8A34E512BD8B59C5C823E /* WallabagKitCollectionResponse.swift */; };
+		BF_4D1280BDF0B04EFCCFE420F95E3833AE /* WallabagError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_E0EE35D548DFC2E4DD114575AD748AB8 /* WallabagError.swift */; };
+		BF_52CA2EA1E65C2A35D518FCC8878DAE42 /* PaidSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_9FE0A9D67CA3E51B3186F35BC61793D8 /* PaidSubscription.swift */; };
+		BF_52DE0750D8F47C6E0DCEEF3E9926DF6E /* ThemeChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_256529387B0BA37F7523EC3B4761C8BC /* ThemeChoiceTableViewController.swift */; };
+		BF_58567850CC932A049952E736EE61B0DE /* WallabagAuthErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_C3CA4908C169B55F757B33B99B07B0D1 /* WallabagAuthErrorTests.swift */; };
+		BF_5E32F916F9BCFA405DB48696D544FCA2 /* WallabagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_30FF53C4D2743E54768DC21BC6D095F3 /* WallabagKit.framework */; };
+		BF_61A51732C997F3090974F35FC6A51BA4 /* ServerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_F713F03368A599A8750912FE8BC6F7C2 /* ServerViewController.swift */; };
+		BF_6501D4BDF703ADAC0E1EBB67937832A7 /* EmptyCollection.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_2BF273D49F4833BC11A86510154631AF /* EmptyCollection.json */; };
+		BF_69A8B5C65C16A5031C7513FFCB6BCEBF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_9904635DBD17CD8DEC268B0000282D5E /* Utils.swift */; };
+		BF_6A08E18EA6029DF0BFAE0EE3BDD1BF0C /* TokenAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_96C789F3C88641EE29D6624BC8CDB21E /* TokenAdapter.swift */; };
+		BF_6FC7E4B0BF1DD82534758E09D42CB4BD /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_7D29FAB95590AC974DCDAC639A09A15A /* ArticleViewController.swift */; };
+		BF_762B1448F05D92E507BBC9314D9CDA2E /* Entry.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_4F6DCF741037732F30E4ED36FA3E5984 /* Entry.json */; };
+		BF_762E1EF65D6144988B757F7F11555A40 /* WallabagAuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_C362FD77426C778CB79609AAAEDE8D74 /* WallabagAuthError.swift */; };
+		BF_767B670EFD6E74785BD2212AF6B9A34A /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_BC1A4543A5BCE695E19D56D0A17CE7C6 /* UIImageView.swift */; };
+		BF_7CC38D8557CAD849430D9776421E5E5E /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_CB6C74A2C8026DC8DECD880DB6E11937 /* StringTests.swift */; };
+		BF_80E0A78558343DE730DEA217B8252318 /* ArticlesTableViewController+UISearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_56186CC4C8CE1EFA0554417A91A72A00 /* ArticlesTableViewController+UISearchResults.swift */; };
+		BF_83312011338DF667DC8174DD85C2A1B7 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_2E58EB127F216B99AAB45039FA033FD9 /* Int.swift */; };
+		BF_8388B13A002651D2E144ADFFB0441F2A /* WallabagCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FR_82E6C4DE6233AF1C7AC8D97E23DDE0F5 /* WallabagCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF_87E311661C0B3BA3247CC388C7CCD8AF /* WallabagKitCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_EFE6ED1C47DAA622DFB6E57FF56AB4B9 /* WallabagKitCollectionTests.swift */; };
+		BF_8B31D8FCBE24A0B24D928AC2A5D8883B /* PodcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_8040EBB1039DE9F3631AF6947C7E9500 /* PodcastViewController.swift */; };
+		BF_8D6AECAD1330C2318EF223E35E3AC61D /* Black.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_9F42F31690A7DC7D012875FD435B91AF /* Black.swift */; };
+		BF_8DF5B0DFCF66D71D7A3C7EF0E10B2EEA /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_448862BF589F4829A648C0F56DC31F9A /* DictionaryTests.swift */; };
+		BF_925ACE132CABB3F8D50A6B5DC619A2ED /* WallabagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_30FF53C4D2743E54768DC21BC6D095F3 /* WallabagKit.framework */; };
+		BF_93075D9BA7C176EDFDA77E5E3B181EBF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_638B0E94F7CFDAE0590D0F5B445F46A3 /* LoginViewController.swift */; };
+		BF_9BBB16CA6E4D3A7D5F136DBB84BD905F /* WallabagVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_B1D5A1B59CE28AE553B9A233F0E64D1F /* WallabagVersion.swift */; };
+		BF_9DC6B3C1B4267E7BF73A9F9365B14227 /* Dusk.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_17692053F35D14DF23BEA33BEA938F30 /* Dusk.swift */; };
+		BF_A00A76038455E614969B0C4D0C0CF45B /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_CB80D9AF5E152C1943DB3A301D670B91 /* IntTests.swift */; };
+		BF_A21BB2F27788E4441068455E497A3358 /* dusk.css in Resources */ = {isa = PBXBuildFile; fileRef = FR_F0CF05B945E91969A44C04BE4530C49C /* dusk.css */; };
+		BF_A263058FD57BCE7DECF1322ABBB1C729 /* UIPodcastSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_32C57241F64E1AA0D53CFA7BA2CF2BFC /* UIPodcastSlider.swift */; };
+		BF_A31D94510D6C4BD65AC0122EB64626C8 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_6121D1E9B47B792E1964E21692ED3F7D /* String.swift */; };
+		BF_A3C2C3584CE33DDAC30BEBE5596FFC83 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_290ECAC1FE613D28DF9CB4D061F101F9 /* KeychainPasswordItem.swift */; };
+		BF_A732338E1D54D23BE388646C6CEBF86B /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_0344656411C412FE13B14B176D31788F /* ArticlesTableViewController.swift */; };
+		BF_B103129BE6658829E2C3D2A06000273C /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = FR_A40BCE81D37EA403FF10738F2054C6F6 /* main.css */; };
+		BF_B1157D4BF6AD7D39E2F5385157298795 /* justify.css in Resources */ = {isa = PBXBuildFile; fileRef = FR_8B1C0A3D787E489A3283413D0A549963 /* justify.css */; };
+		BF_B19FB0956CC0285F9184C852A8AF8964 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FR_F94DA63289F6177D1927EB1C68054CF9 /* Assets.xcassets */; };
+		BF_B254447C18A3B0B138019B3D89F74819 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_0A6C6DDD5DC94BB30E7D5FE8EB8185B6 /* AboutViewController.swift */; };
+		BF_B65C56029A480EC410440D0564ACCC07 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_632A9CD2A020AD0A4DF6207A3AC2599E /* Bool.swift */; };
+		BF_B9C6AF04850C3AB60715C3FF13432B78 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_98514F67A77EA8D6B6267CBD63F94725 /* Entry.swift */; };
+		BF_BA780EE50C69580433E87F40A2057664 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = VG_EA96FF2BC82D31145832EB0EF527D3DA /* LaunchScreen.storyboard */; };
+		BF_C08A9375D74D7DB78FE8F985821676D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_9600E47FC00A35A057E5DE937EDBFDF3 /* AppDelegate.swift */; };
+		BF_C111BF36F49BF3218CAB8697AE292541 /* WallabagKitCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_53A7AFE531920C01689A4DA430C0CA0F /* WallabagKitCollection.swift */; };
+		BF_C20A6A5CECA3D24560032AB50BBEC618 /* ClientIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_1958605A09104E19FD12C7A197BDCDDD /* ClientIdViewController.swift */; };
+		BF_C26A33FB794CDBA88061605B28BCADDE /* Night.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_8D62A2546C66F5585479D35DCDBC5485 /* Night.swift */; };
+		BF_C34B818DF3810583F726069B8FF3F5D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FR_F94DA63289F6177D1927EB1C68054CF9 /* Assets.xcassets */; };
+		BF_C63B962A10CD74586351B9DB5E0FBBE1 /* WallabagKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_AAAE3FAEDFB1E2658F53DC3C5B9D5F2A /* WallabagKitTests.swift */; };
+		BF_C98578DAC2B60106DE8F261D7D58F753 /* wallabag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = VG_F540DF4D4B4A00E6F8DD2EB20CDDDCED /* wallabag.xcdatamodeld */; };
+		BF_C9F13CB7B3B557E809E6D9898B0791C2 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_C16D1C5C72DB19E504BB13DC0273DD1D /* Date.swift */; };
+		BF_CD815E61A34934671D18A3D50D33C4D8 /* WallabagSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_D12F9BFF12ECE9D85363436FAF065862 /* WallabagSession.swift */; };
+		BF_CE964B07FEB75562961FA60EC0BAC3AC /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_AC4562CEF7DED37A7E444808BE77D845 /* SubscriptionViewController.swift */; };
+		BF_D43865006969E073154F7B621CF59B41 /* WallabagSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_501742B816EAED2BC7637BD9696D3B07 /* WallabagSubscription.swift */; };
+		BF_DB7F468621011B78AA80968FF9B4DD93 /* RetrieveMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_26E374F0AF1D1FBEC022213E082366DF /* RetrieveMode.swift */; };
+		BF_DCFFD8C8A227B0DFCA01E513C63768CF /* WallabagKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_2B05AB740144CAD6EB0C8052792EE957 /* WallabagKit.swift */; };
+		BF_DD384BCC5299EA5EEB8825713EBE508F /* Localizable.plist in Resources */ = {isa = PBXBuildFile; fileRef = FR_F21BD2487093365E104F75BAF6110063 /* Localizable.plist */; };
+		BF_E31E28734E796243BE3166C951A2188A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_B99F86A83D2A96FD01E5D62F07C4C804 /* HomeViewController.swift */; };
+		BF_E4C5BA8B967986D005FC808C1952FDD1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = VG_BEEC8418DD761BF3A09EDB772794FA5C /* Localizable.strings */; };
+		BF_E5E5782D6CDF4EAC54A27F1EAA358264 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_5CD42737A10942BF90FB3FCE8BF74956 /* ThemeManager.swift */; };
+		BF_E5FC1DABBBE6571009018308372A700C /* WallabagKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FR_30FF53C4D2743E54768DC21BC6D095F3 /* WallabagKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BF_E5FE0D37FE59FE82D435BA78E800F06D /* WallabagStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_8D21AE6597E312DB2EBBFCD9E0C9A6C3 /* WallabagStore.swift */; };
+		BF_E6040E8172A1379E9F3BF5092595589A /* AuthSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_EA8F1AFA4AAA4DA7100F817954FA4F9F /* AuthSuccess.json */; };
+		BF_E780EC3E849303D73BE290A1B3579062 /* ThemedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_F62DBF6AB382156DE823A6D9EE143721 /* ThemedTableViewCell.swift */; };
+		BF_E86293481ACAC83DE1587222089DDC5D /* EntryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_5C8DA6DE33F2FACC03BFACE708CD2ED6 /* EntryExtension.swift */; };
+		BF_E8710C248C5F4249B0BB296DE58850BB /* night.css in Resources */ = {isa = PBXBuildFile; fileRef = FR_6B880FEB7099AF97E87A948C5830143E /* night.css */; };
+		BF_EA215B60EEF235007184EA5642A0D739 /* WallabagKitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_7970C57402EAD79D7F0E02564CEBD5D6 /* WallabagKitResponse.swift */; };
+		BF_EBBF32C4FDBC17CF83A9DA232E92AF63 /* wallabag2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = VG_005B14D0EA11F73FED5913E6316966AD /* wallabag2.xcdatamodeld */; };
+		BF_ED77B66718E560A945220474644CE261 /* RegisterProcessUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_9121B30EA31B0520AB30AD93B296B817 /* RegisterProcessUITests.swift */; };
+		BF_F2ADFB3B4C1B0836F13DB4A1DE5406A7 /* TokenAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_AB15CF3A73378A512C3D9BBC9F7ECD65 /* TokenAdapterTests.swift */; };
+		BF_F3D83B60EAA7409ECA0C6179871F8B10 /* ThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_729C1F2BE744A3E09D2CCA9CE975A461 /* ThemeProtocol.swift */; };
+		BF_F455B9C80CD63DD87EF42992438C4F82 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_39287A02F2B756958D56349AC317D33B /* ShareViewController.swift */; };
+		BF_F4704CC172521D78A1A955AD8BC9F40A /* AuthWrongPassword.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_AA3C9177E62CEEBC8018AAB81DA95B35 /* AuthWrongPassword.json */; };
+		BF_FAB4EB8A6C5A3541452A95839FE485E8 /* WallabagAuthSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_4496EDBF32EDD9F2B4CBACDBCD7A2C34 /* WallabagAuthSuccess.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CIP_071FC410EEBE2F113AD901110C6F00B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = P_EDC2B1D3872816D6335919C238A9EA25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = NT_2BC32F97DBD026A7F5702723F0BF8EEA;
+			remoteInfo = WallabagKit;
+		};
+		CIP_1ACB0324E37D86480F884882645570C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = P_EDC2B1D3872816D6335919C238A9EA25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = NT_BD23E71198CA112A6681701D37EB5AFF;
+			remoteInfo = wallabag;
+		};
+		CIP_870664F8474136D7F2D8C6349F63FDB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = P_EDC2B1D3872816D6335919C238A9EA25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = NT_9041DA9DE0CA801DA5DDB449DEC4E2DB;
+			remoteInfo = WallabagCommon;
+		};
+		CIP_A82E7FE8DFB2E12FAFE6537A425B76DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = P_EDC2B1D3872816D6335919C238A9EA25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = NT_BD23E71198CA112A6681701D37EB5AFF;
+			remoteInfo = wallabag;
+		};
+		CIP_ACDF73173331CEF7D000391E9E309BD4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = P_EDC2B1D3872816D6335919C238A9EA25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = NT_9041DA9DE0CA801DA5DDB449DEC4E2DB;
+			remoteInfo = WallabagCommon;
+		};
+		CIP_E00AFC5D83AC284D61515ECEFFC8709F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = P_EDC2B1D3872816D6335919C238A9EA25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = NT_2BC32F97DBD026A7F5702723F0BF8EEA;
+			remoteInfo = WallabagKit;
+		};
+		CIP_FA80C5FDD9AB4C553980D36FC3D391FA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = P_EDC2B1D3872816D6335919C238A9EA25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = NT_489A0A0E84B6A7E06B0FAA10CDEBABA5;
+			remoteInfo = bagit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CFBP_BBB4D336DFE3473638D4284D25266CBD /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BF_2B92FCD9D4DF3C35C6CEAE0D4A46F98F /* bagit.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CFBP_FB6EE7002903288EA097197B26A1C90A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BF_8388B13A002651D2E144ADFFB0441F2A /* WallabagCommon.framework in Embed Frameworks */,
+				BF_E5FC1DABBBE6571009018308372A700C /* WallabagKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FR_0344656411C412FE13B14B176D31788F /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
+		FR_0499A5EA97C3340763652A3DED80B81F /* black.css */ = {isa = PBXFileReference; path = black.css; sourceTree = "<group>"; };
+		FR_0A6C6DDD5DC94BB30E7D5FE8EB8185B6 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		FR_0D81D880CC2314E3DD84B9C8E00667AD /* wallabagUITests-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "wallabagUITests-Debug.xcconfig"; sourceTree = "<group>"; };
+		FR_0EF389E23F508F60AB1F657ECF52C8CF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FR_12B18233ADE8A34E512BD8B59C5C823E /* WallabagKitCollectionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitCollectionResponse.swift; sourceTree = "<group>"; };
+		FR_17692053F35D14DF23BEA33BEA938F30 /* Dusk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dusk.swift; sourceTree = "<group>"; };
+		FR_1958605A09104E19FD12C7A197BDCDDD /* ClientIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientIdViewController.swift; sourceTree = "<group>"; };
+		FR_1BCA2B5D79E6386A16A4B6341BC136FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FR_1DE9D932C526142E220FFC665A0EC101 /* UbuntuTitling-Bold.ttf */ = {isa = PBXFileReference; path = "UbuntuTitling-Bold.ttf"; sourceTree = "<group>"; };
+		FR_250D2539097D8AD4F65F91206902AF43 /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
+		FR_256529387B0BA37F7523EC3B4761C8BC /* ThemeChoiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeChoiceTableViewController.swift; sourceTree = "<group>"; };
+		FR_26E374F0AF1D1FBEC022213E082366DF /* RetrieveMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveMode.swift; sourceTree = "<group>"; };
+		FR_290ECAC1FE613D28DF9CB4D061F101F9 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
+		FR_2B05AB740144CAD6EB0C8052792EE957 /* WallabagKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKit.swift; sourceTree = "<group>"; };
+		FR_2BF273D49F4833BC11A86510154631AF /* EmptyCollection.json */ = {isa = PBXFileReference; path = EmptyCollection.json; sourceTree = "<group>"; };
+		FR_2E58EB127F216B99AAB45039FA033FD9 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		FR_30E9D498939E8CFB6D9100E2EFCAEE2F /* wallabag.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabag.xcdatamodel; sourceTree = "<group>"; };
+		FR_30FF53C4D2743E54768DC21BC6D095F3 /* WallabagKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WallabagKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_315AD6439BE85BB13FC17E766770E347 /* TipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
+		FR_317F9C93FC0631DF00AB2E1FAEF90DD8 /* article.html */ = {isa = PBXFileReference; path = article.html; sourceTree = "<group>"; };
+		FR_323841563C4A3B7DCF903F8AB57A64A0 /* wallabagUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = wallabagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_32C57241F64E1AA0D53CFA7BA2CF2BFC /* UIPodcastSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPodcastSlider.swift; sourceTree = "<group>"; };
+		FR_39287A02F2B756958D56349AC317D33B /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		FR_3996D9FD806100BF0335AAE1A4EE148E /* UIWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWebView.swift; sourceTree = "<group>"; };
+		FR_3AD905BC68B1086C84A70A1C09F7267F /* wallabag-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wallabag-Bridging-Header.h"; sourceTree = "<group>"; };
+		FR_3C63EF667F0034B52FD8C3A71EAA05F7 /* bagit-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "bagit-Debug.xcconfig"; sourceTree = "<group>"; };
+		FR_3D36C33EB332B689DF2343AE9E4EE6FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FR_448862BF589F4829A648C0F56DC31F9A /* DictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
+		FR_4496EDBF32EDD9F2B4CBACDBCD7A2C34 /* WallabagAuthSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuthSuccess.swift; sourceTree = "<group>"; };
+		FR_4F6DCF741037732F30E4ED36FA3E5984 /* Entry.json */ = {isa = PBXFileReference; path = Entry.json; sourceTree = "<group>"; };
+		FR_501742B816EAED2BC7637BD9696D3B07 /* WallabagSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagSubscription.swift; sourceTree = "<group>"; };
+		FR_5259EA32015B0B9F139FF20E34F493C3 /* wallabagTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = wallabagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_53A7AFE531920C01689A4DA430C0CA0F /* WallabagKitCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitCollection.swift; sourceTree = "<group>"; };
+		FR_54B1532FB2199D5A7368CCEB6B21DBD3 /* ArticlesTableViewController+pastboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesTableViewController+pastboard.swift"; sourceTree = "<group>"; };
+		FR_56186CC4C8CE1EFA0554417A91A72A00 /* ArticlesTableViewController+UISearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesTableViewController+UISearchResults.swift"; sourceTree = "<group>"; };
+		FR_59D833DA3B62EC2460F61AED1FC045C5 /* Bridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bridge.m; sourceTree = "<group>"; };
+		FR_5B447F87774BEBB6A41ADE06979E95A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FR_5C8DA6DE33F2FACC03BFACE708CD2ED6 /* EntryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryExtension.swift; sourceTree = "<group>"; };
+		FR_5CD42737A10942BF90FB3FCE8BF74956 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		FR_5DE83659FDAF5871759C0A7D752A7823 /* wallabag-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "wallabag-Release.xcconfig"; sourceTree = "<group>"; };
+		FR_5E14209A3FF3601917A397C25C00B4B4 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		FR_606AAB346453DED260A405BD16778883 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FR_6121D1E9B47B792E1964E21692ED3F7D /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		FR_61A676531CA9D9C92B75347167B7A6A6 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FR_632A9CD2A020AD0A4DF6207A3AC2599E /* Bool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
+		FR_638B0E94F7CFDAE0590D0F5B445F46A3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FR_6B880FEB7099AF97E87A948C5830143E /* night.css */ = {isa = PBXFileReference; path = night.css; sourceTree = "<group>"; };
+		FR_705B60FAB625A6C6618A0D60722C8D36 /* wallabagUITests-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "wallabagUITests-Release.xcconfig"; sourceTree = "<group>"; };
+		FR_709ED9B3B72198FF7033B14173B6DE6E /* WallabagAuthSuccessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuthSuccessTests.swift; sourceTree = "<group>"; };
+		FR_729C1F2BE744A3E09D2CCA9CE975A461 /* ThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProtocol.swift; sourceTree = "<group>"; };
+		FR_741636153F3013F637E866140A8EEC77 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FR_748A54FFB777972CBC13D57DA248E216 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		FR_748B8A6308E71467419C89AF0B8851D9 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		FR_7970C57402EAD79D7F0E02564CEBD5D6 /* WallabagKitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitResponse.swift; sourceTree = "<group>"; };
+		FR_7ABC493E8F892DF451AABBB415AFE326 /* wallabag-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "wallabag-Debug.xcconfig"; sourceTree = "<group>"; };
+		FR_7C185759A7CA2367F6B2A09ECF202E33 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Main.strings; sourceTree = "<group>"; };
+		FR_7D29FAB95590AC974DCDAC639A09A15A /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		FR_7EF8E3725DA0867206C920EE5FBF277C /* wallabag.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = wallabag.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_7F369F01648273740FFAC734BF79A78E /* wallabag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wallabag.entitlements; sourceTree = "<group>"; };
+		FR_8040EBB1039DE9F3631AF6947C7E9500 /* PodcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastViewController.swift; sourceTree = "<group>"; };
+		FR_81AA471161740DD167D7CAF669B872BD /* wallabag2v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabag2v2.xcdatamodel; sourceTree = "<group>"; };
+		FR_82E6C4DE6233AF1C7AC8D97E23DDE0F5 /* WallabagCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WallabagCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_89CBFB2A6488E68DF37E66008BC3A23A /* EntriesCollection.json */ = {isa = PBXFileReference; path = EntriesCollection.json; sourceTree = "<group>"; };
+		FR_89F054C6A0F715E5EF3B91F79CE58DA8 /* wallabag2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabag2.xcdatamodel; sourceTree = "<group>"; };
+		FR_8B1C0A3D787E489A3283413D0A549963 /* justify.css */ = {isa = PBXFileReference; path = justify.css; sourceTree = "<group>"; };
+		FR_8D21AE6597E312DB2EBBFCD9E0C9A6C3 /* WallabagStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagStore.swift; sourceTree = "<group>"; };
+		FR_8D62A2546C66F5585479D35DCDBC5485 /* Night.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Night.swift; sourceTree = "<group>"; };
+		FR_9121B30EA31B0520AB30AD93B296B817 /* RegisterProcessUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProcessUITests.swift; sourceTree = "<group>"; };
+		FR_9600E47FC00A35A057E5DE937EDBFDF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FR_961F3C1FF1B21F7C50102EC1F49BBBD1 /* light.css */ = {isa = PBXFileReference; path = light.css; sourceTree = "<group>"; };
+		FR_966247DE2278EAC741F8CADCD0454AD1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FR_96C789F3C88641EE29D6624BC8CDB21E /* TokenAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAdapter.swift; sourceTree = "<group>"; };
+		FR_98514F67A77EA8D6B6267CBD63F94725 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		FR_9904635DBD17CD8DEC268B0000282D5E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		FR_9E9BE38AB90AD883FD5021F11A8FAA93 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		FR_9F42F31690A7DC7D012875FD435B91AF /* Black.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Black.swift; sourceTree = "<group>"; };
+		FR_9FE0A9D67CA3E51B3186F35BC61793D8 /* PaidSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidSubscription.swift; sourceTree = "<group>"; };
+		FR_A3394AD5B62C39C7F3B5011E3477304B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FR_A40B0F5D5C1999D5A85DD6F73367CD83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FR_A40BCE81D37EA403FF10738F2054C6F6 /* main.css */ = {isa = PBXFileReference; path = main.css; sourceTree = "<group>"; };
+		FR_A558DD3F249C938DA7F179688063D500 /* bagit.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = bagit.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_AA3C9177E62CEEBC8018AAB81DA95B35 /* AuthWrongPassword.json */ = {isa = PBXFileReference; path = AuthWrongPassword.json; sourceTree = "<group>"; };
+		FR_AAAE3FAEDFB1E2658F53DC3C5B9D5F2A /* WallabagKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitTests.swift; sourceTree = "<group>"; };
+		FR_AB15CF3A73378A512C3D9BBC9F7ECD65 /* TokenAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAdapterTests.swift; sourceTree = "<group>"; };
+		FR_AC4562CEF7DED37A7E444808BE77D845 /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
+		FR_ADF34B1BF3A7AF7D035A47CC6C5A02E3 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		FR_AE53A3DB97F325B6D9DB02AFB1731782 /* VoiceChoiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceChoiceTableViewController.swift; sourceTree = "<group>"; };
+		FR_B1D5A1B59CE28AE553B9A233F0E64D1F /* WallabagVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagVersion.swift; sourceTree = "<group>"; };
+		FR_B31DA5B35D7E8A4CBB7576648A35021E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FR_B3F20BFCCD3C9F0039EE2AC6D8D1A71B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FR_B59475CCE7E9CDF9B6B6C979AF3EBC87 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		FR_B99F86A83D2A96FD01E5D62F07C4C804 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FR_BC1A4543A5BCE695E19D56D0A17CE7C6 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		FR_C16D1C5C72DB19E504BB13DC0273DD1D /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		FR_C362FD77426C778CB79609AAAEDE8D74 /* WallabagAuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuthError.swift; sourceTree = "<group>"; };
+		FR_C3C4233F888858AE47654B49C6B3D482 /* ArticlesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesUITests.swift; sourceTree = "<group>"; };
+		FR_C3CA4908C169B55F757B33B99B07B0D1 /* WallabagAuthErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuthErrorTests.swift; sourceTree = "<group>"; };
+		FR_C6ACC6D258ADB3D12E651FB3A8EA41AA /* ratatouille.css */ = {isa = PBXFileReference; path = ratatouille.css; sourceTree = "<group>"; };
+		FR_C9900CB03BB06DCC825054DAFDE4D907 /* XCTExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTExtension.swift; sourceTree = "<group>"; };
+		FR_CB6C74A2C8026DC8DECD880DB6E11937 /* StringTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
+		FR_CB80D9AF5E152C1943DB3A301D670B91 /* IntTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
+		FR_CE8F1CAE55A402D667F085B074B8B384 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FR_D12F9BFF12ECE9D85363436FAF065862 /* WallabagSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagSession.swift; sourceTree = "<group>"; };
+		FR_D25A5811CCA84B9080305DDA9A796022 /* bagit-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "bagit-Release.xcconfig"; sourceTree = "<group>"; };
+		FR_D555C88886417F7FFACF8E780E3AD81F /* WallabagSyncing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagSyncing.swift; sourceTree = "<group>"; };
+		FR_DA09BB346347C06FFAD641070BE2A9FD /* White.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = White.swift; sourceTree = "<group>"; };
+		FR_DA14E8A9BDD1B350E3F92CF5B28B71E3 /* bagit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bagit.entitlements; sourceTree = "<group>"; };
+		FR_DB0DAC9CCBBA045830CE0162F301EB29 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		FR_DFD1FC86C02A4A3FE409DADAC171B1D0 /* wallabagTests-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "wallabagTests-Release.xcconfig"; sourceTree = "<group>"; };
+		FR_E0EE35D548DFC2E4DD114575AD748AB8 /* WallabagError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagError.swift; sourceTree = "<group>"; };
+		FR_E41029877586205F3E830CC9AFE0F388 /* white.css */ = {isa = PBXFileReference; path = white.css; sourceTree = "<group>"; };
+		FR_E5D0C792EF4BAB178E7682B261515B9F /* NSNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotification.swift; sourceTree = "<group>"; };
+		FR_E776B6F65D97A6E9F1F6FF526198278E /* WallabagAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuth.swift; sourceTree = "<group>"; };
+		FR_EA8F1AFA4AAA4DA7100F817954FA4F9F /* AuthSuccess.json */ = {isa = PBXFileReference; path = AuthSuccess.json; sourceTree = "<group>"; };
+		FR_EAD3D12A2FA96A8314701F1BD7EBF6EC /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
+		FR_EB94C29743AD862E9F49EBC1F0D0F02E /* SyncOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncOperation.swift; sourceTree = "<group>"; };
+		FR_EC04A5892A1BA2A2841C2AC36736A2F6 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FR_EEA76C806A8451B9E073B5DD7C8E35F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FR_EFE6ED1C47DAA622DFB6E57FF56AB4B9 /* WallabagKitCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitCollectionTests.swift; sourceTree = "<group>"; };
+		FR_F00BE02B4B3D06E908BEFCE4144D6CEB /* wallabagTests-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "wallabagTests-Debug.xcconfig"; sourceTree = "<group>"; };
+		FR_F0CF05B945E91969A44C04BE4530C49C /* dusk.css */ = {isa = PBXFileReference; path = dusk.css; sourceTree = "<group>"; };
+		FR_F21BD2487093365E104F75BAF6110063 /* Localizable.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Localizable.plist; sourceTree = "<group>"; };
+		FR_F62DBF6AB382156DE823A6D9EE143721 /* ThemedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemedTableViewCell.swift; sourceTree = "<group>"; };
+		FR_F713F03368A599A8750912FE8BC6F7C2 /* ServerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerViewController.swift; sourceTree = "<group>"; };
+		FR_F7BDFB5A5171A43D14D5E7009B3AF255 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		FR_F94DA63289F6177D1927EB1C68054CF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FR_FA62FFCCB14BCE263891CD62C043376F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FR_FA97C2226C9528F55E7FC153D65779FB /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		FR_FB57B50C0018C70024665EF4B6003B02 /* WallabagKitEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitEntry.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FBP_A2CDC7FD673463C773C2B1E55CB82B88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF_1409F149805969A9DBDDEE90D29E68DE /* WallabagCommon.framework in Frameworks */,
+				BF_925ACE132CABB3F8D50A6B5DC619A2ED /* WallabagKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBP_DE759BFC5CE36E23A0069A9567ADBE92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF_3F1D949902F6926241CB902FE1EADEB3 /* WallabagCommon.framework in Frameworks */,
+				BF_5E32F916F9BCFA405DB48696D544FCA2 /* WallabagKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		G_121606438FEEA3CA4EBE0D933A35C03C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FR_448862BF589F4829A648C0F56DC31F9A /* DictionaryTests.swift */,
+				FR_CB80D9AF5E152C1943DB3A301D670B91 /* IntTests.swift */,
+				FR_CB6C74A2C8026DC8DECD880DB6E11937 /* StringTests.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		G_16D85DEB94463C22A0C313B23AE8C024 /* wallabagTests */ = {
+			isa = PBXGroup;
+			children = (
+				FR_EEA76C806A8451B9E073B5DD7C8E35F4 /* Info.plist */,
+				FR_C9900CB03BB06DCC825054DAFDE4D907 /* XCTExtension.swift */,
+				G_121606438FEEA3CA4EBE0D933A35C03C /* Extension */,
+				G_6B93B99B31A0305CA3A141EB734D8EF0 /* JSON */,
+				G_7A59FC07F17EB220D3E123D5C4A411CC /* WallabagKit */,
+			);
+			path = wallabagTests;
+			sourceTree = "<group>";
+		};
+		G_29BF5EB5439C5DE434EDECB77E86BDC6 /* wallabagUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FR_C3C4233F888858AE47654B49C6B3D482 /* ArticlesUITests.swift */,
+				FR_A40B0F5D5C1999D5A85DD6F73367CD83 /* Info.plist */,
+				FR_9121B30EA31B0520AB30AD93B296B817 /* RegisterProcessUITests.swift */,
+			);
+			path = wallabagUITests;
+			sourceTree = "<group>";
+		};
+		G_39C6C9CFDD44BBB7BB8E0F812CE69E29 /* configs */ = {
+			isa = PBXGroup;
+			children = (
+				FR_3C63EF667F0034B52FD8C3A71EAA05F7 /* bagit-Debug.xcconfig */,
+				FR_D25A5811CCA84B9080305DDA9A796022 /* bagit-Release.xcconfig */,
+				FR_5E14209A3FF3601917A397C25C00B4B4 /* Debug.xcconfig */,
+				FR_ADF34B1BF3A7AF7D035A47CC6C5A02E3 /* Release.xcconfig */,
+				FR_7ABC493E8F892DF451AABBB415AFE326 /* wallabag-Debug.xcconfig */,
+				FR_5DE83659FDAF5871759C0A7D752A7823 /* wallabag-Release.xcconfig */,
+				FR_F00BE02B4B3D06E908BEFCE4144D6CEB /* wallabagTests-Debug.xcconfig */,
+				FR_DFD1FC86C02A4A3FE409DADAC171B1D0 /* wallabagTests-Release.xcconfig */,
+				FR_0D81D880CC2314E3DD84B9C8E00667AD /* wallabagUITests-Debug.xcconfig */,
+				FR_705B60FAB625A6C6618A0D60722C8D36 /* wallabagUITests-Release.xcconfig */,
+			);
+			path = configs;
+			sourceTree = "<group>";
+		};
+		G_536DF6796F3839A2AA1A94F0F76D1A50 /* wallabagKit */ = {
+			isa = PBXGroup;
+			children = (
+				FR_3D36C33EB332B689DF2343AE9E4EE6FE /* Info.plist */,
+				FR_E5D0C792EF4BAB178E7682B261515B9F /* NSNotification.swift */,
+				FR_96C789F3C88641EE29D6624BC8CDB21E /* TokenAdapter.swift */,
+				FR_E776B6F65D97A6E9F1F6FF526198278E /* WallabagAuth.swift */,
+				FR_C362FD77426C778CB79609AAAEDE8D74 /* WallabagAuthError.swift */,
+				FR_4496EDBF32EDD9F2B4CBACDBCD7A2C34 /* WallabagAuthSuccess.swift */,
+				FR_E0EE35D548DFC2E4DD114575AD748AB8 /* WallabagError.swift */,
+				FR_2B05AB740144CAD6EB0C8052792EE957 /* WallabagKit.swift */,
+				FR_53A7AFE531920C01689A4DA430C0CA0F /* WallabagKitCollection.swift */,
+				FR_12B18233ADE8A34E512BD8B59C5C823E /* WallabagKitCollectionResponse.swift */,
+				FR_FB57B50C0018C70024665EF4B6003B02 /* WallabagKitEntry.swift */,
+				FR_7970C57402EAD79D7F0E02564CEBD5D6 /* WallabagKitResponse.swift */,
+				FR_B1D5A1B59CE28AE553B9A233F0E64D1F /* WallabagVersion.swift */,
+			);
+			path = wallabagKit;
+			sourceTree = "<group>";
+		};
+		G_60BF241AD87B2847EBA2C59F302A8DF3 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				VG_EA96FF2BC82D31145832EB0EF527D3DA /* LaunchScreen.storyboard */,
+				VG_6CD892D2BBF5FE25B74443256D4272AA /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		G_6B93B99B31A0305CA3A141EB734D8EF0 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				FR_EA8F1AFA4AAA4DA7100F817954FA4F9F /* AuthSuccess.json */,
+				FR_AA3C9177E62CEEBC8018AAB81DA95B35 /* AuthWrongPassword.json */,
+				FR_2BF273D49F4833BC11A86510154631AF /* EmptyCollection.json */,
+				FR_89CBFB2A6488E68DF37E66008BC3A23A /* EntriesCollection.json */,
+				FR_4F6DCF741037732F30E4ED36FA3E5984 /* Entry.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		G_7A59FC07F17EB220D3E123D5C4A411CC /* WallabagKit */ = {
+			isa = PBXGroup;
+			children = (
+				FR_AB15CF3A73378A512C3D9BBC9F7ECD65 /* TokenAdapterTests.swift */,
+				FR_C3CA4908C169B55F757B33B99B07B0D1 /* WallabagAuthErrorTests.swift */,
+				FR_709ED9B3B72198FF7033B14173B6DE6E /* WallabagAuthSuccessTests.swift */,
+				FR_EFE6ED1C47DAA622DFB6E57FF56AB4B9 /* WallabagKitCollectionTests.swift */,
+				FR_AAAE3FAEDFB1E2658F53DC3C5B9D5F2A /* WallabagKitTests.swift */,
+			);
+			path = WallabagKit;
+			sourceTree = "<group>";
+		};
+		G_81C31EE82E6432EC5BD810AE60BAAAC2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FR_1DE9D932C526142E220FFC665A0EC101 /* UbuntuTitling-Bold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		G_91414645069EEDC291CE7A989E70D2DC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FR_748B8A6308E71467419C89AF0B8851D9 /* ArticleTableViewCell.swift */,
+				FR_F62DBF6AB382156DE823A6D9EE143721 /* ThemedTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		G_A0EB5ED7FC525D97C47FAD04B172691C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FR_0A6C6DDD5DC94BB30E7D5FE8EB8185B6 /* AboutViewController.swift */,
+				FR_0344656411C412FE13B14B176D31788F /* ArticlesTableViewController.swift */,
+				FR_54B1532FB2199D5A7368CCEB6B21DBD3 /* ArticlesTableViewController+pastboard.swift */,
+				FR_56186CC4C8CE1EFA0554417A91A72A00 /* ArticlesTableViewController+UISearchResults.swift */,
+				FR_7D29FAB95590AC974DCDAC639A09A15A /* ArticleViewController.swift */,
+				FR_1958605A09104E19FD12C7A197BDCDDD /* ClientIdViewController.swift */,
+				FR_B99F86A83D2A96FD01E5D62F07C4C804 /* HomeViewController.swift */,
+				FR_638B0E94F7CFDAE0590D0F5B445F46A3 /* LoginViewController.swift */,
+				FR_8040EBB1039DE9F3631AF6947C7E9500 /* PodcastViewController.swift */,
+				FR_F713F03368A599A8750912FE8BC6F7C2 /* ServerViewController.swift */,
+				FR_748A54FFB777972CBC13D57DA248E216 /* SettingsTableViewController.swift */,
+				FR_AC4562CEF7DED37A7E444808BE77D845 /* SubscriptionViewController.swift */,
+				FR_256529387B0BA37F7523EC3B4761C8BC /* ThemeChoiceTableViewController.swift */,
+				FR_315AD6439BE85BB13FC17E766770E347 /* TipViewController.swift */,
+				FR_AE53A3DB97F325B6D9DB02AFB1731782 /* VoiceChoiceTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		G_B507F86627987D54B7C8B4837197C891 /* bagit */ = {
+			isa = PBXGroup;
+			children = (
+				FR_DA14E8A9BDD1B350E3F92CF5B28B71E3 /* bagit.entitlements */,
+				FR_CE8F1CAE55A402D667F085B074B8B384 /* Info.plist */,
+				FR_B59475CCE7E9CDF9B6B6C979AF3EBC87 /* Media.xcassets */,
+				FR_39287A02F2B756958D56349AC317D33B /* ShareViewController.swift */,
+			);
+			path = bagit;
+			sourceTree = "<group>";
+		};
+		G_BD722E6D6F9F896167754C6E90947E1F /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				FR_98514F67A77EA8D6B6267CBD63F94725 /* Entry.swift */,
+				FR_5C8DA6DE33F2FACC03BFACE708CD2ED6 /* EntryExtension.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		G_BFAC74A6E84ED8C37095B2C3988CA599 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FR_632A9CD2A020AD0A4DF6207A3AC2599E /* Bool.swift */,
+				FR_C16D1C5C72DB19E504BB13DC0273DD1D /* Date.swift */,
+				FR_F7BDFB5A5171A43D14D5E7009B3AF255 /* Dictionary.swift */,
+				FR_2E58EB127F216B99AAB45039FA033FD9 /* Int.swift */,
+				FR_6121D1E9B47B792E1964E21692ED3F7D /* String.swift */,
+				FR_BC1A4543A5BCE695E19D56D0A17CE7C6 /* UIImageView.swift */,
+				FR_3996D9FD806100BF0335AAE1A4EE148E /* UIWebView.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		G_C695FAD8BA58329D13ADE1E32DD7B622 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				FR_9F42F31690A7DC7D012875FD435B91AF /* Black.swift */,
+				FR_17692053F35D14DF23BEA33BEA938F30 /* Dusk.swift */,
+				FR_EAD3D12A2FA96A8314701F1BD7EBF6EC /* Light.swift */,
+				FR_8D62A2546C66F5585479D35DCDBC5485 /* Night.swift */,
+				FR_5CD42737A10942BF90FB3FCE8BF74956 /* ThemeManager.swift */,
+				FR_729C1F2BE744A3E09D2CCA9CE975A461 /* ThemeProtocol.swift */,
+				FR_DA09BB346347C06FFAD641070BE2A9FD /* White.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		G_CE89579BF929DEF37EAE365EBEC61C09 /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				FR_EB94C29743AD862E9F49EBC1F0D0F02E /* SyncOperation.swift */,
+			);
+			path = Operation;
+			sourceTree = "<group>";
+		};
+		G_D9112B40FBAA7D6E28EF1DE3BF37847D = {
+			isa = PBXGroup;
+			children = (
+				G_B507F86627987D54B7C8B4837197C891 /* bagit */,
+				G_39C6C9CFDD44BBB7BB8E0F812CE69E29 /* configs */,
+				G_EE322AF580B12A5FAFB51DB68815824E /* wallabag */,
+				G_E8920E57F6B0E478DBD62B5057B1A420 /* wallabagCommon */,
+				G_536DF6796F3839A2AA1A94F0F76D1A50 /* wallabagKit */,
+				G_16D85DEB94463C22A0C313B23AE8C024 /* wallabagTests */,
+				G_29BF5EB5439C5DE434EDECB77E86BDC6 /* wallabagUITests */,
+				G_F9352AEEBDAE1173F665BDBED628DF2A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		G_DFD8F6A37FD99EE890AF4FA2569F633D /* html-ressources */ = {
+			isa = PBXGroup;
+			children = (
+				FR_317F9C93FC0631DF00AB2E1FAEF90DD8 /* article.html */,
+				FR_0499A5EA97C3340763652A3DED80B81F /* black.css */,
+				FR_F0CF05B945E91969A44C04BE4530C49C /* dusk.css */,
+				FR_8B1C0A3D787E489A3283413D0A549963 /* justify.css */,
+				FR_961F3C1FF1B21F7C50102EC1F49BBBD1 /* light.css */,
+				FR_A40BCE81D37EA403FF10738F2054C6F6 /* main.css */,
+				FR_6B880FEB7099AF97E87A948C5830143E /* night.css */,
+				FR_C6ACC6D258ADB3D12E651FB3A8EA41AA /* ratatouille.css */,
+				FR_E41029877586205F3E830CC9AFE0F388 /* white.css */,
+			);
+			path = "html-ressources";
+			sourceTree = "<group>";
+		};
+		G_E288595FB7758C59B0C10F1A195B1273 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FR_32C57241F64E1AA0D53CFA7BA2CF2BFC /* UIPodcastSlider.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		G_E8920E57F6B0E478DBD62B5057B1A420 /* wallabagCommon */ = {
+			isa = PBXGroup;
+			children = (
+				FR_B31DA5B35D7E8A4CBB7576648A35021E /* Info.plist */,
+				FR_290ECAC1FE613D28DF9CB4D061F101F9 /* KeychainPasswordItem.swift */,
+				FR_9E9BE38AB90AD883FD5021F11A8FAA93 /* Setting.swift */,
+			);
+			path = wallabagCommon;
+			sourceTree = "<group>";
+		};
+		G_ED05746A8B318D93F5C59AFB3D2C703A /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				FR_250D2539097D8AD4F65F91206902AF43 /* AnalyticsManager.swift */,
+				FR_59D833DA3B62EC2460F61AED1FC045C5 /* Bridge.m */,
+				FR_9FE0A9D67CA3E51B3186F35BC61793D8 /* PaidSubscription.swift */,
+				FR_26E374F0AF1D1FBEC022213E082366DF /* RetrieveMode.swift */,
+				FR_9904635DBD17CD8DEC268B0000282D5E /* Utils.swift */,
+				FR_3AD905BC68B1086C84A70A1C09F7267F /* wallabag-Bridging-Header.h */,
+				FR_D12F9BFF12ECE9D85363436FAF065862 /* WallabagSession.swift */,
+				FR_8D21AE6597E312DB2EBBFCD9E0C9A6C3 /* WallabagStore.swift */,
+				FR_501742B816EAED2BC7637BD9696D3B07 /* WallabagSubscription.swift */,
+				FR_D555C88886417F7FFACF8E780E3AD81F /* WallabagSyncing.swift */,
+				G_CE89579BF929DEF37EAE365EBEC61C09 /* Operation */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		G_EE322AF580B12A5FAFB51DB68815824E /* wallabag */ = {
+			isa = PBXGroup;
+			children = (
+				FR_9600E47FC00A35A057E5DE937EDBFDF3 /* AppDelegate.swift */,
+				FR_F94DA63289F6177D1927EB1C68054CF9 /* Assets.xcassets */,
+				FR_606AAB346453DED260A405BD16778883 /* Info.plist */,
+				FR_F21BD2487093365E104F75BAF6110063 /* Localizable.plist */,
+				VG_BEEC8418DD761BF3A09EDB772794FA5C /* Localizable.strings */,
+				FR_7F369F01648273740FFAC734BF79A78E /* wallabag.entitlements */,
+				VG_F540DF4D4B4A00E6F8DD2EB20CDDDCED /* wallabag.xcdatamodeld */,
+				VG_005B14D0EA11F73FED5913E6316966AD /* wallabag2.xcdatamodeld */,
+				G_91414645069EEDC291CE7A989E70D2DC /* Cell */,
+				G_A0EB5ED7FC525D97C47FAD04B172691C /* Controller */,
+				G_BD722E6D6F9F896167754C6E90947E1F /* Entity */,
+				G_BFAC74A6E84ED8C37095B2C3988CA599 /* Extension */,
+				G_81C31EE82E6432EC5BD810AE60BAAAC2 /* Fonts */,
+				G_DFD8F6A37FD99EE890AF4FA2569F633D /* html-ressources */,
+				G_ED05746A8B318D93F5C59AFB3D2C703A /* Lib */,
+				G_60BF241AD87B2847EBA2C59F302A8DF3 /* Storyboard */,
+				G_C695FAD8BA58329D13ADE1E32DD7B622 /* Theme */,
+				G_E288595FB7758C59B0C10F1A195B1273 /* UI */,
+			);
+			path = wallabag;
+			sourceTree = "<group>";
+		};
+		G_F9352AEEBDAE1173F665BDBED628DF2A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FR_A558DD3F249C938DA7F179688063D500 /* bagit.appex */,
+				FR_7EF8E3725DA0867206C920EE5FBF277C /* wallabag.app */,
+				FR_82E6C4DE6233AF1C7AC8D97E23DDE0F5 /* WallabagCommon.framework */,
+				FR_30FF53C4D2743E54768DC21BC6D095F3 /* WallabagKit.framework */,
+				FR_5259EA32015B0B9F139FF20E34F493C3 /* wallabagTests.xctest */,
+				FR_323841563C4A3B7DCF903F8AB57A64A0 /* wallabagUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		NT_2BC32F97DBD026A7F5702723F0BF8EEA /* WallabagKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CL_C816286FF780A7E423C7D21154D89416 /* Build configuration list for PBXNativeTarget "WallabagKit" */;
+			buildPhases = (
+				SBP_297E6E30FB7434954325CE6786C3A71F /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WallabagKit;
+			productName = WallabagKit;
+			productReference = FR_30FF53C4D2743E54768DC21BC6D095F3 /* WallabagKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		NT_489A0A0E84B6A7E06B0FAA10CDEBABA5 /* bagit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CL_44A5CB396F506B286FFD30802EFC315A /* Build configuration list for PBXNativeTarget "bagit" */;
+			buildPhases = (
+				SBP_DF8DB4E523C1D08325DDAF1E889BD990 /* Sources */,
+				RBP_278ABA6F07006C3A3BABC73145D43577 /* Resources */,
+				FBP_A2CDC7FD673463C773C2B1E55CB82B88 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				TD_840B2D9FBB81A496F63496EDA2E451AD /* PBXTargetDependency */,
+				TD_E06F4373FB191B2DABAC06A22EF76FC1 /* PBXTargetDependency */,
+			);
+			name = bagit;
+			productName = bagit;
+			productReference = FR_A558DD3F249C938DA7F179688063D500 /* bagit.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		NT_5802CBFD0D43BF78B1884228586E64A2 /* wallabagUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CL_8A30949FEDBDC73C2592A9D3D3880D8E /* Build configuration list for PBXNativeTarget "wallabagUITests" */;
+			buildPhases = (
+				SBP_75AF22468FC3237C4C70F5983BE568DC /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				TD_BED4C27AF0A8EF90ACD12F4472EF57DC /* PBXTargetDependency */,
+			);
+			name = wallabagUITests;
+			productName = wallabagUITests;
+			productReference = FR_323841563C4A3B7DCF903F8AB57A64A0 /* wallabagUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		NT_9041DA9DE0CA801DA5DDB449DEC4E2DB /* WallabagCommon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CL_867E8C018A458ADF3F592810415304FA /* Build configuration list for PBXNativeTarget "WallabagCommon" */;
+			buildPhases = (
+				SBP_C863EB5BDDB51EB1392F7ED3645B94A7 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WallabagCommon;
+			productName = WallabagCommon;
+			productReference = FR_82E6C4DE6233AF1C7AC8D97E23DDE0F5 /* WallabagCommon.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		NT_BD23E71198CA112A6681701D37EB5AFF /* wallabag */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CL_190B884A40E78F55451C94F5CB7C6579 /* Build configuration list for PBXNativeTarget "wallabag" */;
+			buildPhases = (
+				SBP_3ECB3731B063579A4C0583AF67964EAC /* Sources */,
+				RBP_825E9A58AED2499F56D573FC032F15E0 /* Resources */,
+				FBP_DE759BFC5CE36E23A0069A9567ADBE92 /* Frameworks */,
+				CFBP_BBB4D336DFE3473638D4284D25266CBD /* Embed App Extensions */,
+				CFBP_FB6EE7002903288EA097197B26A1C90A /* Embed Frameworks */,
+				SSBP_59F8FB275EB4E6831F8FEA98BB26B420 /* Swiftlint */,
+				SSBP_6DCAE331BDFE2ED58C8DDD77DDBAB2F7 /* fabricio */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				TD_5C6AA7FEAE76C0A4A69DF856CAB03102 /* PBXTargetDependency */,
+				TD_A6B9DDFBC1630DD6D2EE13E0BE451A48 /* PBXTargetDependency */,
+				TD_4801052C761E8B3DE93A18BB32263938 /* PBXTargetDependency */,
+			);
+			name = wallabag;
+			productName = wallabag;
+			productReference = FR_7EF8E3725DA0867206C920EE5FBF277C /* wallabag.app */;
+			productType = "com.apple.product-type.application";
+		};
+		NT_CB245D289C47CA3177DD28B514882F44 /* wallabagTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CL_77749CD558E6ED03FE10C44D3921BE26 /* Build configuration list for PBXNativeTarget "wallabagTests" */;
+			buildPhases = (
+				SBP_A52973954353113F748EE4ACAB338DE0 /* Sources */,
+				RBP_7A631E32949F5546966AB698301709F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				TD_0A5C94E8B280894F69C00E78285C069B /* PBXTargetDependency */,
+			);
+			name = wallabagTests;
+			productName = wallabagTests;
+			productReference = FR_5259EA32015B0B9F139FF20E34F493C3 /* wallabagTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		P_EDC2B1D3872816D6335919C238A9EA25 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1000;
+				TargetAttributes = {
+					NT_2BC32F97DBD026A7F5702723F0BF8EEA = {
+						DevelopmentTeam = G97URPCGB8;
+					};
+					NT_489A0A0E84B6A7E06B0FAA10CDEBABA5 = {
+						DevelopmentTeam = G97URPCGB8;
+					};
+					NT_5802CBFD0D43BF78B1884228586E64A2 = {
+						DevelopmentTeam = G97URPCGB8;
+					};
+					NT_9041DA9DE0CA801DA5DDB449DEC4E2DB = {
+						DevelopmentTeam = G97URPCGB8;
+					};
+					NT_BD23E71198CA112A6681701D37EB5AFF = {
+						DevelopmentTeam = G97URPCGB8;
+					};
+					NT_CB245D289C47CA3177DD28B514882F44 = {
+						DevelopmentTeam = G97URPCGB8;
+						TestTargetID = NT_BD23E71198CA112A6681701D37EB5AFF;
+					};
+				};
+			};
+			buildConfigurationList = CL_BC7DC4DFEA5A92D01B326FBF3519F33A /* Build configuration list for PBXProject "wallabag" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				de,
+				en,
+				fr,
+				ro,
+			);
+			mainGroup = G_D9112B40FBAA7D6E28EF1DE3BF37847D;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				NT_9041DA9DE0CA801DA5DDB449DEC4E2DB /* WallabagCommon */,
+				NT_2BC32F97DBD026A7F5702723F0BF8EEA /* WallabagKit */,
+				NT_489A0A0E84B6A7E06B0FAA10CDEBABA5 /* bagit */,
+				NT_BD23E71198CA112A6681701D37EB5AFF /* wallabag */,
+				NT_CB245D289C47CA3177DD28B514882F44 /* wallabagTests */,
+				NT_5802CBFD0D43BF78B1884228586E64A2 /* wallabagUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		RBP_278ABA6F07006C3A3BABC73145D43577 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF_B19FB0956CC0285F9184C852A8AF8964 /* Assets.xcassets in Resources */,
+				BF_3D48DCA00E8CF928EC9C14036EEFD36B /* Media.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		RBP_7A631E32949F5546966AB698301709F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF_E6040E8172A1379E9F3BF5092595589A /* AuthSuccess.json in Resources */,
+				BF_F4704CC172521D78A1A955AD8BC9F40A /* AuthWrongPassword.json in Resources */,
+				BF_6501D4BDF703ADAC0E1EBB67937832A7 /* EmptyCollection.json in Resources */,
+				BF_20305CD3F44AD3F0A300A08D28D4712F /* EntriesCollection.json in Resources */,
+				BF_762B1448F05D92E507BBC9314D9CDA2E /* Entry.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		RBP_825E9A58AED2499F56D573FC032F15E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF_C34B818DF3810583F726069B8FF3F5D3 /* Assets.xcassets in Resources */,
+				BF_BA780EE50C69580433E87F40A2057664 /* LaunchScreen.storyboard in Resources */,
+				BF_DD384BCC5299EA5EEB8825713EBE508F /* Localizable.plist in Resources */,
+				BF_E4C5BA8B967986D005FC808C1952FDD1 /* Localizable.strings in Resources */,
+				BF_42EE562310F74101FFA47579EB427A90 /* Main.storyboard in Resources */,
+				BF_0958BD47C0A373C73825495FA643F41D /* UbuntuTitling-Bold.ttf in Resources */,
+				BF_0576133F70765A88C0F8BD8FC41C19EE /* article.html in Resources */,
+				BF_38E2D165C7E2E8A343AA0CEACA342310 /* black.css in Resources */,
+				BF_A21BB2F27788E4441068455E497A3358 /* dusk.css in Resources */,
+				BF_B1157D4BF6AD7D39E2F5385157298795 /* justify.css in Resources */,
+				BF_1DE4ED4D6E3A2B33C04E95951D2AD25C /* light.css in Resources */,
+				BF_B103129BE6658829E2C3D2A06000273C /* main.css in Resources */,
+				BF_E8710C248C5F4249B0BB296DE58850BB /* night.css in Resources */,
+				BF_3405357D2A8A06979EC0F11E7AEEBCF2 /* ratatouille.css in Resources */,
+				BF_1A5195CA8D30551EC224B3121FBFC1F4 /* white.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		SSBP_59F8FB275EB4E6831F8FEA98BB26B420 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = swiftlint;
+		};
+		SSBP_6DCAE331BDFE2ED58C8DDD77DDBAB2F7 /* fabricio */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = fabricio;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 0207ff96630ec7ce562a1b658bd7bd2a0f8024a3 e655dde9ee1422229d8c0589d0596ba3c3e0641d994a75ea76a048cb981288bb\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		SBP_297E6E30FB7434954325CE6786C3A71F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF_438D847CFB746FE9075482EC514F7DF6 /* NSNotification.swift in Sources */,
+				BF_6A08E18EA6029DF0BFAE0EE3BDD1BF0C /* TokenAdapter.swift in Sources */,
+				BF_16FBEE28F3FDAA53565923290DA21840 /* WallabagAuth.swift in Sources */,
+				BF_762E1EF65D6144988B757F7F11555A40 /* WallabagAuthError.swift in Sources */,
+				BF_FAB4EB8A6C5A3541452A95839FE485E8 /* WallabagAuthSuccess.swift in Sources */,
+				BF_4D1280BDF0B04EFCCFE420F95E3833AE /* WallabagError.swift in Sources */,
+				BF_DCFFD8C8A227B0DFCA01E513C63768CF /* WallabagKit.swift in Sources */,
+				BF_C111BF36F49BF3218CAB8697AE292541 /* WallabagKitCollection.swift in Sources */,
+				BF_4C392115E51DA700BB8909B337B31EDB /* WallabagKitCollectionResponse.swift in Sources */,
+				BF_35848BB94A3F0CDC92714E6B0DF3D7B9 /* WallabagKitEntry.swift in Sources */,
+				BF_EA215B60EEF235007184EA5642A0D739 /* WallabagKitResponse.swift in Sources */,
+				BF_9BBB16CA6E4D3A7D5F136DBB84BD905F /* WallabagVersion.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		SBP_3ECB3731B063579A4C0583AF67964EAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF_B254447C18A3B0B138019B3D89F74819 /* AboutViewController.swift in Sources */,
+				BF_047B132AA818924F42C07857A48D5648 /* AnalyticsManager.swift in Sources */,
+				BF_C08A9375D74D7DB78FE8F985821676D0 /* AppDelegate.swift in Sources */,
+				BF_0705B526CC56B92C6135AB3CEAB62908 /* ArticleTableViewCell.swift in Sources */,
+				BF_6FC7E4B0BF1DD82534758E09D42CB4BD /* ArticleViewController.swift in Sources */,
+				BF_80E0A78558343DE730DEA217B8252318 /* ArticlesTableViewController+UISearchResults.swift in Sources */,
+				BF_410C8342258361866BCC68C2408CF424 /* ArticlesTableViewController+pastboard.swift in Sources */,
+				BF_A732338E1D54D23BE388646C6CEBF86B /* ArticlesTableViewController.swift in Sources */,
+				BF_8D6AECAD1330C2318EF223E35E3AC61D /* Black.swift in Sources */,
+				BF_B65C56029A480EC410440D0564ACCC07 /* Bool.swift in Sources */,
+				BF_1E5922FFFB75D12639D9E575600F6CC2 /* Bridge.m in Sources */,
+				BF_C20A6A5CECA3D24560032AB50BBEC618 /* ClientIdViewController.swift in Sources */,
+				BF_C9F13CB7B3B557E809E6D9898B0791C2 /* Date.swift in Sources */,
+				BF_330993596D71B361978BE9F6CC8CE80C /* Dictionary.swift in Sources */,
+				BF_9DC6B3C1B4267E7BF73A9F9365B14227 /* Dusk.swift in Sources */,
+				BF_B9C6AF04850C3AB60715C3FF13432B78 /* Entry.swift in Sources */,
+				BF_E86293481ACAC83DE1587222089DDC5D /* EntryExtension.swift in Sources */,
+				BF_E31E28734E796243BE3166C951A2188A /* HomeViewController.swift in Sources */,
+				BF_83312011338DF667DC8174DD85C2A1B7 /* Int.swift in Sources */,
+				BF_39F871EE675DC699FB335EC1E12564C3 /* Light.swift in Sources */,
+				BF_93075D9BA7C176EDFDA77E5E3B181EBF /* LoginViewController.swift in Sources */,
+				BF_C26A33FB794CDBA88061605B28BCADDE /* Night.swift in Sources */,
+				BF_52CA2EA1E65C2A35D518FCC8878DAE42 /* PaidSubscription.swift in Sources */,
+				BF_8B31D8FCBE24A0B24D928AC2A5D8883B /* PodcastViewController.swift in Sources */,
+				BF_DB7F468621011B78AA80968FF9B4DD93 /* RetrieveMode.swift in Sources */,
+				BF_61A51732C997F3090974F35FC6A51BA4 /* ServerViewController.swift in Sources */,
+				BF_37983FE718ADC942C53B1B1D6B7325C0 /* SettingsTableViewController.swift in Sources */,
+				BF_A31D94510D6C4BD65AC0122EB64626C8 /* String.swift in Sources */,
+				BF_CE964B07FEB75562961FA60EC0BAC3AC /* SubscriptionViewController.swift in Sources */,
+				BF_1CE07035053A5DB167C27DA29AC0FC70 /* SyncOperation.swift in Sources */,
+				BF_52DE0750D8F47C6E0DCEEF3E9926DF6E /* ThemeChoiceTableViewController.swift in Sources */,
+				BF_E5E5782D6CDF4EAC54A27F1EAA358264 /* ThemeManager.swift in Sources */,
+				BF_F3D83B60EAA7409ECA0C6179871F8B10 /* ThemeProtocol.swift in Sources */,
+				BF_E780EC3E849303D73BE290A1B3579062 /* ThemedTableViewCell.swift in Sources */,
+				BF_00D91E5F9A9D166BC797C715B7F35902 /* TipViewController.swift in Sources */,
+				BF_767B670EFD6E74785BD2212AF6B9A34A /* UIImageView.swift in Sources */,
+				BF_A263058FD57BCE7DECF1322ABBB1C729 /* UIPodcastSlider.swift in Sources */,
+				BF_27B3C5BB859104CEF0AB1D52843622B4 /* UIWebView.swift in Sources */,
+				BF_69A8B5C65C16A5031C7513FFCB6BCEBF /* Utils.swift in Sources */,
+				BF_1D1FBDA14845DDF75F10B4FA61AFBDA5 /* VoiceChoiceTableViewController.swift in Sources */,
+				BF_CD815E61A34934671D18A3D50D33C4D8 /* WallabagSession.swift in Sources */,
+				BF_E5FE0D37FE59FE82D435BA78E800F06D /* WallabagStore.swift in Sources */,
+				BF_D43865006969E073154F7B621CF59B41 /* WallabagSubscription.swift in Sources */,
+				BF_28D11B569BD97D0663CF4229C773A732 /* WallabagSyncing.swift in Sources */,
+				BF_16EC634D0D63828D6202CCABA3D1AD41 /* White.swift in Sources */,
+				BF_C98578DAC2B60106DE8F261D7D58F753 /* wallabag.xcdatamodeld in Sources */,
+				BF_EBBF32C4FDBC17CF83A9DA232E92AF63 /* wallabag2.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		SBP_75AF22468FC3237C4C70F5983BE568DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF_1DBCBFC32B6F4A8E0AB791304B1B5225 /* ArticlesUITests.swift in Sources */,
+				BF_ED77B66718E560A945220474644CE261 /* RegisterProcessUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		SBP_A52973954353113F748EE4ACAB338DE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF_8DF5B0DFCF66D71D7A3C7EF0E10B2EEA /* DictionaryTests.swift in Sources */,
+				BF_A00A76038455E614969B0C4D0C0CF45B /* IntTests.swift in Sources */,
+				BF_7CC38D8557CAD849430D9776421E5E5E /* StringTests.swift in Sources */,
+				BF_F2ADFB3B4C1B0836F13DB4A1DE5406A7 /* TokenAdapterTests.swift in Sources */,
+				BF_58567850CC932A049952E736EE61B0DE /* WallabagAuthErrorTests.swift in Sources */,
+				BF_3C34FF37F2AAB722ED3278184555355B /* WallabagAuthSuccessTests.swift in Sources */,
+				BF_87E311661C0B3BA3247CC388C7CCD8AF /* WallabagKitCollectionTests.swift in Sources */,
+				BF_C63B962A10CD74586351B9DB5E0FBBE1 /* WallabagKitTests.swift in Sources */,
+				BF_218B02857CD5370E001E1DEDBCD9DA81 /* XCTExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		SBP_C863EB5BDDB51EB1392F7ED3645B94A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF_A3C2C3584CE33DDAC30BEBE5596FFC83 /* KeychainPasswordItem.swift in Sources */,
+				BF_3DBF7C7BDA9E629B717DCD93B144C785 /* Setting.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		SBP_DF8DB4E523C1D08325DDAF1E889BD990 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF_F455B9C80CD63DD87EF42992438C4F82 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		TD_0A5C94E8B280894F69C00E78285C069B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = NT_BD23E71198CA112A6681701D37EB5AFF /* wallabag */;
+			targetProxy = CIP_A82E7FE8DFB2E12FAFE6537A425B76DE /* PBXContainerItemProxy */;
+		};
+		TD_4801052C761E8B3DE93A18BB32263938 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = NT_2BC32F97DBD026A7F5702723F0BF8EEA /* WallabagKit */;
+			targetProxy = CIP_E00AFC5D83AC284D61515ECEFFC8709F /* PBXContainerItemProxy */;
+		};
+		TD_5C6AA7FEAE76C0A4A69DF856CAB03102 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = NT_489A0A0E84B6A7E06B0FAA10CDEBABA5 /* bagit */;
+			targetProxy = CIP_FA80C5FDD9AB4C553980D36FC3D391FA /* PBXContainerItemProxy */;
+		};
+		TD_840B2D9FBB81A496F63496EDA2E451AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = NT_9041DA9DE0CA801DA5DDB449DEC4E2DB /* WallabagCommon */;
+			targetProxy = CIP_870664F8474136D7F2D8C6349F63FDB9 /* PBXContainerItemProxy */;
+		};
+		TD_A6B9DDFBC1630DD6D2EE13E0BE451A48 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = NT_9041DA9DE0CA801DA5DDB449DEC4E2DB /* WallabagCommon */;
+			targetProxy = CIP_ACDF73173331CEF7D000391E9E309BD4 /* PBXContainerItemProxy */;
+		};
+		TD_BED4C27AF0A8EF90ACD12F4472EF57DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = NT_BD23E71198CA112A6681701D37EB5AFF /* wallabag */;
+			targetProxy = CIP_1ACB0324E37D86480F884882645570C3 /* PBXContainerItemProxy */;
+		};
+		TD_E06F4373FB191B2DABAC06A22EF76FC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = NT_2BC32F97DBD026A7F5702723F0BF8EEA /* WallabagKit */;
+			targetProxy = CIP_071FC410EEBE2F113AD901110C6F00B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		VG_6CD892D2BBF5FE25B74443256D4272AA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FR_B3F20BFCCD3C9F0039EE2AC6D8D1A71B /* Base */,
+				FR_FA97C2226C9528F55E7FC153D65779FB /* de */,
+				FR_DB0DAC9CCBBA045830CE0162F301EB29 /* fr */,
+				FR_7C185759A7CA2367F6B2A09ECF202E33 /* ro */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		VG_BEEC8418DD761BF3A09EDB772794FA5C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FR_1BCA2B5D79E6386A16A4B6341BC136FB /* Base */,
+				FR_0EF389E23F508F60AB1F657ECF52C8CF /* de */,
+				FR_A3394AD5B62C39C7F3B5011E3477304B /* en */,
+				FR_FA62FFCCB14BCE263891CD62C043376F /* fr */,
+				FR_EC04A5892A1BA2A2841C2AC36736A2F6 /* ro */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		VG_EA96FF2BC82D31145832EB0EF527D3DA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FR_5B447F87774BEBB6A41ADE06979E95A7 /* Base */,
+				FR_741636153F3013F637E866140A8EEC77 /* de */,
+				FR_966247DE2278EAC741F8CADCD0454AD1 /* fr */,
+				FR_61A676531CA9D9C92B75347167B7A6A6 /* ro */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BC_134A04D16ED0DC540A02FB020D23C154 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = wallabagCommon/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.WallabagCommon";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		BC_13D58D81E2962B191486C671D6F75E8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FR_ADF34B1BF3A7AF7D035A47CC6C5A02E3 /* Release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = G97URPCGB8;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		BC_1E9B0D4DE54B789A00DD6BD7CD1CEC6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FR_DFD1FC86C02A4A3FE409DADAC171B1D0 /* wallabagTests-Release.xcconfig */;
+			buildSettings = {
+				TEST_TARGET_NAME = wallabag;
+			};
+			name = Release;
+		};
+		BC_33931D07F6CEFB4E79ABD85B44B35814 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = wallabagCommon/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.WallabagCommon";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		BC_505B2D771FAE5BA482FDE1D838A21CE9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FR_D25A5811CCA84B9080305DDA9A796022 /* bagit-Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		BC_6011BE404681179924710C752B7AE1E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FR_5E14209A3FF3601917A397C25C00B4B4 /* Debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = G97URPCGB8;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		BC_6F0F6BBDA618C08580F153A8FD13AC72 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = wallabagKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.WallabagKit";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		BC_7120209EE2FECA4917EB66C3F2AE7E19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FR_0D81D880CC2314E3DD84B9C8E00667AD /* wallabagUITests-Debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+			};
+			name = Debug;
+		};
+		BC_90CCD4263F8F9AA8C8E4948E53C2893A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = wallabagKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.WallabagKit";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		BC_9B60593253EA2EE52BB1586B9C0841CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FR_3C63EF667F0034B52FD8C3A71EAA05F7 /* bagit-Debug.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		BC_9D935480D16D898F8DBC01B782C08152 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FR_705B60FAB625A6C6618A0D60722C8D36 /* wallabagUITests-Release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+			};
+			name = Release;
+		};
+		BC_D651553CD8B23E7B23BC80FD5D2F696F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FR_7ABC493E8F892DF451AABBB415AFE326 /* wallabag-Debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+			};
+			name = Debug;
+		};
+		BC_ECF7215D7E1774CB15404DD496DBD630 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FR_5DE83659FDAF5871759C0A7D752A7823 /* wallabag-Release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+			};
+			name = Release;
+		};
+		BC_FA6C574C74CBE5E620CF329BAEE11175 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FR_F00BE02B4B3D06E908BEFCE4144D6CEB /* wallabagTests-Debug.xcconfig */;
+			buildSettings = {
+				TEST_TARGET_NAME = wallabag;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CL_190B884A40E78F55451C94F5CB7C6579 /* Build configuration list for PBXNativeTarget "wallabag" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC_D651553CD8B23E7B23BC80FD5D2F696F /* Debug */,
+				BC_ECF7215D7E1774CB15404DD496DBD630 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "";
+		};
+		CL_44A5CB396F506B286FFD30802EFC315A /* Build configuration list for PBXNativeTarget "bagit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC_9B60593253EA2EE52BB1586B9C0841CE /* Debug */,
+				BC_505B2D771FAE5BA482FDE1D838A21CE9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "";
+		};
+		CL_77749CD558E6ED03FE10C44D3921BE26 /* Build configuration list for PBXNativeTarget "wallabagTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC_FA6C574C74CBE5E620CF329BAEE11175 /* Debug */,
+				BC_1E9B0D4DE54B789A00DD6BD7CD1CEC6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "";
+		};
+		CL_867E8C018A458ADF3F592810415304FA /* Build configuration list for PBXNativeTarget "WallabagCommon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC_33931D07F6CEFB4E79ABD85B44B35814 /* Debug */,
+				BC_134A04D16ED0DC540A02FB020D23C154 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "";
+		};
+		CL_8A30949FEDBDC73C2592A9D3D3880D8E /* Build configuration list for PBXNativeTarget "wallabagUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC_7120209EE2FECA4917EB66C3F2AE7E19 /* Debug */,
+				BC_9D935480D16D898F8DBC01B782C08152 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "";
+		};
+		CL_BC7DC4DFEA5A92D01B326FBF3519F33A /* Build configuration list for PBXProject "wallabag" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC_6011BE404681179924710C752B7AE1E3 /* Debug */,
+				BC_13D58D81E2962B191486C671D6F75E8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CL_C816286FF780A7E423C7D21154D89416 /* Build configuration list for PBXNativeTarget "WallabagKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC_6F0F6BBDA618C08580F153A8FD13AC72 /* Debug */,
+				BC_90CCD4263F8F9AA8C8E4948E53C2893A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = "";
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		VG_005B14D0EA11F73FED5913E6316966AD /* wallabag2.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FR_89F054C6A0F715E5EF3B91F79CE58DA8 /* wallabag2.xcdatamodel */,
+				FR_81AA471161740DD167D7CAF669B872BD /* wallabag2v2.xcdatamodel */,
+			);
+			currentVersion = FR_89F054C6A0F715E5EF3B91F79CE58DA8 /* wallabag2.xcdatamodel */;
+			path = wallabag2.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		VG_F540DF4D4B4A00E6F8DD2EB20CDDDCED /* wallabag.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FR_30E9D498939E8CFB6D9100E2EFCAEE2F /* wallabag.xcdatamodel */,
+			);
+			currentVersion = FR_30E9D498939E8CFB6D9100E2EFCAEE2F /* wallabag.xcdatamodel */;
+			path = wallabag.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = P_EDC2B1D3872816D6335919C238A9EA25 /* Project object */;
+}
