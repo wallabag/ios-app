@@ -12,8 +12,8 @@ import WallabagCommon
 
 final class VoiceChoiceTableViewController: UITableViewController {
 
-    let setting = WallabagSetting()
-    let analytics = AnalyticsManager()
+    var setting: WallabagSetting!
+    var analytics: AnalyticsManager!
     let voices: [AVSpeechSynthesisVoice] = AVSpeechSynthesisVoice.speechVoices()
 
     override func viewDidLoad() {

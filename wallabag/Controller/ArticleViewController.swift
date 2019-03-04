@@ -16,7 +16,8 @@ protocol ArticleViewControllerProtocol {
 }
 
 final class ArticleViewController: UIViewController, ArticleViewControllerProtocol {
-    let analytics = AnalyticsManager()
+    var analytics: AnalyticsManager!
+    var themeManager: ThemeManager!
     var podcastController: PodcastViewController?
 
     var entry: Entry! {
@@ -124,7 +125,7 @@ final class ArticleViewController: UIViewController, ArticleViewControllerProtoc
         setupAccessibilityLabel()
         contentWeb.load(entry: entry)
         contentWeb.scrollView.delegate = self
-        contentWeb.backgroundColor = ThemeManager.manager.getBackgroundColor()
+        contentWeb.backgroundColor = themeManager.getBackgroundColor()
 
         UIApplication.shared.isIdleTimerDisabled = true
 

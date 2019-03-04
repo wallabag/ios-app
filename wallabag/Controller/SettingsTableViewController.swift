@@ -12,8 +12,9 @@ import WallabagCommon
 
 final class SettingsTableViewController: UITableViewController {
 
-    let analytics = AnalyticsManager()
-    let setting = WallabagSetting()
+    var analytics: AnalyticsManager!
+    var setting: WallabagSetting!
+    var themeManager: ThemeManager!
 
     @IBOutlet weak var currentThemeLabel: UILabel!
     @IBOutlet weak var justifySwitch: UISwitch!
@@ -72,8 +73,8 @@ final class SettingsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if let header = view as? UITableViewHeaderFooterView {
-            header.backgroundView?.backgroundColor = ThemeManager.manager.getBackgroundSelectedColor()
-            header.textLabel?.textColor = ThemeManager.manager.getColor()
+            header.backgroundView?.backgroundColor = themeManager.getBackgroundSelectedColor()
+            header.textLabel?.textColor = themeManager.getColor()
         }
     }
 

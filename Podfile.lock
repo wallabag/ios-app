@@ -21,6 +21,9 @@ PODS:
   - RealmSwift (3.13.1):
     - Realm (= 3.13.1)
   - SideMenu (5.0.3)
+  - Swinject (2.5.0)
+  - SwinjectStoryboard (2.1.0):
+    - Swinject (~> 2.5)
   - TUSafariActivity (1.0.4)
   - URITemplate (2.0.3)
 
@@ -34,6 +37,8 @@ DEPENDENCIES:
   - Mockingjay
   - RealmSwift
   - SideMenu
+  - Swinject
+  - SwinjectStoryboard
   - TUSafariActivity (~> 1.0)
 
 SPEC REPOS:
@@ -48,6 +53,8 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - SideMenu
+    - Swinject
+    - SwinjectStoryboard
     - TUSafariActivity
     - URITemplate
 
@@ -62,9 +69,11 @@ SPEC CHECKSUMS:
   Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
   RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
+  Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
+  SwinjectStoryboard: 688f096033103e66ffcf6ca678211acd7d7be505
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
   URITemplate: ace0c4c46dcf8afe6e89b4060621852886b15c3b
 
-PODFILE CHECKSUM: 30609e5869d902f669110e93d2f0186a1ca80a00
+PODFILE CHECKSUM: bc871693d6e3119eb6f8005ec13e85498bfe1a3d
 
 COCOAPODS: 1.6.0

@@ -10,7 +10,8 @@ import UIKit
 import StoreKit
 
 final class TipViewController: UIViewController, SKPaymentTransactionObserver, SKProductsRequestDelegate {
-    let analytics = AnalyticsManager()
+    var analytics: AnalyticsManager!
+    var themeManager: ThemeManager!
     var transactionInProgress = false
     var productIDs: Set<String> = ["tips1"]
     let store: WallabagStore = WallabagStore()
@@ -75,9 +76,9 @@ final class TipViewController: UIViewController, SKPaymentTransactionObserver, S
         super.viewDidLoad()
         analytics.sendScreenViewed(.tipView)
 
-        view.backgroundColor = ThemeManager.manager.getBackgroundColor()
+        view.backgroundColor = themeManager.getBackgroundColor()
         tipContent.text = "This application is developed on free time, it is free and will remain so. But you can contribute financially by making a donation whenever you want to support the project.".localized
-        tipContent.textColor = ThemeManager.manager.getColor()
+        tipContent.textColor = themeManager.getColor()
 
         SKPaymentQueue.default().add(self)
         tipButton.isEnabled = false

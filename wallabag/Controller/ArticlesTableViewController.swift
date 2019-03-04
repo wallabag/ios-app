@@ -13,21 +13,17 @@ import CoreSpotlight
 import RealmSwift
 import WallabagKit
 import WallabagCommon
+import SwinjectStoryboard
 
 final class ArticlesTableViewController: UITableViewController {
 
     let searchController = UISearchController(searchResultsController: nil)
-    let analytics = AnalyticsManager()
-    let setting = WallabagSetting()
+    var analytics: AnalyticsManager!
+    var setting: WallabagSetting!
     var wallabagSync: WallabagSyncing!
+    var hapticNotification: UINotificationFeedbackGenerator!
+    var realm: Realm!
 
-    lazy var realm: Realm = {
-        do {
-            return try Realm()
-        } catch {
-            fatalError("realm error")
-        }
-    }()
     var results: Results<Entry>?
     var notificationToken: NotificationToken?
     var searchTimer: Timer?
@@ -130,6 +126,7 @@ final class ArticlesTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "articleIdentifier", for: indexPath) as? ArticleTableViewCell else {
             return UITableViewCell()
         }
+        cell.themeManager = SwinjectStoryboard.defaultContainer.resolve(ThemeManager.self)
         cell.present(results![indexPath.row])
         return cell
     }
@@ -224,6 +221,7 @@ final class ArticlesTableViewController: UITableViewController {
             entry.isArchived = !entry.isArchived
         }
         WallabagSession.shared.update(entry)
+        hapticNotification.notificationOccurred(.success)
     }
 
     private func star(_ entry: Entry) {
@@ -231,10 +229,12 @@ final class ArticlesTableViewController: UITableViewController {
             entry.isStarred = !entry.isStarred
         }
         WallabagSession.shared.update(entry)
+        hapticNotification.notificationOccurred(.success)
     }
 
     private func delete(_ entry: Entry) {
         WallabagSession.shared.delete(entry)
+        hapticNotification.notificationOccurred(.warning)
     }
 
     private func addArticle() {

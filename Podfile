@@ -13,6 +13,8 @@ target 'wallabag' do
     pod 'GoogleAnalytics'
     pod 'Fabric'
     pod 'Crashlytics'
+    pod 'Swinject'
+    pod 'SwinjectStoryboard'
     
     target 'wallabagUITests' do
        inherit! :search_paths

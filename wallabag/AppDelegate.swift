@@ -15,20 +15,22 @@ import WallabagCommon
 import WallabagKit
 import Fabric
 import Crashlytics
+import SwinjectStoryboard
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let setting: WallabagSetting = WallabagSetting()
+    var setting: WallabagSetting!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
 
+        setting = SwinjectStoryboard.defaultContainer.resolve(WallabagSetting.self)
+
         configureTheme()
         configureNetworkIndicator()
         configureGA()
-        configureRealm()
         handleArgs()
 
         Log(WallabagSession.shared.currentState)
@@ -63,7 +65,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func configureTheme() {
-        ThemeManager.manager.apply(setting.get(for: .theme))
+        SwinjectStoryboard.defaultContainer.resolve(ThemeManager.self)?.apply(setting.get(for: .theme))
+        //ThemeManager.manager.apply(setting.get(for: .theme))
     }
 
     private func handleArgs() {
@@ -77,22 +80,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let gai = GAI.sharedInstance()
         _ = gai?.tracker(withTrackingId: "UA-115437094-1")
         gai?.trackUncaughtExceptions = true
-    }
-
-    private func configureRealm() {
-        Log("[LOG] Realm path" + (Realm.Configuration.defaultConfiguration.fileURL?.description)!)
-        let config = Realm.Configuration(
-            schemaVersion: 2,
-            migrationBlock: { _, _ in
-        })
-
-        Realm.Configuration.defaultConfiguration = config
-
-        do {
-            _ = try Realm()
-        } catch {
-            fatalError("real error")
-        }
     }
 
     private func configureNetworkIndicator() {

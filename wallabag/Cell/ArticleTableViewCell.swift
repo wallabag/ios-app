@@ -11,7 +11,6 @@ import AlamofireImage
 import CoreData
 
 final class ArticleTableViewCell: ThemedTableViewCell {
-
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var website: UILabel!
     @IBOutlet weak var readingTime: UILabel!
@@ -42,10 +41,10 @@ final class ArticleTableViewCell: ThemedTableViewCell {
 
     override func setupTheme() {
         super.setupTheme()
-        title?.textColor = ThemeManager.manager.getColor()
-        website?.textColor = ThemeManager.manager.getColor()
-        readingTime?.textColor = ThemeManager.manager.getColor()
-        readed?.tintColor = ThemeManager.manager.getTintColor()
-        starred?.tintColor = ThemeManager.manager.getTintColor()
+        title?.textColor = themeManager.getColor()
+        website?.textColor = themeManager.getColor()
+        readingTime?.textColor = themeManager.getColor()
+        readed?.tintColor = themeManager.getTintColor()
+        starred?.tintColor = themeManager.getTintColor()
     }
 }

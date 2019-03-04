@@ -12,8 +12,8 @@ import WallabagCommon
 
 final class LoginViewController: UIViewController {
 
-    let analytics = AnalyticsManager()
-    let setting = WallabagSetting()
+    var analytics: AnalyticsManager!
+    var setting: WallabagSetting!
 
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!

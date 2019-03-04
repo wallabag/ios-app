@@ -12,8 +12,8 @@ import WallabagKit
 
 final class ServerViewController: UIViewController {
 
-    let analytics = AnalyticsManager()
-    let setting = WallabagSetting()
+    var analytics: AnalyticsManager!
+    var setting: WallabagSetting!
 
     @IBOutlet weak var server: UITextField!
 

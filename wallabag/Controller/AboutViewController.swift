@@ -10,18 +10,18 @@ import UIKit
 
 final class AboutViewController: UIViewController {
 
-    @IBOutlet weak var versionText: UILabel!
+    var analytics: AnalyticsManager!
+    var themeManager: ThemeManager!
 
+    @IBOutlet weak var versionText: UILabel!
     @IBAction func reportBug(_ sender: Any) {
 
     }
 
-    let analytics = AnalyticsManager()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         analytics.sendScreenViewed(.aboutView)
-        view.backgroundColor = ThemeManager.manager.getBackgroundColor()
+        view.backgroundColor = themeManager.getBackgroundColor()
 
         let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? "0"
         let build = Bundle.main.infoDictionary!["CFBundleVersion"] as? String ?? "0"

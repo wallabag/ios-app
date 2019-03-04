@@ -9,13 +9,14 @@
 import UIKit
 
 class ThemeManager {
-    static let manager = ThemeManager()
-    private init() {
-        currentTheme = White()
-    }
 
-    private var themes: [ThemeProtocol] = [White(), Light(), Dusk(), Night(), Black()]
     private var currentTheme: ThemeProtocol
+    private var themes: [ThemeProtocol] = [White(), Light(), Dusk(), Night(), Black()]
+
+    //static let manager = ThemeManager()
+    init(currentTheme: ThemeProtocol) {
+        self.currentTheme = currentTheme
+    }
 
     func apply(_ themeName: String) {
         updateCurrentTheme(themeName)

@@ -11,21 +11,21 @@ import WallabagCommon
 
 final class ThemeChoiceTableViewController: UITableViewController {
 
-    let analytics = AnalyticsManager()
-    let setting = WallabagSetting()
-    var themes: [ThemeProtocol] = ThemeManager.manager.getThemes()
+    var analytics: AnalyticsManager!
+    var setting: WallabagSetting!
+    var themeManager: ThemeManager!
 
     override func viewDidLoad() {
         analytics.sendScreenViewed(.themeChoiceView)
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return themes.count
+        return themeManager.getThemes().count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-        let theme: ThemeProtocol = themes[indexPath.row]
+        let theme: ThemeProtocol = themeManager.getThemes()[indexPath.row]
 
         cell.textLabel?.text = theme.name.ucFirst
 
@@ -43,10 +43,10 @@ final class ThemeChoiceTableViewController: UITableViewController {
         tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
         tableView.deselectRow(at: indexPath, animated: true)
 
-        let selectedTheme = themes[indexPath.row]
+        let selectedTheme = themeManager.getThemes()[indexPath.row]
 
         setting.set(selectedTheme.name, for: .theme)
-        ThemeManager.manager.apply(selectedTheme.name)
+        themeManager.apply(selectedTheme.name)
 
         _ = navigationController?.popViewController(animated: true)
     }

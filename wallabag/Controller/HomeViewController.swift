@@ -11,8 +11,8 @@ import WallabagCommon
 
 final class HomeViewController: UIViewController {
 
-    let analytics = AnalyticsManager()
-    let setting = WallabagSetting()
+    var analytics: AnalyticsManager!
+    var setting: WallabagSetting!
 
     @IBAction func authError(segue: UIStoryboardSegue) {
         setting.set(false, for: .wallabagIsConfigured)

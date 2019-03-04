@@ -11,11 +11,12 @@ import WallabagCommon
 
 final class ClientIdViewController: UIViewController {
 
-    let analytics = AnalyticsManager()
+    var analytics: AnalyticsManager!
+    var setting: WallabagSetting!
+
     @IBOutlet weak var clientId: UITextField!
     @IBOutlet weak var clientSecret: UITextField!
     @IBOutlet weak var helpTextView: UITextView!
-    let setting: Setting = WallabagSetting()
 
     @IBAction func openMyInstance(_ sender: Any) {
         UIApplication.shared.open(URL(string: setting.get(for: .host) + "/developer")!, options: [:], completionHandler: nil)
