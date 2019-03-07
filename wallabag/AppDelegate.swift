@@ -21,11 +21,13 @@ import WallabagKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var setting: WallabagSetting!
+    var realm: Realm!
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
 
         setting = SwinjectStoryboard.defaultContainer.resolve(WallabagSetting.self)
+        realm = SwinjectStoryboard.defaultContainer.resolve(Realm.self)
 
         configureTheme()
         configureNetworkIndicator()
@@ -177,8 +179,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func resetApplication() {
         setting.reset(suiteName: setting.sharedDomain)
-        try? Realm().write {
-            try? Realm().deleteAll()
+        try? realm.write {
+            realm.deleteAll()
         }
     }
 }

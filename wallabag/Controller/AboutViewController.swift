@@ -7,13 +7,21 @@
 //
 
 import UIKit
+import MessageUI
 
 final class AboutViewController: UIViewController {
     var analytics: AnalyticsManager!
     var themeManager: ThemeManager!
 
     @IBOutlet var versionText: UILabel!
-    @IBAction func reportBug(_: UIButton) {}
+    @IBAction func reportBug(_: UIButton) {
+        let mailController = MFMailComposeViewController()
+        mailController.setSubject("Wallabag Feedback")
+        mailController.setMessageBody("Please describe your problem or suggest new feature", isHTML: false)
+        mailController.setToRecipients(["support@district-web.fr"])
+
+        present(mailController, animated: true)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,5 +32,11 @@ final class AboutViewController: UIViewController {
         let build = Bundle.main.infoDictionary!["CFBundleVersion"] as? String ?? "0"
 
         versionText.text = String(format: "Version %@ build %@".localized, arguments: [version, build])
+    }
+}
+
+extension AboutViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        dismiss(animated: true)
     }
 }
