@@ -21,3 +21,5 @@ identifier_name:
 #force_cast: warning # implicitly
 force_try:
   severity: warning # explicitly
+disabled_rules:
+  - trailing_comma

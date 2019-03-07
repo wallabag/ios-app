@@ -27,7 +27,7 @@
 "C5u-67-6oh.headerTitle" = "Thème";
 
 /* Class = "UILabel"; text = "Wallabag"; ObjectID = "FRs-RA-L1c"; */
-"FRs-RA-L1c.text" = "wallabag";
+"FRs-RA-L1c.text" = "Wallabag";
 
 /* Class = "UINavigationItem"; title = "Auth"; ObjectID = "GhO-El-f27"; */
 "GhO-El-f27.title" = "Authentification";

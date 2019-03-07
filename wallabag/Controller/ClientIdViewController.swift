@@ -10,15 +10,14 @@ import UIKit
 import WallabagCommon
 
 final class ClientIdViewController: UIViewController {
-
     var analytics: AnalyticsManager!
     var setting: WallabagSetting!
 
-    @IBOutlet weak var clientId: UITextField!
-    @IBOutlet weak var clientSecret: UITextField!
-    @IBOutlet weak var helpTextView: UITextView!
+    @IBOutlet var clientId: UITextField!
+    @IBOutlet var clientSecret: UITextField!
+    @IBOutlet var helpTextView: UITextView!
 
-    @IBAction func openMyInstance(_ sender: Any) {
+    @IBAction func openMyInstance(_: Any) {
         UIApplication.shared.open(URL(string: setting.get(for: .host) + "/developer")!, options: [:], completionHandler: nil)
     }
 
@@ -30,7 +29,8 @@ final class ClientIdViewController: UIViewController {
     }
 
     // MARK: - Navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+    override func prepare(for _: UIStoryboardSegue, sender _: Any?) {
         setting.set(clientId.text!, for: .clientId)
         setting.set(clientSecret.text!, for: .clientSecret)
     }

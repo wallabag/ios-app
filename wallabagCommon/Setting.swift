@@ -6,8 +6,8 @@
 //  Copyright © 2016 maxime marinel. All rights reserved.
 //
 
-import Foundation
 import AVFoundation
+import Foundation
 
 public class SettingKeys {}
 
@@ -51,6 +51,7 @@ public class WallabagSetting: Setting {
     public init() {
         super.init(UserDefaults(suiteName: sharedDomain)!)
     }
+
     public func getPassword() -> String? {
         guard "" != get(for: .username) else {
             return nil
@@ -78,16 +79,16 @@ public class WallabagSetting: Setting {
 }
 
 public extension SettingKeys {
-    public static let wallabagIsConfigured = SettingKey<Bool>("wallabagConfiguredV3.1", false)
-    public static let host = SettingKey<String>("host", "")
-    public static let username = SettingKey<String>("username", "")
-    public static let clientId = SettingKey<String>("clientId", "")
-    public static let clientSecret = SettingKey<String>("clientSecret", "")
-    public static let speechVoice = SettingKey<String>("speechVoice", "com.apple.ttsbundle.Daniel-compact")
-    public static let badgeEnabled = SettingKey<Bool>("badge", true)
-    public static let defaultMode = SettingKey<String>("defaultMode", "allArticles")
-    public static let previousPasteBoardUrl = SettingKey<String>("previousPasteBoardUrl", "")
-    public static let speechRate = SettingKey<Float>("speechRate", AVSpeechUtteranceDefaultSpeechRate)
-    public static let justifyArticle = SettingKey<Bool>("justifyArticle", true)
-    public static let theme = SettingKey<String>("theme", "white")
+    static let wallabagIsConfigured = SettingKey<Bool>("wallabagConfiguredV3.1", false)
+    static let host = SettingKey<String>("host", "")
+    static let username = SettingKey<String>("username", "")
+    static let clientId = SettingKey<String>("clientId", "")
+    static let clientSecret = SettingKey<String>("clientSecret", "")
+    static let speechVoice = SettingKey<String>("speechVoice", "com.apple.ttsbundle.Daniel-compact")
+    static let badgeEnabled = SettingKey<Bool>("badge", true)
+    static let defaultMode = SettingKey<String>("defaultMode", "allArticles")
+    static let previousPasteBoardUrl = SettingKey<String>("previousPasteBoardUrl", "")
+    static let speechRate = SettingKey<Float>("speechRate", AVSpeechUtteranceDefaultSpeechRate)
+    static let justifyArticle = SettingKey<Bool>("justifyArticle", true)
+    static let theme = SettingKey<String>("theme", "white")
 }

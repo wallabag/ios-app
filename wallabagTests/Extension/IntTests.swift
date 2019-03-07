@@ -6,11 +6,10 @@
 //  Copyright © 2016 maxime marinel. All rights reserved.
 //
 
-import XCTest
 @testable import wallabag
+import XCTest
 
 class IntTests: XCTestCase {
-
     func testReadingTime() {
         XCTAssertEqual("00:01:00", 1.readingTime)
         XCTAssertEqual("00:02:00", 2.readingTime)

@@ -5,7 +5,6 @@
 import XCTest
 
 class SnapshotUITests: XCTestCase {
-
     override func setUp() {
         super.setUp()
         continueAfterFailure = false

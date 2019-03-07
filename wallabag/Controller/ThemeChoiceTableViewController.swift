@@ -10,7 +10,6 @@ import UIKit
 import WallabagCommon
 
 final class ThemeChoiceTableViewController: UITableViewController {
-
     var analytics: AnalyticsManager!
     var setting: WallabagSetting!
     var themeManager: ThemeManager!
@@ -19,7 +18,7 @@ final class ThemeChoiceTableViewController: UITableViewController {
         analytics.sendScreenViewed(.themeChoiceView)
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return themeManager.getThemes().count
     }
 

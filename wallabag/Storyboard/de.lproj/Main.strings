@@ -30,7 +30,7 @@
 "C5u-67-6oh.headerTitle" = "Design";
 
 /* Class = "UILabel"; text = "Wallabag"; ObjectID = "FRs-RA-L1c"; */
-"FRs-RA-L1c.text" = "wallabag";
+"FRs-RA-L1c.text" = "Wallabag";
 
 /* Class = "UINavigationItem"; title = "Auth"; ObjectID = "GhO-El-f27"; */
 "GhO-El-f27.title" = "Authentifizierung";
@@ -49,9 +49,6 @@
 
 /* Class = "UILabel"; text = "wallabag v2 for iOS"; ObjectID = "OmZ-lq-KqG"; */
 "OmZ-lq-KqG.text" = "Wallabag Reader";
-
-/* Class = "UILabel"; text = "Report issue:  https://github.com/wallabag/ios-app/issues"; ObjectID = "ROP-iA-4oU"; */
-"ROP-iA-4oU.text" = "Fehler melden:  https://github.com/wallabag/ios-app/issues";
 
 /* Class = "UILabel"; text = "Unread articles"; ObjectID = "T0z-d1-R3T"; */
 "T0z-d1-R3T.text" = "Ungelesene Artikel";

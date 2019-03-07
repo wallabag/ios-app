@@ -6,20 +6,19 @@
 //  Copyright © 2016 maxime marinel. All rights reserved.
 //
 
-import UIKit
 import AVFoundation
+import UIKit
 import WallabagCommon
 
 final class SettingsTableViewController: UITableViewController {
-
     var analytics: AnalyticsManager!
     var setting: WallabagSetting!
     var themeManager: ThemeManager!
 
-    @IBOutlet weak var currentThemeLabel: UILabel!
-    @IBOutlet weak var justifySwitch: UISwitch!
-    @IBOutlet weak var badgeSwitch: UISwitch!
-    @IBOutlet weak var speechRateSlider: UISlider!
+    @IBOutlet var currentThemeLabel: UILabel!
+    @IBOutlet var justifySwitch: UISwitch!
+    @IBOutlet var badgeSwitch: UISwitch!
+    @IBOutlet var speechRateSlider: UISlider!
 
     @IBAction func speechRateChanged(_ sender: UISlider) {
         setting.set(sender.value, for: .speechRate)
@@ -71,7 +70,7 @@ final class SettingsTableViewController: UITableViewController {
         }
     }
 
-    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+    override func tableView(_: UITableView, willDisplayHeaderView view: UIView, forSection _: Int) {
         if let header = view as? UITableViewHeaderFooterView {
             header.backgroundView?.backgroundColor = themeManager.getBackgroundSelectedColor()
             header.textLabel?.textColor = themeManager.getColor()

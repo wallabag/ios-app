@@ -28,7 +28,6 @@ func snapshot(name: String, waitForLoadingIndicator: Bool = true) {
 }
 
 public class Snapshot: NSObject {
-
     public class func setupSnapshot(app: XCUIApplication) {
         setLanguage(app)
         setLocale(app)
@@ -131,7 +130,7 @@ public class Snapshot: NSObject {
 
 extension XCUIElement {
     var isLoadingIndicator: Bool {
-        return self.frame.size == CGSize(width: 10, height: 20)
+        return frame.size == CGSize(width: 10, height: 20)
     }
 }
 

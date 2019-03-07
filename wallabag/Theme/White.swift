@@ -15,5 +15,5 @@ class White: ThemeProtocol {
     var barStyle: UIBarStyle = .default
     var backgroundColor: UIColor = .white
     var navigationBarBackground: UIImage?
-    var backgroundSelectedColor: UIColor = UIColor.init(red: 229.rgb, green: 229.rgb, blue: 229.rgb, alpha: 1)
+    var backgroundSelectedColor: UIColor = UIColor(red: 229.rgb, green: 229.rgb, blue: 229.rgb, alpha: 1)
 }

@@ -53,11 +53,6 @@
 /* Class = "UILabel"; text = "wallabag v2 for iOS"; ObjectID = "OmZ-lq-KqG"; */
 "OmZ-lq-KqG.text" = "Wallabag Reader";
 
-/* Class = "UILabel"; text = "Report issue:
- https://github.com/wallabag/ios-app/issues"; ObjectID = "ROP-iA-4oU"; */
-"ROP-iA-4oU.text" = "Raportează eroare:
- https://github.com/wallabag/ios-app/issues";
-
 /* Class = "UILabel"; text = "Unread articles"; ObjectID = "T0z-d1-R3T"; */
 "T0z-d1-R3T.text" = "Articole necitite";
 

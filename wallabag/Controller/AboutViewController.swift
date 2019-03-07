@@ -9,14 +9,11 @@
 import UIKit
 
 final class AboutViewController: UIViewController {
-
     var analytics: AnalyticsManager!
     var themeManager: ThemeManager!
 
-    @IBOutlet weak var versionText: UILabel!
-    @IBAction func reportBug(_ sender: Any) {
-
-    }
+    @IBOutlet var versionText: UILabel!
+    @IBAction func reportBug(_: UIButton) {}
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -21,7 +21,7 @@ public struct PaidSubscription {
 
     public var isActive: Bool {
         // is current date between purchaseDate and expiresDate?
-        return (purchaseDate...expiresDate).contains(Date())
+        return (purchaseDate ... expiresDate).contains(Date())
     }
 
     init?(json: [String: Any]) {
@@ -31,8 +31,8 @@ public struct PaidSubscription {
             let purchaseDate = dateFormatter.date(from: purchaseDateString),
             let expiresDateString = json["expires_date"] as? String,
             let expiresDate = dateFormatter.date(from: expiresDateString)
-            else {
-                return nil
+        else {
+            return nil
         }
 
         self.productId = productId

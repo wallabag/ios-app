@@ -6,17 +6,17 @@
 //  Copyright © 2016 maxime marinel. All rights reserved.
 //
 
-import UIKit
 import AlamofireImage
 import CoreData
+import UIKit
 
 final class ArticleTableViewCell: ThemedTableViewCell {
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var website: UILabel!
-    @IBOutlet weak var readingTime: UILabel!
-    @IBOutlet weak var previewImage: UIImageView!
-    @IBOutlet weak var readed: UIImageView!
-    @IBOutlet weak var starred: UIImageView!
+    @IBOutlet var title: UILabel!
+    @IBOutlet var website: UILabel!
+    @IBOutlet var readingTime: UILabel!
+    @IBOutlet var previewImage: UIImageView!
+    @IBOutlet var readed: UIImageView!
+    @IBOutlet var starred: UIImageView!
 
     func present(_ entry: Entry) {
         setupTheme()

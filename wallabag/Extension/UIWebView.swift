@@ -12,7 +12,7 @@ import WallabagCommon
 extension UIWebView {
     func load(entry: Entry) {
         DispatchQueue.main.async { [weak self] in
-            guard let content = self?.contentForWebView(entry) else {return}
+            guard let content = self?.contentForWebView(entry) else { return }
             self?.loadHTMLString(content, baseURL: Bundle.main.bundleURL)
         }
     }

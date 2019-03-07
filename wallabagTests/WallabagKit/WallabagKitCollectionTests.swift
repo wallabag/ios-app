@@ -6,9 +6,9 @@
 //  Copyright © 2018 maxime marinel. All rights reserved.
 //
 
-import XCTest
 @testable import wallabag
 @testable import WallabagKit
+import XCTest
 
 class WallabagKitCollectionTests: XCTestCase {
     func testDecodeEmptyCollectionOfWallabagEntry() {

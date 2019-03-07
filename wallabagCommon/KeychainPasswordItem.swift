@@ -51,8 +51,8 @@ struct KeychainPasswordItem {
         guard let existingItem = queryResult as? [String: AnyObject],
             let passwordData = existingItem[kSecValueData as String] as? Data,
             let password = String(data: passwordData, encoding: String.Encoding.utf8)
-            else {
-                throw KeychainError.unexpectedPasswordData
+        else {
+            throw KeychainError.unexpectedPasswordData
         }
 
         return password
@@ -85,12 +85,12 @@ struct KeychainPasswordItem {
         var attributesToUpdate = [String: AnyObject]()
         attributesToUpdate[kSecAttrAccount as String] = newAccountName as AnyObject?
 
-        let query = KeychainPasswordItem.keychainQuery(withService: service, account: self.account, accessGroup: accessGroup)
+        let query = KeychainPasswordItem.keychainQuery(withService: service, account: account, accessGroup: accessGroup)
         let status = SecItemUpdate(query as CFDictionary, attributesToUpdate as CFDictionary)
 
         guard status == noErr || status == errSecItemNotFound else { throw KeychainError.unhandledError(status: status) }
 
-        self.account = newAccountName
+        account = newAccountName
     }
 
     func deleteItem() throws {
@@ -117,7 +117,7 @@ struct KeychainPasswordItem {
 
         var passwordItems = [KeychainPasswordItem]()
         for result in resultData {
-            guard let account  = result[kSecAttrAccount as String] as? String else { throw KeychainError.unexpectedItemData }
+            guard let account = result[kSecAttrAccount as String] as? String else { throw KeychainError.unexpectedItemData }
 
             let passwordItem = KeychainPasswordItem(service: service, account: account, accessGroup: accessGroup)
             passwordItems.append(passwordItem)

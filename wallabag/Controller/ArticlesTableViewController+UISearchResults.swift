@@ -15,7 +15,7 @@ extension ArticlesTableViewController: UISearchResultsUpdating {
 
         let predicateTitle = NSPredicate(format: "title CONTAINS[cd] %@", searchText)
         let predicateContent = NSPredicate(format: "content CONTAINS[cd] %@", searchText)
-        let predicateCompound =  NSCompoundPredicate(orPredicateWithSubpredicates: [predicateTitle, predicateContent])
+        let predicateCompound = NSCompoundPredicate(orPredicateWithSubpredicates: [predicateTitle, predicateContent])
 
         filteringList(predicateCompound)
     }

@@ -6,17 +6,17 @@
 //  Copyright © 2018 maxime marinel. All rights reserved.
 //
 
-import Foundation
-import WallabagKit
-import RealmSwift
 import CoreSpotlight
+import Foundation
+import RealmSwift
+import WallabagKit
 
 final class SyncOperation: Operation {
     enum State: String {
         case ready = "Ready"
         case executing = "Executing"
         case finished = "Finished"
-        fileprivate var keyPath: String { return "is" + self.rawValue }
+        fileprivate var keyPath: String { return "is" + rawValue }
     }
 
     override var isAsynchronous: Bool { return true }
@@ -33,6 +33,7 @@ final class SyncOperation: Operation {
             didChangeValue(forKey: oldValue.keyPath)
         }
     }
+
     var entries: WallabagKitCollection<WallabagKitEntry>?
     let kit: WallabagKitProtocol
 
@@ -45,7 +46,7 @@ final class SyncOperation: Operation {
     }
 
     override func start() {
-        if self.isCancelled {
+        if isCancelled {
             state = .finished
         } else {
             state = .ready
@@ -54,7 +55,7 @@ final class SyncOperation: Operation {
     }
 
     override func main() {
-        if self.isCancelled {
+        if isCancelled {
             state = .finished
         } else {
             state = .executing
@@ -67,9 +68,9 @@ final class SyncOperation: Operation {
                 realm.beginWrite()
                 for wallabagEntry in entries {
                     if let entry = realm.object(ofType: Entry.self, forPrimaryKey: wallabagEntry.id) {
-                        self.update(entry: entry, from: wallabagEntry)
+                        update(entry: entry, from: wallabagEntry)
                     } else {
-                        self.insert(wallabagEntry, realm)
+                        insert(wallabagEntry, realm)
                     }
                 }
                 try realm.commitWrite()
@@ -88,8 +89,7 @@ final class SyncOperation: Operation {
         #warning("@TODO move spotlight to an observer")
         let searchableItem = CSSearchableItem(uniqueIdentifier: entry.spotlightIdentifier,
                                               domainIdentifier: "entry",
-                                              attributeSet: entry.searchableItemAttributeSet
-        )
+                                              attributeSet: entry.searchableItemAttributeSet)
         CSSearchableIndex.default().indexSearchableItems([searchableItem]) { (error) -> Void in
             if error != nil {
                 Log(error!.localizedDescription)
@@ -100,15 +100,15 @@ final class SyncOperation: Operation {
     private func update(entry: Entry, from article: WallabagKitEntry) {
         #warning("@TODO handle article without updated date needed")
         if let articleUpdatedAt = Date.fromISOString(article.updatedAt) {
-        if entry.updatedAt != articleUpdatedAt {
-            if articleUpdatedAt > entry.updatedAt! {
+            if entry.updatedAt != articleUpdatedAt {
+                if articleUpdatedAt > entry.updatedAt! {
+                    entry.hydrate(from: article)
+                } else {
+                    update(entry: entry)
+                }
                 entry.hydrate(from: article)
-            } else {
-                update(entry: entry)
             }
-            entry.hydrate(from: article)
         }
-    }
     }
 
     private func update(entry: Entry) {
@@ -116,8 +116,9 @@ final class SyncOperation: Operation {
             update: entry.id,
             parameters: [
                 "archive": entry.isArchived.int,
-                "starred": entry.isStarred.int
-        ], queue: nil) { _ in
+                "starred": entry.isStarred.int,
+            ], queue: nil
+        ) { _ in
             Log("Update from local to server")
         }
     }

@@ -43,14 +43,13 @@ final class WallabagStore: NSObject {
     }
 
     func loadSubscriptionOptions() {
-
         let productIDPrefix = Bundle.main.bundleIdentifier! + ".sub."
 
         let allAccess = productIDPrefix + "allaccess"
-        let oneAWeek  = productIDPrefix + "oneaweek"
+        let oneAWeek = productIDPrefix + "oneaweek"
 
         let allAccessMonthly = productIDPrefix + "allaccess.monthly"
-        let oneAWeekMonthly  = productIDPrefix + "oneaweek.monthly"
+        let oneAWeekMonthly = productIDPrefix + "oneaweek.monthly"
 
         let productIDs = Set([allAccess, oneAWeek, allAccessMonthly, oneAWeekMonthly])
 
@@ -70,14 +69,14 @@ final class WallabagStore: NSObject {
 
     func uploadReceipt(completion: ((_ success: Bool) -> Void)? = nil) {
         if let receiptData = loadReceipt() {
-            upload(receipt: receiptData) { [weak self] (result) in
+            upload(receipt: receiptData) { [weak self] result in
                 guard let strongSelf = self else { return }
                 switch result {
-                case .success(let result):
+                case let .success(result):
                     strongSelf.currentSessionId = result.sessionId
                     strongSelf.currentSubscription = result.currentSubscription
                     completion?(true)
-                case .failure(let error):
+                case let .failure(error):
                     print("🚫 Receipt Upload Failed: \(error)")
                     completion?(false)
                 }
@@ -85,46 +84,46 @@ final class WallabagStore: NSObject {
         }
     }
 
-    private func upload(receipt data: Data, completion: @escaping UploadReceiptCompletion) {
-        /*let body = [
-            "receipt-data": data.base64EncodedString(),
-            "password": "65bdeeb88cfb488d8f4d5a4786afa936"
-        ]
-        let bodyData = try! JSONSerialization.data(withJSONObject: body, options: [])
+    private func upload(receipt _: Data, completion _: @escaping UploadReceiptCompletion) {
+        /* let body = [
+         "receipt-data": data.base64EncodedString(),
+         "password": "65bdeeb88cfb488d8f4d5a4786afa936"
+         ]
+         let bodyData = try! JSONSerialization.data(withJSONObject: body, options: [])
 
-        let url = URL(string: "https://sandbox.itunes.apple.com/verifyReceipt")!
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.httpBody = bodyData
+         let url = URL(string: "https://sandbox.itunes.apple.com/verifyReceipt")!
+         var request = URLRequest(url: url)
+         request.httpMethod = "POST"
+         request.httpBody = bodyData
 
-        let task = URLSession.shared.dataTask(with: request) { (responseData, _, error) in
-            if let error = error {
-                print(error)
-                //completion(.failure(.other(error)))
-            } else if let responseData = responseData {
-                let json = try! JSONSerialization.jsonObject(with: responseData, options: []) as! Dictionary<String, Any>
-                if let receipt = json["receipt"] as? [String: Any], let purchases = receipt["in_app"] as? Array<[String: Any]> {
-                    var subscriptions = [PaidSubscription]()
-                    for purchase in purchases {
-                        if let paidSubscription = PaidSubscription(json: purchase) {
-                            subscriptions.append(paidSubscription)
-                        }
-                    }
+         let task = URLSession.shared.dataTask(with: request) { (responseData, _, error) in
+         if let error = error {
+         print(error)
+         //completion(.failure(.other(error)))
+         } else if let responseData = responseData {
+         let json = try! JSONSerialization.jsonObject(with: responseData, options: []) as! Dictionary<String, Any>
+         if let receipt = json["receipt"] as? [String: Any], let purchases = receipt["in_app"] as? Array<[String: Any]> {
+         var subscriptions = [PaidSubscription]()
+         for purchase in purchases {
+         if let paidSubscription = PaidSubscription(json: purchase) {
+         subscriptions.append(paidSubscription)
+         }
+         }
 
-                    //currentSubscription = subscriptions.filter { $0.isActive }.first
-                    //paidSubscriptions = subscriptions
-                } else {
-                    //paidSubscriptions = []
-                }
+         //currentSubscription = subscriptions.filter { $0.isActive }.first
+         //paidSubscriptions = subscriptions
+         } else {
+         //paidSubscriptions = []
+         }
 
-                //let session = Session(receiptData: data, parsedReceipt: json)
-                //self.sessions[session.id] = session
-                //let result = (sessionId: session.id, currentSubscription: session.currentSubscription)
-                //completion(.success(result))
-            }
-        }
+         //let session = Session(receiptData: data, parsedReceipt: json)
+         //self.sessions[session.id] = session
+         //let result = (sessionId: session.id, currentSubscription: session.currentSubscription)
+         //completion(.success(result))
+         }
+         }
 
-        task.resume()*/
+         task.resume() */
     }
 
     private func loadReceipt() -> Data? {
@@ -143,8 +142,9 @@ final class WallabagStore: NSObject {
 }
 
 // MARK: - SKProductsRequestDelegate
+
 extension WallabagStore: SKProductsRequestDelegate {
-    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+    func productsRequest(_: SKProductsRequest, didReceive response: SKProductsResponse) {
         options = response.products.map { WallabagSubscription(product: $0) }
     }
 

@@ -17,23 +17,23 @@ extension String {
     }
 
     var ucFirst: String {
-        let first = String(self.prefix(1))
+        let first = String(prefix(1))
 
-        return first.uppercased() + String(self.dropFirst())
+        return first.uppercased() + String(dropFirst())
     }
 
     var lcFirst: String {
-        let first = String(self.prefix(1))
+        let first = String(prefix(1))
 
-        return first.lowercased() + String(self.dropFirst())
+        return first.lowercased() + String(dropFirst())
     }
 
     var withoutHTML: String {
-        return self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        return replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
     }
 
     var speakable: [String] {
-        return self.replacingOccurrences(of: "<p[^>]+>", with: "<p>", options: .regularExpression, range: nil).components(separatedBy: "<p>").filter { $0.count > 0 }
+        return replacingOccurrences(of: "<p[^>]+>", with: "<p>", options: .regularExpression, range: nil).components(separatedBy: "<p>").filter { $0.count > 0 }
     }
 
     var localized: String {

@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import RealmSwift
 import Swinject
 import SwinjectStoryboard
 import WallabagCommon
-import RealmSwift
 
 extension SwinjectStoryboard {
+    // swiftlint:disable function_body_length
     @objc class func setup() {
         defaultContainer.register(WallabagSetting.self) { _ in WallabagSetting() }.inObjectScope(.container)
         defaultContainer.register(AnalyticsManager.self) { _ in AnalyticsManager() }.inObjectScope(.container)
@@ -20,18 +21,19 @@ extension SwinjectStoryboard {
                 let config = Realm.Configuration(
                     schemaVersion: 2,
                     migrationBlock: { _, _ in
-                })
+                    }
+                )
 
                 Realm.Configuration.defaultConfiguration = config
 
                 return try Realm()
-            } catch let error {
+            } catch {
                 print(error)
                 fatalError("Error init realm")
             }
         }.inObjectScope(.container)
         defaultContainer.register(ThemeManager.self) { _ in
-            return ThemeManager(currentTheme: White())
+            ThemeManager(currentTheme: White())
         }.inObjectScope(.container)
         defaultContainer.storyboardInitCompleted(AboutViewController.self) { resolver, controller in
             controller.analytics = resolver.resolve(AnalyticsManager.self)
@@ -75,8 +77,7 @@ extension SwinjectStoryboard {
         }
         defaultContainer.storyboardInitCompleted(TipViewController.self) { resolver, controller in
             controller.analytics = resolver.resolve(AnalyticsManager.self)
-            controller.themeManager = resolver.resolve(ThemeManager.self
-            )
+            controller.themeManager = resolver.resolve(ThemeManager.self)
         }
         defaultContainer.storyboardInitCompleted(VoiceChoiceTableViewController.self) { resolver, controller in
             controller.analytics = resolver.resolve(AnalyticsManager.self)

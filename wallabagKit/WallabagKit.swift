@@ -6,8 +6,8 @@
 //  Copyright © 2018 maxime marinel. All rights reserved.
 //
 
-import Foundation
 import Alamofire
+import Foundation
 
 public protocol WallabagKitProtocol {
     var accessToken: String? { get }
@@ -19,7 +19,6 @@ public protocol WallabagKitProtocol {
 }
 
 public class WallabagKit: WallabagKitProtocol {
-
     var host: String?
     var clientID: String?
     var clientSecret: String?
@@ -30,6 +29,7 @@ public class WallabagKit: WallabagKitProtocol {
             }
         }
     }
+
     static let sessionManager: SessionManager = SessionManager()
 
     public init(host: String, clientID: String, clientSecret: String) {
@@ -38,7 +38,7 @@ public class WallabagKit: WallabagKitProtocol {
         self.clientSecret = clientSecret
     }
 
-    static public func getVersion(from host: String, completion: @escaping (WallabagVersion) -> Void) {
+    public static func getVersion(from host: String, completion: @escaping (WallabagVersion) -> Void) {
         Alamofire.request("\(host)/api/version", method: .get)
             .responseString { response in
                 guard let body = response.result.value else { completion(WallabagVersion(version: "unknown"))
@@ -47,7 +47,7 @@ public class WallabagKit: WallabagKitProtocol {
 
                 let version = WallabagVersion(version: body)
                 completion(version)
-        }
+            }
     }
 
     init() {}
@@ -56,8 +56,8 @@ public class WallabagKit: WallabagKitProtocol {
         guard let host = self.host,
             let clientID = self.clientID,
             let clientSecret = self.clientSecret else {
-                completion(.invalidParameter)
-                return
+            completion(.invalidParameter)
+            return
         }
 
         let parameters = [
@@ -65,13 +65,13 @@ public class WallabagKit: WallabagKitProtocol {
             "client_id": clientID,
             "client_secret": clientSecret,
             "username": username,
-            "password": password
+            "password": password,
         ]
 
         Alamofire.request("\(host)/oauth/v2/token", method: .post, parameters: parameters)
             .responseData { response in
                 switch response.result {
-                case .success(let data):
+                case let .success(data):
                     if 400 == response.response?.statusCode {
                         guard let result = try? JSONDecoder().decode(WallabagAuthError.self, from: data) else {
                             completion(.unexpectedError)
@@ -91,30 +91,30 @@ public class WallabagKit: WallabagKitProtocol {
                 default:
                     completion(.unexpectedError)
                 }
-        }
+            }
     }
 
     public func entry(parameters: Parameters = [:], queue: DispatchQueue?, completion: @escaping (WallabagKitCollectionResponse<WallabagKitEntry>) -> Void) {
         WallabagKit.sessionManager.request("\(host!)/api/entries", parameters: parameters)
-            .validate(statusCode: 200..<500)
+            .validate(statusCode: 200 ..< 500)
             .responseData(queue: queue) { response in
                 switch response.result {
-                case .success(let data):
+                case let .success(data):
                     guard let result = try? JSONDecoder().decode(WallabagKitCollection<WallabagKitEntry>.self, from: data) else {
                         completion(.error(WallabagError.invalidJSON))
                         return
                     }
                     completion(.success(result))
-                case .failure(let error):
+                case let .failure(error):
                     completion(.error(error))
                 }
-        }
+            }
     }
 
     public func entry(add url: URL, queue: DispatchQueue?, completion: @escaping (WallabagKitResponse<WallabagKitEntry>) -> Void) {
         WallabagKit.sessionManager.request("\(host!)/api/entries", method: .post, parameters: ["url": url.absoluteString]).responseData(queue: queue) { response in
             switch response.result {
-            case .success(let data):
+            case let .success(data):
                 guard let result = try? JSONDecoder().decode(WallabagKitEntry.self, from: data) else {
                     completion(.error(WallabagError.invalidJSON))
                     return
@@ -131,14 +131,14 @@ public class WallabagKit: WallabagKitProtocol {
             .validate()
             .responseData { _ in
                 completion()
-        }
+            }
     }
 
     public func entry(update id: Int, parameters: Parameters = [:], queue: DispatchQueue?, completion: @escaping (WallabagKitResponse<WallabagKitEntry>) -> Void) {
         WallabagKit.sessionManager.request("\(host!)/api/entries/\(id)", method: .patch, parameters: parameters)
             .validate().responseData(queue: queue) { response in
                 switch response.result {
-                case .success(let data):
+                case let .success(data):
                     guard let result = try? JSONDecoder().decode(WallabagKitEntry.self, from: data) else {
                         completion(.error(WallabagError.invalidJSON))
                         return
@@ -147,6 +147,6 @@ public class WallabagKit: WallabagKitProtocol {
                 case .failure:
                     completion(.error(WallabagError.unexpectedError))
                 }
-        }
+            }
     }
 }

@@ -11,18 +11,18 @@ import RealmSwift
 import WallabagKit
 
 final class Entry: Object {
-    @objc dynamic public var content: String?
-    @objc dynamic public var createdAt: Date?
-    @objc dynamic public var domainName: String?
-    @objc dynamic public var id: Int = 0
-    @objc dynamic public var isArchived: Bool = false
-    @objc dynamic public var isStarred: Bool = false
-    @objc dynamic public var previewPicture: String?
-    @objc dynamic public var title: String?
-    @objc dynamic public var updatedAt: Date?
-    @objc dynamic public var url: String?
-    @objc dynamic public var readingTime: Int = 0
-    @objc dynamic public var screenPosition: Float = 0.0
+    @objc public dynamic var content: String?
+    @objc public dynamic var createdAt: Date?
+    @objc public dynamic var domainName: String?
+    @objc public dynamic var id: Int = 0
+    @objc public dynamic var isArchived: Bool = false
+    @objc public dynamic var isStarred: Bool = false
+    @objc public dynamic var previewPicture: String?
+    @objc public dynamic var title: String?
+    @objc public dynamic var updatedAt: Date?
+    @objc public dynamic var url: String?
+    @objc public dynamic var readingTime: Int = 0
+    @objc public dynamic var screenPosition: Float = 0.0
 
     override class func primaryKey() -> String? {
         return "id"

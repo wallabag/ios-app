@@ -9,6 +9,6 @@
 import Foundation
 
 public extension NSNotification.Name {
-    public static let wallabagkitAuthSuccess = NSNotification.Name("wallabagkit.auth.success")
-    public static let wallabagkitAuthError = NSNotification.Name("wallabagkit.auth.error")
+    static let wallabagkitAuthSuccess = NSNotification.Name("wallabagkit.auth.success")
+    static let wallabagkitAuthError = NSNotification.Name("wallabagkit.auth.error")
 }

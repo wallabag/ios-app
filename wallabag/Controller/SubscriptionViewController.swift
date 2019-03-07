@@ -5,8 +5,8 @@
 //  Created by maxime marinel on 10/08/2018.
 //
 
-import UIKit
 import StoreKit
+import UIKit
 
 class SubscriptionViewController: UIViewController, SKPaymentTransactionObserver, SKProductsRequestDelegate {
     var productIDs: Set<String> = ["podcast"]
@@ -17,28 +17,27 @@ class SubscriptionViewController: UIViewController, SKPaymentTransactionObserver
         }
     }
 
-    @IBOutlet weak var subscribeButton: UIButton!
+    @IBOutlet var subscribeButton: UIButton!
 
-    @IBAction func subscribe(_ sender: UIButton) {
+    @IBAction func subscribe(_: UIButton) {
         if transactionInProgress {
             return
         }
 
         let payment = SKPayment(product: product!)
         SKPaymentQueue.default().add(payment)
-        self.transactionInProgress = true
+        transactionInProgress = true
     }
 
-    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-
+    func paymentQueue(_: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
             switch transaction.transactionState {
             case .purchased:
                 Log("Transaction completed successfully.")
                 SKPaymentQueue.default().finishTransaction(transaction)
                 transactionInProgress = false
-                //tipButton.titleLabel?.text = "Thank you!!!"
-                //analytics.send(.tipPurchased)
+            //tipButton.titleLabel?.text = "Thank you!!!"
+            // analytics.send(.tipPurchased)
             case .failed:
                 Log("Transaction error")
                 SKPaymentQueue.default().finishTransaction(transaction)
@@ -53,7 +52,7 @@ class SubscriptionViewController: UIViewController, SKPaymentTransactionObserver
         }
     }
 
-    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+    func productsRequest(_: SKProductsRequest, didReceive response: SKProductsResponse) {
         Log("Request product")
         if response.products.count != 0,
             let firstproduct = response.products.first {

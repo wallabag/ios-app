@@ -11,11 +11,10 @@ import WallabagCommon
 import WallabagKit
 
 final class ServerViewController: UIViewController {
-
     var analytics: AnalyticsManager!
     var setting: WallabagSetting!
 
-    @IBOutlet weak var server: UITextField!
+    @IBOutlet var server: UITextField!
 
     override func viewDidLoad() {
         analytics.sendScreenViewed(.serverView)
@@ -24,7 +23,7 @@ final class ServerViewController: UIViewController {
 
     @IBAction func nextPressed(_ sender: UIButton) {
         sender.isEnabled = false
-        self.setting.set(self.server.text!, for: .host)
+        setting.set(server.text!, for: .host)
         validateServer(string: server.text!) { [unowned self] isValid, _ in
             if isValid {
                 self.performSegue(withIdentifier: "toClientId", sender: nil)
@@ -40,14 +39,14 @@ final class ServerViewController: UIViewController {
         }
     }
 
-    private func validateServer(string: String, completion: @escaping (Bool, WallabagVersion?) -> Void ) {
+    private func validateServer(string: String, completion: @escaping (Bool, WallabagVersion?) -> Void) {
         do {
             let regex = try NSRegularExpression(pattern: "(http|https)://", options: [])
             guard let url = URL(string: string),
                 UIApplication.shared.canOpenURL(url),
                 1 == regex.matches(in: string, options: [], range: NSRange(location: 0, length: string.count)).count else {
-                    completion(false, nil)
-                    return
+                completion(false, nil)
+                return
             }
             WallabagKit.getVersion(from: string) { version in
                 completion(version.supportedVersion != .unsupported, version)

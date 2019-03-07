@@ -6,11 +6,10 @@
 //  Copyright © 2016 maxime marinel. All rights reserved.
 //
 
-import XCTest
 @testable import wallabag
+import XCTest
 
 class DictionaryTests: XCTestCase {
-
     func testMerge() {
         let dic = ["Key": "Value"]
         let merged = dic.merge(dict: ["OtherKey": "OtherValue"])

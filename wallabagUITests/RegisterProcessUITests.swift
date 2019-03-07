@@ -9,7 +9,6 @@
 import XCTest
 
 class RegisterProcessUITests: XCTestCase {
-
     override func setUp() {
         super.setUp()
         continueAfterFailure = false

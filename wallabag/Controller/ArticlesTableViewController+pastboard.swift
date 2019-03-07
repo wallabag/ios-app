@@ -12,7 +12,7 @@ extension ArticlesTableViewController {
     @objc func pasteBoardAction() {
         guard let pasteBoardUrl = UIPasteboard.general.url,
             pasteBoardUrl.absoluteString != setting.get(for: .previousPasteBoardUrl) else {
-                return
+            return
         }
         setting.set(pasteBoardUrl.absoluteString, for: .previousPasteBoardUrl)
 

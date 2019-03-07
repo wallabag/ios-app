@@ -6,8 +6,8 @@
 //  Copyright © 2018 maxime marinel. All rights reserved.
 //
 
-import Foundation
 import Alamofire
+import Foundation
 
 class TokenAdapter: RequestAdapter {
     let accessToken: String

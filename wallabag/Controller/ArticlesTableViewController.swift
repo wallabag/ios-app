@@ -6,17 +6,16 @@
 //  Copyright © 2016 maxime marinel. All rights reserved.
 //
 
-import UIKit
-import UserNotifications
 import CoreData
 import CoreSpotlight
 import RealmSwift
-import WallabagKit
-import WallabagCommon
 import SwinjectStoryboard
+import UIKit
+import UserNotifications
+import WallabagCommon
+import WallabagKit
 
 final class ArticlesTableViewController: UITableViewController {
-
     let searchController = UISearchController(searchResultsController: nil)
     var analytics: AnalyticsManager!
     var setting: WallabagSetting!
@@ -35,7 +34,7 @@ final class ArticlesTableViewController: UITableViewController {
 
     @IBOutlet var progressView: UIProgressView!
 
-    @IBAction func disconnect(segue: UIStoryboardSegue) {
+    @IBAction func disconnect(segue _: UIStoryboardSegue) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
@@ -55,7 +54,7 @@ final class ArticlesTableViewController: UITableViewController {
         mode = RetrieveMode(rawValue: segue.identifier!)!
     }
 
-    @IBAction func addLink(_ sender: UIBarButtonItem) {
+    @IBAction func addLink(_: UIBarButtonItem) {
         addArticle()
     }
 
@@ -64,7 +63,7 @@ final class ArticlesTableViewController: UITableViewController {
             guard let userInfo = activity.userInfo,
                 let selectedEntry = userInfo[CSSearchableItemActivityIdentifier] as? String,
                 let selectedEntryId = Int(selectedEntry.components(separatedBy: ".").last!) else {
-                    return
+                return
             }
             Log("Back from activity")
 
@@ -79,12 +78,12 @@ final class ArticlesTableViewController: UITableViewController {
         super.viewDidLoad()
         wallabagSync = WallabagSyncing(kit: WallabagSession.shared.kit!)
         wallabagSync.progress = { currentPage, maxPage in
-            DispatchQueue.main.async {[weak self] in
+            DispatchQueue.main.async { [weak self] in
                 self?.progressView.progress = Float(currentPage) / Float(maxPage)
             }
             Log("Progress \(currentPage)/\(maxPage)")
         }
-        self.mode = RetrieveMode(rawValue: setting.get(for: .defaultMode)) ?? .allArticles
+        mode = RetrieveMode(rawValue: setting.get(for: .defaultMode)) ?? .allArticles
 
         analytics.sendScreenViewed(.articlesView)
         progressView.isHidden = true
@@ -118,7 +117,8 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+    override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return results!.count
     }
 
@@ -131,11 +131,11 @@ final class ArticlesTableViewController: UITableViewController {
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    override func tableView(_: UITableView, canEditRowAt _: IndexPath) -> Bool {
         return true
     }
 
-    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    override func tableView(_: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let entry = results![indexPath.row]
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete".localized, handler: { _, _ in
             self.delete(entry)
@@ -158,6 +158,7 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     // MARK: - Navigation
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "readArticle",
             let controller = segue.destination as? ArticleViewController {
@@ -184,36 +185,33 @@ final class ArticlesTableViewController: UITableViewController {
     }
 
     func filteringList(_ predicate: NSPredicate? = nil) {
-        self.notificationToken?.invalidate()
-        self.notificationToken = nil
+        notificationToken?.invalidate()
+        notificationToken = nil
 
         if let predicate = predicate {
-            self.results = self.realm.objects(Entry.self).filter(predicate)
+            results = realm.objects(Entry.self).filter(predicate)
         } else {
-            self.results = self.realm.objects(Entry.self).filter(self.mode.predicate())
+            results = realm.objects(Entry.self).filter(mode.predicate())
         }
 
-        self.results = self.results?.sorted(byKeyPath: "id", ascending: false)
+        results = results?.sorted(byKeyPath: "id", ascending: false)
 
-        self.notificationToken = self.results?.observe { (changes: RealmCollectionChange) in
+        notificationToken = results?.observe { (changes: RealmCollectionChange) in
             switch changes {
             case .initial:
                 self.tableView.reloadData()
-                break
-            case .update(_, let deletions, let insertions, let modifications):
+            case let .update(_, deletions, insertions, modifications):
                 self.tableView.beginUpdates()
                 self.tableView.insertRows(at: insertions.map { IndexPath(row: $0, section: 0) }, with: .automatic)
                 self.tableView.deleteRows(at: deletions.map { IndexPath(row: $0, section: 0) }, with: .automatic)
                 self.tableView.reloadRows(at: modifications.map { IndexPath(row: $0, section: 0) }, with: .automatic)
                 self.tableView.endUpdates()
-                break
-            case .error(let err):
+            case let .error(err):
                 fatalError("\(err)")
-                break
             }
         }
-        self.reloadUI()
-        self.tableView.reloadData()
+        reloadUI()
+        tableView.reloadData()
     }
 
     private func read(_ entry: Entry) {

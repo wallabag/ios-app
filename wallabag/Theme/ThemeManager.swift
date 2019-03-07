@@ -9,11 +9,10 @@
 import UIKit
 
 class ThemeManager {
-
     private var currentTheme: ThemeProtocol
     private var themes: [ThemeProtocol] = [White(), Light(), Dusk(), Night(), Black()]
 
-    //static let manager = ThemeManager()
+    // static let manager = ThemeManager()
     init(currentTheme: ThemeProtocol) {
         self.currentTheme = currentTheme
     }
@@ -30,8 +29,8 @@ class ThemeManager {
         let uiBarButton = UIBarButtonItem.appearance()
         uiBarButton.tintColor = currentTheme.tintColor
         uiBarButton.setTitleTextAttributes([
-            NSAttributedString.Key.font: UIFont(name: "UbuntuTitling-Bold", size: 15.0)!
-            ], for: .normal)
+            NSAttributedString.Key.font: UIFont(name: "UbuntuTitling-Bold", size: 15.0)!,
+        ], for: .normal)
 
         let uiLabel = UILabel.appearance()
         uiLabel.textColor = currentTheme.color

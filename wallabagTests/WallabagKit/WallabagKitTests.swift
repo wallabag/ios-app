@@ -6,13 +6,12 @@
 //  Copyright © 2018 maxime marinel. All rights reserved.
 //
 
-import XCTest
+import Mockingjay
 @testable import wallabag
 @testable import WallabagKit
-import Mockingjay
+import XCTest
 
 class WallabagKitTests: XCTestCase {
-
     func testAuthWithEmptyParameterThenInvalidParameter() {
         let expectation = XCTestExpectation(description: "wait login")
         let kit = WallabagKit()
@@ -50,8 +49,8 @@ class WallabagKitTests: XCTestCase {
         let data = try! Data(contentsOf: path)
 
         stub({ request in
-            //TODO need to find how to check post parameter
-            return request.httpMethod == HTTPMethod.post.description
+            // TODO: need to find how to check post parameter
+            request.httpMethod == HTTPMethod.post.description
                 && request.url?.absoluteString == "http://localhost/oauth/v2/token"
         }, jsonData(data))
 
@@ -62,7 +61,7 @@ class WallabagKitTests: XCTestCase {
 
         kit.requestAuth(username: "John", password: "dodo") { completion in
             switch completion {
-            case .success(let success):
+            case let .success(success):
                 XCTAssertEqual("MjQyYjk4OWNmODA2ZGZiZTJiNjFiN2I2ZmQ3YTcwODFjYjBiODcwMWFlNmZjNGQ0ZDRkYjgwMTNjMDQyZGUwYQ", success.accessToken)
                 XCTAssertEqual(success.accessToken, kit.accessToken)
             default:
@@ -78,8 +77,8 @@ class WallabagKitTests: XCTestCase {
         let data = try! Data(contentsOf: path)
 
         stub({ request in
-            //TODO need to find how to check post parameter
-            return request.httpMethod == HTTPMethod.post.description
+            // TODO: need to find how to check post parameter
+            request.httpMethod == HTTPMethod.post.description
                 && request.url?.absoluteString == "http://localhost/oauth/v2/token"
         }, http(400, headers: nil, download: .content(data)))
 
@@ -88,7 +87,7 @@ class WallabagKitTests: XCTestCase {
 
         kit.requestAuth(username: "John", password: "wrongPassword") { completion in
             switch completion {
-            case .error(let error):
+            case let .error(error):
                 XCTAssertEqual("invalid_grant", error.error)
                 XCTAssertEqual("Invalid username and password combination", error.description)
             default:

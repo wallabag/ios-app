@@ -6,8 +6,8 @@
 //  Copyright © 2017 maxime marinel. All rights reserved.
 //
 
-import UIKit
 import StoreKit
+import UIKit
 
 final class TipViewController: UIViewController, SKPaymentTransactionObserver, SKProductsRequestDelegate {
     var analytics: AnalyticsManager!
@@ -24,20 +24,20 @@ final class TipViewController: UIViewController, SKPaymentTransactionObserver, S
         }
     }
 
-    @IBOutlet weak var tipContent: UITextView!
-    @IBOutlet weak var tipButton: UIButton!
-    @IBAction func tip(_ sender: Any) {
+    @IBOutlet var tipContent: UITextView!
+    @IBOutlet var tipButton: UIButton!
+    @IBAction func tip(_: Any) {
         if transactionInProgress {
             return
         }
 
         let payment = SKPayment(product: product!)
         SKPaymentQueue.default().add(payment)
-        self.transactionInProgress = true
+        transactionInProgress = true
         analytics.send(.tip)
     }
 
-    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+    func paymentQueue(_: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
             switch transaction.transactionState {
             case .purchased:
@@ -60,12 +60,12 @@ final class TipViewController: UIViewController, SKPaymentTransactionObserver, S
         }
     }
 
-    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+    func productsRequest(_: SKProductsRequest, didReceive response: SKProductsResponse) {
         Log("Request product")
         if response.products.count != 0,
             let firstproduct = response.products.first {
-                product = firstproduct
-                tipButton.isEnabled = true
+            product = firstproduct
+            tipButton.isEnabled = true
         } else {
             Log("There are no products.")
             Log(response.invalidProductIdentifiers.description)
@@ -88,7 +88,7 @@ final class TipViewController: UIViewController, SKPaymentTransactionObserver, S
     private func requestProductInfo() {
         if SKPaymentQueue.canMakePayments() {
             Log("Can make paiement")
-            let productRequest  = SKProductsRequest(productIdentifiers: productIDs)
+            let productRequest = SKProductsRequest(productIdentifiers: productIDs)
             productRequest.delegate = self
             productRequest.start()
         } else {

@@ -6,8 +6,8 @@
 //  Copyright © 2016 maxime marinel. All rights reserved.
 //
 
-import UIKit
 import Social
+import UIKit
 import WallabagCommon
 import WallabagKit
 
@@ -47,7 +47,7 @@ class ShareViewController: UIViewController {
         }
     }
 
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_: Bool) {
         if setting.get(for: .wallabagIsConfigured), let attachements = getAttachements() {
             let kit = WallabagKit(host: setting.get(for: .host), clientID: setting.get(for: .clientId), clientSecret: setting.get(for: .clientSecret))
             kit.requestAuth(username: setting.get(for: .username), password: setting.getPassword()!) { [unowned self] auth in

@@ -26,26 +26,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-icon-black-no-bg" translatesAutoresizingMaskIntoConstraints="NO" id="K7r-Is-Qyw">
-                                <rect key="frame" x="87.5" y="28" width="200" height="200"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="AaF-Wi-Xdv"/>
-                                    <constraint firstAttribute="width" constant="200" id="XWq-bE-k6T"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wallabag" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRs-RA-L1c">
-                                <rect key="frame" x="16" y="236" width="343" height="50"/>
+                                <rect key="frame" x="24" y="248.5" width="327" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="JFd-lV-8XK"/>
+                                    <constraint firstAttribute="height" constant="50" id="chy-bF-kzT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reader" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kg7-cj-yjM">
+                                <rect key="frame" x="8" y="308.5" width="359" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="0dz-H9-0te"/>
+                                    <constraint firstAttribute="height" constant="50" id="CNZ-CX-g1V"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="38"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn4-yG-cxW" userLabel="Add Server">
-                                <rect key="frame" x="156" y="294" width="63" height="32"/>
+                                <rect key="frame" x="155.5" y="418.5" width="64" height="29"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Home.Register.Button"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="uHV-vJ-PUc"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="UbuntuTitling-Bold" family="Ubuntu Titling" pointSize="17"/>
                                 <state key="normal" title="Register">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,13 +62,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FRs-RA-L1c" firstAttribute="leading" secondItem="jgR-CC-0zk" secondAttribute="leadingMargin" id="0Zd-Ap-Bhh"/>
-                            <constraint firstItem="K7r-Is-Qyw" firstAttribute="centerX" secondItem="jgR-CC-0zk" secondAttribute="centerX" id="5h3-fR-vgJ"/>
-                            <constraint firstItem="Zn4-yG-cxW" firstAttribute="top" secondItem="FRs-RA-L1c" secondAttribute="bottom" constant="8" id="BwY-wA-FY9"/>
-                            <constraint firstItem="Zn4-yG-cxW" firstAttribute="centerX" secondItem="jgR-CC-0zk" secondAttribute="centerX" id="GFn-ae-qJr"/>
-                            <constraint firstItem="FRs-RA-L1c" firstAttribute="top" secondItem="K7r-Is-Qyw" secondAttribute="bottom" constant="8" id="JWX-vu-NhE"/>
-                            <constraint firstItem="K7r-Is-Qyw" firstAttribute="top" secondItem="8dj-Du-tEP" secondAttribute="bottom" constant="8" id="WiD-2X-fhA"/>
-                            <constraint firstItem="FRs-RA-L1c" firstAttribute="trailing" secondItem="jgR-CC-0zk" secondAttribute="trailingMargin" id="xxp-3Q-Z9c"/>
+                            <constraint firstAttribute="trailing" secondItem="Kg7-cj-yjM" secondAttribute="trailing" constant="8" id="5pw-Jh-dJY"/>
+                            <constraint firstItem="Kg7-cj-yjM" firstAttribute="leading" secondItem="jgR-CC-0zk" secondAttribute="leading" constant="8" id="Kxe-6Z-qfO"/>
+                            <constraint firstItem="Kg7-cj-yjM" firstAttribute="top" secondItem="FRs-RA-L1c" secondAttribute="bottom" constant="10" id="cXY-pM-6Nm"/>
+                            <constraint firstItem="Zn4-yG-cxW" firstAttribute="top" secondItem="Kg7-cj-yjM" secondAttribute="bottom" constant="60" id="eL7-8d-oQ5"/>
+                            <constraint firstItem="Zn4-yG-cxW" firstAttribute="centerX" secondItem="jgR-CC-0zk" secondAttribute="centerX" id="fIQ-gB-enF"/>
+                            <constraint firstItem="Kg7-cj-yjM" firstAttribute="centerY" secondItem="jgR-CC-0zk" secondAttribute="centerY" id="kSw-ci-E3H"/>
+                            <constraint firstItem="FRs-RA-L1c" firstAttribute="leading" secondItem="jgR-CC-0zk" secondAttribute="leadingMargin" constant="8" id="wXU-8E-BqD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FRs-RA-L1c" secondAttribute="trailing" constant="8" id="y5G-kd-PZ8"/>
                         </constraints>
                     </view>
                 </viewController>

@@ -6,12 +6,11 @@
 //  Copyright © 2017 maxime marinel. All rights reserved.
 //
 
-import UIKit
 import AVFoundation
+import UIKit
 import WallabagCommon
 
 final class VoiceChoiceTableViewController: UITableViewController {
-
     var setting: WallabagSetting!
     var analytics: AnalyticsManager!
     let voices: [AVSpeechSynthesisVoice] = AVSpeechSynthesisVoice.speechVoices()
@@ -20,7 +19,7 @@ final class VoiceChoiceTableViewController: UITableViewController {
         analytics.sendScreenViewed(.voiceChoiseView)
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return voices.count
     }
 

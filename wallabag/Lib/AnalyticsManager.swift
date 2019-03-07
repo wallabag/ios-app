@@ -13,6 +13,7 @@ class AnalyticsManager {
         var name: String {
             return String(describing: self)
         }
+
         case articlesView
         case articleView
         case aboutView
@@ -33,6 +34,7 @@ class AnalyticsManager {
                 return "User Interaction"
             }
         }
+
         var action: String {
             switch self {
             case .synthesis:
@@ -45,6 +47,7 @@ class AnalyticsManager {
                 return "Tip purchased"
             }
         }
+
         var label: String {
             switch self {
             case .shareArticle:
@@ -56,7 +59,7 @@ class AnalyticsManager {
 
         var value: NSNumber {
             switch self {
-            case .synthesis(let state):
+            case let .synthesis(state):
                 return state ? 1 : 0
             case .shareArticle, .tip, .tipPurchased:
                 return 1
@@ -70,7 +73,7 @@ class AnalyticsManager {
     }
 
     lazy var tracker: GAITracker = {
-        return GAI.sharedInstance().defaultTracker
+        GAI.sharedInstance().defaultTracker
     }()
 
     func sendScreenViewed(_ event: AnalyticsViewEvent) {

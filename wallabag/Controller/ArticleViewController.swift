@@ -6,9 +6,9 @@
 //  Copyright © 2016 maxime marinel. All rights reserved.
 //
 
-import UIKit
-import TUSafariActivity
 import RealmSwift
+import TUSafariActivity
+import UIKit
 import WallabagCommon
 
 protocol ArticleViewControllerProtocol {
@@ -35,61 +35,63 @@ final class ArticleViewController: UIViewController, ArticleViewControllerProtoc
         case show
         case hidden
     }
+
     var podcastViewState: PodcastViewState = .hidden {
         didSet {
             if podcastViewState == .show {
                 UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseIn],
                                animations: {
-                                self.podcastView.center.y -= self.podcastView.bounds.height
-                                self.podcastView.layoutIfNeeded()
+                                   self.podcastView.center.y -= self.podcastView.bounds.height
+                                   self.podcastView.layoutIfNeeded()
                 }, completion: nil)
-                self.podcastView.isHidden = false
+                podcastView.isHidden = false
             } else {
                 UIView.animate(withDuration: 0.5, delay: 0, options: [.curveLinear],
                                animations: {
-                                self.podcastView.center.y += self.podcastView.bounds.height
-                                self.podcastView.layoutIfNeeded()
-                }, completion: {(_ completed: Bool) -> Void in
-                    self.podcastView.isHidden = true
+                                   self.podcastView.center.y += self.podcastView.bounds.height
+                                   self.podcastView.layoutIfNeeded()
+                               }, completion: { (_: Bool) -> Void in
+                                   self.podcastView.isHidden = true
                 })
             }
         }
     }
 
-    @IBOutlet weak var contentWeb: UIWebView!
-    @IBOutlet weak var readButton: UIBarButtonItem!
-    @IBOutlet weak var starButton: UIBarButtonItem!
-    @IBOutlet weak var speechButton: UIBarButtonItem!
-    @IBOutlet weak var deleteButton: UIBarButtonItem!
-    @IBOutlet weak var podcastView: UIView!
+    @IBOutlet var contentWeb: UIWebView!
+    @IBOutlet var readButton: UIBarButtonItem!
+    @IBOutlet var starButton: UIBarButtonItem!
+    @IBOutlet var speechButton: UIBarButtonItem!
+    @IBOutlet var deleteButton: UIBarButtonItem!
+    @IBOutlet var podcastView: UIView!
 
-    @IBAction func add(_ sender: Any) {
+    @IBAction func add(_: Any) {
         addHandler?()
     }
 
-    @IBAction func read(_ sender: Any) {
+    @IBAction func read(_: Any) {
         readHandler?(entry)
-        _ = self.navigationController?.popViewController(animated: true)
+        _ = navigationController?.popViewController(animated: true)
     }
 
-    @IBAction func star(_ sender: Any) {
+    @IBAction func star(_: Any) {
         starHandler?(entry)
         updateUi()
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
         if let controller = segue.destination as? PodcastViewController {
             controller.entry = entry
             podcastController = controller
             Log("prepare podcast view")
         }
     }
-    override func viewDidAppear(_ animated: Bool) {
+
+    override func viewDidAppear(_: Bool) {
         podcastViewState = .hidden
     }
 
-    @IBAction func speech(_ sender: Any) {
-        //podcastViewState = podcastViewState == .show ? .hidden : .show
+    @IBAction func speech(_: Any) {
+        // podcastViewState = podcastViewState == .show ? .hidden : .show
         if let podcastController = podcastController {
             podcastController.playPressed(podcastController.playButton)
         }
@@ -146,7 +148,7 @@ final class ArticleViewController: UIViewController, ArticleViewControllerProtoc
 
 extension ArticleViewController: UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
-        webView.scrollView.setContentOffset(CGPoint(x: 0.0, y: Double(self.entry.screenPosition)), animated: true)
+        webView.scrollView.setContentOffset(CGPoint(x: 0.0, y: Double(entry.screenPosition)), animated: true)
     }
 }
 

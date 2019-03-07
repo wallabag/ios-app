@@ -5,10 +5,10 @@
 //  Created by maxime marinel on 06/08/2018.
 //
 
-import UIKit
 import AVFoundation
-import WallabagCommon
 import StoreKit
+import UIKit
+import WallabagCommon
 
 class PodcastViewController: UIViewController {
     @IBOutlet var playButton: UIButton!
@@ -30,11 +30,11 @@ class PodcastViewController: UIViewController {
 
     var isPaid: Bool = false
 
-    @IBAction func playPressed(_ sender: UIButton) {
+    @IBAction func playPressed(_: UIButton) {
         Log("Play pressed")
         if !speecher.isSpeaking {
             utterances.forEach { speecher.speak($0) }
-            //analytics.send(.synthesis(state: true))
+            // analytics.send(.synthesis(state: true))
         } else {
             if speecher.isPaused {
                 speecher.continueSpeaking()
@@ -62,20 +62,20 @@ class PodcastViewController: UIViewController {
         view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         view.layer.shadowPath = UIBezierPath(roundedRect: view.bounds, cornerRadius: view.layer.cornerRadius).cgPath
         view.layer.shadowColor = UIColor.black.cgColor
-        self.view.layer.shadowOpacity = 0.5
-        self.view.layer.shadowRadius = 10
+        view.layer.shadowOpacity = 0.5
+        view.layer.shadowRadius = 10
     }
 
-    @IBAction func next(_ sender: UIButton) {
+    @IBAction func next(_: UIButton) {
         Log("next pressed")
         var nextUtterances = utterances
-        nextUtterances.removeSubrange(0...currentUtteranceIndex)
+        nextUtterances.removeSubrange(0 ... currentUtteranceIndex)
         speecher.stopSpeaking(at: .immediate)
         nextUtterances.forEach { speecher.speak($0) }
     }
 
     private func getUtterances() -> [AVSpeechUtterance] {
-        guard let content = entry.content else {return []}
+        guard let content = entry.content else { return [] }
 
         if isPaid {
             for paragraph in content.speakable {
@@ -85,7 +85,7 @@ class PodcastViewController: UIViewController {
                 utterance.voice = setting.getSpeechVoice()
                 utterances.append(utterance)
             }
-            //slider.displayTick(tick: utterances.count)
+            // slider.displayTick(tick: utterances.count)
         } else {
             let utterance = AVSpeechUtterance(string: content.withoutHTML)
             utterance.rate = setting.get(for: .speechRate)
@@ -102,19 +102,19 @@ class PodcastViewController: UIViewController {
 }
 
 extension PodcastViewController: AVSpeechSynthesizerDelegate {
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, willSpeakRangeOfSpeechString characterRange: NSRange, utterance: AVSpeechUtterance) {
-        //currentUtteranceIndutteranceances.index(of: utterance) ?? 0
+    func speechSynthesizer(_: AVSpeechSynthesizer, willSpeakRangeOfSpeechString _: NSRange, utterance _: AVSpeechUtterance) {
+        // currentUtteranceIndutteranceances.index(of: utterance) ?? 0
     }
 
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
+    func speechSynthesizer(_: AVSpeechSynthesizer, didStart _: AVSpeechUtterance) {
         playButton.setImage(UIImage(named: "pause"), for: .normal)
     }
 
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didContinue utterance: AVSpeechUtterance) {
+    func speechSynthesizer(_: AVSpeechSynthesizer, didContinue _: AVSpeechUtterance) {
         playButton.setImage(UIImage(named: "pause"), for: .normal)
     }
 
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didPause utterance: AVSpeechUtterance) {
+    func speechSynthesizer(_: AVSpeechSynthesizer, didPause _: AVSpeechUtterance) {
         playButton.setImage(UIImage(named: "play"), for: .normal)
     }
 }

@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import WallabagKit
 import RealmSwift
+import WallabagKit
 
 class WallabagSyncing {
     private let kit: WallabagKitProtocol
@@ -18,6 +18,7 @@ class WallabagSyncing {
         queue.qualityOfService = .utility
         return queue
     }()
+
     private let group = DispatchGroup()
     private var entriesSynced: [Int] = []
     var progress: ((Int, Int) -> Void)?
@@ -46,13 +47,13 @@ class WallabagSyncing {
                 self.group.leave()
             }
             switch response {
-            case .success(let entries):
+            case let .success(entries):
                 syncOperation.setEntries(entries)
-                entries.items.forEach({self.entriesSynced.append($0.id)})
+                entries.items.forEach({ self.entriesSynced.append($0.id) })
                 if page < entries.pages {
                     self.fetchEntry(page: page + 1)
                 }
-                    self.progress?(page, entries.pages)
+                self.progress?(page, entries.pages)
             case .error:
                 Log("Fetch error")
             }
@@ -68,9 +69,7 @@ class WallabagSyncing {
                     let entries = realmPurge.objects(Entry.self).filter("NOT (id IN %@)", self.entriesSynced)
                     realmPurge.delete(entries)
                 }
-            } catch _ {
-
-            }
+            } catch _ {}
         }
     }
 }
