@@ -33,7 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         configureTheme()
         configureNetworkIndicator()
-        configureGA()
         handleArgs()
 
         Log(wallabagSession.currentState)
@@ -68,12 +67,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if args.contains("-reset") {
             resetApplication()
         }
-    }
-
-    private func configureGA() {
-        let gai = GAI.sharedInstance()
-        _ = gai?.tracker(withTrackingId: "UA-115437094-1")
-        gai?.trackUncaughtExceptions = true
     }
 
     private func configureNetworkIndicator() {

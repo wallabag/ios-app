@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class Black: ThemeProtocol {
     var name: String = "black"

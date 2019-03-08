@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Fabric
+import Crashlytics
 
 class AnalyticsManager {
     enum AnalyticsViewEvent {
@@ -35,7 +37,7 @@ class AnalyticsManager {
             }
         }
 
-        var action: String {
+        var name: String {
             switch self {
             case .synthesis:
                 return "Use Synthesis"
@@ -72,20 +74,11 @@ class AnalyticsManager {
         case tipPurchased
     }
 
-    lazy var tracker: GAITracker = {
-        GAI.sharedInstance().defaultTracker
-    }()
-
     func sendScreenViewed(_ event: AnalyticsViewEvent) {
-        tracker.set(kGAIScreenName, value: event.name)
-        guard let builder = GAIDictionaryBuilder.createScreenView(),
-            let build = builder.build() as [NSObject: AnyObject]? else { return }
-        tracker.send(build)
+        Answers.logContentView(withName: event.name, contentType: nil, contentId: nil, customAttributes: nil)
     }
 
     func send(_ event: AnalyticsEvent) {
-        guard let builder = GAIDictionaryBuilder.createEvent(withCategory: event.category, action: event.action, label: event.label, value: event.value),
-            let build = builder.build() as [NSObject: AnyObject]? else { return }
-        tracker.send(build)
+        Answers.logCustomEvent(withName: event.category, customAttributes: [event.name: event.value])
     }
 }

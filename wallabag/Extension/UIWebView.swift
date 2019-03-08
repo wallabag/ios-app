@@ -8,6 +8,7 @@
 
 import Foundation
 import WallabagCommon
+import UIKit
 
 extension UIWebView {
     func load(entry: Entry) {

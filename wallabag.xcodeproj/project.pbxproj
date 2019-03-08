@@ -26,7 +26,6 @@
 		BF_1D1FBDA14845DDF75F10B4FA61AFBDA5 /* VoiceChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_AE53A3DB97F325B6D9DB02AFB1731782 /* VoiceChoiceTableViewController.swift */; };
 		BF_1DBCBFC32B6F4A8E0AB791304B1B5225 /* ArticlesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_C3C4233F888858AE47654B49C6B3D482 /* ArticlesUITests.swift */; };
 		BF_1DE4ED4D6E3A2B33C04E95951D2AD25C /* light.css in Resources */ = {isa = PBXBuildFile; fileRef = FR_961F3C1FF1B21F7C50102EC1F49BBBD1 /* light.css */; };
-		BF_1E5922FFFB75D12639D9E575600F6CC2 /* Bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = FR_59D833DA3B62EC2460F61AED1FC045C5 /* Bridge.m */; };
 		BF_20305CD3F44AD3F0A300A08D28D4712F /* EntriesCollection.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_89CBFB2A6488E68DF37E66008BC3A23A /* EntriesCollection.json */; };
 		BF_218B02857CD5370E001E1DEDBCD9DA81 /* XCTExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_C9900CB03BB06DCC825054DAFDE4D907 /* XCTExtension.swift */; };
 		BF_27B3C5BB859104CEF0AB1D52843622B4 /* UIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_3996D9FD806100BF0335AAE1A4EE148E /* UIWebView.swift */; };
@@ -234,7 +233,6 @@
 		FR_32C57241F64E1AA0D53CFA7BA2CF2BFC /* UIPodcastSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPodcastSlider.swift; sourceTree = "<group>"; };
 		FR_39287A02F2B756958D56349AC317D33B /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		FR_3996D9FD806100BF0335AAE1A4EE148E /* UIWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWebView.swift; sourceTree = "<group>"; };
-		FR_3AD905BC68B1086C84A70A1C09F7267F /* wallabag-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "wallabag-Bridging-Header.h"; sourceTree = "<group>"; };
 		FR_3C63EF667F0034B52FD8C3A71EAA05F7 /* bagit-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "bagit-Debug.xcconfig"; sourceTree = "<group>"; };
 		FR_3D36C33EB332B689DF2343AE9E4EE6FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FR_448862BF589F4829A648C0F56DC31F9A /* DictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
@@ -245,7 +243,6 @@
 		FR_53A7AFE531920C01689A4DA430C0CA0F /* WallabagKitCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitCollection.swift; sourceTree = "<group>"; };
 		FR_54B1532FB2199D5A7368CCEB6B21DBD3 /* ArticlesTableViewController+pastboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesTableViewController+pastboard.swift"; sourceTree = "<group>"; };
 		FR_56186CC4C8CE1EFA0554417A91A72A00 /* ArticlesTableViewController+UISearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesTableViewController+UISearchResults.swift"; sourceTree = "<group>"; };
-		FR_59D833DA3B62EC2460F61AED1FC045C5 /* Bridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Bridge.m; sourceTree = "<group>"; };
 		FR_5B447F87774BEBB6A41ADE06979E95A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FR_5C8DA6DE33F2FACC03BFACE708CD2ED6 /* EntryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryExtension.swift; sourceTree = "<group>"; };
 		FR_5CD42737A10942BF90FB3FCE8BF74956 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
@@ -267,7 +264,7 @@
 		FR_7ABC493E8F892DF451AABBB415AFE326 /* wallabag-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "wallabag-Debug.xcconfig"; sourceTree = "<group>"; };
 		FR_7C185759A7CA2367F6B2A09ECF202E33 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Main.strings; sourceTree = "<group>"; };
 		FR_7D29FAB95590AC974DCDAC639A09A15A /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
-		FR_7EF8E3725DA0867206C920EE5FBF277C /* wallabag.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = wallabag.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_7EF8E3725DA0867206C920EE5FBF277C /* wallabag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wallabag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FR_7F369F01648273740FFAC734BF79A78E /* wallabag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wallabag.entitlements; sourceTree = "<group>"; };
 		FR_8040EBB1039DE9F3631AF6947C7E9500 /* PodcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastViewController.swift; sourceTree = "<group>"; };
 		FR_82E6C4DE6233AF1C7AC8D97E23DDE0F5 /* WallabagCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WallabagCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -674,11 +671,9 @@
 			isa = PBXGroup;
 			children = (
 				FR_250D2539097D8AD4F65F91206902AF43 /* AnalyticsManager.swift */,
-				FR_59D833DA3B62EC2460F61AED1FC045C5 /* Bridge.m */,
 				FR_9FE0A9D67CA3E51B3186F35BC61793D8 /* PaidSubscription.swift */,
 				FR_26E374F0AF1D1FBEC022213E082366DF /* RetrieveMode.swift */,
 				FR_9904635DBD17CD8DEC268B0000282D5E /* Utils.swift */,
-				FR_3AD905BC68B1086C84A70A1C09F7267F /* wallabag-Bridging-Header.h */,
 				FR_D12F9BFF12ECE9D85363436FAF065862 /* WallabagSession.swift */,
 				FR_8D21AE6597E312DB2EBBFCD9E0C9A6C3 /* WallabagStore.swift */,
 				FR_501742B816EAED2BC7637BD9696D3B07 /* WallabagSubscription.swift */,
@@ -1183,7 +1178,6 @@
 				BF_A732338E1D54D23BE388646C6CEBF86B /* ArticlesTableViewController.swift in Sources */,
 				BF_8D6AECAD1330C2318EF223E35E3AC61D /* Black.swift in Sources */,
 				BF_B65C56029A480EC410440D0564ACCC07 /* Bool.swift in Sources */,
-				BF_1E5922FFFB75D12639D9E575600F6CC2 /* Bridge.m in Sources */,
 				BF_C20A6A5CECA3D24560032AB50BBEC618 /* ClientIdViewController.swift in Sources */,
 				BF_C9F13CB7B3B557E809E6D9898B0791C2 /* Date.swift in Sources */,
 				BF_330993596D71B361978BE9F6CC8CE80C /* Dictionary.swift in Sources */,
@@ -1481,6 +1475,9 @@
 			baseConfigurationReference = FR_7ABC493E8F892DF451AABBB415AFE326 /* wallabag-Debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 			};
 			name = Debug;
 		};
@@ -1489,6 +1486,9 @@
 			baseConfigurationReference = FR_5DE83659FDAF5871759C0A7D752A7823 /* wallabag-Release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 			};
 			name = Release;
 		};

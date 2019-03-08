@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension UIImageView {
     func display(entry: Entry, withShadow: Bool = false) {

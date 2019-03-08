@@ -10,7 +10,6 @@ target 'wallabag' do
     pod 'TUSafariActivity', '~> 1.0'
     pod 'SideMenu'
     pod 'RealmSwift'
-    pod 'GoogleAnalytics'
     pod 'Fabric'
     pod 'Crashlytics'
     pod 'Swinject'

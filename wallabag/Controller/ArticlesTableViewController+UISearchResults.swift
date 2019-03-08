@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension ArticlesTableViewController: UISearchResultsUpdating {
     @objc func deferSearch(timer: Timer) {
