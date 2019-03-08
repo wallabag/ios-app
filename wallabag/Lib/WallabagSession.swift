@@ -36,7 +36,7 @@ class WallabagSession {
 
     init(setting: WallabagSetting) {
         self.setting = setting
-        self.currentState = setting.get(for: .wallabagIsConfigured) ? .configured : .missingConfiguration
+        currentState = setting.get(for: .wallabagIsConfigured) ? .configured : .missingConfiguration
     }
 
     func startSession() {

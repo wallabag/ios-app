@@ -6,8 +6,8 @@
 //  Copyright © 2016 maxime marinel. All rights reserved.
 //
 
-import UIKit
 import MessageUI
+import UIKit
 
 final class AboutViewController: UIViewController {
     var analytics: AnalyticsManager!
@@ -36,7 +36,7 @@ final class AboutViewController: UIViewController {
 }
 
 extension AboutViewController: MFMailComposeViewControllerDelegate {
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+    func mailComposeController(_: MFMailComposeViewController, didFinishWith _: MFMailComposeResult, error _: Error?) {
         dismiss(animated: true)
     }
 }

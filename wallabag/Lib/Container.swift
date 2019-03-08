@@ -14,14 +14,14 @@ import WallabagKit
 
 // swiftlint:disable function_body_length
 extension SwinjectStoryboard {
-    class private func registerClass() {
+    private class func registerClass() {
         defaultContainer.register(AnalyticsManager.self) { _ in AnalyticsManager() }.inObjectScope(.container)
         defaultContainer.register(Realm.self) { _ in
             do {
                 let config = Realm.Configuration(
                     schemaVersion: 2,
                     migrationBlock: { _, _ in
-                }
+                    }
                 )
 
                 Realm.Configuration.defaultConfiguration = config
@@ -31,20 +31,20 @@ extension SwinjectStoryboard {
                 print(error)
                 fatalError("Error init realm")
             }
-            }.inObjectScope(.container)
+        }.inObjectScope(.container)
         defaultContainer.register(ThemeManager.self) { _ in
             ThemeManager(currentTheme: White())
-            }.inObjectScope(.container)
+        }.inObjectScope(.container)
         defaultContainer.register(WallabagSetting.self) { _ in WallabagSetting() }.inObjectScope(.container)
         defaultContainer.register(WallabagSession.self) { resolver in
             guard let setting = resolver.resolve(WallabagSetting.self) else { fatalError() }
             let session = WallabagSession(setting: setting)
 
             return session
-            }.inObjectScope(.container)
+        }.inObjectScope(.container)
     }
 
-    class private func registerStoryboard() {
+    private class func registerStoryboard() {
         defaultContainer.storyboardInitCompleted(AboutViewController.self) { resolver, controller in
             controller.analytics = resolver.resolve(AnalyticsManager.self)
             controller.themeManager = resolver.resolve(ThemeManager.self)
