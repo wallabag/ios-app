@@ -1,1 +1,2 @@
-Support 2.3.6 server version
+La version 4.0.0 vient de sortir, elle est marque un changement important. 
+Pour continuer d'utiliser  la version open source rendez vous sur le github du projet wallabag.

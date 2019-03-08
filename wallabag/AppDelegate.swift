@@ -21,6 +21,7 @@ import WallabagKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var setting: WallabagSetting!
+    var wallabagSession: WallabagSession!
     var realm: Realm!
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -28,21 +29,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         setting = SwinjectStoryboard.defaultContainer.resolve(WallabagSetting.self)
         realm = SwinjectStoryboard.defaultContainer.resolve(Realm.self)
+        wallabagSession = SwinjectStoryboard.defaultContainer.resolve(WallabagSession.self)
 
         configureTheme()
         configureNetworkIndicator()
         configureGA()
         handleArgs()
 
-        Log(WallabagSession.shared.currentState)
+        Log(wallabagSession.currentState)
 
-        guard WallabagSession.shared.currentState != .missingConfiguration else {
+        guard wallabagSession.currentState != .missingConfiguration else {
             let homeController = window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "home") as? HomeViewController
             window?.rootViewController = homeController
             return true
         }
 
-        WallabagSession.shared.startSession()
+        wallabagSession.startSession()
         setupQuickAction()
         requestBadge()
 

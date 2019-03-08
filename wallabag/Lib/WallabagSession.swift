@@ -23,10 +23,10 @@ class WallabagSession {
         case fetching
     }
 
-    private let setting = WallabagSetting()
-    var kit: WallabagKit?
+    private let setting: WallabagSetting
     private var wallabagSync: WallabagSyncing?
-    static let shared = WallabagSession()
+
+    var kit: WallabagKit?
     var currentState: State {
         didSet {
             Log("Update state with \(currentState)")
@@ -34,8 +34,9 @@ class WallabagSession {
         }
     }
 
-    private init() {
-        currentState = setting.get(for: .wallabagIsConfigured) ? .configured : .missingConfiguration
+    init(setting: WallabagSetting) {
+        self.setting = setting
+        self.currentState = setting.get(for: .wallabagIsConfigured) ? .configured : .missingConfiguration
     }
 
     func startSession() {

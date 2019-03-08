@@ -13,6 +13,7 @@ import WallabagKit
 final class LoginViewController: UIViewController {
     var analytics: AnalyticsManager!
     var setting: WallabagSetting!
+    var wallabagSession: WallabagSession!
 
     @IBOutlet var username: UITextField!
     @IBOutlet var password: UITextField!
@@ -40,7 +41,7 @@ final class LoginViewController: UIViewController {
                     username: self.username.text!
                 )
                 self.performSegue(withIdentifier: "toArticles", sender: nil)
-                WallabagSession.shared.kit = kit
+                self.wallabagSession.kit = kit
             case let .error(error):
                 self.setting.set(false, for: .wallabagIsConfigured)
                 let alertController = UIAlertController(

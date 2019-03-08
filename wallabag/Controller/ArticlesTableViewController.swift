@@ -20,6 +20,7 @@ final class ArticlesTableViewController: UITableViewController {
     var analytics: AnalyticsManager!
     var setting: WallabagSetting!
     var wallabagSync: WallabagSyncing!
+    var wallabagSession: WallabagSession!
     var hapticNotification: UINotificationFeedbackGenerator!
     var realm: Realm!
 
@@ -76,7 +77,7 @@ final class ArticlesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        wallabagSync = WallabagSyncing(kit: WallabagSession.shared.kit!)
+        wallabagSync = WallabagSyncing(kit: wallabagSession.kit!)
         wallabagSync.progress = { currentPage, maxPage in
             DispatchQueue.main.async { [weak self] in
                 self?.progressView.progress = Float(currentPage) / Float(maxPage)
@@ -218,7 +219,7 @@ final class ArticlesTableViewController: UITableViewController {
         try! realm.write {
             entry.isArchived = !entry.isArchived
         }
-        WallabagSession.shared.update(entry)
+        wallabagSession.update(entry)
         hapticNotification.notificationOccurred(.success)
     }
 
@@ -226,12 +227,12 @@ final class ArticlesTableViewController: UITableViewController {
         try! realm.write {
             entry.isStarred = !entry.isStarred
         }
-        WallabagSession.shared.update(entry)
+        wallabagSession.update(entry)
         hapticNotification.notificationOccurred(.success)
     }
 
     private func delete(_ entry: Entry) {
-        WallabagSession.shared.delete(entry)
+        wallabagSession.delete(entry)
         hapticNotification.notificationOccurred(.warning)
     }
 
@@ -243,7 +244,7 @@ final class ArticlesTableViewController: UITableViewController {
         alertController.addAction(UIAlertAction(title: "Add".localized, style: .default, handler: { _ in
             if let textfield = alertController.textFields?.first?.text,
                 let url = URL(string: textfield) {
-                WallabagSession.shared.add(url)
+                self.wallabagSession.add(url)
             }
         }))
         alertController.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
