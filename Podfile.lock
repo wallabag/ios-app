@@ -14,11 +14,6 @@ PODS:
     - URITemplate (~> 2.0)
   - Mockingjay/XCTest (2.0.1):
     - Mockingjay/Core
-  - Realm (3.13.1):
-    - Realm/Headers (= 3.13.1)
-  - Realm/Headers (3.13.1)
-  - RealmSwift (3.13.1):
-    - Realm (= 3.13.1)
   - SideMenu (5.0.3)
   - Swinject (2.5.0)
   - SwinjectStoryboard (2.1.0):
@@ -33,7 +28,6 @@ DEPENDENCIES:
   - Crashlytics
   - Fabric
   - Mockingjay
-  - RealmSwift
   - SideMenu
   - Swinject
   - SwinjectStoryboard
@@ -47,8 +41,6 @@ SPEC REPOS:
     - Crashlytics
     - Fabric
     - Mockingjay
-    - Realm
-    - RealmSwift
     - SideMenu
     - Swinject
     - SwinjectStoryboard
@@ -62,14 +54,12 @@ SPEC CHECKSUMS:
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
   Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   Mockingjay: 11a621880d2887f1775bdcf824341eb68f218450
-  Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
-  RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
   SwinjectStoryboard: 688f096033103e66ffcf6ca678211acd7d7be505
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
   URITemplate: ace0c4c46dcf8afe6e89b4060621852886b15c3b
 
-PODFILE CHECKSUM: dbb1dbb7241a4861e3a91cd264f0ccd54f905337
+PODFILE CHECKSUM: a2fe4cc4710ce60b1d395960cd620f46fc07e8e2
 
 COCOAPODS: 1.6.0

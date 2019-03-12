@@ -6,9 +6,9 @@
 //  Copyright © 2018 maxime marinel. All rights reserved.
 //
 
-import UIKit
-import Fabric
 import Crashlytics
+import Fabric
+import UIKit
 
 class AnalyticsManager {
     enum AnalyticsViewEvent {

@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import WallabagCommon
 import UIKit
+import WallabagCommon
 
 extension ArticlesTableViewController {
     @objc func pasteBoardAction() {

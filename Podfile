@@ -9,7 +9,7 @@ target 'wallabag' do
     pod 'AlamofireNetworkActivityIndicator', '~> 2.2'
     pod 'TUSafariActivity', '~> 1.0'
     pod 'SideMenu'
-    pod 'RealmSwift'
+    #    pod 'RealmSwift'
     pod 'Fabric'
     pod 'Crashlytics'
     pod 'Swinject'

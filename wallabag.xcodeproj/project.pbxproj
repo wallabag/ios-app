@@ -12,6 +12,8 @@
 		2F8CC537EF02E57E2F5A3E10 /* Pods_WallabagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187E74B860DCEEEC05361018 /* Pods_WallabagKit.framework */; };
 		529313D8D32005C704EE3B3B /* Pods_wallabagUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B937068EA95FF9F182115A4C /* Pods_wallabagUITests.framework */; };
 		9C4976532226751900DA4BD0 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4976522226751900DA4BD0 /* Container.swift */; };
+		9CDB1B26223806530082E4D3 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CDB1B24223806530082E4D3 /* Realm.framework */; };
+		9CDB1B27223806530082E4D3 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CDB1B25223806530082E4D3 /* RealmSwift.framework */; };
 		AB3DC9C9261A48EB580EA5C7 /* Pods_wallabagTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB7175D7B561D7862918F59D /* Pods_wallabagTests.framework */; };
 		BF_00D91E5F9A9D166BC797C715B7F35902 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_315AD6439BE85BB13FC17E766770E347 /* TipViewController.swift */; };
 		BF_047B132AA818924F42C07857A48D5648 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_250D2539097D8AD4F65F91206902AF43 /* AnalyticsManager.swift */; };
@@ -202,6 +204,8 @@
 		8852438AA757DAA32F9860C5 /* Pods-wallabagTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.debug.xcconfig"; path = "Target Support Files/Pods-wallabagTests/Pods-wallabagTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9BF2F54C8F6742215BD99AEB /* Pods-bagit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bagit.debug.xcconfig"; path = "Target Support Files/Pods-bagit/Pods-bagit.debug.xcconfig"; sourceTree = "<group>"; };
 		9C4976522226751900DA4BD0 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		9CDB1B24223806530082E4D3 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		9CDB1B25223806530082E4D3 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		B937068EA95FF9F182115A4C /* Pods_wallabagUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB7175D7B561D7862918F59D /* Pods_wallabagTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C08B25C63D843E452FB37E07 /* Pods-wallabag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag.release.xcconfig"; path = "Target Support Files/Pods-wallabag/Pods-wallabag.release.xcconfig"; sourceTree = "<group>"; };
@@ -382,6 +386,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CDB1B26223806530082E4D3 /* Realm.framework in Frameworks */,
+				9CDB1B27223806530082E4D3 /* RealmSwift.framework in Frameworks */,
 				BF_3F1D949902F6926241CB902FE1EADEB3 /* WallabagCommon.framework in Frameworks */,
 				BF_5E32F916F9BCFA405DB48696D544FCA2 /* WallabagKit.framework in Frameworks */,
 				122BEB5F4E480A0CDB5D1E15 /* Pods_wallabag.framework in Frameworks */,
@@ -411,6 +417,8 @@
 		502725B2BF8026EB5E2005F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9CDB1B24223806530082E4D3 /* Realm.framework */,
+				9CDB1B25223806530082E4D3 /* RealmSwift.framework */,
 				187E74B860DCEEEC05361018 /* Pods_WallabagKit.framework */,
 				2F7461CFB047DFAE6666FE6B /* Pods_bagit.framework */,
 				DE2B7A791C646896E2900A3F /* Pods_wallabag.framework */,
@@ -799,6 +807,7 @@
 			buildConfigurationList = CL_190B884A40E78F55451C94F5CB7C6579 /* Build configuration list for PBXNativeTarget "wallabag" */;
 			buildPhases = (
 				D9E3458112767CFA4B93F87D /* [CP] Check Pods Manifest.lock */,
+				9CDB1B23223805520082E4D3 /* Carthage */,
 				SBP_3ECB3731B063579A4C0583AF67964EAC /* Sources */,
 				RBP_825E9A58AED2499F56D573FC032F15E0 /* Resources */,
 				FBP_DE759BFC5CE36E23A0069A9567ADBE92 /* Frameworks */,
@@ -1044,8 +1053,6 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
@@ -1058,8 +1065,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
@@ -1069,6 +1074,26 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-wallabag/Pods-wallabag-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		9CDB1B23223805520082E4D3 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		D9E3458112767CFA4B93F87D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1475,6 +1500,10 @@
 			baseConfigurationReference = FR_7ABC493E8F892DF451AABBB415AFE326 /* wallabag-Debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
@@ -1486,6 +1515,10 @@
 			baseConfigurationReference = FR_5DE83659FDAF5871759C0A7D752A7823 /* wallabag-Release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;

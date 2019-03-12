@@ -1,1 +1,1 @@
---exclude Pods,Generated
+--exclude Pods,Generated,Carthage
