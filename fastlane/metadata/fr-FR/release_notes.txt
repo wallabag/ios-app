@@ -1,2 +1,6 @@
-La version 4.0.0 vient de sortir, elle est marque un changement important. 
-Pour continuer d'utiliser  la version open source rendez vous sur le github du projet wallabag.
+La version 4.0.0 vient de sortir, elle est marque un changement important.
+Si vous voulez continuer d'utiliser la version open source rendez vous sur le github du projet wallabag pour obtenir l'application.
+
+Cette application va continuer d'évoluer afin de satisfaire vos demandes. N'hésitez pas nous soumettre vos idées.
+
+Bonne lecture.

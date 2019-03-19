@@ -3,4 +3,3 @@ Wallabag : sauvegardez et classez vos articles. Lisez-les plus tard. En toute li
 Contrairement aux autres services, wallabag est libre et open source.
 
 Pour utiliser cette application, vous avez besoin d'une instance de wallabag. 
-Vous pouvez par exemple installer wallabag sur votre propre serveur web ou alors vous créez un compte sur wallabag.it ou framabag.org.

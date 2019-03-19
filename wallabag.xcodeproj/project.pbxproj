@@ -12,6 +12,7 @@
 		2F8CC537EF02E57E2F5A3E10 /* Pods_WallabagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187E74B860DCEEEC05361018 /* Pods_WallabagKit.framework */; };
 		529313D8D32005C704EE3B3B /* Pods_wallabagUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B937068EA95FF9F182115A4C /* Pods_wallabagUITests.framework */; };
 		9C4976532226751900DA4BD0 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4976522226751900DA4BD0 /* Container.swift */; };
+		9C6DC0F2224112480012486D /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6DC0F1224112480012486D /* UISearchBar.swift */; };
 		9CDB1B26223806530082E4D3 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CDB1B24223806530082E4D3 /* Realm.framework */; };
 		9CDB1B27223806530082E4D3 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CDB1B25223806530082E4D3 /* RealmSwift.framework */; };
 		AB3DC9C9261A48EB580EA5C7 /* Pods_wallabagTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB7175D7B561D7862918F59D /* Pods_wallabagTests.framework */; };
@@ -204,6 +205,7 @@
 		8852438AA757DAA32F9860C5 /* Pods-wallabagTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.debug.xcconfig"; path = "Target Support Files/Pods-wallabagTests/Pods-wallabagTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9BF2F54C8F6742215BD99AEB /* Pods-bagit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bagit.debug.xcconfig"; path = "Target Support Files/Pods-bagit/Pods-bagit.debug.xcconfig"; sourceTree = "<group>"; };
 		9C4976522226751900DA4BD0 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		9C6DC0F1224112480012486D /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
 		9CDB1B24223806530082E4D3 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		9CDB1B25223806530082E4D3 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		B937068EA95FF9F182115A4C /* Pods_wallabagUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -599,6 +601,7 @@
 				FR_6121D1E9B47B792E1964E21692ED3F7D /* String.swift */,
 				FR_BC1A4543A5BCE695E19D56D0A17CE7C6 /* UIImageView.swift */,
 				FR_3996D9FD806100BF0335AAE1A4EE148E /* UIWebView.swift */,
+				9C6DC0F1224112480012486D /* UISearchBar.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1234,6 +1237,7 @@
 				BF_69A8B5C65C16A5031C7513FFCB6BCEBF /* Utils.swift in Sources */,
 				BF_1D1FBDA14845DDF75F10B4FA61AFBDA5 /* VoiceChoiceTableViewController.swift in Sources */,
 				BF_CD815E61A34934671D18A3D50D33C4D8 /* WallabagSession.swift in Sources */,
+				9C6DC0F2224112480012486D /* UISearchBar.swift in Sources */,
 				BF_E5FE0D37FE59FE82D435BA78E800F06D /* WallabagStore.swift in Sources */,
 				BF_D43865006969E073154F7B621CF59B41 /* WallabagSubscription.swift in Sources */,
 				BF_28D11B569BD97D0663CF4229C773A732 /* WallabagSyncing.swift in Sources */,

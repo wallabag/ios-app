@@ -1,1 +1,6 @@
-Support 2.3.6 server version
+Die Version 4.0.0 wurde gerade veröffentlicht, sie markiert eine bedeutende Änderung.
+Wenn Sie die Open-Source-Version weiterhin verwenden möchten, rufen Sie den github des wallabag-Projekts auf, um die Anwendung zu erhalten.
+
+Diese Anwendung wird sich ständig weiterentwickeln, um Ihre Anforderungen zu erfüllen. Zögern Sie nicht, Ihre Ideen einzureichen.
+
+Gute Lektüre.

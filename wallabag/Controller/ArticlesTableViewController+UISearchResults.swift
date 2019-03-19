@@ -32,13 +32,3 @@ extension ArticlesTableViewController: UISearchResultsUpdating {
         searchTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(deferSearch), userInfo: searchText, repeats: false)
     }
 }
-
-extension UISearchBar {
-    public var textField: UITextField? {
-        let subViews = subviews.flatMap { $0.subviews }
-        guard let textField = (subViews.filter { $0 is UITextField }).first as? UITextField else {
-            return nil
-        }
-        return textField
-    }
-}
