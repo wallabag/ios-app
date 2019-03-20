@@ -36,7 +36,7 @@ final class AboutViewController: UIViewController {
 }
 
 extension AboutViewController: MFMailComposeViewControllerDelegate {
-    func mailComposeController(_: MFMailComposeViewController, didFinishWith _: MFMailComposeResult, error _: Error?) {
-        dismiss(animated: true)
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith _: MFMailComposeResult, error _: Error?) {
+        controller.dismiss(animated: true)
     }
 }
