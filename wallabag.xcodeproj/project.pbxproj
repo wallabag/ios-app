@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		019BD04208AC1A76B0C38F49 /* Pods_bagit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F7461CFB047DFAE6666FE6B /* Pods_bagit.framework */; };
-		122BEB5F4E480A0CDB5D1E15 /* Pods_wallabag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2B7A791C646896E2900A3F /* Pods_wallabag.framework */; };
-		2F8CC537EF02E57E2F5A3E10 /* Pods_WallabagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187E74B860DCEEEC05361018 /* Pods_WallabagKit.framework */; };
-		529313D8D32005C704EE3B3B /* Pods_wallabagUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B937068EA95FF9F182115A4C /* Pods_wallabagUITests.framework */; };
+		2F365F4A226606A6A7FCA71A /* Pods_bagit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FEF4BD34D4D41E41C8EAB8 /* Pods_bagit.framework */; };
+		4CBD7A49262CF91949B539BE /* Pods_wallabag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 120004A85D38659DFF22777E /* Pods_wallabag.framework */; };
+		8DEA940B2BC653670EC8EEF8 /* Pods_WallabagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 984CA91C631E80186E2DEAAF /* Pods_WallabagKit.framework */; };
 		9C4976532226751900DA4BD0 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4976522226751900DA4BD0 /* Container.swift */; };
 		9C6DC0F2224112480012486D /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6DC0F1224112480012486D /* UISearchBar.swift */; };
-		AB3DC9C9261A48EB580EA5C7 /* Pods_wallabagTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB7175D7B561D7862918F59D /* Pods_wallabagTests.framework */; };
+		AE386E514244B3963AA11716 /* Pods_wallabagTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 949A0B73CF953AEE10C136EA /* Pods_wallabagTests.framework */; };
 		BF_00D91E5F9A9D166BC797C715B7F35902 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_315AD6439BE85BB13FC17E766770E347 /* TipViewController.swift */; };
 		BF_047B132AA818924F42C07857A48D5648 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_250D2539097D8AD4F65F91206902AF43 /* AnalyticsManager.swift */; };
 		BF_0576133F70765A88C0F8BD8FC41C19EE /* article.html in Resources */ = {isa = PBXBuildFile; fileRef = FR_317F9C93FC0631DF00AB2E1FAEF90DD8 /* article.html */; };
@@ -113,6 +112,7 @@
 		BF_F455B9C80CD63DD87EF42992438C4F82 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_39287A02F2B756958D56349AC317D33B /* ShareViewController.swift */; };
 		BF_F4704CC172521D78A1A955AD8BC9F40A /* AuthWrongPassword.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_AA3C9177E62CEEBC8018AAB81DA95B35 /* AuthWrongPassword.json */; };
 		BF_FAB4EB8A6C5A3541452A95839FE485E8 /* WallabagAuthSuccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_4496EDBF32EDD9F2B4CBACDBCD7A2C34 /* WallabagAuthSuccess.swift */; };
+		C39D712D7069039B82339D0A /* Pods_wallabagUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F58E60F4986F6555B3AD0FD /* Pods_wallabagUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,25 +194,25 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0E227FA2FCA52D6BFF579585 /* Pods-wallabagUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagUITests.debug.xcconfig"; path = "Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		17A768E2D98AC2F73C6DDBE3 /* Pods-WallabagKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WallabagKit.release.xcconfig"; path = "Target Support Files/Pods-WallabagKit/Pods-WallabagKit.release.xcconfig"; sourceTree = "<group>"; };
-		187C27B92A5B65590A3ED9C7 /* Pods-WallabagKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WallabagKit.debug.xcconfig"; path = "Target Support Files/Pods-WallabagKit/Pods-WallabagKit.debug.xcconfig"; sourceTree = "<group>"; };
-		187E74B860DCEEEC05361018 /* Pods_WallabagKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WallabagKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F7461CFB047DFAE6666FE6B /* Pods_bagit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bagit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DFC0606D62403B880E99CDA /* Pods-wallabag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag.debug.xcconfig"; path = "Target Support Files/Pods-wallabag/Pods-wallabag.debug.xcconfig"; sourceTree = "<group>"; };
-		8852438AA757DAA32F9860C5 /* Pods-wallabagTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.debug.xcconfig"; path = "Target Support Files/Pods-wallabagTests/Pods-wallabagTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9BF2F54C8F6742215BD99AEB /* Pods-bagit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bagit.debug.xcconfig"; path = "Target Support Files/Pods-bagit/Pods-bagit.debug.xcconfig"; sourceTree = "<group>"; };
+		048678B06BF534658A32ACCA /* Pods-WallabagKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WallabagKit.release.xcconfig"; path = "Target Support Files/Pods-WallabagKit/Pods-WallabagKit.release.xcconfig"; sourceTree = "<group>"; };
+		106EFCB5FCEDA89220CB1EBF /* Pods-bagit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bagit.release.xcconfig"; path = "Target Support Files/Pods-bagit/Pods-bagit.release.xcconfig"; sourceTree = "<group>"; };
+		120004A85D38659DFF22777E /* Pods_wallabag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2877691FF407DC3399D23E6B /* Pods-bagit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bagit.debug.xcconfig"; path = "Target Support Files/Pods-bagit/Pods-bagit.debug.xcconfig"; sourceTree = "<group>"; };
+		50FEF4BD34D4D41E41C8EAB8 /* Pods_bagit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bagit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F58E60F4986F6555B3AD0FD /* Pods_wallabagUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81C5BF3BE27EE7FB7B88B4B8 /* Pods-wallabagTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.release.xcconfig"; path = "Target Support Files/Pods-wallabagTests/Pods-wallabagTests.release.xcconfig"; sourceTree = "<group>"; };
+		949A0B73CF953AEE10C136EA /* Pods_wallabagTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		984CA91C631E80186E2DEAAF /* Pods_WallabagKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WallabagKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C4976522226751900DA4BD0 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		9C6DC0F1224112480012486D /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
 		9CDB1B24223806530082E4D3 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		9CDB1B25223806530082E4D3 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
-		B937068EA95FF9F182115A4C /* Pods_wallabagUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BB7175D7B561D7862918F59D /* Pods_wallabagTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C08B25C63D843E452FB37E07 /* Pods-wallabag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag.release.xcconfig"; path = "Target Support Files/Pods-wallabag/Pods-wallabag.release.xcconfig"; sourceTree = "<group>"; };
-		C87D6012D597EF4487B385C6 /* Pods-wallabagTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.release.xcconfig"; path = "Target Support Files/Pods-wallabagTests/Pods-wallabagTests.release.xcconfig"; sourceTree = "<group>"; };
-		DE2B7A791C646896E2900A3F /* Pods_wallabag.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabag.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FCA23003671CC80B166C56CD /* Pods-wallabagUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagUITests.release.xcconfig"; path = "Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests.release.xcconfig"; sourceTree = "<group>"; };
-		FD2A0018455B3A38D49AA9CD /* Pods-bagit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bagit.release.xcconfig"; path = "Target Support Files/Pods-bagit/Pods-bagit.release.xcconfig"; sourceTree = "<group>"; };
+		C051CD63C1EF5236292BF9AF /* Pods-wallabagTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.debug.xcconfig"; path = "Target Support Files/Pods-wallabagTests/Pods-wallabagTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C6EF1C4189846648C08B7688 /* Pods-wallabag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag.debug.xcconfig"; path = "Target Support Files/Pods-wallabag/Pods-wallabag.debug.xcconfig"; sourceTree = "<group>"; };
+		C9502B35C4CC695FFDF320BB /* Pods-wallabag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag.release.xcconfig"; path = "Target Support Files/Pods-wallabag/Pods-wallabag.release.xcconfig"; sourceTree = "<group>"; };
+		E116A0EE2C71A9FF74720076 /* Pods-wallabagUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagUITests.release.xcconfig"; path = "Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EA56FD78688E0F475FE83C95 /* Pods-wallabagUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagUITests.debug.xcconfig"; path = "Target Support Files/Pods-wallabagUITests/Pods-wallabagUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F1903F33189CDF3C5EF6DF91 /* Pods-WallabagKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WallabagKit.debug.xcconfig"; path = "Target Support Files/Pods-WallabagKit/Pods-WallabagKit.debug.xcconfig"; sourceTree = "<group>"; };
 		FR_0344656411C412FE13B14B176D31788F /* ArticlesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewController.swift; sourceTree = "<group>"; };
 		FR_0499A5EA97C3340763652A3DED80B81F /* black.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = black.css; sourceTree = "<group>"; };
 		FR_0A6C6DDD5DC94BB30E7D5FE8EB8185B6 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -289,7 +289,7 @@
 		FR_A3394AD5B62C39C7F3B5011E3477304B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FR_A40B0F5D5C1999D5A85DD6F73367CD83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FR_A40BCE81D37EA403FF10738F2054C6F6 /* main.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
-		FR_A558DD3F249C938DA7F179688063D500 /* bagit.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = bagit.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_A558DD3F249C938DA7F179688063D500 /* bagit.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = bagit.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		FR_AA3C9177E62CEEBC8018AAB81DA95B35 /* AuthWrongPassword.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AuthWrongPassword.json; sourceTree = "<group>"; };
 		FR_AAAE3FAEDFB1E2658F53DC3C5B9D5F2A /* WallabagKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitTests.swift; sourceTree = "<group>"; };
 		FR_AB15CF3A73378A512C3D9BBC9F7ECD65 /* TokenAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAdapterTests.swift; sourceTree = "<group>"; };
@@ -345,7 +345,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB3DC9C9261A48EB580EA5C7 /* Pods_wallabagTests.framework in Frameworks */,
+				AE386E514244B3963AA11716 /* Pods_wallabagTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,7 +353,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				529313D8D32005C704EE3B3B /* Pods_wallabagUITests.framework in Frameworks */,
+				C39D712D7069039B82339D0A /* Pods_wallabagUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,7 +361,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F8CC537EF02E57E2F5A3E10 /* Pods_WallabagKit.framework in Frameworks */,
+				8DEA940B2BC653670EC8EEF8 /* Pods_WallabagKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,7 +378,7 @@
 			files = (
 				BF_1409F149805969A9DBDDEE90D29E68DE /* WallabagCommon.framework in Frameworks */,
 				BF_925ACE132CABB3F8D50A6B5DC619A2ED /* WallabagKit.framework in Frameworks */,
-				019BD04208AC1A76B0C38F49 /* Pods_bagit.framework in Frameworks */,
+				2F365F4A226606A6A7FCA71A /* Pods_bagit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,7 +388,7 @@
 			files = (
 				BF_3F1D949902F6926241CB902FE1EADEB3 /* WallabagCommon.framework in Frameworks */,
 				BF_5E32F916F9BCFA405DB48696D544FCA2 /* WallabagKit.framework in Frameworks */,
-				122BEB5F4E480A0CDB5D1E15 /* Pods_wallabag.framework in Frameworks */,
+				4CBD7A49262CF91949B539BE /* Pods_wallabag.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,16 +398,16 @@
 		40329FA17893FF9F9B2C1810 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				187C27B92A5B65590A3ED9C7 /* Pods-WallabagKit.debug.xcconfig */,
-				17A768E2D98AC2F73C6DDBE3 /* Pods-WallabagKit.release.xcconfig */,
-				9BF2F54C8F6742215BD99AEB /* Pods-bagit.debug.xcconfig */,
-				FD2A0018455B3A38D49AA9CD /* Pods-bagit.release.xcconfig */,
-				7DFC0606D62403B880E99CDA /* Pods-wallabag.debug.xcconfig */,
-				C08B25C63D843E452FB37E07 /* Pods-wallabag.release.xcconfig */,
-				8852438AA757DAA32F9860C5 /* Pods-wallabagTests.debug.xcconfig */,
-				C87D6012D597EF4487B385C6 /* Pods-wallabagTests.release.xcconfig */,
-				0E227FA2FCA52D6BFF579585 /* Pods-wallabagUITests.debug.xcconfig */,
-				FCA23003671CC80B166C56CD /* Pods-wallabagUITests.release.xcconfig */,
+				F1903F33189CDF3C5EF6DF91 /* Pods-WallabagKit.debug.xcconfig */,
+				048678B06BF534658A32ACCA /* Pods-WallabagKit.release.xcconfig */,
+				2877691FF407DC3399D23E6B /* Pods-bagit.debug.xcconfig */,
+				106EFCB5FCEDA89220CB1EBF /* Pods-bagit.release.xcconfig */,
+				C6EF1C4189846648C08B7688 /* Pods-wallabag.debug.xcconfig */,
+				C9502B35C4CC695FFDF320BB /* Pods-wallabag.release.xcconfig */,
+				C051CD63C1EF5236292BF9AF /* Pods-wallabagTests.debug.xcconfig */,
+				81C5BF3BE27EE7FB7B88B4B8 /* Pods-wallabagTests.release.xcconfig */,
+				EA56FD78688E0F475FE83C95 /* Pods-wallabagUITests.debug.xcconfig */,
+				E116A0EE2C71A9FF74720076 /* Pods-wallabagUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -417,11 +417,11 @@
 			children = (
 				9CDB1B24223806530082E4D3 /* Realm.framework */,
 				9CDB1B25223806530082E4D3 /* RealmSwift.framework */,
-				187E74B860DCEEEC05361018 /* Pods_WallabagKit.framework */,
-				2F7461CFB047DFAE6666FE6B /* Pods_bagit.framework */,
-				DE2B7A791C646896E2900A3F /* Pods_wallabag.framework */,
-				BB7175D7B561D7862918F59D /* Pods_wallabagTests.framework */,
-				B937068EA95FF9F182115A4C /* Pods_wallabagUITests.framework */,
+				984CA91C631E80186E2DEAAF /* Pods_WallabagKit.framework */,
+				50FEF4BD34D4D41E41C8EAB8 /* Pods_bagit.framework */,
+				120004A85D38659DFF22777E /* Pods_wallabag.framework */,
+				949A0B73CF953AEE10C136EA /* Pods_wallabagTests.framework */,
+				5F58E60F4986F6555B3AD0FD /* Pods_wallabagUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -734,7 +734,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CL_C816286FF780A7E423C7D21154D89416 /* Build configuration list for PBXNativeTarget "WallabagKit" */;
 			buildPhases = (
-				3A1481A8763F06B6BE4535CF /* [CP] Check Pods Manifest.lock */,
+				90BCAB602F344D63E54DBC43 /* [CP] Check Pods Manifest.lock */,
 				SBP_297E6E30FB7434954325CE6786C3A71F /* Sources */,
 				EF1DF8795311515FF71757F7 /* Frameworks */,
 			);
@@ -751,7 +751,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CL_44A5CB396F506B286FFD30802EFC315A /* Build configuration list for PBXNativeTarget "bagit" */;
 			buildPhases = (
-				2FF75C2CEBE1656A5C830B14 /* [CP] Check Pods Manifest.lock */,
+				B41FCC7A713D9E1BDC5CD5B1 /* [CP] Check Pods Manifest.lock */,
 				SBP_DF8DB4E523C1D08325DDAF1E889BD990 /* Sources */,
 				RBP_278ABA6F07006C3A3BABC73145D43577 /* Resources */,
 				FBP_A2CDC7FD673463C773C2B1E55CB82B88 /* Frameworks */,
@@ -771,7 +771,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CL_8A30949FEDBDC73C2592A9D3D3880D8E /* Build configuration list for PBXNativeTarget "wallabagUITests" */;
 			buildPhases = (
-				F8D09852F20CDC6244D8C661 /* [CP] Check Pods Manifest.lock */,
+				44EE499EEBE207183069C459 /* [CP] Check Pods Manifest.lock */,
 				SBP_75AF22468FC3237C4C70F5983BE568DC /* Sources */,
 				BCC981AA42732B95CF7A3934 /* Frameworks */,
 			);
@@ -805,7 +805,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CL_190B884A40E78F55451C94F5CB7C6579 /* Build configuration list for PBXNativeTarget "wallabag" */;
 			buildPhases = (
-				D9E3458112767CFA4B93F87D /* [CP] Check Pods Manifest.lock */,
+				669A389E805ED422596420EC /* [CP] Check Pods Manifest.lock */,
 				SBP_3ECB3731B063579A4C0583AF67964EAC /* Sources */,
 				RBP_825E9A58AED2499F56D573FC032F15E0 /* Resources */,
 				FBP_DE759BFC5CE36E23A0069A9567ADBE92 /* Frameworks */,
@@ -813,7 +813,7 @@
 				CFBP_FB6EE7002903288EA097197B26A1C90A /* Embed Frameworks */,
 				SSBP_59F8FB275EB4E6831F8FEA98BB26B420 /* Swiftlint */,
 				SSBP_6DCAE331BDFE2ED58C8DDD77DDBAB2F7 /* fabricio */,
-				8A10D0F336B11A0102D2D7B4 /* [CP] Embed Pods Frameworks */,
+				93D6EC21569CC6BBE507480D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -831,11 +831,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CL_77749CD558E6ED03FE10C44D3921BE26 /* Build configuration list for PBXNativeTarget "wallabagTests" */;
 			buildPhases = (
-				5964277B55534195BC937AB4 /* [CP] Check Pods Manifest.lock */,
+				9BCB0D326A8E3635926F9D62 /* [CP] Check Pods Manifest.lock */,
 				SBP_A52973954353113F748EE4ACAB338DE0 /* Sources */,
 				RBP_7A631E32949F5546966AB698301709F2 /* Resources */,
 				545C895F0F66B9482804C5C4 /* Frameworks */,
-				728347F21D0D162B482A8E02 /* [CP] Embed Pods Frameworks */,
+				7E3A4583D4C265EFD32E1509 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -949,7 +949,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2FF75C2CEBE1656A5C830B14 /* [CP] Check Pods Manifest.lock */ = {
+		44EE499EEBE207183069C459 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -964,120 +964,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-bagit-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-wallabagUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3A1481A8763F06B6BE4535CF /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WallabagKit-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5964277B55534195BC937AB4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-wallabagTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		728347F21D0D162B482A8E02 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-wallabagTests/Pods-wallabagTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Mockingjay/Mockingjay.framework",
-				"${BUILT_PRODUCTS_DIR}/URITemplate/URITemplate.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mockingjay.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/URITemplate.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-wallabagTests/Pods-wallabagTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8A10D0F336B11A0102D2D7B4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-wallabag/Pods-wallabag-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
-				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
-				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
-				"${BUILT_PRODUCTS_DIR}/TUSafariActivity/TUSafariActivity.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TUSafariActivity.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-wallabag/Pods-wallabag-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D9E3458112767CFA4B93F87D /* [CP] Check Pods Manifest.lock */ = {
+		669A389E805ED422596420EC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1099,7 +993,27 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F8D09852F20CDC6244D8C661 /* [CP] Check Pods Manifest.lock */ = {
+		7E3A4583D4C265EFD32E1509 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-wallabagTests/Pods-wallabagTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Mockingjay/Mockingjay.framework",
+				"${BUILT_PRODUCTS_DIR}/URITemplate/URITemplate.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mockingjay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/URITemplate.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-wallabagTests/Pods-wallabagTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90BCAB602F344D63E54DBC43 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1114,7 +1028,85 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-wallabagUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-WallabagKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93D6EC21569CC6BBE507480D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-wallabag/Pods-wallabag-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
+				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
+				"${BUILT_PRODUCTS_DIR}/TUSafariActivity/TUSafariActivity.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TUSafariActivity.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-wallabag/Pods-wallabag-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9BCB0D326A8E3635926F9D62 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-wallabagTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B41FCC7A713D9E1BDC5CD5B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bagit-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1348,10 +1340,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 207;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 7;
+				DYLIB_CURRENT_VERSION = 207;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = wallabagCommon/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1370,6 +1362,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -1385,10 +1378,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 207;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 7;
+				DYLIB_CURRENT_VERSION = 207;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = wallabagCommon/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1403,6 +1396,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FR_D25A5811CCA84B9080305DDA9A796022 /* bagit-Release.xcconfig */;
 			buildSettings = {
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -1414,18 +1408,19 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
 		BC_6F0F6BBDA618C08580F153A8FD13AC72 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 187C27B92A5B65590A3ED9C7 /* Pods-WallabagKit.debug.xcconfig */;
+			baseConfigurationReference = F1903F33189CDF3C5EF6DF91 /* Pods-WallabagKit.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 207;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 7;
+				DYLIB_CURRENT_VERSION = 207;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = wallabagKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1446,13 +1441,13 @@
 		};
 		BC_90CCD4263F8F9AA8C8E4948E53C2893A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17A768E2D98AC2F73C6DDBE3 /* Pods-WallabagKit.release.xcconfig */;
+			baseConfigurationReference = 048678B06BF534658A32ACCA /* Pods-WallabagKit.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 207;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 7;
+				DYLIB_CURRENT_VERSION = 207;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = wallabagKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1467,6 +1462,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FR_3C63EF667F0034B52FD8C3A71EAA05F7 /* bagit-Debug.xcconfig */;
 			buildSettings = {
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -1483,6 +1479,7 @@
 			baseConfigurationReference = FR_7ABC493E8F892DF451AABBB415AFE326 /* wallabag-Debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 207;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1498,6 +1495,7 @@
 			baseConfigurationReference = FR_5DE83659FDAF5871759C0A7D752A7823 /* wallabag-Release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 207;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
