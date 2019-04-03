@@ -4,12 +4,12 @@ use_frameworks!
 
 target 'wallabag' do
     inherit! :search_paths
-    pod 'Alamofire', '~> 4.7'
-    pod 'AlamofireImage', '~> 3.4'
-    pod 'AlamofireNetworkActivityIndicator', '~> 2.2'
-    pod 'TUSafariActivity', '~> 1.0'
+    pod 'Alamofire'
+    pod 'AlamofireImage'
+    pod 'AlamofireNetworkActivityIndicator'
+    pod 'TUSafariActivity'
     pod 'SideMenu'
-    #    pod 'RealmSwift'
+    pod 'RealmSwift'
     pod 'Fabric'
     pod 'Crashlytics'
     pod 'Swinject'
@@ -26,11 +26,11 @@ end
 
 target 'WallabagKit' do
     inherit! :search_paths
-    pod 'Alamofire', '~> 4.7'
+    pod 'Alamofire'
 end
 
 target 'bagit' do
-    pod 'Alamofire', '~> 4.7'
+    pod 'Alamofire'
 end
 
 post_install do |installer|

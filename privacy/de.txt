@@ -4,7 +4,7 @@
 <p>Datum des Inkrafttretens: October 11, 2018</p>
 
 
-<p>Wallabag Reader ("wir", "uns", "unser" usw.) betreibt die Website  und die mobile App Wallabag Reader (nachstehend als "Dienst" bezeichnet).</p>
+<p>Wallabag 2 official ("wir", "uns", "unser" usw.) betreibt die Website  und die mobile App Wallabag 2 official (nachstehend als "Dienst" bezeichnet).</p>
 
 <p>Diese Seite enthält Informationen zu der Art und Weise, auf welche wir personenbezogene Daten erfassen, nutzen und offenlegen, wenn Sie unseren Dienst nutzen, sowie zu den Optionen, die Ihnen im Zusammenhang mit diesen Daten zur Verfügung stehen. <a href="https://www.freeprivacypolicy.com/free-privacy-policy-generator.php">Datenschutz-Richtlinie via Free Privacy Policy</a>.</p>
 
@@ -14,7 +14,7 @@
 <ul>
     <li>
         <p><strong>Dienst</strong></p>
-                <p>Der Dienst ist die von dem Wallabag Reader betriebene Website  und mobile App Wallabag Reader.</p>
+                <p>Der Dienst ist die von dem Wallabag 2 official betriebene Website  und mobile App Wallabag 2 official.</p>
             </li>
     <li>
         <p><strong>Personenbezogene Daten</strong></p>
@@ -60,7 +60,7 @@
 </ul>
 
 <h2>Datennutzung</h2> 
-<p>Wir bei Wallabag Reader nutzen die erfassten Daten für verschiedene Zwecke, beispielsweise um:</p>    
+<p>Wir bei Wallabag 2 official nutzen die erfassten Daten für verschiedene Zwecke, beispielsweise um:</p>    
 <ul>
     <li>Ihnen unseren Dienst zur Verfügung zu stellen und diesen aufrecht zu erhalten;</li>
     <li>Ihnen Änderungen in Bezug auf unseren Dienst mitzuteilen;</li>
@@ -75,15 +75,15 @@
 <p>Ihre Daten, einschließlich personenbezogener Daten, können auf Computer übertragen – und auf solchen aufbewahrt – werden, die sich außerhalb Ihres Heimatstaates, Ihrer Heimatprovinz, Ihres Heimatlandes oder einer sonstigen Rechtsordnung befinden und somit Datenschutzgesetzen unterliegen, die sich von den Datenschutzgesetzen in Ihrer Rechtsordnung unterscheiden.</p>
 <p>Falls Sie sich außerhalb von France befinden und sich dazu entscheiden, Daten an uns zu übermitteln, müssen Sie zur Kenntnis nehmen, dass wir Ihre Daten, einschließlich personenbezogener Daten, nach France übertragen und diese dort verarbeiten.</p>
 <p>Ihre Zustimmung zu dieser Datenschutz-Richtlinie und eine nachfolgende Übermittlung von Daten Ihrerseits stellt eine Einverständniserklärung Ihrerseits zu der genannten Übertragung dar.</p>
-<p>Wallabag Reader wird alle im zumutbaren Rahmen erforderlichen Schritte unternehmen um sicherzustellen, dass Ihre Daten auf sichere Weise sowie in Übereinstimmung mit dieser Datenschutz-Richtlinie behandelt werden, und dass Ihre personenbezogenen Daten nicht an Organisationen oder in Länder übertragen werden, hinsichtlich welcher keine hinreichenden Kontrollmechanismen in Bezug auf die Sicherheit Ihrer Daten und sonstigen personenbezogenen Informationen vorliegen.</p>
+<p>Wallabag 2 official wird alle im zumutbaren Rahmen erforderlichen Schritte unternehmen um sicherzustellen, dass Ihre Daten auf sichere Weise sowie in Übereinstimmung mit dieser Datenschutz-Richtlinie behandelt werden, und dass Ihre personenbezogenen Daten nicht an Organisationen oder in Länder übertragen werden, hinsichtlich welcher keine hinreichenden Kontrollmechanismen in Bezug auf die Sicherheit Ihrer Daten und sonstigen personenbezogenen Informationen vorliegen.</p>
 
 <h2>Offenlegung von Daten</h2>
 
 <h3>Gesetzliche Anforderungen</h3>
-<p>Wallabag Reader kann Ihre personenbezogenen Daten unter Umständen offenlegen, wenn es unter Beachtung der Grundsätze von Treu und Glauben der Ansicht ist, dass dies zur Erreichung der nachfolgenden Zielsetzungen erforderlich ist:</p>
+<p>Wallabag 2 official kann Ihre personenbezogenen Daten unter Umständen offenlegen, wenn es unter Beachtung der Grundsätze von Treu und Glauben der Ansicht ist, dass dies zur Erreichung der nachfolgenden Zielsetzungen erforderlich ist:</p>
 <ul>
     <li>zur Erfüllung einer gesetzlichen Pflicht</li>
-    <li>zum Schutz und zur Verteidigung der Rechte oder des Eigentums von Wallabag Reader</li>
+    <li>zum Schutz und zur Verteidigung der Rechte oder des Eigentums von Wallabag 2 official</li>
     <li>zur Vermeidung oder Untersuchung möglicher Fehlverhaltensweisen in Bezug auf den Dienst </li>
     <li>zum Schutz der persönlichen Sicherheit der Nutzer des Dienstes oder der Öffentlichkeit</li>
     <li>zur Vermeidung von Haftungsansprüchen</li>

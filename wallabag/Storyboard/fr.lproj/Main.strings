@@ -45,7 +45,7 @@
 "Oak-js-p1q.text" = "Tous les articles";
 
 /* Class = "UILabel"; text = "wallabag v2 for iOS"; ObjectID = "OmZ-lq-KqG"; */
-"OmZ-lq-KqG.text" = "Wallabag Reader";
+"OmZ-lq-KqG.text" = "Wallabag";
 
 /* Class = "UILabel"; text = "Report bug"; ObjectID = "Td2-rf-4Mi"; */
 "Td2-rf-4Mi.normalTitle" = "Remonter un bug";

@@ -8,5 +8,3 @@ VERSIONING_SYSTEM = apple-generic
 INFOPLIST_FILE = wallabag/Info.plist
 SWIFT_OBJC_BRIDGING_HEADER = wallabag/Lib/wallabag-Bridging-Header.h
 PRODUCT_BUNDLE_IDENTIFIER = fr.district-web.wallabag
-CURRENT_PROJECT_VERSION = 114
-

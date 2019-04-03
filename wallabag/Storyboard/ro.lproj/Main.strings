@@ -51,7 +51,7 @@
 "Oak-js-p1q.text" = "Toate articolele";
 
 /* Class = "UILabel"; text = "wallabag v2 for iOS"; ObjectID = "OmZ-lq-KqG"; */
-"OmZ-lq-KqG.text" = "Wallabag Reader";
+"OmZ-lq-KqG.text" = "Wallabag";
 
 /* Class = "UILabel"; text = "Unread articles"; ObjectID = "T0z-d1-R3T"; */
 "T0z-d1-R3T.text" = "Articole necitite";

@@ -25,6 +25,7 @@ final class ServerViewController: UIViewController {
         sender.isEnabled = false
         setting.set(server.text!, for: .host)
         validateServer(string: server.text!) { [unowned self] isValid, _ in
+            sender.isEnabled = true
             if isValid {
                 self.performSegue(withIdentifier: "toClientId", sender: nil)
             } else {
@@ -49,6 +50,7 @@ final class ServerViewController: UIViewController {
                 return
             }
             WallabagKit.getVersion(from: string) { version in
+                Log("Server version \(version)")
                 completion(version.supportedVersion != .unsupported, version)
             }
         } catch {
