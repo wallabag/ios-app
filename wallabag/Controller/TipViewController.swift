@@ -14,7 +14,6 @@ final class TipViewController: UIViewController, SKPaymentTransactionObserver, S
     var themeManager: ThemeManager!
     var transactionInProgress = false
     var productIDs: Set<String> = ["tips1"]
-    let store: WallabagStore = WallabagStore()
     var product: SKProduct? {
         didSet {
             let formatter = NumberFormatter()

@@ -6,7 +6,6 @@
 //
 
 import AVFoundation
-import StoreKit
 import UIKit
 import WallabagCommon
 
@@ -28,20 +27,17 @@ class PodcastViewController: UIViewController {
 
     weak var entry: Entry!
 
-    var isPaid: Bool = false
-
     @IBAction func playPressed(_: UIButton) {
         Log("Play pressed")
         if !speecher.isSpeaking {
             utterances.forEach { speecher.speak($0) }
-            // analytics.send(.synthesis(state: true))
+            analytics.send(.synthesis(state: true))
         } else {
             if speecher.isPaused {
                 speecher.continueSpeaking()
             } else {
                 speecher.pauseSpeaking(at: .word)
             }
-            // analytics.send(.synthesis(state: false))
         }
     }
 
@@ -49,10 +45,6 @@ class PodcastViewController: UIViewController {
         speecher.delegate = self
         utterances = getUtterances()
         prepareView()
-
-        isPaid = WallabagStore.shared.hasReceiptData
-
-        Log(isPaid)
     }
 
     private func prepareView() {
@@ -76,23 +68,12 @@ class PodcastViewController: UIViewController {
 
     private func getUtterances() -> [AVSpeechUtterance] {
         guard let content = entry.content else { return [] }
-
-        if isPaid {
-            for paragraph in content.speakable {
-                let utterance = AVSpeechUtterance(string: paragraph.withoutHTML)
-                utterance.postUtteranceDelay = 0.4
-                utterance.rate = setting.get(for: .speechRate)
-                utterance.voice = setting.getSpeechVoice()
-                utterances.append(utterance)
-            }
-            // slider.displayTick(tick: utterances.count)
-        } else {
             let utterance = AVSpeechUtterance(string: content.withoutHTML)
             utterance.rate = setting.get(for: .speechRate)
             utterance.voice = setting.getSpeechVoice()
             utterances.append(utterance)
-        }
 
+        slider.displayTick(tick: utterances.count)
         slider.maximumValue = Float(utterances.count)
         slider.minimumValue = 0.0
         slider.value = 0
