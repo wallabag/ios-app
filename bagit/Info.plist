@@ -18,8 +18,8 @@
 	<string>XPC!</string>
 	<key>CFBundleShortVersionString</key>
 	<string>4.0.0</string>
-    <key>CFBundleVersion</key>
-    <string>206</string>
+	<key>CFBundleVersion</key>
+	<string>209</string>
 	<key>ITSEncryptionExportComplianceCode</key>
 	<string></string>
 	<key>NSAppTransportSecurity</key>
