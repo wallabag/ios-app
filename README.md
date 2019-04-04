@@ -12,6 +12,8 @@ wallabag 2 official iOS is a companion app for [wallabag](https://www.wallabag.o
 	</a>
 </p>
 
+[Join TestFlight Beta](https://testflight.apple.com/join/RF9hzKHt)
+
 ## About wallabag
 
 wallabag has been made for you to comfortably read and archive your articles.
@@ -31,12 +33,6 @@ I'm really happy to discover Swift and the apple ecosystem.
 You will find mistakes, many mistakes, do not blame me, learn me with a PR.
 
 You contribute to an excellent opensource project, and you will make me evolve in the Swift language
-
-## Features
-- Connect to your self-hosted wallabag instance or connect to your [wallabag.it](https://wallabag.it) or [Framabag](https://framabag.org) account.
-- Supports wallabag 2.0 and higher.
-- Completely ad-free.
-- Switch between numerous themes.
 
 
 ## Screenshots
