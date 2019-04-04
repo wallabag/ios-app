@@ -1,6 +1,3 @@
-La version 4.0.0 vient de sortir, elle est marque un changement important.
-Si vous voulez continuer d'utiliser la version open source rendez vous sur le github du projet wallabag pour obtenir l'application.
+Support for the latest server version of wallabag.
 
-Cette application va continuer d'évoluer afin de satisfaire vos demandes. N'hésitez pas nous soumettre vos idées.
-
-Bonne lecture.
+Preparation of the application to have a better support of the ipad.
