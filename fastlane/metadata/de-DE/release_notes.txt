@@ -1,3 +1,5 @@
 Support for the latest server version of wallabag.
 
 Preparation of the application to have a better support of the ipad.
+
+Remove check server version

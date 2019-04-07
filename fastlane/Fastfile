@@ -28,11 +28,11 @@ platform :ios do
     increment_build_number
     gym(scheme: "wallabag")
     pilot(skip_waiting_for_build_processing: true)
-    commit_version_bump(message: 'Build Version Bump by fastlane', force: true)
+#    commit_version_bump(message: 'Build Version Bump by fastlane', force: true)
     
-    build_number = Actions.lane_context[Actions::SharedValues::BUILD_NUMBER]
-    add_git_tag(tag: "build-#{build_number}", force: true)
-    push_to_git_remote
+#    build_number = Actions.lane_context[Actions::SharedValues::BUILD_NUMBER]
+#    add_git_tag(tag: "build-#{build_number}", force: true)
+#    push_to_git_remote
   end
 
   lane :screenshot do
