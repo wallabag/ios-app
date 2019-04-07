@@ -24,7 +24,7 @@ final class ServerViewController: UIViewController {
     @IBAction func nextPressed(_ sender: UIButton) {
         sender.isEnabled = false
         setting.set(server.text!, for: .host)
-        validateServer(string: server.text!) { [unowned self] isValid, _ in
+        validateServer(string: server.text!) { [unowned self] isValid in
             sender.isEnabled = true
             if isValid {
                 self.performSegue(withIdentifier: "toClientId", sender: nil)
@@ -40,21 +40,22 @@ final class ServerViewController: UIViewController {
         }
     }
 
-    private func validateServer(string: String, completion: @escaping (Bool, WallabagVersion?) -> Void) {
+    private func validateServer(string: String, completion: @escaping (Bool) -> Void) {
         do {
             let regex = try NSRegularExpression(pattern: "(http|https)://", options: [])
             guard let url = URL(string: string),
                 UIApplication.shared.canOpenURL(url),
                 1 == regex.matches(in: string, options: [], range: NSRange(location: 0, length: string.count)).count else {
-                completion(false, nil)
+                completion(false)
                 return
             }
-            WallabagKit.getVersion(from: string) { version in
+            completion(true)
+            /*WallabagKit.getVersion(from: string) { version in
                 Log("Server version \(version)")
-                completion(version.supportedVersion != .unsupported, version)
-            }
+                completion(version.supportedVersion != .unsupported)
+            }*/
         } catch {
-            completion(false, nil)
+            completion(false)
         }
     }
 }
