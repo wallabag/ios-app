@@ -241,7 +241,7 @@
 		FR_4496EDBF32EDD9F2B4CBACDBCD7A2C34 /* WallabagAuthSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuthSuccess.swift; sourceTree = "<group>"; };
 		FR_4F6DCF741037732F30E4ED36FA3E5984 /* Entry.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Entry.json; sourceTree = "<group>"; };
 		FR_501742B816EAED2BC7637BD9696D3B07 /* WallabagSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagSubscription.swift; sourceTree = "<group>"; };
-		FR_5259EA32015B0B9F139FF20E34F493C3 /* wallabagTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = wallabagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_5259EA32015B0B9F139FF20E34F493C3 /* wallabagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FR_53A7AFE531920C01689A4DA430C0CA0F /* WallabagKitCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitCollection.swift; sourceTree = "<group>"; };
 		FR_54B1532FB2199D5A7368CCEB6B21DBD3 /* ArticlesTableViewController+pastboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesTableViewController+pastboard.swift"; sourceTree = "<group>"; };
 		FR_56186CC4C8CE1EFA0554417A91A72A00 /* ArticlesTableViewController+UISearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesTableViewController+UISearchResults.swift"; sourceTree = "<group>"; };
@@ -1362,6 +1362,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FR_DFD1FC86C02A4A3FE409DADAC171B1D0 /* wallabagTests-Release.xcconfig */;
 			buildSettings = {
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TEST_TARGET_NAME = wallabag;
 			};
 			name = Release;
@@ -1502,6 +1503,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FR_F00BE02B4B3D06E908BEFCE4144D6CEB /* wallabagTests-Debug.xcconfig */;
 			buildSettings = {
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TEST_TARGET_NAME = wallabag;
 			};
 			name = Debug;
