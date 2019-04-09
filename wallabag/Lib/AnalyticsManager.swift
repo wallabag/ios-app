@@ -10,7 +10,11 @@ import Crashlytics
 import Fabric
 import UIKit
 
-class AnalyticsManager {
+protocol AnalyticsManagerProtocol {
+    func sendScreenViewed(_ event: AnalyticsManager.AnalyticsViewEvent)
+}
+
+class AnalyticsManager: AnalyticsManagerProtocol {
     enum AnalyticsViewEvent {
         var name: String {
             return String(describing: self)

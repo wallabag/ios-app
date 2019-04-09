@@ -10,7 +10,7 @@ import MessageUI
 import UIKit
 
 final class AboutViewController: UIViewController {
-    var analytics: AnalyticsManager!
+    var analytics: AnalyticsManagerProtocol!
     var themeManager: ThemeManager!
 
     @IBOutlet var versionText: UILabel!

@@ -13,6 +13,7 @@
 		9C4976532226751900DA4BD0 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4976522226751900DA4BD0 /* Container.swift */; };
 		9C4D4B9C225B69C100FE3095 /* BoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D4B9B225B69C100FE3095 /* BoolTests.swift */; };
 		9C4D4B9E225B6A2B00FE3095 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D4B9D225B6A2B00FE3095 /* DateTests.swift */; };
+		9C661DB9225D45F200086057 /* AboutViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C661DB8225D45F200086057 /* AboutViewControllerTests.swift */; };
 		9C6DC0F2224112480012486D /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6DC0F1224112480012486D /* UISearchBar.swift */; };
 		9CF89A05225CB3AE008D2AD5 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF89A04225CB3AE008D2AD5 /* Registration.storyboard */; };
 		9CF89A07225CB566008D2AD5 /* Tip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF89A06225CB566008D2AD5 /* Tip.storyboard */; };
@@ -212,6 +213,7 @@
 		9C4976522226751900DA4BD0 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		9C4D4B9B225B69C100FE3095 /* BoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolTests.swift; sourceTree = "<group>"; };
 		9C4D4B9D225B6A2B00FE3095 /* DateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
+		9C661DB8225D45F200086057 /* AboutViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewControllerTests.swift; sourceTree = "<group>"; };
 		9C6DC0F1224112480012486D /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
 		9CDB1B24223806530082E4D3 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		9CDB1B25223806530082E4D3 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
@@ -438,6 +440,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9C661DB7225D45DB00086057 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9C661DB8225D45F200086057 /* AboutViewControllerTests.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		G_121606438FEEA3CA4EBE0D933A35C03C /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -453,6 +463,7 @@
 		G_16D85DEB94463C22A0C313B23AE8C024 /* wallabagTests */ = {
 			isa = PBXGroup;
 			children = (
+				9C661DB7225D45DB00086057 /* Controller */,
 				FR_EEA76C806A8451B9E073B5DD7C8E35F4 /* Info.plist */,
 				FR_C9900CB03BB06DCC825054DAFDE4D907 /* XCTExtension.swift */,
 				G_121606438FEEA3CA4EBE0D933A35C03C /* Extension */,
@@ -1253,6 +1264,7 @@
 			files = (
 				BF_8DF5B0DFCF66D71D7A3C7EF0E10B2EEA /* DictionaryTests.swift in Sources */,
 				BF_A00A76038455E614969B0C4D0C0CF45B /* IntTests.swift in Sources */,
+				9C661DB9225D45F200086057 /* AboutViewControllerTests.swift in Sources */,
 				9C4D4B9E225B6A2B00FE3095 /* DateTests.swift in Sources */,
 				BF_7CC38D8557CAD849430D9776421E5E5E /* StringTests.swift in Sources */,
 				BF_F2ADFB3B4C1B0836F13DB4A1DE5406A7 /* TokenAdapterTests.swift in Sources */,
