@@ -14,6 +14,12 @@
 		9C4D4B9C225B69C100FE3095 /* BoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D4B9B225B69C100FE3095 /* BoolTests.swift */; };
 		9C4D4B9E225B6A2B00FE3095 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D4B9D225B6A2B00FE3095 /* DateTests.swift */; };
 		9C6DC0F2224112480012486D /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6DC0F1224112480012486D /* UISearchBar.swift */; };
+		9CF89A05225CB3AE008D2AD5 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF89A04225CB3AE008D2AD5 /* Registration.storyboard */; };
+		9CF89A07225CB566008D2AD5 /* Tip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF89A06225CB566008D2AD5 /* Tip.storyboard */; };
+		9CF89A09225CB5A7008D2AD5 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF89A08225CB5A7008D2AD5 /* About.storyboard */; };
+		9CF89A0B225CB5CE008D2AD5 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF89A0A225CB5CE008D2AD5 /* Settings.storyboard */; };
+		9CF89A0D225CB61E008D2AD5 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF89A0C225CB61E008D2AD5 /* Menu.storyboard */; };
+		9CF89A0F225CB68C008D2AD5 /* Article.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF89A0E225CB68C008D2AD5 /* Article.storyboard */; };
 		AE386E514244B3963AA11716 /* Pods_wallabagTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 949A0B73CF953AEE10C136EA /* Pods_wallabagTests.framework */; };
 		BF_00D91E5F9A9D166BC797C715B7F35902 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_315AD6439BE85BB13FC17E766770E347 /* TipViewController.swift */; };
 		BF_047B132AA818924F42C07857A48D5648 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_250D2539097D8AD4F65F91206902AF43 /* AnalyticsManager.swift */; };
@@ -209,6 +215,12 @@
 		9C6DC0F1224112480012486D /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
 		9CDB1B24223806530082E4D3 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		9CDB1B25223806530082E4D3 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		9CF89A04225CB3AE008D2AD5 /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
+		9CF89A06225CB566008D2AD5 /* Tip.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tip.storyboard; sourceTree = "<group>"; };
+		9CF89A08225CB5A7008D2AD5 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		9CF89A0A225CB5CE008D2AD5 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		9CF89A0C225CB61E008D2AD5 /* Menu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
+		9CF89A0E225CB68C008D2AD5 /* Article.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Article.storyboard; sourceTree = "<group>"; };
 		C051CD63C1EF5236292BF9AF /* Pods-wallabagTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.debug.xcconfig"; path = "Target Support Files/Pods-wallabagTests/Pods-wallabagTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C6EF1C4189846648C08B7688 /* Pods-wallabag.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag.debug.xcconfig"; path = "Target Support Files/Pods-wallabag/Pods-wallabag.debug.xcconfig"; sourceTree = "<group>"; };
 		C9502B35C4CC695FFDF320BB /* Pods-wallabag.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabag.release.xcconfig"; path = "Target Support Files/Pods-wallabag/Pods-wallabag.release.xcconfig"; sourceTree = "<group>"; };
@@ -500,6 +512,12 @@
 		G_60BF241AD87B2847EBA2C59F302A8DF3 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				9CF89A0E225CB68C008D2AD5 /* Article.storyboard */,
+				9CF89A0C225CB61E008D2AD5 /* Menu.storyboard */,
+				9CF89A0A225CB5CE008D2AD5 /* Settings.storyboard */,
+				9CF89A08225CB5A7008D2AD5 /* About.storyboard */,
+				9CF89A06225CB566008D2AD5 /* Tip.storyboard */,
+				9CF89A04225CB3AE008D2AD5 /* Registration.storyboard */,
 				VG_EA96FF2BC82D31145832EB0EF527D3DA /* LaunchScreen.storyboard */,
 				VG_6CD892D2BBF5FE25B74443256D4272AA /* Main.storyboard */,
 			);
@@ -929,6 +947,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF_C34B818DF3810583F726069B8FF3F5D3 /* Assets.xcassets in Resources */,
+				9CF89A0B225CB5CE008D2AD5 /* Settings.storyboard in Resources */,
 				BF_BA780EE50C69580433E87F40A2057664 /* LaunchScreen.storyboard in Resources */,
 				BF_DD384BCC5299EA5EEB8825713EBE508F /* Localizable.plist in Resources */,
 				BF_E4C5BA8B967986D005FC808C1952FDD1 /* Localizable.strings in Resources */,
@@ -937,10 +956,15 @@
 				BF_0576133F70765A88C0F8BD8FC41C19EE /* article.html in Resources */,
 				BF_38E2D165C7E2E8A343AA0CEACA342310 /* black.css in Resources */,
 				BF_A21BB2F27788E4441068455E497A3358 /* dusk.css in Resources */,
+				9CF89A05225CB3AE008D2AD5 /* Registration.storyboard in Resources */,
 				BF_B1157D4BF6AD7D39E2F5385157298795 /* justify.css in Resources */,
 				BF_1DE4ED4D6E3A2B33C04E95951D2AD25C /* light.css in Resources */,
 				BF_B103129BE6658829E2C3D2A06000273C /* main.css in Resources */,
 				BF_E8710C248C5F4249B0BB296DE58850BB /* night.css in Resources */,
+				9CF89A0D225CB61E008D2AD5 /* Menu.storyboard in Resources */,
+				9CF89A0F225CB68C008D2AD5 /* Article.storyboard in Resources */,
+				9CF89A09225CB5A7008D2AD5 /* About.storyboard in Resources */,
+				9CF89A07225CB566008D2AD5 /* Tip.storyboard in Resources */,
 				BF_3405357D2A8A06979EC0F11E7AEEBCF2 /* ratatouille.css in Resources */,
 				BF_1A5195CA8D30551EC224B3121FBFC1F4 /* white.css in Resources */,
 			);

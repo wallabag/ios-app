@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zsG-x9-2za">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Subscriptions-->
+        <scene sceneID="d5F-Ud-pfS">
+            <objects>
+                <viewController title="Subscriptions" id="B9h-vi-Sne" customClass="SubscriptionViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nxg-6t-d1k"/>
+                        <viewControllerLayoutGuide type="bottom" id="xKx-NY-MKn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tJP-ez-Tak">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOG-AN-RKP">
+                                <rect key="frame" x="164" y="617" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="subscribe:" destination="B9h-vi-Sne" eventType="touchUpInside" id="KGH-kT-mWm"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKz-1e-4bb">
+                                <rect key="frame" x="50" y="212" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Get subscriptions and unlock more powerfull tool to boost your productivity.   For the price of one coffee per month you support the devellopmment application and you boost you productivity! Awesome!</string>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <outlet property="subscribeButton" destination="qOG-AN-RKP" id="axK-eg-Pml"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pfH-VY-swq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6458" y="-7"/>
+        </scene>
+        <!--Read Article-->
+        <scene sceneID="UaL-Kt-Wcp">
+            <objects>
+                <viewController id="zsG-x9-2za" userLabel="Read Article" customClass="ArticleViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Kf2-pV-a1B"/>
+                        <viewControllerLayoutGuide type="bottom" id="0ii-Ho-OiO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IIB-w3-phs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vxC-9m-osy">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="zsG-x9-2za" id="Sxm-qs-ywQ"/>
+                                </connections>
+                            </webView>
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WsA-Va-DgB" userLabel="PodcastView">
+                                <rect key="frame" x="0.0" y="220" width="375" height="403"/>
+                                <connections>
+                                    <segue destination="Qo1-bX-YK8" kind="embed" id="gwI-f4-xly"/>
+                                </connections>
+                            </containerView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmR-l8-ha4">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem image="readed" id="X3k-oF-ZXC">
+                                        <connections>
+                                            <action selector="read:" destination="zsG-x9-2za" id="5Bd-Ju-2d1"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="starred" id="VcU-fa-V5f" userLabel="Star boutton">
+                                        <connections>
+                                            <action selector="star:" destination="zsG-x9-2za" id="RwX-qv-2d9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Eb2-gX-W3Y"/>
+                                    <barButtonItem image="lips" id="3vd-F9-MfW">
+                                        <connections>
+                                            <action selector="speech:" destination="zsG-x9-2za" id="1zn-dC-Xwb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="uLk-DD-ezt"/>
+                                    <barButtonItem image="trash" id="IC0-DD-8KU">
+                                        <connections>
+                                            <action selector="deleteArticle:" destination="zsG-x9-2za" id="fWt-Cr-hlJ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cmR-l8-ha4" firstAttribute="leading" secondItem="IIB-w3-phs" secondAttribute="leading" id="1sS-vI-M5x"/>
+                            <constraint firstAttribute="trailing" secondItem="cmR-l8-ha4" secondAttribute="trailing" id="BTa-dE-gEl"/>
+                            <constraint firstAttribute="trailing" secondItem="vxC-9m-osy" secondAttribute="trailing" id="FM5-QC-xPW"/>
+                            <constraint firstAttribute="trailing" secondItem="WsA-Va-DgB" secondAttribute="trailing" id="LSi-H0-vMk"/>
+                            <constraint firstItem="WsA-Va-DgB" firstAttribute="leading" secondItem="IIB-w3-phs" secondAttribute="leading" id="P8c-uB-Bix"/>
+                            <constraint firstItem="vxC-9m-osy" firstAttribute="top" secondItem="Kf2-pV-a1B" secondAttribute="bottom" id="SBV-XY-xMB"/>
+                            <constraint firstItem="cmR-l8-ha4" firstAttribute="top" secondItem="vxC-9m-osy" secondAttribute="bottom" id="VeK-oj-lHW"/>
+                            <constraint firstItem="vxC-9m-osy" firstAttribute="leading" secondItem="IIB-w3-phs" secondAttribute="leading" id="mGN-Cn-5aJ"/>
+                            <constraint firstItem="0ii-Ho-OiO" firstAttribute="top" secondItem="cmR-l8-ha4" secondAttribute="bottom" id="uFj-ax-Oew"/>
+                            <constraint firstItem="WsA-Va-DgB" firstAttribute="top" secondItem="Kf2-pV-a1B" secondAttribute="bottom" constant="129" id="wv1-d8-mCN"/>
+                            <constraint firstItem="WsA-Va-DgB" firstAttribute="bottom" secondItem="cmR-l8-ha4" secondAttribute="top" id="xCN-Rj-2Sg"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="51o-Ow-BBE">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="TZ5-PW-hYk">
+                                <connections>
+                                    <action selector="add:" destination="zsG-x9-2za" id="HbR-Rr-oh7"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="action" id="YkI-7q-ROS">
+                                <connections>
+                                    <action selector="shareMenu:" destination="zsG-x9-2za" id="xlP-XW-3Zb"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="contentWeb" destination="vxC-9m-osy" id="hEI-YH-oMy"/>
+                        <outlet property="deleteButton" destination="IC0-DD-8KU" id="Kct-QB-Efq"/>
+                        <outlet property="podcastView" destination="WsA-Va-DgB" id="Mui-8F-1tQ"/>
+                        <outlet property="readButton" destination="X3k-oF-ZXC" id="hnK-8N-UcN"/>
+                        <outlet property="speechButton" destination="3vd-F9-MfW" id="qky-Bl-1uV"/>
+                        <outlet property="starButton" destination="VcU-fa-V5f" id="YqQ-L0-xvZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hfU-tW-LRl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5552.8000000000002" y="-6.746626686656672"/>
+        </scene>
+        <!--Podcast View Controller-->
+        <scene sceneID="dvY-0d-RVH">
+            <objects>
+                <viewController id="Qo1-bX-YK8" customClass="PodcastViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X93-hd-zjT"/>
+                        <viewControllerLayoutGuide type="bottom" id="lf4-YH-eyN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vgf-At-5nT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="403"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owP-3Q-5Ls">
+                                <rect key="frame" x="163.5" y="334" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="A4d-t9-nJY"/>
+                                    <constraint firstAttribute="width" constant="48" id="cTh-nD-oah"/>
+                                </constraints>
+                                <state key="normal" title="Play" image="play"/>
+                                <connections>
+                                    <action selector="playPressed:" destination="Qo1-bX-YK8" eventType="touchUpInside" id="lv1-eA-38C"/>
+                                </connections>
+                            </button>
+                            <slider hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.80000000000000004" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8cB-4h-qAP" customClass="UIPodcastSlider" customModule="wallabag" customModuleProvider="target">
+                                <rect key="frame" x="30" y="264" width="315" height="31"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </slider>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E0y-5P-r3n">
+                                <rect key="frame" x="87.5" y="32" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="QIk-Gb-WQa"/>
+                                    <constraint firstAttribute="height" constant="200" id="qhf-aV-SPU"/>
+                                </constraints>
+                            </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oef-BU-hAl">
+                                <rect key="frame" x="231.5" y="342" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="YEA-PS-NmU"/>
+                                    <constraint firstAttribute="height" constant="32" id="vDl-zm-wSW"/>
+                                </constraints>
+                                <state key="normal" title="next" image="next"/>
+                                <connections>
+                                    <action selector="next:" destination="Qo1-bX-YK8" eventType="touchUpInside" id="BdJ-Zs-VWP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8cB-4h-qAP" firstAttribute="leading" secondItem="vgf-At-5nT" secondAttribute="leadingMargin" constant="16" id="2FE-Mj-frM"/>
+                            <constraint firstItem="owP-3Q-5Ls" firstAttribute="top" secondItem="8cB-4h-qAP" secondAttribute="bottom" constant="40" id="auc-PI-AGT"/>
+                            <constraint firstItem="8cB-4h-qAP" firstAttribute="top" secondItem="E0y-5P-r3n" secondAttribute="bottom" constant="32" id="cth-ti-oov"/>
+                            <constraint firstItem="Oef-BU-hAl" firstAttribute="leading" secondItem="owP-3Q-5Ls" secondAttribute="trailing" constant="20" id="hKT-pu-CG4"/>
+                            <constraint firstItem="E0y-5P-r3n" firstAttribute="top" secondItem="X93-hd-zjT" secondAttribute="bottom" constant="32" id="jo0-yV-brU"/>
+                            <constraint firstItem="Oef-BU-hAl" firstAttribute="centerY" secondItem="owP-3Q-5Ls" secondAttribute="centerY" id="oIv-jZ-2mW"/>
+                            <constraint firstItem="E0y-5P-r3n" firstAttribute="centerX" secondItem="vgf-At-5nT" secondAttribute="centerX" id="pJW-KA-1aB"/>
+                            <constraint firstItem="owP-3Q-5Ls" firstAttribute="centerX" secondItem="vgf-At-5nT" secondAttribute="centerX" id="uK9-38-mof"/>
+                            <constraint firstItem="8cB-4h-qAP" firstAttribute="trailing" secondItem="vgf-At-5nT" secondAttribute="trailingMargin" constant="-16" id="ut0-wu-RTM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="playButton" destination="owP-3Q-5Ls" id="Aun-0p-VsU"/>
+                        <outlet property="slider" destination="8cB-4h-qAP" id="JPy-Tb-aJ1"/>
+                        <outlet property="thumb" destination="E0y-5P-r3n" id="Sif-fe-NiG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yJt-L8-8Al" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5552.8000000000002" y="649.47526236881561"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="lips" width="22" height="8"/>
+        <image name="next" width="128" height="128"/>
+        <image name="play" width="128" height="128"/>
+        <image name="readed" width="22" height="22"/>
+        <image name="starred" width="22" height="22"/>
+        <image name="trash" width="22" height="22"/>
+    </resources>
+</document>
