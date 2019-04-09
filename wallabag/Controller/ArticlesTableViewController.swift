@@ -46,9 +46,9 @@ final class ArticlesTableViewController: UITableViewController {
 
         })
         alert.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel))
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             appDelegate.window?.rootViewController?.present(alert, animated: false)
-        })
+        }
     }
 
     @IBAction func filterList(segue: UIStoryboardSegue) {

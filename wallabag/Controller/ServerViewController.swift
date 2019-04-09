@@ -50,10 +50,10 @@ final class ServerViewController: UIViewController {
                 return
             }
             completion(true)
-            /*WallabagKit.getVersion(from: string) { version in
-                Log("Server version \(version)")
-                completion(version.supportedVersion != .unsupported)
-            }*/
+            /* WallabagKit.getVersion(from: string) { version in
+                 Log("Server version \(version)")
+                 completion(version.supportedVersion != .unsupported)
+             } */
         } catch {
             completion(false)
         }

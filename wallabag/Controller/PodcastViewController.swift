@@ -68,10 +68,10 @@ class PodcastViewController: UIViewController {
 
     private func getUtterances() -> [AVSpeechUtterance] {
         guard let content = entry.content else { return [] }
-            let utterance = AVSpeechUtterance(string: content.withoutHTML)
-            utterance.rate = setting.get(for: .speechRate)
-            utterance.voice = setting.getSpeechVoice()
-            utterances.append(utterance)
+        let utterance = AVSpeechUtterance(string: content.withoutHTML)
+        utterance.rate = setting.get(for: .speechRate)
+        utterance.voice = setting.getSpeechVoice()
+        utterances.append(utterance)
 
         slider.displayTick(tick: utterances.count)
         slider.maximumValue = Float(utterances.count)
