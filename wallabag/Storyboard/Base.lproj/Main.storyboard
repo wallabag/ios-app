@@ -131,13 +131,13 @@
             </objects>
             <point key="canvasLocation" x="3914" y="-5"/>
         </scene>
-        <!--server-->
+        <!--ServerViewController-->
         <scene sceneID="Rze-No-fci">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="server" storyboardName="Registration" referencedIdentifier="server" id="kcx-vO-7t8" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="server" storyboardName="Registration" referencedIdentifier="ServerViewController" id="kcx-vO-7t8" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9K-Ca-1en" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1713" y="818"/>
+            <point key="canvasLocation" x="2906" y="14"/>
         </scene>
         <!--home-->
         <scene sceneID="ks8-J4-XmW">

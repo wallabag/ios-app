@@ -10,6 +10,7 @@
 		2F365F4A226606A6A7FCA71A /* Pods_bagit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FEF4BD34D4D41E41C8EAB8 /* Pods_bagit.framework */; };
 		4CBD7A49262CF91949B539BE /* Pods_wallabag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 120004A85D38659DFF22777E /* Pods_wallabag.framework */; };
 		8DEA940B2BC653670EC8EEF8 /* Pods_WallabagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 984CA91C631E80186E2DEAAF /* Pods_WallabagKit.framework */; };
+		9C352EB4225E3C020074A026 /* ServerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C352EB3225E3C020074A026 /* ServerViewControllerTests.swift */; };
 		9C4976532226751900DA4BD0 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4976522226751900DA4BD0 /* Container.swift */; };
 		9C4D4B9C225B69C100FE3095 /* BoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D4B9B225B69C100FE3095 /* BoolTests.swift */; };
 		9C4D4B9E225B6A2B00FE3095 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D4B9D225B6A2B00FE3095 /* DateTests.swift */; };
@@ -210,6 +211,7 @@
 		81C5BF3BE27EE7FB7B88B4B8 /* Pods-wallabagTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.release.xcconfig"; path = "Target Support Files/Pods-wallabagTests/Pods-wallabagTests.release.xcconfig"; sourceTree = "<group>"; };
 		949A0B73CF953AEE10C136EA /* Pods_wallabagTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		984CA91C631E80186E2DEAAF /* Pods_WallabagKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WallabagKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C352EB3225E3C020074A026 /* ServerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerViewControllerTests.swift; sourceTree = "<group>"; };
 		9C4976522226751900DA4BD0 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		9C4D4B9B225B69C100FE3095 /* BoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolTests.swift; sourceTree = "<group>"; };
 		9C4D4B9D225B6A2B00FE3095 /* DateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 			isa = PBXGroup;
 			children = (
 				9C661DB8225D45F200086057 /* AboutViewControllerTests.swift */,
+				9C352EB3225E3C020074A026 /* ServerViewControllerTests.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1269,6 +1272,7 @@
 				BF_7CC38D8557CAD849430D9776421E5E5E /* StringTests.swift in Sources */,
 				BF_F2ADFB3B4C1B0836F13DB4A1DE5406A7 /* TokenAdapterTests.swift in Sources */,
 				BF_58567850CC932A049952E736EE61B0DE /* WallabagAuthErrorTests.swift in Sources */,
+				9C352EB4225E3C020074A026 /* ServerViewControllerTests.swift in Sources */,
 				BF_3C34FF37F2AAB722ED3278184555355B /* WallabagAuthSuccessTests.swift in Sources */,
 				BF_87E311661C0B3BA3247CC388C7CCD8AF /* WallabagKitCollectionTests.swift in Sources */,
 				BF_C63B962A10CD74586351B9DB5E0FBBE1 /* WallabagKitTests.swift in Sources */,

@@ -10,8 +10,8 @@ import UIKit
 import WallabagCommon
 
 final class ClientIdViewController: UIViewController {
-    var analytics: AnalyticsManager!
-    var setting: WallabagSetting!
+    var analytics: AnalyticsManagerProtocol!
+    var setting: SettingProtocol!
 
     @IBOutlet var clientId: UITextField!
     @IBOutlet var clientSecret: UITextField!
@@ -29,7 +29,6 @@ final class ClientIdViewController: UIViewController {
     }
 
     // MARK: - Navigation
-
     override func prepare(for _: UIStoryboardSegue, sender _: Any?) {
         setting.set(clientId.text!, for: .clientId)
         setting.set(clientSecret.text!, for: .clientSecret)

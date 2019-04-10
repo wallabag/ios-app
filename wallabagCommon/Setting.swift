@@ -20,7 +20,13 @@ public final class SettingKey<SettingType>: SettingKeys {
     }
 }
 
-public class Setting {
+public protocol SettingProtocol {
+    func get<ValueType>(for key: SettingKey<ValueType>) -> ValueType
+
+    func set<ValueType>(_ value: ValueType, for key: SettingKey<ValueType>)
+}
+
+public class Setting: SettingProtocol {
     let defaults: UserDefaults
 
     init(_ defaults: UserDefaults) {

@@ -11,10 +11,11 @@ import WallabagCommon
 import WallabagKit
 
 final class ServerViewController: UIViewController {
-    var analytics: AnalyticsManager!
-    var setting: WallabagSetting!
+    var analytics: AnalyticsManagerProtocol!
+    var setting: SettingProtocol!
 
     @IBOutlet var server: UITextField!
+    @IBOutlet var nextButton: UIButton!
 
     override func viewDidLoad() {
         analytics.sendScreenViewed(.serverView)
@@ -35,7 +36,8 @@ final class ServerViewController: UIViewController {
                     preferredStyle: .alert
                 )
                 alertController.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
-                self.present(alertController, animated: true, completion: nil)
+                print("tesaeaeaeaet")
+                self.present(alertController, animated: false, completion: nil)
             }
         }
     }
