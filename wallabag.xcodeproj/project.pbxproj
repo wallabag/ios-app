@@ -523,14 +523,14 @@
 		G_60BF241AD87B2847EBA2C59F302A8DF3 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				9CF89A0E225CB68C008D2AD5 /* Article.storyboard */,
-				9CF89A0C225CB61E008D2AD5 /* Menu.storyboard */,
-				9CF89A0A225CB5CE008D2AD5 /* Settings.storyboard */,
 				9CF89A08225CB5A7008D2AD5 /* About.storyboard */,
-				9CF89A06225CB566008D2AD5 /* Tip.storyboard */,
-				9CF89A04225CB3AE008D2AD5 /* Registration.storyboard */,
+				9CF89A0E225CB68C008D2AD5 /* Article.storyboard */,
 				VG_EA96FF2BC82D31145832EB0EF527D3DA /* LaunchScreen.storyboard */,
 				VG_6CD892D2BBF5FE25B74443256D4272AA /* Main.storyboard */,
+				9CF89A0C225CB61E008D2AD5 /* Menu.storyboard */,
+				9CF89A04225CB3AE008D2AD5 /* Registration.storyboard */,
+				9CF89A0A225CB5CE008D2AD5 /* Settings.storyboard */,
+				9CF89A06225CB566008D2AD5 /* Tip.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -626,8 +626,8 @@
 				FR_2E58EB127F216B99AAB45039FA033FD9 /* Int.swift */,
 				FR_6121D1E9B47B792E1964E21692ED3F7D /* String.swift */,
 				FR_BC1A4543A5BCE695E19D56D0A17CE7C6 /* UIImageView.swift */,
-				FR_3996D9FD806100BF0335AAE1A4EE148E /* UIWebView.swift */,
 				9C6DC0F1224112480012486D /* UISearchBar.swift */,
+				FR_3996D9FD806100BF0335AAE1A4EE148E /* UIWebView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -708,14 +708,14 @@
 			isa = PBXGroup;
 			children = (
 				FR_250D2539097D8AD4F65F91206902AF43 /* AnalyticsManager.swift */,
+				9C4976522226751900DA4BD0 /* Container.swift */,
+				G_CE89579BF929DEF37EAE365EBEC61C09 /* Operation */,
 				FR_9FE0A9D67CA3E51B3186F35BC61793D8 /* PaidSubscription.swift */,
 				FR_26E374F0AF1D1FBEC022213E082366DF /* RetrieveMode.swift */,
 				FR_9904635DBD17CD8DEC268B0000282D5E /* Utils.swift */,
 				FR_D12F9BFF12ECE9D85363436FAF065862 /* WallabagSession.swift */,
 				FR_501742B816EAED2BC7637BD9696D3B07 /* WallabagSubscription.swift */,
 				FR_D555C88886417F7FFACF8E780E3AD81F /* WallabagSyncing.swift */,
-				G_CE89579BF929DEF37EAE365EBEC61C09 /* Operation */,
-				9C4976522226751900DA4BD0 /* Container.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -725,20 +725,20 @@
 			children = (
 				FR_9600E47FC00A35A057E5DE937EDBFDF3 /* AppDelegate.swift */,
 				FR_F94DA63289F6177D1927EB1C68054CF9 /* Assets.xcassets */,
-				FR_606AAB346453DED260A405BD16778883 /* Info.plist */,
-				FR_F21BD2487093365E104F75BAF6110063 /* Localizable.plist */,
-				VG_BEEC8418DD761BF3A09EDB772794FA5C /* Localizable.strings */,
-				FR_7F369F01648273740FFAC734BF79A78E /* wallabag.entitlements */,
 				G_91414645069EEDC291CE7A989E70D2DC /* Cell */,
 				G_A0EB5ED7FC525D97C47FAD04B172691C /* Controller */,
 				G_BD722E6D6F9F896167754C6E90947E1F /* Entity */,
 				G_BFAC74A6E84ED8C37095B2C3988CA599 /* Extension */,
 				G_81C31EE82E6432EC5BD810AE60BAAAC2 /* Fonts */,
 				G_DFD8F6A37FD99EE890AF4FA2569F633D /* html-ressources */,
+				FR_606AAB346453DED260A405BD16778883 /* Info.plist */,
 				G_ED05746A8B318D93F5C59AFB3D2C703A /* Lib */,
+				FR_F21BD2487093365E104F75BAF6110063 /* Localizable.plist */,
+				VG_BEEC8418DD761BF3A09EDB772794FA5C /* Localizable.strings */,
 				G_60BF241AD87B2847EBA2C59F302A8DF3 /* Storyboard */,
 				G_C695FAD8BA58329D13ADE1E32DD7B622 /* Theme */,
 				G_E288595FB7758C59B0C10F1A195B1273 /* UI */,
+				FR_7F369F01648273740FFAC734BF79A78E /* wallabag.entitlements */,
 			);
 			path = wallabag;
 			sourceTree = "<group>";

@@ -11,7 +11,7 @@ import UIKit
 
 final class AboutViewController: UIViewController {
     var analytics: AnalyticsManagerProtocol!
-    var themeManager: ThemeManager!
+    var themeManager: ThemeManagerProtocol!
 
     @IBOutlet var versionText: UILabel!
 
