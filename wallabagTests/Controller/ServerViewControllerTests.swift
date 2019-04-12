@@ -5,11 +5,11 @@
 //  Created by maxime marinel on 10/04/2019.
 //
 
-import XCTest
-@testable import wallabag
-import SwinjectStoryboard
 import Swinject
+import SwinjectStoryboard
+@testable import wallabag
 import WallabagCommon
+import XCTest
 
 class ServerViewControllerTests: XCTestCase {
     class AnalyticsManagerMock: AnalyticsManagerProtocol {
@@ -34,13 +34,14 @@ class ServerViewControllerTests: XCTestCase {
 
     func testWithServerConfiguredInSetting() {
         class SettingMock: SettingProtocol {
-            func get<ValueType>(for key: SettingKey<ValueType>) -> ValueType {
+            func get<ValueType>(for _: SettingKey<ValueType>) -> ValueType {
                 return ("http://my.server.wallabag" as? ValueType)!
             }
-            func set<ValueType>(_ value: ValueType, for key: SettingKey<ValueType>) {}
+
+            func set<ValueType>(_: ValueType, for _: SettingKey<ValueType>) {}
         }
         container.register(SettingMock.self) { _ in
-            return SettingMock()
+            SettingMock()
         }
         container.storyboardInitCompleted(ServerViewController.self) { r, c in
             c.analytics = r.resolve(AnalyticsManagerMock.self)
@@ -55,16 +56,17 @@ class ServerViewControllerTests: XCTestCase {
     func testWithInvalidUrlThenShowAlertError() {
         class SettingMock: SettingProtocol {
             var setValue: String?
-            func get<ValueType>(for key: SettingKey<ValueType>) -> ValueType {
+            func get<ValueType>(for _: SettingKey<ValueType>) -> ValueType {
                 return ("" as? ValueType)!
             }
-            func set<ValueType>(_ value: ValueType, for key: SettingKey<ValueType>) {
+
+            func set<ValueType>(_ value: ValueType, for _: SettingKey<ValueType>) {
                 print(value)
                 setValue = (value as! String)
             }
         }
         container.register(SettingMock.self) { _ in
-            return SettingMock()
+            SettingMock()
         }.inObjectScope(.container)
         container.storyboardInitCompleted(ServerViewController.self) { r, c in
             c.analytics = r.resolve(AnalyticsManagerMock.self)
@@ -85,15 +87,16 @@ class ServerViewControllerTests: XCTestCase {
     func testWithValidUrlThenPerfomSegue() {
         class SettingMock: SettingProtocol {
             var setValue: String?
-            func get<ValueType>(for key: SettingKey<ValueType>) -> ValueType {
+            func get<ValueType>(for _: SettingKey<ValueType>) -> ValueType {
                 return ("" as? ValueType)!
             }
-            func set<ValueType>(_ value: ValueType, for key: SettingKey<ValueType>) {
+
+            func set<ValueType>(_ value: ValueType, for _: SettingKey<ValueType>) {
                 setValue = (value as! String)
             }
         }
         container.register(SettingMock.self) { _ in
-            return SettingMock()
+            SettingMock()
         }.inObjectScope(.container)
         container.storyboardInitCompleted(ServerViewController.self) { r, c in
             c.analytics = r.resolve(AnalyticsManagerMock.self)

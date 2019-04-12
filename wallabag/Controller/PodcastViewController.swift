@@ -27,16 +27,25 @@ class PodcastViewController: UIViewController {
 
     weak var entry: Entry!
 
-    @IBAction func playPressed(_: UIButton) {
-        Log("Play pressed")
-        if !speecher.isSpeaking {
-            utterances.forEach { speecher.speak($0) }
-            analytics.send(.synthesis(state: true))
-        } else {
-            if speecher.isPaused {
-                speecher.continueSpeaking()
+    @IBAction func playPressed(_ button: UIButton) {
+        defer {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                button.isEnabled = true
+            }
+        }
+
+        if button.isEnabled {
+            button.isEnabled = false
+            Log("Play pressed")
+            if !speecher.isSpeaking {
+                utterances.forEach { speecher.speak($0) }
+                analytics.send(.synthesis(state: true))
             } else {
-                speecher.pauseSpeaking(at: .word)
+                if speecher.isPaused {
+                    speecher.continueSpeaking()
+                } else {
+                    speecher.pauseSpeaking(at: .word)
+                }
             }
         }
     }

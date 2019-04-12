@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zsG-x9-2za">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +18,7 @@
                         <viewControllerLayoutGuide type="bottom" id="xKx-NY-MKn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tJP-ez-Tak">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOG-AN-RKP">
@@ -53,11 +57,11 @@
                         <viewControllerLayoutGuide type="bottom" id="0ii-Ho-OiO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IIB-w3-phs">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vxC-9m-osy">
-                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="774"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="zsG-x9-2za" id="Sxm-qs-ywQ"/>
@@ -70,7 +74,7 @@
                                 </connections>
                             </containerView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cmR-l8-ha4">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
                                 <items>
                                     <barButtonItem image="readed" id="X3k-oF-ZXC">
                                         <connections>
@@ -144,7 +148,7 @@
         <!--Podcast View Controller-->
         <scene sceneID="dvY-0d-RVH">
             <objects>
-                <viewController id="Qo1-bX-YK8" customClass="PodcastViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PodcastViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qo1-bX-YK8" customClass="PodcastViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="X93-hd-zjT"/>
                         <viewControllerLayoutGuide type="bottom" id="lf4-YH-eyN"/>
@@ -154,7 +158,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owP-3Q-5Ls">
-                                <rect key="frame" x="163.5" y="334" width="48" height="48"/>
+                                <rect key="frame" x="163.5" y="378" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="A4d-t9-nJY"/>
                                     <constraint firstAttribute="width" constant="48" id="cTh-nD-oah"/>
@@ -165,18 +169,18 @@
                                 </connections>
                             </button>
                             <slider hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.80000000000000004" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8cB-4h-qAP" customClass="UIPodcastSlider" customModule="wallabag" customModuleProvider="target">
-                                <rect key="frame" x="30" y="264" width="315" height="31"/>
+                                <rect key="frame" x="30" y="308" width="315" height="31"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </slider>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E0y-5P-r3n">
-                                <rect key="frame" x="87.5" y="32" width="200" height="200"/>
+                                <rect key="frame" x="87.5" y="76" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="QIk-Gb-WQa"/>
                                     <constraint firstAttribute="height" constant="200" id="qhf-aV-SPU"/>
                                 </constraints>
                             </imageView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oef-BU-hAl">
-                                <rect key="frame" x="231.5" y="342" width="32" height="32"/>
+                                <rect key="frame" x="231.5" y="386" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="YEA-PS-NmU"/>
                                     <constraint firstAttribute="height" constant="32" id="vDl-zm-wSW"/>
