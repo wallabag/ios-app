@@ -12,6 +12,7 @@ import UIKit
 
 protocol AnalyticsManagerProtocol {
     func sendScreenViewed(_ event: AnalyticsManager.AnalyticsViewEvent)
+    func send(_ event: AnalyticsManager.AnalyticsEvent)
 }
 
 class AnalyticsManager: AnalyticsManagerProtocol {

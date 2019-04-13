@@ -11,15 +11,6 @@ import SwinjectStoryboard
 import XCTest
 
 class AboutViewControllerTests: XCTestCase {
-    class AnalyticsManagerMock: AnalyticsManagerProtocol {
-        var sendScreenViewedCalled = false
-        var event: AnalyticsManager.AnalyticsViewEvent?
-        func sendScreenViewed(_ event: AnalyticsManager.AnalyticsViewEvent) {
-            sendScreenViewedCalled = true
-            self.event = event
-        }
-    }
-
     class ThemeManagerMock: ThemeManagerProtocol {
         func getBackgroundColor() -> UIColor {
             return UIColor.red
@@ -47,7 +38,7 @@ class AboutViewControllerTests: XCTestCase {
 
     func testLoadController() {
         XCTAssertTrue(analyticsMock.sendScreenViewedCalled)
-        XCTAssertTrue(analyticsMock.event == AnalyticsManager.AnalyticsViewEvent.aboutView)
+        XCTAssertTrue(analyticsMock.eventScreenView == AnalyticsManager.AnalyticsViewEvent.aboutView)
         XCTAssertEqual(String(format: "Version %@ build %@".localized, arguments: [bundle.infoDictionary!["CFBundleShortVersionString"] as! CVarArg, bundle.infoDictionary!["CFBundleVersion"] as! CVarArg]), aboutController.versionText.text)
         XCTAssertEqual(UIColor.red, aboutController.view.backgroundColor)
     }

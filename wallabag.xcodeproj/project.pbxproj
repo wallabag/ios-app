@@ -17,6 +17,7 @@
 		9C58ABBA22607EC10020CDA2 /* PodcastViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C58ABB922607EC10020CDA2 /* PodcastViewControllerTests.swift */; };
 		9C661DB9225D45F200086057 /* AboutViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C661DB8225D45F200086057 /* AboutViewControllerTests.swift */; };
 		9C6DC0F2224112480012486D /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6DC0F1224112480012486D /* UISearchBar.swift */; };
+		9CF1ED952262796D00AF750F /* AnalyticsManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1ED942262796D00AF750F /* AnalyticsManagerMock.swift */; };
 		9CF89A05225CB3AE008D2AD5 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF89A04225CB3AE008D2AD5 /* Registration.storyboard */; };
 		9CF89A07225CB566008D2AD5 /* Tip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF89A06225CB566008D2AD5 /* Tip.storyboard */; };
 		9CF89A09225CB5A7008D2AD5 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF89A08225CB5A7008D2AD5 /* About.storyboard */; };
@@ -221,6 +222,7 @@
 		9C6DC0F1224112480012486D /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
 		9CDB1B24223806530082E4D3 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		9CDB1B25223806530082E4D3 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		9CF1ED942262796D00AF750F /* AnalyticsManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManagerMock.swift; sourceTree = "<group>"; };
 		9CF89A04225CB3AE008D2AD5 /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		9CF89A06225CB566008D2AD5 /* Tip.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tip.storyboard; sourceTree = "<group>"; };
 		9CF89A08225CB5A7008D2AD5 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
@@ -454,6 +456,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		9CF1ED932262794B00AF750F /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				9CF1ED942262796D00AF750F /* AnalyticsManagerMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		G_121606438FEEA3CA4EBE0D933A35C03C /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -470,11 +480,12 @@
 			isa = PBXGroup;
 			children = (
 				9C661DB7225D45DB00086057 /* Controller */,
-				FR_EEA76C806A8451B9E073B5DD7C8E35F4 /* Info.plist */,
-				FR_C9900CB03BB06DCC825054DAFDE4D907 /* XCTExtension.swift */,
 				G_121606438FEEA3CA4EBE0D933A35C03C /* Extension */,
+				FR_EEA76C806A8451B9E073B5DD7C8E35F4 /* Info.plist */,
 				G_6B93B99B31A0305CA3A141EB734D8EF0 /* JSON */,
+				9CF1ED932262794B00AF750F /* Mock */,
 				G_7A59FC07F17EB220D3E123D5C4A411CC /* WallabagKit */,
+				FR_C9900CB03BB06DCC825054DAFDE4D907 /* XCTExtension.swift */,
 			);
 			path = wallabagTests;
 			sourceTree = "<group>";
@@ -1278,6 +1289,7 @@
 				9C352EB4225E3C020074A026 /* ServerViewControllerTests.swift in Sources */,
 				BF_3C34FF37F2AAB722ED3278184555355B /* WallabagAuthSuccessTests.swift in Sources */,
 				BF_87E311661C0B3BA3247CC388C7CCD8AF /* WallabagKitCollectionTests.swift in Sources */,
+				9CF1ED952262796D00AF750F /* AnalyticsManagerMock.swift in Sources */,
 				9C58ABBA22607EC10020CDA2 /* PodcastViewControllerTests.swift in Sources */,
 				BF_C63B962A10CD74586351B9DB5E0FBBE1 /* WallabagKitTests.swift in Sources */,
 				BF_218B02857CD5370E001E1DEDBCD9DA81 /* XCTExtension.swift in Sources */,

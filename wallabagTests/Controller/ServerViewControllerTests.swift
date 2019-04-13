@@ -12,15 +12,6 @@ import WallabagCommon
 import XCTest
 
 class ServerViewControllerTests: XCTestCase {
-    class AnalyticsManagerMock: AnalyticsManagerProtocol {
-        var sendScreenViewedCalled = false
-        var event: AnalyticsManager.AnalyticsViewEvent?
-        func sendScreenViewed(_ event: AnalyticsManager.AnalyticsViewEvent) {
-            sendScreenViewedCalled = true
-            self.event = event
-        }
-    }
-
     let container = Container()
     var storyboard: SwinjectStoryboard!
     var bundle: Bundle = Bundle(identifier: "fr.district-web.wallabag")!
@@ -50,7 +41,7 @@ class ServerViewControllerTests: XCTestCase {
         serverController = (storyboard.instantiateViewController(withIdentifier: "ServerViewController") as! ServerViewController)
         _ = serverController.view
         XCTAssertEqual("http://my.server.wallabag", serverController.server.text)
-        XCTAssertTrue(analyticsMock.event == AnalyticsManager.AnalyticsViewEvent.serverView)
+        XCTAssertTrue(analyticsMock.eventScreenView == AnalyticsManager.AnalyticsViewEvent.serverView)
     }
 
     func testWithInvalidUrlThenShowAlertError() {

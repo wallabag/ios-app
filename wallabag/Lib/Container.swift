@@ -74,7 +74,9 @@ extension SwinjectStoryboard {
             controller.setting = resolver.resolve(WallabagSetting.self)
             controller.wallabagSession = resolver.resolve(WallabagSession.self)
         }
-        defaultContainer.storyboardInitCompleted(PodcastViewController.self) { _, _ in }
+        defaultContainer.storyboardInitCompleted(PodcastViewController.self) { resolver, controller in
+            controller.analytics = resolver.resolve(AnalyticsManager.self)
+        }
         defaultContainer.storyboardInitCompleted(ServerViewController.self) { resolver, controller in
             controller.analytics = resolver.resolve(AnalyticsManager.self)
             controller.setting = resolver.resolve(WallabagSetting.self)
