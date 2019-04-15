@@ -30,6 +30,7 @@ final class ClientIdViewController: UIViewController {
     }
 
     // MARK: - Navigation
+
     override func prepare(for _: UIStoryboardSegue, sender _: Any?) {
         setting.set(clientId.text!, for: .clientId)
         setting.set(clientSecret.text!, for: .clientSecret)

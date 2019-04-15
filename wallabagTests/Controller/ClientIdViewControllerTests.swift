@@ -24,22 +24,8 @@ class ClientIdViewControllerTests: XCTestCase {
     }
 
     func testWithSettingFillFields() {
-        class SettingMock: SettingProtocol {
-            func get<ValueType>(for test: SettingKey<ValueType>) -> ValueType {
-                if "clientId" == test.key {
-                    return ("the_client_id" as? ValueType)!
-                }
-                if "clientSecret" == test.key {
-                    return ("the_client_secret" as? ValueType)!
-                }
-                fatalError()
-            }
-
-            func set<ValueType>(_: ValueType, for _: SettingKey<ValueType>) {}
-            func set(password: String, username: String) {}
-        }
         container.register(SettingMock.self) { _ in
-            SettingMock()
+            SettingMock(["clientId": "the_client_id", "clientSecret": "the_client_secret"])
         }
         container.storyboardInitCompleted(ClientIdViewController.self) { r, c in
             c.analytics = r.resolve(AnalyticsManagerMock.self)
@@ -54,19 +40,6 @@ class ClientIdViewControllerTests: XCTestCase {
     }
 
     func testFillFieldAndNextButtonPressedThenSetSettings() {
-        class SettingMock: SettingProtocol {
-            var settedValues: [String:String] = [:]
-            func get<ValueType>(for test: SettingKey<ValueType>) -> ValueType {
-                return ("" as? ValueType)!
-            }
-
-            func set<ValueType>(_ value: ValueType, for key: SettingKey<ValueType>) {
-                print(key.key)
-                print(value)
-                settedValues[key.key] = (value as! String)
-            }
-            func set(password: String, username: String) {}
-        }
         container.register(SettingMock.self) { _ in
             SettingMock()
         }.inObjectScope(.container)

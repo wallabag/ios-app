@@ -24,17 +24,8 @@ class ServerViewControllerTests: XCTestCase {
     }
 
     func testWithServerConfiguredInSetting() {
-        class SettingMock: SettingProtocol {
-            func get<ValueType>(for _: SettingKey<ValueType>) -> ValueType {
-                return ("http://my.server.wallabag" as? ValueType)!
-            }
-
-            func set<ValueType>(_: ValueType, for _: SettingKey<ValueType>) {}
-
-            func set(password: String, username: String) {}
-        }
         container.register(SettingMock.self) { _ in
-            SettingMock()
+            SettingMock(["host": "http://my.server.wallabag"])
         }
         container.storyboardInitCompleted(ServerViewController.self) { r, c in
             c.analytics = r.resolve(AnalyticsManagerMock.self)
@@ -47,18 +38,6 @@ class ServerViewControllerTests: XCTestCase {
     }
 
     func testWithInvalidUrlThenShowAlertError() {
-        class SettingMock: SettingProtocol {
-            var setValue: String?
-            func get<ValueType>(for _: SettingKey<ValueType>) -> ValueType {
-                return ("" as? ValueType)!
-            }
-
-            func set<ValueType>(_ value: ValueType, for _: SettingKey<ValueType>) {
-                print(value)
-                setValue = (value as! String)
-            }
-            func set(password: String, username: String) {}
-        }
         container.register(SettingMock.self) { _ in
             SettingMock()
         }.inObjectScope(.container)
@@ -73,23 +52,12 @@ class ServerViewControllerTests: XCTestCase {
         serverController.nextButton.sendActions(for: .touchUpInside)
 
         XCTAssertTrue(serverController.presentedViewController is UIAlertController)
-        XCTAssertEqual("invalidurl", container.resolve(SettingMock.self)?.setValue)
+        XCTAssertEqual("invalidurl", container.resolve(SettingMock.self)?.settedValues["host"])
         XCTAssertEqual("Error", (serverController.presentedViewController as! UIAlertController).title)
         XCTAssertEqual("Whoops looks like something went wrong. Check the url, don't forget http or https", (serverController.presentedViewController as! UIAlertController).message)
     }
 
     func testWithValidUrlThenPerfomSegue() {
-        class SettingMock: SettingProtocol {
-            var setValue: String?
-            func get<ValueType>(for _: SettingKey<ValueType>) -> ValueType {
-                return ("" as? ValueType)!
-            }
-
-            func set<ValueType>(_ value: ValueType, for _: SettingKey<ValueType>) {
-                setValue = (value as! String)
-            }
-            func set(password: String, username: String) {}
-        }
         container.register(SettingMock.self) { _ in
             SettingMock()
         }.inObjectScope(.container)
@@ -108,6 +76,6 @@ class ServerViewControllerTests: XCTestCase {
         serverController.nextButton.sendActions(for: .touchUpInside)
 
         XCTAssertTrue(serverController.presentedViewController is ClientIdViewController)
-        XCTAssertEqual("http://isvalid.url", container.resolve(SettingMock.self)?.setValue)
+        XCTAssertEqual("http://isvalid.url", container.resolve(SettingMock.self)?.settedValues["host"])
     }
 }
