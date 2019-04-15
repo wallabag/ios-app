@@ -28,7 +28,6 @@ extension SwinjectStoryboard {
 
                 return try Realm()
             } catch {
-                print(error)
                 fatalError("Error init realm")
             }
         }.inObjectScope(.container)
