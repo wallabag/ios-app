@@ -18,6 +18,7 @@
 		9C661DB9225D45F200086057 /* AboutViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C661DB8225D45F200086057 /* AboutViewControllerTests.swift */; };
 		9C6DC0F2224112480012486D /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6DC0F1224112480012486D /* UISearchBar.swift */; };
 		9CF1ED952262796D00AF750F /* AnalyticsManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1ED942262796D00AF750F /* AnalyticsManagerMock.swift */; };
+		9CF1ED9722627D4500AF750F /* ClientIdViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1ED9622627D4500AF750F /* ClientIdViewControllerTests.swift */; };
 		9CF89A05225CB3AE008D2AD5 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF89A04225CB3AE008D2AD5 /* Registration.storyboard */; };
 		9CF89A07225CB566008D2AD5 /* Tip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF89A06225CB566008D2AD5 /* Tip.storyboard */; };
 		9CF89A09225CB5A7008D2AD5 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF89A08225CB5A7008D2AD5 /* About.storyboard */; };
@@ -223,6 +224,7 @@
 		9CDB1B24223806530082E4D3 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		9CDB1B25223806530082E4D3 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		9CF1ED942262796D00AF750F /* AnalyticsManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManagerMock.swift; sourceTree = "<group>"; };
+		9CF1ED9622627D4500AF750F /* ClientIdViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientIdViewControllerTests.swift; sourceTree = "<group>"; };
 		9CF89A04225CB3AE008D2AD5 /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		9CF89A06225CB566008D2AD5 /* Tip.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tip.storyboard; sourceTree = "<group>"; };
 		9CF89A08225CB5A7008D2AD5 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
@@ -450,8 +452,9 @@
 			isa = PBXGroup;
 			children = (
 				9C661DB8225D45F200086057 /* AboutViewControllerTests.swift */,
-				9C352EB3225E3C020074A026 /* ServerViewControllerTests.swift */,
+				9CF1ED9622627D4500AF750F /* ClientIdViewControllerTests.swift */,
 				9C58ABB922607EC10020CDA2 /* PodcastViewControllerTests.swift */,
+				9C352EB3225E3C020074A026 /* ServerViewControllerTests.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1293,6 +1296,7 @@
 				9C58ABBA22607EC10020CDA2 /* PodcastViewControllerTests.swift in Sources */,
 				BF_C63B962A10CD74586351B9DB5E0FBBE1 /* WallabagKitTests.swift in Sources */,
 				BF_218B02857CD5370E001E1DEDBCD9DA81 /* XCTExtension.swift in Sources */,
+				9CF1ED9722627D4500AF750F /* ClientIdViewControllerTests.swift in Sources */,
 				9C4D4B9C225B69C100FE3095 /* BoolTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

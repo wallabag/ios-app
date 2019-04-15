@@ -30,6 +30,8 @@ class ServerViewControllerTests: XCTestCase {
             }
 
             func set<ValueType>(_: ValueType, for _: SettingKey<ValueType>) {}
+
+            func set(password: String, username: String) {}
         }
         container.register(SettingMock.self) { _ in
             SettingMock()
@@ -55,6 +57,7 @@ class ServerViewControllerTests: XCTestCase {
                 print(value)
                 setValue = (value as! String)
             }
+            func set(password: String, username: String) {}
         }
         container.register(SettingMock.self) { _ in
             SettingMock()
@@ -85,6 +88,7 @@ class ServerViewControllerTests: XCTestCase {
             func set<ValueType>(_ value: ValueType, for _: SettingKey<ValueType>) {
                 setValue = (value as! String)
             }
+            func set(password: String, username: String) {}
         }
         container.register(SettingMock.self) { _ in
             SettingMock()

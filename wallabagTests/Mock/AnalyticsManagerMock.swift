@@ -15,8 +15,9 @@ class AnalyticsManagerMock: AnalyticsManagerProtocol {
     var event: AnalyticsManager.AnalyticsEvent?
     func sendScreenViewed(_ event: AnalyticsManager.AnalyticsViewEvent) {
         sendScreenViewedCalled = true
-        self.eventScreenView = event
+        eventScreenView = event
     }
+
     func send(_ event: AnalyticsManager.AnalyticsEvent) {
         sendCalled = true
         self.event = event

@@ -36,7 +36,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn4-yG-cxW" userLabel="Add Server">
-                                <rect key="frame" x="175" y="481" width="64" height="29"/>
+                                <rect key="frame" x="175.5" y="481" width="63" height="29"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Home.Register.Button"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="uHV-vJ-PUc"/>
@@ -155,7 +155,7 @@
         <!--ClientId-->
         <scene sceneID="VmF-x9-ghS">
             <objects>
-                <viewController id="hyy-VQ-rcz" userLabel="ClientId" customClass="ClientIdViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ClientIdViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hyy-VQ-rcz" userLabel="ClientId" customClass="ClientIdViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="T3x-Ud-Wa2"/>
                         <viewControllerLayoutGuide type="bottom" id="BXs-WV-4No"/>
@@ -238,6 +238,7 @@ This token are secret and can be found in your developer page, And create a new 
                         <outlet property="clientId" destination="dsM-5G-HXR" id="hz2-AJ-9dh"/>
                         <outlet property="clientSecret" destination="iBk-4L-sqH" id="W9C-0n-Ppo"/>
                         <outlet property="helpTextView" destination="Bkh-cz-HgQ" id="ARU-su-Hsq"/>
+                        <outlet property="nextButton" destination="mDJ-gL-tA5" id="t9p-B1-I5W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckr-j6-LHz" userLabel="First Responder" sceneMemberID="firstResponder"/>

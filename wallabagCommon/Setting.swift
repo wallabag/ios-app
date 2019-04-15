@@ -12,21 +12,15 @@ import Foundation
 public class SettingKeys {}
 
 public final class SettingKey<SettingType>: SettingKeys {
-    let key: String
-    let defaultParameter: SettingType
+    public let key: String
+    public let defaultParameter: SettingType
     public init(_ key: String, _ defaultParameter: SettingType) {
         self.key = key
         self.defaultParameter = defaultParameter
     }
 }
 
-public protocol SettingProtocol {
-    func get<ValueType>(for key: SettingKey<ValueType>) -> ValueType
-
-    func set<ValueType>(_ value: ValueType, for key: SettingKey<ValueType>)
-}
-
-public class Setting: SettingProtocol {
+public class Setting {
     let defaults: UserDefaults
 
     init(_ defaults: UserDefaults) {
@@ -52,7 +46,15 @@ public class Setting: SettingProtocol {
     }
 }
 
-public class WallabagSetting: Setting {
+public protocol SettingProtocol {
+    func get<ValueType>(for key: SettingKey<ValueType>) -> ValueType
+
+    func set<ValueType>(_ value: ValueType, for key: SettingKey<ValueType>)
+
+    func set(password: String, username: String) 
+}
+
+public class WallabagSetting: Setting, SettingProtocol {
     public let sharedDomain = "group.wallabag.share_extension"
     public init() {
         super.init(UserDefaults(suiteName: sharedDomain)!)

@@ -15,6 +15,7 @@ final class ClientIdViewController: UIViewController {
 
     @IBOutlet var clientId: UITextField!
     @IBOutlet var clientSecret: UITextField!
+    @IBOutlet var nextButton: UIButton!
     @IBOutlet var helpTextView: UITextView!
 
     @IBAction func openMyInstance(_: Any) {
@@ -29,7 +30,6 @@ final class ClientIdViewController: UIViewController {
     }
 
     // MARK: - Navigation
-
     override func prepare(for _: UIStoryboardSegue, sender _: Any?) {
         setting.set(clientId.text!, for: .clientId)
         setting.set(clientSecret.text!, for: .clientSecret)
