@@ -23,21 +23,26 @@ class ArticleViewControllerTests: XCTestCase {
     var analyticsMock: AnalyticsManagerMock = AnalyticsManagerMock()
     var themeManagerMock: ThemeManagerMock = ThemeManagerMock()
     var articleController: ArticleViewController!
+    var entry: Entry {
+        let entry = Entry()
+        entry.title = "The big title"
+        entry.url = "http://url.of.myarticle"
+
+        return entry
+    }
 
     override func setUp() {
         storyboard = SwinjectStoryboard.create(name: "Article", bundle: bundle, container: container)
         container.register(AnalyticsManagerMock.self) { _ in self.analyticsMock }
         container.register(ThemeManagerMock.self) { _ in self.themeManagerMock }
-    }
-
-    func testViewDidLoad() {
         container.storyboardInitCompleted(ArticleViewController.self) { r, c in
             c.analytics = r.resolve(AnalyticsManagerMock.self)
             c.themeManager = r.resolve(ThemeManagerMock.self)
         }
         articleController = (storyboard.instantiateViewController(withIdentifier: "ArticleViewController") as! ArticleViewController)
-        let entry = Entry()
-        entry.title = "The big title"
+    }
+
+    func testViewDidLoad() {
         articleController.entry = entry
         XCTAssertFalse(UIApplication.shared.isIdleTimerDisabled)
         UIApplication.shared.keyWindow?.rootViewController = articleController
@@ -51,5 +56,15 @@ class ArticleViewControllerTests: XCTestCase {
         XCTAssertEqual(.red, articleController.contentWeb.backgroundColor)
         XCTAssertEqual(.never, articleController.navigationItem.largeTitleDisplayMode)
         #warning("Missing test for webview:load")
+    }
+
+    func testShareMenu() {
+        articleController.entry = entry
+        UIApplication.shared.keyWindow?.rootViewController = articleController
+
+        articleController.shareMenu(UIBarButtonItem())
+
+        XCTAssertEqual(AnalyticsManager.AnalyticsEvent.shareArticle.name, analyticsMock.event?.name)
+        #warning("missing presented shareview")
     }
 }

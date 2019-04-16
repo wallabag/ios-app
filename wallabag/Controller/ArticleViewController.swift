@@ -62,6 +62,7 @@ final class ArticleViewController: UIViewController, ArticleViewControllerProtoc
     @IBOutlet var starButton: UIBarButtonItem!
     @IBOutlet var speechButton: UIBarButtonItem!
     @IBOutlet var deleteButton: UIBarButtonItem!
+    @IBOutlet var shareButton: UIBarButtonItem!
     @IBOutlet var podcastView: UIView!
 
     @IBAction func add(_: Any) {
