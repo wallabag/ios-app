@@ -16,8 +16,8 @@ protocol ArticleViewControllerProtocol {
 }
 
 final class ArticleViewController: UIViewController, ArticleViewControllerProtocol {
-    var analytics: AnalyticsManager!
-    var themeManager: ThemeManager!
+    var analytics: AnalyticsManagerProtocol!
+    var themeManager: ThemeManagerProtocol!
     var podcastController: PodcastViewController?
 
     var entry: Entry! {
