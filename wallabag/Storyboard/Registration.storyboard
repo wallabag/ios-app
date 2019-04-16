@@ -36,7 +36,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn4-yG-cxW" userLabel="Add Server">
-                                <rect key="frame" x="175.5" y="481" width="63" height="29"/>
+                                <rect key="frame" x="175" y="481" width="64" height="29"/>
                                 <accessibility key="accessibilityConfiguration" identifier="Home.Register.Button"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="uHV-vJ-PUc"/>
@@ -248,7 +248,7 @@ This token are secret and can be found in your developer page, And create a new 
         <!--Login View-->
         <scene sceneID="UT9-CD-1CQ">
             <objects>
-                <viewController id="kUA-VQ-mVR" userLabel="Login View" customClass="LoginViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kUA-VQ-mVR" userLabel="Login View" customClass="LoginViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mot-7w-8di"/>
                         <viewControllerLayoutGuide type="bottom" id="Lvb-T3-PgC"/>

@@ -15,6 +15,7 @@ class SettingMock: SettingProtocol {
     init(_ getValues: [String: String] = [:]) {
         self.getValues = getValues
     }
+
     func get<ValueType>(for key: SettingKey<ValueType>) -> ValueType {
         guard let value = getValues[key.key] as? ValueType else {
             return (""as! ValueType)
