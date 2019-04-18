@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: update CocoaPods
-          command: gem install cocoapods --pre
+          command: sudo gem install cocoapods --pre
       - run:
           name: Install CocoaPods
           command: pod install
