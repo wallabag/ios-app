@@ -9,9 +9,6 @@ jobs:
       xcode: "10.2.0"
     steps:
       - checkout
-      - run: 
-          name: Install swiftLint
-          command: brew install swiftlint
       - run:
           name: update CocoaPods
           command: sudo gem install cocoapods --pre
