@@ -44,9 +44,7 @@ class ArticleViewControllerTests: XCTestCase {
 
     func testViewDidLoad() {
         articleController.entry = entry
-        XCTAssertFalse(UIApplication.shared.isIdleTimerDisabled)
         UIApplication.shared.keyWindow?.rootViewController = articleController
-        XCTAssertTrue(UIApplication.shared.isIdleTimerDisabled)
         XCTAssertEqual(AnalyticsManager.AnalyticsViewEvent.articleView, analyticsMock.eventScreenView)
         XCTAssertEqual("The big title", articleController.navigationItem.title)
         XCTAssertEqual("Read", articleController.readButton.accessibilityLabel)
