@@ -10,6 +10,7 @@
 		2F365F4A226606A6A7FCA71A /* Pods_bagit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50FEF4BD34D4D41E41C8EAB8 /* Pods_bagit.framework */; };
 		4CBD7A49262CF91949B539BE /* Pods_wallabag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 120004A85D38659DFF22777E /* Pods_wallabag.framework */; };
 		8DEA940B2BC653670EC8EEF8 /* Pods_WallabagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 984CA91C631E80186E2DEAAF /* Pods_WallabagKit.framework */; };
+		9C19F8E322707707009450F9 /* RetrieveModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19F8E222707707009450F9 /* RetrieveModeTests.swift */; };
 		9C352EB4225E3C020074A026 /* ServerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C352EB3225E3C020074A026 /* ServerViewControllerTests.swift */; };
 		9C4976532226751900DA4BD0 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4976522226751900DA4BD0 /* Container.swift */; };
 		9C4D4B9C225B69C100FE3095 /* BoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D4B9B225B69C100FE3095 /* BoolTests.swift */; };
@@ -217,6 +218,7 @@
 		81C5BF3BE27EE7FB7B88B4B8 /* Pods-wallabagTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wallabagTests.release.xcconfig"; path = "Target Support Files/Pods-wallabagTests/Pods-wallabagTests.release.xcconfig"; sourceTree = "<group>"; };
 		949A0B73CF953AEE10C136EA /* Pods_wallabagTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		984CA91C631E80186E2DEAAF /* Pods_WallabagKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WallabagKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C19F8E222707707009450F9 /* RetrieveModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveModeTests.swift; sourceTree = "<group>"; };
 		9C352EB3225E3C020074A026 /* ServerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerViewControllerTests.swift; sourceTree = "<group>"; };
 		9C4976522226751900DA4BD0 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		9C4D4B9B225B69C100FE3095 /* BoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolTests.swift; sourceTree = "<group>"; };
@@ -454,6 +456,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9C19F8E1227076EB009450F9 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				9C19F8E222707707009450F9 /* RetrieveModeTests.swift */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
 		9C661DB7225D45DB00086057 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -491,6 +501,7 @@
 		G_16D85DEB94463C22A0C313B23AE8C024 /* wallabagTests */ = {
 			isa = PBXGroup;
 			children = (
+				9C19F8E1227076EB009450F9 /* Lib */,
 				9C661DB7225D45DB00086057 /* Controller */,
 				G_121606438FEEA3CA4EBE0D933A35C03C /* Extension */,
 				FR_EEA76C806A8451B9E073B5DD7C8E35F4 /* Info.plist */,
@@ -1291,6 +1302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C19F8E322707707009450F9 /* RetrieveModeTests.swift in Sources */,
 				9C824D772265ED28009E519B /* LoginViewControllerTests.swift in Sources */,
 				BF_8DF5B0DFCF66D71D7A3C7EF0E10B2EEA /* DictionaryTests.swift in Sources */,
 				BF_A00A76038455E614969B0C4D0C0CF45B /* IntTests.swift in Sources */,
