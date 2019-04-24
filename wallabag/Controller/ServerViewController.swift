@@ -36,7 +36,7 @@ final class ServerViewController: UIViewController {
                     preferredStyle: .alert
                 )
                 alertController.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel, handler: nil))
-                self.present(alertController, animated: false, completion: nil)
+                self.present(alertController, animated: true, completion: nil)
             }
         }
     }
