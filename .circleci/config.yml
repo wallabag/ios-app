@@ -5,24 +5,36 @@
 version: 2
 jobs:
   build:
+    environment:
+      BUNDLE_PATH: vendor/bundle
+      FL_OUTPUT_DIR: output
     macos:
       xcode: "10.2.0"
     steps:
+      - restore_cache:
+          keys:
+          - v1-gems-{{ checksum "Gemfile.lock" }}
+          - v1-gems-
+      - run:
+          name: Bundle install
+          command: bundle check || bundle install
+          environment:
+            BUNDLE_JOBS: 4
+            BUNDLE_RETRY: 3
+      - save_cache:
+          key: v1-gems-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
       - checkout
       - run:
-          name: update CocoaPods
-          command: sudo gem install cocoapods --pre
-      - run:
           name: Install CocoaPods
-          command: pod install
+          command: |
+            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
+            bundle exec pod install
       - run:
           name: Build and run tests
-          command: fastlane ios testlib        
+          command: bundle exec fastlane ios testlib        
       - store_test_results:
-          path: test_output/report.xml
+          path: output/scan
       - store_artifacts:
-          path: /tmp/test-results
-          destination: scan-test-results
-      - store_artifacts:
-          path: ~/Library/Logs/scan
-          destination: scan-logs
+          path: output
