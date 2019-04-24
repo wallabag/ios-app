@@ -8,9 +8,11 @@ jobs:
     environment:
       BUNDLE_PATH: vendor/bundle
       FL_OUTPUT_DIR: output
+    working_directory: /Users/distiller/project
     macos:
       xcode: "10.2.0"
     steps:
+      - checkout
       - restore_cache:
           keys:
           - v1-gems-{{ checksum "Gemfile.lock" }}
@@ -25,7 +27,6 @@ jobs:
           key: v1-gems-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
-      - checkout
       - run:
           name: Install CocoaPods
           command: |
