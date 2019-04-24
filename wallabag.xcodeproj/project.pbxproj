@@ -63,7 +63,6 @@
 		BF_438D847CFB746FE9075482EC514F7DF6 /* NSNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_E5D0C792EF4BAB178E7682B261515B9F /* NSNotification.swift */; };
 		BF_4C392115E51DA700BB8909B337B31EDB /* WallabagKitCollectionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_12B18233ADE8A34E512BD8B59C5C823E /* WallabagKitCollectionResponse.swift */; };
 		BF_4D1280BDF0B04EFCCFE420F95E3833AE /* WallabagError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_E0EE35D548DFC2E4DD114575AD748AB8 /* WallabagError.swift */; };
-		BF_52CA2EA1E65C2A35D518FCC8878DAE42 /* PaidSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_9FE0A9D67CA3E51B3186F35BC61793D8 /* PaidSubscription.swift */; };
 		BF_52DE0750D8F47C6E0DCEEF3E9926DF6E /* ThemeChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_256529387B0BA37F7523EC3B4761C8BC /* ThemeChoiceTableViewController.swift */; };
 		BF_58567850CC932A049952E736EE61B0DE /* WallabagAuthErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_C3CA4908C169B55F757B33B99B07B0D1 /* WallabagAuthErrorTests.swift */; };
 		BF_5E32F916F9BCFA405DB48696D544FCA2 /* WallabagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_30FF53C4D2743E54768DC21BC6D095F3 /* WallabagKit.framework */; };
@@ -108,7 +107,6 @@
 		BF_C63B962A10CD74586351B9DB5E0FBBE1 /* WallabagKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_AAAE3FAEDFB1E2658F53DC3C5B9D5F2A /* WallabagKitTests.swift */; };
 		BF_C9F13CB7B3B557E809E6D9898B0791C2 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_C16D1C5C72DB19E504BB13DC0273DD1D /* Date.swift */; };
 		BF_CD815E61A34934671D18A3D50D33C4D8 /* WallabagSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_D12F9BFF12ECE9D85363436FAF065862 /* WallabagSession.swift */; };
-		BF_D43865006969E073154F7B621CF59B41 /* WallabagSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_501742B816EAED2BC7637BD9696D3B07 /* WallabagSubscription.swift */; };
 		BF_DB7F468621011B78AA80968FF9B4DD93 /* RetrieveMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_26E374F0AF1D1FBEC022213E082366DF /* RetrieveMode.swift */; };
 		BF_DCFFD8C8A227B0DFCA01E513C63768CF /* WallabagKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_2B05AB740144CAD6EB0C8052792EE957 /* WallabagKit.swift */; };
 		BF_DD384BCC5299EA5EEB8825713EBE508F /* Localizable.plist in Resources */ = {isa = PBXBuildFile; fileRef = FR_F21BD2487093365E104F75BAF6110063 /* Localizable.plist */; };
@@ -274,7 +272,6 @@
 		FR_448862BF589F4829A648C0F56DC31F9A /* DictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
 		FR_4496EDBF32EDD9F2B4CBACDBCD7A2C34 /* WallabagAuthSuccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuthSuccess.swift; sourceTree = "<group>"; };
 		FR_4F6DCF741037732F30E4ED36FA3E5984 /* Entry.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Entry.json; sourceTree = "<group>"; };
-		FR_501742B816EAED2BC7637BD9696D3B07 /* WallabagSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagSubscription.swift; sourceTree = "<group>"; };
 		FR_5259EA32015B0B9F139FF20E34F493C3 /* wallabagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FR_53A7AFE531920C01689A4DA430C0CA0F /* WallabagKitCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitCollection.swift; sourceTree = "<group>"; };
 		FR_54B1532FB2199D5A7368CCEB6B21DBD3 /* ArticlesTableViewController+pastboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesTableViewController+pastboard.swift"; sourceTree = "<group>"; };
@@ -316,7 +313,6 @@
 		FR_9904635DBD17CD8DEC268B0000282D5E /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		FR_9E9BE38AB90AD883FD5021F11A8FAA93 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		FR_9F42F31690A7DC7D012875FD435B91AF /* Black.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Black.swift; sourceTree = "<group>"; };
-		FR_9FE0A9D67CA3E51B3186F35BC61793D8 /* PaidSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidSubscription.swift; sourceTree = "<group>"; };
 		FR_A3394AD5B62C39C7F3B5011E3477304B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FR_A40B0F5D5C1999D5A85DD6F73367CD83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FR_A40BCE81D37EA403FF10738F2054C6F6 /* main.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
@@ -750,11 +746,9 @@
 				FR_250D2539097D8AD4F65F91206902AF43 /* AnalyticsManager.swift */,
 				9C4976522226751900DA4BD0 /* Container.swift */,
 				G_CE89579BF929DEF37EAE365EBEC61C09 /* Operation */,
-				FR_9FE0A9D67CA3E51B3186F35BC61793D8 /* PaidSubscription.swift */,
 				FR_26E374F0AF1D1FBEC022213E082366DF /* RetrieveMode.swift */,
 				FR_9904635DBD17CD8DEC268B0000282D5E /* Utils.swift */,
 				FR_D12F9BFF12ECE9D85363436FAF065862 /* WallabagSession.swift */,
-				FR_501742B816EAED2BC7637BD9696D3B07 /* WallabagSubscription.swift */,
 				FR_D555C88886417F7FFACF8E780E3AD81F /* WallabagSyncing.swift */,
 			);
 			path = Lib;
@@ -1264,7 +1258,6 @@
 				BF_39F871EE675DC699FB335EC1E12564C3 /* Light.swift in Sources */,
 				BF_93075D9BA7C176EDFDA77E5E3B181EBF /* LoginViewController.swift in Sources */,
 				BF_C26A33FB794CDBA88061605B28BCADDE /* Night.swift in Sources */,
-				BF_52CA2EA1E65C2A35D518FCC8878DAE42 /* PaidSubscription.swift in Sources */,
 				BF_8B31D8FCBE24A0B24D928AC2A5D8883B /* PodcastViewController.swift in Sources */,
 				BF_DB7F468621011B78AA80968FF9B4DD93 /* RetrieveMode.swift in Sources */,
 				BF_61A51732C997F3090974F35FC6A51BA4 /* ServerViewController.swift in Sources */,
@@ -1283,7 +1276,6 @@
 				BF_1D1FBDA14845DDF75F10B4FA61AFBDA5 /* VoiceChoiceTableViewController.swift in Sources */,
 				BF_CD815E61A34934671D18A3D50D33C4D8 /* WallabagSession.swift in Sources */,
 				9C6DC0F2224112480012486D /* UISearchBar.swift in Sources */,
-				BF_D43865006969E073154F7B621CF59B41 /* WallabagSubscription.swift in Sources */,
 				BF_28D11B569BD97D0663CF4229C773A732 /* WallabagSyncing.swift in Sources */,
 				BF_16EC634D0D63828D6202CCABA3D1AD41 /* White.swift in Sources */,
 			);
