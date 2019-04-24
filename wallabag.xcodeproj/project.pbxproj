@@ -11,6 +11,11 @@
 		4CBD7A49262CF91949B539BE /* Pods_wallabag.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 120004A85D38659DFF22777E /* Pods_wallabag.framework */; };
 		8DEA940B2BC653670EC8EEF8 /* Pods_WallabagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 984CA91C631E80186E2DEAAF /* Pods_WallabagKit.framework */; };
 		9C19F8E322707707009450F9 /* RetrieveModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19F8E222707707009450F9 /* RetrieveModeTests.swift */; };
+		9C19F8E622707AC8009450F9 /* BlackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19F8E522707AC8009450F9 /* BlackTests.swift */; };
+		9C19F8E822707D79009450F9 /* DuskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19F8E722707D79009450F9 /* DuskTests.swift */; };
+		9C19F8EA22707E00009450F9 /* LightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19F8E922707E00009450F9 /* LightTests.swift */; };
+		9C19F8EC22707E68009450F9 /* NightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19F8EB22707E68009450F9 /* NightTests.swift */; };
+		9C19F8EE22707F2A009450F9 /* WhiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19F8ED22707F2A009450F9 /* WhiteTests.swift */; };
 		9C352EB4225E3C020074A026 /* ServerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C352EB3225E3C020074A026 /* ServerViewControllerTests.swift */; };
 		9C4976532226751900DA4BD0 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4976522226751900DA4BD0 /* Container.swift */; };
 		9C4D4B9C225B69C100FE3095 /* BoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D4B9B225B69C100FE3095 /* BoolTests.swift */; };
@@ -217,6 +222,11 @@
 		949A0B73CF953AEE10C136EA /* Pods_wallabagTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wallabagTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		984CA91C631E80186E2DEAAF /* Pods_WallabagKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WallabagKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C19F8E222707707009450F9 /* RetrieveModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveModeTests.swift; sourceTree = "<group>"; };
+		9C19F8E522707AC8009450F9 /* BlackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackTests.swift; sourceTree = "<group>"; };
+		9C19F8E722707D79009450F9 /* DuskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuskTests.swift; sourceTree = "<group>"; };
+		9C19F8E922707E00009450F9 /* LightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightTests.swift; sourceTree = "<group>"; };
+		9C19F8EB22707E68009450F9 /* NightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightTests.swift; sourceTree = "<group>"; };
+		9C19F8ED22707F2A009450F9 /* WhiteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteTests.swift; sourceTree = "<group>"; };
 		9C352EB3225E3C020074A026 /* ServerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerViewControllerTests.swift; sourceTree = "<group>"; };
 		9C4976522226751900DA4BD0 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		9C4D4B9B225B69C100FE3095 /* BoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolTests.swift; sourceTree = "<group>"; };
@@ -460,6 +470,38 @@
 			path = Lib;
 			sourceTree = "<group>";
 		};
+		9C19F8E422707AAF009450F9 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				9C19F8F022707FB9009450F9 /* Themes */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		9C19F8EF22707FA5009450F9 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				FR_9F42F31690A7DC7D012875FD435B91AF /* Black.swift */,
+				FR_17692053F35D14DF23BEA33BEA938F30 /* Dusk.swift */,
+				FR_EAD3D12A2FA96A8314701F1BD7EBF6EC /* Light.swift */,
+				FR_8D62A2546C66F5585479D35DCDBC5485 /* Night.swift */,
+				FR_DA09BB346347C06FFAD641070BE2A9FD /* White.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		9C19F8F022707FB9009450F9 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				9C19F8E522707AC8009450F9 /* BlackTests.swift */,
+				9C19F8E722707D79009450F9 /* DuskTests.swift */,
+				9C19F8E922707E00009450F9 /* LightTests.swift */,
+				9C19F8EB22707E68009450F9 /* NightTests.swift */,
+				9C19F8ED22707F2A009450F9 /* WhiteTests.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
 		9C661DB7225D45DB00086057 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -497,6 +539,7 @@
 		G_16D85DEB94463C22A0C313B23AE8C024 /* wallabagTests */ = {
 			isa = PBXGroup;
 			children = (
+				9C19F8E422707AAF009450F9 /* Theme */,
 				9C19F8E1227076EB009450F9 /* Lib */,
 				9C661DB7225D45DB00086057 /* Controller */,
 				G_121606438FEEA3CA4EBE0D933A35C03C /* Extension */,
@@ -671,13 +714,9 @@
 		G_C695FAD8BA58329D13ADE1E32DD7B622 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
-				FR_9F42F31690A7DC7D012875FD435B91AF /* Black.swift */,
-				FR_17692053F35D14DF23BEA33BEA938F30 /* Dusk.swift */,
-				FR_EAD3D12A2FA96A8314701F1BD7EBF6EC /* Light.swift */,
-				FR_8D62A2546C66F5585479D35DCDBC5485 /* Night.swift */,
+				9C19F8EF22707FA5009450F9 /* Themes */,
 				FR_5CD42737A10942BF90FB3FCE8BF74956 /* ThemeManager.swift */,
 				FR_729C1F2BE744A3E09D2CCA9CE975A461 /* ThemeProtocol.swift */,
-				FR_DA09BB346347C06FFAD641070BE2A9FD /* White.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
@@ -1294,6 +1333,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C19F8EC22707E68009450F9 /* NightTests.swift in Sources */,
+				9C19F8E822707D79009450F9 /* DuskTests.swift in Sources */,
 				9C19F8E322707707009450F9 /* RetrieveModeTests.swift in Sources */,
 				9C824D772265ED28009E519B /* LoginViewControllerTests.swift in Sources */,
 				BF_8DF5B0DFCF66D71D7A3C7EF0E10B2EEA /* DictionaryTests.swift in Sources */,
@@ -1303,11 +1344,14 @@
 				9CCEFF8C2264A37B00441A18 /* SettingMock.swift in Sources */,
 				BF_7CC38D8557CAD849430D9776421E5E5E /* StringTests.swift in Sources */,
 				BF_F2ADFB3B4C1B0836F13DB4A1DE5406A7 /* TokenAdapterTests.swift in Sources */,
+				9C19F8E622707AC8009450F9 /* BlackTests.swift in Sources */,
 				BF_58567850CC932A049952E736EE61B0DE /* WallabagAuthErrorTests.swift in Sources */,
 				9C352EB4225E3C020074A026 /* ServerViewControllerTests.swift in Sources */,
+				9C19F8EE22707F2A009450F9 /* WhiteTests.swift in Sources */,
 				BF_3C34FF37F2AAB722ED3278184555355B /* WallabagAuthSuccessTests.swift in Sources */,
 				BF_87E311661C0B3BA3247CC388C7CCD8AF /* WallabagKitCollectionTests.swift in Sources */,
 				9CF1ED952262796D00AF750F /* AnalyticsManagerMock.swift in Sources */,
+				9C19F8EA22707E00009450F9 /* LightTests.swift in Sources */,
 				9C58ABBA22607EC10020CDA2 /* PodcastViewControllerTests.swift in Sources */,
 				9C824D792265F429009E519B /* ArticleViewControllerTests.swift in Sources */,
 				BF_C63B962A10CD74586351B9DB5E0FBBE1 /* WallabagKitTests.swift in Sources */,
