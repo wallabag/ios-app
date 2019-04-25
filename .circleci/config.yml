@@ -35,16 +35,13 @@ jobs:
           - v1-pod-{{ checksum "Podfile.lock" }}
           - v1-pod-
       - run:
-          name: Install CocoaPods repos
-          command:  curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
+          name: Install cocoapods
+          command: bundle exec pod install
       - save_cache:
           name: Save cocoapods cache
           key: v1-pod-{{ checksum "Podfile.lock" }}
           paths:
             - .cocoapods
-      - run:
-          name: Install cocoapods
-          command: bundle exec pod install
       - persist_to_workspace:
           root: .
           paths:
