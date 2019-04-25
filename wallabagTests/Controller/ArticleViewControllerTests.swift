@@ -65,4 +65,63 @@ class ArticleViewControllerTests: XCTestCase {
         XCTAssertEqual(AnalyticsManager.AnalyticsEvent.shareArticle.name, analyticsMock.event?.name)
         #warning("missing presented shareview")
     }
+
+    func testAdd() {
+        articleController.entry = entry
+        UIApplication.shared.keyWindow?.rootViewController = articleController
+
+        var addHandlerCalled = false
+        articleController.addHandler = {
+            addHandlerCalled = true
+        }
+
+        articleController.add(UIButton())
+        XCTAssertTrue(addHandlerCalled)
+    }
+
+    func testRead() {
+        let entry = self.entry
+        articleController.entry = entry
+        UIApplication.shared.keyWindow?.rootViewController = articleController
+
+        var readHandlerCalled = false
+        var entryHandler: Entry?
+        articleController.readHandler = { entry in
+            readHandlerCalled = true
+            entryHandler = entry
+        }
+
+        articleController.read(UIButton())
+        XCTAssertTrue(readHandlerCalled)
+        XCTAssertEqual(entry, entryHandler)
+    }
+
+    func testStar() {
+        let entry = self.entry
+        articleController.entry = entry
+        UIApplication.shared.keyWindow?.rootViewController = articleController
+
+        var starHandlerCalled = false
+        var entryHandler: Entry?
+        articleController.starHandler = { entry in
+            starHandlerCalled = true
+            entryHandler = entry
+        }
+
+        articleController.star(UIButton())
+        XCTAssertTrue(starHandlerCalled)
+        XCTAssertEqual(entry, entryHandler)
+    }
+
+//    func testDeleteArticleCancel() {
+//        let entry = self.entry
+//        articleController.entry = entry
+//        UIApplication.shared.keyWindow?.rootViewController = articleController
+
+//        articleController.deleteArticle(UIBarButtonItem())
+
+//        let alert: UIAlertController = articleController.presentedViewController as! UIAlertController
+//        XCTAssertEqual("Cancel", alert.actions.last!.title)
+        //XCTAssertTrue(articleController.presentedViewController is UIAlertController)
+//    }
 }
