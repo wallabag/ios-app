@@ -113,15 +113,15 @@ class ArticleViewControllerTests: XCTestCase {
         XCTAssertEqual(entry, entryHandler)
     }
 
-//    func testDeleteArticleCancel() {
-//        let entry = self.entry
-//        articleController.entry = entry
-//        UIApplication.shared.keyWindow?.rootViewController = articleController
+    func testDeleteArticleCancel() {
+        let entry = self.entry
+        articleController.entry = entry
+        UIApplication.shared.keyWindow?.rootViewController = articleController
 
-//        articleController.deleteArticle(UIBarButtonItem())
+        articleController.deleteArticle(UIBarButtonItem())
 
-//        let alert: UIAlertController = articleController.presentedViewController as! UIAlertController
-//        XCTAssertEqual("Cancel", alert.actions.last!.title)
+        let alert: UIAlertController = articleController.presentedViewController as! UIAlertController
+        XCTAssertEqual("Cancel", alert.actions.last!.title)
         //XCTAssertTrue(articleController.presentedViewController is UIAlertController)
-//    }
+    }
 }
