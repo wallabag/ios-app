@@ -32,6 +32,20 @@ jobs:
           command: |
             curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
             bundle exec pod install
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+  testlib:
+    environment:
+      BUNDLE_PATH: vendor/bundle
+      FL_OUTPUT_DIR: output
+    working_directory: /Users/distiller/project
+    macos:
+      xcode: "10.2.0"
+    steps:
+      - attach_workspace:
+          at: .
       - run:
           name: Build and run tests
           command: bundle exec fastlane ios testlib        
@@ -39,3 +53,12 @@ jobs:
           path: output/scan
       - store_artifacts:
           path: output
+workflows:
+  version: 2
+  build-and-test:
+    jobs:
+      - build
+      - testlib:
+          requires:
+            - build
+
