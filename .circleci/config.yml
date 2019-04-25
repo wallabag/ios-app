@@ -14,6 +14,7 @@ jobs:
     steps:
       - checkout
       - restore_cache:
+          name: Save bundle cache
           keys:
           - v1-gems-{{ checksum "Gemfile.lock" }}
           - v1-gems-
@@ -24,14 +25,26 @@ jobs:
             BUNDLE_JOBS: 4
             BUNDLE_RETRY: 3
       - save_cache:
+          name: Restore bundle cache
           key: v1-gems-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
+      - restore_cache:
+          name: Restore cocoapods cache
+          keys:
+          - v1-pod-{{ checksum "Podfile.lock" }}
+          - v1-pod-
       - run:
-          name: Install CocoaPods
-          command: |
-            curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
-            bundle exec pod install
+          name: Install CocoaPods repos
+          command:  curl https://cocoapods-specs.circleci.com/fetch-cocoapods-repo-from-s3.sh | bash -s cf
+      - save_cache:
+          name: Save cocoapods cache
+          key: v1-pod-{{ checksum "Podfile.lock" }}
+          paths:
+            - .cocoapods
+      - run:
+          name: Install cocoapods
+          command: bundle exec pod install
       - persist_to_workspace:
           root: .
           paths:
