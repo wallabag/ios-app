@@ -41,7 +41,7 @@ jobs:
           name: Save cocoapods cache
           key: v1-pod-{{ checksum "Podfile.lock" }}
           paths:
-            - .cocoapods
+            - ~/.cocoapods
       - persist_to_workspace:
           root: .
           paths:
