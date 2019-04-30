@@ -15,13 +15,15 @@ target 'wallabag' do
     pod 'Swinject'
     pod 'SwinjectStoryboard'
     
-    target 'wallabagUITests' do
-       inherit! :search_paths
-    end
+    
     target 'wallabagTests' do
         inherit! :search_paths
         pod 'Mockingjay'
     end
+end
+
+target 'wallabagUITests' do
+  inherit! :search_paths
 end
 
 target 'WallabagKit' do
