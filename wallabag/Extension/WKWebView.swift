@@ -9,8 +9,9 @@
 import Foundation
 import UIKit
 import WallabagCommon
+import WebKit
 
-extension UIWebView {
+extension WKWebView {
     func load(entry: Entry) {
         DispatchQueue.main.async { [weak self] in
             guard let content = self?.contentForWebView(entry) else { return }

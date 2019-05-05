@@ -24,6 +24,7 @@
 		9C4D4B9E225B6A2B00FE3095 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D4B9D225B6A2B00FE3095 /* DateTests.swift */; };
 		9C58ABBA22607EC10020CDA2 /* PodcastViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C58ABB922607EC10020CDA2 /* PodcastViewControllerTests.swift */; };
 		9C661DB9225D45F200086057 /* AboutViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C661DB8225D45F200086057 /* AboutViewControllerTests.swift */; };
+		9C677CAD227EF5A6006C7112 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C677CAC227EF5A6006C7112 /* WebKit.framework */; };
 		9C6DC0F2224112480012486D /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6DC0F1224112480012486D /* UISearchBar.swift */; };
 		9C824D772265ED28009E519B /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C824D762265ED28009E519B /* LoginViewControllerTests.swift */; };
 		9C824D792265F429009E519B /* ArticleViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C824D782265F429009E519B /* ArticleViewControllerTests.swift */; };
@@ -51,7 +52,7 @@
 		BF_1DE4ED4D6E3A2B33C04E95951D2AD25C /* light.css in Resources */ = {isa = PBXBuildFile; fileRef = FR_961F3C1FF1B21F7C50102EC1F49BBBD1 /* light.css */; };
 		BF_20305CD3F44AD3F0A300A08D28D4712F /* EntriesCollection.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_89CBFB2A6488E68DF37E66008BC3A23A /* EntriesCollection.json */; };
 		BF_218B02857CD5370E001E1DEDBCD9DA81 /* XCTExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_C9900CB03BB06DCC825054DAFDE4D907 /* XCTExtension.swift */; };
-		BF_27B3C5BB859104CEF0AB1D52843622B4 /* UIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_3996D9FD806100BF0335AAE1A4EE148E /* UIWebView.swift */; };
+		BF_27B3C5BB859104CEF0AB1D52843622B4 /* WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_3996D9FD806100BF0335AAE1A4EE148E /* WKWebView.swift */; };
 		BF_28D11B569BD97D0663CF4229C773A732 /* WallabagSyncing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_D555C88886417F7FFACF8E780E3AD81F /* WallabagSyncing.swift */; };
 		BF_2B92FCD9D4DF3C35C6CEAE0D4A46F98F /* bagit.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FR_A558DD3F249C938DA7F179688063D500 /* bagit.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BF_330993596D71B361978BE9F6CC8CE80C /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_F7BDFB5A5171A43D14D5E7009B3AF255 /* Dictionary.swift */; };
@@ -232,6 +233,7 @@
 		9C4D4B9D225B6A2B00FE3095 /* DateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
 		9C58ABB922607EC10020CDA2 /* PodcastViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastViewControllerTests.swift; sourceTree = "<group>"; };
 		9C661DB8225D45F200086057 /* AboutViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewControllerTests.swift; sourceTree = "<group>"; };
+		9C677CAC227EF5A6006C7112 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		9C6DC0F1224112480012486D /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
 		9C824D762265ED28009E519B /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		9C824D782265F429009E519B /* ArticleViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewControllerTests.swift; sourceTree = "<group>"; };
@@ -278,7 +280,7 @@
 		FR_317F9C93FC0631DF00AB2E1FAEF90DD8 /* article.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = article.html; sourceTree = "<group>"; };
 		FR_32C57241F64E1AA0D53CFA7BA2CF2BFC /* UIPodcastSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPodcastSlider.swift; sourceTree = "<group>"; };
 		FR_39287A02F2B756958D56349AC317D33B /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
-		FR_3996D9FD806100BF0335AAE1A4EE148E /* UIWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWebView.swift; sourceTree = "<group>"; };
+		FR_3996D9FD806100BF0335AAE1A4EE148E /* WKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebView.swift; sourceTree = "<group>"; };
 		FR_3C63EF667F0034B52FD8C3A71EAA05F7 /* bagit-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "bagit-Debug.xcconfig"; sourceTree = "<group>"; };
 		FR_3D36C33EB332B689DF2343AE9E4EE6FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FR_448862BF589F4829A648C0F56DC31F9A /* DictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C677CAD227EF5A6006C7112 /* WebKit.framework in Frameworks */,
 				BF_3F1D949902F6926241CB902FE1EADEB3 /* WallabagCommon.framework in Frameworks */,
 				BF_5E32F916F9BCFA405DB48696D544FCA2 /* WallabagKit.framework in Frameworks */,
 				0F8404B59488B2FC5E6B5550 /* (null) in Frameworks */,
@@ -451,6 +454,7 @@
 		502725B2BF8026EB5E2005F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9C677CAC227EF5A6006C7112 /* WebKit.framework */,
 				9CDB1B24223806530082E4D3 /* Realm.framework */,
 				9CDB1B25223806530082E4D3 /* RealmSwift.framework */,
 				B1CFFDE02536C39D9CB88466 /* Pods_WallabagKit.framework */,
@@ -705,7 +709,7 @@
 				FR_6121D1E9B47B792E1964E21692ED3F7D /* String.swift */,
 				FR_BC1A4543A5BCE695E19D56D0A17CE7C6 /* UIImageView.swift */,
 				9C6DC0F1224112480012486D /* UISearchBar.swift */,
-				FR_3996D9FD806100BF0335AAE1A4EE148E /* UIWebView.swift */,
+				FR_3996D9FD806100BF0335AAE1A4EE148E /* WKWebView.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1329,7 +1333,7 @@
 				BF_00D91E5F9A9D166BC797C715B7F35902 /* TipViewController.swift in Sources */,
 				BF_767B670EFD6E74785BD2212AF6B9A34A /* UIImageView.swift in Sources */,
 				BF_A263058FD57BCE7DECF1322ABBB1C729 /* UIPodcastSlider.swift in Sources */,
-				BF_27B3C5BB859104CEF0AB1D52843622B4 /* UIWebView.swift in Sources */,
+				BF_27B3C5BB859104CEF0AB1D52843622B4 /* WKWebView.swift in Sources */,
 				BF_69A8B5C65C16A5031C7513FFCB6BCEBF /* Utils.swift in Sources */,
 				BF_1D1FBDA14845DDF75F10B4FA61AFBDA5 /* VoiceChoiceTableViewController.swift in Sources */,
 				BF_CD815E61A34934671D18A3D50D33C4D8 /* WallabagSession.swift in Sources */,

@@ -10,6 +10,7 @@ import RealmSwift
 import TUSafariActivity
 import UIKit
 import WallabagCommon
+import WebKit
 
 protocol ArticleViewControllerProtocol {
     var entry: Entry! { get set }
@@ -57,7 +58,7 @@ final class ArticleViewController: UIViewController, ArticleViewControllerProtoc
         }
     }
 
-    @IBOutlet var contentWeb: UIWebView!
+    @IBOutlet var contentWeb: WKWebView!
     @IBOutlet var readButton: UIBarButtonItem!
     @IBOutlet var starButton: UIBarButtonItem!
     @IBOutlet var speechButton: UIBarButtonItem!
@@ -127,6 +128,7 @@ final class ArticleViewController: UIViewController, ArticleViewControllerProtoc
         updateUi()
         setupAccessibilityLabel()
         contentWeb.load(entry: entry)
+        contentWeb.navigationDelegate = self
         contentWeb.scrollView.delegate = self
         contentWeb.backgroundColor = themeManager.getBackgroundColor()
 
@@ -147,8 +149,8 @@ final class ArticleViewController: UIViewController, ArticleViewControllerProtoc
     }
 }
 
-extension ArticleViewController: UIWebViewDelegate {
-    func webViewDidFinishLoad(_ webView: UIWebView) {
+extension ArticleViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         webView.scrollView.setContentOffset(CGPoint(x: 0.0, y: Double(entry.screenPosition)), animated: true)
     }
 }
