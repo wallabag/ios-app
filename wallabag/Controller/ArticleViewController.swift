@@ -11,6 +11,7 @@ import TUSafariActivity
 import UIKit
 import WallabagCommon
 import WebKit
+import SafariServices
 
 protocol ArticleViewControllerProtocol {
     var entry: Entry! { get set }
@@ -153,6 +154,25 @@ final class ArticleViewController: UIViewController, ArticleViewControllerProtoc
 extension ArticleViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         webView.scrollView.setContentOffset(CGPoint(x: 0.0, y: Double(entry.screenPosition)), animated: true)
+    }
+
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        guard let urlTarget = navigationAction.request.url else {
+            decisionHandler(.cancel)
+            return
+        }
+        let urlAbsolute = urlTarget.absoluteString
+
+        if urlAbsolute.hasPrefix(Bundle.main.bundleURL.absoluteString) || urlAbsolute == "about:blank" {
+            decisionHandler(.allow)
+            return
+        }
+
+        let safariController = SFSafariViewController(url: urlTarget)
+        safariController.modalPresentationStyle = .overFullScreen
+
+        present(safariController, animated: true, completion: nil)
+        decisionHandler(.cancel)
     }
 }
 
