@@ -11,10 +11,11 @@ import WallabagCommon
 import WallabagKit
 
 final class ServerViewController: UIViewController {
-    var analytics: AnalyticsManager!
-    var setting: WallabagSetting!
+    var analytics: AnalyticsManagerProtocol!
+    var setting: SettingProtocol!
 
     @IBOutlet var server: UITextField!
+    @IBOutlet var nextButton: UIButton!
 
     override func viewDidLoad() {
         analytics.sendScreenViewed(.serverView)

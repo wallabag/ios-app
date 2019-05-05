@@ -16,8 +16,8 @@ protocol ArticleViewControllerProtocol {
 }
 
 final class ArticleViewController: UIViewController, ArticleViewControllerProtocol {
-    var analytics: AnalyticsManager!
-    var themeManager: ThemeManager!
+    var analytics: AnalyticsManagerProtocol!
+    var themeManager: ThemeManagerProtocol!
     var podcastController: PodcastViewController?
 
     var entry: Entry! {
@@ -62,6 +62,7 @@ final class ArticleViewController: UIViewController, ArticleViewControllerProtoc
     @IBOutlet var starButton: UIBarButtonItem!
     @IBOutlet var speechButton: UIBarButtonItem!
     @IBOutlet var deleteButton: UIBarButtonItem!
+    @IBOutlet var shareButton: UIBarButtonItem!
     @IBOutlet var podcastView: UIView!
 
     @IBAction func add(_: Any) {

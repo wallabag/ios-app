@@ -8,7 +8,11 @@
 
 import UIKit
 
-class ThemeManager {
+protocol ThemeManagerProtocol {
+    func getBackgroundColor() -> UIColor
+}
+
+class ThemeManager: ThemeManagerProtocol {
     private var currentTheme: ThemeProtocol
     private var themes: [ThemeProtocol] = [White(), Light(), Dusk(), Night(), Black()]
 

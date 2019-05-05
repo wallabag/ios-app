@@ -10,11 +10,12 @@ import UIKit
 import WallabagCommon
 
 final class ClientIdViewController: UIViewController {
-    var analytics: AnalyticsManager!
-    var setting: WallabagSetting!
+    var analytics: AnalyticsManagerProtocol!
+    var setting: SettingProtocol!
 
     @IBOutlet var clientId: UITextField!
     @IBOutlet var clientSecret: UITextField!
+    @IBOutlet var nextButton: UIButton!
     @IBOutlet var helpTextView: UITextView!
 
     @IBAction func openMyInstance(_: Any) {

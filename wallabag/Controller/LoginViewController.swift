@@ -11,8 +11,8 @@ import WallabagCommon
 import WallabagKit
 
 final class LoginViewController: UIViewController {
-    var analytics: AnalyticsManager!
-    var setting: WallabagSetting!
+    var analytics: AnalyticsManagerProtocol!
+    var setting: SettingProtocol!
     var wallabagSession: WallabagSession!
 
     @IBOutlet var username: UITextField!
