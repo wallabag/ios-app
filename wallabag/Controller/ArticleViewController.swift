@@ -20,6 +20,7 @@ final class ArticleViewController: UIViewController, ArticleViewControllerProtoc
     var analytics: AnalyticsManagerProtocol!
     var themeManager: ThemeManagerProtocol!
     var podcastController: PodcastViewController?
+    var setting: SettingProtocol!
 
     var entry: Entry! {
         didSet {
@@ -127,7 +128,7 @@ final class ArticleViewController: UIViewController, ArticleViewControllerProtoc
         navigationItem.title = entry.title
         updateUi()
         setupAccessibilityLabel()
-        contentWeb.load(entry: entry)
+        contentWeb.load(entry: entry, withTheme: setting.get(for: .theme), justify: setting.get(for: .justifyArticle))
         contentWeb.navigationDelegate = self
         contentWeb.scrollView.delegate = self
         contentWeb.backgroundColor = themeManager.getBackgroundColor()
