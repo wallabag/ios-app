@@ -13,15 +13,12 @@ import UIKit
 import WallabagCommon
 import WebKit
 
-protocol ArticleViewControllerProtocol {
-    var entry: Entry! { get set }
-}
-
-final class ArticleViewController: UIViewController, ArticleViewControllerProtocol {
+final class ArticleViewController: UIViewController {
     var analytics: AnalyticsManagerProtocol!
     var themeManager: ThemeManagerProtocol!
     var podcastController: PodcastViewController?
     var setting: SettingProtocol!
+    var realm: Realm!
 
     var entry: Entry! {
         didSet {
@@ -178,7 +175,7 @@ extension ArticleViewController: WKNavigationDelegate {
 
 extension ArticleViewController: UIScrollViewDelegate {
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-        try? Realm().write {
+        try? realm.write {
             entry.screenPosition = Float(scrollView.contentOffset.y)
         }
     }
