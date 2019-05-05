@@ -35,9 +35,11 @@ class ArticleViewControllerTests: XCTestCase {
         storyboard = SwinjectStoryboard.create(name: "Article", bundle: bundle, container: container)
         container.register(AnalyticsManagerMock.self) { _ in self.analyticsMock }
         container.register(ThemeManagerMock.self) { _ in self.themeManagerMock }
+        container.register(SettingMock.self) { _ in SettingMock(["justifyArticle": true]) }.inObjectScope(.container)
         container.storyboardInitCompleted(ArticleViewController.self) { r, c in
             c.analytics = r.resolve(AnalyticsManagerMock.self)
             c.themeManager = r.resolve(ThemeManagerMock.self)
+            c.setting = r.resolve(SettingMock.self)
         }
         articleController = (storyboard.instantiateViewController(withIdentifier: "ArticleViewController") as! ArticleViewController)
     }
@@ -122,6 +124,6 @@ class ArticleViewControllerTests: XCTestCase {
 
         let alert: UIAlertController = articleController.presentedViewController as! UIAlertController
         XCTAssertEqual("Cancel", alert.actions.last!.title)
-        //XCTAssertTrue(articleController.presentedViewController is UIAlertController)
+        // XCTAssertTrue(articleController.presentedViewController is UIAlertController)
     }
 }

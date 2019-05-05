@@ -12,13 +12,13 @@ class SettingMock: SettingProtocol {
     var getValues: [String: Any]
     var settedValues: [String: String] = [:]
 
-    init(_ getValues: [String: String] = [:]) {
+    init(_ getValues: [String: Any] = [:]) {
         self.getValues = getValues
     }
 
     func get<ValueType>(for key: SettingKey<ValueType>) -> ValueType {
         guard let value = getValues[key.key] as? ValueType else {
-            return (""as! ValueType)
+            return ("" as! ValueType)
         }
 
         return value

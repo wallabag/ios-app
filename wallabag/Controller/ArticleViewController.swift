@@ -7,11 +7,11 @@
 //
 
 import RealmSwift
+import SafariServices
 import TUSafariActivity
 import UIKit
 import WallabagCommon
 import WebKit
-import SafariServices
 
 protocol ArticleViewControllerProtocol {
     var entry: Entry! { get set }
@@ -152,11 +152,11 @@ final class ArticleViewController: UIViewController, ArticleViewControllerProtoc
 }
 
 extension ArticleViewController: WKNavigationDelegate {
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    func webView(_ webView: WKWebView, didFinish _: WKNavigation!) {
         webView.scrollView.setContentOffset(CGPoint(x: 0.0, y: Double(entry.screenPosition)), animated: true)
     }
 
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+    func webView(_: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         guard let urlTarget = navigationAction.request.url else {
             decisionHandler(.cancel)
             return
