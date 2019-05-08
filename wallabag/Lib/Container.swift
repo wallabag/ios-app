@@ -19,13 +19,13 @@ extension SwinjectStoryboard {
         defaultContainer.register(Realm.self) { _ in
             do {
                 let config = Realm.Configuration(
-                    schemaVersion: 2,
+                    schemaVersion: 7,
                     migrationBlock: { _, _ in
                     }
                 )
 
                 Realm.Configuration.defaultConfiguration = config
-
+                Log("Realm path: \(Realm.Configuration.defaultConfiguration.fileURL?.absoluteString ?? "")")
                 return try Realm()
             } catch {
                 fatalError("Error init realm")

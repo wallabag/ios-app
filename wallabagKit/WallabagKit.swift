@@ -104,6 +104,7 @@ public class WallabagKit: WallabagKitProtocol {
                         completion(.error(WallabagError.invalidJSON))
                         return
                     }
+
                     completion(.success(result))
                 case let .failure(error):
                     completion(.error(error))
