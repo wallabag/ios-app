@@ -21,13 +21,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vxC-9m-osy">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="zsG-x9-2za" id="Sxm-qs-ywQ"/>
-                                </connections>
-                            </webView>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WsA-Va-DgB" userLabel="PodcastView">
                                 <rect key="frame" x="0.0" y="220" width="375" height="403"/>
                                 <connections>
@@ -61,17 +54,25 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Suo-J7-HtF">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Suo-J7-HtF" firstAttribute="top" secondItem="Kf2-pV-a1B" secondAttribute="bottom" id="0F1-p2-GSp"/>
                             <constraint firstItem="cmR-l8-ha4" firstAttribute="leading" secondItem="IIB-w3-phs" secondAttribute="leading" id="1sS-vI-M5x"/>
+                            <constraint firstItem="Suo-J7-HtF" firstAttribute="leading" secondItem="IIB-w3-phs" secondAttribute="leading" id="AdZ-69-CBF"/>
                             <constraint firstAttribute="trailing" secondItem="cmR-l8-ha4" secondAttribute="trailing" id="BTa-dE-gEl"/>
-                            <constraint firstAttribute="trailing" secondItem="vxC-9m-osy" secondAttribute="trailing" id="FM5-QC-xPW"/>
                             <constraint firstAttribute="trailing" secondItem="WsA-Va-DgB" secondAttribute="trailing" id="LSi-H0-vMk"/>
                             <constraint firstItem="WsA-Va-DgB" firstAttribute="leading" secondItem="IIB-w3-phs" secondAttribute="leading" id="P8c-uB-Bix"/>
-                            <constraint firstItem="vxC-9m-osy" firstAttribute="top" secondItem="Kf2-pV-a1B" secondAttribute="bottom" id="SBV-XY-xMB"/>
-                            <constraint firstItem="cmR-l8-ha4" firstAttribute="top" secondItem="vxC-9m-osy" secondAttribute="bottom" id="VeK-oj-lHW"/>
-                            <constraint firstItem="vxC-9m-osy" firstAttribute="leading" secondItem="IIB-w3-phs" secondAttribute="leading" id="mGN-Cn-5aJ"/>
+                            <constraint firstItem="0ii-Ho-OiO" firstAttribute="top" secondItem="Suo-J7-HtF" secondAttribute="bottom" constant="49" id="SbL-mK-oZN"/>
+                            <constraint firstAttribute="trailing" secondItem="Suo-J7-HtF" secondAttribute="trailing" id="Xwh-8e-gvk"/>
                             <constraint firstItem="0ii-Ho-OiO" firstAttribute="top" secondItem="cmR-l8-ha4" secondAttribute="bottom" id="uFj-ax-Oew"/>
                             <constraint firstItem="WsA-Va-DgB" firstAttribute="top" secondItem="Kf2-pV-a1B" secondAttribute="bottom" constant="129" id="wv1-d8-mCN"/>
                             <constraint firstItem="WsA-Va-DgB" firstAttribute="bottom" secondItem="cmR-l8-ha4" secondAttribute="top" id="xCN-Rj-2Sg"/>
@@ -95,7 +96,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="contentWeb" destination="vxC-9m-osy" id="hEI-YH-oMy"/>
+                        <outlet property="contentWeb" destination="Suo-J7-HtF" id="kuV-kh-reU"/>
                         <outlet property="deleteButton" destination="IC0-DD-8KU" id="Kct-QB-Efq"/>
                         <outlet property="podcastView" destination="WsA-Va-DgB" id="Mui-8F-1tQ"/>
                         <outlet property="readButton" destination="X3k-oF-ZXC" id="hnK-8N-UcN"/>
@@ -106,7 +107,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfU-tW-LRl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5552.8000000000002" y="-6.746626686656672"/>
+            <point key="canvasLocation" x="5552.1739130434789" y="-7.3660714285714279"/>
         </scene>
         <!--Podcast View Controller-->
         <scene sceneID="dvY-0d-RVH">

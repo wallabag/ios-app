@@ -1,5 +1,1 @@
-Support for the latest server version of wallabag.
-
-Preparation of the application to have a better support of the ipad.
-
-Remove check server version
+Now link in article are open in safari popover and can be close to continue reading

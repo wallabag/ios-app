@@ -5,6 +5,7 @@
 //  Created by maxime marinel on 16/04/2019.
 //
 
+import RealmSwift
 import Swinject
 import SwinjectStoryboard
 @testable import wallabag
@@ -35,9 +36,19 @@ class ArticleViewControllerTests: XCTestCase {
         storyboard = SwinjectStoryboard.create(name: "Article", bundle: bundle, container: container)
         container.register(AnalyticsManagerMock.self) { _ in self.analyticsMock }
         container.register(ThemeManagerMock.self) { _ in self.themeManagerMock }
+        container.register(SettingMock.self) { _ in SettingMock(["justifyArticle": true]) }.inObjectScope(.container)
+        container.register(Realm.self) { _ in
+            do {
+                return try Realm()
+            } catch {
+                fatalError("Error init realm")
+            }
+        }
         container.storyboardInitCompleted(ArticleViewController.self) { r, c in
             c.analytics = r.resolve(AnalyticsManagerMock.self)
             c.themeManager = r.resolve(ThemeManagerMock.self)
+            c.setting = r.resolve(SettingMock.self)
+            c.realm = r.resolve(Realm.self)
         }
         articleController = (storyboard.instantiateViewController(withIdentifier: "ArticleViewController") as! ArticleViewController)
     }
@@ -122,6 +133,6 @@ class ArticleViewControllerTests: XCTestCase {
 
         let alert: UIAlertController = articleController.presentedViewController as! UIAlertController
         XCTAssertEqual("Cancel", alert.actions.last!.title)
-        //XCTAssertTrue(articleController.presentedViewController is UIAlertController)
+        // XCTAssertTrue(articleController.presentedViewController is UIAlertController)
     }
 }

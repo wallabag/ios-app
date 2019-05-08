@@ -51,6 +51,8 @@ extension SwinjectStoryboard {
         defaultContainer.storyboardInitCompleted(ArticleViewController.self) { resolver, controller in
             controller.analytics = resolver.resolve(AnalyticsManager.self)
             controller.themeManager = resolver.resolve(ThemeManager.self)
+            controller.setting = resolver.resolve(WallabagSetting.self)
+            controller.realm = resolver.resolve(Realm.self)
         }
         defaultContainer.storyboardInitCompleted(ArticlesTableViewController.self) { resolver, controller in
             controller.analytics = resolver.resolve(AnalyticsManager.self)

@@ -7,18 +7,18 @@
 //
 
 import RealmSwift
+import SafariServices
 import TUSafariActivity
 import UIKit
 import WallabagCommon
+import WebKit
 
-protocol ArticleViewControllerProtocol {
-    var entry: Entry! { get set }
-}
-
-final class ArticleViewController: UIViewController, ArticleViewControllerProtocol {
+final class ArticleViewController: UIViewController {
     var analytics: AnalyticsManagerProtocol!
     var themeManager: ThemeManagerProtocol!
     var podcastController: PodcastViewController?
+    var setting: SettingProtocol!
+    var realm: Realm!
 
     var entry: Entry! {
         didSet {
@@ -57,7 +57,7 @@ final class ArticleViewController: UIViewController, ArticleViewControllerProtoc
         }
     }
 
-    @IBOutlet var contentWeb: UIWebView!
+    @IBOutlet var contentWeb: WKWebView!
     @IBOutlet var readButton: UIBarButtonItem!
     @IBOutlet var starButton: UIBarButtonItem!
     @IBOutlet var speechButton: UIBarButtonItem!
@@ -126,7 +126,8 @@ final class ArticleViewController: UIViewController, ArticleViewControllerProtoc
         navigationItem.title = entry.title
         updateUi()
         setupAccessibilityLabel()
-        contentWeb.load(entry: entry)
+        contentWeb.load(entry: entry, withTheme: setting.get(for: .theme), justify: setting.get(for: .justifyArticle))
+        contentWeb.navigationDelegate = self
         contentWeb.scrollView.delegate = self
         contentWeb.backgroundColor = themeManager.getBackgroundColor()
 
@@ -147,15 +148,34 @@ final class ArticleViewController: UIViewController, ArticleViewControllerProtoc
     }
 }
 
-extension ArticleViewController: UIWebViewDelegate {
-    func webViewDidFinishLoad(_ webView: UIWebView) {
+extension ArticleViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish _: WKNavigation!) {
         webView.scrollView.setContentOffset(CGPoint(x: 0.0, y: Double(entry.screenPosition)), animated: true)
+    }
+
+    func webView(_: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        guard let urlTarget = navigationAction.request.url else {
+            decisionHandler(.cancel)
+            return
+        }
+        let urlAbsolute = urlTarget.absoluteString
+
+        if urlAbsolute.hasPrefix(Bundle.main.bundleURL.absoluteString) || urlAbsolute == "about:blank" {
+            decisionHandler(.allow)
+            return
+        }
+
+        let safariController = SFSafariViewController(url: urlTarget)
+        safariController.modalPresentationStyle = .overFullScreen
+
+        present(safariController, animated: true, completion: nil)
+        decisionHandler(.cancel)
     }
 }
 
 extension ArticleViewController: UIScrollViewDelegate {
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
-        try? Realm().write {
+        try? realm.write {
             entry.screenPosition = Float(scrollView.contentOffset.y)
         }
     }
