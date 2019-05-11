@@ -101,7 +101,6 @@ final class ArticlesTableViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
 
-        // filteringList()
         reloadUI()
 
         tableView.refreshControl = UIRefreshControl()
