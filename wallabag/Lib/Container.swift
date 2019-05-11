@@ -7,6 +7,7 @@
 
 import Foundation
 import RealmSwift
+import SideMenu
 import Swinject
 import SwinjectStoryboard
 import WallabagCommon
@@ -19,7 +20,7 @@ extension SwinjectStoryboard {
         defaultContainer.register(Realm.self) { _ in
             do {
                 let config = Realm.Configuration(
-                    schemaVersion: 7,
+                    schemaVersion: 8,
                     migrationBlock: { _, _ in
                     }
                 )
@@ -87,6 +88,11 @@ extension SwinjectStoryboard {
             controller.setting = resolver.resolve(WallabagSetting.self)
             controller.themeManager = resolver.resolve(ThemeManager.self)
         }
+        defaultContainer.storyboardInitCompleted(TagsTableViewController.self) { resolver, controller in
+            controller.analytics = resolver.resolve(AnalyticsManager.self)
+            controller.setting = resolver.resolve(WallabagSetting.self)
+            controller.realm = resolver.resolve(Realm.self)
+        }
         defaultContainer.storyboardInitCompleted(ThemeChoiceTableViewController.self) { resolver, controller in
             controller.analytics = resolver.resolve(AnalyticsManager.self)
             controller.setting = resolver.resolve(WallabagSetting.self)
@@ -102,6 +108,8 @@ extension SwinjectStoryboard {
         }
 
         defaultContainer.storyboardInitCompleted(UINavigationController.self) { _, _ in }
+        defaultContainer.storyboardInitCompleted(UITableViewController.self) { _, _ in }
+        defaultContainer.storyboardInitCompleted(UISideMenuNavigationController.self) { _, _ in }
     }
 
     @objc class func setup() {

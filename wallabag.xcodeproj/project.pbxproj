@@ -32,6 +32,8 @@
 		9C824D792265F429009E519B /* ArticleViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C824D782265F429009E519B /* ArticleViewControllerTests.swift */; };
 		9C961B2622770ECE009F80A4 /* WallabagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C961B2522770ECE009F80A4 /* WallabagUITests.swift */; };
 		9CCEFF8C2264A37B00441A18 /* SettingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCEFF8B2264A37B00441A18 /* SettingMock.swift */; };
+		9CE84F04228592E400B92BB1 /* Tags.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CE84F03228592E400B92BB1 /* Tags.storyboard */; };
+		9CE84F08228594F700B92BB1 /* TagsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE84F07228594F700B92BB1 /* TagsTableViewController.swift */; };
 		9CF1ED952262796D00AF750F /* AnalyticsManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1ED942262796D00AF750F /* AnalyticsManagerMock.swift */; };
 		9CF1ED9722627D4500AF750F /* ClientIdViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1ED9622627D4500AF750F /* ClientIdViewControllerTests.swift */; };
 		9CF89A05225CB3AE008D2AD5 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF89A04225CB3AE008D2AD5 /* Registration.storyboard */; };
@@ -247,6 +249,8 @@
 		9CCEFF8B2264A37B00441A18 /* SettingMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMock.swift; sourceTree = "<group>"; };
 		9CDB1B24223806530082E4D3 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		9CDB1B25223806530082E4D3 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		9CE84F03228592E400B92BB1 /* Tags.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tags.storyboard; sourceTree = "<group>"; };
+		9CE84F07228594F700B92BB1 /* TagsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsTableViewController.swift; sourceTree = "<group>"; };
 		9CF1ED942262796D00AF750F /* AnalyticsManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManagerMock.swift; sourceTree = "<group>"; };
 		9CF1ED9622627D4500AF750F /* ClientIdViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientIdViewControllerTests.swift; sourceTree = "<group>"; };
 		9CF89A04225CB3AE008D2AD5 /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
@@ -618,6 +622,7 @@
 				9CF89A04225CB3AE008D2AD5 /* Registration.storyboard */,
 				9CF89A0A225CB5CE008D2AD5 /* Settings.storyboard */,
 				9CF89A06225CB566008D2AD5 /* Tip.storyboard */,
+				9CE84F03228592E400B92BB1 /* Tags.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -677,6 +682,7 @@
 				FR_8040EBB1039DE9F3631AF6947C7E9500 /* PodcastViewController.swift */,
 				FR_F713F03368A599A8750912FE8BC6F7C2 /* ServerViewController.swift */,
 				FR_748A54FFB777972CBC13D57DA248E216 /* SettingsTableViewController.swift */,
+				9CE84F07228594F700B92BB1 /* TagsTableViewController.swift */,
 				FR_256529387B0BA37F7523EC3B4761C8BC /* ThemeChoiceTableViewController.swift */,
 				FR_315AD6439BE85BB13FC17E766770E347 /* TipViewController.swift */,
 				FR_AE53A3DB97F325B6D9DB02AFB1731782 /* VoiceChoiceTableViewController.swift */,
@@ -1054,6 +1060,7 @@
 				BF_C34B818DF3810583F726069B8FF3F5D3 /* Assets.xcassets in Resources */,
 				9CF89A0B225CB5CE008D2AD5 /* Settings.storyboard in Resources */,
 				BF_BA780EE50C69580433E87F40A2057664 /* LaunchScreen.storyboard in Resources */,
+				9CE84F04228592E400B92BB1 /* Tags.storyboard in Resources */,
 				BF_DD384BCC5299EA5EEB8825713EBE508F /* Localizable.plist in Resources */,
 				BF_E4C5BA8B967986D005FC808C1952FDD1 /* Localizable.strings in Resources */,
 				BF_42EE562310F74101FFA47579EB427A90 /* Main.storyboard in Resources */,
@@ -1307,6 +1314,7 @@
 			files = (
 				BF_B254447C18A3B0B138019B3D89F74819 /* AboutViewController.swift in Sources */,
 				BF_047B132AA818924F42C07857A48D5648 /* AnalyticsManager.swift in Sources */,
+				9CE84F08228594F700B92BB1 /* TagsTableViewController.swift in Sources */,
 				BF_C08A9375D74D7DB78FE8F985821676D0 /* AppDelegate.swift in Sources */,
 				9C5153A422836892001A976B /* Tag.swift in Sources */,
 				BF_0705B526CC56B92C6135AB3CEAB62908 /* ArticleTableViewCell.swift in Sources */,
