@@ -5,8 +5,8 @@
 //  Created by maxime marinel on 12/05/2019.
 //
 
-import UIKit
 import RealmSwift
+import UIKit
 
 class ArticleTagViewController: UIViewController {
     weak var entry: Entry!
@@ -15,7 +15,7 @@ class ArticleTagViewController: UIViewController {
     var results: Results<Tag>?
     var notificationToken: NotificationToken?
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
