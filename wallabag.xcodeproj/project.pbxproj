@@ -34,6 +34,7 @@
 		9CCEFF8C2264A37B00441A18 /* SettingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCEFF8B2264A37B00441A18 /* SettingMock.swift */; };
 		9CE84F04228592E400B92BB1 /* Tags.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CE84F03228592E400B92BB1 /* Tags.storyboard */; };
 		9CE84F08228594F700B92BB1 /* TagsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE84F07228594F700B92BB1 /* TagsTableViewController.swift */; };
+		9CE84F0A22880FBD00B92BB1 /* ArticleTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE84F0922880FBD00B92BB1 /* ArticleTagViewController.swift */; };
 		9CF1ED952262796D00AF750F /* AnalyticsManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1ED942262796D00AF750F /* AnalyticsManagerMock.swift */; };
 		9CF1ED9722627D4500AF750F /* ClientIdViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1ED9622627D4500AF750F /* ClientIdViewControllerTests.swift */; };
 		9CF89A05225CB3AE008D2AD5 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CF89A04225CB3AE008D2AD5 /* Registration.storyboard */; };
@@ -251,6 +252,7 @@
 		9CDB1B25223806530082E4D3 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		9CE84F03228592E400B92BB1 /* Tags.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tags.storyboard; sourceTree = "<group>"; };
 		9CE84F07228594F700B92BB1 /* TagsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsTableViewController.swift; sourceTree = "<group>"; };
+		9CE84F0922880FBD00B92BB1 /* ArticleTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTagViewController.swift; sourceTree = "<group>"; };
 		9CF1ED942262796D00AF750F /* AnalyticsManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManagerMock.swift; sourceTree = "<group>"; };
 		9CF1ED9622627D4500AF750F /* ClientIdViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientIdViewControllerTests.swift; sourceTree = "<group>"; };
 		9CF89A04225CB3AE008D2AD5 /* Registration.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
@@ -675,6 +677,7 @@
 				FR_0344656411C412FE13B14B176D31788F /* ArticlesTableViewController.swift */,
 				FR_54B1532FB2199D5A7368CCEB6B21DBD3 /* ArticlesTableViewController+pastboard.swift */,
 				FR_56186CC4C8CE1EFA0554417A91A72A00 /* ArticlesTableViewController+UISearchResults.swift */,
+				9CE84F0922880FBD00B92BB1 /* ArticleTagViewController.swift */,
 				FR_7D29FAB95590AC974DCDAC639A09A15A /* ArticleViewController.swift */,
 				FR_1958605A09104E19FD12C7A197BDCDDD /* ClientIdViewController.swift */,
 				FR_B99F86A83D2A96FD01E5D62F07C4C804 /* HomeViewController.swift */,
@@ -1353,6 +1356,7 @@
 				BF_69A8B5C65C16A5031C7513FFCB6BCEBF /* Utils.swift in Sources */,
 				BF_1D1FBDA14845DDF75F10B4FA61AFBDA5 /* VoiceChoiceTableViewController.swift in Sources */,
 				BF_CD815E61A34934671D18A3D50D33C4D8 /* WallabagSession.swift in Sources */,
+				9CE84F0A22880FBD00B92BB1 /* ArticleTagViewController.swift in Sources */,
 				9C6DC0F2224112480012486D /* UISearchBar.swift in Sources */,
 				BF_28D11B569BD97D0663CF4229C773A732 /* WallabagSyncing.swift in Sources */,
 				BF_16EC634D0D63828D6202CCABA3D1AD41 /* White.swift in Sources */,

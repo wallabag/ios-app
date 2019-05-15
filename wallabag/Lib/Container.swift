@@ -63,6 +63,10 @@ extension SwinjectStoryboard {
             controller.wallabagSession = resolver.resolve(WallabagSession.self)
             controller.realm = resolver.resolve(Realm.self)
         }
+        defaultContainer.storyboardInitCompleted(ArticleTagViewController.self) { resolver, controller in
+            controller.realm = resolver.resolve(Realm.self)
+            controller.wallabagSession = resolver.resolve(WallabagSession.self)
+        }
         defaultContainer.storyboardInitCompleted(ClientIdViewController.self) { resolver, controller in
             controller.analytics = resolver.resolve(AnalyticsManager.self)
             controller.setting = resolver.resolve(WallabagSetting.self)

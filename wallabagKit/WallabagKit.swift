@@ -150,4 +150,12 @@ public class WallabagKit: WallabagKitProtocol {
                 }
             }
     }
+
+    public func tag(addForEntry id: Int, tag: String) {
+        WallabagKit.sessionManager.request("\(host!)/api/entries/\(id)/tags", method: .post, parameters: ["tags": "\(tag)"])
+    }
+
+    public func tag(deleteForEntry id: Int, tagId: Int) {
+        WallabagKit.sessionManager.request("\(host!)/api/entries/\(id)/tags/\(tagId)", method: .delete)
+    }
 }

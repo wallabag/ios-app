@@ -17,6 +17,7 @@ final class ArticleViewController: UIViewController {
     var analytics: AnalyticsManagerProtocol!
     var themeManager: ThemeManagerProtocol!
     var podcastController: PodcastViewController?
+    var articleTagController: ArticleTagViewController?
     var setting: SettingProtocol!
     var realm: Realm!
 
@@ -64,6 +65,11 @@ final class ArticleViewController: UIViewController {
     @IBOutlet var deleteButton: UIBarButtonItem!
     @IBOutlet var shareButton: UIBarButtonItem!
     @IBOutlet var podcastView: UIView!
+    @IBOutlet var tagsView: UIView!
+
+    @IBAction func tagTapped(_: Any) {
+        tagsView.isHidden.toggle()
+    }
 
     @IBAction func add(_: Any) {
         addHandler?()
@@ -84,6 +90,11 @@ final class ArticleViewController: UIViewController {
             controller.entry = entry
             podcastController = controller
             Log("prepare podcast view")
+        }
+        if let controller = segue.destination as? ArticleTagViewController {
+            controller.entry = entry
+            articleTagController = controller
+            Log("prepare tag view")
         }
     }
 
