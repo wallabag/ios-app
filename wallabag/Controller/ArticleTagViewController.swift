@@ -47,6 +47,10 @@ class ArticleTagViewController: UIViewController {
         }
         tableView.reloadData()
     }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        notificationToken = nil
+    }
 }
 
 extension ArticleTagViewController: UITableViewDataSource {
