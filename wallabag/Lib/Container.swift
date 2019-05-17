@@ -82,6 +82,7 @@ extension SwinjectStoryboard {
         }
         defaultContainer.storyboardInitCompleted(PodcastViewController.self) { resolver, controller in
             controller.analytics = resolver.resolve(AnalyticsManager.self)
+            controller.setting = resolver.resolve(WallabagSetting.self)
         }
         defaultContainer.storyboardInitCompleted(ServerViewController.self) { resolver, controller in
             controller.analytics = resolver.resolve(AnalyticsManager.self)
