@@ -194,7 +194,6 @@
         <!--Article Tag View Controller-->
         <scene sceneID="mxu-ZB-xAz">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iA6-b6-rRM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="d2e-bz-LXm" customClass="ArticleTagViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C3U-jl-cY6"/>
@@ -207,7 +206,13 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I3T-6S-n7w">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="Tag" id="QiO-7O-MfI"/>
+                                    <navigationItem title="Tag" id="QiO-7O-MfI">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7SO-Tp-7Cq">
+                                            <connections>
+                                                <action selector="addTag:" destination="d2e-bz-LXm" id="QOR-t8-Y8w"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H0D-TD-H6M">
@@ -254,6 +259,7 @@
                         <outlet property="tableView" destination="H0D-TD-H6M" id="kYk-XP-Vwr"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iA6-b6-rRM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4743.4782608695659" y="468.75"/>
         </scene>

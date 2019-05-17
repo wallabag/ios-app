@@ -39,7 +39,7 @@ class TagsTableViewController: UITableViewController {
         tableView.reloadData()
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_: Bool) {
         notificationToken = nil
     }
 

@@ -151,11 +151,22 @@ public class WallabagKit: WallabagKitProtocol {
             }
     }
 
-    public func tag(addForEntry id: Int, tag: String) {
-        WallabagKit.sessionManager.request("\(host!)/api/entries/\(id)/tags", method: .post, parameters: ["tags": "\(tag)"])
+    public func tag(add tag: String, for entryId: Int, completion: @escaping (WallabagKitResponse<WallabagKitEntry>) -> Void) {
+        WallabagKit.sessionManager.request("\(host!)/api/entries/\(entryId)/tags", method: .post, parameters: ["tags": "\(tag)"]).validate().responseData { response in
+            switch response.result {
+            case let .success(data):
+                guard let result = try? JSONDecoder().decode(WallabagKitEntry.self, from: data) else {
+                    completion(.error(WallabagError.invalidJSON))
+                    return
+                }
+                completion(.success(result))
+            case .failure:
+                completion(.error(WallabagError.unexpectedError))
+            }
+        }
     }
 
-    public func tag(deleteForEntry id: Int, tagId: Int) {
-        WallabagKit.sessionManager.request("\(host!)/api/entries/\(id)/tags/\(tagId)", method: .delete)
+    public func tag(delete id: Int, for entryId: Int) {
+        WallabagKit.sessionManager.request("\(host!)/api/entries/\(entryId)/tags/\(id)", method: .delete)
     }
 }

@@ -105,4 +105,35 @@ class WallabagSession {
             queue: .main
         ) { _ in }
     }
+
+    func add(tag: String, for entry: Entry) {
+        guard let kit = kit, currentState == .connected else { return }
+        kit.tag(add: tag, for: entry.id) { response in
+            switch response {
+            case let .success(wallabagEntry):
+                do {
+                    let realm = try Realm()
+                    try realm.write {
+                        let entry = Entry()
+                        entry.hydrate(from: wallabagEntry)
+                        realm.add(entry, update: true)
+                    }
+                } catch _ {}
+            case .error:
+                break
+            }
+        }
+    }
+
+    func delete(tag: Tag, for entry: Entry) {
+        guard let kit = kit, currentState == .connected else { return }
+        kit.tag(delete: tag.id, for: entry.id)
+        do {
+            let realm = try Realm()
+            try realm.write {
+                let index = entry.tags.index(of: tag)
+                entry.tags.remove(at: index!)
+            }
+        } catch _ {}
+    }
 }

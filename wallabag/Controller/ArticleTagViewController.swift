@@ -17,6 +17,18 @@ class ArticleTagViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
 
+    @IBAction func addTag(_: Any) {
+        let alertController = UIAlertController(title: "Add tag".localized, message: nil, preferredStyle: .alert)
+        alertController.addTextField(configurationHandler: { _ in })
+        alertController.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel))
+        alertController.addAction(UIAlertAction(title: "Add".localized, style: .default) { _ in
+            if let textfield = alertController.textFields?.first?.text {
+                self.wallabagSession.add(tag: textfield, for: self.entry)
+            }
+        })
+        present(alertController, animated: true)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.layer.cornerRadius = 20
@@ -48,7 +60,7 @@ class ArticleTagViewController: UIViewController {
         tableView.reloadData()
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_: Bool) {
         notificationToken = nil
     }
 }
@@ -78,23 +90,17 @@ extension ArticleTagViewController: UITableViewDataSource {
 
 extension ArticleTagViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        #warning("Todo push to server")
         defer {
             tableView.deselectRow(at: indexPath, animated: true)
         }
         guard let tag = results?[indexPath.row], let cell = tableView.cellForRow(at: indexPath) else { return }
 
-        try? realm.write {
-            if entry.tags.contains(tag) {
-                let index = entry.tags.index(of: tag)
-                entry.tags.remove(at: index!)
-                self.wallabagSession.kit?.tag(deleteForEntry: entry.id, tagId: tag.id)
-                cell.accessoryType = .none
-            } else {
-                entry.tags.append(tag)
-                self.wallabagSession.kit?.tag(addForEntry: entry.id, tag: tag.label!)
-                cell.accessoryType = .checkmark
-            }
+        if entry.tags.contains(tag) {
+            wallabagSession.delete(tag: tag, for: entry)
+            cell.accessoryType = .none
+        } else {
+            wallabagSession.add(tag: tag.label!, for: entry)
+            cell.accessoryType = .checkmark
         }
     }
 }
