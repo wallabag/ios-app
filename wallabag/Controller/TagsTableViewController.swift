@@ -39,6 +39,10 @@ class TagsTableViewController: UITableViewController {
         tableView.reloadData()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        notificationToken = nil
+    }
+
     // MARK: - Table view data source
 
     override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
