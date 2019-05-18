@@ -21,7 +21,7 @@ class PodcastViewController: UIViewController {
     }
 
     var analytics: AnalyticsManagerProtocol!
-    var setting: WallabagSetting!
+    var setting: SettingProtocol!
     private var speecher: AVSpeechSynthesizer = AVSpeechSynthesizer()
     private var utterances: [AVSpeechUtterance] = []
 

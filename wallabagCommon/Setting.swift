@@ -52,6 +52,8 @@ public protocol SettingProtocol {
     func set<ValueType>(_ value: ValueType, for key: SettingKey<ValueType>)
 
     func set(password: String, username: String)
+
+    func getSpeechVoice() -> AVSpeechSynthesisVoice?
 }
 
 public class WallabagSetting: Setting, SettingProtocol {

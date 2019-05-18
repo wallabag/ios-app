@@ -50,6 +50,10 @@ class ArticleViewControllerTests: XCTestCase {
             c.setting = r.resolve(SettingMock.self)
             c.realm = r.resolve(Realm.self)
         }
+        container.storyboardInitCompleted(ArticleTagViewController.self) { r, c in
+            c.realm = r.resolve(Realm.self)
+            c.wallabagSession = r.resolve(WallabagSession.self)
+        }
         articleController = (storyboard.instantiateViewController(withIdentifier: "ArticleViewController") as! ArticleViewController)
     }
 
