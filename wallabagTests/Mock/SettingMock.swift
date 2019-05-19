@@ -5,6 +5,7 @@
 //  Created by maxime marinel on 15/04/2019.
 //
 
+import AVFoundation
 import Foundation
 import WallabagCommon
 
@@ -29,4 +30,8 @@ class SettingMock: SettingProtocol {
     }
 
     func set(password _: String, username _: String) {}
+
+    func getSpeechVoice() -> AVSpeechSynthesisVoice? {
+        return AVSpeechSynthesisVoice(language: "FR_fr")
+    }
 }

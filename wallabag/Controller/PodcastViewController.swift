@@ -21,7 +21,7 @@ class PodcastViewController: UIViewController {
     }
 
     var analytics: AnalyticsManagerProtocol!
-    private let setting = WallabagSetting()
+    var setting: SettingProtocol!
     private var speecher: AVSpeechSynthesizer = AVSpeechSynthesizer()
     private var utterances: [AVSpeechUtterance] = []
 
@@ -76,7 +76,7 @@ class PodcastViewController: UIViewController {
     }
 
     private func getUtterances() -> [AVSpeechUtterance] {
-        guard let content = entry.content else { return [] }
+        guard let content = entry?.content else { return [] }
         let utterance = AVSpeechUtterance(string: content.withoutHTML)
         utterance.rate = setting.get(for: .speechRate)
         utterance.voice = setting.getSpeechVoice()

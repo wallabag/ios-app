@@ -20,8 +20,12 @@ class PodcastViewControllerTests: XCTestCase {
     override func setUp() {
         storyboard = SwinjectStoryboard.create(name: "Article", bundle: bundle, container: container)
         container.register(AnalyticsManagerMock.self) { _ in self.analyticsMock }
+        container.register(SettingMock.self) { _ in
+            SettingMock(["speechRate": Float(1.0)])
+        }
         container.storyboardInitCompleted(PodcastViewController.self) { r, c in
             c.analytics = r.resolve(AnalyticsManagerMock.self)
+            c.setting = r.resolve(SettingMock.self)
         }
         podcastController = (storyboard.instantiateViewController(withIdentifier: "PodcastViewController") as! PodcastViewController)
     }
