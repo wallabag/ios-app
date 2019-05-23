@@ -30,6 +30,7 @@
 		9C6DC0F2224112480012486D /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6DC0F1224112480012486D /* UISearchBar.swift */; };
 		9C824D772265ED28009E519B /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C824D762265ED28009E519B /* LoginViewControllerTests.swift */; };
 		9C824D792265F429009E519B /* ArticleViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C824D782265F429009E519B /* ArticleViewControllerTests.swift */; };
+		9C90F62C2296B86F00C113EF /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9C90F62B2296B86F00C113EF /* Settings.bundle */; };
 		9C961B2622770ECE009F80A4 /* WallabagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C961B2522770ECE009F80A4 /* WallabagUITests.swift */; };
 		9CCEFF8C2264A37B00441A18 /* SettingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCEFF8B2264A37B00441A18 /* SettingMock.swift */; };
 		9CE84F04228592E400B92BB1 /* Tags.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CE84F03228592E400B92BB1 /* Tags.storyboard */; };
@@ -244,6 +245,7 @@
 		9C6DC0F1224112480012486D /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
 		9C824D762265ED28009E519B /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		9C824D782265F429009E519B /* ArticleViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewControllerTests.swift; sourceTree = "<group>"; };
+		9C90F62B2296B86F00C113EF /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9C961B2322770ECE009F80A4 /* wallabagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C961B2522770ECE009F80A4 /* WallabagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagUITests.swift; sourceTree = "<group>"; };
 		9C961B2722770ECE009F80A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -830,6 +832,7 @@
 				G_C695FAD8BA58329D13ADE1E32DD7B622 /* Theme */,
 				G_E288595FB7758C59B0C10F1A195B1273 /* UI */,
 				FR_7F369F01648273740FFAC734BF79A78E /* wallabag.entitlements */,
+				9C90F62B2296B86F00C113EF /* Settings.bundle */,
 			);
 			path = wallabag;
 			sourceTree = "<group>";
@@ -1063,6 +1066,7 @@
 				BF_C34B818DF3810583F726069B8FF3F5D3 /* Assets.xcassets in Resources */,
 				9CF89A0B225CB5CE008D2AD5 /* Settings.storyboard in Resources */,
 				BF_BA780EE50C69580433E87F40A2057664 /* LaunchScreen.storyboard in Resources */,
+				9C90F62C2296B86F00C113EF /* Settings.bundle in Resources */,
 				9CE84F04228592E400B92BB1 /* Tags.storyboard in Resources */,
 				BF_DD384BCC5299EA5EEB8825713EBE508F /* Localizable.plist in Resources */,
 				BF_E4C5BA8B967986D005FC808C1952FDD1 /* Localizable.strings in Resources */,
