@@ -2,9 +2,6 @@
 /* Class = "UINavigationItem"; title = "Server"; ObjectID = "03w-5D-czm"; */
 "03w-5D-czm.title" = "Serveur";
 
-/* Class = "UINavigationItem"; title = "About"; ObjectID = "1Lt-G4-Rie"; */
-"1Lt-G4-Rie.title" = "A propos";
-
 /* Class = "UIButton"; normalTitle = "Next"; ObjectID = "2e6-On-1Cd"; */
 "2e6-On-1Cd.normalTitle" = "Suivant";
 
@@ -43,9 +40,6 @@
 
 /* Class = "UILabel"; text = "All articles"; ObjectID = "Oak-js-p1q"; */
 "Oak-js-p1q.text" = "Tous les articles";
-
-/* Class = "UILabel"; text = "wallabag v2 for iOS"; ObjectID = "OmZ-lq-KqG"; */
-"OmZ-lq-KqG.text" = "Wallabag";
 
 /* Class = "UILabel"; text = "Report bug"; ObjectID = "Td2-rf-4Mi"; */
 "Td2-rf-4Mi.normalTitle" = "Remonter un bug";
@@ -116,9 +110,6 @@
 /* Class = "UILabel"; text = "Show badge"; ObjectID = "mw6-pB-lz5"; */
 "mw6-pB-lz5.text" = "Afficher le badge";
 
-/* Class = "UILabel"; text = "Version 1.0.0 build 14"; ObjectID = "p4F-5W-KZX"; */
-"p4F-5W-KZX.text" = "Version 1.0.0 build 14";
-
 /* Class = "UILabel"; text = "Disconnect"; ObjectID = "pO6-f6-PiT"; */
 "pO6-f6-PiT.text" = "Déconnecter";
 
@@ -145,9 +136,6 @@
 
 /* Class = "UILabel"; text = "Starred articles"; ObjectID = "vWc-HK-q7e"; */
 "vWc-HK-q7e.text" = "Articles favoris";
-
-/* Class = "UILabel"; text = "Made by Maxime Marinel (@bourvill)"; ObjectID = "wsy-Ao-UlA"; */
-"wsy-Ao-UlA.text" = "Fait par Maxime Marinel (@bourvill)";
 
 /* Class = "UITableViewSection"; headerTitle = "Articles"; ObjectID = "wu1-pA-PCy"; */
 "wu1-pA-PCy.headerTitle" = "Articles";

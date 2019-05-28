@@ -1,0 +1,13 @@
+
+/* Class = "UINavigationItem"; title = "About"; ObjectID = "1Lt-G4-Rie"; */
+"1Lt-G4-Rie.title" = "Despre";
+
+/* Class = "UILabel"; text = "Wallabag"; ObjectID = "OmZ-lq-KqG"; */
+"OmZ-lq-KqG.text" = "Wallabag";
+
+/* Class = "UILabel"; text = "Version 1.0.0 build 14"; ObjectID = "p4F-5W-KZX"; */
+"p4F-5W-KZX.text" = "Version 1.0.0 build 14";
+
+/* Class = "UILabel"; text = "Made by Maxime Marinel (@bourvill)"; ObjectID = "wsy-Ao-UlA"; */
+"wsy-Ao-UlA.text" = "Made by Maxime Marinel (@bourvill)";
+

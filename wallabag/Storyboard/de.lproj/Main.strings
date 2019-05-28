@@ -2,9 +2,6 @@
 /* Class = "UINavigationItem"; title = "Server"; ObjectID = "03w-5D-czm"; */
 "03w-5D-czm.title" = "Server";
 
-/* Class = "UINavigationItem"; title = "About"; ObjectID = "1Lt-G4-Rie"; */
-"1Lt-G4-Rie.title" = "Über";
-
 /* Class = "UIButton"; normalTitle = "Create account on wallabag.it"; ObjectID = "2a9-yC-pw0"; */
 "2a9-yC-pw0.normalTitle" = "Account auf wallabag.it erstellen";
 
@@ -46,9 +43,6 @@
 
 /* Class = "UILabel"; text = "All articles"; ObjectID = "Oak-js-p1q"; */
 "Oak-js-p1q.text" = "Alle Artikel";
-
-/* Class = "UILabel"; text = "wallabag v2 for iOS"; ObjectID = "OmZ-lq-KqG"; */
-"OmZ-lq-KqG.text" = "Wallabag";
 
 /* Class = "UILabel"; text = "Unread articles"; ObjectID = "T0z-d1-R3T"; */
 "T0z-d1-R3T.text" = "Ungelesene Artikel";
@@ -116,9 +110,6 @@
 /* Class = "UILabel"; text = "Show badge"; ObjectID = "mw6-pB-lz5"; */
 "mw6-pB-lz5.text" = "Indikator anzeigen";
 
-/* Class = "UILabel"; text = "Version 1.0.0 build 14"; ObjectID = "p4F-5W-KZX"; */
-"p4F-5W-KZX.text" = "Version 1.0.0 build 14";
-
 /* Class = "UILabel"; text = "Disconnect"; ObjectID = "pO6-f6-PiT"; */
 "pO6-f6-PiT.text" = "Verbindung trennen";
 
@@ -145,9 +136,6 @@
 
 /* Class = "UILabel"; text = "Starred articles"; ObjectID = "vWc-HK-q7e"; */
 "vWc-HK-q7e.text" = "Favorisierte Artikel";
-
-/* Class = "UILabel"; text = "Made by Maxime Marinel (@bourvill)"; ObjectID = "wsy-Ao-UlA"; */
-"wsy-Ao-UlA.text" = "Entwickelt von Maxime Marinel (@bourvill)";
 
 /* Class = "UITableViewSection"; headerTitle = "Articles"; ObjectID = "wu1-pA-PCy"; */
 "wu1-pA-PCy.headerTitle" = "Artikel";
