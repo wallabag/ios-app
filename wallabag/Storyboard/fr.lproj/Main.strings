@@ -32,20 +32,11 @@
 /* Class = "UILabel"; text = "Justify"; ObjectID = "IjZ-Yg-nJ5"; */
 "IjZ-Yg-nJ5.text" = "Justifier";
 
-/* Class = "UILabel"; text = "Starred articles"; ObjectID = "Jq2-Nb-TZS"; */
-"Jq2-Nb-TZS.text" = "Articles favoris";
-
 /* Class = "UILabel"; text = "Unread articles"; ObjectID = "L2O-zX-aIh"; */
 "L2O-zX-aIh.text" = "Articles non lus";
 
-/* Class = "UILabel"; text = "All articles"; ObjectID = "Oak-js-p1q"; */
-"Oak-js-p1q.text" = "Tous les articles";
-
 /* Class = "UILabel"; text = "Report bug"; ObjectID = "Td2-rf-4Mi"; */
 "Td2-rf-4Mi.normalTitle" = "Remonter un bug";
-
-/* Class = "UILabel"; text = "Unread articles"; ObjectID = "T0z-d1-R3T"; */
-"T0z-d1-R3T.text" = "Articles non lus";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "UQC-pk-uO1"; */
 "UQC-pk-uO1.placeholder" = "Mot de passe";
@@ -65,9 +56,6 @@
 /* Class = "UIButton"; normalTitle = "Register"; ObjectID = "Zn4-yG-cxW"; */
 "Zn4-yG-cxW.normalTitle" = "S'enregistrer";
 
-/* Class = "UILabel"; text = "Settings"; ObjectID = "afM-i7-0Kb"; */
-"afM-i7-0Kb.text" = "Paramètres";
-
 /* Class = "UITableViewController"; title = "Settings"; ObjectID = "cre-7a-Z1t"; */
 "cre-7a-Z1t.title" = "Paramètres";
 
@@ -77,14 +65,8 @@
 /* Class = "UILabel"; text = "Article title big and long title"; ObjectID = "eDD-og-deR"; */
 "eDD-og-deR.text" = "Article title big and long title";
 
-/* Class = "UITableViewSection"; headerTitle = "Other"; ObjectID = "eJr-Jk-JW5"; */
-"eJr-Jk-JW5.headerTitle" = "Autre";
-
 /* Class = "UITextField"; placeholder = "Server"; ObjectID = "eWS-vU-XLm"; */
 "eWS-vU-XLm.placeholder" = "Serveur";
-
-/* Class = "UILabel"; text = "About"; ObjectID = "eXt-Oa-Lm6"; */
-"eXt-Oa-Lm6.text" = "A propos";
 
 /* Class = "UITableViewSection"; headerTitle = "Badge"; ObjectID = "hNQ-C1-sdE"; */
 "hNQ-C1-sdE.headerTitle" = "Badge";
@@ -95,12 +77,6 @@
 /* Class = "UITextField"; placeholder = "ClientSecret"; ObjectID = "iBk-4L-sqH"; */
 "iBk-4L-sqH.placeholder" = "ClientSecret";
 
-/* Class = "UILabel"; text = "Read articles"; ObjectID = "id6-5J-i15"; */
-"id6-5J-i15.text" = "Articles lus";
-
-/* Class = "UINavigationItem"; title = "Wallabag"; ObjectID = "kGU-bR-BWV"; */
-"kGU-bR-BWV.title" = "wallabag";
-
 /* Class = "UILabel"; text = "Reading time 00:00"; ObjectID = "kgC-hH-jOI"; */
 "kgC-hH-jOI.text" = "Temps de lecture 00:00";
 
@@ -109,9 +85,6 @@
 
 /* Class = "UILabel"; text = "Show badge"; ObjectID = "mw6-pB-lz5"; */
 "mw6-pB-lz5.text" = "Afficher le badge";
-
-/* Class = "UILabel"; text = "Disconnect"; ObjectID = "pO6-f6-PiT"; */
-"pO6-f6-PiT.text" = "Déconnecter";
 
 /* Class = "UILabel"; text = "Wallabag"; ObjectID = "qDI-0H-Usb"; */
 "qDI-0H-Usb.text" = "wallabag";
@@ -136,12 +109,6 @@
 
 /* Class = "UILabel"; text = "Starred articles"; ObjectID = "vWc-HK-q7e"; */
 "vWc-HK-q7e.text" = "Articles favoris";
-
-/* Class = "UITableViewSection"; headerTitle = "Articles"; ObjectID = "wu1-pA-PCy"; */
-"wu1-pA-PCy.headerTitle" = "Articles";
-
-/* Class = "UILabel"; text = "Tip"; ObjectID = "hwn-bm-Zgf"; */
-"hwn-bm-Zgf.text" = "Don";
 
 /* Class = "UITableViewController"; title = "Tip"; ObjectID = "4Nr-QO-Wak"; */
 "4Nr-QO-Wak.title" = "Don";

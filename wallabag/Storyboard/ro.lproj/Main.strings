@@ -38,17 +38,8 @@
 /* Class = "UILabel"; text = "Justify"; ObjectID = "IjZ-Yg-nJ5"; */
 "IjZ-Yg-nJ5.text" = "Justifică";
 
-/* Class = "UILabel"; text = "Starred articles"; ObjectID = "Jq2-Nb-TZS"; */
-"Jq2-Nb-TZS.text" = "Articole favorite";
-
 /* Class = "UILabel"; text = "Unread articles"; ObjectID = "L2O-zX-aIh"; */
 "L2O-zX-aIh.text" = "Articole necitite";
-
-/* Class = "UILabel"; text = "All articles"; ObjectID = "Oak-js-p1q"; */
-"Oak-js-p1q.text" = "Toate articolele";
-
-/* Class = "UILabel"; text = "Unread articles"; ObjectID = "T0z-d1-R3T"; */
-"T0z-d1-R3T.text" = "Articole necitite";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "UQC-pk-uO1"; */
 "UQC-pk-uO1.placeholder" = "Parolă";
@@ -68,9 +59,6 @@
 /* Class = "UIButton"; normalTitle = "Register"; ObjectID = "Zn4-yG-cxW"; */
 "Zn4-yG-cxW.normalTitle" = "Înregistrare";
 
-/* Class = "UILabel"; text = "Settings"; ObjectID = "afM-i7-0Kb"; */
-"afM-i7-0Kb.text" = "Setări";
-
 /* Class = "UITableViewController"; title = "Settings"; ObjectID = "cre-7a-Z1t"; */
 "cre-7a-Z1t.title" = "Setări";
 
@@ -80,14 +68,8 @@
 /* Class = "UILabel"; text = "Article title big and long title"; ObjectID = "eDD-og-deR"; */
 "eDD-og-deR.text" = "Titlu de articol mare și lung";
 
-/* Class = "UITableViewSection"; headerTitle = "Other"; ObjectID = "eJr-Jk-JW5"; */
-"eJr-Jk-JW5.headerTitle" = "Altele";
-
 /* Class = "UITextField"; placeholder = "Server"; ObjectID = "eWS-vU-XLm"; */
 "eWS-vU-XLm.placeholder" = "Server";
-
-/* Class = "UILabel"; text = "About"; ObjectID = "eXt-Oa-Lm6"; */
-"eXt-Oa-Lm6.text" = "Despre";
 
 /* Class = "UITableViewSection"; headerTitle = "Badge"; ObjectID = "hNQ-C1-sdE"; */
 "hNQ-C1-sdE.headerTitle" = "Badge";
@@ -95,17 +77,8 @@
 /* Class = "UILabel"; text = "Wallabag"; ObjectID = "hZI-U1-cVg"; */
 "hZI-U1-cVg.text" = "Wallabag";
 
-/* Class = "UILabel"; text = "Tip"; ObjectID = "hwn-bm-Zgf"; */
-"hwn-bm-Zgf.text" = "Tip";
-
 /* Class = "UITextField"; placeholder = "ClientSecret"; ObjectID = "iBk-4L-sqH"; */
 "iBk-4L-sqH.placeholder" = "ClientSecret";
-
-/* Class = "UILabel"; text = "Read articles"; ObjectID = "id6-5J-i15"; */
-"id6-5J-i15.text" = "Articole citite";
-
-/* Class = "UINavigationItem"; title = "Wallabag"; ObjectID = "kGU-bR-BWV"; */
-"kGU-bR-BWV.title" = "Wallabag";
 
 /* Class = "UILabel"; text = "Reading time 00:00"; ObjectID = "kgC-hH-jOI"; */
 "kgC-hH-jOI.text" = "Timp de citire 00:00";
@@ -115,9 +88,6 @@
 
 /* Class = "UILabel"; text = "Show badge"; ObjectID = "mw6-pB-lz5"; */
 "mw6-pB-lz5.text" = "Arată badge";
-
-/* Class = "UILabel"; text = "Disconnect"; ObjectID = "pO6-f6-PiT"; */
-"pO6-f6-PiT.text" = "Deconectare";
 
 /* Class = "UILabel"; text = "Wallabag"; ObjectID = "qDI-0H-Usb"; */
 "qDI-0H-Usb.text" = "Wallabag";
@@ -145,6 +115,3 @@
 
 /* Class = "UILabel"; text = "Starred articles"; ObjectID = "vWc-HK-q7e"; */
 "vWc-HK-q7e.text" = "Articole favorite";
-
-/* Class = "UITableViewSection"; headerTitle = "Articles"; ObjectID = "wu1-pA-PCy"; */
-"wu1-pA-PCy.headerTitle" = "Articole";

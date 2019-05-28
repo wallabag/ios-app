@@ -35,17 +35,8 @@
 /* Class = "UILabel"; text = "Justify"; ObjectID = "IjZ-Yg-nJ5"; */
 "IjZ-Yg-nJ5.text" = "Blocksatz";
 
-/* Class = "UILabel"; text = "Starred articles"; ObjectID = "Jq2-Nb-TZS"; */
-"Jq2-Nb-TZS.text" = "Favorisierte Artikel";
-
 /* Class = "UILabel"; text = "Unread articles"; ObjectID = "L2O-zX-aIh"; */
 "L2O-zX-aIh.text" = "Ungelesene Artikel";
-
-/* Class = "UILabel"; text = "All articles"; ObjectID = "Oak-js-p1q"; */
-"Oak-js-p1q.text" = "Alle Artikel";
-
-/* Class = "UILabel"; text = "Unread articles"; ObjectID = "T0z-d1-R3T"; */
-"T0z-d1-R3T.text" = "Ungelesene Artikel";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "UQC-pk-uO1"; */
 "UQC-pk-uO1.placeholder" = "Kennwort";
@@ -65,9 +56,6 @@
 /* Class = "UIButton"; normalTitle = "Register"; ObjectID = "Zn4-yG-cxW"; */
 "Zn4-yG-cxW.normalTitle" = "Registrieren";
 
-/* Class = "UILabel"; text = "Settings"; ObjectID = "afM-i7-0Kb"; */
-"afM-i7-0Kb.text" = "Einstellungen";
-
 /* Class = "UITableViewController"; title = "Settings"; ObjectID = "cre-7a-Z1t"; */
 "cre-7a-Z1t.title" = "Einstellungen";
 
@@ -77,14 +65,8 @@
 /* Class = "UILabel"; text = "Article title big and long title"; ObjectID = "eDD-og-deR"; */
 "eDD-og-deR.text" = "Artikel mit extra-langem Titel";
 
-/* Class = "UITableViewSection"; headerTitle = "Other"; ObjectID = "eJr-Jk-JW5"; */
-"eJr-Jk-JW5.headerTitle" = "Andere";
-
 /* Class = "UITextField"; placeholder = "Server"; ObjectID = "eWS-vU-XLm"; */
 "eWS-vU-XLm.placeholder" = "Server";
-
-/* Class = "UILabel"; text = "About"; ObjectID = "eXt-Oa-Lm6"; */
-"eXt-Oa-Lm6.text" = "Über";
 
 /* Class = "UITableViewSection"; headerTitle = "Badge"; ObjectID = "hNQ-C1-sdE"; */
 "hNQ-C1-sdE.headerTitle" = "Indikator";
@@ -95,12 +77,6 @@
 /* Class = "UITextField"; placeholder = "ClientSecret"; ObjectID = "iBk-4L-sqH"; */
 "iBk-4L-sqH.placeholder" = "Client-Secret";
 
-/* Class = "UILabel"; text = "Read articles"; ObjectID = "id6-5J-i15"; */
-"id6-5J-i15.text" = "Gelesene Artikel";
-
-/* Class = "UINavigationItem"; title = "Wallabag"; ObjectID = "kGU-bR-BWV"; */
-"kGU-bR-BWV.title" = "wallabag";
-
 /* Class = "UILabel"; text = "Reading time 00:00"; ObjectID = "kgC-hH-jOI"; */
 "kgC-hH-jOI.text" = "Lesezeit 00:00";
 
@@ -109,9 +85,6 @@
 
 /* Class = "UILabel"; text = "Show badge"; ObjectID = "mw6-pB-lz5"; */
 "mw6-pB-lz5.text" = "Indikator anzeigen";
-
-/* Class = "UILabel"; text = "Disconnect"; ObjectID = "pO6-f6-PiT"; */
-"pO6-f6-PiT.text" = "Verbindung trennen";
 
 /* Class = "UILabel"; text = "Wallabag"; ObjectID = "qDI-0H-Usb"; */
 "qDI-0H-Usb.text" = "wallabag";
@@ -136,12 +109,6 @@
 
 /* Class = "UILabel"; text = "Starred articles"; ObjectID = "vWc-HK-q7e"; */
 "vWc-HK-q7e.text" = "Favorisierte Artikel";
-
-/* Class = "UITableViewSection"; headerTitle = "Articles"; ObjectID = "wu1-pA-PCy"; */
-"wu1-pA-PCy.headerTitle" = "Artikel";
-
-/* Class = "UILabel"; text = "Tip"; ObjectID = "hwn-bm-Zgf"; */
-"hwn-bm-Zgf.text" = "Geschenk";
 
 /* Class = "UILabel"; text = "Rate"; ObjectID = "UuI-en-p7j"; */
 "UuI-en-p7j.text" = "Geschwindigkeit";
