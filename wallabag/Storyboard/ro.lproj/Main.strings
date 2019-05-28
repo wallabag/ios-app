@@ -2,17 +2,11 @@
 /* Class = "UITableViewSection"; headerTitle = "Article default list"; ObjectID = "3cW-8W-1Xl"; */
 "3cW-8W-1Xl.headerTitle" = "Lista implicită de articole";
 
-/* Class = "UIViewController"; title = "Tip"; ObjectID = "4Nr-QO-Wak"; */
-"4Nr-QO-Wak.title" = "Tip";
-
 /* Class = "UINavigationItem"; title = "Title"; ObjectID = "51o-Ow-BBE"; */
 "51o-Ow-BBE.title" = "Titlu";
 
 /* Class = "UITableViewSection"; headerTitle = "Theme"; ObjectID = "C5u-67-6oh"; */
 "C5u-67-6oh.headerTitle" = "Temă";
-
-/* Class = "UIButton"; normalTitle = "Store loading"; ObjectID = "IOC-eL-yrD"; */
-"IOC-eL-yrD.normalTitle" = "Store-ul se încarcă";
 
 /* Class = "UILabel"; text = "Justify"; ObjectID = "IjZ-Yg-nJ5"; */
 "IjZ-Yg-nJ5.text" = "Justifică";
@@ -58,9 +52,6 @@
 
 /* Class = "UILabel"; text = "All articles"; ObjectID = "uDI-eD-zGh"; */
 "uDI-eD-zGh.text" = "Toate articolele";
-
-/* Class = "UITextView"; text = "This application is developed on free time, it is free and will remain so.\nBut you can contribute financially by making a donation whenever you want to support the project."; ObjectID = "vTk-p8-TZZ"; */
-"vTk-p8-TZZ.text" = "Această aplicație este dezvoltată în timpul liber, este gratuită și va rămâne așa. \nDar poți contribui financiar făcând o donație oricând dorești pentru a continua suportul proiectului.";
 
 /* Class = "UILabel"; text = "Starred articles"; ObjectID = "vWc-HK-q7e"; */
 "vWc-HK-q7e.text" = "Articole favorite";
