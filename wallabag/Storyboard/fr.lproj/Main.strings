@@ -1,63 +1,18 @@
 
-/* Class = "UITableViewSection"; headerTitle = "Article default list"; ObjectID = "3cW-8W-1Xl"; */
-"3cW-8W-1Xl.headerTitle" = "Article par défaut";
-
 /* Class = "UINavigationItem"; title = "Title"; ObjectID = "51o-Ow-BBE"; */
 "51o-Ow-BBE.title" = "Titre";
-
-/* Class = "UITableViewSection"; headerTitle = "Theme"; ObjectID = "C5u-67-6oh"; */
-"C5u-67-6oh.headerTitle" = "Thème";
-
-/* Class = "UILabel"; text = "Justify"; ObjectID = "IjZ-Yg-nJ5"; */
-"IjZ-Yg-nJ5.text" = "Justifier";
-
-/* Class = "UILabel"; text = "Unread articles"; ObjectID = "L2O-zX-aIh"; */
-"L2O-zX-aIh.text" = "Articles non lus";
 
 /* Class = "UILabel"; text = "Report bug"; ObjectID = "Td2-rf-4Mi"; */
 "Td2-rf-4Mi.normalTitle" = "Remonter un bug";
 
-/* Class = "UILabel"; text = "Title"; ObjectID = "VKB-cB-po0"; */
-"VKB-cB-po0.text" = "Titre";
-
-/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "WwB-ip-ILW"; */
-"WwB-ip-ILW.title" = "Paramètres";
-
-/* Class = "UITableViewSection"; headerTitle = "Article"; ObjectID = "YmF-qh-OwI"; */
-"YmF-qh-OwI.headerTitle" = "Article";
-
 /* Class = "UINavigationItem"; title = " Articles"; ObjectID = "ZjL-wI-QTt"; */
 "ZjL-wI-QTt.title" = " Articles";
-
-/* Class = "UITableViewController"; title = "Settings"; ObjectID = "cre-7a-Z1t"; */
-"cre-7a-Z1t.title" = "Paramètres";
 
 /* Class = "UILabel"; text = "Article title big and long title"; ObjectID = "eDD-og-deR"; */
 "eDD-og-deR.text" = "Article title big and long title";
 
-/* Class = "UITableViewSection"; headerTitle = "Badge"; ObjectID = "hNQ-C1-sdE"; */
-"hNQ-C1-sdE.headerTitle" = "Badge";
-
 /* Class = "UILabel"; text = "Reading time 00:00"; ObjectID = "kgC-hH-jOI"; */
 "kgC-hH-jOI.text" = "Temps de lecture 00:00";
 
-/* Class = "UILabel"; text = "Show badge"; ObjectID = "mw6-pB-lz5"; */
-"mw6-pB-lz5.text" = "Afficher le badge";
-
 /* Class = "UILabel"; text = "website"; ObjectID = "reg-oP-baY"; */
 "reg-oP-baY.text" = "Site internet";
-
-/* Class = "UILabel"; text = "Title"; ObjectID = "sIr-IY-HU7"; */
-"sIr-IY-HU7.text" = "Titre";
-
-/* Class = "UILabel"; text = "Read articles"; ObjectID = "tpY-2N-dv1"; */
-"tpY-2N-dv1.text" = "Articles lus";
-
-/* Class = "UILabel"; text = "All articles"; ObjectID = "uDI-eD-zGh"; */
-"uDI-eD-zGh.text" = "Tous les articles";
-
-/* Class = "UILabel"; text = "Starred articles"; ObjectID = "vWc-HK-q7e"; */
-"vWc-HK-q7e.text" = "Articles favoris";
-
-/* Class = "UILabel"; text = "Rate"; ObjectID = "UuI-en-p7j"; */
-"UuI-en-p7j.text" = "Vitesse";
