@@ -1,7 +1,4 @@
 
-/* Class = "UINavigationItem"; title = "Title"; ObjectID = "51o-Ow-BBE"; */
-"51o-Ow-BBE.title" = "Titre";
-
 /* Class = "UILabel"; text = "Report bug"; ObjectID = "Td2-rf-4Mi"; */
 "Td2-rf-4Mi.normalTitle" = "Remonter un bug";
 

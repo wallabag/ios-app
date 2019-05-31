@@ -1,0 +1,18 @@
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "51o-Ow-BBE"; */
+"51o-Ow-BBE.title" = "Titre";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "9ao-yW-8pQ"; */
+"9ao-yW-8pQ.text" = "Titre";
+
+/* Class = "UIButton"; normalTitle = "next"; ObjectID = "Oef-BU-hAl"; */
+"Oef-BU-hAl.normalTitle" = "suivant";
+
+/* Class = "UINavigationItem"; title = "Tag"; ObjectID = "QiO-7O-MfI"; */
+"QiO-7O-MfI.title" = "Tag";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "oQC-bp-WHy"; */
+"oQC-bp-WHy.title" = "Item";
+
+/* Class = "UIButton"; normalTitle = "Play"; ObjectID = "owP-3Q-5Ls"; */
+"owP-3Q-5Ls.normalTitle" = "Play";

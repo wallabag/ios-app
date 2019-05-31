@@ -2,65 +2,17 @@
 /* Class = "UIButton"; normalTitle = "Create account on wallabag.it"; ObjectID = "2a9-yC-pw0"; */
 "2a9-yC-pw0.normalTitle" = "Account auf wallabag.it erstellen";
 
-/* Class = "UITableViewSection"; headerTitle = "Article default list"; ObjectID = "3cW-8W-1Xl"; */
-"3cW-8W-1Xl.headerTitle" = "Standard-Artikel-Liste";
-
-/* Class = "UINavigationItem"; title = "Title"; ObjectID = "51o-Ow-BBE"; */
-"51o-Ow-BBE.title" = "Titel";
-
-/* Class = "UITableViewSection"; headerTitle = "Theme"; ObjectID = "C5u-67-6oh"; */
-"C5u-67-6oh.headerTitle" = "Design";
-
-/* Class = "UILabel"; text = "Justify"; ObjectID = "IjZ-Yg-nJ5"; */
-"IjZ-Yg-nJ5.text" = "Blocksatz";
-
-/* Class = "UILabel"; text = "Unread articles"; ObjectID = "L2O-zX-aIh"; */
-"L2O-zX-aIh.text" = "Ungelesene Artikel";
-
-/* Class = "UILabel"; text = "Title"; ObjectID = "VKB-cB-po0"; */
-"VKB-cB-po0.text" = "Titel";
-
-/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "WwB-ip-ILW"; */
-"WwB-ip-ILW.title" = "Einstellungen";
-
-/* Class = "UITableViewSection"; headerTitle = "Article"; ObjectID = "YmF-qh-OwI"; */
-"YmF-qh-OwI.headerTitle" = "Artikel";
-
 /* Class = "UINavigationItem"; title = " Articles"; ObjectID = "ZjL-wI-QTt"; */
 "ZjL-wI-QTt.title" = " Artikel";
-
-/* Class = "UITableViewController"; title = "Settings"; ObjectID = "cre-7a-Z1t"; */
-"cre-7a-Z1t.title" = "Einstellungen";
 
 /* Class = "UILabel"; text = "Article title big and long title"; ObjectID = "eDD-og-deR"; */
 "eDD-og-deR.text" = "Artikel mit extra-langem Titel";
 
-/* Class = "UITableViewSection"; headerTitle = "Badge"; ObjectID = "hNQ-C1-sdE"; */
-"hNQ-C1-sdE.headerTitle" = "Indikator";
-
 /* Class = "UILabel"; text = "Reading time 00:00"; ObjectID = "kgC-hH-jOI"; */
 "kgC-hH-jOI.text" = "Lesezeit 00:00";
-
-/* Class = "UILabel"; text = "Show badge"; ObjectID = "mw6-pB-lz5"; */
-"mw6-pB-lz5.text" = "Indikator anzeigen";
 
 /* Class = "UILabel"; text = "Wallabag"; ObjectID = "qDI-0H-Usb"; */
 "qDI-0H-Usb.text" = "wallabag";
 
 /* Class = "UILabel"; text = "website"; ObjectID = "reg-oP-baY"; */
 "reg-oP-baY.text" = "Webseite";
-
-/* Class = "UILabel"; text = "Title"; ObjectID = "sIr-IY-HU7"; */
-"sIr-IY-HU7.text" = "Titel";
-
-/* Class = "UILabel"; text = "Read articles"; ObjectID = "tpY-2N-dv1"; */
-"tpY-2N-dv1.text" = "Gelesene Artikel";
-
-/* Class = "UILabel"; text = "All articles"; ObjectID = "uDI-eD-zGh"; */
-"uDI-eD-zGh.text" = "Alle Artikel";
-
-/* Class = "UILabel"; text = "Starred articles"; ObjectID = "vWc-HK-q7e"; */
-"vWc-HK-q7e.text" = "Favorisierte Artikel";
-
-/* Class = "UILabel"; text = "Rate"; ObjectID = "UuI-en-p7j"; */
-"UuI-en-p7j.text" = "Geschwindigkeit";

@@ -1,57 +1,12 @@
 
-/* Class = "UITableViewSection"; headerTitle = "Article default list"; ObjectID = "3cW-8W-1Xl"; */
-"3cW-8W-1Xl.headerTitle" = "Lista implicită de articole";
-
-/* Class = "UINavigationItem"; title = "Title"; ObjectID = "51o-Ow-BBE"; */
-"51o-Ow-BBE.title" = "Titlu";
-
-/* Class = "UITableViewSection"; headerTitle = "Theme"; ObjectID = "C5u-67-6oh"; */
-"C5u-67-6oh.headerTitle" = "Temă";
-
-/* Class = "UILabel"; text = "Justify"; ObjectID = "IjZ-Yg-nJ5"; */
-"IjZ-Yg-nJ5.text" = "Justifică";
-
-/* Class = "UILabel"; text = "Unread articles"; ObjectID = "L2O-zX-aIh"; */
-"L2O-zX-aIh.text" = "Articole necitite";
-
-/* Class = "UILabel"; text = "Title"; ObjectID = "VKB-cB-po0"; */
-"VKB-cB-po0.text" = "Titlu";
-
-/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "WwB-ip-ILW"; */
-"WwB-ip-ILW.title" = "Setări";
-
-/* Class = "UITableViewSection"; headerTitle = "Article"; ObjectID = "YmF-qh-OwI"; */
-"YmF-qh-OwI.headerTitle" = "Articol";
-
 /* Class = "UINavigationItem"; title = " Articles"; ObjectID = "ZjL-wI-QTt"; */
 "ZjL-wI-QTt.title" = " Articole";
-
-/* Class = "UITableViewController"; title = "Settings"; ObjectID = "cre-7a-Z1t"; */
-"cre-7a-Z1t.title" = "Setări";
 
 /* Class = "UILabel"; text = "Article title big and long title"; ObjectID = "eDD-og-deR"; */
 "eDD-og-deR.text" = "Titlu de articol mare și lung";
 
-/* Class = "UITableViewSection"; headerTitle = "Badge"; ObjectID = "hNQ-C1-sdE"; */
-"hNQ-C1-sdE.headerTitle" = "Badge";
-
 /* Class = "UILabel"; text = "Reading time 00:00"; ObjectID = "kgC-hH-jOI"; */
 "kgC-hH-jOI.text" = "Timp de citire 00:00";
 
-/* Class = "UILabel"; text = "Show badge"; ObjectID = "mw6-pB-lz5"; */
-"mw6-pB-lz5.text" = "Arată badge";
-
 /* Class = "UILabel"; text = "website"; ObjectID = "reg-oP-baY"; */
 "reg-oP-baY.text" = "website";
-
-/* Class = "UILabel"; text = "Title"; ObjectID = "sIr-IY-HU7"; */
-"sIr-IY-HU7.text" = "Titlu";
-
-/* Class = "UILabel"; text = "Read articles"; ObjectID = "tpY-2N-dv1"; */
-"tpY-2N-dv1.text" = "Articole citite";
-
-/* Class = "UILabel"; text = "All articles"; ObjectID = "uDI-eD-zGh"; */
-"uDI-eD-zGh.text" = "Toate articolele";
-
-/* Class = "UILabel"; text = "Starred articles"; ObjectID = "vWc-HK-q7e"; */
-"vWc-HK-q7e.text" = "Articole favorite";
