@@ -996,7 +996,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1020;
 				TargetAttributes = {
 					9C961B2222770ECE009F80A4 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -1006,18 +1006,23 @@
 					};
 					NT_2BC32F97DBD026A7F5702723F0BF8EEA = {
 						DevelopmentTeam = G97URPCGB8;
+						LastSwiftMigration = 1020;
 					};
 					NT_489A0A0E84B6A7E06B0FAA10CDEBABA5 = {
 						DevelopmentTeam = G97URPCGB8;
+						LastSwiftMigration = 1020;
 					};
 					NT_9041DA9DE0CA801DA5DDB449DEC4E2DB = {
 						DevelopmentTeam = G97URPCGB8;
+						LastSwiftMigration = 1020;
 					};
 					NT_BD23E71198CA112A6681701D37EB5AFF = {
 						DevelopmentTeam = G97URPCGB8;
+						LastSwiftMigration = 1020;
 					};
 					NT_CB245D289C47CA3177DD28B514882F44 = {
 						DevelopmentTeam = G97URPCGB8;
+						LastSwiftMigration = 1020;
 						TestTargetID = NT_BD23E71198CA112A6681701D37EB5AFF;
 					};
 				};
@@ -1723,6 +1728,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.WallabagCommon";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -1735,6 +1741,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -1744,6 +1751,7 @@
 			baseConfigurationReference = FR_DFD1FC86C02A4A3FE409DADAC171B1D0 /* wallabagTests-Release.xcconfig */;
 			buildSettings = {
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = wallabag;
 			};
 			name = Release;
@@ -1762,6 +1770,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.WallabagCommon";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1770,6 +1779,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FR_D25A5811CCA84B9080305DDA9A796022 /* bagit-Release.xcconfig */;
 			buildSettings = {
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -1801,6 +1811,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.WallabagKit";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1820,6 +1831,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.WallabagKit";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -1828,6 +1840,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FR_3C63EF667F0034B52FD8C3A71EAA05F7 /* bagit-Debug.xcconfig */;
 			buildSettings = {
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1845,6 +1858,7 @@
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1861,6 +1875,7 @@
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1869,6 +1884,7 @@
 			baseConfigurationReference = FR_F00BE02B4B3D06E908BEFCE4144D6CEB /* wallabagTests-Debug.xcconfig */;
 			buildSettings = {
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = wallabag;
 			};
 			name = Debug;
