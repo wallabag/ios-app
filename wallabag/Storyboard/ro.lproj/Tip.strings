@@ -1,0 +1,9 @@
+
+/* Class = "UIViewController"; title = "Tip"; ObjectID = "4Nr-QO-Wak"; */
+"4Nr-QO-Wak.title" = "Tip";
+
+/* Class = "UIButton"; normalTitle = "Store loading"; ObjectID = "IOC-eL-yrD"; */
+"IOC-eL-yrD.normalTitle" = "Store-ul se încarcă";
+
+/* Class = "UITextView"; text = "This application is developed on free time, it is free and will remain so.\nBut you can contribute financially by making a donation whenever you want to support the project."; ObjectID = "vTk-p8-TZZ"; */
+"vTk-p8-TZZ.text" = "Această aplicație este dezvoltată în timpul liber, este gratuită și va rămâne așa. \nDar poți contribui financiar făcând o donație oricând dorești pentru a continua suportul proiectului.";

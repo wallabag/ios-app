@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "Starred articles"; ObjectID = "Jq2-Nb-TZS"; */
+"Jq2-Nb-TZS.text" = "Favorisierte Artikel";
+
+/* Class = "UILabel"; text = "All articles"; ObjectID = "Oak-js-p1q"; */
+"Oak-js-p1q.text" = "Alle Artikel";
+
+/* Class = "UILabel"; text = "Unread articles"; ObjectID = "T0z-d1-R3T"; */
+"T0z-d1-R3T.text" = "Ungelesene Artikel";
+
+/* Class = "UILabel"; text = "Tags"; ObjectID = "TLu-TK-aKx"; */
+"TLu-TK-aKx.text" = "Tags";
+
+/* Class = "UILabel"; text = "Settings"; ObjectID = "afM-i7-0Kb"; */
+"afM-i7-0Kb.text" = "Einstellungen";
+
+/* Class = "UITableViewSection"; headerTitle = "Other"; ObjectID = "eJr-Jk-JW5"; */
+"eJr-Jk-JW5.headerTitle" = "Andere";
+
+/* Class = "UILabel"; text = "About"; ObjectID = "eXt-Oa-Lm6"; */
+"eXt-Oa-Lm6.text" = "Über";
+
+/* Class = "UILabel"; text = "Tip"; ObjectID = "hwn-bm-Zgf"; */
+"hwn-bm-Zgf.text" = "Geschenk";
+
+/* Class = "UILabel"; text = "Read articles"; ObjectID = "id6-5J-i15"; */
+"id6-5J-i15.text" = "Gelesene Artikel";
+
+/* Class = "UINavigationItem"; title = "Wallabag"; ObjectID = "kGU-bR-BWV"; */
+"kGU-bR-BWV.title" = "Wallabag";
+
+/* Class = "UILabel"; text = "Disconnect"; ObjectID = "pO6-f6-PiT"; */
+"pO6-f6-PiT.text" = "Verbindung trennen";
+
+/* Class = "UITableViewSection"; headerTitle = "Articles"; ObjectID = "wu1-pA-PCy"; */
+"wu1-pA-PCy.headerTitle" = "Artikel";
