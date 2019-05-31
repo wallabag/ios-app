@@ -1,3 +1,7 @@
-Now link in article are open in safari popover and can be close to continue reading
+Les voilà enfin! Mais qui sont il? Les tags!
 
-Tags
+Vous pouvez enfin consulter vos tags, les ajouters sur vos articles! Encore du travail à venir sur cette partie mais c'est enfin disponible!
+
+Egalement maintenant en cliquant dans un lien de vos articles vous ne serez plus coincé, ils s'ouvriront dans safari!
+
+Des corrections de crash également.

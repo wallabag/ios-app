@@ -1,5 +1,7 @@
-Support for the latest server version of wallabag.
+Here they are finally! But who are? Tags!
 
-Preparation of the application to have a better support of the ipad.
+You can finally read your tags, add them on your articles! This is finally available!
 
-Remove check server version
+Also, you will not be stuck anymore when you click on link in article, they will open in safari!
+
+Fixed crash too.
