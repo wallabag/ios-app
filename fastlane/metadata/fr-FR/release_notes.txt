@@ -1,7 +1,7 @@
-Les voilà enfin! Mais qui sont il? Les tags!
+Les voilà enfin ! Mais qui sont-ils ? Les tags !
 
-Vous pouvez enfin consulter vos tags, les ajouters sur vos articles! Encore du travail à venir sur cette partie mais c'est enfin disponible!
+Vous pouvez enfin consulter vos tags, les ajouter à vos articles ! Encore du travail à venir sur cette partie mais c'est enfin disponible.
 
-Egalement maintenant en cliquant dans un lien de vos articles vous ne serez plus coincé, ils s'ouvriront dans safari!
+A noter qu'en cliquant dans un lien de vos articles vous ne serez plus coincé, ils s'ouvriront dans Safari !
 
 Des corrections de crash également.
