@@ -59,7 +59,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func configureTheme() {
-        SwinjectStoryboard.defaultContainer.resolve(ThemeManager.self)?.apply(setting.get(for: .theme))
+        let theme = setting.get(for: .theme)
+        SwinjectStoryboard.defaultContainer.resolve(ThemeManager.self)?.apply(theme)
+        Answers.logCustomEvent(withName: "Theme", customAttributes: ["theme": theme])
     }
 
     private func handleArgs() {

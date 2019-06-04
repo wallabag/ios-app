@@ -36,7 +36,7 @@ target 'bagit' do
 end
 
 post_install do |installer|
-    myTargets = ['SideMenu']
+    myTargets = [ 'SideMenu']
     
     installer.pods_project.targets.each do |target|
         if myTargets.include? target.name
