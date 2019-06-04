@@ -116,7 +116,7 @@ class WallabagSession {
                     try realm.write {
                         let entry = Entry()
                         entry.hydrate(from: wallabagEntry)
-                        realm.add(entry, update: true)
+                        realm.add(entry, update: .modified)
                     }
                 } catch _ {}
             case .error:

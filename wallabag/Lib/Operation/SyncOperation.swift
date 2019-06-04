@@ -78,7 +78,7 @@ final class SyncOperation: Operation {
 
                     let entry = Entry()
                     entry.hydrate(from: wallabagEntry)
-                    realm.add(entry, update: true)
+                    realm.add(entry, update: .modified)
 
                     updateSpotlight(entry)
                 }
