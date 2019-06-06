@@ -29,7 +29,7 @@ final class ArticlesTableViewController: UITableViewController {
     var searchTimer: Timer?
     var mode: RetrieveMode = .allArticles {
         didSet {
-            filteringList()
+            filteringList(mode.predicate())
         }
     }
 
@@ -46,13 +46,15 @@ final class ArticlesTableViewController: UITableViewController {
 
         })
         alert.addAction(UIAlertAction(title: "Cancel".localized, style: .cancel))
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             appDelegate.window?.rootViewController?.present(alert, animated: false)
-        })
+        }
     }
 
     @IBAction func filterList(segue: UIStoryboardSegue) {
-        mode = RetrieveMode(rawValue: segue.identifier!)!
+        if let retrieveMode = RetrieveMode(rawValue: segue.identifier!) {
+            mode = retrieveMode
+        }
     }
 
     @IBAction func addLink(_: UIBarButtonItem) {
@@ -99,7 +101,6 @@ final class ArticlesTableViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
 
-        filteringList()
         reloadUI()
 
         tableView.refreshControl = UIRefreshControl()

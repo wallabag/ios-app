@@ -1,5 +1,7 @@
-Support for the latest server version of wallabag.
+Les voilà enfin ! Mais qui sont-ils ? Les tags !
 
-Preparation of the application to have a better support of the ipad.
+Vous pouvez enfin consulter vos tags, les ajouter à vos articles ! Encore du travail à venir sur cette partie mais c'est enfin disponible.
 
-Remove check server version
+A noter qu'en cliquant dans un lien de vos articles vous ne serez plus coincé, ils s'ouvriront dans Safari !
+
+Des corrections de crash également.

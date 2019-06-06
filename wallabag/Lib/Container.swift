@@ -7,6 +7,7 @@
 
 import Foundation
 import RealmSwift
+import SideMenu
 import Swinject
 import SwinjectStoryboard
 import WallabagCommon
@@ -19,16 +20,15 @@ extension SwinjectStoryboard {
         defaultContainer.register(Realm.self) { _ in
             do {
                 let config = Realm.Configuration(
-                    schemaVersion: 2,
+                    schemaVersion: 8,
                     migrationBlock: { _, _ in
                     }
                 )
 
                 Realm.Configuration.defaultConfiguration = config
-
+                Log("Realm path: \(Realm.Configuration.defaultConfiguration.fileURL?.absoluteString ?? "")")
                 return try Realm()
             } catch {
-                print(error)
                 fatalError("Error init realm")
             }
         }.inObjectScope(.container)
@@ -52,6 +52,8 @@ extension SwinjectStoryboard {
         defaultContainer.storyboardInitCompleted(ArticleViewController.self) { resolver, controller in
             controller.analytics = resolver.resolve(AnalyticsManager.self)
             controller.themeManager = resolver.resolve(ThemeManager.self)
+            controller.setting = resolver.resolve(WallabagSetting.self)
+            controller.realm = resolver.resolve(Realm.self)
         }
         defaultContainer.storyboardInitCompleted(ArticlesTableViewController.self) { resolver, controller in
             controller.analytics = resolver.resolve(AnalyticsManager.self)
@@ -60,6 +62,10 @@ extension SwinjectStoryboard {
             controller.wallabagSync = resolver.resolve(WallabagSyncing.self)
             controller.wallabagSession = resolver.resolve(WallabagSession.self)
             controller.realm = resolver.resolve(Realm.self)
+        }
+        defaultContainer.storyboardInitCompleted(ArticleTagViewController.self) { resolver, controller in
+            controller.realm = resolver.resolve(Realm.self)
+            controller.wallabagSession = resolver.resolve(WallabagSession.self)
         }
         defaultContainer.storyboardInitCompleted(ClientIdViewController.self) { resolver, controller in
             controller.analytics = resolver.resolve(AnalyticsManager.self)
@@ -74,7 +80,10 @@ extension SwinjectStoryboard {
             controller.setting = resolver.resolve(WallabagSetting.self)
             controller.wallabagSession = resolver.resolve(WallabagSession.self)
         }
-        defaultContainer.storyboardInitCompleted(PodcastViewController.self) { _, _ in }
+        defaultContainer.storyboardInitCompleted(PodcastViewController.self) { resolver, controller in
+            controller.analytics = resolver.resolve(AnalyticsManager.self)
+            controller.setting = resolver.resolve(WallabagSetting.self)
+        }
         defaultContainer.storyboardInitCompleted(ServerViewController.self) { resolver, controller in
             controller.analytics = resolver.resolve(AnalyticsManager.self)
             controller.setting = resolver.resolve(WallabagSetting.self)
@@ -83,6 +92,11 @@ extension SwinjectStoryboard {
             controller.analytics = resolver.resolve(AnalyticsManager.self)
             controller.setting = resolver.resolve(WallabagSetting.self)
             controller.themeManager = resolver.resolve(ThemeManager.self)
+        }
+        defaultContainer.storyboardInitCompleted(TagsTableViewController.self) { resolver, controller in
+            controller.analytics = resolver.resolve(AnalyticsManager.self)
+            controller.setting = resolver.resolve(WallabagSetting.self)
+            controller.realm = resolver.resolve(Realm.self)
         }
         defaultContainer.storyboardInitCompleted(ThemeChoiceTableViewController.self) { resolver, controller in
             controller.analytics = resolver.resolve(AnalyticsManager.self)
@@ -99,6 +113,8 @@ extension SwinjectStoryboard {
         }
 
         defaultContainer.storyboardInitCompleted(UINavigationController.self) { _, _ in }
+        defaultContainer.storyboardInitCompleted(UITableViewController.self) { _, _ in }
+        defaultContainer.storyboardInitCompleted(UISideMenuNavigationController.self) { _, _ in }
     }
 
     @objc class func setup() {

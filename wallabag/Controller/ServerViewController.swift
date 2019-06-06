@@ -11,10 +11,11 @@ import WallabagCommon
 import WallabagKit
 
 final class ServerViewController: UIViewController {
-    var analytics: AnalyticsManager!
-    var setting: WallabagSetting!
+    var analytics: AnalyticsManagerProtocol!
+    var setting: SettingProtocol!
 
     @IBOutlet var server: UITextField!
+    @IBOutlet var nextButton: UIButton!
 
     override func viewDidLoad() {
         analytics.sendScreenViewed(.serverView)
@@ -50,10 +51,10 @@ final class ServerViewController: UIViewController {
                 return
             }
             completion(true)
-            /*WallabagKit.getVersion(from: string) { version in
-                Log("Server version \(version)")
-                completion(version.supportedVersion != .unsupported)
-            }*/
+            /* WallabagKit.getVersion(from: string) { version in
+                 Log("Server version \(version)")
+                 completion(version.supportedVersion != .unsupported)
+             } */
         } catch {
             completion(false)
         }

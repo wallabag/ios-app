@@ -49,7 +49,7 @@ class WallabagSyncing {
             switch response {
             case let .success(entries):
                 syncOperation.setEntries(entries)
-                entries.items.forEach({ self.entriesSynced.append($0.id) })
+                entries.items.forEach { self.entriesSynced.append($0.id) }
                 if page < entries.pages {
                     self.fetchEntry(page: page + 1)
                 }

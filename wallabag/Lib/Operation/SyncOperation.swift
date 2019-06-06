@@ -67,11 +67,20 @@ final class SyncOperation: Operation {
                 let realm = try Realm()
                 realm.beginWrite()
                 for wallabagEntry in entries {
+                    #warning("@TODO clean cascade of if")
                     if let entry = realm.object(ofType: Entry.self, forPrimaryKey: wallabagEntry.id) {
-                        update(entry: entry, from: wallabagEntry)
-                    } else {
-                        insert(wallabagEntry, realm)
+                        if let articleUpdatedAt = Date.fromISOString(wallabagEntry.updatedAt) {
+                            if entry.updatedAt! > articleUpdatedAt {
+                                update(entry: entry)
+                            }
+                        }
                     }
+
+                    let entry = Entry()
+                    entry.hydrate(from: wallabagEntry)
+                    realm.add(entry, update: true)
+
+                    updateSpotlight(entry)
                 }
                 try realm.commitWrite()
             } catch _ {
@@ -80,12 +89,7 @@ final class SyncOperation: Operation {
         }
     }
 
-    private func insert(_ wallabagEntry: WallabagKitEntry, _ realm: Realm) {
-        let entry = Entry()
-        Log("Insert article \(wallabagEntry.id)")
-        entry.hydrate(from: wallabagEntry)
-        realm.add(entry)
-
+    private func updateSpotlight(_ entry: Entry) {
         #warning("@TODO move spotlight to an observer")
         let searchableItem = CSSearchableItem(uniqueIdentifier: entry.spotlightIdentifier,
                                               domainIdentifier: "entry",
@@ -93,20 +97,6 @@ final class SyncOperation: Operation {
         CSSearchableIndex.default().indexSearchableItems([searchableItem]) { (error) -> Void in
             if error != nil {
                 Log(error!.localizedDescription)
-            }
-        }
-    }
-
-    private func update(entry: Entry, from article: WallabagKitEntry) {
-        #warning("@TODO handle article without updated date needed")
-        if let articleUpdatedAt = Date.fromISOString(article.updatedAt) {
-            if entry.updatedAt != articleUpdatedAt {
-                if articleUpdatedAt > entry.updatedAt! {
-                    entry.hydrate(from: article)
-                } else {
-                    update(entry: entry)
-                }
-                entry.hydrate(from: article)
             }
         }
     }

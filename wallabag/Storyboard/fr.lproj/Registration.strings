@@ -1,0 +1,54 @@
+
+/* Class = "UINavigationItem"; title = "Server"; ObjectID = "03w-5D-czm"; */
+"03w-5D-czm.title" = "Serveur";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "2e6-On-1Cd"; */
+"2e6-On-1Cd.normalTitle" = "Suivant";
+
+/* Class = "UILabel"; text = "Wallabag"; ObjectID = "5IJ-gJ-VQh"; */
+"5IJ-gJ-VQh.text" = "Wallabag";
+
+/* Class = "UIButton"; normalTitle = "Open my developer page"; ObjectID = "AM9-CO-l8h"; */
+"AM9-CO-l8h.normalTitle" = "Ouvrir ma page de développeur";
+
+/* Class = "UITextView"; text = "Well, now the client_id and client_secret.\nThis token are secret and can be found in your developer page, And create a new client or use an already existing token"; ObjectID = "Bkh-cz-HgQ"; */
+"Bkh-cz-HgQ.text" = "Well, now the client_id and client_secret.\nThis token are secret and can be found in your developer page, And create a new client or use an already existing token";
+
+/* Class = "UITextField"; placeholder = "Username"; ObjectID = "C1D-rB-gOJ"; */
+"C1D-rB-gOJ.placeholder" = "Login";
+
+/* Class = "UILabel"; text = "Wallabag"; ObjectID = "FRs-RA-L1c"; */
+"FRs-RA-L1c.text" = "Wallabag";
+
+/* Class = "UINavigationItem"; title = "Auth"; ObjectID = "GhO-El-f27"; */
+"GhO-El-f27.title" = "Authentification";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "UQC-pk-uO1"; */
+"UQC-pk-uO1.placeholder" = "Mot de passe";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "Zn4-yG-cxW"; */
+"Zn4-yG-cxW.normalTitle" = "S'enregistrer";
+
+/* Class = "UITextField"; placeholder = "ClientId"; ObjectID = "dsM-5G-HXR"; */
+"dsM-5G-HXR.placeholder" = "ClientId";
+
+/* Class = "UITextField"; placeholder = "Server"; ObjectID = "eWS-vU-XLm"; */
+"eWS-vU-XLm.placeholder" = "Serveur";
+
+/* Class = "UILabel"; text = "Wallabag"; ObjectID = "hZI-U1-cVg"; */
+"hZI-U1-cVg.text" = "Wallabag";
+
+/* Class = "UITextField"; placeholder = "ClientSecret"; ObjectID = "iBk-4L-sqH"; */
+"iBk-4L-sqH.placeholder" = "ClientSecret";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "mDJ-gL-tA5"; */
+"mDJ-gL-tA5.normalTitle" = "Suivant";
+
+/* Class = "UILabel"; text = "Wallabag"; ObjectID = "qDI-0H-Usb"; */
+"qDI-0H-Usb.text" = "Wallabag";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "teE-c3-any"; */
+"teE-c3-any.normalTitle" = "Suivant";
+
+/* Class = "UINavigationItem"; title = "Client Id"; ObjectID = "uvq-Qw-sZt"; */
+"uvq-Qw-sZt.title" = "Client Id";

@@ -1,5 +1,7 @@
-Support for the latest server version of wallabag.
+Hier sind sie endlich! Aber wer ist das? Stichworte!
 
-Preparation of the application to have a better support of the ipad.
+Endlich können Sie Ihre Tags lesen und zu Ihren Artikeln hinzufügen! Dies ist endlich verfügbar!
 
-Remove check server version
+Außerdem wirst du nicht mehr hängen bleiben, wenn du auf den Link im Artikel klickst, sie öffnen sich in Safari!
+
+Absturz behoben.

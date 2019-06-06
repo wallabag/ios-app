@@ -10,7 +10,12 @@ import Crashlytics
 import Fabric
 import UIKit
 
-class AnalyticsManager {
+protocol AnalyticsManagerProtocol {
+    func sendScreenViewed(_ event: AnalyticsManager.AnalyticsViewEvent)
+    func send(_ event: AnalyticsManager.AnalyticsEvent)
+}
+
+class AnalyticsManager: AnalyticsManagerProtocol {
     enum AnalyticsViewEvent {
         var name: String {
             return String(describing: self)
@@ -74,11 +79,21 @@ class AnalyticsManager {
         case tipPurchased
     }
 
+    private func send(event: () -> Void) {
+        if UserDefaults.standard.bool(forKey: "analytics_enabled_preference") {
+            event()
+        }
+    }
+
     func sendScreenViewed(_ event: AnalyticsViewEvent) {
-        Answers.logContentView(withName: event.name, contentType: nil, contentId: nil, customAttributes: nil)
+        send {
+            Answers.logContentView(withName: event.name, contentType: nil, contentId: nil, customAttributes: nil)
+        }
     }
 
     func send(_ event: AnalyticsEvent) {
-        Answers.logCustomEvent(withName: event.category, customAttributes: [event.name: event.value])
+        send {
+            Answers.logCustomEvent(withName: event.category, customAttributes: [event.name: event.value])
+        }
     }
 }

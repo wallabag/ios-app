@@ -7,24 +7,20 @@ default_platform :ios
 platform :ios do
   desc "Runs all the tests"
   lane :test do
-    cocoapods
     scan(scheme: "wallabag")
   end
 
   lane :testlib do 
-    cocoapods
     scan(scheme: "WallabagTest")
   end
 
   lane :testui do 
-    cocoapods
-    scan(scheme: "WallabagTestUi")
+    scan(scheme: "WallabagUITest")
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
-    cocoapods
     increment_build_number
     gym(scheme: "wallabag")
     pilot(skip_waiting_for_build_processing: true)
@@ -35,8 +31,7 @@ platform :ios do
 #    push_to_git_remote
   end
 
-  lane :screenshot do
-    cocoapods
+  lane :screenshot do 
     snapshot(scheme: "wallabagScreenshot")
   end
 

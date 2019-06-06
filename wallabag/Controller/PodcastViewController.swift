@@ -20,23 +20,32 @@ class PodcastViewController: UIViewController {
         }
     }
 
-    private let analytics = AnalyticsManager()
-    private let setting = WallabagSetting()
+    var analytics: AnalyticsManagerProtocol!
+    var setting: SettingProtocol!
     private var speecher: AVSpeechSynthesizer = AVSpeechSynthesizer()
     private var utterances: [AVSpeechUtterance] = []
 
     weak var entry: Entry!
 
-    @IBAction func playPressed(_: UIButton) {
-        Log("Play pressed")
-        if !speecher.isSpeaking {
-            utterances.forEach { speecher.speak($0) }
-            analytics.send(.synthesis(state: true))
-        } else {
-            if speecher.isPaused {
-                speecher.continueSpeaking()
+    @IBAction func playPressed(_ button: UIButton) {
+        defer {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                button.isEnabled = true
+            }
+        }
+
+        if button.isEnabled {
+            button.isEnabled = false
+            Log("Play pressed")
+            if !speecher.isSpeaking {
+                utterances.forEach { speecher.speak($0) }
+                analytics.send(.synthesis(state: true))
             } else {
-                speecher.pauseSpeaking(at: .word)
+                if speecher.isPaused {
+                    speecher.continueSpeaking()
+                } else {
+                    speecher.pauseSpeaking(at: .word)
+                }
             }
         }
     }
@@ -67,11 +76,11 @@ class PodcastViewController: UIViewController {
     }
 
     private func getUtterances() -> [AVSpeechUtterance] {
-        guard let content = entry.content else { return [] }
-            let utterance = AVSpeechUtterance(string: content.withoutHTML)
-            utterance.rate = setting.get(for: .speechRate)
-            utterance.voice = setting.getSpeechVoice()
-            utterances.append(utterance)
+        guard let content = entry?.content else { return [] }
+        let utterance = AVSpeechUtterance(string: content.withoutHTML)
+        utterance.rate = setting.get(for: .speechRate)
+        utterance.voice = setting.getSpeechVoice()
+        utterances.append(utterance)
 
         slider.displayTick(tick: utterances.count)
         slider.maximumValue = Float(utterances.count)

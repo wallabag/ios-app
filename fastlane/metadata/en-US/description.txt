@@ -2,4 +2,6 @@ wallabag, a self hostable application for saving web pages
 
 Unlike other services, wallabag is free (as in freedom) and open source.
 
-In order to use this app, you need a hosted wallabag instance. You can either install wallabag on your server/webspace or you can register at wallabag.it or framabag.org.
+To use this application, you need an instance of wallabag.
+
+For example, you can install wallabag on your own web server.

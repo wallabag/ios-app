@@ -2,11 +2,11 @@ PODS:
   - Alamofire (4.8.2)
   - AlamofireImage (3.5.2):
     - Alamofire (~> 4.8)
-  - AlamofireNetworkActivityIndicator (2.3.0):
-    - Alamofire (~> 4.7)
-  - Crashlytics (3.12.0):
-    - Fabric (~> 1.9.0)
-  - Fabric (1.9.0)
+  - AlamofireNetworkActivityIndicator (2.4.0):
+    - Alamofire (~> 4.8)
+  - Crashlytics (3.13.1):
+    - Fabric (~> 1.10.1)
+  - Fabric (1.10.1)
   - Mockingjay (2.0.1):
     - Mockingjay/Core (= 2.0.1)
     - Mockingjay/XCTest (= 2.0.1)
@@ -14,13 +14,13 @@ PODS:
     - URITemplate (~> 2.0)
   - Mockingjay/XCTest (2.0.1):
     - Mockingjay/Core
-  - Realm (3.14.0):
-    - Realm/Headers (= 3.14.0)
-  - Realm/Headers (3.14.0)
-  - RealmSwift (3.14.0):
-    - Realm (= 3.14.0)
+  - Realm (3.16.1):
+    - Realm/Headers (= 3.16.1)
+  - Realm/Headers (3.16.1)
+  - RealmSwift (3.16.1):
+    - Realm (= 3.16.1)
   - SideMenu (5.0.3)
-  - Swinject (2.6.0)
+  - Swinject (2.6.1)
   - SwinjectStoryboard (2.2.0):
     - Swinject (~> 2.6)
   - TUSafariActivity (1.0.4)
@@ -58,18 +58,18 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
-  AlamofireNetworkActivityIndicator: 18346ff6d770d9513d0ac6f2d99706f40f93dbaa
-  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
-  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
+  AlamofireNetworkActivityIndicator: 9acc3de3ca6645bf0efed462396b0df13dd3e7b8
+  Crashlytics: 5aa8e90dcbf2f34898b4f5a0037787531246cca0
+  Fabric: f6f21452846788bb44595d73e9909d79d328e617
   Mockingjay: 11a621880d2887f1775bdcf824341eb68f218450
-  Realm: 221b25919bb5a010a3c597d707f8df3492dcd93a
-  RealmSwift: 28f22dfa6a27b9a778cfb09471558b6afcf1022c
+  Realm: 601cacc51d8be3b17a377ef787be0f6ee0e76cf1
+  RealmSwift: 486f2e09d5a8ccff63ed66e48d0846b111deb5e5
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
-  Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
+  Swinject: b624462f47b635a64f89a60a247baa5fccec14e1
   SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
   URITemplate: ace0c4c46dcf8afe6e89b4060621852886b15c3b
 
-PODFILE CHECKSUM: 291b8eb6e886070246dc7c51ae3298533c401325
+PODFILE CHECKSUM: 1722d5f0b3cc75f65d869501116befb6fdd0ada6
 
-COCOAPODS: 1.7.0.beta.3
+COCOAPODS: 1.6.2
