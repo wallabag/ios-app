@@ -40,7 +40,7 @@ class WallabagSession {
     }
 
     func startSession() {
-        kit = WallabagKit(
+        /*kit = WallabagKit(
             host: setting.get(for: .host),
             clientID: setting.get(for: .clientId),
             clientSecret: setting.get(for: .clientSecret)
@@ -60,12 +60,12 @@ class WallabagSession {
                 self?.currentState = .error
             }
         }
-        wallabagSync = WallabagSyncing(kit: kit)
+        wallabagSync = WallabagSyncing(kit: kit)*/
     }
 
     func add(_ url: URL) {
         guard let kit = kit, currentState == .connected else { return }
-        kit.entry(add: url, queue: .main) { response in
+        /*kit.entry(add: url, queue: .main) { response in
             switch response {
             case let .success(wallabagEntry):
                 do {
@@ -79,36 +79,36 @@ class WallabagSession {
             case .error:
                 break
             }
-        }
+        }*/
     }
 
     func delete(_ entry: Entry) {
         guard let kit = kit, currentState == .connected else { return }
-        kit.entry(delete: entry.id) {
+        /*kit.entry(delete: entry.id) {
             do {
                 let realm = try Realm()
                 try realm.write {
                     realm.delete(entry)
                 }
             } catch {}
-        }
+        }*/
     }
 
     func update(_ entry: Entry) {
         guard let kit = kit, currentState == .connected else { return }
-        kit.entry(
+        /*kit.entry(
             update: entry.id,
             parameters: [
                 "archive": entry.isArchived.int,
                 "starred": entry.isStarred.int,
             ],
             queue: .main
-        ) { _ in }
+        ) { _ in }*/
     }
 
     func add(tag: String, for entry: Entry) {
         guard let kit = kit, currentState == .connected else { return }
-        kit.tag(add: tag, for: entry.id) { response in
+        /*kit.tag(add: tag, for: entry.id) { response in
             switch response {
             case let .success(wallabagEntry):
                 do {
@@ -122,18 +122,18 @@ class WallabagSession {
             case .error:
                 break
             }
-        }
+        }*/
     }
 
     func delete(tag: Tag, for entry: Entry) {
         guard let kit = kit, currentState == .connected else { return }
-        kit.tag(delete: tag.id, for: entry.id)
+        /*kit.tag(delete: tag.id, for: entry.id)
         do {
             let realm = try Realm()
             try realm.write {
                 let index = entry.tags.index(of: tag)
                 entry.tags.remove(at: index!)
             }
-        } catch _ {}
+        } catch _ {}*/
     }
 }

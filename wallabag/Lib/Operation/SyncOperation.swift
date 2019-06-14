@@ -34,16 +34,16 @@ final class SyncOperation: Operation {
         }
     }
 
-    var entries: WallabagKitCollection<WallabagKitEntry>?
-    let kit: WallabagKitProtocol
+    //var entries: WallabagKitCollection<WallabagKitEntry>?
+    //let kit: WallabagKitProtocol
 
-    init(kit: WallabagKitProtocol) {
+    /*init(kit: WallabagKitProtocol) {
         self.kit = kit
-    }
+    }*/
 
-    func setEntries(_ entries: WallabagKitCollection<WallabagKitEntry>) {
+    /*func setEntries(_ entries: WallabagKitCollection<WallabagKitEntry>) {
         self.entries = entries
-    }
+    }*/
 
     override func start() {
         if isCancelled {
@@ -63,8 +63,9 @@ final class SyncOperation: Operation {
                 state = .finished
             }
             do {
-                guard let entries = entries?.items else { return }
                 let realm = try Realm()
+                /*guard let entries = entries?.items else { return }
+
                 realm.beginWrite()
                 for wallabagEntry in entries {
                     #warning("@TODO clean cascade of if")
@@ -81,7 +82,7 @@ final class SyncOperation: Operation {
                     realm.add(entry, update: .modified)
 
                     updateSpotlight(entry)
-                }
+                }*/
                 try realm.commitWrite()
             } catch _ {
                 Log("error")
@@ -102,7 +103,7 @@ final class SyncOperation: Operation {
     }
 
     private func update(entry: Entry) {
-        kit.entry(
+        /*kit.entry(
             update: entry.id,
             parameters: [
                 "archive": entry.isArchived.int,
@@ -110,6 +111,6 @@ final class SyncOperation: Operation {
             ], queue: nil
         ) { _ in
             Log("Update from local to server")
-        }
+        }*/
     }
 }

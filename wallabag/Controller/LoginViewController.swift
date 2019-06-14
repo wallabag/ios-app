@@ -21,7 +21,7 @@ final class LoginViewController: UIViewController {
     @IBAction func login(_ sender: UIButton) {
         sender.isEnabled = false
 
-        let kit = WallabagKit(host: setting.get(for: .host),
+        /*let kit = WallabagKit(host: setting.get(for: .host),
                               clientID: setting.get(for: .clientId),
                               clientSecret: setting.get(for: .clientSecret))
 
@@ -61,7 +61,7 @@ final class LoginViewController: UIViewController {
                 alertController.addAction(UIAlertAction(title: "ok".localized, style: .cancel))
                 self.present(alertController, animated: true, completion: nil)
             }
-        }
+        }*/
     }
 
     override func viewDidLoad() {

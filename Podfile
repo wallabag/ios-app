@@ -14,6 +14,7 @@ target 'wallabag' do
     pod 'Crashlytics'
     pod 'Swinject'
     pod 'SwinjectStoryboard'
+    pod 'WallabagKit', :path => '../WallabagKit'
     
     
     target 'wallabagTests' do

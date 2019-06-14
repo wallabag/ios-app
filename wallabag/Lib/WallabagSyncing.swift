@@ -10,7 +10,7 @@ import RealmSwift
 import WallabagKit
 
 class WallabagSyncing {
-    private let kit: WallabagKitProtocol
+    /*private let kit: WallabagKitProtocol
     private let dispatchQueue = DispatchQueue(label: "fr.district-web.wallabag.articleSyncQueue", qos: .utility)
     private var operationQueue: OperationQueue = {
         let queue = OperationQueue()
@@ -25,20 +25,20 @@ class WallabagSyncing {
 
     init(kit: WallabagKitProtocol) {
         self.kit = kit
-    }
+    }*/
 
     func sync(completion: @escaping () -> Void) {
-        entriesSynced = []
+       /* entriesSynced = []
         fetchEntry(page: 1)
         group.notify(queue: dispatchQueue) { [unowned self] in
             Log("Sync terminated")
             self.purge()
             completion()
-        }
+        }*/
     }
 
     private func fetchEntry(page: Int) {
-        group.enter()
+        /*group.enter()
         Log("fetch \(page)")
 
         kit.entry(parameters: ["page": page], queue: dispatchQueue) { [unowned self] response in
@@ -58,11 +58,11 @@ class WallabagSyncing {
                 Log("Fetch error")
             }
             self.operationQueue.addOperation(syncOperation)
-        }
+        }*/
     }
 
     private func purge() {
-        dispatchQueue.async { [unowned self] in
+        /*dispatchQueue.async { [unowned self] in
             do {
                 let realmPurge = try Realm()
                 try realmPurge.write {
@@ -70,6 +70,6 @@ class WallabagSyncing {
                     realmPurge.delete(entries)
                 }
             } catch _ {}
-        }
+        }*/
     }
 }

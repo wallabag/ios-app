@@ -12,6 +12,7 @@ import Swinject
 import SwinjectStoryboard
 import WallabagCommon
 import WallabagKit
+import Alamofire
 
 // swiftlint:disable function_body_length
 extension SwinjectStoryboard {
@@ -42,6 +43,14 @@ extension SwinjectStoryboard {
 
             return session
         }.inObjectScope(.container)
+        defaultContainer.register(SessionManager.self) { _ in
+            return SessionManager.default
+        }.inObjectScope(.container)
+        defaultContainer.register(WallabagKit.self) { resolver in
+            guard let setting = resolver.resolve(WallabagSetting.self), let session = resolver.resolve(SessionManager.self) else { fatalError() }
+
+            return WallabagKit(host: setting.get(for: .host), session: session)
+        }
     }
 
     private class func registerStoryboard() {

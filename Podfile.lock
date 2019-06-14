@@ -25,6 +25,8 @@ PODS:
     - Swinject (~> 2.6)
   - TUSafariActivity (1.0.4)
   - URITemplate (2.0.3)
+  - WallabagKit (0.1):
+    - Alamofire
 
 DEPENDENCIES:
   - Alamofire
@@ -38,6 +40,7 @@ DEPENDENCIES:
   - Swinject
   - SwinjectStoryboard
   - TUSafariActivity
+  - WallabagKit (from `../WallabagKit`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -55,6 +58,10 @@ SPEC REPOS:
     - TUSafariActivity
     - URITemplate
 
+EXTERNAL SOURCES:
+  WallabagKit:
+    :path: "../WallabagKit"
+
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
@@ -69,7 +76,8 @@ SPEC CHECKSUMS:
   SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
   URITemplate: ace0c4c46dcf8afe6e89b4060621852886b15c3b
+  WallabagKit: 19be3ccb6f330b36aa83dc72a1ae102c2387b670
 
-PODFILE CHECKSUM: c951c439a6144f3310922c17acf9b437d52906db
+PODFILE CHECKSUM: 3874515f0f3a481e72bb0578b24a5b4f41565eb4
 
 COCOAPODS: 1.7.1

@@ -16,6 +16,7 @@ import UIKit
 import UserNotifications
 import WallabagCommon
 import WallabagKit
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -53,9 +54,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func sendUsageVersion() {
-        WallabagKit.getVersion(from: setting.get(for: .host)) { version in
-            Answers.logCustomEvent(withName: "Server version", customAttributes: ["server_version": version.version])
+        SwinjectStoryboard.defaultContainer.resolve(WallabagKit.self)?.request(endpoint: VersionEndpoint.getVersion) {
+            response in
+            switch response.result {
+            case let .success(version):
+                Answers.logCustomEvent(withName: "Server version", customAttributes: ["server_version": version])
+            default:
+                break
+            }
         }
+
     }
 
     private func configureTheme() {

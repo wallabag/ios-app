@@ -79,13 +79,13 @@ final class ArticlesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        wallabagSync = WallabagSyncing(kit: wallabagSession.kit!)
-        wallabagSync.progress = { currentPage, maxPage in
+        //wallabagSync = WallabagSyncing(kit: wallabagSession.kit!)
+        /*wallabagSync.progress = { currentPage, maxPage in
             DispatchQueue.main.async { [weak self] in
                 self?.progressView.progress = Float(currentPage) / Float(maxPage)
             }
             Log("Progress \(currentPage)/\(maxPage)")
-        }
+        }*/
         mode = RetrieveMode(rawValue: setting.get(for: .defaultMode)) ?? .allArticles
 
         analytics.sendScreenViewed(.articlesView)
