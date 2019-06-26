@@ -44,6 +44,20 @@ wallabag app is a free and open source project developed by volunteers. Any cont
  * [Report bugs and make suggestions.](https://github.com/wallabag/ios-app/issues)
  * Write some code. Please follow the code style used in the project to make a review process faster.
 
+### Local Development
+
+Requirements
+
+* Xcode
+* [CocoaPods](https://github.com/CocoaPods/CocoaPods): use `bundle install` in project root
+
+Steps
+
+0. In project directory, run `bundle exec pod install`
+0. Open `wallabag.xcworkspace` (not `wallabag.xcodeproj`) in Xcode
+0. Build & Run project in Xcode
+0. Make changes, rebuild, test
+
 ## License
 
 This application is released under MIT (see [LICENSE](LICENSE)).
