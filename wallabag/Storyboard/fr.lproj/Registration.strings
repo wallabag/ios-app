@@ -26,8 +26,8 @@
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "UQC-pk-uO1"; */
 "UQC-pk-uO1.placeholder" = "Mot de passe";
 
-/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "Zn4-yG-cxW"; */
-"Zn4-yG-cxW.normalTitle" = "S'enregistrer";
+/* Class = "UIButton"; normalTitle = "Log in"; ObjectID = "Zn4-yG-cxW"; */
+"Zn4-yG-cxW.normalTitle" = "Se connecter";
 
 /* Class = "UITextField"; placeholder = "ClientId"; ObjectID = "dsM-5G-HXR"; */
 "dsM-5G-HXR.placeholder" = "ClientId";
