@@ -18,6 +18,7 @@ class WallabagSyncing {
         queue.qualityOfService = .utility
         return queue
     }()
+    private var isSyncing = false
 
     private let group = DispatchGroup()
     private var entriesSynced: [Int] = []
@@ -28,12 +29,16 @@ class WallabagSyncing {
     }
 
     func sync(completion: @escaping () -> Void) {
-        entriesSynced = []
-        fetchEntry(page: 1)
-        group.notify(queue: dispatchQueue) { [unowned self] in
-            Log("Sync terminated")
-            self.purge()
-            completion()
+        if !isSyncing {
+            isSyncing = true
+            entriesSynced = []
+            fetchEntry(page: 1)
+            group.notify(queue: dispatchQueue) { [unowned self] in
+                self.isSyncing = false
+                Log("Sync terminated")
+                self.purge()
+                completion()
+            }
         }
     }
 
