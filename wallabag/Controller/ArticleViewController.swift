@@ -67,8 +67,7 @@ final class ArticleViewController: UIViewController {
     }
 
     @IBAction func speech(_: Any) {
-        let alert = UIAlertController(title: "Player", message: nil, preferredStyle: .actionSheet)
-        alert.popoverPresentationController?.barButtonItem = speechButton
+        let alert = UIAlertController(title: "Player", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Load".localized, style: .default) { _ in
             self.articlePlayer.load(self.entry)
         })

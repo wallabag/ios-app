@@ -52,6 +52,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    func applicationDidFinishLaunching(_: UIApplication) {
+        UIApplication.shared.beginReceivingRemoteControlEvents()
+    }
+
     private func sendUsageVersion() {
         WallabagKit.getVersion(from: setting.get(for: .host)) { version in
             Answers.logCustomEvent(withName: "Server version", customAttributes: ["server_version": version.version])
