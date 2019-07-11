@@ -1,7 +1,5 @@
-Hier sind sie endlich! Aber wer ist das? Stichworte!
+Wir haben den Artikelleser verbessert. Sie können nun das Lesen von der Kommandozentrale aus steuern. Wir haben noch viele Ideen, um den Leser von Artikeln zu verbessern.
 
-Endlich können Sie Ihre Tags lesen und zu Ihren Artikeln hinzufügen! Dies ist endlich verfügbar!
+Außerdem haben wir versucht, einen Absturz zu beheben.
 
-Außerdem wirst du nicht mehr hängen bleiben, wenn du auf den Link im Artikel klickst, sie öffnen sich in Safari!
-
-Absturz behoben.
+Viel Spaß beim Lesen
