@@ -1,7 +1,5 @@
-Here they are! But who? Tags! Finally!
+We have improved the article reader, you can now control the reading from the command center. We still have a lot of ideas to improve the reader of articles.
 
-You can finally read your tags, add them on your articles! This is finally available!
+Also we tried to fix some crash.
 
-Also, you will not be stuck anymore when you click on link in article, they will open in safari!
-
-Fixed crash too.
+Good reading

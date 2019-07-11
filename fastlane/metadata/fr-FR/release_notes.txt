@@ -1,7 +1,5 @@
-Les voilà enfin ! Mais qui sont-ils ? Les tags !
+Nous avons amélioré le lecteur d'article, vous pouvez maintenant contrôler la lecture depuis le command center. Nous avons encore beaucoup d'idées pour améliorer la lecteur des articles.
 
-Vous pouvez enfin consulter vos tags, les ajouter à vos articles ! Encore du travail à venir sur cette partie mais c'est enfin disponible.
+Egalement nous avons tenter de corriger certains crash.
 
-A noter qu'en cliquant dans un lien de vos articles vous ne serez plus coincé, ils s'ouvriront dans Safari !
-
-Des corrections de crash également.
+Bonne lecture
