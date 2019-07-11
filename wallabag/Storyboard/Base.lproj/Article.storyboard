@@ -21,12 +21,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WsA-Va-DgB" userLabel="PodcastView">
-                                <rect key="frame" x="0.0" y="220" width="375" height="403"/>
-                                <connections>
-                                    <segue destination="Qo1-bX-YK8" kind="embed" id="gwI-f4-xly"/>
-                                </connections>
-                            </containerView>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Suo-J7-HtF">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -81,13 +75,9 @@
                             <constraint firstItem="cmR-l8-ha4" firstAttribute="leading" secondItem="IIB-w3-phs" secondAttribute="leading" id="1sS-vI-M5x"/>
                             <constraint firstItem="Suo-J7-HtF" firstAttribute="leading" secondItem="IIB-w3-phs" secondAttribute="leading" id="AdZ-69-CBF"/>
                             <constraint firstAttribute="trailing" secondItem="cmR-l8-ha4" secondAttribute="trailing" id="BTa-dE-gEl"/>
-                            <constraint firstAttribute="trailing" secondItem="WsA-Va-DgB" secondAttribute="trailing" id="LSi-H0-vMk"/>
-                            <constraint firstItem="WsA-Va-DgB" firstAttribute="leading" secondItem="IIB-w3-phs" secondAttribute="leading" id="P8c-uB-Bix"/>
                             <constraint firstItem="0ii-Ho-OiO" firstAttribute="top" secondItem="Suo-J7-HtF" secondAttribute="bottom" constant="49" id="SbL-mK-oZN"/>
                             <constraint firstAttribute="trailing" secondItem="Suo-J7-HtF" secondAttribute="trailing" id="Xwh-8e-gvk"/>
                             <constraint firstItem="0ii-Ho-OiO" firstAttribute="top" secondItem="cmR-l8-ha4" secondAttribute="bottom" id="uFj-ax-Oew"/>
-                            <constraint firstItem="WsA-Va-DgB" firstAttribute="top" secondItem="Kf2-pV-a1B" secondAttribute="bottom" constant="129" id="wv1-d8-mCN"/>
-                            <constraint firstItem="WsA-Va-DgB" firstAttribute="bottom" secondItem="cmR-l8-ha4" secondAttribute="top" id="xCN-Rj-2Sg"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -110,7 +100,6 @@
                     <connections>
                         <outlet property="contentWeb" destination="Suo-J7-HtF" id="kuV-kh-reU"/>
                         <outlet property="deleteButton" destination="IC0-DD-8KU" id="Kct-QB-Efq"/>
-                        <outlet property="podcastView" destination="WsA-Va-DgB" id="Mui-8F-1tQ"/>
                         <outlet property="readButton" destination="X3k-oF-ZXC" id="hnK-8N-UcN"/>
                         <outlet property="shareButton" destination="YkI-7q-ROS" id="6HG-PF-XDI"/>
                         <outlet property="speechButton" destination="3vd-F9-MfW" id="qky-Bl-1uV"/>
@@ -121,75 +110,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfU-tW-LRl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5552.1739130434789" y="-7.3660714285714279"/>
-        </scene>
-        <!--Podcast View Controller-->
-        <scene sceneID="dvY-0d-RVH">
-            <objects>
-                <viewController storyboardIdentifier="PodcastViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qo1-bX-YK8" customClass="PodcastViewController" customModule="wallabag" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="X93-hd-zjT"/>
-                        <viewControllerLayoutGuide type="bottom" id="lf4-YH-eyN"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vgf-At-5nT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="403"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="owP-3Q-5Ls">
-                                <rect key="frame" x="163.5" y="378" width="48" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="A4d-t9-nJY"/>
-                                    <constraint firstAttribute="width" constant="48" id="cTh-nD-oah"/>
-                                </constraints>
-                                <state key="normal" title="Play" image="play"/>
-                                <connections>
-                                    <action selector="playPressed:" destination="Qo1-bX-YK8" eventType="touchUpInside" id="lv1-eA-38C"/>
-                                </connections>
-                            </button>
-                            <slider hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.80000000000000004" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8cB-4h-qAP" customClass="UIPodcastSlider" customModule="wallabag" customModuleProvider="target">
-                                <rect key="frame" x="30" y="308" width="315" height="31"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </slider>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E0y-5P-r3n">
-                                <rect key="frame" x="87.5" y="76" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="QIk-Gb-WQa"/>
-                                    <constraint firstAttribute="height" constant="200" id="qhf-aV-SPU"/>
-                                </constraints>
-                            </imageView>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oef-BU-hAl">
-                                <rect key="frame" x="231.5" y="386" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="YEA-PS-NmU"/>
-                                    <constraint firstAttribute="height" constant="32" id="vDl-zm-wSW"/>
-                                </constraints>
-                                <state key="normal" title="next" image="next"/>
-                                <connections>
-                                    <action selector="next:" destination="Qo1-bX-YK8" eventType="touchUpInside" id="BdJ-Zs-VWP"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="8cB-4h-qAP" firstAttribute="leading" secondItem="vgf-At-5nT" secondAttribute="leadingMargin" constant="16" id="2FE-Mj-frM"/>
-                            <constraint firstItem="owP-3Q-5Ls" firstAttribute="top" secondItem="8cB-4h-qAP" secondAttribute="bottom" constant="40" id="auc-PI-AGT"/>
-                            <constraint firstItem="8cB-4h-qAP" firstAttribute="top" secondItem="E0y-5P-r3n" secondAttribute="bottom" constant="32" id="cth-ti-oov"/>
-                            <constraint firstItem="Oef-BU-hAl" firstAttribute="leading" secondItem="owP-3Q-5Ls" secondAttribute="trailing" constant="20" id="hKT-pu-CG4"/>
-                            <constraint firstItem="E0y-5P-r3n" firstAttribute="top" secondItem="X93-hd-zjT" secondAttribute="bottom" constant="32" id="jo0-yV-brU"/>
-                            <constraint firstItem="Oef-BU-hAl" firstAttribute="centerY" secondItem="owP-3Q-5Ls" secondAttribute="centerY" id="oIv-jZ-2mW"/>
-                            <constraint firstItem="E0y-5P-r3n" firstAttribute="centerX" secondItem="vgf-At-5nT" secondAttribute="centerX" id="pJW-KA-1aB"/>
-                            <constraint firstItem="owP-3Q-5Ls" firstAttribute="centerX" secondItem="vgf-At-5nT" secondAttribute="centerX" id="uK9-38-mof"/>
-                            <constraint firstItem="8cB-4h-qAP" firstAttribute="trailing" secondItem="vgf-At-5nT" secondAttribute="trailingMargin" constant="-16" id="ut0-wu-RTM"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="playButton" destination="owP-3Q-5Ls" id="Aun-0p-VsU"/>
-                        <outlet property="slider" destination="8cB-4h-qAP" id="JPy-Tb-aJ1"/>
-                        <outlet property="thumb" destination="E0y-5P-r3n" id="Sif-fe-NiG"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yJt-L8-8Al" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5552.8000000000002" y="649.47526236881561"/>
         </scene>
         <!--Article Tag View Controller-->
         <scene sceneID="mxu-ZB-xAz">
@@ -261,13 +181,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iA6-b6-rRM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4743.4782608695659" y="468.75"/>
+            <point key="canvasLocation" x="5554" y="532"/>
         </scene>
     </scenes>
     <resources>
         <image name="lips" width="22" height="8"/>
-        <image name="next" width="128" height="128"/>
-        <image name="play" width="128" height="128"/>
         <image name="readed" width="22" height="22"/>
         <image name="starred" width="22" height="22"/>
         <image name="tag" width="18" height="18"/>

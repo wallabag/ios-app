@@ -18,6 +18,7 @@ class WallabagSyncing {
         queue.qualityOfService = .utility
         return queue
     }()
+
     private var isSyncing = false
 
     private let group = DispatchGroup()
