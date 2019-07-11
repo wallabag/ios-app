@@ -24,7 +24,6 @@
 		9C4D4B9E225B6A2B00FE3095 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D4B9D225B6A2B00FE3095 /* DateTests.swift */; };
 		9C5153A2228363A7001A976B /* WallabagKitTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5153A02283621C001A976B /* WallabagKitTag.swift */; };
 		9C5153A422836892001A976B /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5153A322836892001A976B /* Tag.swift */; };
-		9C58ABBA22607EC10020CDA2 /* PodcastViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C58ABB922607EC10020CDA2 /* PodcastViewControllerTests.swift */; };
 		9C661DB9225D45F200086057 /* AboutViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C661DB8225D45F200086057 /* AboutViewControllerTests.swift */; };
 		9C677CAD227EF5A6006C7112 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C677CAC227EF5A6006C7112 /* WebKit.framework */; };
 		9C6DC0F2224112480012486D /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6DC0F1224112480012486D /* UISearchBar.swift */; };
@@ -239,7 +238,6 @@
 		9C4D4B9D225B6A2B00FE3095 /* DateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
 		9C5153A02283621C001A976B /* WallabagKitTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitTag.swift; sourceTree = "<group>"; };
 		9C5153A322836892001A976B /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
-		9C58ABB922607EC10020CDA2 /* PodcastViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastViewControllerTests.swift; sourceTree = "<group>"; };
 		9C661DB8225D45F200086057 /* AboutViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewControllerTests.swift; sourceTree = "<group>"; };
 		9C677CAC227EF5A6006C7112 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		9C6DC0F1224112480012486D /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
@@ -543,7 +541,6 @@
 				9C824D782265F429009E519B /* ArticleViewControllerTests.swift */,
 				9CF1ED9622627D4500AF750F /* ClientIdViewControllerTests.swift */,
 				9C824D762265ED28009E519B /* LoginViewControllerTests.swift */,
-				9C58ABB922607EC10020CDA2 /* PodcastViewControllerTests.swift */,
 				9C352EB3225E3C020074A026 /* ServerViewControllerTests.swift */,
 			);
 			path = Controller;
@@ -1408,7 +1405,6 @@
 				BF_87E311661C0B3BA3247CC388C7CCD8AF /* WallabagKitCollectionTests.swift in Sources */,
 				9CF1ED952262796D00AF750F /* AnalyticsManagerMock.swift in Sources */,
 				9C19F8EA22707E00009450F9 /* LightTests.swift in Sources */,
-				9C58ABBA22607EC10020CDA2 /* PodcastViewControllerTests.swift in Sources */,
 				9C824D792265F429009E519B /* ArticleViewControllerTests.swift in Sources */,
 				BF_C63B962A10CD74586351B9DB5E0FBBE1 /* WallabagKitTests.swift in Sources */,
 				BF_218B02857CD5370E001E1DEDBCD9DA81 /* XCTExtension.swift in Sources */,
