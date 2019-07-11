@@ -28,6 +28,7 @@
 		9C661DB9225D45F200086057 /* AboutViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C661DB8225D45F200086057 /* AboutViewControllerTests.swift */; };
 		9C677CAD227EF5A6006C7112 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C677CAC227EF5A6006C7112 /* WebKit.framework */; };
 		9C6DC0F2224112480012486D /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6DC0F1224112480012486D /* UISearchBar.swift */; };
+		9C7CBD0722D60B8A00EE1DE3 /* ArticlePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7CBD0622D60B8A00EE1DE3 /* ArticlePlayer.swift */; };
 		9C824D772265ED28009E519B /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C824D762265ED28009E519B /* LoginViewControllerTests.swift */; };
 		9C824D792265F429009E519B /* ArticleViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C824D782265F429009E519B /* ArticleViewControllerTests.swift */; };
 		9C90F62C2296B86F00C113EF /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9C90F62B2296B86F00C113EF /* Settings.bundle */; };
@@ -92,7 +93,6 @@
 		BF_83312011338DF667DC8174DD85C2A1B7 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_2E58EB127F216B99AAB45039FA033FD9 /* Int.swift */; };
 		BF_8388B13A002651D2E144ADFFB0441F2A /* WallabagCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FR_82E6C4DE6233AF1C7AC8D97E23DDE0F5 /* WallabagCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BF_87E311661C0B3BA3247CC388C7CCD8AF /* WallabagKitCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_EFE6ED1C47DAA622DFB6E57FF56AB4B9 /* WallabagKitCollectionTests.swift */; };
-		BF_8B31D8FCBE24A0B24D928AC2A5D8883B /* PodcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_8040EBB1039DE9F3631AF6947C7E9500 /* PodcastViewController.swift */; };
 		BF_8D6AECAD1330C2318EF223E35E3AC61D /* Black.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_9F42F31690A7DC7D012875FD435B91AF /* Black.swift */; };
 		BF_8DF5B0DFCF66D71D7A3C7EF0E10B2EEA /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_448862BF589F4829A648C0F56DC31F9A /* DictionaryTests.swift */; };
 		BF_925ACE132CABB3F8D50A6B5DC619A2ED /* WallabagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FR_30FF53C4D2743E54768DC21BC6D095F3 /* WallabagKit.framework */; };
@@ -243,6 +243,7 @@
 		9C661DB8225D45F200086057 /* AboutViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewControllerTests.swift; sourceTree = "<group>"; };
 		9C677CAC227EF5A6006C7112 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		9C6DC0F1224112480012486D /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
+		9C7CBD0622D60B8A00EE1DE3 /* ArticlePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePlayer.swift; sourceTree = "<group>"; };
 		9C824D762265ED28009E519B /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		9C824D782265F429009E519B /* ArticleViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewControllerTests.swift; sourceTree = "<group>"; };
 		9C90F62B2296B86F00C113EF /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -343,7 +344,6 @@
 		FR_7D29FAB95590AC974DCDAC639A09A15A /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		FR_7EF8E3725DA0867206C920EE5FBF277C /* wallabag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wallabag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FR_7F369F01648273740FFAC734BF79A78E /* wallabag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wallabag.entitlements; sourceTree = "<group>"; };
-		FR_8040EBB1039DE9F3631AF6947C7E9500 /* PodcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastViewController.swift; sourceTree = "<group>"; };
 		FR_82E6C4DE6233AF1C7AC8D97E23DDE0F5 /* WallabagCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WallabagCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FR_89CBFB2A6488E68DF37E66008BC3A23A /* EntriesCollection.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EntriesCollection.json; sourceTree = "<group>"; };
 		FR_8B1C0A3D787E489A3283413D0A549963 /* justify.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = justify.css; sourceTree = "<group>"; };
@@ -702,7 +702,6 @@
 				FR_1958605A09104E19FD12C7A197BDCDDD /* ClientIdViewController.swift */,
 				FR_B99F86A83D2A96FD01E5D62F07C4C804 /* HomeViewController.swift */,
 				FR_638B0E94F7CFDAE0590D0F5B445F46A3 /* LoginViewController.swift */,
-				FR_8040EBB1039DE9F3631AF6947C7E9500 /* PodcastViewController.swift */,
 				FR_F713F03368A599A8750912FE8BC6F7C2 /* ServerViewController.swift */,
 				FR_748A54FFB777972CBC13D57DA248E216 /* SettingsTableViewController.swift */,
 				9CE84F07228594F700B92BB1 /* TagsTableViewController.swift */,
@@ -821,12 +820,13 @@
 			isa = PBXGroup;
 			children = (
 				FR_250D2539097D8AD4F65F91206902AF43 /* AnalyticsManager.swift */,
+				9C7CBD0622D60B8A00EE1DE3 /* ArticlePlayer.swift */,
 				9C4976522226751900DA4BD0 /* Container.swift */,
-				G_CE89579BF929DEF37EAE365EBEC61C09 /* Operation */,
 				FR_26E374F0AF1D1FBEC022213E082366DF /* RetrieveMode.swift */,
 				FR_9904635DBD17CD8DEC268B0000282D5E /* Utils.swift */,
 				FR_D12F9BFF12ECE9D85363436FAF065862 /* WallabagSession.swift */,
 				FR_D555C88886417F7FFACF8E780E3AD81F /* WallabagSyncing.swift */,
+				G_CE89579BF929DEF37EAE365EBEC61C09 /* Operation */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -1340,6 +1340,7 @@
 				BF_B254447C18A3B0B138019B3D89F74819 /* AboutViewController.swift in Sources */,
 				BF_047B132AA818924F42C07857A48D5648 /* AnalyticsManager.swift in Sources */,
 				9CE84F08228594F700B92BB1 /* TagsTableViewController.swift in Sources */,
+				9C7CBD0722D60B8A00EE1DE3 /* ArticlePlayer.swift in Sources */,
 				BF_C08A9375D74D7DB78FE8F985821676D0 /* AppDelegate.swift in Sources */,
 				9C5153A422836892001A976B /* Tag.swift in Sources */,
 				BF_0705B526CC56B92C6135AB3CEAB62908 /* ArticleTableViewCell.swift in Sources */,
@@ -1361,7 +1362,6 @@
 				BF_39F871EE675DC699FB335EC1E12564C3 /* Light.swift in Sources */,
 				BF_93075D9BA7C176EDFDA77E5E3B181EBF /* LoginViewController.swift in Sources */,
 				BF_C26A33FB794CDBA88061605B28BCADDE /* Night.swift in Sources */,
-				BF_8B31D8FCBE24A0B24D928AC2A5D8883B /* PodcastViewController.swift in Sources */,
 				BF_DB7F468621011B78AA80968FF9B4DD93 /* RetrieveMode.swift in Sources */,
 				BF_61A51732C997F3090974F35FC6A51BA4 /* ServerViewController.swift in Sources */,
 				BF_37983FE718ADC942C53B1B1D6B7325C0 /* SettingsTableViewController.swift in Sources */,

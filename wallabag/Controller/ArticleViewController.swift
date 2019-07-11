@@ -16,10 +16,10 @@ import WebKit
 final class ArticleViewController: UIViewController {
     var analytics: AnalyticsManagerProtocol!
     var themeManager: ThemeManagerProtocol!
-    var podcastController: PodcastViewController?
     var articleTagController: ArticleTagViewController?
     var setting: SettingProtocol!
     var realm: Realm!
+    var articlePlayer: ArticlePlayer!
 
     var entry: Entry! {
         didSet {
@@ -32,39 +32,12 @@ final class ArticleViewController: UIViewController {
     var starHandler: ((_ entry: Entry) -> Void)?
     var addHandler: (() -> Void)?
 
-    enum PodcastViewState {
-        case show
-        case hidden
-    }
-
-    var podcastViewState: PodcastViewState = .hidden {
-        didSet {
-            if podcastViewState == .show {
-                UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseIn],
-                               animations: {
-                                   self.podcastView.center.y -= self.podcastView.bounds.height
-                                   self.podcastView.layoutIfNeeded()
-                }, completion: nil)
-                podcastView.isHidden = false
-            } else {
-                UIView.animate(withDuration: 0.5, delay: 0, options: [.curveLinear],
-                               animations: {
-                                   self.podcastView.center.y += self.podcastView.bounds.height
-                                   self.podcastView.layoutIfNeeded()
-                               }, completion: { (_: Bool) -> Void in
-                                   self.podcastView.isHidden = true
-                })
-            }
-        }
-    }
-
     @IBOutlet var contentWeb: WKWebView!
     @IBOutlet var readButton: UIBarButtonItem!
     @IBOutlet var starButton: UIBarButtonItem!
     @IBOutlet var speechButton: UIBarButtonItem!
     @IBOutlet var deleteButton: UIBarButtonItem!
     @IBOutlet var shareButton: UIBarButtonItem!
-    @IBOutlet var podcastView: UIView!
     @IBOutlet var tagsView: UIView!
 
     @IBAction func tagTapped(_: Any) {
@@ -86,11 +59,6 @@ final class ArticleViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
-        if let controller = segue.destination as? PodcastViewController {
-            controller.entry = entry
-            podcastController = controller
-            Log("prepare podcast view")
-        }
         if let controller = segue.destination as? ArticleTagViewController {
             controller.entry = entry
             articleTagController = controller
@@ -98,15 +66,25 @@ final class ArticleViewController: UIViewController {
         }
     }
 
-    override func viewDidAppear(_: Bool) {
-        podcastViewState = .hidden
-    }
-
     @IBAction func speech(_: Any) {
-        // podcastViewState = podcastViewState == .show ? .hidden : .show
-        if let podcastController = podcastController {
-            podcastController.playPressed(podcastController.playButton)
+        let alert = UIAlertController(title: "Player", message: nil, preferredStyle: .actionSheet)
+        alert.popoverPresentationController?.barButtonItem = speechButton
+        alert.addAction(UIAlertAction(title: "Load".localized, style: .default) { _ in
+            self.articlePlayer.load(self.entry)
+        })
+        if articlePlayer.isLoaded {
+            alert.addAction(UIAlertAction(title: "Play".localized, style: .default) { _ in
+                self.articlePlayer.play()
+            })
         }
+        alert.addAction(UIAlertAction(title: "Pause".localized, style: .default) { _ in
+            self.articlePlayer.pause()
+        })
+        alert.addAction(UIAlertAction(title: "Stop".localized, style: .default) { _ in
+            self.articlePlayer.stop()
+        })
+        alert.addAction(UIAlertAction(title: "Cancel".localized, style: .default))
+        present(alert, animated: true)
     }
 
     @IBAction func shareMenu(_ sender: UIBarButtonItem) {
