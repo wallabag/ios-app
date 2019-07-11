@@ -993,7 +993,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1100;
 				TargetAttributes = {
 					9C961B2222770ECE009F80A4 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -1736,6 +1736,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
