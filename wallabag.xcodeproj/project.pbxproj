@@ -27,6 +27,9 @@
 		9C661DB9225D45F200086057 /* AboutViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C661DB8225D45F200086057 /* AboutViewControllerTests.swift */; };
 		9C677CAD227EF5A6006C7112 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C677CAC227EF5A6006C7112 /* WebKit.framework */; };
 		9C6DC0F2224112480012486D /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6DC0F1224112480012486D /* UISearchBar.swift */; };
+		9C73EC4422D79037008663B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C73EC4322D79037008663B1 /* SceneDelegate.swift */; };
+		9C73EC4722D79093008663B1 /* ArticleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C73EC4622D79093008663B1 /* ArticleListView.swift */; };
+		9C73EC4922D791C1008663B1 /* DBData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C73EC4822D791C1008663B1 /* DBData.swift */; };
 		9C7CBD0722D60B8A00EE1DE3 /* ArticlePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7CBD0622D60B8A00EE1DE3 /* ArticlePlayer.swift */; };
 		9C824D772265ED28009E519B /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C824D762265ED28009E519B /* LoginViewControllerTests.swift */; };
 		9C824D792265F429009E519B /* ArticleViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C824D782265F429009E519B /* ArticleViewControllerTests.swift */; };
@@ -241,6 +244,9 @@
 		9C661DB8225D45F200086057 /* AboutViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewControllerTests.swift; sourceTree = "<group>"; };
 		9C677CAC227EF5A6006C7112 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		9C6DC0F1224112480012486D /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
+		9C73EC4322D79037008663B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9C73EC4622D79093008663B1 /* ArticleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListView.swift; sourceTree = "<group>"; };
+		9C73EC4822D791C1008663B1 /* DBData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBData.swift; sourceTree = "<group>"; };
 		9C7CBD0622D60B8A00EE1DE3 /* ArticlePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePlayer.swift; sourceTree = "<group>"; };
 		9C824D762265ED28009E519B /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		9C824D782265F429009E519B /* ArticleViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewControllerTests.swift; sourceTree = "<group>"; };
@@ -546,6 +552,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		9C73EC4522D7907E008663B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9C73EC4622D79093008663B1 /* ArticleListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		9C961B2422770ECE009F80A4 /* wallabagUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -831,6 +845,7 @@
 		G_EE322AF580B12A5FAFB51DB68815824E /* wallabag */ = {
 			isa = PBXGroup;
 			children = (
+				9C73EC4522D7907E008663B1 /* View */,
 				FR_9600E47FC00A35A057E5DE937EDBFDF3 /* AppDelegate.swift */,
 				FR_F94DA63289F6177D1927EB1C68054CF9 /* Assets.xcassets */,
 				G_91414645069EEDC291CE7A989E70D2DC /* Cell */,
@@ -848,6 +863,8 @@
 				G_E288595FB7758C59B0C10F1A195B1273 /* UI */,
 				FR_7F369F01648273740FFAC734BF79A78E /* wallabag.entitlements */,
 				9C90F62B2296B86F00C113EF /* Settings.bundle */,
+				9C73EC4322D79037008663B1 /* SceneDelegate.swift */,
+				9C73EC4822D791C1008663B1 /* DBData.swift */,
 			);
 			path = wallabag;
 			sourceTree = "<group>";
@@ -1361,17 +1378,20 @@
 				BF_83312011338DF667DC8174DD85C2A1B7 /* Int.swift in Sources */,
 				9C4976532226751900DA4BD0 /* Container.swift in Sources */,
 				BF_39F871EE675DC699FB335EC1E12564C3 /* Light.swift in Sources */,
+				9C73EC4922D791C1008663B1 /* DBData.swift in Sources */,
 				BF_93075D9BA7C176EDFDA77E5E3B181EBF /* LoginViewController.swift in Sources */,
 				BF_C26A33FB794CDBA88061605B28BCADDE /* Night.swift in Sources */,
 				BF_DB7F468621011B78AA80968FF9B4DD93 /* RetrieveMode.swift in Sources */,
 				BF_61A51732C997F3090974F35FC6A51BA4 /* ServerViewController.swift in Sources */,
 				BF_37983FE718ADC942C53B1B1D6B7325C0 /* SettingsTableViewController.swift in Sources */,
 				BF_A31D94510D6C4BD65AC0122EB64626C8 /* String.swift in Sources */,
+				9C73EC4422D79037008663B1 /* SceneDelegate.swift in Sources */,
 				BF_1CE07035053A5DB167C27DA29AC0FC70 /* SyncOperation.swift in Sources */,
 				BF_52DE0750D8F47C6E0DCEEF3E9926DF6E /* ThemeChoiceTableViewController.swift in Sources */,
 				BF_E5E5782D6CDF4EAC54A27F1EAA358264 /* ThemeManager.swift in Sources */,
 				BF_F3D83B60EAA7409ECA0C6179871F8B10 /* ThemeProtocol.swift in Sources */,
 				BF_E780EC3E849303D73BE290A1B3579062 /* ThemedTableViewCell.swift in Sources */,
+				9C73EC4722D79093008663B1 /* ArticleListView.swift in Sources */,
 				BF_00D91E5F9A9D166BC797C715B7F35902 /* TipViewController.swift in Sources */,
 				BF_767B670EFD6E74785BD2212AF6B9A34A /* UIImageView.swift in Sources */,
 				BF_A263058FD57BCE7DECF1322ABBB1C729 /* UIPodcastSlider.swift in Sources */,
@@ -1735,7 +1755,7 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = G97URPCGB8;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1785,7 +1805,7 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = G97URPCGB8;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1845,6 +1865,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 219;
+				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
