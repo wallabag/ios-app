@@ -1,1 +1,1 @@
-Fixed a display issue on some iphone
+Fixed a display issue on some iPhone
