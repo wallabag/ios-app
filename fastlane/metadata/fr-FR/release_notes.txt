@@ -1,5 +1,1 @@
-Nous avons amélioré le lecteur d'article, vous pouvez maintenant contrôler la lecture depuis le command center. Nous avons encore beaucoup d'idées pour améliorer la lecteur des articles.
-
-Egalement nous avons tenter de corriger certains crash.
-
-Bonne lecture
+Correction d'un problème d'affichage sur certains iPhone

@@ -1,5 +1,1 @@
-We have improved the article reader, you can now control the reading from the command center. We still have a lot of ideas to improve the reader of articles.
-
-Also we tried to fix some crash.
-
-Good reading
+Fixed a display issue on some iPhone

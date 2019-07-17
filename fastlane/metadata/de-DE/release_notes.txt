@@ -1,5 +1,1 @@
-Wir haben den Artikelleser verbessert. Sie können nun das Lesen von der Kommandozentrale aus steuern. Wir haben noch viele Ideen, um den Leser von Artikeln zu verbessern.
-
-Außerdem haben wir versucht, einen Absturz zu beheben.
-
-Viel Spaß beim Lesen
+Fixed a display issue on some iPhone
