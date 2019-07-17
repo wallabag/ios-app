@@ -32,8 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         realm = SwinjectStoryboard.defaultContainer.resolve(Realm.self)
         wallabagSession = SwinjectStoryboard.defaultContainer.resolve(WallabagSession.self)
 
-        return true
-        
+
         configureTheme()
         configureNetworkIndicator()
         handleArgs()

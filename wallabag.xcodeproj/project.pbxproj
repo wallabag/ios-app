@@ -33,6 +33,8 @@
 		9C7CBD0722D60B8A00EE1DE3 /* ArticlePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7CBD0622D60B8A00EE1DE3 /* ArticlePlayer.swift */; };
 		9C824D772265ED28009E519B /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C824D762265ED28009E519B /* LoginViewControllerTests.swift */; };
 		9C824D792265F429009E519B /* ArticleViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C824D782265F429009E519B /* ArticleViewControllerTests.swift */; };
+		9C9085F722DF3FF600D47262 /* ArticleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9085F622DF3FF600D47262 /* ArticleRowView.swift */; };
+		9C9085F922DF44CD00D47262 /* NetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9085F822DF44CD00D47262 /* NetworkImage.swift */; };
 		9C90F62C2296B86F00C113EF /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9C90F62B2296B86F00C113EF /* Settings.bundle */; };
 		9C961B2622770ECE009F80A4 /* WallabagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C961B2522770ECE009F80A4 /* WallabagUITests.swift */; };
 		9CAFCC8122A11A3E0085B50E /* Article.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CAFCC8322A11A3E0085B50E /* Article.storyboard */; };
@@ -250,6 +252,8 @@
 		9C7CBD0622D60B8A00EE1DE3 /* ArticlePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePlayer.swift; sourceTree = "<group>"; };
 		9C824D762265ED28009E519B /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		9C824D782265F429009E519B /* ArticleViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewControllerTests.swift; sourceTree = "<group>"; };
+		9C9085F622DF3FF600D47262 /* ArticleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRowView.swift; sourceTree = "<group>"; };
+		9C9085F822DF44CD00D47262 /* NetworkImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImage.swift; sourceTree = "<group>"; };
 		9C90F62B2296B86F00C113EF /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9C961B2322770ECE009F80A4 /* wallabagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C961B2522770ECE009F80A4 /* WallabagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagUITests.swift; sourceTree = "<group>"; };
@@ -556,6 +560,7 @@
 			isa = PBXGroup;
 			children = (
 				9C73EC4622D79093008663B1 /* ArticleListView.swift */,
+				9C9085F622DF3FF600D47262 /* ArticleRowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -865,6 +870,7 @@
 				9C90F62B2296B86F00C113EF /* Settings.bundle */,
 				9C73EC4322D79037008663B1 /* SceneDelegate.swift */,
 				9C73EC4822D791C1008663B1 /* DBData.swift */,
+				9C9085F822DF44CD00D47262 /* NetworkImage.swift */,
 			);
 			path = wallabag;
 			sourceTree = "<group>";
@@ -1377,9 +1383,11 @@
 				BF_E31E28734E796243BE3166C951A2188A /* HomeViewController.swift in Sources */,
 				BF_83312011338DF667DC8174DD85C2A1B7 /* Int.swift in Sources */,
 				9C4976532226751900DA4BD0 /* Container.swift in Sources */,
+				9C9085F722DF3FF600D47262 /* ArticleRowView.swift in Sources */,
 				BF_39F871EE675DC699FB335EC1E12564C3 /* Light.swift in Sources */,
 				9C73EC4922D791C1008663B1 /* DBData.swift in Sources */,
 				BF_93075D9BA7C176EDFDA77E5E3B181EBF /* LoginViewController.swift in Sources */,
+				9C9085F922DF44CD00D47262 /* NetworkImage.swift in Sources */,
 				BF_C26A33FB794CDBA88061605B28BCADDE /* Night.swift in Sources */,
 				BF_DB7F468621011B78AA80968FF9B4DD93 /* RetrieveMode.swift in Sources */,
 				BF_61A51732C997F3090974F35FC6A51BA4 /* ServerViewController.swift in Sources */,

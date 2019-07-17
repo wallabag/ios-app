@@ -13,9 +13,8 @@ struct ArticleListView : View {
 
     var body: some View {
         List(entries.results.identified(by: \.id)) { entry in
-            Text("test")
+            ArticleRowView(entry: entry)
         }
-        
     }
 }
 
