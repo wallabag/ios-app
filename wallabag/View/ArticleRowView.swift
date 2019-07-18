@@ -13,9 +13,9 @@ extension String {
     }
 }
 
-struct ArticleRowView : View {
+struct ArticleRowView: View {
     var entry: Entry
-    
+
     var body: some View {
         HStack {
             NetworkImage(imageURL: entry.previewPicture?.url, placeholderImage: UIImage(systemName: "book")!)
@@ -37,9 +37,9 @@ struct ArticleRowView : View {
 }
 
 #if DEBUG
-struct ArticleRowView_Previews : PreviewProvider {
-    static var previews: some View {
-        ArticleRowView(entry: Entry())
+    struct ArticleRowView_Previews: PreviewProvider {
+        static var previews: some View {
+            ArticleRowView(entry: Entry())
+        }
     }
-}
 #endif

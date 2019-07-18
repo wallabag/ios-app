@@ -25,13 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var realm: Realm!
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         Fabric.with([Crashlytics.self])
 
         setting = SwinjectStoryboard.defaultContainer.resolve(WallabagSetting.self)
         realm = SwinjectStoryboard.defaultContainer.resolve(Realm.self)
         wallabagSession = SwinjectStoryboard.defaultContainer.resolve(WallabagSession.self)
-
 
         configureTheme()
         configureNetworkIndicator()
@@ -53,8 +51,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         return true
     }
-    
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+
+    func application(_: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options _: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)

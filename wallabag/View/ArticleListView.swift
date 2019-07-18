@@ -5,23 +5,29 @@
 //  Created by Marinel Maxime on 11/07/2019.
 //
 
-import SwiftUI
 import RealmSwift
+import SwiftUI
 
-struct ArticleListView : View {
+struct ArticleListView: View {
     @ObjectBinding var entries = BindableResults<Entry>(results: try! Realm().objects(Entry.self))
 
     var body: some View {
-        List(entries.results.identified(by: \.id)) { entry in
-            ArticleRowView(entry: entry)
+        NavigationView {
+            List(entries.results.identified(by: \.id)) { entry in
+                NavigationLink(destination: ArticleView(entry: entry)) {
+                    ArticleRowView(entry: entry)
+                }
+            }
+            .navigationBarTitle("Articles")
+            .navigationBarItems(trailing: Button(action: {}, label: { Image(systemName: "plus") }))
         }
     }
 }
 
 #if DEBUG
-struct ArticleListView_Previews : PreviewProvider {
-    static var previews: some View {
-        ArticleListView()
+    struct ArticleListView_Previews: PreviewProvider {
+        static var previews: some View {
+            ArticleListView()
+        }
     }
-}
 #endif

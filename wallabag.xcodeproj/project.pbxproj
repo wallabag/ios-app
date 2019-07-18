@@ -37,6 +37,8 @@
 		9C9085F922DF44CD00D47262 /* NetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9085F822DF44CD00D47262 /* NetworkImage.swift */; };
 		9C90F62C2296B86F00C113EF /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9C90F62B2296B86F00C113EF /* Settings.bundle */; };
 		9C961B2622770ECE009F80A4 /* WallabagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C961B2522770ECE009F80A4 /* WallabagUITests.swift */; };
+		9CA5D4C422E0906A00167574 /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D4C322E0906A00167574 /* ArticleView.swift */; };
+		9CA5D4C622E092B500167574 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D4C522E092B500167574 /* WebView.swift */; };
 		9CAFCC8122A11A3E0085B50E /* Article.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CAFCC8322A11A3E0085B50E /* Article.storyboard */; };
 		9CCEFF8C2264A37B00441A18 /* SettingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCEFF8B2264A37B00441A18 /* SettingMock.swift */; };
 		9CD16004229D4F64001DC3A5 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD16006229D4F64001DC3A5 /* About.storyboard */; };
@@ -258,6 +260,8 @@
 		9C961B2322770ECE009F80A4 /* wallabagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C961B2522770ECE009F80A4 /* WallabagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagUITests.swift; sourceTree = "<group>"; };
 		9C961B2722770ECE009F80A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CA5D4C322E0906A00167574 /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
+		9CA5D4C522E092B500167574 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		9CAFCC7E22A111E40085B50E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Settings.strings; sourceTree = "<group>"; };
 		9CAFCC8022A113AB0085B50E /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Settings.strings; sourceTree = "<group>"; };
 		9CAFCC8222A11A3E0085B50E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Article.storyboard; sourceTree = "<group>"; };
@@ -561,6 +565,8 @@
 			children = (
 				9C73EC4622D79093008663B1 /* ArticleListView.swift */,
 				9C9085F622DF3FF600D47262 /* ArticleRowView.swift */,
+				9CA5D4C322E0906A00167574 /* ArticleView.swift */,
+				9CA5D4C522E092B500167574 /* WebView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1383,6 +1389,7 @@
 				BF_E31E28734E796243BE3166C951A2188A /* HomeViewController.swift in Sources */,
 				BF_83312011338DF667DC8174DD85C2A1B7 /* Int.swift in Sources */,
 				9C4976532226751900DA4BD0 /* Container.swift in Sources */,
+				9CA5D4C422E0906A00167574 /* ArticleView.swift in Sources */,
 				9C9085F722DF3FF600D47262 /* ArticleRowView.swift in Sources */,
 				BF_39F871EE675DC699FB335EC1E12564C3 /* Light.swift in Sources */,
 				9C73EC4922D791C1008663B1 /* DBData.swift in Sources */,
@@ -1401,6 +1408,7 @@
 				BF_E780EC3E849303D73BE290A1B3579062 /* ThemedTableViewCell.swift in Sources */,
 				9C73EC4722D79093008663B1 /* ArticleListView.swift in Sources */,
 				BF_00D91E5F9A9D166BC797C715B7F35902 /* TipViewController.swift in Sources */,
+				9CA5D4C622E092B500167574 /* WebView.swift in Sources */,
 				BF_767B670EFD6E74785BD2212AF6B9A34A /* UIImageView.swift in Sources */,
 				BF_A263058FD57BCE7DECF1322ABBB1C729 /* UIPodcastSlider.swift in Sources */,
 				BF_27B3C5BB859104CEF0AB1D52843622B4 /* WKWebView.swift in Sources */,
