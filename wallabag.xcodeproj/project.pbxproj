@@ -19,6 +19,11 @@
 		9C19F8EC22707E68009450F9 /* NightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19F8EB22707E68009450F9 /* NightTests.swift */; };
 		9C19F8EE22707F2A009450F9 /* WhiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19F8ED22707F2A009450F9 /* WhiteTests.swift */; };
 		9C352EB4225E3C020074A026 /* ServerViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C352EB3225E3C020074A026 /* ServerViewControllerTests.swift */; };
+		9C37216F22E0FBC500D363FB /* StubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37216E22E0FBC500D363FB /* StubView.swift */; };
+		9C37217122E107D200D363FB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37217022E107D200D363FB /* MainView.swift */; };
+		9C37217322E1087800D363FB /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37217222E1087800D363FB /* RegistrationView.swift */; };
+		9C37217522E1134600D363FB /* ServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37217422E1134600D363FB /* ServerView.swift */; };
+		9C37217722E1171100D363FB /* ClientIdClientSecretView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37217622E1171100D363FB /* ClientIdClientSecretView.swift */; };
 		9C4976532226751900DA4BD0 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4976522226751900DA4BD0 /* Container.swift */; };
 		9C4D4B9C225B69C100FE3095 /* BoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D4B9B225B69C100FE3095 /* BoolTests.swift */; };
 		9C4D4B9E225B6A2B00FE3095 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D4B9D225B6A2B00FE3095 /* DateTests.swift */; };
@@ -240,6 +245,11 @@
 		9C19F8EB22707E68009450F9 /* NightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightTests.swift; sourceTree = "<group>"; };
 		9C19F8ED22707F2A009450F9 /* WhiteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteTests.swift; sourceTree = "<group>"; };
 		9C352EB3225E3C020074A026 /* ServerViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerViewControllerTests.swift; sourceTree = "<group>"; };
+		9C37216E22E0FBC500D363FB /* StubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubView.swift; sourceTree = "<group>"; };
+		9C37217022E107D200D363FB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		9C37217222E1087800D363FB /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		9C37217422E1134600D363FB /* ServerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerView.swift; sourceTree = "<group>"; };
+		9C37217622E1171100D363FB /* ClientIdClientSecretView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientIdClientSecretView.swift; sourceTree = "<group>"; };
 		9C4976522226751900DA4BD0 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		9C4D4B9B225B69C100FE3095 /* BoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolTests.swift; sourceTree = "<group>"; };
 		9C4D4B9D225B6A2B00FE3095 /* DateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
@@ -567,6 +577,11 @@
 				9C9085F622DF3FF600D47262 /* ArticleRowView.swift */,
 				9CA5D4C322E0906A00167574 /* ArticleView.swift */,
 				9CA5D4C522E092B500167574 /* WebView.swift */,
+				9C37216E22E0FBC500D363FB /* StubView.swift */,
+				9C37217022E107D200D363FB /* MainView.swift */,
+				9C37217222E1087800D363FB /* RegistrationView.swift */,
+				9C37217422E1134600D363FB /* ServerView.swift */,
+				9C37217622E1171100D363FB /* ClientIdClientSecretView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1376,6 +1391,7 @@
 				BF_0705B526CC56B92C6135AB3CEAB62908 /* ArticleTableViewCell.swift in Sources */,
 				BF_6FC7E4B0BF1DD82534758E09D42CB4BD /* ArticleViewController.swift in Sources */,
 				BF_80E0A78558343DE730DEA217B8252318 /* ArticlesTableViewController+UISearchResults.swift in Sources */,
+				9C37216F22E0FBC500D363FB /* StubView.swift in Sources */,
 				BF_410C8342258361866BCC68C2408CF424 /* ArticlesTableViewController+pastboard.swift in Sources */,
 				BF_A732338E1D54D23BE388646C6CEBF86B /* ArticlesTableViewController.swift in Sources */,
 				BF_8D6AECAD1330C2318EF223E35E3AC61D /* Black.swift in Sources */,
@@ -1385,6 +1401,8 @@
 				BF_330993596D71B361978BE9F6CC8CE80C /* Dictionary.swift in Sources */,
 				BF_9DC6B3C1B4267E7BF73A9F9365B14227 /* Dusk.swift in Sources */,
 				BF_B9C6AF04850C3AB60715C3FF13432B78 /* Entry.swift in Sources */,
+				9C37217722E1171100D363FB /* ClientIdClientSecretView.swift in Sources */,
+				9C37217122E107D200D363FB /* MainView.swift in Sources */,
 				BF_E86293481ACAC83DE1587222089DDC5D /* EntryExtension.swift in Sources */,
 				BF_E31E28734E796243BE3166C951A2188A /* HomeViewController.swift in Sources */,
 				BF_83312011338DF667DC8174DD85C2A1B7 /* Int.swift in Sources */,
@@ -1409,6 +1427,8 @@
 				9C73EC4722D79093008663B1 /* ArticleListView.swift in Sources */,
 				BF_00D91E5F9A9D166BC797C715B7F35902 /* TipViewController.swift in Sources */,
 				9CA5D4C622E092B500167574 /* WebView.swift in Sources */,
+				9C37217322E1087800D363FB /* RegistrationView.swift in Sources */,
+				9C37217522E1134600D363FB /* ServerView.swift in Sources */,
 				BF_767B670EFD6E74785BD2212AF6B9A34A /* UIImageView.swift in Sources */,
 				BF_A263058FD57BCE7DECF1322ABBB1C729 /* UIPodcastSlider.swift in Sources */,
 				BF_27B3C5BB859104CEF0AB1D52843622B4 /* WKWebView.swift in Sources */,

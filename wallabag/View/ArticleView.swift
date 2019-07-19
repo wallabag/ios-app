@@ -19,7 +19,7 @@ struct ArticleView: View {
                 Image(systemName: "bookmark")
                 Spacer()
                 Image(systemName: "trash")
-            }
+            }.padding()
         }.navigationBarTitle(entry.title ?? "")
     }
 }

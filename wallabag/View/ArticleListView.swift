@@ -19,7 +19,7 @@ struct ArticleListView: View {
                 }
             }
             .navigationBarTitle("Articles")
-            .navigationBarItems(trailing: Button(action: {}, label: { Image(systemName: "plus") }))
+            .navigationBarItems(trailing: PresentationLink(destination: StubView(), label: {Image(systemName: "plus")}))
         }
     }
 }
