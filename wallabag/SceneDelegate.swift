@@ -7,6 +7,11 @@
 
 import SwiftUI
 import UIKit
+import Combine
+
+class Sett: BindableObject {
+    let didChange = PassthroughSubject<Void, Never>()
+}
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
@@ -16,8 +21,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         if let windowScene = scene as? UIWindowScene {
+            
+            let setting = Sett()
+            
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: MainView())
+            window.rootViewController = UIHostingController(rootView: MainView().environmentObject(setting))
             self.window = window
             window.makeKeyAndVisible()
         }

@@ -9,9 +9,10 @@ import SwiftUI
 
 struct MainView: View {
     @State var registration: Bool = true
+    @EnvironmentObject var setting: Sett
     
     var body: some View {
-        return ViewBuilder.buildBlock(registration ? ViewBuilder.buildEither(first: RegistrationView()) : ViewBuilder.buildEither(second: ArticleListView()), Button("Tap", action: {self.registration.toggle()}))
+        return ViewBuilder.buildBlock(registration ? ViewBuilder.buildEither(first: RegistrationView().environmentObject(setting)) : ViewBuilder.buildEither(second: ArticleListView()), Button("Tap", action: {self.registration.toggle()}))
     }
 }
 

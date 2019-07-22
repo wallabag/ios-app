@@ -42,7 +42,7 @@ struct ClientIdClientSecretView: View {
             Section(header: Text("Client secret")) {
                 TextField($clientIdClientSecretValidator.clientSecret)
             }
-            NavigationLink("Next", destination: ClientIdClientSecretView()).disabled(!clientIdClientSecretValidator.isValid)
+            NavigationLink("Next", destination: LoginView()).disabled(!clientIdClientSecretValidator.isValid)
         }
     }
 }

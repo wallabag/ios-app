@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RegistrationView: View {
+    @EnvironmentObject var setting: Sett
     
     var body: some View {
         NavigationView {
@@ -15,7 +16,7 @@ struct RegistrationView: View {
                 Image("logo")
                 Text("Wallabag")
                     .font(.title)
-                NavigationLink("Register", destination: ServerView())
+                NavigationLink("Register", destination: ServerView().environmentObject(setting))
             }.navigationBarHidden(true)
         }
     }

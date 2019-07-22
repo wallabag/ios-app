@@ -24,6 +24,7 @@
 		9C37217322E1087800D363FB /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37217222E1087800D363FB /* RegistrationView.swift */; };
 		9C37217522E1134600D363FB /* ServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37217422E1134600D363FB /* ServerView.swift */; };
 		9C37217722E1171100D363FB /* ClientIdClientSecretView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37217622E1171100D363FB /* ClientIdClientSecretView.swift */; };
+		9C40054A22E1DE3200A6E5CA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C40054922E1DE3200A6E5CA /* LoginView.swift */; };
 		9C4976532226751900DA4BD0 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4976522226751900DA4BD0 /* Container.swift */; };
 		9C4D4B9C225B69C100FE3095 /* BoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D4B9B225B69C100FE3095 /* BoolTests.swift */; };
 		9C4D4B9E225B6A2B00FE3095 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D4B9D225B6A2B00FE3095 /* DateTests.swift */; };
@@ -45,6 +46,7 @@
 		9CA5D4C422E0906A00167574 /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D4C322E0906A00167574 /* ArticleView.swift */; };
 		9CA5D4C622E092B500167574 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D4C522E092B500167574 /* WebView.swift */; };
 		9CAFCC8122A11A3E0085B50E /* Article.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CAFCC8322A11A3E0085B50E /* Article.storyboard */; };
+		9CCC4AFC22E3BFD400F73891 /* WallabagUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC4AFB22E3BFD400F73891 /* WallabagUserDefaults.swift */; };
 		9CCEFF8C2264A37B00441A18 /* SettingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCEFF8B2264A37B00441A18 /* SettingMock.swift */; };
 		9CD16004229D4F64001DC3A5 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD16006229D4F64001DC3A5 /* About.storyboard */; };
 		9CD1600F229D5128001DC3A5 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CD16011229D5128001DC3A5 /* Menu.storyboard */; };
@@ -250,6 +252,7 @@
 		9C37217222E1087800D363FB /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		9C37217422E1134600D363FB /* ServerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerView.swift; sourceTree = "<group>"; };
 		9C37217622E1171100D363FB /* ClientIdClientSecretView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientIdClientSecretView.swift; sourceTree = "<group>"; };
+		9C40054922E1DE3200A6E5CA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9C4976522226751900DA4BD0 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		9C4D4B9B225B69C100FE3095 /* BoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolTests.swift; sourceTree = "<group>"; };
 		9C4D4B9D225B6A2B00FE3095 /* DateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
@@ -278,6 +281,7 @@
 		9CAFCC8522A11A500085B50E /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Article.strings; sourceTree = "<group>"; };
 		9CAFCC8722A11B2E0085B50E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Article.strings; sourceTree = "<group>"; };
 		9CAFCC8922A11B300085B50E /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Article.strings; sourceTree = "<group>"; };
+		9CCC4AFB22E3BFD400F73891 /* WallabagUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagUserDefaults.swift; sourceTree = "<group>"; };
 		9CCEFF8B2264A37B00441A18 /* SettingMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMock.swift; sourceTree = "<group>"; };
 		9CD16005229D4F64001DC3A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/About.storyboard; sourceTree = "<group>"; };
 		9CD1600A229D4F8D001DC3A5 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/About.strings; sourceTree = "<group>"; };
@@ -582,6 +586,7 @@
 				9C37217222E1087800D363FB /* RegistrationView.swift */,
 				9C37217422E1134600D363FB /* ServerView.swift */,
 				9C37217622E1171100D363FB /* ClientIdClientSecretView.swift */,
+				9C40054922E1DE3200A6E5CA /* LoginView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -892,6 +897,7 @@
 				9C73EC4322D79037008663B1 /* SceneDelegate.swift */,
 				9C73EC4822D791C1008663B1 /* DBData.swift */,
 				9C9085F822DF44CD00D47262 /* NetworkImage.swift */,
+				9CCC4AFB22E3BFD400F73891 /* WallabagUserDefaults.swift */,
 			);
 			path = wallabag;
 			sourceTree = "<group>";
@@ -1412,6 +1418,7 @@
 				BF_39F871EE675DC699FB335EC1E12564C3 /* Light.swift in Sources */,
 				9C73EC4922D791C1008663B1 /* DBData.swift in Sources */,
 				BF_93075D9BA7C176EDFDA77E5E3B181EBF /* LoginViewController.swift in Sources */,
+				9C40054A22E1DE3200A6E5CA /* LoginView.swift in Sources */,
 				9C9085F922DF44CD00D47262 /* NetworkImage.swift in Sources */,
 				BF_C26A33FB794CDBA88061605B28BCADDE /* Night.swift in Sources */,
 				BF_DB7F468621011B78AA80968FF9B4DD93 /* RetrieveMode.swift in Sources */,
@@ -1422,6 +1429,7 @@
 				BF_1CE07035053A5DB167C27DA29AC0FC70 /* SyncOperation.swift in Sources */,
 				BF_52DE0750D8F47C6E0DCEEF3E9926DF6E /* ThemeChoiceTableViewController.swift in Sources */,
 				BF_E5E5782D6CDF4EAC54A27F1EAA358264 /* ThemeManager.swift in Sources */,
+				9CCC4AFC22E3BFD400F73891 /* WallabagUserDefaults.swift in Sources */,
 				BF_F3D83B60EAA7409ECA0C6179871F8B10 /* ThemeProtocol.swift in Sources */,
 				BF_E780EC3E849303D73BE290A1B3579062 /* ThemedTableViewCell.swift in Sources */,
 				9C73EC4722D79093008663B1 /* ArticleListView.swift in Sources */,

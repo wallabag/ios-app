@@ -9,10 +9,10 @@ import SwiftUI
 import Combine
 
 class ServerValidator: BindableObject {
-    let didChange = PassthroughSubject<Void, Never>()
-    var isValid: Bool = false {
+    let didChange = PassthroughSubject<ServerValidator, Never>()
+    @Published var isValid: Bool = false {
         didSet {
-            didChange.send()
+            didChange.send(self)
         }
     }
     var url: String = "" {
@@ -21,7 +21,7 @@ class ServerValidator: BindableObject {
         }
     }
     
-    func validate(url: String) {
+    private func validate(url: String) {
         isValid = validateServer(string: url)
     }
     
@@ -34,27 +34,38 @@ class ServerValidator: BindableObject {
                     return false
             }
             return true
-            /* WallabagKit.getVersion(from: string) { version in
-             Log("Server version \(version)")
-             completion(version.supportedVersion != .unsupported)
-             } */
         } catch {
             return false
         }
     }
+    deinit {
+        print("by")
+    }
 }
 
 struct ServerView: View {
-    @ObjectBinding var serverValidator = ServerValidator()
+    @ObjectBinding var validator = ServerValidator()
+    
+    init() {
+        validator.$isValid.sink { [unowned validator] isValid in
+            if(isValid){
+                WallabagUserDefaults.host = validator.url
+            }
+        }
+    }
     
     var body: some View {
         Form {
             Section(header: Text("Server")) {
-                TextField($serverValidator.url)
+                TextField($validator.url)
+            }.onAppear {
+                self.validator.url = WallabagUserDefaults.host
             }
-            NavigationLink("Next", destination: ClientIdClientSecretView()).disabled(!serverValidator.isValid)
-            }
+            NavigationLink(destination: ClientIdClientSecretView()) {
+               Text("Next")
+            }.disabled(!validator.isValid)
         }
+    }
 }
 
 #if DEBUG
