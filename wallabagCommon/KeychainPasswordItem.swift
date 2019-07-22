@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct KeychainPasswordItem {
+public struct KeychainPasswordItem {
     // MARK: Types
 
     enum KeychainError: Error {
@@ -26,7 +26,7 @@ struct KeychainPasswordItem {
 
     // MARK: Intialization
 
-    init(service: String, account: String, accessGroup: String? = nil) {
+    public init(service: String, account: String, accessGroup: String? = nil) {
         self.service = service
         self.account = account
         self.accessGroup = accessGroup
@@ -34,7 +34,7 @@ struct KeychainPasswordItem {
 
     // MARK: Keychain access
 
-    func readPassword() throws -> String {
+    public func readPassword() throws -> String {
         var query = KeychainPasswordItem.keychainQuery(withService: service, account: account, accessGroup: accessGroup)
         query[kSecMatchLimit as String] = kSecMatchLimitOne
         query[kSecReturnAttributes as String] = kCFBooleanTrue
@@ -58,7 +58,7 @@ struct KeychainPasswordItem {
         return password
     }
 
-    func savePassword(_ password: String) throws {
+    public func savePassword(_ password: String) throws {
         let encodedPassword = password.data(using: String.Encoding.utf8)!
 
         do {

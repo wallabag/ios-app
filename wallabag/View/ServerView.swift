@@ -8,21 +8,25 @@
 import SwiftUI
 import Combine
 
-class ServerValidator: BindableObject {
-    let didChange = PassthroughSubject<ServerValidator, Never>()
-    @Published var isValid: Bool = false {
+class ServerHandler: BindableObject {
+    let didChange = PassthroughSubject<ServerHandler, Never>()
+    
+    var isValid: Bool = false {
         didSet {
             didChange.send(self)
         }
     }
     var url: String = "" {
         didSet {
-            validate(url: url)
+            handle(url: url)
         }
     }
     
-    private func validate(url: String) {
+    private func handle(url: String) {
         isValid = validateServer(string: url)
+        if (isValid) {
+           WallabagUserDefaults.host = url
+        }
     }
     
     private func validateServer(string: String) -> Bool {
@@ -38,32 +42,22 @@ class ServerValidator: BindableObject {
             return false
         }
     }
-    deinit {
-        print("by")
-    }
 }
 
 struct ServerView: View {
-    @ObjectBinding var validator = ServerValidator()
-    
-    init() {
-        validator.$isValid.sink { [unowned validator] isValid in
-            if(isValid){
-                WallabagUserDefaults.host = validator.url
-            }
-        }
-    }
+    @EnvironmentObject var appState: AppState
+    @ObjectBinding var serverHandler = ServerHandler()
     
     var body: some View {
         Form {
             Section(header: Text("Server")) {
-                TextField($validator.url)
+                TextField($serverHandler.url)
             }.onAppear {
-                self.validator.url = WallabagUserDefaults.host
+                self.serverHandler.url = WallabagUserDefaults.host
             }
-            NavigationLink(destination: ClientIdClientSecretView()) {
+            NavigationLink(destination: ClientIdClientSecretView().environmentObject(appState)) {
                Text("Next")
-            }.disabled(!validator.isValid)
+            }.disabled(!serverHandler.isValid)
         }
     }
 }

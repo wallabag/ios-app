@@ -10,24 +10,19 @@ import Foundation
 struct WallabagUserDefaults {
     @UserDefault("host", defaultValue: "")
     static var host: String
-}
-
-@propertyWrapper
-struct UserDefault<T> {
-    let key: String
-    let defaultValue: T
     
-    init(_ key: String, defaultValue: T) {
-        self.key = key
-        self.defaultValue = defaultValue
-    }
+    @UserDefault("clientId", defaultValue: "")
+    static var clientId: String
     
-    var wrappedValue: T {
-        get {
-            return UserDefaults.standard.object(forKey: key) as? T ?? defaultValue
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: key)
-        }
-    }
+    @UserDefault("clientSecret", defaultValue: "")
+    static var clientSecret: String
+    
+    @UserDefault("username", defaultValue: "")
+    static var login: String
+    
+    @Password
+    static var password: String
+    
+    @UserDefault("registred", defaultValue: false)
+    static var registred: Bool
 }

@@ -8,11 +8,13 @@
 import SwiftUI
 import Combine
 
-class ClientIdClientSecretValidator: BindableObject {
+class ClientIdClientSecretHandler: BindableObject {
     let didChange = PassthroughSubject<Void, Never>()
     var isValid: Bool = false {
         didSet {
             didChange.send()
+            WallabagUserDefaults.clientId = clientId
+            WallabagUserDefaults.clientSecret = clientSecret
         }
     }
     var clientId: String = "" {
@@ -32,17 +34,23 @@ class ClientIdClientSecretValidator: BindableObject {
 }
 
 struct ClientIdClientSecretView: View {
-    @ObjectBinding var clientIdClientSecretValidator = ClientIdClientSecretValidator()
+    @EnvironmentObject var appState: AppState
+    @ObjectBinding var clientIdClientSecretHandler = ClientIdClientSecretHandler()
     
     var body: some View {
         Form {
             Section(header: Text("Client id")) {
-                TextField($clientIdClientSecretValidator.clientId)
+                TextField($clientIdClientSecretHandler.clientId).onAppear {
+                    self.clientIdClientSecretHandler.clientId = WallabagUserDefaults.clientId
+                    
+                }
             }
             Section(header: Text("Client secret")) {
-                TextField($clientIdClientSecretValidator.clientSecret)
+                TextField($clientIdClientSecretHandler.clientSecret).onAppear {
+                    self.clientIdClientSecretHandler.clientSecret = WallabagUserDefaults.clientSecret
+                }
             }
-            NavigationLink("Next", destination: LoginView()).disabled(!clientIdClientSecretValidator.isValid)
+            NavigationLink("Next", destination: LoginView().environmentObject(appState)).disabled(!clientIdClientSecretHandler.isValid)
         }
     }
 }

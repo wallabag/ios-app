@@ -9,8 +9,18 @@ import SwiftUI
 import UIKit
 import Combine
 
-class Sett: BindableObject {
+class AppState: BindableObject {
     let didChange = PassthroughSubject<Void, Never>()
+    
+    var registred: Bool = false {
+        didSet {
+            didChange.send()
+        }
+    }
+    
+    init() {
+        registred = WallabagUserDefaults.registred
+    }
 }
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -22,10 +32,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         if let windowScene = scene as? UIWindowScene {
             
-            let setting = Sett()
+            let appState = AppState()
             
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: MainView().environmentObject(setting))
+            window.rootViewController = UIHostingController(rootView: MainView().environmentObject(appState))
             self.window = window
             window.makeKeyAndVisible()
         }

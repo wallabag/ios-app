@@ -9,11 +9,15 @@ import SwiftUI
 import Combine
 
 
-class LoginValidator: BindableObject {
+class LoginHandler: BindableObject {
     let didChange = PassthroughSubject<Void, Never>()
+    
     var isValid: Bool = false {
         didSet {
             didChange.send()
+            if (isValid) {
+                //WallabagUserDefaults.password = password
+            }
         }
     }
     
@@ -34,19 +38,22 @@ class LoginValidator: BindableObject {
 }
 
 struct LoginView: View {
-    @ObjectBinding var loginValidator = LoginValidator()
+    @ObjectBinding var loginHandler = LoginHandler()
+    @EnvironmentObject var appState: AppState
     
     var body: some View {
         Form {
             Section(header: Text("Login")) {
-                TextField($loginValidator.login)
+                TextField($loginHandler.login).onAppear {
+                    self.loginHandler.login = WallabagUserDefaults.login
+                }
             }
             Section(header: Text("Passwod")) {
-                SecureField($loginValidator.password)
+                SecureField($loginHandler.password)
             }
             Button("Login") {
-                
-            }.disabled(!loginValidator.isValid)
+                self.appState.registred = true
+            }.disabled(!loginHandler.isValid)
         }
     }
 }
