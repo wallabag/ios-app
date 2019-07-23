@@ -11,7 +11,14 @@ import WallabagCommon
 @propertyWrapper
 struct Password {
     
-    var wrappedValue: String 
+    private(set) var value: String = ""
     
+    var wrappedValue: String {
+        get { value }
+        set { value = newValue }
+    }
     
+    init(initialValue: String) {
+        self.wrappedValue = initialValue
+    }
 }

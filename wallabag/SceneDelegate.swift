@@ -15,6 +15,7 @@ class AppState: BindableObject {
     var registred: Bool = false {
         didSet {
             didChange.send()
+            WallabagUserDefaults.registred = registred
         }
     }
     

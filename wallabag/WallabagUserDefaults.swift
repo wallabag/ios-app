@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import WallabagCommon
 
 struct WallabagUserDefaults {
+    static let keychain: KeychainPasswordItem = KeychainPasswordItem(service: "wallabag", account: "main")
     @UserDefault("host", defaultValue: "")
     static var host: String
     
@@ -20,8 +22,10 @@ struct WallabagUserDefaults {
     @UserDefault("username", defaultValue: "")
     static var login: String
     
-    @Password
-    static var password: String
+    static var password: String {
+        get { return (try? keychain.readPassword()) ?? "" }
+        set { try? keychain.savePassword(newValue)}
+    }
     
     @UserDefault("registred", defaultValue: false)
     static var registred: Bool

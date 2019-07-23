@@ -16,7 +16,7 @@ class LoginHandler: BindableObject {
         didSet {
             didChange.send()
             if (isValid) {
-                //WallabagUserDefaults.password = password
+                WallabagUserDefaults.password = password
             }
         }
     }
