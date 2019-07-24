@@ -12,7 +12,7 @@ import Combine
 class AppState: BindableObject {
     let didChange = PassthroughSubject<Void, Never>()
     
-    var registred: Bool = false {
+    @Published var registred: Bool = false {
         didSet {
             didChange.send()
             WallabagUserDefaults.registred = registred
@@ -34,6 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             
             let appState = AppState()
+            
             
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(rootView: MainView().environmentObject(appState))

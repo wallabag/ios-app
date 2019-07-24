@@ -6,6 +6,53 @@
 //
 
 import SwiftUI
+import WallabagKit
+import Combine
+
+class AppSync: BindableObject {
+    let didChange = PassthroughSubject<Void, Never>()
+    
+    func sync() {
+        let kit = WallabagKit(
+            host: WallabagUserDefaults.host,
+            clientID: WallabagUserDefaults.clientId,
+            clientSecret: WallabagUserDefaults.clientSecret
+        )
+        kit.requestAuth(
+            username: WallabagUserDefaults.login,
+            password: WallabagUserDefaults.password
+        ) { auth in
+            switch auth {
+            case .success:
+                let sync = WallabagSyncing(kit: kit)
+                sync.kit = kit
+                sync.sync {
+                    
+                }
+            case .error(_):
+                break
+            case .invalidParameter:
+                break
+            case .unexpectedError:
+                break
+            }
+            print(auth)
+            /*[weak self] auth in
+             
+            switch auth {
+            case .success:
+                self?.currentState = .connected
+            case let .error(error):
+                Log(error)
+                self?.currentState = .error
+            case .invalidParameter, .unexpectedError:
+                self?.currentState = .error
+            }*/
+        }
+        
+        
+    }
+}
 
 struct MainView: View {
     @EnvironmentObject var appState: AppState
@@ -13,7 +60,7 @@ struct MainView: View {
     var body: some View {
         return ViewBuilder.buildBlock(
             appState.registred ?
-            ViewBuilder.buildEither(second: ArticleListView()):
+            ViewBuilder.buildEither(second: ArticleListView().environmentObject(AppSync())) :
             ViewBuilder.buildEither(first: RegistrationView().environmentObject(appState))
         )
     }

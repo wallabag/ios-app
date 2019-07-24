@@ -9,6 +9,7 @@ import RealmSwift
 import SwiftUI
 
 struct ArticleListView: View {
+    @EnvironmentObject var sync: AppSync
     @ObjectBinding var entries = BindableResults<Entry>(results: try! Realm().objects(Entry.self))
 
     var body: some View {
@@ -19,10 +20,20 @@ struct ArticleListView: View {
                 }
             }
             .navigationBarTitle("Articles")
-            .navigationBarItems(trailing: PresentationLink(destination: StubView(), label: {Image(systemName: "plus")}))
+            .navigationBarItems(trailing:
+                ViewBuilder.buildBlock(
+                    HStack {
+                        Button(action: {
+                            self.sync.sync()
+                        }, label: {Image(systemName: "arrow.counterclockwise")})
+                        PresentationLink(destination: StubView(), label: {Image(systemName: "plus")})
+                    }
+                )
+            )
         }
     }
 }
+
 
 #if DEBUG
     struct ArticleListView_Previews: PreviewProvider {

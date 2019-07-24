@@ -10,7 +10,7 @@ import RealmSwift
 import WallabagKit
 
 class WallabagSyncing {
-    private let kit: WallabagKitProtocol
+    var kit: WallabagKitProtocol
     private let dispatchQueue = DispatchQueue(label: "fr.district-web.wallabag.articleSyncQueue", qos: .utility)
     private var operationQueue: OperationQueue = {
         let queue = OperationQueue()
@@ -34,7 +34,7 @@ class WallabagSyncing {
             isSyncing = true
             entriesSynced = []
             fetchEntry(page: 1)
-            group.notify(queue: dispatchQueue) { [unowned self] in
+            group.notify(queue: dispatchQueue) {
                 self.isSyncing = false
                 Log("Sync terminated")
                 self.purge()
@@ -47,7 +47,7 @@ class WallabagSyncing {
         group.enter()
         Log("fetch \(page)")
 
-        kit.entry(parameters: ["page": page], queue: dispatchQueue) { [unowned self] response in
+        kit.entry(parameters: ["page": page], queue: dispatchQueue) { response in
             let syncOperation = SyncOperation(kit: self.kit)
             syncOperation.completionBlock = {
                 self.group.leave()
