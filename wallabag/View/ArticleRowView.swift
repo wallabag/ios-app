@@ -26,8 +26,8 @@ struct ArticleRowView: View {
                 Text("Reading time")
                     .font(.footnote)
                 HStack {
-                    Image(systemName: "book")
-                    Image(systemName: "bookmark")
+                    Image(systemName: entry.isArchived ? "book.fill" : "book")
+                    Image(systemName: entry.isStarred ? "bookmark.fill" : "bookmark")
                     Text(entry.domainName ?? "")
                         .font(.footnote)
                 }

@@ -581,14 +581,11 @@
 		9C73EC4522D7907E008663B1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9CB4D03F22E8A9220078BD1C /* Registration */,
 				9C73EC4622D79093008663B1 /* ArticleListView.swift */,
 				9C9085F622DF3FF600D47262 /* ArticleRowView.swift */,
 				9CA5D4C322E0906A00167574 /* ArticleView.swift */,
-				9C37217622E1171100D363FB /* ClientIdClientSecretView.swift */,
-				9C40054922E1DE3200A6E5CA /* LoginView.swift */,
 				9C37217022E107D200D363FB /* MainView.swift */,
-				9C37217222E1087800D363FB /* RegistrationView.swift */,
-				9C37217422E1134600D363FB /* ServerView.swift */,
 				9C37216E22E0FBC500D363FB /* StubView.swift */,
 				9CA5D4C522E092B500167574 /* WebView.swift */,
 			);
@@ -611,6 +608,17 @@
 				9C961B2722770ECE009F80A4 /* Info.plist */,
 			);
 			path = wallabagUITests;
+			sourceTree = "<group>";
+		};
+		9CB4D03F22E8A9220078BD1C /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				9C37217622E1171100D363FB /* ClientIdClientSecretView.swift */,
+				9C40054922E1DE3200A6E5CA /* LoginView.swift */,
+				9C37217222E1087800D363FB /* RegistrationView.swift */,
+				9C37217422E1134600D363FB /* ServerView.swift */,
+			);
+			path = Registration;
 			sourceTree = "<group>";
 		};
 		9CF1ED932262794B00AF750F /* Mock */ = {

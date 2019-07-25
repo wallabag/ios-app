@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct ArticleView: View {
     var entry: Entry!
@@ -13,12 +14,16 @@ struct ArticleView: View {
     var body: some View {
         VStack {
             WebView(entry: entry)
-            Spacer()
             HStack {
-                Image(systemName: "book")
-                Image(systemName: "bookmark")
+                Button(action: {
+                    let realm = try? Realm()
+                    try? realm?.write {
+                        self.entry.isArchived.toggle()
+                    }
+                }, label: {Image(systemName: entry.isArchived ? "book.fill" : "book")})
+                Button(action: {}, label: {Image(systemName: entry.isStarred ? "bookmark.fill" : "bookmark")})
                 Spacer()
-                Image(systemName: "trash")
+                Button(action: {}, label: {Image(systemName: "trash")})
             }.padding()
         }.navigationBarTitle(entry.title ?? "")
     }

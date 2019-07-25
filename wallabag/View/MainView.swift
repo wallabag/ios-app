@@ -12,6 +12,8 @@ import Combine
 class AppSync: BindableObject {
     let didChange = PassthroughSubject<Void, Never>()
     
+    var inProgress = false
+    
     func sync() {
         let kit = WallabagKit(
             host: WallabagUserDefaults.host,
