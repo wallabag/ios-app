@@ -40,13 +40,13 @@ struct ClientIdClientSecretView: View {
     var body: some View {
         Form {
             Section(header: Text("Client id")) {
-                TextField($clientIdClientSecretHandler.clientId).onAppear {
+                TextField("Client id", text: $clientIdClientSecretHandler.clientId).onAppear {
                     self.clientIdClientSecretHandler.clientId = WallabagUserDefaults.clientId
                     
                 }
             }
             Section(header: Text("Client secret")) {
-                TextField($clientIdClientSecretHandler.clientSecret).onAppear {
+                TextField("Client secret", text: $clientIdClientSecretHandler.clientSecret).onAppear {
                     self.clientIdClientSecretHandler.clientSecret = WallabagUserDefaults.clientSecret
                 }
             }

@@ -12,7 +12,7 @@ public struct NetworkImage: SwiftUI.View {
 
     public let imageURL: URL?
     public let placeholderImage: UIImage
-    public let animation: Animation = .basic()
+    public let animation: Animation = .spring()
 
     public var body: some SwiftUI.View {
         Image(uiImage: image ?? placeholderImage)
@@ -26,7 +26,9 @@ public struct NetworkImage: SwiftUI.View {
         guard let imageURL = imageURL, image == nil else { return }
         URLSession.shared.dataTask(with: imageURL) { data, _, error in
             if nil == error {
-                self.image = UIImage(data: data!)
+                withAnimation(self.animation) {
+                    self.image = UIImage(data: data!)
+                }
             }
         }.resume()
     }

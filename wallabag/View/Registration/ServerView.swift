@@ -51,7 +51,7 @@ struct ServerView: View {
     var body: some View {
         Form {
             Section(header: Text("Server")) {
-                TextField($serverHandler.url)
+                TextField("Server", text: $serverHandler.url)
             }.onAppear {
                 self.serverHandler.url = WallabagUserDefaults.host
             }

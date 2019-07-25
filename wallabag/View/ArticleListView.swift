@@ -14,7 +14,7 @@ struct ArticleListView: View {
 
     var body: some View {
         NavigationView {
-            List(entries.results.identified(by: \.id)) { entry in
+            List(entries.results, id: \.id) { entry in
                 NavigationLink(destination: ArticleView(entry: entry)) {
                     ArticleRowView(entry: entry)
                 }

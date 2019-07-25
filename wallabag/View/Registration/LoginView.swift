@@ -44,12 +44,12 @@ struct LoginView: View {
     var body: some View {
         Form {
             Section(header: Text("Login")) {
-                TextField($loginHandler.login).onAppear {
+                TextField("Login", text: $loginHandler.login).onAppear {
                     self.loginHandler.login = WallabagUserDefaults.login
                 }
             }
             Section(header: Text("Passwod")) {
-                SecureField($loginHandler.password)
+                SecureField("Password", text: $loginHandler.password)
             }
             Button("Login") {
                 self.appState.registred = true
