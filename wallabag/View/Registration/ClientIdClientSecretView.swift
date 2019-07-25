@@ -9,10 +9,10 @@ import SwiftUI
 import Combine
 
 class ClientIdClientSecretHandler: BindableObject {
-    let didChange = PassthroughSubject<Void, Never>()
+    let willChange = PassthroughSubject<Void, Never>()
     var isValid: Bool = false {
         didSet {
-            didChange.send()
+            willChange.send()
             WallabagUserDefaults.clientId = clientId
             WallabagUserDefaults.clientSecret = clientSecret
         }

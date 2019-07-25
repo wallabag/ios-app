@@ -9,11 +9,11 @@ import SwiftUI
 import Combine
 
 class ServerHandler: BindableObject {
-    let didChange = PassthroughSubject<ServerHandler, Never>()
+    let willChange = PassthroughSubject<ServerHandler, Never>()
     
     var isValid: Bool = false {
         didSet {
-            didChange.send(self)
+            willChange.send(self)
         }
     }
     var url: String = "" {

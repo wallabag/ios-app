@@ -10,11 +10,11 @@ import Combine
 
 
 class LoginHandler: BindableObject {
-    let didChange = PassthroughSubject<Void, Never>()
+    let willChange = PassthroughSubject<Void, Never>()
     
     var isValid: Bool = false {
         didSet {
-            didChange.send()
+            willChange.send()
             if (isValid) {
                 WallabagUserDefaults.password = password
             }

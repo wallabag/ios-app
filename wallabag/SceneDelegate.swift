@@ -10,11 +10,11 @@ import UIKit
 import Combine
 
 class AppState: BindableObject {
-    let didChange = PassthroughSubject<Void, Never>()
+    let willChange = PassthroughSubject<Void, Never>()
     
     @Published var registred: Bool = false {
         didSet {
-            didChange.send()
+            willChange.send()
             WallabagUserDefaults.registred = registred
         }
     }

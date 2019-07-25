@@ -10,7 +10,7 @@ import WallabagKit
 import Combine
 
 class AppSync: BindableObject {
-    let didChange = PassthroughSubject<Void, Never>()
+    let willChange = PassthroughSubject<Void, Never>()
     
     var inProgress = false
     

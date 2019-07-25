@@ -10,7 +10,7 @@ import RealmSwift
 import SwiftUI
 
 final class DBData: BindableObject {
-    let didChange = PassthroughSubject<DBData, Never>()
+    let willChange = PassthroughSubject<DBData, Never>()
 
     private var notificationTokens: [NotificationToken] = []
     var results: Results<Entry>?
@@ -21,13 +21,13 @@ final class DBData: BindableObject {
         results = realm.objects(Entry.self)
         // Observe changes in the underlying model
         notificationTokens.append(results!.observe { _ in
-            self.didChange.send(self)
+            self.willChange.send(self)
         })
     }
 }
 
 class BindableResults<Element>: BindableObject where Element: RealmSwift.RealmCollectionValue {
-    let didChange = PassthroughSubject<Void, Never>()
+    let willChange = PassthroughSubject<Void, Never>()
 
     let results: Results<Element>
     private var token: NotificationToken!
@@ -39,7 +39,7 @@ class BindableResults<Element>: BindableObject where Element: RealmSwift.RealmCo
 
     func lateInit() {
         token = results.observe { _ in
-            self.didChange.send(())
+            self.willChange.send(())
         }
     }
 
