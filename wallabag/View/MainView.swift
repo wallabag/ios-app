@@ -9,49 +9,58 @@ import SwiftUI
 import WallabagKit
 import Combine
 
+class WallaSession: BindableObject {
+    enum State {
+        case unknown
+        case connected
+    }
+    let willChange = PassthroughSubject<Void, Never>()
+    
+    @Published var state: State = .unknown
+    var session: WallabagKit?
+    
+    func requestSession() {
+        let kit = WallabagKit(
+                    host: WallabagUserDefaults.host,
+                    clientID: WallabagUserDefaults.clientId,
+                    clientSecret: WallabagUserDefaults.clientSecret
+                )
+                kit.requestAuth(
+                    username: WallabagUserDefaults.login,
+                    password: WallabagUserDefaults.password
+                ) { auth in
+                    switch auth {
+                    case .success(_):
+                        self.state = .connected
+                    @unknown default:
+                        self.state = .unknown
+                    }
+        }
+    }
+}
+
 class AppSync: BindableObject {
     let willChange = PassthroughSubject<Void, Never>()
     
+    let session: WallaSession
+    
+    init() {
+        self.session = WallaSession()
+    }
+    
     var inProgress = false
     
-    func sync() {
-        let kit = WallabagKit(
-            host: WallabagUserDefaults.host,
-            clientID: WallabagUserDefaults.clientId,
-            clientSecret: WallabagUserDefaults.clientSecret
-        )
-        kit.requestAuth(
-            username: WallabagUserDefaults.login,
-            password: WallabagUserDefaults.password
-        ) { auth in
-            switch auth {
-            case .success:
-                let sync = WallabagSyncing(kit: kit)
-                sync.kit = kit
-                sync.sync {
-                    
-                }
-            case .error(_):
-                break
-            case .invalidParameter:
-                break
-            case .unexpectedError:
-                break
+    func requestSync() {
+        inProgress = true
+        _ = session.$state.sink { state in
+            if(state == .connected){
+                self.sync()
             }
-            print(auth)
-            /*[weak self] auth in
-             
-            switch auth {
-            case .success:
-                self?.currentState = .connected
-            case let .error(error):
-                Log(error)
-                self?.currentState = .error
-            case .invalidParameter, .unexpectedError:
-                self?.currentState = .error
-            }*/
         }
-        
+        session.requestSession()
+    }
+    
+    private func sync() {
         
     }
 }
@@ -60,9 +69,10 @@ struct MainView: View {
     @EnvironmentObject var appState: AppState
     
     var body: some View {
+        let appSync = AppSync()
         return ViewBuilder.buildBlock(
             appState.registred ?
-            ViewBuilder.buildEither(second: ArticleListView().environmentObject(AppSync())) :
+            ViewBuilder.buildEither(second: ArticleListView().environmentObject(appSync)) :
             ViewBuilder.buildEither(first: RegistrationView().environmentObject(appState))
         )
     }
