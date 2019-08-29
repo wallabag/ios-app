@@ -18,7 +18,7 @@ struct Password {
         set { value = newValue }
     }
     
-    init(initialValue: String) {
-        self.wrappedValue = initialValue
+    init(wrappedValue : String) {
+        self.wrappedValue = wrappedValue
     }
 }

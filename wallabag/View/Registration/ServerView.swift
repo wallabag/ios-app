@@ -9,13 +9,7 @@ import SwiftUI
 import Combine
 
 class ServerHandler: ObservableObject {
-    let willChange = PassthroughSubject<ServerHandler, Never>()
-    
-    var isValid: Bool = false {
-        didSet {
-            willChange.send(self)
-        }
-    }
+    @Published var isValid: Bool = false
     var url: String = "" {
         didSet {
             handle(url: url)
@@ -51,14 +45,14 @@ struct ServerView: View {
     var body: some View {
         Form {
             Section(header: Text("Server")) {
-                TextField("Server", text: $serverHandler.url)
+                TextField("Server", text: $serverHandler.url).disableAutocorrection(true)
             }.onAppear {
                 self.serverHandler.url = WallabagUserDefaults.host
             }
             NavigationLink(destination: ClientIdClientSecretView().environmentObject(appState)) {
                Text("Next")
             }.disabled(!serverHandler.isValid)
-        }
+        }.navigationBarTitle("Server")
     }
 }
 

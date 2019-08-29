@@ -9,10 +9,8 @@ import SwiftUI
 import Combine
 
 class ClientIdClientSecretHandler: ObservableObject {
-    let willChange = PassthroughSubject<Void, Never>()
-    var isValid: Bool = false {
+    @Published var isValid: Bool = false {
         didSet {
-            willChange.send()
             WallabagUserDefaults.clientId = clientId
             WallabagUserDefaults.clientSecret = clientSecret
         }
@@ -51,7 +49,7 @@ struct ClientIdClientSecretView: View {
                 }
             }
             NavigationLink("Next", destination: LoginView().environmentObject(appState)).disabled(!clientIdClientSecretHandler.isValid)
-        }
+        }.navigationBarTitle("Client id & secret")
     }
 }
 

@@ -10,11 +10,8 @@ import Combine
 
 
 class LoginHandler: ObservableObject {
-    let willChange = PassthroughSubject<Void, Never>()
-    
-    var isValid: Bool = false {
+    @Published var isValid: Bool = false {
         didSet {
-            willChange.send()
             if (isValid) {
                 WallabagUserDefaults.password = password
             }
@@ -54,7 +51,7 @@ struct LoginView: View {
             Button("Login") {
                 self.appState.registred = true
             }.disabled(!loginHandler.isValid)
-        }
+        }.navigationBarTitle("Login & Password")
     }
 }
 
