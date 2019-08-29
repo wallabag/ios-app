@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-class ServerHandler: BindableObject {
+class ServerHandler: ObservableObject {
     let willChange = PassthroughSubject<ServerHandler, Never>()
     
     var isValid: Bool = false {
@@ -46,7 +46,7 @@ class ServerHandler: BindableObject {
 
 struct ServerView: View {
     @EnvironmentObject var appState: AppState
-    @ObjectBinding var serverHandler = ServerHandler()
+    @ObservedObject var serverHandler = ServerHandler()
     
     var body: some View {
         Form {

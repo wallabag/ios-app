@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-class ClientIdClientSecretHandler: BindableObject {
+class ClientIdClientSecretHandler: ObservableObject {
     let willChange = PassthroughSubject<Void, Never>()
     var isValid: Bool = false {
         didSet {
@@ -35,7 +35,7 @@ class ClientIdClientSecretHandler: BindableObject {
 
 struct ClientIdClientSecretView: View {
     @EnvironmentObject var appState: AppState
-    @ObjectBinding var clientIdClientSecretHandler = ClientIdClientSecretHandler()
+    @ObservedObject var clientIdClientSecretHandler = ClientIdClientSecretHandler()
     
     var body: some View {
         Form {

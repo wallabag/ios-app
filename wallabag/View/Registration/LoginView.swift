@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 
-class LoginHandler: BindableObject {
+class LoginHandler: ObservableObject {
     let willChange = PassthroughSubject<Void, Never>()
     
     var isValid: Bool = false {
@@ -38,7 +38,7 @@ class LoginHandler: BindableObject {
 }
 
 struct LoginView: View {
-    @ObjectBinding var loginHandler = LoginHandler()
+    @ObservedObject var loginHandler = LoginHandler()
     @EnvironmentObject var appState: AppState
     
     var body: some View {

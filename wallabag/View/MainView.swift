@@ -9,7 +9,7 @@ import SwiftUI
 import WallabagKit
 import Combine
 
-class WallaSession: BindableObject {
+class WallaSession: ObservableObject {
     enum State {
         case unknown
         case connected
@@ -39,7 +39,7 @@ class WallaSession: BindableObject {
     }
 }
 
-class AppSync: BindableObject {
+class AppSync: ObservableObject {
     let willChange = PassthroughSubject<Void, Never>()
     
     let session: WallaSession

@@ -9,15 +9,12 @@ import SwiftUI
 import UIKit
 import Combine
 
-class AppState: BindableObject {
-    let willChange = PassthroughSubject<Void, Never>()
-    
+class AppState: ObservableObject {
     @Published var registred: Bool = false {
         didSet {
-            willChange.send()
             WallabagUserDefaults.registred = registred
         }
-    }
+    } 
     
     init() {
         registred = WallabagUserDefaults.registred

@@ -13,18 +13,18 @@ struct ArticleListView: View {
         case unarchived
     }
     @EnvironmentObject var appSync: AppSync
-    @ObjectBinding var entries = BindableResults<Entry>(results: try! Realm().objects(Entry.self))
+    @ObservedObject var entries = BindableResults<Entry>(results: try! Realm().objects(Entry.self))
     @State var filter: Filter = .unarchived
 
     var body: some View {
         NavigationView {
             VStack {
-                SegmentedControl(selection: $filter) {
+                /*SegmentedControl(selection: $filter) {
                     Text("All").tag(3)
                     Text("Read").tag(0)
                     Text("Starred").tag(1)
                     Text("Unread").tag(2)
-            }
+            }*/
             List(entries.results, id: \.id) { entry in
                 NavigationLink(destination: ArticleView(entry: entry)) {
                     ArticleRowView(entry: entry)
@@ -42,7 +42,7 @@ struct ArticleListView: View {
                                 Image(systemName: "arrow.counterclockwise")
                             }
                         ).disabled(appSync.inProgress)
-                        PresentationLink(destination: StubView(), label: {Image(systemName: "plus")})
+                        NavigationLink(destination: StubView(), label: {Image(systemName: "plus")})
                     }
                 )
             )
