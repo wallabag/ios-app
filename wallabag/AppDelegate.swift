@@ -11,6 +11,7 @@ import CoreSpotlight
 import Crashlytics
 import Fabric
 import RealmSwift
+import Swinject
 import SwinjectStoryboard
 import UIKit
 import UserNotifications
@@ -19,6 +20,50 @@ import WallabagKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    let container: Container = {
+        let container = Container()
+        container.register(AnalyticsManager.self) { _ in AnalyticsManager() }.inObjectScope(.container)
+        container.register(Realm.self) { _ in
+            do {
+                let config = Realm.Configuration(
+                    schemaVersion: 8,
+                    migrationBlock: { _, _ in
+                    }
+                )
+
+                Realm.Configuration.defaultConfiguration = config
+                Log("Realm path: \(Realm.Configuration.defaultConfiguration.fileURL?.absoluteString ?? "")")
+                return try Realm()
+            } catch {
+                fatalError("Error init realm")
+            }
+        }.inObjectScope(.container)
+        container.register(ThemeManager.self) { _ in
+            ThemeManager(currentTheme: White())
+        }.inObjectScope(.container)
+        container.register(WallabagSetting.self) { _ in WallabagSetting() }.inObjectScope(.container)
+        container.register(WallabagSession.self) { resolver in
+            guard let setting = resolver.resolve(WallabagSetting.self) else { fatalError() }
+            let session = WallabagSession(setting: setting)
+
+            return session
+        }.inObjectScope(.container)
+        container.register(ArticlePlayer.self) { resolver in
+            let articlePlayer = ArticlePlayer()
+            articlePlayer.analytics = resolver.resolve(AnalyticsManager.self)
+            articlePlayer.setting = resolver.resolve(WallabagSetting.self)
+            return articlePlayer
+        }.inObjectScope(.container)
+        /*container.register(MazouteSDK.self) { _ in
+            guard let baseURL = AppDelegate.infoForKey("API_URL"),
+                let username = AppDelegate.infoForKey("API_USERNAME"),
+                let password = AppDelegate.infoForKey("API_PASSWORD") else { fatalError() }
+            return MazouteSDK(baseURL: baseURL, username: username, password: password)
+        }*/
+
+        return container
+    }()
+    
     var window: UIWindow?
     var setting: WallabagSetting!
     var wallabagSession: WallabagSession!

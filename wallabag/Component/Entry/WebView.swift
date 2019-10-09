@@ -22,8 +22,17 @@ struct WebView: UIViewRepresentable {
 
 #if DEBUG
     struct WebView_Previews: PreviewProvider {
+        static var entry: Entry = {
+            let entry = Entry()
+            entry.title = "Test"
+            entry.content = "<p>Nice Content</p>"
+            return entry
+        }()
         static var previews: some View {
-            Text("No preview")
+            Group {
+                WebView(entry: entry).colorScheme(.light)
+                WebView(entry: entry).colorScheme(.dark)
+            }
         }
     }
 #endif

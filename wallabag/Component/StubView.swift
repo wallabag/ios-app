@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct StubView: View {
-    
     var body: some View {
         Text("test")
     }
@@ -17,7 +16,7 @@ struct StubView: View {
 #if DEBUG
 struct StubView_Previews: PreviewProvider {
     static var previews: some View {
-        StubView()
+        StubView().previewLayout(.fixed(width: 300, height: 70))
     }
 }
 #endif

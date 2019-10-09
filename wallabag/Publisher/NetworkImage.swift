@@ -38,7 +38,7 @@ public struct NetworkImage: SwiftUI.View {
     struct NetworkImage_Previews: PreviewProvider {
         static var previews: some SwiftUI.View {
             NetworkImage(imageURL: URL(string: "https://www.apple.com/favicon.ico")!,
-                         placeholderImage: UIImage(systemName: "bookmark")!)
+                         placeholderImage: UIImage(systemName: "bookmark")!).previewLayout(.fixed(width: 70, height: 70))
         }
     }
 #endif
