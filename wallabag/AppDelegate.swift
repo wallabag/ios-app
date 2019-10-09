@@ -61,16 +61,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
-
-        //setting = SwinjectStoryboard.defaultContainer.resolve(WallabagSetting.self)
-        //realm = SwinjectStoryboard.defaultContainer.resolve(Realm.self)
         
-
-        configureTheme()
         handleArgs()
 
-        setupQuickAction()
-        requestBadge()
+        //setupQuickAction()
+        //requestBadge()
 
         sendUsageVersion()
 
@@ -91,12 +86,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         /*WallabagKit.getVersion(from: setting.get(for: .host)) { version in
             Answers.logCustomEvent(withName: "Server version", customAttributes: ["server_version": version.version])
         }*/
-    }
-
-    private func configureTheme() {
-        let theme = setting.get(for: .theme)
-       // SwinjectStoryboard.defaultContainer.resolve(ThemeManager.self)?.apply(theme)
-        Answers.logCustomEvent(withName: "Theme", customAttributes: ["theme": theme])
     }
 
     private func handleArgs() {
@@ -139,11 +128,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_: UIApplication) {
-        updateBadge()
+        //updateBadge()
     }
 
     func applicationWillTerminate(_: UIApplication) {
-        updateBadge()
+        //updateBadge()
     }
 
     func application(_: UIApplication, performFetchWithCompletionHandler _: @escaping (UIBackgroundFetchResult) -> Swift.Void) {
@@ -159,13 +148,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          } */
     }
 
-    private func requestBadge() {
+    /*private func requestBadge() {
         if setting.get(for: .badgeEnabled) {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in }
         }
-    }
+    }*/
 
-    private func updateBadge() {
+    /*private func updateBadge() {
         if !setting.get(for: .badgeEnabled) {
             UIApplication.shared.applicationIconBadgeNumber = 0
             return
@@ -177,8 +166,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         let entries = try? Realm().objects(Entry.self).filter(mode.predicate())
         UIApplication.shared.applicationIconBadgeNumber = entries?.count ?? 0
-    }
+    }*/
 
+    /*
     private func setupQuickAction() {
         if setting.get(for: .wallabagIsConfigured) {
             let starredAction = UIApplicationShortcutItem(type: RetrieveMode.starredArticles.rawValue, localizedTitle: RetrieveMode.starredArticles.humainReadable().localized, localizedSubtitle: nil, icon: UIApplicationShortcutIcon(templateImageName: "starred"), userInfo: [:])
@@ -192,7 +182,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let archivedAction = UIApplicationShortcutItem(type: RetrieveMode.archivedArticles.rawValue, localizedTitle: RetrieveMode.archivedArticles.humainReadable().localized, localizedSubtitle: nil, icon: UIApplicationShortcutIcon(templateImageName: "readed"), userInfo: [:])
             UIApplication.shared.shortcutItems = [unarchivedAction, archivedAction, starredAction]
         }
-    }
+    }*/
 
     func application(_: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler _: @escaping (Bool) -> Void) {
        /* guard let navController = window!.rootViewController as? UINavigationController,
