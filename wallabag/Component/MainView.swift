@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import WallabagKit
 import Combine
 
 class WallaSession: ObservableObject {
@@ -16,10 +15,9 @@ class WallaSession: ObservableObject {
     }
     
     @Published var state: State = .unknown
-    var session: WallabagKit?
     
     func requestSession() {
-        let kit = WallabagKit(
+        /*let kit = WallabagKit(
             host: WallabagUserDefaults.host,
             clientID: WallabagUserDefaults.clientId,
             clientSecret: WallabagUserDefaults.clientSecret
@@ -34,7 +32,7 @@ class WallaSession: ObservableObject {
             @unknown default:
                 self.state = .unknown
             }
-        }
+        }*/
     }
 }
 

@@ -9,7 +9,6 @@
 import CoreSpotlight
 import Foundation
 import MobileCoreServices
-import WallabagKit
 
 extension Entry {
     var spotlightIdentifier: String {
@@ -23,7 +22,7 @@ extension Entry {
 
         return searchableItemAttributeSet
     }
-
+/*
     func hydrate(from article: WallabagKitEntry) {
         if 0 == id {
             setValue(article.id, forKey: "id")
@@ -45,5 +44,5 @@ extension Entry {
             tag.slug = $0.slug ?? ""
             tags.append(tag)
         }
-    }
+    }*/
 }

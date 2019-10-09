@@ -9,7 +9,7 @@
 import Social
 import UIKit
 import WallabagCommon
-import WallabagKit
+
 
 @objc(ShareViewController)
 class ShareViewController: UIViewController {
@@ -49,7 +49,7 @@ class ShareViewController: UIViewController {
 
     override func viewWillAppear(_: Bool) {
         if setting.get(for: .wallabagIsConfigured), let attachements = getAttachements() {
-            let kit = WallabagKit(host: setting.get(for: .host), clientID: setting.get(for: .clientId), clientSecret: setting.get(for: .clientSecret))
+            /*let kit = WallabagKit(host: setting.get(for: .host), clientID: setting.get(for: .clientId), clientSecret: setting.get(for: .clientSecret))
             kit.requestAuth(username: setting.get(for: .username), password: setting.getPassword()!) { [unowned self] auth in
                 switch auth {
                 case .success:
@@ -70,7 +70,7 @@ class ShareViewController: UIViewController {
                 default:
                     self.clearView(withError: true)
                 }
-            }
+            }*/
         }
     }
 

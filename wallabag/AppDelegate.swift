@@ -6,17 +6,14 @@
 //  Copyright © 2016 maxime marinel. All rights reserved.
 //
 
-import AlamofireNetworkActivityIndicator
 import CoreSpotlight
 import Crashlytics
 import Fabric
 import RealmSwift
 import Swinject
-import SwinjectStoryboard
 import UIKit
 import UserNotifications
 import WallabagCommon
-import WallabagKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -42,12 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             ThemeManager(currentTheme: White())
         }.inObjectScope(.container)
         container.register(WallabagSetting.self) { _ in WallabagSetting() }.inObjectScope(.container)
-        container.register(WallabagSession.self) { resolver in
-            guard let setting = resolver.resolve(WallabagSetting.self) else { fatalError() }
-            let session = WallabagSession(setting: setting)
-
-            return session
-        }.inObjectScope(.container)
         container.register(ArticlePlayer.self) { resolver in
             let articlePlayer = ArticlePlayer()
             articlePlayer.analytics = resolver.resolve(AnalyticsManager.self)
@@ -66,29 +57,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var setting: WallabagSetting!
-    var wallabagSession: WallabagSession!
     var realm: Realm!
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
 
-        setting = SwinjectStoryboard.defaultContainer.resolve(WallabagSetting.self)
-        realm = SwinjectStoryboard.defaultContainer.resolve(Realm.self)
-        wallabagSession = SwinjectStoryboard.defaultContainer.resolve(WallabagSession.self)
+        //setting = SwinjectStoryboard.defaultContainer.resolve(WallabagSetting.self)
+        //realm = SwinjectStoryboard.defaultContainer.resolve(Realm.self)
+        
 
         configureTheme()
-        configureNetworkIndicator()
         handleArgs()
 
-        Log(wallabagSession.currentState)
-
-        guard wallabagSession.currentState != .missingConfiguration else {
-            let homeController = window?.rootViewController?.storyboard?.instantiateViewController(withIdentifier: "home") as? HomeViewController
-            window?.rootViewController = homeController
-            return true
-        }
-
-        wallabagSession.startSession()
         setupQuickAction()
         requestBadge()
 
@@ -108,14 +88,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func sendUsageVersion() {
-        WallabagKit.getVersion(from: setting.get(for: .host)) { version in
+        /*WallabagKit.getVersion(from: setting.get(for: .host)) { version in
             Answers.logCustomEvent(withName: "Server version", customAttributes: ["server_version": version.version])
-        }
+        }*/
     }
 
     private func configureTheme() {
         let theme = setting.get(for: .theme)
-        SwinjectStoryboard.defaultContainer.resolve(ThemeManager.self)?.apply(theme)
+       // SwinjectStoryboard.defaultContainer.resolve(ThemeManager.self)?.apply(theme)
         Answers.logCustomEvent(withName: "Theme", customAttributes: ["theme": theme])
     }
 
@@ -126,18 +106,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-    private func configureNetworkIndicator() {
-        NetworkActivityIndicatorManager.shared.isEnabled = true
-        NetworkActivityIndicatorManager.shared.startDelay = 0.1
-    }
-
     func application(_: UIApplication, continue userActivity: NSUserActivity, restorationHandler _: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
-        guard
+        /*guard
             let mainController = window?.rootViewController! as? UINavigationController,
             let articlesTable = mainController.viewControllers.first as? ArticlesTableViewController else {
             return false
         }
-        articlesTable.restoreUserActivityState(userActivity)
+        articlesTable.restoreUserActivityState(userActivity)*/
         return true
     }
 
@@ -220,13 +195,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler _: @escaping (Bool) -> Void) {
-        guard let navController = window!.rootViewController as? UINavigationController,
+       /* guard let navController = window!.rootViewController as? UINavigationController,
             let rootController = navController.viewControllers.first as? ArticlesTableViewController else {
             return
         }
         if let mode = RetrieveMode(rawValue: shortcutItem.type) {
             rootController.mode = mode
-        }
+        }*/
     }
 
     func resetApplication() {
