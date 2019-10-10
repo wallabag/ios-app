@@ -5,31 +5,35 @@
 //  Created by Marinel Maxime on 18/07/2019.
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
 
 class ServerHandler: ObservableObject {
-    @Published var isValid: Bool = false
+    @Published var isValid: Bool = false {
+        didSet {
+            if isValid {
+                WallabagUserDefaults.host = url
+            }
+        }
+    }
+
     var url: String = "" {
         didSet {
             handle(url: url)
         }
     }
-    
+
     private func handle(url: String) {
         isValid = validateServer(string: url)
-        if (isValid) {
-           WallabagUserDefaults.host = url
-        }
     }
-    
+
     private func validateServer(string: String) -> Bool {
         do {
             let regex = try NSRegularExpression(pattern: "(http|https)://", options: [])
             guard let url = URL(string: string),
                 UIApplication.shared.canOpenURL(url),
                 1 == regex.matches(in: string, options: [], range: NSRange(location: 0, length: string.count)).count else {
-                    return false
+                return false
             }
             return true
         } catch {
@@ -41,7 +45,7 @@ class ServerHandler: ObservableObject {
 struct ServerView: View {
     @EnvironmentObject var appState: AppState
     @ObservedObject var serverHandler = ServerHandler()
-    
+
     var body: some View {
         Form {
             Section(header: Text("Server")) {
@@ -49,17 +53,19 @@ struct ServerView: View {
             }.onAppear {
                 self.serverHandler.url = WallabagUserDefaults.host
             }
-            NavigationLink(destination: ClientIdClientSecretView().environmentObject(appState)) {
-               Text("Next")
+            NavigationLink(destination: ClientIdClientSecretView()) {
+                Text("Next")
             }.disabled(!serverHandler.isValid)
         }.navigationBarTitle("Server")
     }
 }
 
 #if DEBUG
-struct ServerView_Previews: PreviewProvider {
-    static var previews: some View {
-        ServerView()
+    struct ServerView_Previews: PreviewProvider {
+        static var previews: some View {
+            NavigationView {
+                ServerView().environmentObject(AppState())
+            }
+        }
     }
-}
 #endif

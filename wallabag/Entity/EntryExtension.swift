@@ -22,27 +22,28 @@ extension Entry {
 
         return searchableItemAttributeSet
     }
-/*
-    func hydrate(from article: WallabagKitEntry) {
-        if 0 == id {
-            setValue(article.id, forKey: "id")
-        }
-        title = article.title
-        content = article.content
-        createdAt = Date.fromISOString(article.createdAt)
-        updatedAt = Date.fromISOString(article.updatedAt)
-        domainName = article.domainName
-        isArchived = article.isArchived == 1
-        isStarred = article.isStarred == 1
-        previewPicture = article.previewPicture
-        url = article.url
-        readingTime = article.readingTime ?? 0
-        article.tags?.forEach {
-            let tag = Tag()
-            tag.id = $0.id!
-            tag.label = $0.label ?? ""
-            tag.slug = $0.slug ?? ""
-            tags.append(tag)
-        }
-    }*/
+
+    /*
+     func hydrate(from article: WallabagKitEntry) {
+         if 0 == id {
+             setValue(article.id, forKey: "id")
+         }
+         title = article.title
+         content = article.content
+         createdAt = Date.fromISOString(article.createdAt)
+         updatedAt = Date.fromISOString(article.updatedAt)
+         domainName = article.domainName
+         isArchived = article.isArchived == 1
+         isStarred = article.isStarred == 1
+         previewPicture = article.previewPicture
+         url = article.url
+         readingTime = article.readingTime ?? 0
+         article.tags?.forEach {
+             let tag = Tag()
+             tag.id = $0.id!
+             tag.label = $0.label ?? ""
+             tag.slug = $0.slug ?? ""
+             tags.append(tag)
+         }
+     }*/
 }

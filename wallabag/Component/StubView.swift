@@ -14,9 +14,9 @@ struct StubView: View {
 }
 
 #if DEBUG
-struct StubView_Previews: PreviewProvider {
-    static var previews: some View {
-        StubView().previewLayout(.fixed(width: 300, height: 70))
+    struct StubView_Previews: PreviewProvider {
+        static var previews: some View {
+            StubView().previewLayout(.fixed(width: 300, height: 70))
+        }
     }
-}
 #endif

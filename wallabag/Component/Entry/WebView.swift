@@ -28,6 +28,7 @@ struct WebView: UIViewRepresentable {
             entry.content = "<p>Nice Content</p>"
             return entry
         }()
+
         static var previews: some View {
             Group {
                 WebView(entry: entry).colorScheme(.light)

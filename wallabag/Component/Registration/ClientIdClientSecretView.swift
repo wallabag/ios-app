@@ -5,8 +5,8 @@
 //  Created by Marinel Maxime on 18/07/2019.
 //
 
-import SwiftUI
 import Combine
+import SwiftUI
 
 class ClientIdClientSecretHandler: ObservableObject {
     @Published var isValid: Bool = false {
@@ -15,48 +15,51 @@ class ClientIdClientSecretHandler: ObservableObject {
             WallabagUserDefaults.clientSecret = clientSecret
         }
     }
+
     var clientId: String = "" {
         didSet {
             validate()
         }
     }
+
     var clientSecret: String = "" {
         didSet {
             validate()
         }
     }
-    
-    private func validate(){
+
+    init() {
+        clientId = WallabagUserDefaults.clientId
+        clientSecret = WallabagUserDefaults.clientSecret
+    }
+
+    private func validate() {
         isValid = !clientId.isEmpty && !clientSecret.isEmpty
     }
 }
 
 struct ClientIdClientSecretView: View {
-    @EnvironmentObject var appState: AppState
     @ObservedObject var clientIdClientSecretHandler = ClientIdClientSecretHandler()
-    
+
     var body: some View {
         Form {
             Section(header: Text("Client id")) {
-                TextField("Client id", text: $clientIdClientSecretHandler.clientId).onAppear {
-                    self.clientIdClientSecretHandler.clientId = WallabagUserDefaults.clientId
-                    
-                }
+                TextField("Client id", text: $clientIdClientSecretHandler.clientId)
             }
             Section(header: Text("Client secret")) {
-                TextField("Client secret", text: $clientIdClientSecretHandler.clientSecret).onAppear {
-                    self.clientIdClientSecretHandler.clientSecret = WallabagUserDefaults.clientSecret
-                }
+                TextField("Client secret", text: $clientIdClientSecretHandler.clientSecret)
             }
-            NavigationLink("Next", destination: LoginView().environmentObject(appState)).disabled(!clientIdClientSecretHandler.isValid)
+            NavigationLink("Next", destination: LoginView()).disabled(!clientIdClientSecretHandler.isValid)
         }.navigationBarTitle("Client id & secret")
     }
 }
 
 #if DEBUG
-struct ClientIdClientSecretView_Previews: PreviewProvider {
-    static var previews: some View {
-        ClientIdClientSecretView()
+    struct ClientIdClientSecretView_Previews: PreviewProvider {
+        static var previews: some View {
+            NavigationView {
+                ClientIdClientSecretView()
+            }
+        }
     }
-}
 #endif

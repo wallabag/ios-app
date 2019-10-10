@@ -5,8 +5,8 @@
 //  Created by Marinel Maxime on 18/07/2019.
 //
 
-import SwiftUI
 import RealmSwift
+import SwiftUI
 
 struct ArticleView: View {
     var entry: Entry!
@@ -20,10 +20,10 @@ struct ArticleView: View {
                     try? realm?.write {
                         self.entry.isArchived.toggle()
                     }
-                }, label: {Image(systemName: entry.isArchived ? "book.fill" : "book")})
-                Button(action: {}, label: {Image(systemName: entry.isStarred ? "bookmark.fill" : "bookmark")})
+                }, label: { Image(systemName: entry.isArchived ? "book.fill" : "book") })
+                Button(action: {}, label: { Image(systemName: entry.isStarred ? "bookmark.fill" : "bookmark") })
                 Spacer()
-                Button(action: {}, label: {Image(systemName: "trash")})
+                Button(action: {}, label: { Image(systemName: "trash") })
             }.padding()
         }.navigationBarTitle(entry.title ?? "")
     }

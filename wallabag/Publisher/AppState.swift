@@ -5,8 +5,8 @@
 //  Created by Marinel Maxime on 09/10/2019.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 class AppState: ObservableObject {
     @Published var registred: Bool = false {
@@ -14,7 +14,7 @@ class AppState: ObservableObject {
             WallabagUserDefaults.registred = registred
         }
     }
-    
+
     init() {
         registred = WallabagUserDefaults.registred
     }

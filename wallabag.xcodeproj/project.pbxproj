@@ -447,11 +447,11 @@
 		9C73EC4522D7907E008663B1 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				9C37217022E107D200D363FB /* MainView.swift */,
+				9C37216E22E0FBC500D363FB /* StubView.swift */,
 				9C5EDEE8234E887A00141DFD /* About */,
 				9C5EDEE2234E810C00141DFD /* Entry */,
 				9CB4D03F22E8A9220078BD1C /* Registration */,
-				9C37217022E107D200D363FB /* MainView.swift */,
-				9C37216E22E0FBC500D363FB /* StubView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
