@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct AboutView: View {
-    var version: String = {
-        Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String ?? "0"
-    }()
+    @BundleKey("CFBundleShortVersionString")
+    var version: String
 
-    var build: String = {
-        Bundle.main.infoDictionary!["CFBundleVersion"] as? String ?? "0"
-    }()
+    @BundleKey("CFBundleVersion")
+    var build: String
 
     var body: some View {
         VStack {

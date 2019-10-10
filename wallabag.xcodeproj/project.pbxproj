@@ -49,9 +49,13 @@
 		9C961B2622770ECE009F80A4 /* WallabagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C961B2522770ECE009F80A4 /* WallabagUITests.swift */; };
 		9CA5D4C422E0906A00167574 /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D4C322E0906A00167574 /* ArticleView.swift */; };
 		9CA5D4C622E092B500167574 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D4C522E092B500167574 /* WebView.swift */; };
+		9CB41DC4234FC03C00C2740B /* ServerTextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB41DC3234FC03C00C2740B /* ServerTextFieldValidator.swift */; };
+		9CB41DC6234FC14500C2740B /* ClientIdClientServerTextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB41DC5234FC14500C2740B /* ClientIdClientServerTextFieldValidator.swift */; };
+		9CB41DC8234FC23200C2740B /* LoginTextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB41DC7234FC23200C2740B /* LoginTextFieldValidator.swift */; };
 		9CCC4AFC22E3BFD400F73891 /* WallabagUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC4AFB22E3BFD400F73891 /* WallabagUserDefaults.swift */; };
 		9CCC4AFE22E5D92E00F73891 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC4AFD22E5D92E00F73891 /* Password.swift */; };
 		9CCEFF8C2264A37B00441A18 /* SettingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCEFF8B2264A37B00441A18 /* SettingMock.swift */; };
+		9CE32CBA234F648A004DD045 /* BundleKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE32CB9234F648A004DD045 /* BundleKey.swift */; };
 		9CF1ED952262796D00AF750F /* AnalyticsManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1ED942262796D00AF750F /* AnalyticsManagerMock.swift */; };
 		9CF1ED9722627D4500AF750F /* ClientIdViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1ED9622627D4500AF750F /* ClientIdViewControllerTests.swift */; };
 		BF_047B132AA818924F42C07857A48D5648 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_250D2539097D8AD4F65F91206902AF43 /* AnalyticsManager.swift */; };
@@ -219,9 +223,13 @@
 		9C961B2722770ECE009F80A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CA5D4C322E0906A00167574 /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
 		9CA5D4C522E092B500167574 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		9CB41DC3234FC03C00C2740B /* ServerTextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerTextFieldValidator.swift; sourceTree = "<group>"; };
+		9CB41DC5234FC14500C2740B /* ClientIdClientServerTextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientIdClientServerTextFieldValidator.swift; sourceTree = "<group>"; };
+		9CB41DC7234FC23200C2740B /* LoginTextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextFieldValidator.swift; sourceTree = "<group>"; };
 		9CCC4AFB22E3BFD400F73891 /* WallabagUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagUserDefaults.swift; sourceTree = "<group>"; };
 		9CCC4AFD22E5D92E00F73891 /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
 		9CCEFF8B2264A37B00441A18 /* SettingMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMock.swift; sourceTree = "<group>"; };
+		9CE32CB9234F648A004DD045 /* BundleKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleKey.swift; sourceTree = "<group>"; };
 		9CF1ED942262796D00AF750F /* AnalyticsManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManagerMock.swift; sourceTree = "<group>"; };
 		9CF1ED9622627D4500AF750F /* ClientIdViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientIdViewControllerTests.swift; sourceTree = "<group>"; };
 		FR_0499A5EA97C3340763652A3DED80B81F /* black.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = black.css; sourceTree = "<group>"; };
@@ -462,6 +470,7 @@
 				9CCC4AFD22E5D92E00F73891 /* Password.swift */,
 				9C889E7E22E66BCA00B9F767 /* UserDefault.swift */,
 				9C5EDEE6234E848D00141DFD /* Injector.swift */,
+				9CE32CB9234F648A004DD045 /* BundleKey.swift */,
 			);
 			path = PropertyWrapper;
 			sourceTree = "<group>";
@@ -473,6 +482,16 @@
 				9C961B2722770ECE009F80A4 /* Info.plist */,
 			);
 			path = wallabagUITests;
+			sourceTree = "<group>";
+		};
+		9CB41DC2234FC00D00C2740B /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				9CB41DC3234FC03C00C2740B /* ServerTextFieldValidator.swift */,
+				9CB41DC5234FC14500C2740B /* ClientIdClientServerTextFieldValidator.swift */,
+				9CB41DC7234FC23200C2740B /* LoginTextFieldValidator.swift */,
+			);
+			path = Validator;
 			sourceTree = "<group>";
 		};
 		9CB4D03F22E8A9220078BD1C /* Registration */ = {
@@ -710,6 +729,7 @@
 				G_60BF241AD87B2847EBA2C59F302A8DF3 /* Storyboard */,
 				G_C695FAD8BA58329D13ADE1E32DD7B622 /* Theme */,
 				G_E288595FB7758C59B0C10F1A195B1273 /* UI */,
+				9CB41DC2234FC00D00C2740B /* Validator */,
 			);
 			path = wallabag;
 			sourceTree = "<group>";
@@ -988,6 +1008,7 @@
 				BF_9DC6B3C1B4267E7BF73A9F9365B14227 /* Dusk.swift in Sources */,
 				BF_B9C6AF04850C3AB60715C3FF13432B78 /* Entry.swift in Sources */,
 				9C37217722E1171100D363FB /* ClientIdClientSecretView.swift in Sources */,
+				9CB41DC8234FC23200C2740B /* LoginTextFieldValidator.swift in Sources */,
 				9C37217122E107D200D363FB /* MainView.swift in Sources */,
 				BF_E86293481ACAC83DE1587222089DDC5D /* EntryExtension.swift in Sources */,
 				BF_83312011338DF667DC8174DD85C2A1B7 /* Int.swift in Sources */,
@@ -998,10 +1019,12 @@
 				9C73EC4922D791C1008663B1 /* DBData.swift in Sources */,
 				9C40054A22E1DE3200A6E5CA /* LoginView.swift in Sources */,
 				9C9085F922DF44CD00D47262 /* NetworkImage.swift in Sources */,
+				9CE32CBA234F648A004DD045 /* BundleKey.swift in Sources */,
 				BF_C26A33FB794CDBA88061605B28BCADDE /* Night.swift in Sources */,
 				BF_DB7F468621011B78AA80968FF9B4DD93 /* RetrieveMode.swift in Sources */,
 				BF_A31D94510D6C4BD65AC0122EB64626C8 /* String.swift in Sources */,
 				9C5EDEE7234E848D00141DFD /* Injector.swift in Sources */,
+				9CB41DC4234FC03C00C2740B /* ServerTextFieldValidator.swift in Sources */,
 				9C73EC4422D79037008663B1 /* SceneDelegate.swift in Sources */,
 				BF_E5E5782D6CDF4EAC54A27F1EAA358264 /* ThemeManager.swift in Sources */,
 				9CCC4AFC22E3BFD400F73891 /* WallabagUserDefaults.swift in Sources */,
@@ -1010,6 +1033,7 @@
 				9CA5D4C622E092B500167574 /* WebView.swift in Sources */,
 				9C37217322E1087800D363FB /* RegistrationView.swift in Sources */,
 				9C37217522E1134600D363FB /* ServerView.swift in Sources */,
+				9CB41DC6234FC14500C2740B /* ClientIdClientServerTextFieldValidator.swift in Sources */,
 				BF_767B670EFD6E74785BD2212AF6B9A34A /* UIImageView.swift in Sources */,
 				BF_A263058FD57BCE7DECF1322ABBB1C729 /* UIPodcastSlider.swift in Sources */,
 				BF_27B3C5BB859104CEF0AB1D52843622B4 /* WKWebView.swift in Sources */,

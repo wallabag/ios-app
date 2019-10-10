@@ -5,57 +5,20 @@
 //  Created by Marinel Maxime on 18/07/2019.
 //
 
-import Combine
 import SwiftUI
-
-class ServerHandler: ObservableObject {
-    @Published var isValid: Bool = false {
-        didSet {
-            if isValid {
-                WallabagUserDefaults.host = url
-            }
-        }
-    }
-
-    var url: String = "" {
-        didSet {
-            handle(url: url)
-        }
-    }
-
-    private func handle(url: String) {
-        isValid = validateServer(string: url)
-    }
-
-    private func validateServer(string: String) -> Bool {
-        do {
-            let regex = try NSRegularExpression(pattern: "(http|https)://", options: [])
-            guard let url = URL(string: string),
-                UIApplication.shared.canOpenURL(url),
-                1 == regex.matches(in: string, options: [], range: NSRange(location: 0, length: string.count)).count else {
-                return false
-            }
-            return true
-        } catch {
-            return false
-        }
-    }
-}
 
 struct ServerView: View {
     @EnvironmentObject var appState: AppState
-    @ObservedObject var serverHandler = ServerHandler()
+    @ObservedObject var serverValidator = ServerTextFieldValidator()
 
     var body: some View {
         Form {
             Section(header: Text("Server")) {
-                TextField("Server", text: $serverHandler.url).disableAutocorrection(true)
-            }.onAppear {
-                self.serverHandler.url = WallabagUserDefaults.host
+                TextField("Server", text: $serverValidator.url).disableAutocorrection(true)
             }
             NavigationLink(destination: ClientIdClientSecretView()) {
                 Text("Next")
-            }.disabled(!serverHandler.isValid)
+            }.disabled(!serverValidator.isValid)
         }.navigationBarTitle("Server")
     }
 }
