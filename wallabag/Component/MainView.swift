@@ -6,9 +6,12 @@
 //
 
 import Combine
+import RealmSwift
 import SwiftUI
 
 class AppSync: ObservableObject {
+    @Injector var realm: Realm
+
     let session: WallabagSession
 
     init() {
@@ -34,15 +37,31 @@ class AppSync: ObservableObject {
     }
 
     private func sync() {
-        _ = session.kit.send(decodable: WallabagCollection<WallabagEntry>.self, to: WallabagEntryEndpoint.get)
+        fetchEntries { collection in
+            self.realm.beginWrite()
+            for wallabagEntry in collection.items {
+                if let entry = self.realm.object(ofType: Entry.self, forPrimaryKey: wallabagEntry.id) {}
+                let entry = Entry()
+                entry.hydrate(from: wallabagEntry)
+                self.realm.add(entry, update: .modified)
+            }
+            try? self.realm.commitWrite()
+        }
+
+        DispatchQueue.global().asyncAfter(deadline: .now() + 2) { self.inProgress = false }
+    }
+
+    private func fetchEntries(page: Int = 1, completion: @escaping (WallabagCollection<WallabagEntry>) -> Void) {
+        _ = session.kit.send(decodable: WallabagCollection<WallabagEntry>.self, to: WallabagEntryEndpoint.get(page: page, perPage: 1))
             .sink(receiveCompletion: { completion in
                 print(completion)
                 if case .failure = completion {}
-            }, receiveValue: { entries in
-                Log(entries)
+            }, receiveValue: { collection in
+                if collection.page < collection.pages {
+                    self.fetchEntries(page: collection.page + 1) { completion($0) }
+                }
+                completion(collection)
             })
-
-        DispatchQueue.global().asyncAfter(deadline: .now() + 2) { self.inProgress = false }
     }
 }
 

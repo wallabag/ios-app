@@ -8,14 +8,23 @@
 import Foundation
 
 enum WallabagEntryEndpoint: WallabagKitEndpoint {
-    case get
+    case get(page: Int = 1, perPage: Int = 30)
 
     func method() -> HttpMethod {
         .get
     }
 
     func endpoint() -> String {
-        "/api/entries.json?perPage=1"
+        switch self {
+        case let .get(page, perPage):
+            var request = URLComponents()
+            request.path = "/api/entries.json"
+            request.queryItems = [
+                URLQueryItem(name: "page", value: "\(page)"),
+                URLQueryItem(name: "perPage", value: "\(perPage)"),
+            ]
+            return request.url!.relativeString
+        }
     }
 
     func getBody() -> Data {
