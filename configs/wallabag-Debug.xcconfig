@@ -1,5 +1,4 @@
 // Generated using xcconfig-extractor 0.4.0 by Toshihiro Suzuki - https://github.com/toshi0383/xcconfig-extractor
-#include "../Pods/Target Support Files/Pods-wallabag/Pods-wallabag.debug.xcconfig"
 #include "wallabag.xcconfig"
 SWIFT_OPTIMIZATION_LEVEL = -Onone
 
