@@ -29,4 +29,13 @@ struct WallabagUserDefaults {
 
     @UserDefault("registred", defaultValue: false)
     static var registred: Bool
+
+    @UserDefault("accessToken", defaultValue: nil)
+    static var accessToken: String?
+
+    @UserDefault("refreshToken", defaultValue: nil)
+    static var refreshToken: String?
+
+    @UserDefault("expiresIn", defaultValue: nil)
+    static var expiresIn: Int?
 }

@@ -8,39 +8,11 @@
 import Combine
 import SwiftUI
 
-class WallaSession: ObservableObject {
-    enum State {
-        case unknown
-        case connected
-    }
-
-    @Published var state: State = .unknown
-
-    func requestSession() {
-        /* let kit = WallabagKit(
-             host: WallabagUserDefaults.host,
-             clientID: WallabagUserDefaults.clientId,
-             clientSecret: WallabagUserDefaults.clientSecret
-         )
-         kit.requestAuth(
-             username: WallabagUserDefaults.login,
-             password: WallabagUserDefaults.password
-         ) { auth in
-             switch auth {
-             case .success(_):
-                 self.state = .connected
-             @unknown default:
-                 self.state = .unknown
-             }
-         } */
-    }
-}
-
 class AppSync: ObservableObject {
-    let session: WallaSession
+    let session: WallabagSession
 
     init() {
-        session = WallaSession()
+        session = WallabagSession()
     }
 
     deinit {
@@ -62,6 +34,14 @@ class AppSync: ObservableObject {
     }
 
     private func sync() {
+        _ = session.kit.send(decodable: WallabagCollection<WallabagEntry>.self, to: WallabagEntryEndpoint.get)
+            .sink(receiveCompletion: { completion in
+                print(completion)
+                if case .failure = completion {}
+            }, receiveValue: { entries in
+                Log(entries)
+            })
+
         DispatchQueue.global().asyncAfter(deadline: .now() + 2) { self.inProgress = false }
     }
 }
