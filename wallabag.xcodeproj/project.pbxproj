@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C0C3B8A2354890F008AD2C9 /* GeneralSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0C3B892354890F008AD2C9 /* GeneralSetting.swift */; };
 		9C19F8E322707707009450F9 /* RetrieveModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19F8E222707707009450F9 /* RetrieveModeTests.swift */; };
 		9C19F8E622707AC8009450F9 /* BlackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19F8E522707AC8009450F9 /* BlackTests.swift */; };
 		9C19F8E822707D79009450F9 /* DuskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19F8E722707D79009450F9 /* DuskTests.swift */; };
@@ -49,7 +50,7 @@
 		9C7CBD0722D60B8A00EE1DE3 /* ArticlePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7CBD0622D60B8A00EE1DE3 /* ArticlePlayer.swift */; };
 		9C824D772265ED28009E519B /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C824D762265ED28009E519B /* LoginViewControllerTests.swift */; };
 		9C824D792265F429009E519B /* ArticleViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C824D782265F429009E519B /* ArticleViewControllerTests.swift */; };
-		9C889E7F22E66BCA00B9F767 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C889E7E22E66BCA00B9F767 /* UserDefault.swift */; };
+		9C889E7F22E66BCA00B9F767 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C889E7E22E66BCA00B9F767 /* Setting.swift */; };
 		9C9085F722DF3FF600D47262 /* ArticleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9085F622DF3FF600D47262 /* ArticleRowView.swift */; };
 		9C9085F922DF44CD00D47262 /* NetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9085F822DF44CD00D47262 /* NetworkImage.swift */; };
 		9C90F62C2296B86F00C113EF /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9C90F62B2296B86F00C113EF /* Settings.bundle */; };
@@ -190,6 +191,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9C0C3B892354890F008AD2C9 /* GeneralSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSetting.swift; sourceTree = "<group>"; };
 		9C19F8E222707707009450F9 /* RetrieveModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveModeTests.swift; sourceTree = "<group>"; };
 		9C19F8E522707AC8009450F9 /* BlackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackTests.swift; sourceTree = "<group>"; };
 		9C19F8E722707D79009450F9 /* DuskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuskTests.swift; sourceTree = "<group>"; };
@@ -229,7 +231,7 @@
 		9C7CBD0622D60B8A00EE1DE3 /* ArticlePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePlayer.swift; sourceTree = "<group>"; };
 		9C824D762265ED28009E519B /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		9C824D782265F429009E519B /* ArticleViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewControllerTests.swift; sourceTree = "<group>"; };
-		9C889E7E22E66BCA00B9F767 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		9C889E7E22E66BCA00B9F767 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		9C9085F622DF3FF600D47262 /* ArticleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRowView.swift; sourceTree = "<group>"; };
 		9C9085F822DF44CD00D47262 /* NetworkImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkImage.swift; sourceTree = "<group>"; };
 		9C90F62B2296B86F00C113EF /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -494,10 +496,11 @@
 		9C889E7D22E66BB000B9F767 /* PropertyWrapper */ = {
 			isa = PBXGroup;
 			children = (
-				9CCC4AFD22E5D92E00F73891 /* Password.swift */,
-				9C889E7E22E66BCA00B9F767 /* UserDefault.swift */,
-				9C5EDEE6234E848D00141DFD /* Injector.swift */,
 				9CE32CB9234F648A004DD045 /* BundleKey.swift */,
+				9C0C3B892354890F008AD2C9 /* GeneralSetting.swift */,
+				9C5EDEE6234E848D00141DFD /* Injector.swift */,
+				9CCC4AFD22E5D92E00F73891 /* Password.swift */,
+				9C889E7E22E66BCA00B9F767 /* Setting.swift */,
 			);
 			path = PropertyWrapper;
 			sourceTree = "<group>";
@@ -1037,7 +1040,7 @@
 				9C7CBD0722D60B8A00EE1DE3 /* ArticlePlayer.swift in Sources */,
 				BF_C08A9375D74D7DB78FE8F985821676D0 /* AppDelegate.swift in Sources */,
 				9C5153A422836892001A976B /* Tag.swift in Sources */,
-				9C889E7F22E66BCA00B9F767 /* UserDefault.swift in Sources */,
+				9C889E7F22E66BCA00B9F767 /* Setting.swift in Sources */,
 				9C37216F22E0FBC500D363FB /* StubView.swift in Sources */,
 				9C5EDEE5234E842B00141DFD /* AppState.swift in Sources */,
 				BF_8D6AECAD1330C2318EF223E35E3AC61D /* Black.swift in Sources */,
@@ -1052,6 +1055,7 @@
 				9C7AFE142353CE4500FBF989 /* WallabagOAuth.swift in Sources */,
 				9C3F13E42353D4C800303AA8 /* WallabagCollection.swift in Sources */,
 				9CB41DC8234FC23200C2740B /* LoginTextFieldValidator.swift in Sources */,
+				9C0C3B8A2354890F008AD2C9 /* GeneralSetting.swift in Sources */,
 				9C37217122E107D200D363FB /* MainView.swift in Sources */,
 				9C7AFE0D2353C93E00FBF989 /* WallabagSession.swift in Sources */,
 				BF_E86293481ACAC83DE1587222089DDC5D /* EntryExtension.swift in Sources */,

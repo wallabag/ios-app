@@ -10,16 +10,16 @@ import WallabagCommon
 
 struct WallabagUserDefaults {
     static let keychain: KeychainPasswordItem = KeychainPasswordItem(service: "wallabag", account: "main")
-    @UserDefault("host", defaultValue: "")
+    @Setting("host", defaultValue: "")
     static var host: String
 
-    @UserDefault("clientId", defaultValue: "")
+    @Setting("clientId", defaultValue: "")
     static var clientId: String
 
-    @UserDefault("clientSecret", defaultValue: "")
+    @Setting("clientSecret", defaultValue: "")
     static var clientSecret: String
 
-    @UserDefault("username", defaultValue: "")
+    @Setting("username", defaultValue: "")
     static var login: String
 
     static var password: String {
@@ -27,15 +27,15 @@ struct WallabagUserDefaults {
         set { try? keychain.savePassword(newValue) }
     }
 
-    @UserDefault("registred", defaultValue: false)
+    @Setting("registred", defaultValue: false)
     static var registred: Bool
 
-    @UserDefault("accessToken", defaultValue: nil)
+    @Setting("accessToken", defaultValue: nil)
     static var accessToken: String?
 
-    @UserDefault("refreshToken", defaultValue: nil)
+    @Setting("refreshToken", defaultValue: nil)
     static var refreshToken: String?
 
-    @UserDefault("expiresIn", defaultValue: nil)
+    @Setting("expiresIn", defaultValue: nil)
     static var expiresIn: Int?
 }
