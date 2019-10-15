@@ -38,4 +38,13 @@ struct WallabagUserDefaults {
 
     @Setting("expiresIn", defaultValue: nil)
     static var expiresIn: Int?
+    
+    @GeneralSetting("justifyArticle", defaultValue: true)
+    static var justifyArticle: Bool
+    
+    @GeneralSetting("badge", defaultValue: true)
+    static var badgeEnabled: Bool
+    
+    @GeneralSetting("defaultMode", defaultValue: "allArticles")
+    static var defaultMode: String
 }

@@ -8,9 +8,23 @@
 	<array>
 		<dict>
 			<key>Type</key>
-			<string>PSGroupSpecifier</string>
+			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>Settings</string>
+			<string>Badge</string>
+			<key>Key</key>
+			<string>Badge</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Justify Article</string>
+			<key>Key</key>
+			<string>justifyArticle</string>
+			<key>DefaultValue</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -21,6 +35,30 @@
 			<string>analytics_enabled_preference</string>
 			<key>DefaultValue</key>
 			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Titles</key>
+			<array>
+				<string>All articles</string>
+				<string>Read articles</string>
+				<string>Starred articles</string>
+				<string>Unread articles</string>
+			</array>
+			<key>Title</key>
+			<string>Mode</string>
+			<key>Key</key>
+			<string>defaultMode</string>
+			<key>DefaultValue</key>
+			<string>allArticles</string>
+			<key>Values</key>
+			<array>
+				<string>allArticles</string>
+				<string>archivedArticles</string>
+				<string>starredArticles</string>
+				<string>unarchivedArticles</string>
+			</array>
 		</dict>
 	</array>
 </dict>
