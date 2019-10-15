@@ -38,6 +38,9 @@
 		9C661DB9225D45F200086057 /* AboutViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C661DB8225D45F200086057 /* AboutViewControllerTests.swift */; };
 		9C66B6BD235667770068B968 /* AppSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C66B6BC235667770068B968 /* AppSync.swift */; };
 		9C66B6C2235678780068B968 /* RetrieveModePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C66B6C1235678780068B968 /* RetrieveModePicker.swift */; };
+		9C66B6C5235680130068B968 /* ArchiveEntryContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C66B6C4235680130068B968 /* ArchiveEntryContextMenu.swift */; };
+		9C66B6C72356806E0068B968 /* StarEntryContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C66B6C62356806E0068B968 /* StarEntryContextMenu.swift */; };
+		9C66B6C9235681280068B968 /* DeleteEntryContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C66B6C8235681280068B968 /* DeleteEntryContextMenu.swift */; };
 		9C677CAD227EF5A6006C7112 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C677CAC227EF5A6006C7112 /* WebKit.framework */; };
 		9C6DC0F2224112480012486D /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6DC0F1224112480012486D /* UISearchBar.swift */; };
 		9C73EC4422D79037008663B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C73EC4322D79037008663B1 /* SceneDelegate.swift */; };
@@ -217,6 +220,9 @@
 		9C661DB8225D45F200086057 /* AboutViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewControllerTests.swift; sourceTree = "<group>"; };
 		9C66B6BC235667770068B968 /* AppSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSync.swift; sourceTree = "<group>"; };
 		9C66B6C1235678780068B968 /* RetrieveModePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveModePicker.swift; sourceTree = "<group>"; };
+		9C66B6C4235680130068B968 /* ArchiveEntryContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveEntryContextMenu.swift; sourceTree = "<group>"; };
+		9C66B6C62356806E0068B968 /* StarEntryContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarEntryContextMenu.swift; sourceTree = "<group>"; };
+		9C66B6C8235681280068B968 /* DeleteEntryContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteEntryContextMenu.swift; sourceTree = "<group>"; };
 		9C677CAC227EF5A6006C7112 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		9C6DC0F1224112480012486D /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
 		9C73EC4322D79037008663B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -476,14 +482,25 @@
 			path = Filter;
 			sourceTree = "<group>";
 		};
+		9C66B6C323567FF70068B968 /* ContextMenu */ = {
+			isa = PBXGroup;
+			children = (
+				9C66B6C4235680130068B968 /* ArchiveEntryContextMenu.swift */,
+				9C66B6C8235681280068B968 /* DeleteEntryContextMenu.swift */,
+				9C66B6C62356806E0068B968 /* StarEntryContextMenu.swift */,
+			);
+			path = ContextMenu;
+			sourceTree = "<group>";
+		};
 		9C73EC4522D7907E008663B1 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				9C66B6BE235678270068B968 /* Filter */,
 				9C37217022E107D200D363FB /* MainView.swift */,
 				9C37216E22E0FBC500D363FB /* StubView.swift */,
 				9C5EDEE8234E887A00141DFD /* About */,
+				9C66B6C323567FF70068B968 /* ContextMenu */,
 				9C5EDEE2234E810C00141DFD /* Entry */,
+				9C66B6BE235678270068B968 /* Filter */,
 				9CB4D03F22E8A9220078BD1C /* Registration */,
 			);
 			path = Component;
@@ -1050,6 +1067,7 @@
 				9C37217722E1171100D363FB /* ClientIdClientSecretView.swift in Sources */,
 				9C66B6C2235678780068B968 /* RetrieveModePicker.swift in Sources */,
 				9CB41DCE234FC44200C2740B /* WallabagKit.swift in Sources */,
+				9C66B6C9235681280068B968 /* DeleteEntryContextMenu.swift in Sources */,
 				9C7AFE142353CE4500FBF989 /* WallabagOAuth.swift in Sources */,
 				9C3F13E42353D4C800303AA8 /* WallabagCollection.swift in Sources */,
 				9CB41DC8234FC23200C2740B /* LoginTextFieldValidator.swift in Sources */,
@@ -1057,6 +1075,7 @@
 				9C37217122E107D200D363FB /* MainView.swift in Sources */,
 				9C7AFE0D2353C93E00FBF989 /* WallabagSession.swift in Sources */,
 				9C66B6BD235667770068B968 /* AppSync.swift in Sources */,
+				9C66B6C72356806E0068B968 /* StarEntryContextMenu.swift in Sources */,
 				BF_E86293481ACAC83DE1587222089DDC5D /* EntryExtension.swift in Sources */,
 				BF_83312011338DF667DC8174DD85C2A1B7 /* Int.swift in Sources */,
 				9C4976532226751900DA4BD0 /* Container.swift in Sources */,
@@ -1080,6 +1099,7 @@
 				9C7AFE112353CE1D00FBF989 /* WallabagKitEndpoint.swift in Sources */,
 				9C73EC4722D79093008663B1 /* ArticleListView.swift in Sources */,
 				9CA5D4C622E092B500167574 /* WebView.swift in Sources */,
+				9C66B6C5235680130068B968 /* ArchiveEntryContextMenu.swift in Sources */,
 				9C37217322E1087800D363FB /* RegistrationView.swift in Sources */,
 				9C37217522E1134600D363FB /* ServerView.swift in Sources */,
 				9CB41DC6234FC14500C2740B /* ClientIdClientServerTextFieldValidator.swift in Sources */,

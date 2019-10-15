@@ -9,7 +9,7 @@ import RealmSwift
 import SwiftUI
 
 struct ArticleView: View {
-    var entry: Entry!
+    var entry: Entry
 
     var body: some View {
         VStack {

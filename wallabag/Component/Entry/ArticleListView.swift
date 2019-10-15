@@ -20,18 +20,9 @@ struct ArticleListView: View {
                 List(entryPublisher.entries, id: \.id) { entry in
                     NavigationLink(destination: ArticleView(entry: entry)) {
                         ArticleRowView(entry: entry).contextMenu {
-                            Button(action: {}, label: {
-                                Text("Mark as read")
-                                Image(systemName: "book")
-                            })
-                            Button(action: {}, label: {
-                                Text("Mark as favorite")
-                                Image(systemName: "star")
-                            })
-                            Button(action: {}, label: {
-                                Text("Delete")
-                                Image(systemName: "trash")
-                            })
+                            ArchiveEntryContextMenu(entryPublisher: self.entryPublisher, entry: entry)
+                            StarEntryContextMenu(entryPublisher: self.entryPublisher, entry: entry)
+                            DeleteEntryContextMenu(entryPublisher: self.entryPublisher, entry: entry)
                         }
                     }
                 }.onAppear(perform: entryPublisher.loadEntries)

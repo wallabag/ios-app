@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-extension String {
-    var url: URL? {
-        return URL(string: self)
-    }
-}
-
 struct ArticleRowView: View {
     var entry: Entry
 

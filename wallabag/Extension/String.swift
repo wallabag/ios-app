@@ -39,4 +39,8 @@ extension String {
     var localized: String {
         return NSLocalizedString(self, comment: "")
     }
+
+    var url: URL? {
+        return URL(string: self)
+    }
 }

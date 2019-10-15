@@ -42,6 +42,18 @@ class EntryPublisher: ObservableObject {
         }
     }
 
+    func toggleArchive(_ entry: Entry) {
+        try? realm.write {
+            entry.isArchived.toggle()
+        }
+    }
+
+    func toggleStar(_ entry: Entry) {
+        try? realm.write {
+            entry.isStarred.toggle()
+        }
+    }
+
     deinit {
         notificationToken?.invalidate()
     }
