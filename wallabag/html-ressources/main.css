@@ -14,8 +14,34 @@ html {
   min-height: 100%;
 }
 
-body {
-  background: #FFF;
+@media (prefers-color-scheme: dark) {
+  body {
+      color: #777;
+      background: #000;
+  }
+
+  ::selection {
+      color: #777;
+      background: #000;
+  }
+
+  p, li {
+      color: #555;
+  }
+
+  a {
+      color: #137fb3;
+  }
+
+  blockquote {
+      background: #111;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background: #FFF;
+  }
 }
 
 /* ==========================================================================

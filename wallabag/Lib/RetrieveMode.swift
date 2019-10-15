@@ -7,24 +7,11 @@
 
 import Foundation
 
-enum RetrieveMode: String {
-    case allArticles
-    case archivedArticles
-    case unarchivedArticles
-    case starredArticles
-
-    func humainReadable() -> String {
-        switch self {
-        case .allArticles:
-            return "All articles"
-        case .archivedArticles:
-            return "Read articles"
-        case .starredArticles:
-            return "Starred articles"
-        case .unarchivedArticles:
-            return "Unread articles"
-        }
-    }
+enum RetrieveMode: String, CaseIterable {
+    case allArticles = "All articles"
+    case archivedArticles = "Read articles"
+    case unarchivedArticles = "Unread articles"
+    case starredArticles = "Starred articles"
 
     func predicate() -> NSPredicate {
         switch self {

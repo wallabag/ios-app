@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var setting: WallabagSetting!
-    var realm: Realm!
+    @Injector var realm: Realm
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
@@ -195,7 +195,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func resetApplication() {
-        setting.reset(suiteName: setting.sharedDomain)
+        // setting.reset(suiteName: setting.sharedDomain)
         try? realm.write {
             realm.deleteAll()
         }

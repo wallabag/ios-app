@@ -9,43 +9,47 @@ import RealmSwift
 import SwiftUI
 
 struct ArticleListView: View {
-    enum Filter {
-        case unarchived
-    }
-
+    @Injector var realm: Realm
     @EnvironmentObject var appSync: AppSync
-    @ObservedObject var entries = BindableResults<Entry>(results: try! Realm().objects(Entry.self))
-    @State var filter: Filter = .unarchived
+    @ObservedObject var entryPublisher = EntryPublisher()
 
     var body: some View {
         NavigationView {
             VStack {
-                /* SegmentedControl(selection: $filter) {
-                         Text("All").tag(3)
-                         Text("Read").tag(0)
-                         Text("Starred").tag(1)
-                         Text("Unread").tag(2)
-                 } */
-                List(entries.results, id: \.id) { entry in
+                RetrieveModePicker(filter: $entryPublisher.retrieveMode)
+                List(entryPublisher.entries, id: \.id) { entry in
                     NavigationLink(destination: ArticleView(entry: entry)) {
-                        ArticleRowView(entry: entry)
-                    }
-                }
-                .navigationBarTitle("Articles")
-                .navigationBarItems(trailing:
-                    ViewBuilder.buildBlock(
-                        HStack {
-                            Button(
-                                action: {
-                                    self.appSync.requestSync()
-                                },
-                                label: {
-                                    Image(systemName: "arrow.counterclockwise")
-                                }
-                            ).disabled(appSync.inProgress)
-                            NavigationLink(destination: StubView(), label: { Image(systemName: "plus") })
+                        ArticleRowView(entry: entry).contextMenu {
+                            Button(action: {}, label: {
+                                Text("Mark as read")
+                                Image(systemName: "book")
+                            })
+                            Button(action: {}, label: {
+                                Text("Mark as favorite")
+                                Image(systemName: "star")
+                            })
+                            Button(action: {}, label: {
+                                Text("Delete")
+                                Image(systemName: "trash")
+                            })
                         }
-                ))
+                    }
+                }.onAppear(perform: entryPublisher.loadEntries)
+                    .navigationBarTitle("Articles")
+                    .navigationBarItems(trailing:
+                        ViewBuilder.buildBlock(
+                            HStack {
+                                Button(
+                                    action: {
+                                        self.appSync.requestSync()
+                                    },
+                                    label: {
+                                        Image(systemName: "arrow.counterclockwise")
+                                    }
+                                ).disabled(appSync.inProgress)
+                                NavigationLink(destination: StubView(), label: { Image(systemName: "plus") })
+                            }
+                    ))
             }
         }
     }

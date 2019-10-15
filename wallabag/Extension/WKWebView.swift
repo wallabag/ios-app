@@ -12,20 +12,20 @@ import WallabagCommon
 import WebKit
 
 extension WKWebView {
-    func load(entry: Entry, withTheme theme: String, justify: Bool) {
+    func load(entry: Entry, justify: Bool) {
         DispatchQueue.main.async { [weak self] in
-            guard let content = self?.contentForWebView(entry, withTheme: theme, justify: justify) else { return }
+            guard let content = self?.contentForWebView(entry, justify: justify) else { return }
             self?.loadHTMLString(content, baseURL: Bundle.main.bundleURL)
         }
     }
 
-    func contentForWebView(_ entry: Entry, withTheme theme: String, justify: Bool) -> String? {
+    func contentForWebView(_ entry: Entry, justify: Bool) -> String? {
         do {
             guard let content = entry.content, let title = entry.title else { return nil }
             let html = try String(contentsOfFile: Bundle.main.path(forResource: "article", ofType: "html")!)
             let justify = justify ? "justify.css" : ""
 
-            return String(format: html, arguments: [justify, theme, title, content])
+            return String(format: html, arguments: [justify, title, content])
         } catch {
             fatalError("Unable to load article view")
         }

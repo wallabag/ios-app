@@ -16,7 +16,7 @@ struct WebView: UIViewRepresentable {
     }
 
     func updateUIView(_ view: WKWebView, context _: Context) {
-        view.load(entry: entry, withTheme: "white", justify: false)
+        view.load(entry: entry, justify: false)
     }
 }
 
