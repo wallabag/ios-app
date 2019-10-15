@@ -9,7 +9,7 @@ import SwiftUI
 import WebKit
 
 struct WebView: UIViewRepresentable {
-    var entry: Entry!
+    var entry: Entry
 
     func makeUIView(context _: Context) -> WKWebView {
         WKWebView(frame: .zero)
