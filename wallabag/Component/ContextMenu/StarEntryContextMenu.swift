@@ -15,13 +15,7 @@ struct StarEntryContextMenu: View {
             self.entryPublisher.toggleStar(self.entry)
         }, label: {
             Text(entry.isStarred ? "Unstart" : "Mark as favorite")
-            Image(systemName: entry.isStarred ? "star.fill" : "star")
+            EntryPictoImage(entry: entry, keyPath: \.isStarred, picto: "star")
         })
     }
 }
-
-/* struct FavoriteEntryContextMenu_Previews: PreviewProvider {
- static var previews: some View {
-     FavoriteEntryContextMenu()
- }
- } */
