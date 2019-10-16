@@ -9,11 +9,17 @@ import Foundation
 
 enum WallabagEntryEndpoint: WallabagKitEndpoint {
     case get(page: Int = 1, perPage: Int = 30)
-
+    case add(url: String)
+    
     func method() -> HttpMethod {
-        .get
+        switch self {
+        case .get:
+            return .get
+        case .add:
+            return .post
+        }
     }
-
+    
     func endpoint() -> String {
         switch self {
         case let .get(page, perPage):
@@ -24,13 +30,20 @@ enum WallabagEntryEndpoint: WallabagKitEndpoint {
                 URLQueryItem(name: "perPage", value: "\(perPage)"),
             ]
             return request.url!.relativeString
+        case .add:
+            return "/api/entries.json"
         }
     }
-
+    
     func getBody() -> Data {
-        "".data(using: .utf8)!
+        switch self {
+        case let .add(url):
+            return "url=\(url)".data(using: .utf8)!
+        default:
+            return "".data(using: .utf8)!
+        }
     }
-
+    
     func requireAuth() -> Bool {
         true
     }

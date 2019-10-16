@@ -15,7 +15,7 @@ struct MainView: View {
         let appSync = AppSync()
         return ViewBuilder.buildBlock(
             appState.registred ?
-                ViewBuilder.buildEither(second: ArticleListView().environmentObject(appSync)) :
+                ViewBuilder.buildEither(second: ArticleListView().environmentObject(appSync).environmentObject(appState)) :
                 ViewBuilder.buildEither(first: RegistrationView().environmentObject(appState))
         )
     }

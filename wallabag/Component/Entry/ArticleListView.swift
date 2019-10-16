@@ -5,14 +5,14 @@
 //  Created by Marinel Maxime on 11/07/2019.
 //
 
-import RealmSwift
 import SwiftUI
 
 struct ArticleListView: View {
-    @Injector var realm: Realm
     @EnvironmentObject var appSync: AppSync
+    @EnvironmentObject var appState: AppState
     @ObservedObject var entryPublisher = EntryPublisher()
-
+    @State var showAdd: Bool = false
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -33,12 +33,15 @@ struct ArticleListView: View {
                                 Button(
                                     action: {
                                         self.appSync.requestSync()
-                                    },
+                                },
                                     label: {
                                         Image(systemName: "arrow.counterclockwise")
-                                    }
+                                }
                                 ).disabled(appSync.inProgress)
-                                NavigationLink(destination: StubView(), label: { Image(systemName: "plus") })
+                                Button(action: {
+                                    self.appState.session.addEntry(url: "http://www.annonces-airsoft.fr")
+                                }, label: {Image(systemName: "plus")})
+                                NavigationLink(destination: AddEntryView(), label: { Image(systemName: "plus") })
                             }
                     ))
             }
@@ -47,9 +50,9 @@ struct ArticleListView: View {
 }
 
 #if DEBUG
-    struct ArticleListView_Previews: PreviewProvider {
-        static var previews: some View {
-            ArticleListView()
-        }
+struct ArticleListView_Previews: PreviewProvider {
+    static var previews: some View {
+        ArticleListView()
     }
+}
 #endif

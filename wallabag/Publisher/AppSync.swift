@@ -11,13 +11,8 @@ import RealmSwift
 
 class AppSync: ObservableObject {
     @Injector var realm: Realm
-
-    let session: WallabagSession
+    @Injector var session: WallabagSession
     let syncQueue = DispatchQueue(label: "fr.district-web.wallabag.sync-queue", qos: .userInitiated)
-
-    init() {
-        session = WallabagSession()
-    }
 
     deinit {
         sessionState?.cancel()

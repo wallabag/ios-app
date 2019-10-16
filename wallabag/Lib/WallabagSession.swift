@@ -17,11 +17,8 @@ class WallabagSession: ObservableObject {
     }
 
     @Published var state: State = .unknown
-
-    lazy var kit: WallabagKit = {
-        WallabagKit(host: WallabagUserDefaults.host)
-    }()
-
+    @Injector var kit: WallabagKit
+    
     func requestSession() {
         _ = kit.requestAuth(
             clientId: WallabagUserDefaults.clientId,
@@ -37,6 +34,12 @@ class WallabagSession: ObservableObject {
             WallabagUserDefaults.accessToken = token.accessToken
             self.kit.bearer = token.accessToken
             self.state = .connected
+        })
+    }
+    
+    func addEntry(url: String) {
+        kit.send(decodable: WallabagEntry.self, to: WallabagEntryEndpoint.add(url: url)).sink(receiveCompletion: {completion in Log(completion)}, receiveValue: { entry in
+            Log(entry)
         })
     }
 }

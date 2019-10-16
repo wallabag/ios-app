@@ -14,8 +14,17 @@ class AppState: ObservableObject {
             WallabagUserDefaults.registred = registred
         }
     }
+    
+    @Injector var session: WallabagSession
 
     init() {
         registred = WallabagUserDefaults.registred
+        if  registred {
+            initSession()
+        }
+    }
+    
+    private func initSession() {
+        session.requestSession()
     }
 }
