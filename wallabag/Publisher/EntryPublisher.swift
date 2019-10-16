@@ -33,7 +33,7 @@ class EntryPublisher: ObservableObject {
                 break
             }
         }
-        entries = results.filter(retrieveMode.predicate()).compactMap { $0 }
+        entries = results.filter(retrieveMode.predicate()).sorted(byKeyPath: "id", ascending: false).compactMap { $0 }
     }
 
     func start(entry: Entry) {

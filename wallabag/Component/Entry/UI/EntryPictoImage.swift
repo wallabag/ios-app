@@ -22,11 +22,13 @@ struct EntryPictoImage_Previews: PreviewProvider {
         entry.isArchived = true
         return entry
     }()
+
     static var entryNotIs: Entry = {
         let entry = Entry()
         entry.isArchived = false
         return entry
     }()
+
     static var previews: some View {
         Group {
             EntryPictoImage(entry: entryIs, keyPath: \.isArchived, picto: "book").previewLayout(.fixed(width: 30, height: 30))

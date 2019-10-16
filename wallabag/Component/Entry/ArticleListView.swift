@@ -12,7 +12,7 @@ struct ArticleListView: View {
     @EnvironmentObject var appState: AppState
     @ObservedObject var entryPublisher = EntryPublisher()
     @State var showAdd: Bool = false
-    
+
     var body: some View {
         NavigationView {
             VStack {
@@ -22,7 +22,7 @@ struct ArticleListView: View {
                         ArticleRowView(entry: entry).contextMenu {
                             ArchiveEntryContextMenu(entryPublisher: self.entryPublisher, entry: entry)
                             StarEntryContextMenu(entryPublisher: self.entryPublisher, entry: entry)
-                            DeleteEntryContextMenu(entryPublisher: self.entryPublisher, entry: entry)
+                            DeleteEntryContextMenu(entry: entry)
                         }
                     }
                 }.onAppear(perform: entryPublisher.loadEntries)
@@ -33,14 +33,14 @@ struct ArticleListView: View {
                                 Button(
                                     action: {
                                         self.appSync.requestSync()
-                                },
+                                    },
                                     label: {
                                         Image(systemName: "arrow.counterclockwise")
-                                }
+                                    }
                                 ).disabled(appSync.inProgress)
                                 Button(action: {
                                     self.appState.session.addEntry(url: "http://www.annonces-airsoft.fr")
-                                }, label: {Image(systemName: "plus")})
+                                }, label: { Image(systemName: "plus") })
                                 NavigationLink(destination: AddEntryView(), label: { Image(systemName: "plus") })
                             }
                     ))
@@ -50,9 +50,9 @@ struct ArticleListView: View {
 }
 
 #if DEBUG
-struct ArticleListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ArticleListView()
+    struct ArticleListView_Previews: PreviewProvider {
+        static var previews: some View {
+            ArticleListView()
+        }
     }
-}
 #endif

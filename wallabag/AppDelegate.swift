@@ -35,8 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Error init realm")
             }
         }.inObjectScope(.container)
-        container.register(WallabagKit.self, factory: { _ in WallabagKit(host: WallabagUserDefaults.host)}).inObjectScope(.container)
-        container.register(WallabagSession.self, factory: { _ in WallabagSession()})
+        container.register(WallabagKit.self, factory: { _ in WallabagKit(host: WallabagUserDefaults.host) }).inObjectScope(.container)
+        container.register(WallabagSession.self, factory: { _ in WallabagSession() })
         container.register(WallabagSetting.self) { _ in WallabagSetting() }.inObjectScope(.container)
         container.register(ArticlePlayer.self) { resolver in
             let articlePlayer = ArticlePlayer()

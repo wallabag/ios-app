@@ -11,7 +11,7 @@ struct AddEntryView: View {
     @EnvironmentObject var appState: AppState
     @Environment(\.presentationMode) var presentationMode
     @State var url: String = ""
-    
+
     var body: some View {
         Form {
             TextField("Url", text: $url).autocapitalization(.none).disableAutocorrection(true)
@@ -19,7 +19,7 @@ struct AddEntryView: View {
                 self.appState.session.addEntry(url: self.url)
                 self.presentationMode.wrappedValue.dismiss()
             }
-        }.navigationBarTitle("Server")   
+        }.navigationBarTitle("Server")
     }
 }
 

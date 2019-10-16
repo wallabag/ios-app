@@ -8,18 +8,14 @@
 import SwiftUI
 
 struct DeleteEntryContextMenu: View {
-    var entryPublisher: EntryPublisher
+    @EnvironmentObject var appState: AppState
     var entry: Entry
     var body: some View {
-        Button(action: {}, label: {
+        Button(action: {
+            self.appState.session.delete(entry: self.entry)
+        }, label: {
             Text("Delete")
             Image(systemName: "trash")
         })
     }
 }
-
-/* struct DeleteEntryContextMenu_Previews: PreviewProvider {
- static var previews: some View {
-     DeleteEntryContextMenu()
- }
- } */

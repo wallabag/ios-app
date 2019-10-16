@@ -18,7 +18,7 @@ class WallabagSession: ObservableObject {
 
     @Published var state: State = .unknown
     @Injector var kit: WallabagKit
-    
+
     func requestSession() {
         _ = kit.requestAuth(
             clientId: WallabagUserDefaults.clientId,
@@ -36,10 +36,14 @@ class WallabagSession: ObservableObject {
             self.state = .connected
         })
     }
-    
+
     func addEntry(url: String) {
-        kit.send(decodable: WallabagEntry.self, to: WallabagEntryEndpoint.add(url: url)).sink(receiveCompletion: {completion in Log(completion)}, receiveValue: { entry in
+        _ = kit.send(decodable: WallabagEntry.self, to: WallabagEntryEndpoint.add(url: url)).sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { entry in
             Log(entry)
         })
+    }
+
+    func delete(entry: Entry) {
+        _ = kit.send(decodable: WallabagEntry.self, to: WallabagEntryEndpoint.delete(id: entry.id)).sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { _ in })
     }
 }
