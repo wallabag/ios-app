@@ -11,6 +11,7 @@ enum WallabagEntryEndpoint: WallabagKitEndpoint {
     case get(page: Int = 1, perPage: Int = 30)
     case add(url: String)
     case delete(id: Int)
+    case update(id: Int, parameters: WallabagKit.Parameters)
 
     func method() -> HttpMethod {
         switch self {
@@ -20,6 +21,8 @@ enum WallabagEntryEndpoint: WallabagKitEndpoint {
             return .post
         case .delete:
             return .delete
+        case .update:
+            return .patch
         }
     }
 
@@ -37,6 +40,8 @@ enum WallabagEntryEndpoint: WallabagKitEndpoint {
             return "/api/entries.json"
         case let .delete(id):
             return "/api/entries/\(id)"
+        case let .update(id, _):
+            return "/api/entries/\(id).json"
         }
     }
 
@@ -44,6 +49,8 @@ enum WallabagEntryEndpoint: WallabagKitEndpoint {
         switch self {
         case let .add(url):
             return "url=\(url)".data(using: .utf8)!
+        case let .update(_, parameters):
+            return try! JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
         default:
             return "".data(using: .utf8)!
         }

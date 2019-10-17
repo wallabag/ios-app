@@ -43,6 +43,10 @@ class WallabagSession: ObservableObject {
         })
     }
 
+    func update(_ entry: Entry, parameters: WallabagKit.Parameters) {
+        _ = kit.send(decodable: WallabagEntry.self, to: WallabagEntryEndpoint.update(id: entry.id, parameters: parameters)).sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { _ in })
+    }
+
     func delete(entry: Entry) {
         _ = kit.send(decodable: WallabagEntry.self, to: WallabagEntryEndpoint.delete(id: entry.id)).sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { _ in })
     }

@@ -29,12 +29,13 @@ enum WallabagOauth: WallabagKitEndpoint {
     func getBody() -> Data {
         switch self {
         case let .request(clientId, clientSecret, username, password):
-            let mutable = NSMutableData(data: "grant_type=password".data(using: .utf8)!)
-            mutable.append("&client_id=\(clientId)".data(using: .utf8)!)
-            mutable.append("&client_secret=\(clientSecret)".data(using: .utf8)!)
-            mutable.append("&username=\(username)".data(using: .utf8)!)
-            mutable.append("&password=\(password)".data(using: .utf8)!)
-            return mutable as Data
+            return try! JSONSerialization.data(withJSONObject: [
+                "grant_type": "password",
+                "client_id": clientId,
+                "client_secret": clientSecret,
+                "username": username,
+                "password": password,
+            ], options: .prettyPrinted)
         }
     }
 

@@ -9,6 +9,7 @@ import Combine
 import Foundation
 
 public class WallabagKit {
+    typealias Parameters = [String: Any]
     private var host: String
     private var decoder: JSONDecoder
     private let session: URLSession
@@ -30,6 +31,7 @@ public class WallabagKit {
         urlRequest.httpMethod = to.method().rawValue
         urlRequest.httpBody = to.getBody()
         urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         if to.requireAuth() {
             urlRequest.setValue("Bearer \(bearer!)", forHTTPHeaderField: "Authorization")
         }
