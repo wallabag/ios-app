@@ -12,15 +12,23 @@ import RealmSwift
 class AppSync: ObservableObject {
     @Injector var realm: Realm
     @Injector var session: WallabagSession
-    let syncQueue = DispatchQueue(label: "fr.district-web.wallabag.sync-queue", qos: .userInitiated)
+    @Published var inProgress = false
+
+    private var sessionState: AnyCancellable?
+    private let syncQueue = DispatchQueue(label: "fr.district-web.wallabag.sync-queue", qos: .userInitiated)
+    private var operationQueue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.name = "Sync operation queue"
+        queue.qualityOfService = .userInitiated
+        return queue
+    }()
+
+    private let dispatchGroup = DispatchGroup()
+    private var entriesSynced: [Int] = []
 
     deinit {
         sessionState?.cancel()
     }
-
-    var sessionState: AnyCancellable?
-
-    @Published var inProgress = false
 
     func requestSync() {
         inProgress = true
@@ -33,23 +41,34 @@ class AppSync: ObservableObject {
     }
 
     private func sync() {
+        entriesSynced = []
         fetchEntries { collection in
             self.realm.beginWrite()
             for wallabagEntry in collection.items {
-                if let entry = self.realm.object(ofType: Entry.self, forPrimaryKey: wallabagEntry.id) {}
-                let entry = Entry()
-                entry.hydrate(from: wallabagEntry)
-                self.realm.add(entry, update: .modified)
+                self.entriesSynced.append(wallabagEntry.id)
+                if let entry = self.realm.object(ofType: Entry.self, forPrimaryKey: wallabagEntry.id) {
+                    if let articleUpdatedAt = Date.fromISOString(wallabagEntry.updatedAt) {
+                        if entry.updatedAt! > articleUpdatedAt {
+                            self.update(entry: entry)
+                        }
+                    }
+                }
             }
             try? self.realm.commitWrite()
         }
-
-        DispatchQueue.global().asyncAfter(deadline: .now() + 2) { self.inProgress = false }
+        dispatchGroup.notify(queue: syncQueue) {
+            // self.purge()
+            DispatchQueue.main.async {
+                self.inProgress = false
+            }
+        }
     }
 
     private func fetchEntries(page: Int = 1, completion: @escaping (WallabagCollection<WallabagEntry>) -> Void) {
-        _ = session.kit.send(decodable: WallabagCollection<WallabagEntry>.self, to: WallabagEntryEndpoint.get(page: page, perPage: 1))
+        dispatchGroup.enter()
+        _ = session.kit.send(decodable: WallabagCollection<WallabagEntry>.self, to: WallabagEntryEndpoint.get(page: page))
             .sink(receiveCompletion: { completion in
+                self.dispatchGroup.leave()
                 print(completion)
                 if case .failure = completion {}
             }, receiveValue: { collection in
@@ -58,5 +77,24 @@ class AppSync: ObservableObject {
                 }
                 completion(collection)
             })
+    }
+
+    private func update(entry: Entry) {
+        _ = session.kit.send(decodable: WallabagEntry.self, to: WallabagEntryEndpoint.update(id: entry.id, parameters: [
+            "archive": entry.isArchived.int,
+            "starred": entry.isStarred.int,
+        ])).sink(receiveCompletion: { _ in }, receiveValue: { _ in })
+    }
+
+    private func purge() {
+        DispatchQueue.main.async { [unowned self] in
+            do {
+                let realmPurge = try Realm()
+                try realmPurge.write {
+                    let entries = realmPurge.objects(Entry.self).filter("NOT (id IN %@)", self.entriesSynced)
+                    realmPurge.delete(entries)
+                }
+            } catch _ {}
+        }
     }
 }
