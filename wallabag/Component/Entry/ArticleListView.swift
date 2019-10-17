@@ -38,9 +38,6 @@ struct ArticleListView: View {
                                         Image(systemName: "arrow.counterclockwise")
                                     }
                                 ).disabled(appSync.inProgress)
-                                Button(action: {
-                                    self.appState.session.addEntry(url: "http://www.annonces-airsoft.fr")
-                                }, label: { Image(systemName: "plus") })
                                 NavigationLink(destination: AddEntryView(), label: { Image(systemName: "plus") })
                             }
                     ))

@@ -420,12 +420,12 @@
 		9C5EDEE2234E810C00141DFD /* Entry */ = {
 			isa = PBXGroup;
 			children = (
-				9C1EB6E623573DB900A5E54B /* UI */,
-				9CA5D4C522E092B500167574 /* WebView.swift */,
-				9CA5D4C322E0906A00167574 /* ArticleView.swift */,
+				9CA8EA7D2357AFE100F149A9 /* AddEntryView.swift */,
 				9C73EC4622D79093008663B1 /* ArticleListView.swift */,
 				9C9085F622DF3FF600D47262 /* ArticleRowView.swift */,
-				9CA8EA7D2357AFE100F149A9 /* AddEntryView.swift */,
+				9CA5D4C322E0906A00167574 /* ArticleView.swift */,
+				9CA5D4C522E092B500167574 /* WebView.swift */,
+				9C1EB6E623573DB900A5E54B /* UI */,
 			);
 			path = Entry;
 			sourceTree = "<group>";
