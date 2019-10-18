@@ -7,16 +7,19 @@
 
 import SwiftUI
 
-struct ArchiveEntryContextMenu: View {
+struct ArchiveEntryButton: View {
     @EnvironmentObject var appState: AppState
     var entryPublisher: EntryPublisher
     var entry: Entry
+    var showText: Bool = true
     var body: some View {
         Button(action: {
             self.appState.session.update(self.entry, parameters: ["archive": (!self.entry.isArchived).int])
             self.entryPublisher.toggleArchive(self.entry)
         }, label: {
-            Text(entry.isArchived ? "Mark as unread" : "Mark as read")
+            if showText {
+                Text(entry.isArchived ? "Mark as unread" : "Mark as read")
+            }
             EntryPictoImage(entry: entry, keyPath: \.isArchived, picto: "book")
         })
     }

@@ -54,6 +54,12 @@ class EntryPublisher: ObservableObject {
         }
     }
 
+    func delete(_ entry: Entry) {
+        try? realm.write {
+            realm.delete(entry)
+        }
+    }
+
     deinit {
         notificationToken?.invalidate()
     }

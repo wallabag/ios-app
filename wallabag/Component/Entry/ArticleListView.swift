@@ -18,11 +18,11 @@ struct ArticleListView: View {
             VStack {
                 RetrieveModePicker(filter: $entryPublisher.retrieveMode)
                 List(entryPublisher.entries, id: \.id) { entry in
-                    NavigationLink(destination: ArticleView(entry: entry)) {
+                    NavigationLink(destination: ArticleView(entry: entry, entryPublisher: self.entryPublisher)) {
                         ArticleRowView(entry: entry).contextMenu {
-                            ArchiveEntryContextMenu(entryPublisher: self.entryPublisher, entry: entry)
-                            StarEntryContextMenu(entryPublisher: self.entryPublisher, entry: entry)
-                            DeleteEntryContextMenu(entry: entry)
+                            ArchiveEntryButton(entryPublisher: self.entryPublisher, entry: entry)
+                            StarEntryButton(entryPublisher: self.entryPublisher, entry: entry)
+                            DeleteEntryButton(entryPublisher: self.entryPublisher, entry: entry)
                         }
                     }
                 }.onAppear(perform: entryPublisher.loadEntries)

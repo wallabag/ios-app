@@ -10,29 +10,26 @@ import SwiftUI
 
 struct ArticleView: View {
     var entry: Entry
+    var entryPublisher: EntryPublisher
 
     var body: some View {
         VStack {
             WebView(entry: entry)
             HStack {
-                Button(action: {
-                    let realm = try? Realm()
-                    try? realm?.write {
-                        self.entry.isArchived.toggle()
-                    }
-                }, label: { Image(systemName: entry.isArchived ? "book.fill" : "book") })
-                Button(action: {}, label: { Image(systemName: entry.isStarred ? "bookmark.fill" : "bookmark") })
+                ArchiveEntryButton(entryPublisher: entryPublisher, entry: entry, showText: false)
+                StarEntryButton(entryPublisher: entryPublisher, entry: entry, showText: false)
                 Spacer()
-                Button(action: {}, label: { Image(systemName: "trash") })
+                DeleteEntryButton(entryPublisher: entryPublisher, entry: entry, showText: false)
             }.padding()
         }.navigationBarTitle(entry.title ?? "")
     }
 }
 
-#if DEBUG
-    struct ArticleView_Previews: PreviewProvider {
-        static var previews: some View {
-            ArticleView(entry: Entry())
-        }
-    }
-#endif
+/*
+ #if DEBUG
+ struct ArticleView_Previews: PreviewProvider {
+     static var previews: some View {
+         ArticleView(entry: Entry())
+     }
+ }
+ #endif*/

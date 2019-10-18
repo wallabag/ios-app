@@ -16,12 +16,6 @@ class AppSync: ObservableObject {
 
     private var sessionState: AnyCancellable?
     private let syncQueue = DispatchQueue(label: "fr.district-web.wallabag.sync-queue", qos: .userInitiated)
-    private var operationQueue: OperationQueue = {
-        let queue = OperationQueue()
-        queue.name = "Sync operation queue"
-        queue.qualityOfService = .userInitiated
-        return queue
-    }()
 
     private let dispatchGroup = DispatchGroup()
     private var entriesSynced: [Int] = []
@@ -53,6 +47,9 @@ class AppSync: ObservableObject {
                         }
                     }
                 }
+                let entry = Entry()
+                entry.hydrate(from: wallabagEntry)
+                self.realm.add(entry, update: .modified)
             }
             try? self.realm.commitWrite()
         }
