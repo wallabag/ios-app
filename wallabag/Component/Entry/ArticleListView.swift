@@ -30,14 +30,7 @@ struct ArticleListView: View {
                     .navigationBarItems(trailing:
                         ViewBuilder.buildBlock(
                             HStack {
-                                Button(
-                                    action: {
-                                        self.appSync.requestSync()
-                                    },
-                                    label: {
-                                        Image(systemName: "arrow.counterclockwise")
-                                    }
-                                ).disabled(appSync.inProgress)
+                                RefreshButton()
                                 NavigationLink(destination: AddEntryView(), label: { Image(systemName: "plus") })
                             }
                     ))

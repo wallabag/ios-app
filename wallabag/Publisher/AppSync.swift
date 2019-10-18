@@ -57,7 +57,7 @@ class AppSync: ObservableObject {
             try? self.realm.commitWrite()
         }
         dispatchGroup.notify(queue: syncQueue) {
-            // self.purge()
+            self.purge()
             DispatchQueue.main.async {
                 self.inProgress = false
             }
@@ -69,7 +69,6 @@ class AppSync: ObservableObject {
         _ = session.kit.send(decodable: WallabagCollection<WallabagEntry>.self, to: WallabagEntryEndpoint.get(page: page))
             .sink(receiveCompletion: { completion in
                 self.dispatchGroup.leave()
-                print(completion)
                 if case .failure = completion {}
             }, receiveValue: { collection in
                 if collection.page < collection.pages {
@@ -89,10 +88,9 @@ class AppSync: ObservableObject {
     private func purge() {
         DispatchQueue.main.async { [unowned self] in
             do {
-                let realmPurge = try Realm()
-                try realmPurge.write {
-                    let entries = realmPurge.objects(Entry.self).filter("NOT (id IN %@)", self.entriesSynced)
-                    realmPurge.delete(entries)
+                try self.realm.write {
+                    let entries = self.realm.objects(Entry.self).filter("NOT (id IN %@)", self.entriesSynced)
+                    self.realm.delete(entries)
                 }
             } catch _ {}
         }

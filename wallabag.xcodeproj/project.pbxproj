@@ -61,6 +61,7 @@
 		9C9085F922DF44CD00D47262 /* NetworkImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9085F822DF44CD00D47262 /* NetworkImage.swift */; };
 		9C90F62C2296B86F00C113EF /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9C90F62B2296B86F00C113EF /* Settings.bundle */; };
 		9C961B2622770ECE009F80A4 /* WallabagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C961B2522770ECE009F80A4 /* WallabagUITests.swift */; };
+		9CA42AD42359CAC500EF1BF6 /* RefreshButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA42AD32359CAC500EF1BF6 /* RefreshButton.swift */; };
 		9CA5D4C422E0906A00167574 /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D4C322E0906A00167574 /* ArticleView.swift */; };
 		9CA5D4C622E092B500167574 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D4C522E092B500167574 /* WebView.swift */; };
 		9CA8EA7E2357AFE100F149A9 /* AddEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA8EA7D2357AFE100F149A9 /* AddEntryView.swift */; };
@@ -240,6 +241,7 @@
 		9C961B2322770ECE009F80A4 /* wallabagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C961B2522770ECE009F80A4 /* WallabagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagUITests.swift; sourceTree = "<group>"; };
 		9C961B2722770ECE009F80A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9CA42AD32359CAC500EF1BF6 /* RefreshButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshButton.swift; sourceTree = "<group>"; };
 		9CA5D4C322E0906A00167574 /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
 		9CA5D4C522E092B500167574 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		9CA8EA7D2357AFE100F149A9 /* AddEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryView.swift; sourceTree = "<group>"; };
@@ -413,6 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				9C1EB6E723573DD700A5E54B /* EntryPictoImage.swift */,
+				9CA42AD32359CAC500EF1BF6 /* RefreshButton.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1060,6 +1063,7 @@
 				9C73EC4922D791C1008663B1 /* DBData.swift in Sources */,
 				9C40054A22E1DE3200A6E5CA /* LoginView.swift in Sources */,
 				9C9085F922DF44CD00D47262 /* NetworkImage.swift in Sources */,
+				9CA42AD42359CAC500EF1BF6 /* RefreshButton.swift in Sources */,
 				9CE32CBA234F648A004DD045 /* BundleKey.swift in Sources */,
 				BF_DB7F468621011B78AA80968FF9B4DD93 /* RetrieveMode.swift in Sources */,
 				BF_A31D94510D6C4BD65AC0122EB64626C8 /* String.swift in Sources */,
