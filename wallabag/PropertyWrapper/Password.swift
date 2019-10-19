@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import WallabagCommon
 
 @propertyWrapper
 struct Password {

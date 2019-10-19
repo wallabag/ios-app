@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import WallabagCommon
 
 struct WallabagUserDefaults {
     static let keychain: KeychainPasswordItem = KeychainPasswordItem(service: "wallabag", account: "main")

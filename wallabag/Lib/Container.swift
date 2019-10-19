@@ -7,7 +7,6 @@
 
 import Foundation
 import RealmSwift
-import WallabagCommon
 // import WallabagKit
 
 // swiftlint:disable function_body_length

@@ -13,7 +13,6 @@ import RealmSwift
 import Swinject
 import UIKit
 import UserNotifications
-import WallabagCommon
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -37,11 +36,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }.inObjectScope(.container)
         container.register(WallabagKit.self, factory: { _ in WallabagKit(host: WallabagUserDefaults.host) }).inObjectScope(.container)
         container.register(WallabagSession.self, factory: { _ in WallabagSession() })
-        container.register(WallabagSetting.self) { _ in WallabagSetting() }.inObjectScope(.container)
         container.register(ArticlePlayer.self) { resolver in
             let articlePlayer = ArticlePlayer()
             articlePlayer.analytics = resolver.resolve(AnalyticsManager.self)
-            articlePlayer.setting = resolver.resolve(WallabagSetting.self)
             return articlePlayer
         }.inObjectScope(.container)
         /* container.register(MazouteSDK.self) { _ in
@@ -55,7 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     var window: UIWindow?
-    var setting: WallabagSetting!
     @Injector var realm: Realm
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

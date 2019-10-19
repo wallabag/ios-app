@@ -8,13 +8,11 @@
 import AVFoundation
 import Foundation
 import MediaPlayer
-import WallabagCommon
 
 class ArticlePlayer {
     private var speecher: AVSpeechSynthesizer = AVSpeechSynthesizer()
 
     var analytics: AnalyticsManagerProtocol!
-    var setting: SettingProtocol!
     var isPlaying: Bool {
         return speecher.isSpeaking
     }
@@ -42,8 +40,8 @@ class ArticlePlayer {
         speecher.stopSpeaking(at: .immediate)
         guard let content = entry.content else { return }
         utterance = AVSpeechUtterance(string: content.withoutHTML)
-        utterance?.rate = setting.get(for: .speechRate)
-        utterance?.voice = setting.getSpeechVoice()
+        //utterance?.rate = setting.get(for: .speechRate)
+        //utterance?.voice = setting.getSpeechVoice()
         MPNowPlayingInfoCenter.default().nowPlayingInfo = [
             MPMediaItemPropertyTitle: entry.title,
             MPMediaItemPropertyArtist: "Wallabag",

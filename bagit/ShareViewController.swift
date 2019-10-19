@@ -8,11 +8,10 @@
 
 import Social
 import UIKit
-import WallabagCommon
 
 @objc(ShareViewController)
 class ShareViewController: UIViewController {
-    let setting = WallabagSetting()
+    //let setting = WallabagSetting()
 
     lazy var extError = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "App maybe not configured"])
 
@@ -47,7 +46,7 @@ class ShareViewController: UIViewController {
     }
 
     override func viewWillAppear(_: Bool) {
-        if setting.get(for: .wallabagIsConfigured), let attachements = getAttachements() {
+        //if setting.get(for: .wallabagIsConfigured), let attachements = getAttachements() {
             /* let kit = WallabagKit(host: setting.get(for: .host), clientID: setting.get(for: .clientId), clientSecret: setting.get(for: .clientSecret))
              kit.requestAuth(username: setting.get(for: .username), password: setting.getPassword()!) { [unowned self] auth in
                  switch auth {
@@ -70,7 +69,7 @@ class ShareViewController: UIViewController {
                      self.clearView(withError: true)
                  }
              } */
-        }
+        //}
     }
 
     private func getAttachements() -> [NSItemProvider]? {

@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import WallabagCommon
 import WebKit
 
 extension WKWebView {
