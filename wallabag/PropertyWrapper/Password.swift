@@ -1,5 +1,5 @@
 //
-//  test.swift
+//  password.swift
 //  wallabag
 //
 //  Created by Marinel Maxime on 22/07/2019.
@@ -9,14 +9,14 @@ import Foundation
 
 @propertyWrapper
 struct Password {
-    private(set) var value: String = ""
-
+    private var keychain: KeychainPasswordItem
+    
     var wrappedValue: String {
-        get { value }
-        set { value = newValue }
+        get { return (try? keychain.readPassword()) ?? "" }
+        set { try? keychain.savePassword(newValue) }
     }
-
-    init(wrappedValue: String) {
-        self.wrappedValue = wrappedValue
+    
+    init() {
+        self.keychain = KeychainPasswordItem(service: "wallabag", account: "main")
     }
 }

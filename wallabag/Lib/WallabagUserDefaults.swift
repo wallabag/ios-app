@@ -21,10 +21,8 @@ struct WallabagUserDefaults {
     @Setting("username", defaultValue: "")
     static var login: String
 
-    static var password: String {
-        get { return (try? keychain.readPassword()) ?? "" }
-        set { try? keychain.savePassword(newValue) }
-    }
+    @Password()
+    static var password: String
 
     @Setting("registred", defaultValue: false)
     static var registred: Bool
