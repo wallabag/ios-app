@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9C0C3B8A2354890F008AD2C9 /* GeneralSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0C3B892354890F008AD2C9 /* GeneralSetting.swift */; };
+		9C148525235E3ED50082D7BB /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C148524235E3ED50082D7BB /* CoreData.swift */; };
+		9C148527235E3F680082D7BB /* CoreDataViewContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C148526235E3F680082D7BB /* CoreDataViewContext.swift */; };
+		9C14852A235E3FF00082D7BB /* wallabagStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C148528235E3FF00082D7BB /* wallabagStore.xcdatamodeld */; };
 		9C19F8E322707707009450F9 /* RetrieveModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19F8E222707707009450F9 /* RetrieveModeTests.swift */; };
 		9C19F8E622707AC8009450F9 /* BlackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19F8E522707AC8009450F9 /* BlackTests.swift */; };
 		9C19F8E822707D79009450F9 /* DuskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19F8E722707D79009450F9 /* DuskTests.swift */; };
@@ -170,6 +173,9 @@
 
 /* Begin PBXFileReference section */
 		9C0C3B892354890F008AD2C9 /* GeneralSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSetting.swift; sourceTree = "<group>"; };
+		9C148524235E3ED50082D7BB /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		9C148526235E3F680082D7BB /* CoreDataViewContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewContext.swift; sourceTree = "<group>"; };
+		9C148529235E3FF00082D7BB /* wallabagStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabagStore.xcdatamodel; sourceTree = "<group>"; };
 		9C19F8E222707707009450F9 /* RetrieveModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveModeTests.swift; sourceTree = "<group>"; };
 		9C19F8E522707AC8009450F9 /* BlackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackTests.swift; sourceTree = "<group>"; };
 		9C19F8E722707D79009450F9 /* DuskTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuskTests.swift; sourceTree = "<group>"; };
@@ -485,6 +491,7 @@
 				9C5EDEE6234E848D00141DFD /* Injector.swift */,
 				9CCC4AFD22E5D92E00F73891 /* Password.swift */,
 				9C889E7E22E66BCA00B9F767 /* Setting.swift */,
+				9C148526235E3F680082D7BB /* CoreDataViewContext.swift */,
 			);
 			path = PropertyWrapper;
 			sourceTree = "<group>";
@@ -704,6 +711,7 @@
 				FR_26E374F0AF1D1FBEC022213E082366DF /* RetrieveMode.swift */,
 				FR_9904635DBD17CD8DEC268B0000282D5E /* Utils.swift */,
 				9C7AFE0C2353C93E00FBF989 /* WallabagSession.swift */,
+				9C148524235E3ED50082D7BB /* CoreData.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -731,6 +739,7 @@
 				G_60BF241AD87B2847EBA2C59F302A8DF3 /* Storyboard */,
 				G_E288595FB7758C59B0C10F1A195B1273 /* UI */,
 				9CB41DC2234FC00D00C2740B /* Validator */,
+				9C148528235E3FF00082D7BB /* wallabagStore.xcdatamodeld */,
 			);
 			path = wallabag;
 			sourceTree = "<group>";
@@ -967,6 +976,7 @@
 				9C5EDEEA234E889100141DFD /* AboutView.swift in Sources */,
 				BF_047B132AA818924F42C07857A48D5648 /* AnalyticsManager.swift in Sources */,
 				9C7CBD0722D60B8A00EE1DE3 /* ArticlePlayer.swift in Sources */,
+				9C14852A235E3FF00082D7BB /* wallabagStore.xcdatamodeld in Sources */,
 				BF_C08A9375D74D7DB78FE8F985821676D0 /* AppDelegate.swift in Sources */,
 				9C5153A422836892001A976B /* Tag.swift in Sources */,
 				9C889E7F22E66BCA00B9F767 /* Setting.swift in Sources */,
@@ -996,6 +1006,7 @@
 				9C9085F722DF3FF600D47262 /* ArticleRowView.swift in Sources */,
 				9C7AFE0F2353CE0300FBF989 /* HttpMethod.swift in Sources */,
 				9C73EC4922D791C1008663B1 /* DBData.swift in Sources */,
+				9C148525235E3ED50082D7BB /* CoreData.swift in Sources */,
 				9C40054A22E1DE3200A6E5CA /* LoginView.swift in Sources */,
 				9C9085F922DF44CD00D47262 /* NetworkImage.swift in Sources */,
 				9CA42AD42359CAC500EF1BF6 /* RefreshButton.swift in Sources */,
@@ -1010,6 +1021,7 @@
 				9CCC4AFC22E3BFD400F73891 /* WallabagUserDefaults.swift in Sources */,
 				9C7AFE112353CE1D00FBF989 /* WallabagKitEndpoint.swift in Sources */,
 				9C73EC4722D79093008663B1 /* ArticleListView.swift in Sources */,
+				9C148527235E3F680082D7BB /* CoreDataViewContext.swift in Sources */,
 				9CA5D4C622E092B500167574 /* WebView.swift in Sources */,
 				9CA8EA7E2357AFE100F149A9 /* AddEntryView.swift in Sources */,
 				9C66B6C5235680130068B968 /* ArchiveEntryButton.swift in Sources */,
@@ -1445,6 +1457,19 @@
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		9C148528235E3FF00082D7BB /* wallabagStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9C148529235E3FF00082D7BB /* wallabagStore.xcdatamodel */,
+			);
+			currentVersion = 9C148529235E3FF00082D7BB /* wallabagStore.xcdatamodel */;
+			path = wallabagStore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = P_EDC2B1D3872816D6335919C238A9EA25 /* Project object */;
 }

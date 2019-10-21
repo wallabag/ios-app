@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ArticleRowView: View {
-    var entry: Entry
+    @ObservedObject var entry: Entry
 
     var body: some View {
         HStack {
@@ -30,6 +30,12 @@ struct ArticleRowView: View {
     }
 }
 
+struct TestPoc: View {
+    @Binding var isArchived: Bool
+    var body: some View {
+        Image(systemName: isArchived ? "book.fill" : "book")
+    }
+}
 struct ArticleRowView_Previews: PreviewProvider {
     static var previews: some View {
         ArticleRowView(entry: Entry()).previewLayout(.fixed(width: 300, height: 70))

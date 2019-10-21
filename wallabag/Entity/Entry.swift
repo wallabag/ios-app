@@ -8,7 +8,40 @@
 
 import Foundation
 import RealmSwift
+import CoreData
 
+
+class Entry: NSManagedObject, Identifiable {}
+
+extension Entry {
+    @nonobjc public class func fetchRequestSorted() -> NSFetchRequest<Entry> {
+        let fetchRequest = NSFetchRequest<Entry>(entityName: "Entry")
+        let sortDescriptor = NSSortDescriptor(key: "id", ascending: false)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        return fetchRequest
+    }
+    
+    @nonobjc public class func fetchOneById(_ id: Int) -> NSFetchRequest<Entry> {
+        let fetchRequest = NSFetchRequest<Entry>(entityName: "Entry")
+        fetchRequest.predicate = NSPredicate(format: "id == %ld", id)
+        return fetchRequest
+    }
+
+    @NSManaged public dynamic var content: String?
+    @NSManaged public dynamic var createdAt: Date?
+    @NSManaged public dynamic var domainName: String?
+    @NSManaged public dynamic var id: Int
+    @NSManaged public dynamic var isArchived: Bool
+    @NSManaged public dynamic var isStarred: Bool
+    @NSManaged public dynamic var previewPicture: String?
+    @NSManaged public dynamic var title: String?
+    @NSManaged public dynamic var updatedAt: Date?
+    @NSManaged public dynamic var url: String?
+    @NSManaged public dynamic var readingTime: Int
+    @NSManaged public dynamic var screenPosition: Float
+}
+
+/*
 final class Entry: Object {
     @objc public dynamic var content: String?
     @objc public dynamic var createdAt: Date?
@@ -31,4 +64,4 @@ final class Entry: Object {
     override class func indexedProperties() -> [String] {
         return ["title", "content", "isArchived", "isStarred"]
     }
-}
+}*/

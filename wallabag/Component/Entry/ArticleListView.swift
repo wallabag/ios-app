@@ -12,20 +12,20 @@ struct ArticleListView: View {
     @EnvironmentObject var appState: AppState
     @ObservedObject var entryPublisher = EntryPublisher()
     @State var showAdd: Bool = false
-
+    
     var body: some View {
         NavigationView {
             VStack {
                 RetrieveModePicker(filter: $entryPublisher.retrieveMode)
                 List(entryPublisher.entries, id: \.id) { entry in
-                    NavigationLink(destination: ArticleView(entry: entry, entryPublisher: self.entryPublisher)) {
+                   NavigationLink(destination: ArticleView(entry: entry, entryPublisher: self.entryPublisher)) {
                         ArticleRowView(entry: entry).contextMenu {
                             ArchiveEntryButton(entryPublisher: self.entryPublisher, entry: entry)
                             StarEntryButton(entryPublisher: self.entryPublisher, entry: entry)
                             DeleteEntryButton(entryPublisher: self.entryPublisher, entry: entry)
                         }
                     }
-                }.onAppear(perform: entryPublisher.loadEntries)
+                }.onAppear(perform: entryPublisher.fetch)
                     .navigationBarTitle("Articles")
                     .navigationBarItems(trailing:
                         ViewBuilder.buildBlock(
@@ -40,9 +40,9 @@ struct ArticleListView: View {
 }
 
 #if DEBUG
-    struct ArticleListView_Previews: PreviewProvider {
-        static var previews: some View {
-            ArticleListView()
-        }
+struct ArticleListView_Previews: PreviewProvider {
+    static var previews: some View {
+        ArticleListView()
     }
+}
 #endif

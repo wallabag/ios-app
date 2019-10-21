@@ -24,9 +24,10 @@ extension Entry {
     }
 
     func hydrate(from article: WallabagEntry) {
-        if 0 == id {
+        /*if 0 == id {
             setValue(article.id, forKey: "id")
-        }
+        }*/
+        id = article.id
         title = article.title
         content = article.content
         createdAt = Date.fromISOString(article.createdAt)

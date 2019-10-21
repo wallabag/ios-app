@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EntryPictoImage: View {
-    var entry: Entry
+    @ObservedObject var entry: Entry
     var keyPath: KeyPath<Entry, Bool>
     var picto: String
     var body: some View {
@@ -16,6 +16,7 @@ struct EntryPictoImage: View {
     }
 }
 
+/*
 struct EntryPictoImage_Previews: PreviewProvider {
     static var entryIs: Entry = {
         let entry = Entry()
@@ -37,3 +38,4 @@ struct EntryPictoImage_Previews: PreviewProvider {
         }
     }
 }
+*/

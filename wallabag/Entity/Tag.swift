@@ -12,7 +12,7 @@ final class Tag: Object {
     @objc public dynamic var id: Int = 0
     @objc public dynamic var label: String?
     @objc public dynamic var slug: String?
-    let entries = LinkingObjects(fromType: Entry.self, property: "tags")
+    //let entries = LinkingObjects(fromType: Entry.self, property: "tags")
 
     override class func primaryKey() -> String? {
         return "id"

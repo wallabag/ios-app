@@ -7,60 +7,49 @@
 
 import Combine
 import Foundation
-import RealmSwift
+import CoreData
 
 class EntryPublisher: ObservableObject {
-    @Injector var realm: Realm
     @Published var retrieveMode: RetrieveMode = .allArticles {
         didSet {
-            loadEntries()
+            fetch()
         }
     }
-
     @Published var entries: [Entry] = []
-
-    private var notificationToken: NotificationToken?
-
-    func loadEntries() {
-        let results = realm.objects(Entry.self)
-        notificationToken = results.observe { changes in
-            switch changes {
-            case let .update(results, _, _, _):
-                self.entries = results.compactMap { $0 }
-            case .initial:
-                break
-            case .error:
-                break
-            }
-        }
-        entries = results.filter(retrieveMode.predicate()).sorted(byKeyPath: "id", ascending: false).compactMap { $0 }
+    var hasChanges: Cancellable?
+    @CoreDataViewContext var context: NSManagedObjectContext
+    
+    init() {
+         hasChanges = context.publisher(for: \.hasChanges).sink { _ in
+             self.fetch()
+         }
     }
-
-    func start(entry: Entry) {
-        try? realm.write {
-            entry.isStarred = true
+    
+    func fetch() {
+        do {
+            entries = try context.fetch(Entry.fetchRequestSorted()).self
+        } catch {
+            fatalError(error.localizedDescription)
         }
     }
 
     func toggleArchive(_ entry: Entry) {
-        try? realm.write {
-            entry.isArchived.toggle()
-        }
+        entry.isArchived.toggle()
+        entry.objectWillChange.send()
     }
 
     func toggleStar(_ entry: Entry) {
-        try? realm.write {
-            entry.isStarred.toggle()
-        }
+        entry.isStarred.toggle()
+        entry.objectWillChange.send()
     }
 
     func delete(_ entry: Entry) {
-        try? realm.write {
+        /*try? realm.write {
             realm.delete(entry)
-        }
+        }*/
     }
 
     deinit {
-        notificationToken?.invalidate()
+        hasChanges?.cancel()
     }
 }

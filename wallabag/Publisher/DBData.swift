@@ -9,7 +9,7 @@ import Combine
 import RealmSwift
 import SwiftUI
 
-final class DBData: ObservableObject {
+/*final class DBData: ObservableObject {
     let willChange = PassthroughSubject<DBData, Never>()
 
     private var notificationTokens: [NotificationToken] = []
@@ -46,4 +46,4 @@ class BindableResults<Element>: ObservableObject where Element: RealmSwift.Realm
     deinit {
         token.invalidate()
     }
-}
+}*/
