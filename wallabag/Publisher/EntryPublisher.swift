@@ -10,14 +10,16 @@ import Foundation
 import CoreData
 
 class EntryPublisher: ObservableObject {
+    @CoreDataViewContext var context: NSManagedObjectContext
+    
     @Published var retrieveMode: RetrieveMode = .allArticles {
         didSet {
             fetch()
         }
     }
     @Published var entries: [Entry] = []
-    var hasChanges: Cancellable?
-    @CoreDataViewContext var context: NSManagedObjectContext
+    
+    private var hasChanges: Cancellable?
     
     init() {
          hasChanges = context.publisher(for: \.hasChanges).sink { _ in
@@ -44,9 +46,11 @@ class EntryPublisher: ObservableObject {
     }
 
     func delete(_ entry: Entry) {
-        /*try? realm.write {
-            realm.delete(entry)
-        }*/
+        if let index = entries.firstIndex(of: entry) {
+            context.delete(entry)
+            entries.remove(at: index)
+            objectWillChange.send()
+        }
     }
 
     deinit {
