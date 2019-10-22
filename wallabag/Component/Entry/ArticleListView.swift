@@ -10,22 +10,13 @@ import SwiftUI
 struct ArticleListView: View {
     @EnvironmentObject var appSync: AppSync
     @EnvironmentObject var appState: AppState
-    @ObservedObject var entryPublisher = EntryPublisher()
-    @State var showAdd: Bool = false
+    @EnvironmentObject var entryPublisher: EntryPublisher
     
     var body: some View {
         NavigationView {
             VStack {
                 RetrieveModePicker(filter: $entryPublisher.retrieveMode)
-                List(entryPublisher.entries, id: \.id) { entry in
-                   NavigationLink(destination: ArticleView(entry: entry, entryPublisher: self.entryPublisher)) {
-                        ArticleRowView(entry: entry).contextMenu {
-                            ArchiveEntryButton(entryPublisher: self.entryPublisher, entry: entry)
-                            StarEntryButton(entryPublisher: self.entryPublisher, entry: entry)
-                            DeleteEntryButton(entryPublisher: self.entryPublisher, entry: entry)
-                        }
-                    }
-                }.onAppear(perform: entryPublisher.fetch)
+                ArticleTableView(entries: $entryPublisher.entries)
                     .navigationBarTitle("Articles")
                     .navigationBarItems(trailing:
                         ViewBuilder.buildBlock(

@@ -9,12 +9,12 @@ import SwiftUI
 
 struct StarEntryButton: View {
     @EnvironmentObject var appState: AppState
-    var entryPublisher: EntryPublisher
+    @EnvironmentObject var entryPublisher: EntryPublisher
     var entry: Entry
     var showText: Bool = true
     var body: some View {
         Button(action: {
-            self.appState.session.update(self.entry, parameters: ["favorite": (!self.entry.isStarred).int])
+            self.appState.session.update(self.entry, parameters: ["starred": (!self.entry.isStarred).int])
             self.entryPublisher.toggleStar(self.entry)
         }, label: {
             if showText {

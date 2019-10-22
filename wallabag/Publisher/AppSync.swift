@@ -26,36 +26,47 @@ class AppSync: ObservableObject {
         sessionState?.cancel()
     }
     
-    func requestSync() {
+    func requestSync(completion: @escaping () -> ()) {
         inProgress = true
         sessionState = session.$state.sink { state in
             if state == .connected {
-                self.sync()
+                self.sync {
+                    completion()
+                }
             }
         }
         session.requestSession()
     }
     
-    private func sync() {
+    private func sync(completion: @escaping () -> ()) {
         entriesSynced = []
         fetchEntries { collection in
-            for wallabagEntry in collection.items {
-                
-                if let entry = try? self.coreDataContext.fetch(Entry.fetchOneById(wallabagEntry.id)).first {
-                    if let articleUpdatedAt = Date.fromISOString(wallabagEntry.updatedAt) {
-                        if entry.updatedAt! > articleUpdatedAt {
-                            self.update(entry: entry)
+            CoreData.shared.persistentContainer.performBackgroundTask { backgroundContext in
+                for wallabagEntry in collection.items {
+                    self.entriesSynced.append(wallabagEntry.id)
+                    if let entry = try? self.coreDataContext.fetch(Entry.fetchOneById(wallabagEntry.id)).first {
+                        if let articleUpdatedAt = Date.fromISOString(wallabagEntry.updatedAt) {
+                            if entry.updatedAt! > articleUpdatedAt {
+                                self.update(entry: entry)
+                            }
                         }
+                    } else {
+                        let entry = Entry(context: backgroundContext)
+                        entry.hydrate(from: wallabagEntry)
                     }
                 }
-                let entry = Entry(context: self.coreDataContext)
-                entry.hydrate(from: wallabagEntry)
+                do {
+                    try backgroundContext.save()
+                } catch {
+                    
+                }
             }
         }
         dispatchGroup.notify(queue: syncQueue) {
             self.purge()
             DispatchQueue.main.async {
                 self.inProgress = false
+                completion()
             }
         }
     }
@@ -82,13 +93,20 @@ class AppSync: ObservableObject {
     }
     
     private func purge() {
-        DispatchQueue.main.async { [unowned self] in
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Entry")
+        fetchRequest.predicate = NSPredicate(format: "NOT (id IN %@)", argumentArray: [self.entriesSynced])
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        CoreData.shared.persistentContainer.performBackgroundTask { backgroundContext in
             do {
-                /*try self.realm.write {
-                 let entries = self.realm.objects(Entry.self).filter("NOT (id IN %@)", self.entriesSynced)
-                 self.realm.delete(entries)
-                 }*/
-            } catch _ {}
+                let batchDeleteResult = try backgroundContext.execute(deleteRequest) as? NSBatchDeleteResult
+                
+                if let deletedObjectIDs = batchDeleteResult?.result as? [NSManagedObjectID] {
+                    NSManagedObjectContext.mergeChanges(fromRemoteContextSave: [NSDeletedObjectsKey: deletedObjectIDs],
+                                                        into: [self.coreDataContext])
+                }
+            } catch {
+                Log("Error in batch delete")
+            }
         }
     }
 }

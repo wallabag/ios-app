@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ArchiveEntryButton: View {
     @EnvironmentObject var appState: AppState
-    var entryPublisher: EntryPublisher
+    @EnvironmentObject var entryPublisher: EntryPublisher
     var entry: Entry
     var showText: Bool = true
     var body: some View {

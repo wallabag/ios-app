@@ -12,15 +12,29 @@ enum RetrieveMode: String, CaseIterable {
     case archivedArticles = "Read articles"
     case unarchivedArticles = "Unread articles"
     case starredArticles = "Starred articles"
-
+    
+    init(fromCase: String) {
+        switch fromCase {
+        case "allArticles":
+            self = .allArticles
+        case "archivedArticles":
+            self = .archivedArticles
+        case "unarchivedArticles":
+            self = .unarchivedArticles
+        case "starredArticles":
+            self = .starredArticles
+        default:
+            fatalError()        }
+    }
+    
     func predicate() -> NSPredicate {
         switch self {
         case .unarchivedArticles:
-            return NSPredicate(format: "isArchived == 0")
+            return NSPredicate(format: "isArchived == NO")
         case .starredArticles:
-            return NSPredicate(format: "isStarred == 1")
+            return NSPredicate(format: "isStarred == YES")
         case .archivedArticles:
-            return NSPredicate(format: "isArchived == 1")
+            return NSPredicate(format: "isArchived == YES")
         case .allArticles:
             return NSPredicate(value: true)
         }

@@ -9,27 +9,27 @@ import RealmSwift
 import SwiftUI
 
 struct ArticleView: View {
-    var entry: Entry
-    var entryPublisher: EntryPublisher
+    @ObservedObject var entry: Entry
+    @EnvironmentObject var entryPublisher: EntryPublisher
 
     var body: some View {
         VStack {
             WebView(entry: entry)
             HStack {
-                ArchiveEntryButton(entryPublisher: entryPublisher, entry: entry, showText: false)
-                StarEntryButton(entryPublisher: entryPublisher, entry: entry, showText: false)
+                ArchiveEntryButton(entry: entry, showText: false)
+                StarEntryButton(entry: entry, showText: false)
                 Spacer()
-                DeleteEntryButton(entryPublisher: entryPublisher, entry: entry, showText: false)
+                DeleteEntryButton(entry: entry, showText: false)
             }.padding()
         }.navigationBarTitle(entry.title ?? "")
     }
 }
 
-/*
+
  #if DEBUG
  struct ArticleView_Previews: PreviewProvider {
      static var previews: some View {
          ArticleView(entry: Entry())
      }
  }
- #endif*/
+ #endif

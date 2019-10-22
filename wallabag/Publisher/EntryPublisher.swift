@@ -10,6 +10,10 @@ import Foundation
 import CoreData
 
 class EntryPublisher: ObservableObject {
+    //BUG WORKAROUND
+    let objectWillChange = ObservableObjectPublisher()
+    //END BUG WORKAROUND
+    
     @CoreDataViewContext var context: NSManagedObjectContext
     
     @Published var retrieveMode: RetrieveMode = .allArticles {
@@ -22,6 +26,7 @@ class EntryPublisher: ObservableObject {
     private var hasChanges: Cancellable?
     
     init() {
+        retrieveMode = RetrieveMode(fromCase: WallabagUserDefaults.defaultMode)
          hasChanges = context.publisher(for: \.hasChanges).sink { _ in
              self.fetch()
          }
@@ -29,7 +34,10 @@ class EntryPublisher: ObservableObject {
     
     func fetch() {
         do {
-            entries = try context.fetch(Entry.fetchRequestSorted()).self
+            let fetchRequest = Entry.fetchRequestSorted()
+            fetchRequest.predicate = retrieveMode.predicate()
+            entries = try context.fetch(fetchRequest)
+            objectWillChange.send()
         } catch {
             fatalError(error.localizedDescription)
         }

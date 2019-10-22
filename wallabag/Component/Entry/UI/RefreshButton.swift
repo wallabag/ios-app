@@ -9,10 +9,14 @@ import SwiftUI
 
 struct RefreshButton: View {
     @EnvironmentObject var appSync: AppSync
+    @EnvironmentObject var entryPublisher: EntryPublisher
     var body: some View {
         Button(
             action: {
-                self.appSync.requestSync()
+                self.appSync.requestSync {
+                    self.entryPublisher.fetch()
+                    self.entryPublisher.objectWillChange.send()
+                }
             },
             label: {
                 Image(systemName: "arrow.counterclockwise")

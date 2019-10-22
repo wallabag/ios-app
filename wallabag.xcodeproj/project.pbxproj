@@ -66,6 +66,7 @@
 		9C90F62C2296B86F00C113EF /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9C90F62B2296B86F00C113EF /* Settings.bundle */; };
 		9C961B2622770ECE009F80A4 /* WallabagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C961B2522770ECE009F80A4 /* WallabagUITests.swift */; };
 		9CA42AD42359CAC500EF1BF6 /* RefreshButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA42AD32359CAC500EF1BF6 /* RefreshButton.swift */; };
+		9CA4CDE0235F22E700F94982 /* ArticleTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA4CDDF235F22E700F94982 /* ArticleTableView.swift */; };
 		9CA5D4C422E0906A00167574 /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D4C322E0906A00167574 /* ArticleView.swift */; };
 		9CA5D4C622E092B500167574 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D4C522E092B500167574 /* WebView.swift */; };
 		9CA8EA7E2357AFE100F149A9 /* AddEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA8EA7D2357AFE100F149A9 /* AddEntryView.swift */; };
@@ -229,6 +230,7 @@
 		9C961B2522770ECE009F80A4 /* WallabagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagUITests.swift; sourceTree = "<group>"; };
 		9C961B2722770ECE009F80A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CA42AD32359CAC500EF1BF6 /* RefreshButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshButton.swift; sourceTree = "<group>"; };
+		9CA4CDDF235F22E700F94982 /* ArticleTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableView.swift; sourceTree = "<group>"; };
 		9CA5D4C322E0906A00167574 /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
 		9CA5D4C522E092B500167574 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		9CA8EA7D2357AFE100F149A9 /* AddEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryView.swift; sourceTree = "<group>"; };
@@ -404,6 +406,7 @@
 				9CA8EA7D2357AFE100F149A9 /* AddEntryView.swift */,
 				9C73EC4622D79093008663B1 /* ArticleListView.swift */,
 				9C9085F622DF3FF600D47262 /* ArticleRowView.swift */,
+				9CA4CDDF235F22E700F94982 /* ArticleTableView.swift */,
 				9CA5D4C322E0906A00167574 /* ArticleView.swift */,
 				9CA5D4C522E092B500167574 /* WebView.swift */,
 				9C1EB6E623573DB900A5E54B /* UI */,
@@ -1029,6 +1032,7 @@
 				9C37217522E1134600D363FB /* ServerView.swift in Sources */,
 				9CB41DC6234FC14500C2740B /* ClientIdClientServerTextFieldValidator.swift in Sources */,
 				BF_767B670EFD6E74785BD2212AF6B9A34A /* UIImageView.swift in Sources */,
+				9CA4CDE0235F22E700F94982 /* ArticleTableView.swift in Sources */,
 				BF_A263058FD57BCE7DECF1322ABBB1C729 /* UIPodcastSlider.swift in Sources */,
 				9CCA195923562096007B4C19 /* EntryPublisher.swift in Sources */,
 				BF_27B3C5BB859104CEF0AB1D52843622B4 /* WKWebView.swift in Sources */,
