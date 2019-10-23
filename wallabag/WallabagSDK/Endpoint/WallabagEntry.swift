@@ -10,16 +10,18 @@ import Foundation
 enum WallabagEntryEndpoint: WallabagKitEndpoint {
     case get(page: Int = 1, perPage: Int = 30)
     case add(url: String)
+    case addTag(tag: String, entry: Int)
     case delete(id: Int)
+    case deleteTag(tagId: Int, entry: Int)
     case update(id: Int, parameters: WallabagKit.Parameters)
 
     func method() -> HttpMethod {
         switch self {
         case .get:
             return .get
-        case .add:
+        case .add, .addTag:
             return .post
-        case .delete:
+        case .delete, .deleteTag:
             return .delete
         case .update:
             return .patch
@@ -38,8 +40,12 @@ enum WallabagEntryEndpoint: WallabagKitEndpoint {
             return request.url!.relativeString
         case .add:
             return "/api/entries.json"
+        case let .addTag(_, entry):
+            return "/api/entries/\(entry)/tags"
         case let .delete(id):
             return "/api/entries/\(id)"
+        case let .deleteTag(tagId, entryId):
+            return "/api/entries/\(entryId)/tags/\(tagId)"
         case let .update(id, _):
             return "/api/entries/\(id).json"
         }
@@ -51,6 +57,8 @@ enum WallabagEntryEndpoint: WallabagKitEndpoint {
             return "url=\(url)".data(using: .utf8)!
         case let .update(_, parameters):
             return try! JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+        case let .addTag(tag, _):
+            return try! JSONSerialization.data(withJSONObject: ["tags": tag], options: .prettyPrinted)
         default:
             return "".data(using: .utf8)!
         }
@@ -77,5 +85,5 @@ public struct WallabagEntry: Decodable {
     public let readingTime: Int?
     public let domainName: String?
     public let previewPicture: String?
-    // public let tags: [WallabagKitTag]?
+    public let tags: [WallabagTag]?
 }

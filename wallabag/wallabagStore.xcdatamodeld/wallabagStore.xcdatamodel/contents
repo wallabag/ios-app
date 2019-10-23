@@ -12,6 +12,17 @@
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Tag" representedClassName=".Tag" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="label" optional="YES" attributeType="String"/>
+        <attribute name="slug" optional="YES" attributeType="String"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="id"/>
@@ -19,6 +30,7 @@
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="Entry" positionX="-63" positionY="-18" width="128" height="208"/>
+        <element name="Entry" positionX="-63" positionY="-18" width="128" height="223"/>
+        <element name="Tag" positionX="-63" positionY="63" width="128" height="88"/>
     </elements>
 </model>

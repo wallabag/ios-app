@@ -7,11 +7,9 @@
 
 import Combine
 import Foundation
-import RealmSwift
 import CoreData
 
 class AppSync: ObservableObject {
-    @Injector var realm: Realm
     @Injector var session: WallabagSession
     @Published var inProgress = false
     @CoreDataViewContext var coreDataContext: NSManagedObjectContext
@@ -21,6 +19,7 @@ class AppSync: ObservableObject {
     
     private let dispatchGroup = DispatchGroup()
     private var entriesSynced: [Int] = []
+    private var tags: [Int: Tag] = [:]
     
     deinit {
         sessionState?.cancel()
@@ -40,29 +39,46 @@ class AppSync: ObservableObject {
     
     private func sync(completion: @escaping () -> ()) {
         entriesSynced = []
-        fetchEntries { collection in
-            CoreData.shared.persistentContainer.performBackgroundTask { backgroundContext in
-                for wallabagEntry in collection.items {
-                    self.entriesSynced.append(wallabagEntry.id)
-                    if let entry = try? self.coreDataContext.fetch(Entry.fetchOneById(wallabagEntry.id)).first {
-                        if let articleUpdatedAt = Date.fromISOString(wallabagEntry.updatedAt) {
-                            if entry.updatedAt! > articleUpdatedAt {
-                                self.update(entry: entry)
-                            }
+        let backgroundContext = CoreData.shared.persistentContainer.newBackgroundContext()
+        
+        self.fetchEntries { collection in
+            for wallabagEntry in collection.items {
+                self.entriesSynced.append(wallabagEntry.id)
+                if let entry = try? self.coreDataContext.fetch(Entry.fetchOneById(wallabagEntry.id)).first {
+                    entry.hydrate(from: wallabagEntry)
+                    if let articleUpdatedAt = Date.fromISOString(wallabagEntry.updatedAt) {
+                        if entry.updatedAt! > articleUpdatedAt {
+                            self.update(entry: entry)
                         }
-                    } else {
-                        let entry = Entry(context: backgroundContext)
-                        entry.hydrate(from: wallabagEntry)
                     }
-                }
-                do {
-                    try backgroundContext.save()
-                } catch {
                     
+                } else {
+                    let entry = Entry(context: backgroundContext)
+                    entry.hydrate(from: wallabagEntry)
+                    let entryTags = entry.mutableSetValue(forKey: #keyPath(Entry.tags))
+                    wallabagEntry.tags?.forEach {
+                        if let tag = self.tags[$0.id] {
+                            entryTags.add(tag)
+                        } else {
+                            let tag = Tag(context: backgroundContext)
+                            tag.id = $0.id
+                            tag.label = $0.label
+                            tag.slug = $0.slug
+                            entryTags.add(tag)
+                            self.tags[$0.id] = tag
+                        }
+                    }
                 }
             }
         }
+        
         dispatchGroup.notify(queue: syncQueue) {
+            do {
+                try backgroundContext.save()
+                backgroundContext.reset()
+            } catch {
+                
+            }
             self.purge()
             DispatchQueue.main.async {
                 self.inProgress = false

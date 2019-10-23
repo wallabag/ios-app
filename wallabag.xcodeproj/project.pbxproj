@@ -26,6 +26,7 @@
 		9C37217722E1171100D363FB /* ClientIdClientSecretView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37217622E1171100D363FB /* ClientIdClientSecretView.swift */; };
 		9C3F13E42353D4C800303AA8 /* WallabagCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F13E32353D4C800303AA8 /* WallabagCollection.swift */; };
 		9C40054A22E1DE3200A6E5CA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C40054922E1DE3200A6E5CA /* LoginView.swift */; };
+		9C45F6CB236069650021813B /* TagListFor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45F6CA236069650021813B /* TagListFor.swift */; };
 		9C4976532226751900DA4BD0 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4976522226751900DA4BD0 /* Container.swift */; };
 		9C4D4B9C225B69C100FE3095 /* BoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D4B9B225B69C100FE3095 /* BoolTests.swift */; };
 		9C4D4B9E225B6A2B00FE3095 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D4B9D225B6A2B00FE3095 /* DateTests.swift */; };
@@ -36,9 +37,10 @@
 		9C5EDEF0234E922D00141DFD /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5EDEEF234E922D00141DFD /* Crashlytics.framework */; };
 		9C5EDEF2234E923700141DFD /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5EDEF1234E923700141DFD /* Fabric.framework */; };
 		9C5EDF00234E937100141DFD /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 9C5EDEFF234E937100141DFD /* Swinject */; };
-		9C5EDF04234E96D500141DFD /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 9C5EDF03234E96D500141DFD /* Realm */; };
-		9C5EDF06234E96D500141DFD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9C5EDF05234E96D500141DFD /* RealmSwift */; };
 		9C5EDF08234E982600141DFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C5EDF07234E982600141DFD /* LaunchScreen.storyboard */; };
+		9C60DE2323606C9100F78D02 /* TagPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60DE2223606C9100F78D02 /* TagPublisher.swift */; };
+		9C60DE2523606DAA00F78D02 /* TagRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60DE2423606DAA00F78D02 /* TagRow.swift */; };
+		9C60DE2723606F9800F78D02 /* WallabagTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60DE2623606F9800F78D02 /* WallabagTag.swift */; };
 		9C661DB9225D45F200086057 /* AboutViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C661DB8225D45F200086057 /* AboutViewControllerTests.swift */; };
 		9C66B6BD235667770068B968 /* AppSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C66B6BC235667770068B968 /* AppSync.swift */; };
 		9C66B6C2235678780068B968 /* RetrieveModePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C66B6C1235678780068B968 /* RetrieveModePicker.swift */; };
@@ -118,7 +120,6 @@
 		BF_DD384BCC5299EA5EEB8825713EBE508F /* Localizable.plist in Resources */ = {isa = PBXBuildFile; fileRef = FR_F21BD2487093365E104F75BAF6110063 /* Localizable.plist */; };
 		BF_E4C5BA8B967986D005FC808C1952FDD1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = VG_BEEC8418DD761BF3A09EDB772794FA5C /* Localizable.strings */; };
 		BF_E6040E8172A1379E9F3BF5092595589A /* AuthSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_EA8F1AFA4AAA4DA7100F817954FA4F9F /* AuthSuccess.json */; };
-		BF_E86293481ACAC83DE1587222089DDC5D /* EntryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_5C8DA6DE33F2FACC03BFACE708CD2ED6 /* EntryExtension.swift */; };
 		BF_F2ADFB3B4C1B0836F13DB4A1DE5406A7 /* TokenAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_AB15CF3A73378A512C3D9BBC9F7ECD65 /* TokenAdapterTests.swift */; };
 		BF_F455B9C80CD63DD87EF42992438C4F82 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_39287A02F2B756958D56349AC317D33B /* ShareViewController.swift */; };
 		BF_F4704CC172521D78A1A955AD8BC9F40A /* AuthWrongPassword.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_AA3C9177E62CEEBC8018AAB81DA95B35 /* AuthWrongPassword.json */; };
@@ -192,6 +193,7 @@
 		9C37217622E1171100D363FB /* ClientIdClientSecretView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientIdClientSecretView.swift; sourceTree = "<group>"; };
 		9C3F13E32353D4C800303AA8 /* WallabagCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagCollection.swift; sourceTree = "<group>"; };
 		9C40054922E1DE3200A6E5CA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		9C45F6CA236069650021813B /* TagListFor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListFor.swift; sourceTree = "<group>"; };
 		9C4976522226751900DA4BD0 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		9C4D4B9B225B69C100FE3095 /* BoolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolTests.swift; sourceTree = "<group>"; };
 		9C4D4B9D225B6A2B00FE3095 /* DateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
@@ -202,6 +204,9 @@
 		9C5EDEEF234E922D00141DFD /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		9C5EDEF1234E923700141DFD /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		9C5EDF07234E982600141DFD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9C60DE2223606C9100F78D02 /* TagPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPublisher.swift; sourceTree = "<group>"; };
+		9C60DE2423606DAA00F78D02 /* TagRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRow.swift; sourceTree = "<group>"; };
+		9C60DE2623606F9800F78D02 /* WallabagTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagTag.swift; sourceTree = "<group>"; };
 		9C661DB8225D45F200086057 /* AboutViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewControllerTests.swift; sourceTree = "<group>"; };
 		9C66B6BC235667770068B968 /* AppSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSync.swift; sourceTree = "<group>"; };
 		9C66B6C1235678780068B968 /* RetrieveModePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveModePicker.swift; sourceTree = "<group>"; };
@@ -262,7 +267,6 @@
 		FR_448862BF589F4829A648C0F56DC31F9A /* DictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
 		FR_4F6DCF741037732F30E4ED36FA3E5984 /* Entry.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Entry.json; sourceTree = "<group>"; };
 		FR_5259EA32015B0B9F139FF20E34F493C3 /* wallabagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FR_5C8DA6DE33F2FACC03BFACE708CD2ED6 /* EntryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryExtension.swift; sourceTree = "<group>"; };
 		FR_5DE83659FDAF5871759C0A7D752A7823 /* wallabag-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "wallabag-Release.xcconfig"; sourceTree = "<group>"; };
 		FR_5E14209A3FF3601917A397C25C00B4B4 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		FR_606AAB346453DED260A405BD16778883 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -338,9 +342,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C5EDF04234E96D500141DFD /* Realm in Frameworks */,
 				9C677CAD227EF5A6006C7112 /* WebKit.framework in Frameworks */,
-				9C5EDF06234E96D500141DFD /* RealmSwift in Frameworks */,
 				9C5EDEF0234E922D00141DFD /* Crashlytics.framework in Frameworks */,
 				9C5EDF00234E937100141DFD /* Swinject in Frameworks */,
 				9C5EDEF2234E923700141DFD /* Fabric.framework in Frameworks */,
@@ -400,6 +402,15 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		9C45F6CC236069700021813B /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				9C45F6CA236069650021813B /* TagListFor.swift */,
+				9C60DE2423606DAA00F78D02 /* TagRow.swift */,
+			);
+			path = Tag;
+			sourceTree = "<group>";
+		};
 		9C5EDEE2234E810C00141DFD /* Entry */ = {
 			isa = PBXGroup;
 			children = (
@@ -422,6 +433,7 @@
 				9C5EDEE4234E842B00141DFD /* AppState.swift */,
 				9CCA195823562096007B4C19 /* EntryPublisher.swift */,
 				9C66B6BC235667770068B968 /* AppSync.swift */,
+				9C60DE2223606C9100F78D02 /* TagPublisher.swift */,
 			);
 			path = Publisher;
 			sourceTree = "<group>";
@@ -471,6 +483,7 @@
 				9C5EDEE2234E810C00141DFD /* Entry */,
 				9C66B6BE235678270068B968 /* Filter */,
 				9CB4D03F22E8A9220078BD1C /* Registration */,
+				9C45F6CC236069700021813B /* Tag */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -482,6 +495,7 @@
 				9C7AFE102353CE1D00FBF989 /* WallabagKitEndpoint.swift */,
 				9C7AFE172353CEBA00FBF989 /* WallabagEntry.swift */,
 				9C3F13E32353D4C800303AA8 /* WallabagCollection.swift */,
+				9C60DE2623606F9800F78D02 /* WallabagTag.swift */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -650,7 +664,6 @@
 			isa = PBXGroup;
 			children = (
 				FR_98514F67A77EA8D6B6267CBD63F94725 /* Entry.swift */,
-				FR_5C8DA6DE33F2FACC03BFACE708CD2ED6 /* EntryExtension.swift */,
 				9C5153A322836892001A976B /* Tag.swift */,
 			);
 			path = Entity;
@@ -815,8 +828,6 @@
 			name = wallabag;
 			packageProductDependencies = (
 				9C5EDEFF234E937100141DFD /* Swinject */,
-				9C5EDF03234E96D500141DFD /* Realm */,
-				9C5EDF05234E96D500141DFD /* RealmSwift */,
 			);
 			productName = wallabag;
 			productReference = FR_7EF8E3725DA0867206C920EE5FBF277C /* wallabag.app */;
@@ -883,7 +894,6 @@
 			mainGroup = G_D9112B40FBAA7D6E28EF1DE3BF37847D;
 			packageReferences = (
 				9C5EDEFE234E937100141DFD /* XCRemoteSwiftPackageReference "Swinject" */,
-				9C5EDF02234E96D500141DFD /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = G_F9352AEEBDAE1173F665BDBED628DF2A /* Products */;
 			projectDirPath = "";
@@ -1002,13 +1012,14 @@
 				9C7AFE0D2353C93E00FBF989 /* WallabagSession.swift in Sources */,
 				9C66B6BD235667770068B968 /* AppSync.swift in Sources */,
 				9C66B6C72356806E0068B968 /* StarEntryButton.swift in Sources */,
-				BF_E86293481ACAC83DE1587222089DDC5D /* EntryExtension.swift in Sources */,
+				9C60DE2723606F9800F78D02 /* WallabagTag.swift in Sources */,
 				BF_83312011338DF667DC8174DD85C2A1B7 /* Int.swift in Sources */,
 				9C4976532226751900DA4BD0 /* Container.swift in Sources */,
 				9CA5D4C422E0906A00167574 /* ArticleView.swift in Sources */,
 				9C9085F722DF3FF600D47262 /* ArticleRowView.swift in Sources */,
 				9C7AFE0F2353CE0300FBF989 /* HttpMethod.swift in Sources */,
 				9C73EC4922D791C1008663B1 /* DBData.swift in Sources */,
+				9C45F6CB236069650021813B /* TagListFor.swift in Sources */,
 				9C148525235E3ED50082D7BB /* CoreData.swift in Sources */,
 				9C40054A22E1DE3200A6E5CA /* LoginView.swift in Sources */,
 				9C9085F922DF44CD00D47262 /* NetworkImage.swift in Sources */,
@@ -1016,12 +1027,14 @@
 				9C78B9D4235BBD8F00BDEFEB /* KeychainPasswordItem.swift in Sources */,
 				9CE32CBA234F648A004DD045 /* BundleKey.swift in Sources */,
 				BF_DB7F468621011B78AA80968FF9B4DD93 /* RetrieveMode.swift in Sources */,
+				9C60DE2523606DAA00F78D02 /* TagRow.swift in Sources */,
 				BF_A31D94510D6C4BD65AC0122EB64626C8 /* String.swift in Sources */,
 				9C1EB6E823573DD700A5E54B /* EntryPictoImage.swift in Sources */,
 				9C5EDEE7234E848D00141DFD /* Injector.swift in Sources */,
 				9CB41DC4234FC03C00C2740B /* ServerTextFieldValidator.swift in Sources */,
 				9C73EC4422D79037008663B1 /* SceneDelegate.swift in Sources */,
 				9CCC4AFC22E3BFD400F73891 /* WallabagUserDefaults.swift in Sources */,
+				9C60DE2323606C9100F78D02 /* TagPublisher.swift in Sources */,
 				9C7AFE112353CE1D00FBF989 /* WallabagKitEndpoint.swift in Sources */,
 				9C73EC4722D79093008663B1 /* ArticleListView.swift in Sources */,
 				9C148527235E3F680082D7BB /* CoreDataViewContext.swift in Sources */,
@@ -1434,14 +1447,6 @@
 				minimumVersion = 2.7.1;
 			};
 		};
-		9C5EDF02234E96D500141DFD /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-cocoa";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.19.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1449,16 +1454,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9C5EDEFE234E937100141DFD /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
-		};
-		9C5EDF03234E96D500141DFD /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9C5EDF02234E96D500141DFD /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = Realm;
-		};
-		9C5EDF05234E96D500141DFD /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9C5EDF02234E96D500141DFD /* XCRemoteSwiftPackageReference "realm-cocoa" */;
-			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 

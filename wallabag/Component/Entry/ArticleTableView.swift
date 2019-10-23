@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ArticleTableView: View {
     @Binding var entries: [Entry]
+    @EnvironmentObject var appState: AppState
     var body: some View {
         List {
             ForEach(entries) { entry in

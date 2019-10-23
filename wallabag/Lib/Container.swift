@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import RealmSwift
+
 // import WallabagKit
 
 // swiftlint:disable function_body_length

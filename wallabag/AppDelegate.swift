@@ -9,7 +9,6 @@
 import CoreSpotlight
 import Crashlytics
 import Fabric
-import RealmSwift
 import Swinject
 import UIKit
 import UserNotifications
@@ -19,21 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let container: Container = {
         let container = Container()
         container.register(AnalyticsManager.self) { _ in AnalyticsManager() }.inObjectScope(.container)
-        container.register(Realm.self) { _ in
-            do {
-                let config = Realm.Configuration(
-                    schemaVersion: 8,
-                    migrationBlock: { _, _ in
-                    }
-                )
-
-                Realm.Configuration.defaultConfiguration = config
-                Log("Realm path: \(Realm.Configuration.defaultConfiguration.fileURL?.absoluteString ?? "")")
-                return try Realm()
-            } catch {
-                fatalError("Error init realm")
-            }
-        }.inObjectScope(.container)
         container.register(WallabagKit.self, factory: { _ in WallabagKit(host: WallabagUserDefaults.host) }).inObjectScope(.container)
         container.register(WallabagSession.self, factory: { _ in WallabagSession() })
         container.register(ArticlePlayer.self) { resolver in
@@ -52,7 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
 
     var window: UIWindow?
-    @Injector var realm: Realm
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
@@ -191,8 +174,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func resetApplication() {
         // setting.reset(suiteName: setting.sharedDomain)
-        try? realm.write {
-            realm.deleteAll()
-        }
     }
 }

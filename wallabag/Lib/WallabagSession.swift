@@ -50,4 +50,12 @@ class WallabagSession: ObservableObject {
     func delete(entry: Entry) {
         _ = kit.send(decodable: WallabagEntry.self, to: WallabagEntryEndpoint.delete(id: entry.id)).sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { _ in })
     }
+    
+    func add(tag: String, for entry: Entry) {
+        _ = kit.send(decodable: WallabagEntry.self, to: WallabagEntryEndpoint.addTag(tag: tag, entry: entry.id)).sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { _ in })
+    }
+    
+    func delete(tag: Tag, for entry: Entry) {
+        _ = kit.send(decodable: WallabagEntry.self, to: WallabagEntryEndpoint.deleteTag(tagId: tag.id, entry: entry.id)).sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { _ in })
+    }
 }

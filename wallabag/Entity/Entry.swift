@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import RealmSwift
 import CoreData
-
+import CoreSpotlight
+import MobileCoreServices
 
 class Entry: NSManagedObject, Identifiable {}
 
@@ -39,29 +39,33 @@ extension Entry {
     @NSManaged public dynamic var url: String?
     @NSManaged public dynamic var readingTime: Int
     @NSManaged public dynamic var screenPosition: Float
+    @NSManaged public var tags: Set<Tag>
 }
 
-/*
-final class Entry: Object {
-    @objc public dynamic var content: String?
-    @objc public dynamic var createdAt: Date?
-    @objc public dynamic var domainName: String?
-    @objc public dynamic var id: Int = 0
-    @objc public dynamic var isArchived: Bool = false
-    @objc public dynamic var isStarred: Bool = false
-    @objc public dynamic var previewPicture: String?
-    @objc public dynamic var title: String?
-    @objc public dynamic var updatedAt: Date?
-    @objc public dynamic var url: String?
-    @objc public dynamic var readingTime: Int = 0
-    @objc public dynamic var screenPosition: Float = 0.0
-    public let tags = List<Tag>()
-
-    override class func primaryKey() -> String? {
-        return "id"
+extension Entry {
+    var spotlightIdentifier: String {
+        return "\(Bundle.main.bundleIdentifier!).spotlight.\(Int(id))"
     }
-
-    override class func indexedProperties() -> [String] {
-        return ["title", "content", "isArchived", "isStarred"]
+    
+    var searchableItemAttributeSet: CSSearchableItemAttributeSet {
+        let searchableItemAttributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeText as String)
+        searchableItemAttributeSet.title = title
+        searchableItemAttributeSet.contentDescription = content?.withoutHTML
+        
+        return searchableItemAttributeSet
     }
-}*/
+    
+    func hydrate(from article: WallabagEntry) {
+        id = article.id
+        title = article.title
+        content = article.content
+        createdAt = Date.fromISOString(article.createdAt)
+        updatedAt = Date.fromISOString(article.updatedAt)
+        domainName = article.domainName
+        isArchived = article.isArchived == 1
+        isStarred = article.isStarred == 1
+        previewPicture = article.previewPicture
+        url = article.url
+        readingTime = article.readingTime ?? 0
+    }
+}
