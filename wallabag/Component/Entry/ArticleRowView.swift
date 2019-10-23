@@ -17,7 +17,7 @@ struct ArticleRowView: View {
             VStack(alignment: .leading) {
                 Text(entry.title ?? "")
                     .font(.headline)
-                Text("Reading time")
+                Text(String(format: "Reading time %@".localized, arguments: [Int(entry.readingTime).readingTime]))
                     .font(.footnote)
                 HStack {
                     EntryPictoImage(entry: entry, keyPath: \.isArchived, picto: "book")
