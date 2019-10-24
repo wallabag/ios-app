@@ -10,6 +10,7 @@ import SwiftUI
 struct RefreshButton: View {
     @EnvironmentObject var appSync: AppSync
     @EnvironmentObject var entryPublisher: EntryPublisher
+
     var body: some View {
         Button(
             action: {
@@ -20,6 +21,8 @@ struct RefreshButton: View {
             },
             label: {
                 Image(systemName: "arrow.counterclockwise")
+                    .rotationEffect(.degrees(appSync.inProgress ? 0 : 360))
+                    .animation(Animation.spring().repeatForever(autoreverses: false))
             }
         ).disabled(appSync.inProgress)
     }
