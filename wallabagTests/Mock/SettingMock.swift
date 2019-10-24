@@ -32,6 +32,6 @@ class SettingMock: SettingProtocol {
     func set(password _: String, username _: String) {}
 
     func getSpeechVoice() -> AVSpeechSynthesisVoice? {
-        return AVSpeechSynthesisVoice(language: "FR_fr")
+        AVSpeechSynthesisVoice(language: "FR_fr")
     }
 }

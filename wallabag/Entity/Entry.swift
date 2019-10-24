@@ -6,9 +6,9 @@
 //  Copyright © 2018 maxime marinel. All rights reserved.
 //
 
-import Foundation
 import CoreData
 import CoreSpotlight
+import Foundation
 import MobileCoreServices
 
 class Entry: NSManagedObject, Identifiable {}
@@ -20,7 +20,7 @@ extension Entry {
         fetchRequest.sortDescriptors = [sortDescriptor]
         return fetchRequest
     }
-    
+
     @nonobjc public class func fetchOneById(_ id: Int) -> NSFetchRequest<Entry> {
         let fetchRequest = NSFetchRequest<Entry>(entityName: "Entry")
         fetchRequest.predicate = NSPredicate(format: "id == %ld", id)
@@ -44,17 +44,17 @@ extension Entry {
 
 extension Entry {
     var spotlightIdentifier: String {
-        return "\(Bundle.main.bundleIdentifier!).spotlight.\(Int(id))"
+        "\(Bundle.main.bundleIdentifier!).spotlight.\(Int(id))"
     }
-    
+
     var searchableItemAttributeSet: CSSearchableItemAttributeSet {
         let searchableItemAttributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeText as String)
         searchableItemAttributeSet.title = title
         searchableItemAttributeSet.contentDescription = content?.withoutHTML
-        
+
         return searchableItemAttributeSet
     }
-    
+
     func hydrate(from article: WallabagEntry) {
         id = article.id
         title = article.title

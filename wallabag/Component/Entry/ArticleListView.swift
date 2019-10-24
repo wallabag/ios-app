@@ -11,7 +11,7 @@ struct ArticleListView: View {
     @EnvironmentObject var appSync: AppSync
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var entryPublisher: EntryPublisher
-    
+
     var body: some View {
         NavigationView {
             VStack {
@@ -31,9 +31,9 @@ struct ArticleListView: View {
 }
 
 #if DEBUG
-struct ArticleListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ArticleListView()
+    struct ArticleListView_Previews: PreviewProvider {
+        static var previews: some View {
+            ArticleListView()
+        }
     }
-}
 #endif

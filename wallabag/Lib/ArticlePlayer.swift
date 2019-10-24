@@ -14,11 +14,11 @@ class ArticlePlayer {
 
     var analytics: AnalyticsManagerProtocol!
     var isPlaying: Bool {
-        return speecher.isSpeaking
+        speecher.isSpeaking
     }
 
     var isLoaded: Bool {
-        return utterance != nil
+        utterance != nil
     }
 
     private var utterance: AVSpeechUtterance?
@@ -40,8 +40,8 @@ class ArticlePlayer {
         speecher.stopSpeaking(at: .immediate)
         guard let content = entry.content else { return }
         utterance = AVSpeechUtterance(string: content.withoutHTML)
-        //utterance?.rate = setting.get(for: .speechRate)
-        //utterance?.voice = setting.getSpeechVoice()
+        // utterance?.rate = setting.get(for: .speechRate)
+        // utterance?.voice = setting.getSpeechVoice()
         MPNowPlayingInfoCenter.default().nowPlayingInfo = [
             MPMediaItemPropertyTitle: entry.title,
             MPMediaItemPropertyArtist: "Wallabag",

@@ -14,7 +14,7 @@ import XCTest
 class ArticleViewControllerTests: XCTestCase {
     class ThemeManagerMock: ThemeManagerProtocol {
         func getBackgroundColor() -> UIColor {
-            return UIColor.red
+            UIColor.red
         }
     }
 

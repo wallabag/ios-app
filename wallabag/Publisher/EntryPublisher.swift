@@ -6,32 +6,33 @@
 //
 
 import Combine
-import Foundation
 import CoreData
+import Foundation
 
 class EntryPublisher: ObservableObject {
-    //BUG WORKAROUND
+    // BUG WORKAROUND
     let objectWillChange = ObservableObjectPublisher()
-    //END BUG WORKAROUND
-    
+    // END BUG WORKAROUND
+
     @CoreDataViewContext var context: NSManagedObjectContext
-    
+
     @Published var retrieveMode: RetrieveMode = .allArticles {
         didSet {
             fetch()
         }
     }
+
     @Published var entries: [Entry] = []
-    
+
     private var hasChanges: Cancellable?
-    
+
     init() {
         retrieveMode = RetrieveMode(fromCase: WallabagUserDefaults.defaultMode)
-         hasChanges = context.publisher(for: \.hasChanges).sink { _ in
-             self.fetch()
-         }
+        hasChanges = context.publisher(for: \.hasChanges).sink { _ in
+            self.fetch()
+        }
     }
-    
+
     func fetch() {
         do {
             let fetchRequest = Entry.fetchRequestSorted()

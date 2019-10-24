@@ -11,7 +11,7 @@ import UIKit
 
 @objc(ShareViewController)
 class ShareViewController: UIViewController {
-    //let setting = WallabagSetting()
+    // let setting = WallabagSetting()
 
     lazy var extError = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "App maybe not configured"])
 
@@ -46,30 +46,30 @@ class ShareViewController: UIViewController {
     }
 
     override func viewWillAppear(_: Bool) {
-        //if setting.get(for: .wallabagIsConfigured), let attachements = getAttachements() {
-            /* let kit = WallabagKit(host: setting.get(for: .host), clientID: setting.get(for: .clientId), clientSecret: setting.get(for: .clientSecret))
-             kit.requestAuth(username: setting.get(for: .username), password: setting.getPassword()!) { [unowned self] auth in
-                 switch auth {
-                 case .success:
-                     for attachement in attachements {
-                         attachement.loadItem(forTypeIdentifier: "public.url", options: nil) { (url, _) -> Void in
-                             if let shareURL = url as? NSURL {
-                                 kit.entry(add: shareURL as URL, queue: nil) { [unowned self] response in
-                                     switch response {
-                                     case .success:
-                                         self.clearView()
-                                     default:
-                                         self.clearView(withError: true)
-                                     }
+        // if setting.get(for: .wallabagIsConfigured), let attachements = getAttachements() {
+        /* let kit = WallabagKit(host: setting.get(for: .host), clientID: setting.get(for: .clientId), clientSecret: setting.get(for: .clientSecret))
+         kit.requestAuth(username: setting.get(for: .username), password: setting.getPassword()!) { [unowned self] auth in
+             switch auth {
+             case .success:
+                 for attachement in attachements {
+                     attachement.loadItem(forTypeIdentifier: "public.url", options: nil) { (url, _) -> Void in
+                         if let shareURL = url as? NSURL {
+                             kit.entry(add: shareURL as URL, queue: nil) { [unowned self] response in
+                                 switch response {
+                                 case .success:
+                                     self.clearView()
+                                 default:
+                                     self.clearView(withError: true)
                                  }
                              }
                          }
                      }
-                 default:
-                     self.clearView(withError: true)
                  }
-             } */
-        //}
+             default:
+                 self.clearView(withError: true)
+             }
+         } */
+        // }
     }
 
     private func getAttachements() -> [NSItemProvider]? {

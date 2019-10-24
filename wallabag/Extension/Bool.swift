@@ -9,6 +9,6 @@ import Foundation
 
 extension Bool {
     var int: Int {
-        return self ? 1 : 0
+        self ? 1 : 0
     }
 }

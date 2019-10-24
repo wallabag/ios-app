@@ -8,41 +8,41 @@
 import Combine
 import SwiftUI
 
-/*final class DBData: ObservableObject {
-    let willChange = PassthroughSubject<DBData, Never>()
+/* final class DBData: ObservableObject {
+ let willChange = PassthroughSubject<DBData, Never>()
 
-    private var notificationTokens: [NotificationToken] = []
-    var results: Results<Entry>?
+ private var notificationTokens: [NotificationToken] = []
+ var results: Results<Entry>?
 
-    init() {
-        let realm = try! Realm()
+ init() {
+     let realm = try! Realm()
 
-        results = realm.objects(Entry.self)
-        // Observe changes in the underlying model
-        notificationTokens.append(results!.observe { _ in
-            self.willChange.send(self)
-        })
-    }
-}
+     results = realm.objects(Entry.self)
+     // Observe changes in the underlying model
+     notificationTokens.append(results!.observe { _ in
+         self.willChange.send(self)
+     })
+ }
+ }
 
-class BindableResults<Element>: ObservableObject where Element: RealmSwift.RealmCollectionValue {
-    let willChange = PassthroughSubject<Void, Never>()
+ class BindableResults<Element>: ObservableObject where Element: RealmSwift.RealmCollectionValue {
+ let willChange = PassthroughSubject<Void, Never>()
 
-    let results: Results<Element>
-    private var token: NotificationToken!
+ let results: Results<Element>
+ private var token: NotificationToken!
 
-    init(results: Results<Element>) {
-        self.results = results
-        lateInit()
-    }
+ init(results: Results<Element>) {
+     self.results = results
+     lateInit()
+ }
 
-    func lateInit() {
-        token = results.observe { _ in
-            self.willChange.send(())
-        }
-    }
+ func lateInit() {
+     token = results.observe { _ in
+         self.willChange.send(())
+     }
+ }
 
-    deinit {
-        token.invalidate()
-    }
-}*/
+ deinit {
+     token.invalidate()
+ }
+ } */

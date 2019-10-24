@@ -20,8 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window.rootViewController = UIHostingController(rootView:
                 MainView()
                     .environmentObject(appState)
-                    .environment(\.managedObjectContext, CoreData.shared.viewContext)
-            )
+                    .environment(\.managedObjectContext, CoreData.shared.viewContext))
             self.window = window
             window.makeKeyAndVisible()
         }

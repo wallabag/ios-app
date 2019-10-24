@@ -22,6 +22,6 @@ extension Int {
     }
 
     var rgb: CGFloat {
-        return CGFloat(self) / 255.0
+        CGFloat(self) / 255.0
     }
 }

@@ -6,26 +6,26 @@
 //
 
 import Combine
-import Foundation
 import CoreData
+import Foundation
 
 class AppSync: ObservableObject {
     @Injector var session: WallabagSession
     @Published var inProgress = false
     @CoreDataViewContext var coreDataContext: NSManagedObjectContext
-    
+
     private var sessionState: AnyCancellable?
     private let syncQueue = DispatchQueue(label: "fr.district-web.wallabag.sync-queue", qos: .userInitiated)
-    
+
     private let dispatchGroup = DispatchGroup()
     private var entriesSynced: [Int] = []
     private var tags: [Int: Tag] = [:]
-    
+
     deinit {
         sessionState?.cancel()
     }
-    
-    func requestSync(completion: @escaping () -> ()) {
+
+    func requestSync(completion: @escaping () -> Void) {
         inProgress = true
         sessionState = session.$state.sink { state in
             if state == .connected {
@@ -36,12 +36,12 @@ class AppSync: ObservableObject {
         }
         session.requestSession()
     }
-    
-    private func sync(completion: @escaping () -> ()) {
+
+    private func sync(completion: @escaping () -> Void) {
         entriesSynced = []
         let backgroundContext = CoreData.shared.persistentContainer.newBackgroundContext()
-        
-        self.fetchEntries { collection in
+
+        fetchEntries { collection in
             for wallabagEntry in collection.items {
                 self.entriesSynced.append(wallabagEntry.id)
                 if let entry = try? self.coreDataContext.fetch(Entry.fetchOneById(wallabagEntry.id)).first {
@@ -51,7 +51,7 @@ class AppSync: ObservableObject {
                             self.update(entry: entry)
                         }
                     }
-                    
+
                 } else {
                     let entry = Entry(context: backgroundContext)
                     entry.hydrate(from: wallabagEntry)
@@ -71,14 +71,12 @@ class AppSync: ObservableObject {
                 }
             }
         }
-        
+
         dispatchGroup.notify(queue: syncQueue) {
             do {
                 try backgroundContext.save()
                 backgroundContext.reset()
-            } catch {
-                
-            }
+            } catch {}
             self.purge()
             DispatchQueue.main.async {
                 self.inProgress = false
@@ -86,7 +84,7 @@ class AppSync: ObservableObject {
             }
         }
     }
-    
+
     private func fetchEntries(page: Int = 1, completion: @escaping (WallabagCollection<WallabagEntry>) -> Void) {
         dispatchGroup.enter()
         _ = session.kit.send(decodable: WallabagCollection<WallabagEntry>.self, to: WallabagEntryEndpoint.get(page: page))
@@ -100,14 +98,14 @@ class AppSync: ObservableObject {
                 completion(collection)
             })
     }
-    
+
     private func update(entry: Entry) {
         _ = session.kit.send(decodable: WallabagEntry.self, to: WallabagEntryEndpoint.update(id: entry.id, parameters: [
             "archive": entry.isArchived.int,
             "starred": entry.isStarred.int,
         ])).sink(receiveCompletion: { _ in }, receiveValue: { _ in })
     }
-    
+
     private func purge() {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Entry")
         fetchRequest.predicate = NSPredicate(format: "NOT (id IN %@)", argumentArray: [self.entriesSynced])
@@ -115,7 +113,7 @@ class AppSync: ObservableObject {
         CoreData.shared.persistentContainer.performBackgroundTask { backgroundContext in
             do {
                 let batchDeleteResult = try backgroundContext.execute(deleteRequest) as? NSBatchDeleteResult
-                
+
                 if let deletedObjectIDs = batchDeleteResult?.result as? [NSManagedObjectID] {
                     NSManagedObjectContext.mergeChanges(fromRemoteContextSave: [NSDeletedObjectsKey: deletedObjectIDs],
                                                         into: [self.coreDataContext])

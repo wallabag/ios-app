@@ -23,7 +23,7 @@ public class WallabagKit {
     }
 
     func requestAuth(clientId: String, clientSecret: String, username: String, password: String) -> AnyPublisher<WallabagToken, Error> {
-        return send(decodable: WallabagToken.self, to: WallabagOauth.request(clientId: clientId, clientSecret: clientSecret, username: username, password: password))
+        send(decodable: WallabagToken.self, to: WallabagOauth.request(clientId: clientId, clientSecret: clientSecret, username: username, password: password))
     }
 
     func send<T: Decodable>(decodable: T.Type, to: WallabagKitEndpoint) -> AnyPublisher<T, Error> {

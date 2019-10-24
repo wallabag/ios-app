@@ -130,7 +130,7 @@ public class Snapshot: NSObject {
 
 extension XCUIElement {
     var isLoadingIndicator: Bool {
-        return frame.size == CGSize(width: 10, height: 20)
+        frame.size == CGSize(width: 10, height: 20)
     }
 }
 

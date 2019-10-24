@@ -18,7 +18,7 @@ protocol AnalyticsManagerProtocol {
 class AnalyticsManager: AnalyticsManagerProtocol {
     enum AnalyticsViewEvent {
         var name: String {
-            return String(describing: self)
+            String(describing: self)
         }
 
         case articlesView

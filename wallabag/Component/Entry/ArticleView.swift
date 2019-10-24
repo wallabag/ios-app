@@ -27,17 +27,15 @@ struct ArticleView: View {
                 Spacer()
                 DeleteEntryButton(entry: entry, showText: false)
             }.padding()
-                .sheet(isPresented: $showTag, content: {TagListFor(entry: self.entry).environmentObject(self.appState)})
+                .sheet(isPresented: $showTag, content: { TagListFor(entry: self.entry).environmentObject(self.appState) })
         }.navigationBarTitle(entry.title ?? "")
-            
     }
 }
 
-
- #if DEBUG
- struct ArticleView_Previews: PreviewProvider {
-     static var previews: some View {
-         ArticleView(entry: Entry())
-     }
- }
- #endif
+#if DEBUG
+    struct ArticleView_Previews: PreviewProvider {
+        static var previews: some View {
+            ArticleView(entry: Entry())
+        }
+    }
+#endif

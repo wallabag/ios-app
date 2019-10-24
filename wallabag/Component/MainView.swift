@@ -12,13 +12,12 @@ struct MainView: View {
     @EnvironmentObject var appState: AppState
 
     var body: some View {
-        return ViewBuilder.buildBlock(
+        ViewBuilder.buildBlock(
             appState.registred ?
                 ViewBuilder.buildEither(second: ArticleListView()
                     .environmentObject(AppSync())
                     .environmentObject(appState)
-                    .environmentObject(EntryPublisher())
-                ) :
+                    .environmentObject(EntryPublisher())) :
                 ViewBuilder.buildEither(first: RegistrationView().environmentObject(appState))
         )
     }

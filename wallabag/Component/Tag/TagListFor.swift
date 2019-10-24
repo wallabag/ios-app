@@ -11,26 +11,19 @@ struct TagListFor: View {
     @ObservedObject var tagPublisher: TagPublisher = TagPublisher()
     @ObservedObject var entry: Entry
     @EnvironmentObject var appState: AppState
-    
-    func row(tag: Tag) -> some View {
-        HStack {
-            TagRow(tag: tag)
-            if self.entry.tags.contains(tag) {
-                Spacer()
-                Image(systemName: "checkmark")
-            }
-        }
-    }
-    
+    @State private var tagLabel: String = ""
+
     var body: some View {
         NavigationView {
-            List(tagPublisher.tags) { tag in
-                self.row(tag: tag).onTapGesture {
-                    if self.entry.tags.contains(tag) {
-                        self.appState.session.delete(tag: tag, for: self.entry)
-                        
-                    }
-                    self.appState.session.add(tag: tag.label, for: self.entry)
+            VStack {
+                HStack {
+                    TextField("New tag", text: $tagLabel)
+                    Button(action: {
+                        self.appState.session.add(tag: self.tagLabel, for: self.entry)
+                    }, label: { Text("Send") })
+                }.padding()
+                List(tagPublisher.tags) { tag in
+                    TagRow(tag: tag, entry: self.entry)
                 }
             }.navigationBarTitle("Tag")
         }

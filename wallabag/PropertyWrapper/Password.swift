@@ -10,13 +10,13 @@ import Foundation
 @propertyWrapper
 struct Password {
     private var keychain: KeychainPasswordItem
-    
+
     var wrappedValue: String {
         get { return (try? keychain.readPassword()) ?? "" }
         set { try? keychain.savePassword(newValue) }
     }
-    
+
     init() {
-        self.keychain = KeychainPasswordItem(service: "wallabag", account: "main")
+        keychain = KeychainPasswordItem(service: "wallabag", account: "main")
     }
 }

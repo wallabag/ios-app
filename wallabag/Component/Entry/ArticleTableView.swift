@@ -13,13 +13,13 @@ struct ArticleTableView: View {
     var body: some View {
         List {
             ForEach(entries) { entry in
-                NavigationLink(destination: ArticleView(entry: entry) ){
+                NavigationLink(destination: ArticleView(entry: entry)) {
                     ArticleRowView(entry: entry)
                         .contextMenu {
                             ArchiveEntryButton(entry: entry)
                             StarEntryButton(entry: entry)
                             DeleteEntryButton(entry: entry)
-                    }
+                        }
                 }
             }
         }

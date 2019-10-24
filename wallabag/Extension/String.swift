@@ -29,18 +29,18 @@ extension String {
     }
 
     var withoutHTML: String {
-        return replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
     }
 
     var speakable: [String] {
-        return replacingOccurrences(of: "<p[^>]+>", with: "<p>", options: .regularExpression, range: nil).components(separatedBy: "<p>").filter { $0.count > 0 }
+        replacingOccurrences(of: "<p[^>]+>", with: "<p>", options: .regularExpression, range: nil).components(separatedBy: "<p>").filter { $0.count > 0 }
     }
 
     var localized: String {
-        return NSLocalizedString(self, comment: "")
+        NSLocalizedString(self, comment: "")
     }
 
     var url: URL? {
-        return URL(string: self)
+        URL(string: self)
     }
 }

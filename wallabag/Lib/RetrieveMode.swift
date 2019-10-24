@@ -12,7 +12,7 @@ enum RetrieveMode: String, CaseIterable {
     case archivedArticles = "Read articles"
     case unarchivedArticles = "Unread articles"
     case starredArticles = "Starred articles"
-    
+
     init(fromCase: String) {
         switch fromCase {
         case "allArticles":
@@ -24,9 +24,10 @@ enum RetrieveMode: String, CaseIterable {
         case "starredArticles":
             self = .starredArticles
         default:
-            fatalError()        }
+            fatalError()
+        }
     }
-    
+
     func predicate() -> NSPredicate {
         switch self {
         case .unarchivedArticles:
