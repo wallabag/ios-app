@@ -10,7 +10,7 @@ import SwiftUI
 struct StarEntryButton: View {
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var entryPublisher: EntryPublisher
-    var entry: Entry
+    @Binding var entry: Entry
     var showText: Bool = true
     var body: some View {
         Button(action: {
@@ -20,7 +20,7 @@ struct StarEntryButton: View {
             if showText {
                 Text(entry.isStarred ? "Unstart" : "Mark as favorite")
             }
-            EntryPictoImage(entry: entry, keyPath: \.isStarred, picto: "star")
+            EntryPictoImage(entry: $entry, keyPath: \.isStarred, picto: "star")
         })
     }
 }

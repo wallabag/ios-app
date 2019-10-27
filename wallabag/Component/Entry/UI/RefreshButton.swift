@@ -16,7 +16,6 @@ struct RefreshButton: View {
             action: {
                 self.appSync.requestSync {
                     self.entryPublisher.fetch()
-                    self.entryPublisher.objectWillChange.send()
                 }
             },
             label: {

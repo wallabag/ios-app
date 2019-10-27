@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ArticleView: View {
-    @ObservedObject var entry: Entry
+    @Binding var entry: Entry
     @EnvironmentObject var entryPublisher: EntryPublisher
     @EnvironmentObject var appState: AppState
     @State var showTag: Bool = false
@@ -17,8 +17,8 @@ struct ArticleView: View {
         VStack {
             WebView(entry: entry)
             HStack {
-                ArchiveEntryButton(entry: entry, showText: false)
-                StarEntryButton(entry: entry, showText: false)
+                ArchiveEntryButton(entry: $entry, showText: false)
+                StarEntryButton(entry: $entry, showText: false)
                 Button(action: {
                     self.showTag.toggle()
                 }, label: {
@@ -35,7 +35,7 @@ struct ArticleView: View {
 #if DEBUG
     struct ArticleView_Previews: PreviewProvider {
         static var previews: some View {
-            ArticleView(entry: Entry())
+            ArticleView(entry: .constant(Entry()))
         }
     }
 #endif

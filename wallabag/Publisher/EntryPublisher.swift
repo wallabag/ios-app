@@ -28,9 +28,13 @@ class EntryPublisher: ObservableObject {
 
     init() {
         retrieveMode = RetrieveMode(fromCase: WallabagUserDefaults.defaultMode)
-        hasChanges = context.publisher(for: \.hasChanges).sink { _ in
-            self.fetch()
+        hasChanges = context.publisher(for: \.updatedObjects).sink { objects in
+            Log(objects)
         }
+        /*hasChanges = context.publisher(for: \.hasChanges).sink { change in
+            Log("Has change")
+            self.fetch()
+        }*/
     }
 
     func fetch() {

@@ -2,38 +2,25 @@
 //  ArticleListView.swift
 //  wallabag
 //
-//  Created by Marinel Maxime on 11/07/2019.
+//  Created by Marinel Maxime on 27/10/2019.
 //
 
+import Foundation
 import SwiftUI
 
 struct ArticleListView: View {
-    @EnvironmentObject var appSync: AppSync
-    @EnvironmentObject var appState: AppState
-    @EnvironmentObject var entryPublisher: EntryPublisher
-
+    @Binding var entries: FetchedResults<Entry>
     var body: some View {
-        NavigationView {
-            VStack {
-                RetrieveModePicker(filter: $entryPublisher.retrieveMode)
-                ArticleTableView(entries: $entryPublisher.entries)
-                    .navigationBarTitle("Articles")
-                    .navigationBarItems(trailing:
-                        ViewBuilder.buildBlock(
-                            HStack {
-                                RefreshButton()
-                                NavigationLink(destination: AddEntryView(), label: { Image(systemName: "plus") })
-                            }
-                    ))
+        List(entries, id: \.objectID) { entry in
+            NavigationLink(destination: ArticleView(entry: .constant(entry))) {
+                ArticleRowView(entry: .constant(entry))
+                    .contextMenu {
+                        ArchiveEntryButton(entry: .constant(entry))
+                        StarEntryButton(entry: .constant(entry))
+                        DeleteEntryButton(entry: entry)
+                }
             }
+            
         }
     }
 }
-
-#if DEBUG
-    struct ArticleListView_Previews: PreviewProvider {
-        static var previews: some View {
-            ArticleListView()
-        }
-    }
-#endif

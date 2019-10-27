@@ -40,11 +40,12 @@ class AppSync: ObservableObject {
     private func sync(completion: @escaping () -> Void) {
         entriesSynced = []
         let backgroundContext = CoreData.shared.persistentContainer.newBackgroundContext()
+        backgroundContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
 
         fetchEntries { collection in
             for wallabagEntry in collection.items {
                 self.entriesSynced.append(wallabagEntry.id)
-                if let entry = try? self.coreDataContext.fetch(Entry.fetchOneById(wallabagEntry.id)).first {
+                if let entry = try? backgroundContext.fetch(Entry.fetchOneById(wallabagEntry.id)).first {
                     entry.hydrate(from: wallabagEntry)
                     if let articleUpdatedAt = Date.fromISOString(wallabagEntry.updatedAt) {
                         if entry.updatedAt! > articleUpdatedAt {
