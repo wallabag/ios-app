@@ -1,1 +1,4 @@
-Fixed a display issue on some iPhone
+Thanks to @weases for working on improving sharing extension.
+
+
+Version 5.0.0 is in preparation. see you soon.

@@ -1,1 +1,4 @@
-Correction d'un problème d'affichage sur certains iPhone
+Merci à @weases d'avoir travaillé à améliorer l'extension de partage.
+
+
+La version 5.0.0 est en preparatif. à tres bientot.
