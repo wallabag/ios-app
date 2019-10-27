@@ -6,6 +6,7 @@
 //  Copyright © 2016 maxime marinel. All rights reserved.
 //
 
+import MobileCoreServices
 import Social
 import UIKit
 import WallabagCommon
@@ -48,14 +49,14 @@ class ShareViewController: UIViewController {
     }
 
     override func viewWillAppear(_: Bool) {
-        if setting.get(for: .wallabagIsConfigured), let attachements = getAttachements() {
-            let kit = WallabagKit(host: setting.get(for: .host), clientID: setting.get(for: .clientId), clientSecret: setting.get(for: .clientSecret))
-            kit.requestAuth(username: setting.get(for: .username), password: setting.getPassword()!) { [unowned self] auth in
+        if setting.get(for: .wallabagIsConfigured), let attachments = getAttachments() {
+            if !attachments.isEmpty {
+                let kit = WallabagKit(host: setting.get(for: .host), clientID: setting.get(for: .clientId), clientSecret: setting.get(for: .clientSecret))
+                kit.requestAuth(username: setting.get(for: .username), password: setting.getPassword()!) { [unowned self] auth in
                 switch auth {
-                case .success:
-                    for attachement in attachements {
-                        attachement.loadItem(forTypeIdentifier: "public.url", options: nil) { (url, _) -> Void in
-                            if let shareURL = url as? NSURL {
+                    case .success:
+                        for attachment in attachments {
+                            self.getUrl(item: attachment) { [unowned self] shareURL in
                                 kit.entry(add: shareURL as URL, queue: nil) { [unowned self] response in
                                     switch response {
                                     case .success:
@@ -66,25 +67,44 @@ class ShareViewController: UIViewController {
                                 }
                             }
                         }
+                    default:
+                        self.clearView(withError: true)
+                        break
                     }
-                default:
-                    self.clearView(withError: true)
                 }
+            } else {
+                self.clearView(withError: true)
             }
+        } else {
+            self.clearView(withError: true)
         }
     }
 
-    private func getAttachements() -> [NSItemProvider]? {
+    private func getAttachments() -> [NSItemProvider]? {
         var att: [NSItemProvider] = []
         guard let items = extensionContext?.inputItems as? [NSExtensionItem] else {
             return nil
         }
         for item in items {
-            for attachement in item.attachments ?? [] where attachement.hasItemConformingToTypeIdentifier("public.url") {
-                att.append(attachement)
+            for attachment in item.attachments ?? [] where attachment.hasItemConformingToTypeIdentifier(kUTTypeURL as String) || attachment.hasItemConformingToTypeIdentifier(kUTTypePlainText as String) {
+                att.append(attachment)
             }
         }
         return att
+    }
+    
+    private func getUrl(item: NSItemProvider, completion: @escaping (NSURL) -> Void) -> Void {
+        if(item.hasItemConformingToTypeIdentifier(kUTTypePlainText as String)){
+            item.loadItem(forTypeIdentifier: kUTTypePlainText as String, options: nil) { (text, _) -> Void in
+                completion(NSURL(string: text as! String)!)
+            }
+        }
+        
+        if(item.hasItemConformingToTypeIdentifier(kUTTypeURL as String)){
+            item.loadItem(forTypeIdentifier: kUTTypeURL as String, options: nil) { (url, _) -> Void in
+                completion((url as? NSURL)!)
+            }
+        }
     }
 
     private func clearView(withError: Bool = false) {
