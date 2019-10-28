@@ -40,7 +40,7 @@ class AppSync: ObservableObject {
     private func sync(completion: @escaping () -> Void) {
         entriesSynced = []
         let backgroundContext = CoreData.shared.persistentContainer.newBackgroundContext()
-        backgroundContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        backgroundContext.mergePolicy = NSOverwriteMergePolicy
 
         fetchEntries { collection in
             for wallabagEntry in collection.items {

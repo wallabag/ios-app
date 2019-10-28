@@ -31,10 +31,10 @@ class EntryPublisher: ObservableObject {
         hasChanges = context.publisher(for: \.updatedObjects).sink { objects in
             Log(objects)
         }
-        /*hasChanges = context.publisher(for: \.hasChanges).sink { change in
-            Log("Has change")
-            self.fetch()
-        }*/
+        /* hasChanges = context.publisher(for: \.hasChanges).sink { change in
+             Log("Has change")
+             self.fetch()
+         } */
     }
 
     func fetch() {

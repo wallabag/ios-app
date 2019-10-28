@@ -11,16 +11,17 @@ import SwiftUI
 struct ArticleListView: View {
     @Binding var entries: FetchedResults<Entry>
     var body: some View {
-        List(entries, id: \.objectID) { entry in
-            NavigationLink(destination: ArticleView(entry: .constant(entry))) {
-                ArticleRowView(entry: .constant(entry))
-                    .contextMenu {
-                        ArchiveEntryButton(entry: .constant(entry))
-                        StarEntryButton(entry: .constant(entry))
-                        DeleteEntryButton(entry: entry)
+        List {
+            ForEach(entries, id: \.objectID) { entry in
+                NavigationLink(destination: ArticleView(entry: .constant(entry))) {
+                    ArticleRowView(entry: .constant(entry))
+                        .contextMenu {
+                            ArchiveEntryButton(entry: .constant(entry))
+                            StarEntryButton(entry: .constant(entry))
+                            DeleteEntryButton(entry: entry)
+                        }
                 }
             }
-            
         }
     }
 }

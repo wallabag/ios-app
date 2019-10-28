@@ -8,19 +8,17 @@
 import CoreData
 import SwiftUI
 
-
-
 struct ArticlesView: View {
     @EnvironmentObject var appSync: AppSync
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var entryPublisher: EntryPublisher
     @State private var retrieveMode: RetrieveMode = .allArticles
-    
+
     var body: some View {
         NavigationView {
             VStack {
                 RetrieveModePicker(filter: $retrieveMode)
-                //WORKAROUND TO fetchRequest
+                // WORKAROUND TO fetchRequest
                 if retrieveMode == .starredArticles {
                     StarredArticleListView()
                 }
@@ -43,14 +41,13 @@ struct ArticlesView: View {
                     }
             ))
         }
-        
     }
 }
 
 #if DEBUG
-struct ArticleListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ArticlesView()
+    struct ArticleListView_Previews: PreviewProvider {
+        static var previews: some View {
+            ArticlesView()
+        }
     }
-}
 #endif
