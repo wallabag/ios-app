@@ -38,7 +38,6 @@
 		9C5EDEF2234E923700141DFD /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5EDEF1234E923700141DFD /* Fabric.framework */; };
 		9C5EDF00234E937100141DFD /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 9C5EDEFF234E937100141DFD /* Swinject */; };
 		9C5EDF08234E982600141DFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C5EDF07234E982600141DFD /* LaunchScreen.storyboard */; };
-		9C60DE2323606C9100F78D02 /* TagPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60DE2223606C9100F78D02 /* TagPublisher.swift */; };
 		9C60DE2523606DAA00F78D02 /* TagRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60DE2423606DAA00F78D02 /* TagRow.swift */; };
 		9C60DE2723606F9800F78D02 /* WallabagTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60DE2623606F9800F78D02 /* WallabagTag.swift */; };
 		9C661DB9225D45F200086057 /* AboutViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C661DB8225D45F200086057 /* AboutViewControllerTests.swift */; };
@@ -208,7 +207,6 @@
 		9C5EDEEF234E922D00141DFD /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		9C5EDEF1234E923700141DFD /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		9C5EDF07234E982600141DFD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9C60DE2223606C9100F78D02 /* TagPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPublisher.swift; sourceTree = "<group>"; };
 		9C60DE2423606DAA00F78D02 /* TagRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRow.swift; sourceTree = "<group>"; };
 		9C60DE2623606F9800F78D02 /* WallabagTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagTag.swift; sourceTree = "<group>"; };
 		9C661DB8225D45F200086057 /* AboutViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewControllerTests.swift; sourceTree = "<group>"; };
@@ -445,7 +443,6 @@
 				9C5EDEE4234E842B00141DFD /* AppState.swift */,
 				9CCA195823562096007B4C19 /* EntryPublisher.swift */,
 				9C66B6BC235667770068B968 /* AppSync.swift */,
-				9C60DE2223606C9100F78D02 /* TagPublisher.swift */,
 			);
 			path = Publisher;
 			sourceTree = "<group>";
@@ -1051,7 +1048,6 @@
 				9CB41DC4234FC03C00C2740B /* ServerTextFieldValidator.swift in Sources */,
 				9C73EC4422D79037008663B1 /* SceneDelegate.swift in Sources */,
 				9CCC4AFC22E3BFD400F73891 /* WallabagUserDefaults.swift in Sources */,
-				9C60DE2323606C9100F78D02 /* TagPublisher.swift in Sources */,
 				9C7AFE112353CE1D00FBF989 /* WallabagKitEndpoint.swift in Sources */,
 				9C73EC4722D79093008663B1 /* ArticlesView.swift in Sources */,
 				9C148527235E3F680082D7BB /* CoreDataViewContext.swift in Sources */,

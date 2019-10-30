@@ -30,6 +30,14 @@ struct TagRow: View {
             }
         }.onAppear {
             self.checked = self.entry.tags.contains(self.tag)
+            Log(self.entry.tags)
+            self.entry.tags.forEach {
+                Log(self.tag.label)
+                Log($0.label)
+                Log(self.$checked.wrappedValue)
+                Log(self.entry.tags.contains(self.tag))
+                Log("----")
+            }
         }
     }
 }

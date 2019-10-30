@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ArticleView: View {
     @Binding var entry: Entry
     @EnvironmentObject var entryPublisher: EntryPublisher
     @EnvironmentObject var appState: AppState
     @State var showTag: Bool = false
-
+    
     var body: some View {
         VStack {
             WebView(entry: entry)
@@ -27,15 +28,19 @@ struct ArticleView: View {
                 Spacer()
                 DeleteEntryButton(entry: entry, showText: false)
             }.padding()
-                .sheet(isPresented: $showTag, content: { TagListFor(entry: self.entry).environmentObject(self.appState) })
+                .sheet(isPresented: $showTag, content: {
+                    TagListFor(entry: self.entry)
+                        .environmentObject(self.appState)
+                        .environment(\.managedObjectContext, CoreData.shared.viewContext)
+                })
         }.navigationBarTitle(entry.title ?? "")
     }
 }
 
 #if DEBUG
-    struct ArticleView_Previews: PreviewProvider {
-        static var previews: some View {
-            ArticleView(entry: .constant(Entry()))
-        }
+struct ArticleView_Previews: PreviewProvider {
+    static var previews: some View {
+        ArticleView(entry: .constant(Entry()))
     }
+}
 #endif

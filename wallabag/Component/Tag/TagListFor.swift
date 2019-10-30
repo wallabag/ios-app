@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct TagListFor: View {
-    @ObservedObject var tagPublisher: TagPublisher = TagPublisher()
     @ObservedObject var entry: Entry
     @EnvironmentObject var appState: AppState
     @State private var tagLabel: String = ""
+
+    @FetchRequest(fetchRequest: Tag.fetchRequestSorted()) var tags: FetchedResults
 
     var body: some View {
         NavigationView {
@@ -22,7 +24,7 @@ struct TagListFor: View {
                         self.appState.session.add(tag: self.tagLabel, for: self.entry)
                     }, label: { Text("Send") })
                 }.padding()
-                List(tagPublisher.tags) { tag in
+                List(tags) { tag in
                     TagRow(tag: tag, entry: self.entry)
                 }
             }.navigationBarTitle("Tag")

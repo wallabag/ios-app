@@ -56,16 +56,15 @@ class AppSync: ObservableObject {
                 } else {
                     let entry = Entry(context: backgroundContext)
                     entry.hydrate(from: wallabagEntry)
-                    let entryTags = entry.mutableSetValue(forKey: #keyPath(Entry.tags))
                     wallabagEntry.tags?.forEach {
                         if let tag = self.tags[$0.id] {
-                            entryTags.add(tag)
+                            entry.tags.insert(tag)
                         } else {
                             let tag = Tag(context: backgroundContext)
                             tag.id = $0.id
                             tag.label = $0.label
                             tag.slug = $0.slug
-                            entryTags.add(tag)
+                            entry.tags.insert(tag)
                             self.tags[$0.id] = tag
                         }
                     }
