@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EntryPictoImage: View {
-    @Binding var entry: Entry
+    @ObservedObject var entry: Entry
     var keyPath: KeyPath<Entry, Bool>
     var picto: String
     var body: some View {

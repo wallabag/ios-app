@@ -14,7 +14,7 @@ struct MainView: View {
     var body: some View {
         ViewBuilder.buildBlock(
             appState.registred ?
-                ViewBuilder.buildEither(second: ArticlesView()
+                ViewBuilder.buildEither(second: EntriesView()
                     .environmentObject(AppSync())
                     .environmentObject(appState)
                     .environmentObject(EntryPublisher())) :

@@ -17,20 +17,28 @@ class EntryPublisher: ObservableObject {
     @CoreDataViewContext var context: NSManagedObjectContext
 
     @Published var retrieveMode: RetrieveMode = .allArticles {
-        didSet {
-            fetch()
+        willSet {
+            objectWillChange.send()
         }
     }
 
-    @Published var entries: [Entry] = []
+    @Published var entries: [Entry] = [] {
+        willSet {
+            objectWillChange.send()
+        }
+    }
 
     private var hasChanges: Cancellable?
 
     init() {
         retrieveMode = RetrieveMode(fromCase: WallabagUserDefaults.defaultMode)
-        hasChanges = context.publisher(for: \.updatedObjects).sink { objects in
-            Log(objects)
+        _ = $retrieveMode.receive(on: RunLoop.main).sink { retrieveMode in
+            print("observable change to \(retrieveMode)")
+            self.fetch()
         }
+        /*hasChanges = context.publisher(for: \.updatedObjects).sink { objects in
+            Log(objects)
+        }*/
         /* hasChanges = context.publisher(for: \.hasChanges).sink { change in
              Log("Has change")
              self.fetch()
@@ -39,16 +47,17 @@ class EntryPublisher: ObservableObject {
 
     func fetch() {
         do {
+            print("run fetch")
             let fetchRequest = Entry.fetchRequestSorted()
             fetchRequest.predicate = retrieveMode.predicate()
             entries = try context.fetch(fetchRequest)
-            objectWillChange.send()
         } catch {
             fatalError(error.localizedDescription)
         }
     }
 
     func toggleArchive(_ entry: Entry) {
+        Log("Toggle archive \(entry.id)")
         entry.isArchived.toggle()
         entry.objectWillChange.send()
     }

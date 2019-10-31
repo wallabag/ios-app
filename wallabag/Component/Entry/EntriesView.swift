@@ -8,7 +8,7 @@
 import CoreData
 import SwiftUI
 
-struct ArticlesView: View {
+struct EntriesView: View {
     @EnvironmentObject var appSync: AppSync
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var entryPublisher: EntryPublisher
@@ -17,20 +17,8 @@ struct ArticlesView: View {
     var body: some View {
         NavigationView {
             VStack {
-                RetrieveModePicker(filter: $retrieveMode)
-                // WORKAROUND TO fetchRequest
-                if retrieveMode == .starredArticles {
-                    StarredArticleListView()
-                }
-                if retrieveMode == .unarchivedArticles {
-                    UnarchivedArticleListView()
-                }
-                if retrieveMode == .archivedArticles {
-                    ArchivedArticleListView()
-                }
-                if retrieveMode == .allArticles {
-                    AllArticlesListView()
-                }
+                RetrieveModePicker(filter: $entryPublisher.retrieveMode)
+                EntriesListView()
             }
             .navigationBarTitle("Articles")
             .navigationBarItems(trailing:
@@ -47,7 +35,7 @@ struct ArticlesView: View {
 #if DEBUG
     struct ArticleListView_Previews: PreviewProvider {
         static var previews: some View {
-            ArticlesView()
+            EntriesView()
         }
     }
 #endif

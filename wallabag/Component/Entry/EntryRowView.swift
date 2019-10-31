@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ArticleRowView: View {
-    @Binding var entry: Entry
+struct EntryRowView: View {
+    var entry: Entry
 
     var body: some View {
         HStack {
@@ -20,8 +20,8 @@ struct ArticleRowView: View {
                 Text(String(format: "Reading time %@".localized, arguments: [Int(entry.readingTime).readingTime]))
                     .font(.footnote)
                 HStack {
-                    EntryPictoImage(entry: $entry, keyPath: \.isArchived, picto: "book")
-                    EntryPictoImage(entry: $entry, keyPath: \.isStarred, picto: "star")
+                    EntryPictoImage(entry: entry, keyPath: \.isArchived, picto: "book")
+                    EntryPictoImage(entry: entry, keyPath: \.isStarred, picto: "star")
                     Text(entry.domainName ?? "")
                         .font(.footnote)
                 }
@@ -32,6 +32,6 @@ struct ArticleRowView: View {
 
 struct ArticleRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ArticleRowView(entry: .constant(Entry())).previewLayout(.fixed(width: 300, height: 70))
+        EntryRowView(entry: Entry()).previewLayout(.fixed(width: 300, height: 70))
     }
 }

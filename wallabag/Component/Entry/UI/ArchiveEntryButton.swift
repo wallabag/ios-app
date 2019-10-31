@@ -10,7 +10,7 @@ import SwiftUI
 struct ArchiveEntryButton: View {
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var entryPublisher: EntryPublisher
-    @Binding var entry: Entry
+    @ObservedObject var entry: Entry
     var showText: Bool = true
     var body: some View {
         Button(action: {
@@ -20,7 +20,7 @@ struct ArchiveEntryButton: View {
             if showText {
                 Text(entry.isArchived ? "Mark as unread" : "Mark as read")
             }
-            EntryPictoImage(entry: $entry, keyPath: \.isArchived, picto: "book")
+            EntryPictoImage(entry: entry, keyPath: \.isArchived, picto: "book")
         })
     }
 }
