@@ -7,34 +7,31 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 class ClientIdClientSecretTextFieldValidator: ObservableObject {
-    @Published var isValid: Bool = false {
+    private(set) var isValid: Bool = false {
         didSet {
             WallabagUserDefaults.clientId = clientId
             WallabagUserDefaults.clientSecret = clientSecret
         }
     }
 
-    var clientId: String = "" {
-        didSet {
-            validate()
-        }
-    }
-
-    var clientSecret: String = "" {
-        didSet {
-            validate()
-        }
-    }
+    @Published var clientId: String = ""
+    @Published var clientSecret: String = ""
+    
+    private var cancellable: AnyCancellable?
 
     init() {
         clientId = WallabagUserDefaults.clientId
         clientSecret = WallabagUserDefaults.clientSecret
-        validate()
+        
+        cancellable = Publishers.CombineLatest($clientId, $clientSecret).sink { clientId, clientSecret in
+            self.isValid = !clientId.isEmpty && !clientSecret.isEmpty
+        }
     }
-
-    private func validate() {
-        isValid = !clientId.isEmpty && !clientSecret.isEmpty
+    
+    deinit {
+        cancellable?.cancel()
     }
 }

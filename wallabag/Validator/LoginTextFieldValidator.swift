@@ -7,9 +7,10 @@
 
 import Combine
 import Foundation
+import Combine
 
 class LoginTextFieldValidator: ObservableObject {
-    @Published var isValid: Bool = false {
+    private(set) var isValid: Bool = false {
         didSet {
             if isValid {
                 WallabagUserDefaults.login = login
@@ -18,23 +19,20 @@ class LoginTextFieldValidator: ObservableObject {
         }
     }
 
-    var login: String = "" {
-        didSet {
-            validate()
-        }
-    }
+    @Published var login: String = ""
+    @Published var password: String = ""
 
-    var password: String = "" {
-        didSet {
-            validate()
-        }
-    }
-
+    private var cancellable: AnyCancellable?
+    
     init() {
         login = WallabagUserDefaults.login
+        
+        cancellable = Publishers.CombineLatest($login, $password).sink { login, password in
+            self.isValid = !login.isEmpty && !password.isEmpty
+        }
     }
-
-    private func validate() {
-        isValid = !login.isEmpty && !password.isEmpty
+    
+    deinit {
+        cancellable?.cancel()
     }
 }
