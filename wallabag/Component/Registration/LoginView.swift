@@ -16,12 +16,15 @@ struct LoginView: View {
             Section(header: Text("Login")) {
                 TextField("Login", text: $loginHandler.login)
             }
-            Section(header: Text("Passwod")) {
+            Section(header: Text("Password")) {
                 SecureField("Password", text: $loginHandler.password)
             }
             Button("Login") {
-                self.appState.registred = true
+                self.loginHandler.tryLogin()
             }.disabled(!loginHandler.isValid)
+            loginHandler.error.map {
+                Text($0).foregroundColor(.red)
+            }
         }.navigationBarTitle("Login & Password")
     }
 }

@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             articlePlayer.analytics = resolver.resolve(AnalyticsManager.self)
             return articlePlayer
         }.inObjectScope(.container)
+        container.register(AppState.self, factory: { _ in AppState()}).inObjectScope(.container)
         /* container.register(MazouteSDK.self) { _ in
              guard let baseURL = AppDelegate.infoForKey("API_URL"),
                  let username = AppDelegate.infoForKey("API_USERNAME"),
