@@ -8,7 +8,6 @@
 import Foundation
 
 struct WallabagUserDefaults {
-    static let keychain: KeychainPasswordItem = KeychainPasswordItem(service: "wallabag", account: "main")
     @Setting("host", defaultValue: "")
     static var host: String
 
