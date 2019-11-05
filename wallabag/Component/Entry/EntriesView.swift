@@ -12,13 +12,20 @@ struct EntriesView: View {
     @EnvironmentObject var appSync: AppSync
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var entryPublisher: EntryPublisher
-    @State private var retrieveMode: RetrieveMode = .allArticles
 
     var body: some View {
         NavigationView {
-            VStack {
+            Group {
                 RetrieveModePicker(filter: $entryPublisher.retrieveMode)
-                EntriesListView()
+                List(entryPublisher.entries) { entry in
+                    NavigationLink(destination: EntryView(entry: entry)) {
+                        EntryRowView(entry: entry).contextMenu {
+                            ArchiveEntryButton(entry: entry)
+                            StarEntryButton(entry: entry)
+                            DeleteEntryButton(entry: entry)
+                        }
+                    }
+                }
             }
             .navigationBarTitle("Articles")
             .navigationBarItems(trailing:
@@ -28,6 +35,8 @@ struct EntriesView: View {
                         NavigationLink(destination: AddEntryView(), label: { Image(systemName: "plus") })
                     }
             ))
+
+            entryPublisher.entries.first.map { EntryView(entry: $0) }
         }
     }
 }

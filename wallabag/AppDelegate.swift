@@ -27,12 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }.inObjectScope(.container)
         container.register(ImageDownloader.self, factory: { _ in ImageDownloader.shared }).inObjectScope(.container)
         container.register(AppState.self, factory: { _ in AppState() }).inObjectScope(.container)
-        /* container.register(MazouteSDK.self) { _ in
-             guard let baseURL = AppDelegate.infoForKey("API_URL"),
-                 let username = AppDelegate.infoForKey("API_USERNAME"),
-                 let password = AppDelegate.infoForKey("API_PASSWORD") else { fatalError() }
-             return MazouteSDK(baseURL: baseURL, username: username, password: password)
-         } */
 
         return container
     }()

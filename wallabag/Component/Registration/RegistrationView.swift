@@ -12,11 +12,10 @@ struct RegistrationView: View {
         NavigationView {
             VStack {
                 Image("logo")
-                Text("Wallabag")
-                    .font(.title)
+                Text("Wallabag").font(.title)
                 NavigationLink("Register", destination: ServerView())
             }.navigationBarHidden(true)
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
