@@ -5,8 +5,8 @@
 //  Created by Marinel Maxime on 23/10/2019.
 //
 
-import SwiftUI
 import CoreData
+import SwiftUI
 
 struct TagListFor: View {
     @ObservedObject var entry: Entry

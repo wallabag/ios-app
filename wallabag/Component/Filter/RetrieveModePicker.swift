@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RetrieveModePicker: View {
     @Binding var filter: RetrieveMode
-    
+
     var body: some View {
         Picker(selection: $filter, label: Text("Filter"), content: {
             Text(RetrieveMode.allArticles.rawValue).tag(RetrieveMode.allArticles)

@@ -5,15 +5,15 @@
 //  Created by Marinel Maxime on 18/07/2019.
 //
 
-import SwiftUI
 import CoreData
+import SwiftUI
 
 struct EntryView: View {
     @ObservedObject var entry: Entry
     @EnvironmentObject var entryPublisher: EntryPublisher
     @EnvironmentObject var appState: AppState
     @State var showTag: Bool = false
-    
+
     var body: some View {
         VStack {
             WebView(entry: entry)
@@ -38,9 +38,9 @@ struct EntryView: View {
 }
 
 #if DEBUG
-struct EntryView_Previews: PreviewProvider {
-    static var previews: some View {
-        EntryView(entry: Entry())
+    struct EntryView_Previews: PreviewProvider {
+        static var previews: some View {
+            EntryView(entry: Entry())
+        }
     }
-}
 #endif

@@ -12,8 +12,7 @@ struct EntryRowView: View {
 
     var body: some View {
         HStack {
-            // NetworkImage(imageURL: entry.previewPicture?.url, placeholderImage: UIImage(systemName: "book")!)
-            //     .frame(width: 50, height: 50, alignment: .center)
+            EntryPicture(url: entry.previewPicture).frame(width: 50, height: 50, alignment: .center)
             VStack(alignment: .leading) {
                 Text(entry.title ?? "")
                     .font(.headline)

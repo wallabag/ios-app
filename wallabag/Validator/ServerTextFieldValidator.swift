@@ -5,9 +5,9 @@
 //  Created by Marinel Maxime on 10/10/2019.
 //
 
+import Combine
 import Foundation
 import SwiftUI
-import Combine
 
 class ServerTextFieldValidator: ObservableObject {
     private(set) var isValid: Bool = false {
@@ -19,7 +19,7 @@ class ServerTextFieldValidator: ObservableObject {
     }
 
     @Published var url: String = ""
-    
+
     private var cancellable: AnyCancellable?
 
     init() {
@@ -28,7 +28,7 @@ class ServerTextFieldValidator: ObservableObject {
             self.isValid = self.validateServer(string: url)
         }
     }
-    
+
     deinit {
         cancellable?.cancel()
     }
