@@ -32,7 +32,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneWillResignActive(_: UIScene) {}
 
-    func sceneWillEnterForeground(_: UIScene) {}
+    func sceneWillEnterForeground(_: UIScene) {
+        updateBadge()
+    }
 
-    func sceneDidEnterBackground(_: UIScene) {}
+    func sceneDidEnterBackground(_: UIScene) {
+        updateBadge()
+    }
+    
+    private func updateBadge() {
+        Log("\(WallabagUserDefaults.badgeEnabled)")
+        if !WallabagUserDefaults.badgeEnabled {
+            UIApplication.shared.applicationIconBadgeNumber = 0
+            return
+        }
+        
+        do {
+            print("run fetch")
+            let fetchRequest = Entry.fetchRequestSorted()
+            fetchRequest.predicate = RetrieveMode(fromCase: WallabagUserDefaults.defaultMode).predicate()
+            let entries = try CoreData.shared.viewContext.fetch(fetchRequest)
+            UIApplication.shared.applicationIconBadgeNumber = entries.count
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+    }
 }
