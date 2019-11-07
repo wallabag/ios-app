@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RegistrationView: View {
+    @State private var showBetaDisclamer: Bool = false
+
     var body: some View {
         NavigationView {
             VStack {
@@ -15,6 +17,10 @@ struct RegistrationView: View {
                 Text("Wallabag").font(.title)
                 NavigationLink("Register", destination: ServerView())
             }.navigationBarHidden(true)
+                .sheet(isPresented: $showBetaDisclamer, content: { BetaDisclaimerView() })
+                .onAppear {
+                    self.showBetaDisclamer = WallabagUserDefaults.showBetaDisclamer
+                }
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }

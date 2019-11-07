@@ -27,28 +27,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }.inObjectScope(.container)
         container.register(ImageDownloader.self, factory: { _ in ImageDownloader.shared }).inObjectScope(.container)
         container.register(AppState.self, factory: { _ in AppState() }).inObjectScope(.container)
-        
+
         return container
     }()
-    
+
     var window: UIWindow?
-    
+
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
-        
+
         requestBadge()
-        
+
         return true
     }
-    
+
     func application(_: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options _: UIScene.ConnectionOptions) -> UISceneConfiguration {
         UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
-    
+
     func applicationDidFinishLaunching(_: UIApplication) {
         UIApplication.shared.beginReceivingRemoteControlEvents()
     }
-    
+
     private func requestBadge() {
         if WallabagUserDefaults.badgeEnabled {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in }

@@ -43,4 +43,7 @@ struct WallabagUserDefaults {
 
     @GeneralSetting("defaultMode", defaultValue: "allArticles")
     static var defaultMode: String
+
+    @Setting("showBetaDisclamer", defaultValue: true)
+    static var showBetaDisclamer: Bool
 }

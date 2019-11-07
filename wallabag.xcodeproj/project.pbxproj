@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9C0C3B8A2354890F008AD2C9 /* GeneralSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0C3B892354890F008AD2C9 /* GeneralSetting.swift */; };
+		9C1410562374445D0080B1AC /* BetaDisclaimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1410552374445D0080B1AC /* BetaDisclaimerView.swift */; };
 		9C148525235E3ED50082D7BB /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C148524235E3ED50082D7BB /* CoreData.swift */; };
 		9C148527235E3F680082D7BB /* CoreDataViewContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C148526235E3F680082D7BB /* CoreDataViewContext.swift */; };
 		9C14852A235E3FF00082D7BB /* wallabagStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C148528235E3FF00082D7BB /* wallabagStore.xcdatamodeld */; };
@@ -172,6 +173,7 @@
 
 /* Begin PBXFileReference section */
 		9C0C3B892354890F008AD2C9 /* GeneralSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSetting.swift; sourceTree = "<group>"; };
+		9C1410552374445D0080B1AC /* BetaDisclaimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetaDisclaimerView.swift; sourceTree = "<group>"; };
 		9C148524235E3ED50082D7BB /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		9C148526235E3F680082D7BB /* CoreDataViewContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewContext.swift; sourceTree = "<group>"; };
 		9C148529235E3FF00082D7BB /* wallabagStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabagStore.xcdatamodel; sourceTree = "<group>"; };
@@ -467,6 +469,7 @@
 				9C66B6BE235678270068B968 /* Filter */,
 				9CB4D03F22E8A9220078BD1C /* Registration */,
 				9C45F6CC236069700021813B /* Tag */,
+				9C1410552374445D0080B1AC /* BetaDisclaimerView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -972,6 +975,7 @@
 				9C5EDEEA234E889100141DFD /* AboutView.swift in Sources */,
 				9C55B12823719ADD0097FE27 /* EntryPicture.swift in Sources */,
 				BF_047B132AA818924F42C07857A48D5648 /* AnalyticsManager.swift in Sources */,
+				9C1410562374445D0080B1AC /* BetaDisclaimerView.swift in Sources */,
 				9C7CBD0722D60B8A00EE1DE3 /* ArticlePlayer.swift in Sources */,
 				9C14852A235E3FF00082D7BB /* wallabagStore.xcdatamodeld in Sources */,
 				BF_C08A9375D74D7DB78FE8F985821676D0 /* AppDelegate.swift in Sources */,

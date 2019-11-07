@@ -39,14 +39,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidEnterBackground(_: UIScene) {
         updateBadge()
     }
-    
+
     private func updateBadge() {
         Log("\(WallabagUserDefaults.badgeEnabled)")
         if !WallabagUserDefaults.badgeEnabled {
             UIApplication.shared.applicationIconBadgeNumber = 0
             return
         }
-        
+
         do {
             print("run fetch")
             let fetchRequest = Entry.fetchRequestSorted()
