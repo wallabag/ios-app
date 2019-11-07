@@ -12,7 +12,7 @@
 			<key>Title</key>
 			<string>Badge</string>
 			<key>Key</key>
-			<string>Badge</string>
+			<string>badge</string>
 			<key>DefaultValue</key>
 			<true/>
 		</dict>
