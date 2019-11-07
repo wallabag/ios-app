@@ -5,13 +5,12 @@
 //  Created by maxime marinel on 30/12/2016.
 //  Copyright © 2016 maxime marinel. All rights reserved.
 //
-
+import MobileCoreServices
 import Social
 import UIKit
 
 @objc(ShareViewController)
 class ShareViewController: UIViewController {
-    // let setting = WallabagSetting()
 
     lazy var extError = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "App maybe not configured"])
 
@@ -46,43 +45,61 @@ class ShareViewController: UIViewController {
     }
 
     override func viewWillAppear(_: Bool) {
-        // if setting.get(for: .wallabagIsConfigured), let attachements = getAttachements() {
-        /* let kit = WallabagKit(host: setting.get(for: .host), clientID: setting.get(for: .clientId), clientSecret: setting.get(for: .clientSecret))
-         kit.requestAuth(username: setting.get(for: .username), password: setting.getPassword()!) { [unowned self] auth in
-             switch auth {
-             case .success:
-                 for attachement in attachements {
-                     attachement.loadItem(forTypeIdentifier: "public.url", options: nil) { (url, _) -> Void in
-                         if let shareURL = url as? NSURL {
-                             kit.entry(add: shareURL as URL, queue: nil) { [unowned self] response in
-                                 switch response {
-                                 case .success:
-                                     self.clearView()
-                                 default:
-                                     self.clearView(withError: true)
-                                 }
-                             }
-                         }
-                     }
-                 }
-             default:
-                 self.clearView(withError: true)
-             }
-         } */
-        // }
+        if WallabagUserDefaults.registred, let attachments = getAttachments() {
+            if !attachments.isEmpty {
+                let kit = WallabagKit(host: WallabagUserDefaults.host)
+                _ = kit.requestAuth(
+                    clientId: WallabagUserDefaults.clientId,
+                    clientSecret: WallabagUserDefaults.clientSecret,
+                    username: WallabagUserDefaults.login,
+                    password: WallabagUserDefaults.password
+                ).sink(receiveCompletion: { completion in
+                    if case .failure = completion {
+                        //self.state = .error
+                    }
+                }, receiveValue: { token in
+                    kit.bearer = token.accessToken
+                    for attachment in attachments {
+                        self.getUrl(item: attachment) { [unowned self] shareURL in
+                            _ = kit.send(decodable: WallabagEntry.self, to: WallabagEntryEndpoint.add(url: shareURL)).sink(receiveCompletion: {_ in }, receiveValue: {_ in
+                                self.clearView()
+                            })
+                        }
+                    }
+                })
+            } else {
+                self.clearView(withError: true)
+            }
+        } else {
+            self.clearView(withError: true)
+        }
     }
 
-    private func getAttachements() -> [NSItemProvider]? {
+    private func getAttachments() -> [NSItemProvider]? {
         var att: [NSItemProvider] = []
         guard let items = extensionContext?.inputItems as? [NSExtensionItem] else {
             return nil
         }
         for item in items {
-            for attachement in item.attachments ?? [] where attachement.hasItemConformingToTypeIdentifier("public.url") {
-                att.append(attachement)
+            for attachment in item.attachments ?? [] where attachment.hasItemConformingToTypeIdentifier(kUTTypeURL as String) || attachment.hasItemConformingToTypeIdentifier(kUTTypePlainText as String) {
+                att.append(attachment)
             }
         }
         return att
+    }
+    
+    private func getUrl(item: NSItemProvider, completion: @escaping (String) -> Void) -> Void {
+        if(item.hasItemConformingToTypeIdentifier(kUTTypePlainText as String)){
+            item.loadItem(forTypeIdentifier: kUTTypePlainText as String, options: nil) { (text, _) -> Void in
+                completion(text as! String)
+            }
+        }
+        
+        if(item.hasItemConformingToTypeIdentifier(kUTTypeURL as String)){
+            item.loadItem(forTypeIdentifier: kUTTypeURL as String, options: nil) { (url, _) -> Void in
+                completion((url as? NSURL)!.absoluteString!)
+            }
+        }
     }
 
     private func clearView(withError: Bool = false) {
