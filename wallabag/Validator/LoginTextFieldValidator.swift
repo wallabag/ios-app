@@ -22,16 +22,21 @@ class LoginTextFieldValidator: ObservableObject {
     init() {
         login = WallabagUserDefaults.login
         cancellable = Publishers.CombineLatest($login, $password).sink { login, password in
-            Log(password)
-            Log(login)
             self.isValid = !login.isEmpty && !password.isEmpty
         }
+
         sessionCancellable = appState.session.$state.sink { state in
-            if state == .error {
-                self.error = "Connection error, please check your parameters"
-            }
-            if state == .connected {
+            switch state {
+            case let .error(reason):
+                self.error = reason
+            case .connected:
                 self.appState.registred = true
+            case .unknown:
+                break
+            case .connecting:
+                break
+            case .offline:
+                break
             }
         }
     }

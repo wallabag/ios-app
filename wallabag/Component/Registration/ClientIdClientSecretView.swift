@@ -13,10 +13,10 @@ struct ClientIdClientSecretView: View {
     var body: some View {
         Form {
             Section(header: Text("Client id")) {
-                TextField("Client id", text: $clientIdClientSecretValidator.clientId).disableAutocorrection(true)
+                TextField("Client id", text: $clientIdClientSecretValidator.clientId).disableAutocorrection(true).autocapitalization(.none)
             }
             Section(header: Text("Client secret")) {
-                TextField("Client secret", text: $clientIdClientSecretValidator.clientSecret).disableAutocorrection(true)
+                TextField("Client secret", text: $clientIdClientSecretValidator.clientSecret).disableAutocorrection(true).autocapitalization(.none)
             }
             NavigationLink("Next", destination: LoginView()).disabled(!clientIdClientSecretValidator.isValid)
         }.navigationBarTitle("Client id & secret")

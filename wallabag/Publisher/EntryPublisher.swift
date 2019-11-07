@@ -36,18 +36,10 @@ class EntryPublisher: ObservableObject {
             print("observable change to \(retrieveMode)")
             self.fetch()
         }
-        /* hasChanges = context.publisher(for: \.updatedObjects).sink { objects in
-             Log(objects)
-         } */
-        /* hasChanges = context.publisher(for: \.hasChanges).sink { change in
-             Log("Has change")
-             self.fetch()
-         } */
     }
 
     func fetch() {
         do {
-            print("run fetch")
             let fetchRequest = Entry.fetchRequestSorted()
             fetchRequest.predicate = retrieveMode.predicate()
             entries = try context.fetch(fetchRequest)
@@ -57,7 +49,6 @@ class EntryPublisher: ObservableObject {
     }
 
     func toggleArchive(_ entry: Entry) {
-        Log("Toggle archive \(entry.id)")
         entry.isArchived.toggle()
         entry.objectWillChange.send()
     }

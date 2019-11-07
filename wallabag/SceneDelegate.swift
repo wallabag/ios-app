@@ -41,14 +41,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     private func updateBadge() {
-        Log("\(WallabagUserDefaults.badgeEnabled)")
         if !WallabagUserDefaults.badgeEnabled {
             UIApplication.shared.applicationIconBadgeNumber = 0
             return
         }
 
         do {
-            print("run fetch")
             let fetchRequest = Entry.fetchRequestSorted()
             fetchRequest.predicate = RetrieveMode(fromCase: WallabagUserDefaults.defaultMode).predicate()
             let entries = try CoreData.shared.viewContext.fetch(fetchRequest)

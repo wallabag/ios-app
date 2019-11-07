@@ -14,7 +14,7 @@ struct ServerView: View {
     var body: some View {
         Form {
             Section(header: Text("Server")) {
-                TextField("Server", text: $serverValidator.url).disableAutocorrection(true)
+                TextField("Server", text: $serverValidator.url).disableAutocorrection(true).autocapitalization(.none)
             }
             NavigationLink(destination: ClientIdClientSecretView()) {
                 Text("Next")

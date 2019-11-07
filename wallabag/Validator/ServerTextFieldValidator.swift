@@ -10,13 +10,7 @@ import Foundation
 import SwiftUI
 
 class ServerTextFieldValidator: ObservableObject {
-    private(set) var isValid: Bool = false {
-        didSet {
-            if isValid {
-                WallabagUserDefaults.host = url
-            }
-        }
-    }
+    private(set) var isValid: Bool = false
 
     @Published var url: String = ""
 
@@ -26,6 +20,9 @@ class ServerTextFieldValidator: ObservableObject {
         url = WallabagUserDefaults.host
         cancellable = $url.sink { url in
             self.isValid = self.validateServer(string: url)
+            if self.isValid {
+                WallabagUserDefaults.host = url
+            }
         }
     }
 

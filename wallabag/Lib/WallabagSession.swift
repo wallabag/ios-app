@@ -12,7 +12,7 @@ class WallabagSession: ObservableObject {
         case unknown
         case connecting
         case connected
-        case error
+        case error(reason: String)
         case offline
     }
 
@@ -26,8 +26,13 @@ class WallabagSession: ObservableObject {
             username: WallabagUserDefaults.login,
             password: WallabagUserDefaults.password
         ).sink(receiveCompletion: { completion in
-            if case .failure = completion {
-                self.state = .error
+            if case let .failure(error) = completion {
+                switch error {
+                case let WallabagKitError.jsonError(jsonError):
+                    self.state = .error(reason: jsonError.errorDescription)
+                default:
+                    self.state = .error(reason: "Unknow error")
+                }
             }
         }, receiveValue: { token in
             WallabagUserDefaults.refreshToken = token.refreshToken

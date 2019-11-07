@@ -28,10 +28,13 @@ class AppSync: ObservableObject {
     func requestSync(completion: @escaping () -> Void) {
         inProgress = true
         sessionState = session.$state.sink { state in
-            if state == .connected {
+            switch state {
+            case .connected:
                 self.sync {
                     completion()
                 }
+            default:
+                break
             }
         }
         session.requestSession()
