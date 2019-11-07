@@ -17,6 +17,6 @@ struct Password {
     }
 
     init() {
-        keychain = KeychainPasswordItem(service: "wallabag", account: "main")
+        keychain = KeychainPasswordItem(service: "wallabag", account: "main", accessGroup: "group.wallabag.share_extension")
     }
 }

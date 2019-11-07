@@ -39,7 +39,7 @@ enum WallabagEntryEndpoint: WallabagKitEndpoint {
             ]
             return request.url!.relativeString
         case .add:
-            return "/api/entries.json"
+            return "/api/entries"
         case let .addTag(_, entry):
             return "/api/entries/\(entry)/tags"
         case let .delete(id):
@@ -54,7 +54,7 @@ enum WallabagEntryEndpoint: WallabagKitEndpoint {
     func getBody() -> Data {
         switch self {
         case let .add(url):
-            return "url=\(url)".data(using: .utf8)!
+            return try! JSONSerialization.data(withJSONObject: ["url": url], options: .prettyPrinted)
         case let .update(_, parameters):
             return try! JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
         case let .addTag(tag, _):
