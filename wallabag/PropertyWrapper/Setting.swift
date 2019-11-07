@@ -11,6 +11,7 @@ import Foundation
 struct Setting<T> {
     let key: String
     let defaultValue: T
+    let userDefaults: UserDefaults = UserDefaults(suiteName: "group.wallabag.share_extension")!
 
     init(_ key: String, defaultValue: T) {
         self.key = key
@@ -19,10 +20,10 @@ struct Setting<T> {
 
     var wrappedValue: T {
         get {
-            return UserDefaults.standard.object(forKey: key) as? T ?? defaultValue
+            return userDefaults.object(forKey: key) as? T ?? defaultValue
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: key)
+            userDefaults.set(newValue, forKey: key)
         }
     }
 }
