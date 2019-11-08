@@ -15,7 +15,7 @@ struct RegistrationView: View {
             VStack {
                 Image("logo")
                 Text("Wallabag").font(.title)
-                NavigationLink("Register", destination: ServerView())
+                NavigationLink("Log in", destination: ServerView())
             }.navigationBarHidden(true)
                 .sheet(isPresented: $showBetaDisclamer, content: { BetaDisclaimerView() })
                 .onAppear {
