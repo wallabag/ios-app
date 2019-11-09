@@ -40,7 +40,7 @@ public class WallabagKit {
             .subscribe(on: DispatchQueue.global())
             .receive(on: OperationQueue.main)
             .tryMap { data, response in
-                //print(String(data: data, encoding: .utf8))
+                // print(String(data: data, encoding: .utf8))
                 let res = response as! HTTPURLResponse
                 if res.statusCode == 400 {
                     if let poc = try? self.decoder.decode(WallabagJsonError.self, from: data) {

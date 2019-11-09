@@ -12,6 +12,7 @@ struct EntriesView: View {
     @EnvironmentObject var appSync: AppSync
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var entryPublisher: EntryPublisher
+    @State private var showAddView: Bool = false
 
     var body: some View {
         NavigationView {
@@ -26,15 +27,15 @@ struct EntriesView: View {
                         }
                     }
                 }
+                // WORKAROUND 13.2 navigation back crash
+                NavigationLink(destination: AddEntryView(), isActive: $showAddView, label: { Image(systemName: "plus") }).hidden()
             }
             .navigationBarTitle("Articles")
             .navigationBarItems(trailing:
-                ViewBuilder.buildBlock(
-                    HStack {
-                        RefreshButton()
-                        NavigationLink(destination: AddEntryView(), label: { Image(systemName: "plus") })
-                    }
-            ))
+                HStack {
+                    RefreshButton()
+                    Button(action: { self.showAddView = true }, label: { Image(systemName: "plus") })
+            })
 
             entryPublisher.entries.first.map { EntryView(entry: $0) }
         }

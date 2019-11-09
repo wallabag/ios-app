@@ -10,7 +10,7 @@ import SwiftUI
 struct AddEntryView: View {
     @EnvironmentObject var appState: AppState
     @Environment(\.presentationMode) var presentationMode
-    @State var url: String = ""
+    @State private var url: String = ""
 
     var body: some View {
         Form {
@@ -19,12 +19,12 @@ struct AddEntryView: View {
                 self.appState.session.addEntry(url: self.url)
                 self.presentationMode.wrappedValue.dismiss()
             }
-        }.navigationBarTitle("Server")
+        }.navigationBarTitle("Add url")
     }
 }
 
 struct AddEntryView_Previews: PreviewProvider {
     static var previews: some View {
-        AddEntryView(url: "")
+        AddEntryView()
     }
 }
