@@ -17,22 +17,20 @@ struct EntryView: View {
     var body: some View {
         VStack {
             WebView(entry: entry)
+            if showTag {
+                TagListFor(entry: entry)
+            }
             HStack {
                 ArchiveEntryButton(entry: entry, showText: false)
                 StarEntryButton(entry: entry, showText: false)
                 Button(action: {
                     self.showTag.toggle()
                 }, label: {
-                    Image(systemName: "tag")
+                    Image(systemName: self.showTag ? "tag.fill" : "tag")
                 })
                 Spacer()
                 DeleteEntryButton(entry: entry, showText: false)
             }.padding()
-                .sheet(isPresented: $showTag, content: {
-                    TagListFor(entry: self.entry)
-                        .environmentObject(self.appState)
-                        .environment(\.managedObjectContext, CoreData.shared.viewContext)
-                })
         }.navigationBarTitle(entry.title ?? "")
     }
 }

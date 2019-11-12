@@ -16,18 +16,17 @@ struct TagListFor: View {
     @FetchRequest(fetchRequest: Tag.fetchRequestSorted()) var tags: FetchedResults
 
     var body: some View {
-        NavigationView {
-            VStack {
-                HStack {
-                    TextField("New tag", text: $tagLabel)
-                    Button(action: {
-                        self.appState.session.add(tag: self.tagLabel, for: self.entry)
-                    }, label: { Text("Send") })
-                }.padding()
-                List(tags) { tag in
-                    TagRow(tag: tag, entry: self.entry)
-                }
-            }.navigationBarTitle("Tag")
+        VStack {
+            Text("Tag").font(.largeTitle).bold()
+            HStack {
+                TextField("New tag", text: $tagLabel)
+                Button(action: {
+                    self.appState.session.add(tag: self.tagLabel, for: self.entry)
+                }, label: { Text("Send") })
+            }.padding()
+            List(tags) { tag in
+                TagRow(tag: tag, entry: self.entry)
+            }
         }
     }
 }
