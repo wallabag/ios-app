@@ -11,13 +11,20 @@ import Foundation
 
 class AppSync: ObservableObject {
     @Injector var session: WallabagSession
-    @Published var inProgress = false
     @CoreDataViewContext var coreDataContext: NSManagedObjectContext
 
-    private var sessionState: AnyCancellable?
-    private let syncQueue = DispatchQueue(label: "fr.district-web.wallabag.sync-queue", qos: .userInitiated)
+    @Published var inProgress = false
 
+    private let syncQueue = DispatchQueue(label: "fr.district-web.wallabag.sync-queue", qos: .userInitiated)
     private let dispatchGroup = DispatchGroup()
+    private var sessionState: AnyCancellable?
+
+    private var backgroundContext: NSManagedObjectContext = {
+        let context = CoreData.shared.persistentContainer.newBackgroundContext()
+        context.mergePolicy = NSOverwriteMergePolicy
+        return context
+    }()
+
     private var entriesSynced: [Int] = []
     private var tags: [Int: Tag] = [:]
 
@@ -42,43 +49,14 @@ class AppSync: ObservableObject {
 
     private func sync(completion: @escaping () -> Void) {
         entriesSynced = []
-        let backgroundContext = CoreData.shared.persistentContainer.newBackgroundContext()
-        backgroundContext.mergePolicy = NSOverwriteMergePolicy
 
-        fetchEntries { collection in
-            for wallabagEntry in collection.items {
-                self.entriesSynced.append(wallabagEntry.id)
-                if let entry = try? backgroundContext.fetch(Entry.fetchOneById(wallabagEntry.id)).first {
-                    entry.hydrate(from: wallabagEntry)
-                    if let articleUpdatedAt = Date.fromISOString(wallabagEntry.updatedAt) {
-                        if entry.updatedAt! > articleUpdatedAt {
-                            self.update(entry: entry)
-                        }
-                    }
-
-                } else {
-                    let entry = Entry(context: backgroundContext)
-                    entry.hydrate(from: wallabagEntry)
-                    wallabagEntry.tags?.forEach {
-                        if let tag = self.tags[$0.id] {
-                            entry.tags.insert(tag)
-                        } else {
-                            let tag = Tag(context: backgroundContext)
-                            tag.id = $0.id
-                            tag.label = $0.label
-                            tag.slug = $0.slug
-                            entry.tags.insert(tag)
-                            self.tags[$0.id] = tag
-                        }
-                    }
-                }
-            }
-        }
+        synchronizeTags()
+        synchronizeEntries()
 
         dispatchGroup.notify(queue: syncQueue) {
             do {
-                try backgroundContext.save()
-                backgroundContext.reset()
+                try self.backgroundContext.save()
+                self.backgroundContext.reset()
             } catch {}
             self.purge()
             DispatchQueue.main.async {
@@ -88,15 +66,66 @@ class AppSync: ObservableObject {
         }
     }
 
+    private func synchronizeEntries() {
+        fetchEntries { collection in
+            collection.items.forEach { wallabagEntry in
+                self.entriesSynced.append(wallabagEntry.id)
+                if let entry = try? self.backgroundContext.fetch(Entry.fetchOneById(wallabagEntry.id)).first {
+                    self.update(entry, with: wallabagEntry)
+                } else {
+                    self.insert(wallabagEntry)
+                }
+            }
+        }
+    }
+
+    private func insert(_ wallabagEntry: WallabagEntry) {
+        let entry = Entry(context: backgroundContext)
+        entry.hydrate(from: wallabagEntry)
+        applyTag(from: wallabagEntry, to: entry)
+    }
+
+    private func update(_ entry: Entry, with wallabagEntry: WallabagEntry) {
+        entry.hydrate(from: wallabagEntry)
+        applyTag(from: wallabagEntry, to: entry)
+    }
+
+    private func applyTag(from wallabagEntry: WallabagEntry, to entry: Entry) {
+        wallabagEntry.tags?.forEach { tag in
+            entry.tags.insert(self.tags[tag.id]!)
+        }
+    }
+
+    private func synchronizeTags() {
+        dispatchGroup.enter()
+        _ = session.kit.send(decodable: [WallabagTag].self, to: WallabagTagEndpoint.get, onQueue: syncQueue)
+            .sink(receiveCompletion: { _ in }, receiveValue: { tags in
+                tags.forEach { wallabagTag in
+                    if let tag = try? self.backgroundContext.fetch(Tag.fetchOneById(wallabagTag.id)).first {
+                        self.tags[tag.id] = tag
+                    } else {
+                        let tag = Tag(context: self.backgroundContext)
+                        tag.id = wallabagTag.id
+                        tag.label = wallabagTag.label
+                        tag.slug = wallabagTag.slug
+                        self.tags[wallabagTag.id] = tag
+                    }
+                }
+                self.dispatchGroup.leave()
+            })
+    }
+
     private func fetchEntries(page: Int = 1, completion: @escaping (WallabagCollection<WallabagEntry>) -> Void) {
         dispatchGroup.enter()
+
         _ = session.kit.send(decodable: WallabagCollection<WallabagEntry>.self, to: WallabagEntryEndpoint.get(page: page))
-            .sink(receiveCompletion: { completion in
+            .sink(receiveCompletion: { _ in
                 self.dispatchGroup.leave()
-                if case .failure = completion {}
             }, receiveValue: { collection in
                 if collection.page < collection.pages {
-                    self.fetchEntries(page: collection.page + 1) { completion($0) }
+                    self.fetchEntries(page: collection.page + 1) { collection in
+                        completion(collection)
+                    }
                 }
                 completion(collection)
             })
@@ -121,6 +150,7 @@ class AppSync: ObservableObject {
                     NSManagedObjectContext.mergeChanges(fromRemoteContextSave: [NSDeletedObjectsKey: deletedObjectIDs],
                                                         into: [self.coreDataContext])
                 }
+                try? backgroundContext.save()
             } catch {
                 Log("Error in batch delete")
             }

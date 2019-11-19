@@ -18,6 +18,12 @@ extension Tag {
         return fetchRequest
     }
 
+    @nonobjc public class func fetchOneById(_ id: Int) -> NSFetchRequest<Tag> {
+        let fetchRequest = NSFetchRequest<Tag>(entityName: "Tag")
+        fetchRequest.predicate = NSPredicate(format: "id == %ld", id)
+        return fetchRequest
+    }
+
     @NSManaged public dynamic var id: Int
     @NSManaged public dynamic var label: String
     @NSManaged public dynamic var slug: String

@@ -33,18 +33,22 @@ class EntryPublisher: ObservableObject {
     init() {
         retrieveMode = RetrieveMode(fromCase: WallabagUserDefaults.defaultMode)
         _ = $retrieveMode.receive(on: RunLoop.main).sink { retrieveMode in
-            print("observable change to \(retrieveMode)")
+            Log("observable change to \(retrieveMode)")
             self.fetch()
         }
     }
 
     func fetch() {
-        do {
-            let fetchRequest = Entry.fetchRequestSorted()
-            fetchRequest.predicate = retrieveMode.predicate()
-            entries = try context.fetch(fetchRequest)
-        } catch {
-            fatalError(error.localizedDescription)
+        entries = []
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            do {
+                let fetchRequest = Entry.fetchRequestSorted()
+                fetchRequest.predicate = self.retrieveMode.predicate()
+                self.entries = try self.context.fetch(fetchRequest)
+                self.objectWillChange.send()
+            } catch {
+                fatalError(error.localizedDescription)
+            }
         }
     }
 

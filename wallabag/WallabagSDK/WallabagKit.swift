@@ -26,7 +26,7 @@ public class WallabagKit {
         send(decodable: WallabagToken.self, to: WallabagOauth.request(clientId: clientId, clientSecret: clientSecret, username: username, password: password))
     }
 
-    func send<T: Decodable>(decodable: T.Type, to: WallabagKitEndpoint) -> AnyPublisher<T, Error> {
+    func send<T: Decodable>(decodable: T.Type, to: WallabagKitEndpoint, onQueue: DispatchQueue = .main) -> AnyPublisher<T, Error> {
         var urlRequest = URLRequest(url: URL(string: "\(host)\(to.endpoint())")!)
         urlRequest.httpMethod = to.method().rawValue
         urlRequest.httpBody = to.getBody()
@@ -37,8 +37,7 @@ public class WallabagKit {
         }
 
         let publisher = session.dataTaskPublisher(for: urlRequest)
-            .subscribe(on: DispatchQueue.global())
-            .receive(on: OperationQueue.main)
+            .subscribe(on: onQueue)
             .tryMap { data, response in
                 // print(String(data: data, encoding: .utf8))
                 let res = response as! HTTPURLResponse

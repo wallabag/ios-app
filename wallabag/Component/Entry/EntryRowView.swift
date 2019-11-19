@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EntryRowView: View {
-    var entry: Entry
+    @ObservedObject var entry: Entry
 
     var body: some View {
         HStack {
