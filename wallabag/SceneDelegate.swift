@@ -13,6 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     @Injector var appState: AppState
+    @Injector var playerPublisher: PlayerPublisher
 
     func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene.ConnectionOptions) {
         if let windowScene = scene as? UIWindowScene {
@@ -20,6 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window.rootViewController = UIHostingController(rootView:
                 MainView()
                     .environmentObject(appState)
+                    .environmentObject(playerPublisher)
                     .environment(\.managedObjectContext, CoreData.shared.viewContext))
             self.window = window
             window.makeKeyAndVisible()

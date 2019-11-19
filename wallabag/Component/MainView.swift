@@ -10,16 +10,21 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var appState: AppState
+    @EnvironmentObject var playerPublisher: PlayerPublisher
 
     var body: some View {
-        ViewBuilder.buildBlock(
-            appState.registred ?
-                ViewBuilder.buildEither(second: EntriesView()
-                    .environmentObject(AppSync())
-                    .environmentObject(appState)
-                    .environmentObject(EntryPublisher())) :
-                ViewBuilder.buildEither(first: RegistrationView().environmentObject(appState))
-        )
+        VStack {
+            ViewBuilder.buildBlock(
+                appState.registred ?
+                    ViewBuilder.buildEither(second: EntriesView()
+                        .environmentObject(AppSync())
+                        .environmentObject(appState)
+                        .environmentObject(EntryPublisher())) :
+                    ViewBuilder.buildEither(first: RegistrationView().environmentObject(appState)))
+            if playerPublisher.showPlayer && appState.registred {
+                PlayerView()
+            }
+        }
     }
 }
 
