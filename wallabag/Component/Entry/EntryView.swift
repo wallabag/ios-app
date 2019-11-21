@@ -12,6 +12,7 @@ struct EntryView: View {
     @ObservedObject var entry: Entry
     @EnvironmentObject var entryPublisher: EntryPublisher
     @EnvironmentObject var appState: AppState
+    @EnvironmentObject var playerPublisher: PlayerPublisher
     @State var showTag: Bool = false
 
     var body: some View {
@@ -29,6 +30,12 @@ struct EntryView: View {
                     Image(systemName: self.showTag ? "tag.fill" : "tag")
                 })
                 Spacer()
+                Button(action: {
+                    self.playerPublisher.load(self.entry)
+                    self.appState.showPlayer = true
+                }, label: {
+                    Image(systemName: "ear")
+                })
                 DeleteEntryButton(entry: entry, showText: false)
             }.padding()
         }.navigationBarTitle(entry.title ?? "")

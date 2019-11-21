@@ -10,7 +10,6 @@ import SwiftUI
 
 struct EntriesView: View {
     @EnvironmentObject var appSync: AppSync
-    @EnvironmentObject var appState: AppState
     @EnvironmentObject var entryPublisher: EntryPublisher
     @State private var showAddView: Bool = false
 

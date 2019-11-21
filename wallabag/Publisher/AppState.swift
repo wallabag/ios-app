@@ -15,6 +15,8 @@ class AppState: ObservableObject {
         }
     }
 
+    @Published var showPlayer: Bool = false
+
     @Injector var session: WallabagSession
 
     init() {

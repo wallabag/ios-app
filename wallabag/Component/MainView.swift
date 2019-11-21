@@ -10,7 +10,6 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var appState: AppState
-    @EnvironmentObject var playerPublisher: PlayerPublisher
 
     var body: some View {
         VStack {
@@ -21,9 +20,7 @@ struct MainView: View {
                         .environmentObject(appState)
                         .environmentObject(EntryPublisher())) :
                     ViewBuilder.buildEither(first: RegistrationView().environmentObject(appState)))
-            if playerPublisher.showPlayer && appState.registred {
-                PlayerView()
-            }
+            PlayerView()
         }
     }
 }
