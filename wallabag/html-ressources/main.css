@@ -42,6 +42,10 @@ html {
   body {
     background: #FFF;
   }
+  
+  a {
+    color: #000;
+  }
 }
 
 /* ==========================================================================
@@ -53,6 +57,10 @@ html {
   background: #000;
 }
 
+a {
+  font-weight: bold;
+}
+
 h2, h3, h4 {
   font-family: 'PT Sans', sans-serif;
   text-transform: uppercase;
@@ -60,11 +68,6 @@ h2, h3, h4 {
 
 p, li {
   color: #666;
-}
-
-a {
-  color: #000;
-  font-weight: bold;
 }
 
 a:hover, a:focus {
