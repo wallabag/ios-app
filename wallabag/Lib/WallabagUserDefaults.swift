@@ -35,6 +35,9 @@ struct WallabagUserDefaults {
     @Setting("expiresIn", defaultValue: nil)
     static var expiresIn: Int?
 
+    @Setting("previousPasteBoardUrl", defaultValue: "")
+    static var previousPasteBoardUrl: String
+
     @GeneralSetting("justifyArticle", defaultValue: true)
     static var justifyArticle: Bool
 

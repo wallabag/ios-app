@@ -9,6 +9,7 @@ import CoreData
 import SwiftUI
 
 struct EntriesView: View {
+    @ObservedObject var pasteBoardPublisher = PasteBoardPublisher()
     @EnvironmentObject var appSync: AppSync
     @EnvironmentObject var entryPublisher: EntryPublisher
     @State private var showAddView: Bool = false
@@ -16,6 +17,9 @@ struct EntriesView: View {
     var body: some View {
         NavigationView {
             Group {
+                if pasteBoardPublisher.showPasteBoardView {
+                    PasteBoardView().environmentObject(pasteBoardPublisher)
+                }
                 RetrieveModePicker(filter: $entryPublisher.retrieveMode)
                 List(entryPublisher.entries) { entry in
                     NavigationLink(destination: EntryView(entry: entry)) {
