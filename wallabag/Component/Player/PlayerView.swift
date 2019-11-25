@@ -13,19 +13,7 @@ struct PlayerView: View {
 
     var body: some View {
         VStack {
-            Rectangle()
-                .foregroundColor(.gray)
-                .frame(width: 40, height: 5, alignment: .center)
-                .cornerRadius(5)
-                .gesture(DragGesture().onEnded { value in
-                    if value.startLocation.y > value.location.y {
-                        self.appState.showPlayer = true
-                        Log("Swip up")
-                    } else {
-                        self.appState.showPlayer = false
-                        Log("Swip Down")
-                    }
-                })
+            SwipePlayerView()
             if appState.showPlayer {
                 if playerPublisher.podcast != nil {
                     playerPublisher.podcast.map { podcast in

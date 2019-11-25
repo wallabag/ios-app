@@ -65,6 +65,7 @@
 		9C66B6C72356806E0068B968 /* StarEntryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C66B6C62356806E0068B968 /* StarEntryButton.swift */; };
 		9C66B6C9235681280068B968 /* DeleteEntryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C66B6C8235681280068B968 /* DeleteEntryButton.swift */; };
 		9C677CAD227EF5A6006C7112 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C677CAC227EF5A6006C7112 /* WebKit.framework */; };
+		9C6D0741238BFEAD00FCF4FF /* SwipePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D0740238BFEAD00FCF4FF /* SwipePlayerView.swift */; };
 		9C6DC0F2224112480012486D /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6DC0F1224112480012486D /* UISearchBar.swift */; };
 		9C73EC4422D79037008663B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C73EC4322D79037008663B1 /* SceneDelegate.swift */; };
 		9C73EC4722D79093008663B1 /* EntriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C73EC4622D79093008663B1 /* EntriesView.swift */; };
@@ -234,6 +235,7 @@
 		9C66B6C62356806E0068B968 /* StarEntryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarEntryButton.swift; sourceTree = "<group>"; };
 		9C66B6C8235681280068B968 /* DeleteEntryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteEntryButton.swift; sourceTree = "<group>"; };
 		9C677CAC227EF5A6006C7112 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		9C6D0740238BFEAD00FCF4FF /* SwipePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipePlayerView.swift; sourceTree = "<group>"; };
 		9C6DC0F1224112480012486D /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
 		9C73EC4322D79037008663B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9C73EC4622D79093008663B1 /* EntriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesView.swift; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 		9C03E49D238473D20060FF14 /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				9C6D073F238BFE9C00FCF4FF /* UI */,
 				9C03E49E238473F10060FF14 /* PlayerView.swift */,
 			);
 			path = Player;
@@ -497,6 +500,14 @@
 				9C66B6C1235678780068B968 /* RetrieveModePicker.swift */,
 			);
 			path = Filter;
+			sourceTree = "<group>";
+		};
+		9C6D073F238BFE9C00FCF4FF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				9C6D0740238BFEAD00FCF4FF /* SwipePlayerView.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		9C73EC4522D7907E008663B1 /* Component */ = {
@@ -1036,6 +1047,7 @@
 				9C7AFE142353CE4500FBF989 /* WallabagOAuth.swift in Sources */,
 				9C3F13E42353D4C800303AA8 /* WallabagCollection.swift in Sources */,
 				9C03E4A1238474110060FF14 /* PlayerPublisher.swift in Sources */,
+				9C6D0741238BFEAD00FCF4FF /* SwipePlayerView.swift in Sources */,
 				9CB41DC8234FC23200C2740B /* LoginTextFieldValidator.swift in Sources */,
 				9C0C3B8A2354890F008AD2C9 /* GeneralSetting.swift in Sources */,
 				9C37217122E107D200D363FB /* MainView.swift in Sources */,
