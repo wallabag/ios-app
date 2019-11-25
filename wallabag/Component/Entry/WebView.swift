@@ -5,6 +5,7 @@
 //  Created by Marinel Maxime on 18/07/2019.
 //
 
+import CoreData
 import SafariServices
 import SwiftUI
 import WebKit
@@ -16,8 +17,9 @@ struct WebView: UIViewRepresentable {
         Coordinator(self)
     }
 
-    class Coordinator: NSObject, WKNavigationDelegate {
+    class Coordinator: NSObject, WKNavigationDelegate, UIScrollViewDelegate {
         var webView: WebView
+        @CoreDataViewContext var context: NSManagedObjectContext
 
         init(_ webView: WebView) {
             self.webView = webView
@@ -45,11 +47,19 @@ struct WebView: UIViewRepresentable {
             UIApplication.shared.open(urlTarget, options: [:], completionHandler: nil)
             decisionHandler(.cancel)
         }
+
+        func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+            context.perform {
+                self.webView.entry.screenPosition = Float(scrollView.contentOffset.y)
+                try? self.context.save()
+            }
+        }
     }
 
     func makeUIView(context: Context) -> WKWebView {
         let webview = WKWebView(frame: .zero)
         webview.navigationDelegate = context.coordinator
+        webview.scrollView.delegate = context.coordinator
         return webview
     }
 
