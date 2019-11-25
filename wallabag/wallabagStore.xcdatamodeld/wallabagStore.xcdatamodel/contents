@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="19A602" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Entry" representedClassName=".Entry" syncable="YES">
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -9,6 +9,7 @@
         <attribute name="isStarred" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="previewPicture" optional="YES" attributeType="String"/>
         <attribute name="readingTime" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="screenPosition" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="url" optional="YES" attributeType="String"/>
@@ -30,7 +31,7 @@
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="Entry" positionX="-63" positionY="-18" width="128" height="223"/>
+        <element name="Entry" positionX="-63" positionY="-18" width="128" height="238"/>
         <element name="Tag" positionX="-63" positionY="63" width="128" height="88"/>
     </elements>
 </model>
