@@ -37,13 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
 
-        // MIGRATION BETA
-        do {
-            let keychain = KeychainPasswordItem(service: "wallabag", account: "main")
-            WallabagUserDefaults.password = try keychain.readPassword()
-        } catch _ {}
-        // END MIGRATION BETA
-
         requestBadge()
 
         return true
