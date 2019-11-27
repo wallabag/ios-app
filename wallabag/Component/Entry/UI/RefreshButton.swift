@@ -20,6 +20,7 @@ struct RefreshButton: View {
             },
             label: {
                 Image(systemName: "arrow.counterclockwise")
+                    .frame(width: 34, height: 34, alignment: .center)
                     .rotationEffect(.degrees(appSync.inProgress ? 0 : 360))
                     .animation(Animation.spring().repeatForever(autoreverses: false))
             }
@@ -30,5 +31,7 @@ struct RefreshButton: View {
 struct RefreshButton_Previews: PreviewProvider {
     static var previews: some View {
         RefreshButton()
+            .environmentObject(AppSync())
+            .environmentObject(EntryPublisher())
     }
 }

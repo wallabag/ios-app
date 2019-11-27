@@ -37,7 +37,7 @@ struct EntriesView: View {
             .navigationBarItems(trailing:
                 HStack {
                     RefreshButton()
-                    Button(action: { self.showAddView = true }, label: { Image(systemName: "plus") })
+                    Button(action: { self.showAddView = true }, label: { Image(systemName: "plus").frame(width: 34, height: 34, alignment: .center) })
             })
 
             entryPublisher.entries.first.map { EntryView(entry: $0) }
@@ -49,6 +49,9 @@ struct EntriesView: View {
     struct ArticleListView_Previews: PreviewProvider {
         static var previews: some View {
             EntriesView()
+                .environmentObject(PasteBoardPublisher())
+                .environmentObject(AppSync())
+                .environmentObject(EntryPublisher())
         }
     }
 #endif
