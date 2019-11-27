@@ -29,13 +29,13 @@ struct EntryView: View {
                 }, label: {
                     Image(systemName: self.showTag ? "tag.fill" : "tag")
                 })
-                Spacer()
                 Button(action: {
                     self.playerPublisher.load(self.entry)
                     self.appState.showPlayer = true
                 }, label: {
-                    Image(systemName: "ear")
+                    Image(systemName: "music.note.list")
                 })
+                Spacer()
                 DeleteEntryButton(entry: entry, showText: false)
             }.padding()
         }.navigationBarTitle(entry.title ?? "")
