@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class PasteBoardPublisher: ObservableObject {
-    @Published var showPasteBoardView: Bool = true {
+    @Published var showPasteBoardView: Bool = false {
         willSet {
             if newValue {
                 WallabagUserDefaults.previousPasteBoardUrl = UIPasteboard.general.url?.absoluteString ?? ""
