@@ -34,11 +34,16 @@ struct EntriesView: View {
                 NavigationLink(destination: AddEntryView(), isActive: $showAddView, label: { Image(systemName: "plus") }).hidden()
             }
             .navigationBarTitle("Articles")
-            .navigationBarItems(trailing:
+            .navigationBarItems(
+                leading: Button(action: {
+                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
+                }, label: { Image(systemName: "gear") }),
+                trailing:
                 HStack {
                     RefreshButton()
                     Button(action: { self.showAddView = true }, label: { Image(systemName: "plus").frame(width: 34, height: 34, alignment: .center) })
-            })
+                }
+            )
 
             entryPublisher.entries.first.map { EntryView(entry: $0) }
         }
