@@ -13,24 +13,23 @@ struct EntriesView: View {
     @EnvironmentObject var appSync: AppSync
     @EnvironmentObject var entryPublisher: EntryPublisher
     @State private var showAddView: Bool = false
-
+    @State private var filter: RetrieveMode = .allArticles
+    
+    @FetchRequest(entity: Entry.entity(), sortDescriptors: []) var entries: FetchedResults<Entry>
+    
     var body: some View {
         NavigationView {
             Group {
+                // MARK: Pasteboard
                 if pasteBoardPublisher.showPasteBoardView {
                     PasteBoardView().environmentObject(pasteBoardPublisher)
                 }
-                RetrieveModePicker(filter: $entryPublisher.retrieveMode)
-                List(entryPublisher.entries) { entry in
-                    NavigationLink(destination: EntryView(entry: entry)) {
-                        EntryRowView(entry: entry).contextMenu {
-                            ArchiveEntryButton(entry: entry)
-                            StarEntryButton(entry: entry)
-                            DeleteEntryButton(entry: entry)
-                        }
-                    }
-                }
-                // WORKAROUND 13.2 navigation back crash
+                // MARK: Picker
+                RetrieveModePicker(filter: self.$filter)
+                
+                EntriesListView(predicate: filter.predicate())
+
+                // MARK: WORKAROUND 13.2 navigation back crash
                 NavigationLink(destination: AddEntryView(), isActive: $showAddView, label: { Image(systemName: "plus") }).hidden()
             }
             .navigationBarTitle("Articles")
@@ -44,19 +43,19 @@ struct EntriesView: View {
                     Button(action: { self.showAddView = true }, label: { Image(systemName: "plus").frame(width: 34, height: 34, alignment: .center) })
                 }
             )
-
+            // MARK: SplitView
             entryPublisher.entries.first.map { EntryView(entry: $0) }
         }
     }
 }
 
 #if DEBUG
-    struct ArticleListView_Previews: PreviewProvider {
-        static var previews: some View {
-            EntriesView()
-                .environmentObject(PasteBoardPublisher())
-                .environmentObject(AppSync())
-                .environmentObject(EntryPublisher())
-        }
+struct ArticleListView_Previews: PreviewProvider {
+    static var previews: some View {
+        EntriesView()
+            .environmentObject(PasteBoardPublisher())
+            .environmentObject(AppSync())
+            .environmentObject(EntryPublisher())
     }
+}
 #endif
