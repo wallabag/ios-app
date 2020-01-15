@@ -80,6 +80,7 @@
 		9C824D772265ED28009E519B /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C824D762265ED28009E519B /* LoginViewControllerTests.swift */; };
 		9C824D792265F429009E519B /* ArticleViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C824D782265F429009E519B /* ArticleViewControllerTests.swift */; };
 		9C889E7F22E66BCA00B9F767 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C889E7E22E66BCA00B9F767 /* Setting.swift */; };
+		9C8F05EA23CFBD1500B98CCE /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F05E923CFBD1500B98CCE /* MenuView.swift */; };
 		9C9085F722DF3FF600D47262 /* EntryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9085F622DF3FF600D47262 /* EntryRowView.swift */; };
 		9C90F62C2296B86F00C113EF /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9C90F62B2296B86F00C113EF /* Settings.bundle */; };
 		9C961B2622770ECE009F80A4 /* WallabagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C961B2522770ECE009F80A4 /* WallabagUITests.swift */; };
@@ -250,6 +251,7 @@
 		9C824D762265ED28009E519B /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		9C824D782265F429009E519B /* ArticleViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewControllerTests.swift; sourceTree = "<group>"; };
 		9C889E7E22E66BCA00B9F767 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		9C8F05E923CFBD1500B98CCE /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		9C9085F622DF3FF600D47262 /* EntryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryRowView.swift; sourceTree = "<group>"; };
 		9C90F62B2296B86F00C113EF /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9C961B2322770ECE009F80A4 /* wallabagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -525,6 +527,7 @@
 				9C03E49D238473D20060FF14 /* Player */,
 				9CB4D03F22E8A9220078BD1C /* Registration */,
 				9C45F6CC236069700021813B /* Tag */,
+				9C8F05E923CFBD1500B98CCE /* MenuView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -1077,6 +1080,7 @@
 				BF_A31D94510D6C4BD65AC0122EB64626C8 /* String.swift in Sources */,
 				9C1EB6E823573DD700A5E54B /* EntryPictoImage.swift in Sources */,
 				9C5EDEE7234E848D00141DFD /* Injector.swift in Sources */,
+				9C8F05EA23CFBD1500B98CCE /* MenuView.swift in Sources */,
 				9CB41DC4234FC03C00C2740B /* ServerTextFieldValidator.swift in Sources */,
 				9C327655238B031D0040D9D6 /* PasteBoardPublisher.swift in Sources */,
 				9C73EC4422D79037008663B1 /* SceneDelegate.swift in Sources */,

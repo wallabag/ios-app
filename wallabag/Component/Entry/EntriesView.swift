@@ -12,6 +12,7 @@ struct EntriesView: View {
     @ObservedObject var pasteBoardPublisher = PasteBoardPublisher()
     @EnvironmentObject var appSync: AppSync
     @EnvironmentObject var entryPublisher: EntryPublisher
+    @Binding var showMenu: Bool
     @State private var showAddView: Bool = false
     @State private var filter: RetrieveMode = RetrieveMode(fromCase: WallabagUserDefaults.defaultMode)
     
@@ -35,8 +36,10 @@ struct EntriesView: View {
             .navigationBarTitle("Articles")
             .navigationBarItems(
                 leading: Button(action: {
-                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
-                }, label: { Image(systemName: "gear") }),
+                    withAnimation {
+                        self.showMenu.toggle()
+                    }
+                }, label: { Image(systemName: "list.bullet") }),
                 trailing:
                 HStack {
                     RefreshButton()
@@ -52,7 +55,7 @@ struct EntriesView: View {
 #if DEBUG
 struct ArticleListView_Previews: PreviewProvider {
     static var previews: some View {
-        EntriesView()
+        EntriesView(showMenu: .constant(false))
             .environmentObject(PasteBoardPublisher())
             .environmentObject(AppSync())
             .environmentObject(EntryPublisher())
