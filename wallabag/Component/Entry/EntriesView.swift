@@ -13,7 +13,7 @@ struct EntriesView: View {
     @EnvironmentObject var appSync: AppSync
     @EnvironmentObject var entryPublisher: EntryPublisher
     @State private var showAddView: Bool = false
-    @State private var filter: RetrieveMode = .allArticles
+    @State private var filter: RetrieveMode = RetrieveMode(fromCase: WallabagUserDefaults.defaultMode)
     
     @FetchRequest(entity: Entry.entity(), sortDescriptors: []) var entries: FetchedResults<Entry>
     
