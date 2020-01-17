@@ -30,7 +30,9 @@ class LoginTextFieldValidator: ObservableObject {
             case let .error(reason):
                 self.error = reason
             case .connected:
-                self.appState.registred = true
+                DispatchQueue.main.async {
+                    self.appState.registred = true
+                }
             case .unknown:
                 break
             case .connecting:
