@@ -10,7 +10,6 @@ import SwiftUI
 
 struct EntryView: View {
     @ObservedObject var entry: Entry
-    @EnvironmentObject var entryPublisher: EntryPublisher
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var playerPublisher: PlayerPublisher
     @State var showTag: Bool = false

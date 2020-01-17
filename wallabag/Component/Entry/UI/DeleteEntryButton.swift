@@ -6,16 +6,17 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct DeleteEntryButton: View {
-    @EnvironmentObject var appState: AppState
-    @EnvironmentObject var entryPublisher: EntryPublisher
+    @Environment(\.managedObjectContext) var context: NSManagedObjectContext
     var entry: Entry
     var showText: Bool = true
     var body: some View {
         Button(action: {
-            self.appState.session.delete(entry: self.entry)
-            self.entryPublisher.delete(self.entry)
+            // @todo : move logic to obsersable
+            //self.appState.session.delete(entry: self.entry)
+            self.context.delete(self.entry)
         }, label: {
             if showText {
                 Text("Delete")

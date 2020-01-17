@@ -9,13 +9,12 @@ import SwiftUI
 
 struct RefreshButton: View {
     @EnvironmentObject var appSync: AppSync
-    @EnvironmentObject var entryPublisher: EntryPublisher
 
     var body: some View {
         Button(
             action: {
                 self.appSync.requestSync {
-                    self.entryPublisher.fetch()
+                    //self.entryPublisher.fetch()
                 }
             },
             label: {
@@ -32,6 +31,5 @@ struct RefreshButton_Previews: PreviewProvider {
     static var previews: some View {
         RefreshButton()
             .environmentObject(AppSync())
-            .environmentObject(EntryPublisher())
     }
 }

@@ -27,7 +27,6 @@ struct MainView: View {
                         EntriesView(showMenu: self.$showMenu)
                             .environmentObject(AppSync())
                             .environmentObject(appState)
-                            .environmentObject(EntryPublisher())
                     }) :
                     ViewBuilder.buildEither(first: RegistrationView().environmentObject(appState)))
             PlayerView()

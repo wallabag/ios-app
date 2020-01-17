@@ -95,7 +95,6 @@
 		9CB41DCE234FC44200C2740B /* WallabagKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB41DCD234FC44200C2740B /* WallabagKit.swift */; };
 		9CC6297A2374C6900020AEFC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_9904635DBD17CD8DEC268B0000282D5E /* Utils.swift */; };
 		9CC7D8B02371DB2F0055884D /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC7D8AF2371DB2F0055884D /* ImageDownloader.swift */; };
-		9CCA195923562096007B4C19 /* EntryPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA195823562096007B4C19 /* EntryPublisher.swift */; };
 		9CCC4AFC22E3BFD400F73891 /* WallabagUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC4AFB22E3BFD400F73891 /* WallabagUserDefaults.swift */; };
 		9CCC4AFE22E5D92E00F73891 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC4AFD22E5D92E00F73891 /* Password.swift */; };
 		9CCEFF8C2264A37B00441A18 /* SettingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCEFF8B2264A37B00441A18 /* SettingMock.swift */; };
@@ -267,7 +266,6 @@
 		9CB41DC7234FC23200C2740B /* LoginTextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextFieldValidator.swift; sourceTree = "<group>"; };
 		9CB41DCD234FC44200C2740B /* WallabagKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKit.swift; sourceTree = "<group>"; };
 		9CC7D8AF2371DB2F0055884D /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
-		9CCA195823562096007B4C19 /* EntryPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPublisher.swift; sourceTree = "<group>"; };
 		9CCC4AFB22E3BFD400F73891 /* WallabagUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagUserDefaults.swift; sourceTree = "<group>"; };
 		9CCC4AFD22E5D92E00F73891 /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
 		9CCEFF8B2264A37B00441A18 /* SettingMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMock.swift; sourceTree = "<group>"; };
@@ -472,7 +470,6 @@
 			children = (
 				9C5EDEE4234E842B00141DFD /* AppState.swift */,
 				9C66B6BC235667770068B968 /* AppSync.swift */,
-				9CCA195823562096007B4C19 /* EntryPublisher.swift */,
 				9C03E4A0238474110060FF14 /* PlayerPublisher.swift */,
 				9C327654238B031D0040D9D6 /* PasteBoardPublisher.swift */,
 			);
@@ -1096,7 +1093,6 @@
 				9CB41DC6234FC14500C2740B /* ClientIdClientServerTextFieldValidator.swift in Sources */,
 				BF_767B670EFD6E74785BD2212AF6B9A34A /* UIImageView.swift in Sources */,
 				BF_A263058FD57BCE7DECF1322ABBB1C729 /* UIPodcastSlider.swift in Sources */,
-				9CCA195923562096007B4C19 /* EntryPublisher.swift in Sources */,
 				BF_27B3C5BB859104CEF0AB1D52843622B4 /* WKWebView.swift in Sources */,
 				9C7AFE162353CE8B00FBF989 /* WallabagKitError.swift in Sources */,
 				BF_69A8B5C65C16A5031C7513FFCB6BCEBF /* Utils.swift in Sources */,

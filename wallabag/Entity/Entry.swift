@@ -68,4 +68,14 @@ extension Entry {
         url = article.url
         readingTime = article.readingTime ?? 0
     }
+    
+    func toggleArchive() {
+        isArchived.toggle()
+        objectWillChange.send()
+    }
+    
+    func toggleStarred() {
+        isStarred.toggle()
+        objectWillChange.send()
+    }
 }

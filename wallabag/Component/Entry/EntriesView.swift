@@ -11,7 +11,6 @@ import SwiftUI
 struct EntriesView: View {
     @ObservedObject var pasteBoardPublisher = PasteBoardPublisher()
     @EnvironmentObject var appSync: AppSync
-    @EnvironmentObject var entryPublisher: EntryPublisher
     @Binding var showMenu: Bool
     @State private var showAddView: Bool = false
     @State private var filter: RetrieveMode = RetrieveMode(fromCase: WallabagUserDefaults.defaultMode)
@@ -47,7 +46,7 @@ struct EntriesView: View {
                 }
             )
             // MARK: SplitView
-            entryPublisher.entries.first.map { EntryView(entry: $0) }
+            entries.first.map { EntryView(entry: $0) }
         }
     }
 }
@@ -58,7 +57,6 @@ struct ArticleListView_Previews: PreviewProvider {
         EntriesView(showMenu: .constant(false))
             .environmentObject(PasteBoardPublisher())
             .environmentObject(AppSync())
-            .environmentObject(EntryPublisher())
     }
 }
 #endif
