@@ -14,6 +14,10 @@ struct MainView: View {
     
     var body: some View {
         VStack {
+            if appState.hasError {
+                Text("\(appState.lastError ?? "")")
+                    .foregroundColor(.red)
+            }
             ViewBuilder.buildBlock(
                 appState.registred ?
                     ViewBuilder.buildEither(second: HStack {

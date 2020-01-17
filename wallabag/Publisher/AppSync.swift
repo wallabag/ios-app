@@ -11,6 +11,7 @@ import Foundation
 
 class AppSync: ObservableObject {
     @Injector var session: WallabagSession
+    @Injector var appState: AppState
     @CoreDataViewContext var coreDataContext: NSManagedObjectContext
 
     @Published var inProgress = false
@@ -39,6 +40,11 @@ class AppSync: ObservableObject {
             case .connected:
                 self.sync {
                     completion()
+                }
+            case .error(let reason):
+                DispatchQueue.main.async {
+                    self.appState.registred = false
+                    self.appState.lastError = reason
                 }
             default:
                 break

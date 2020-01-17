@@ -14,6 +14,17 @@ class AppState: ObservableObject {
             WallabagUserDefaults.registred = registred
         }
     }
+    
+    @Published var hasError: Bool = false
+    @Published var lastError: String? {
+        willSet {
+            hasError = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+                self.hasError = false
+                self.lastError = nil
+            }
+        }
+    }
 
     @Published var showPlayer: Bool = false
 
