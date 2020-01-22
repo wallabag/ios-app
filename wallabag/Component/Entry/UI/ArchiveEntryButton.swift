@@ -12,8 +12,6 @@ struct ArchiveEntryButton: View {
     var showText: Bool = true
     var body: some View {
         Button(action: {
-            // @todo : Move to obsersable push to server
-            //self.appState.session.update(self.entry, parameters: ["archive": (!self.entry.isArchived).int])
             self.entry.toggleArchive()
         }, label: {
             if showText {

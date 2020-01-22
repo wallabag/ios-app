@@ -14,7 +14,11 @@ class AppSync: ObservableObject {
     @Injector var appState: AppState
     @CoreDataViewContext var coreDataContext: NSManagedObjectContext
 
-    @Published var inProgress = false
+    @Published var inProgress = false {
+        willSet {
+            appState.refreshing = newValue
+        }
+    }
 
     private let syncQueue = DispatchQueue(label: "fr.district-web.wallabag.sync-queue", qos: .userInitiated)
     private let dispatchGroup = DispatchGroup()

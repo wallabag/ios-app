@@ -14,6 +14,7 @@ struct RefreshButton: View {
         Button(
             action: {
                 self.appSync.requestSync {
+                    #warning("// TODO : Remove this part. Use obsersable to manage state")
                     //self.entryPublisher.fetch()
                 }
             },

@@ -12,8 +12,6 @@ struct StarEntryButton: View {
     var showText: Bool = true
     var body: some View {
         Button(action: {
-            // @todo : move push server in obsersable
-            //self.appState.session.update(self.entry, parameters: ["starred": (!self.entry.isStarred).int])
             self.entry.toggleStarred()
         }, label: {
             if showText {
