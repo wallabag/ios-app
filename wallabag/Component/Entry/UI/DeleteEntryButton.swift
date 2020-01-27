@@ -14,8 +14,6 @@ struct DeleteEntryButton: View {
     var showText: Bool = true
     var body: some View {
         Button(action: {
-            #warning("// TODO : move logic to obsersable")
-            // self.appState.session.delete(entry: self.entry)
             self.context.delete(self.entry)
         }, label: {
             if showText {
