@@ -14,11 +14,7 @@ class AppSync: ObservableObject {
     @Injector var appState: AppState
     @CoreDataViewContext var coreDataContext: NSManagedObjectContext
 
-    @Published var inProgress = false {
-        willSet {
-            appState.refreshing = newValue
-        }
-    }
+    @Published var inProgress = false
 
     private let syncQueue = DispatchQueue(label: "fr.district-web.wallabag.sync-queue", qos: .userInitiated)
     private let dispatchGroup = DispatchGroup()
@@ -39,6 +35,7 @@ class AppSync: ObservableObject {
 
     func requestSync(completion: @escaping () -> Void) {
         inProgress = true
+        appState.refreshing = true
         sessionState = session.$state.sink { state in
             switch state {
             case .connected:
@@ -64,13 +61,16 @@ class AppSync: ObservableObject {
         synchronizeEntries()
 
         dispatchGroup.notify(queue: syncQueue) {
+            Log("Sync end")
             do {
                 try self.backgroundContext.save()
                 self.backgroundContext.reset()
             } catch {}
             self.purge()
             DispatchQueue.main.async {
+                Log("Refresh end")
                 self.inProgress = false
+                self.appState.refreshing = false
                 completion()
             }
         }

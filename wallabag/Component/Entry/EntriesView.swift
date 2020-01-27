@@ -45,7 +45,7 @@ struct EntriesView: View {
                 }, label: { Image(systemName: "list.bullet") }),
                 trailing:
                 HStack {
-                    RefreshButton()
+                    RefreshButton(appSync: appSync)
                     Button(action: { self.showAddView = true }, label: { Image(systemName: "plus").frame(width: 34, height: 34, alignment: .center) })
                 }
             )

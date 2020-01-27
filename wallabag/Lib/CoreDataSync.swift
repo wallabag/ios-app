@@ -17,13 +17,16 @@ class CoreDataSync {
     init() {
         objectsDidChangeCancellable = NotificationCenter.default
             .publisher(for: .NSManagedObjectContextObjectsDidChange)
+            .receive(on: DispatchQueue.main)
             .sink { notification in
-                if let updatedObjs = notification.userInfo?[NSUpdatedObjectsKey] as? Set<NSManagedObject>, !updatedObjs.isEmpty {
-                    self.updatedObjects(updatedObjs)
-                }
+                if !self.appState.refreshing {
+                    if let updatedObjs = notification.userInfo?[NSUpdatedObjectsKey] as? Set<NSManagedObject>, !updatedObjs.isEmpty {
+                        self.updatedObjects(updatedObjs)
+                    }
 
-                if let deletedObjs = notification.userInfo?[NSDeletedObjectsKey] as? Set<NSManagedObject>, !deletedObjs.isEmpty {
-                    self.deletedObjects(deletedObjs)
+                    if let deletedObjs = notification.userInfo?[NSDeletedObjectsKey] as? Set<NSManagedObject>, !deletedObjs.isEmpty {
+                        self.deletedObjects(deletedObjs)
+                    }
                 }
             }
     }
@@ -48,6 +51,7 @@ class CoreDataSync {
                 // skip tag at this time
                 changedValues.removeValue(forKey: "tags")
                 if changedValues.count > 0 {
+                    Log("Push update entry \(entry.id) to remote")
                     self.appState.session.update(
                         entry,
                         parameters:
