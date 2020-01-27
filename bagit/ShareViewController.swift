@@ -45,35 +45,40 @@ class ShareViewController: UIViewController {
     }
 
     override func viewWillAppear(_: Bool) {
-        if WallabagUserDefaults.registred, let attachments = getAttachments() {
-            if !attachments.isEmpty {
-                let kit = WallabagKit(host: WallabagUserDefaults.host)
-                _ = kit.requestAuth(
-                    clientId: WallabagUserDefaults.clientId,
-                    clientSecret: WallabagUserDefaults.clientSecret,
-                    username: WallabagUserDefaults.login,
-                    password: WallabagUserDefaults.password
-                ).sink(receiveCompletion: { completion in
-                    if case .failure = completion {
-                        self.clearView(withError: true)
+        if WallabagUserDefaults.registred,
+            let attachments = getAttachments(),
+            !attachments.isEmpty {
+            let kit = WallabagKit(host: WallabagUserDefaults.host)
+            _ = kit.requestAuth(
+                clientId: WallabagUserDefaults.clientId,
+                clientSecret: WallabagUserDefaults.clientSecret,
+                username: WallabagUserDefaults.login,
+                password: WallabagUserDefaults.password
+            )
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                if case .failure = completion {
+                    self.clearView(withError: true)
+                }
+            }, receiveValue: { token in
+                kit.bearer = token.accessToken
+                attachments.forEach { attachment in
+                    self.getUrl(item: attachment) { [unowned self] shareURL in
+                        _ = kit.send(
+                            decodable: WallabagEntry.self,
+                            to: WallabagEntryEndpoint.add(url: shareURL)
+                        )
+                        .receive(on: DispatchQueue.main)
+                        .sink(receiveCompletion: { completion in
+                            if case .failure = completion {
+                                self.clearView(withError: true)
+                            }
+                        }, receiveValue: { _ in
+                            self.clearView()
+                        })
                     }
-                }, receiveValue: { token in
-                    kit.bearer = token.accessToken
-                    for attachment in attachments {
-                        self.getUrl(item: attachment) { [unowned self] shareURL in
-                            _ = kit.send(decodable: WallabagEntry.self, to: WallabagEntryEndpoint.add(url: shareURL)).sink(receiveCompletion: { completion in
-                                if case .failure = completion {
-                                    self.clearView(withError: true)
-                                }
-                            }, receiveValue: { _ in
-                                self.clearView()
-                            })
-                        }
-                    }
-                })
-            } else {
-                clearView(withError: true)
-            }
+                }
+            })
         } else {
             clearView(withError: true)
         }
@@ -92,6 +97,7 @@ class ShareViewController: UIViewController {
         return att
     }
 
+    // swiftlint:disable force_cast
     private func getUrl(item: NSItemProvider, completion: @escaping (String) -> Void) {
         if item.hasItemConformingToTypeIdentifier(kUTTypePlainText as String) {
             item.loadItem(forTypeIdentifier: kUTTypePlainText as String, options: nil) { (text, _) -> Void in

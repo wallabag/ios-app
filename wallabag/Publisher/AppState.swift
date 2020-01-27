@@ -14,7 +14,7 @@ class AppState: ObservableObject {
             WallabagUserDefaults.registred = registred
         }
     }
-    
+
     @Published var hasError: Bool = false
     @Published var lastError: String? {
         willSet {
@@ -27,6 +27,7 @@ class AppState: ObservableObject {
     }
 
     @Published var showPlayer: Bool = false
+    @Published var refreshing: Bool = false
 
     @Injector var session: WallabagSession
 
@@ -40,7 +41,7 @@ class AppState: ObservableObject {
     private func initSession() {
         session.requestSession()
     }
-    
+
     func logout() {
         registred = false
     }

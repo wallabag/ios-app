@@ -95,13 +95,13 @@
 		9CB41DCE234FC44200C2740B /* WallabagKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB41DCD234FC44200C2740B /* WallabagKit.swift */; };
 		9CC6297A2374C6900020AEFC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_9904635DBD17CD8DEC268B0000282D5E /* Utils.swift */; };
 		9CC7D8B02371DB2F0055884D /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC7D8AF2371DB2F0055884D /* ImageDownloader.swift */; };
-		9CCA195923562096007B4C19 /* EntryPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCA195823562096007B4C19 /* EntryPublisher.swift */; };
 		9CCC4AFC22E3BFD400F73891 /* WallabagUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC4AFB22E3BFD400F73891 /* WallabagUserDefaults.swift */; };
 		9CCC4AFE22E5D92E00F73891 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC4AFD22E5D92E00F73891 /* Password.swift */; };
 		9CCEFF8C2264A37B00441A18 /* SettingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCEFF8B2264A37B00441A18 /* SettingMock.swift */; };
 		9CE32CBA234F648A004DD045 /* BundleKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE32CB9234F648A004DD045 /* BundleKey.swift */; };
 		9CF1ED952262796D00AF750F /* AnalyticsManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1ED942262796D00AF750F /* AnalyticsManagerMock.swift */; };
 		9CF1ED9722627D4500AF750F /* ClientIdViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1ED9622627D4500AF750F /* ClientIdViewControllerTests.swift */; };
+		9CFA9E3123D270F0004C89E3 /* CoreDataSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFA9E3023D270F0004C89E3 /* CoreDataSync.swift */; };
 		BF_047B132AA818924F42C07857A48D5648 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_250D2539097D8AD4F65F91206902AF43 /* AnalyticsManager.swift */; };
 		BF_0576133F70765A88C0F8BD8FC41C19EE /* article.html in Resources */ = {isa = PBXBuildFile; fileRef = FR_317F9C93FC0631DF00AB2E1FAEF90DD8 /* article.html */; };
 		BF_0958BD47C0A373C73825495FA643F41D /* UbuntuTitling-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FR_1DE9D932C526142E220FFC665A0EC101 /* UbuntuTitling-Bold.ttf */; };
@@ -267,13 +267,13 @@
 		9CB41DC7234FC23200C2740B /* LoginTextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextFieldValidator.swift; sourceTree = "<group>"; };
 		9CB41DCD234FC44200C2740B /* WallabagKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKit.swift; sourceTree = "<group>"; };
 		9CC7D8AF2371DB2F0055884D /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
-		9CCA195823562096007B4C19 /* EntryPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPublisher.swift; sourceTree = "<group>"; };
 		9CCC4AFB22E3BFD400F73891 /* WallabagUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagUserDefaults.swift; sourceTree = "<group>"; };
 		9CCC4AFD22E5D92E00F73891 /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
 		9CCEFF8B2264A37B00441A18 /* SettingMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMock.swift; sourceTree = "<group>"; };
 		9CE32CB9234F648A004DD045 /* BundleKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleKey.swift; sourceTree = "<group>"; };
 		9CF1ED942262796D00AF750F /* AnalyticsManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManagerMock.swift; sourceTree = "<group>"; };
 		9CF1ED9622627D4500AF750F /* ClientIdViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientIdViewControllerTests.swift; sourceTree = "<group>"; };
+		9CFA9E3023D270F0004C89E3 /* CoreDataSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSync.swift; sourceTree = "<group>"; };
 		FR_0D81D880CC2314E3DD84B9C8E00667AD /* wallabagUITests-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "wallabagUITests-Debug.xcconfig"; sourceTree = "<group>"; };
 		FR_0EF389E23F508F60AB1F657ECF52C8CF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FR_1BCA2B5D79E6386A16A4B6341BC136FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -472,7 +472,6 @@
 			children = (
 				9C5EDEE4234E842B00141DFD /* AppState.swift */,
 				9C66B6BC235667770068B968 /* AppSync.swift */,
-				9CCA195823562096007B4C19 /* EntryPublisher.swift */,
 				9C03E4A0238474110060FF14 /* PlayerPublisher.swift */,
 				9C327654238B031D0040D9D6 /* PasteBoardPublisher.swift */,
 			);
@@ -773,6 +772,7 @@
 				FR_9904635DBD17CD8DEC268B0000282D5E /* Utils.swift */,
 				9C7AFE0C2353C93E00FBF989 /* WallabagSession.swift */,
 				9CCC4AFB22E3BFD400F73891 /* WallabagUserDefaults.swift */,
+				9CFA9E3023D270F0004C89E3 /* CoreDataSync.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -864,6 +864,7 @@
 				CFBP_BBB4D336DFE3473638D4284D25266CBD /* Embed App Extensions */,
 				CFBP_FB6EE7002903288EA097197B26A1C90A /* Embed Frameworks */,
 				SSBP_59F8FB275EB4E6831F8FEA98BB26B420 /* Swiftlint */,
+				9CB515DC23D9D741008C9AD6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1002,6 +1003,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		9CB515DC23D9D741008C9AD6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which pecker >/dev/null; then\n  pecker\nelse\n  echo \"warning: Pecker not installed, download from https://github.com/woshiccm/Pecker\"\nfi\n";
+		};
 		SSBP_59F8FB275EB4E6831F8FEA98BB26B420 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1076,6 +1094,7 @@
 				9C78B9D4235BBD8F00BDEFEB /* KeychainPasswordItem.swift in Sources */,
 				9CE32CBA234F648A004DD045 /* BundleKey.swift in Sources */,
 				BF_DB7F468621011B78AA80968FF9B4DD93 /* RetrieveMode.swift in Sources */,
+				9CFA9E3123D270F0004C89E3 /* CoreDataSync.swift in Sources */,
 				9C60DE2523606DAA00F78D02 /* TagRow.swift in Sources */,
 				BF_A31D94510D6C4BD65AC0122EB64626C8 /* String.swift in Sources */,
 				9C1EB6E823573DD700A5E54B /* EntryPictoImage.swift in Sources */,
@@ -1096,7 +1115,6 @@
 				9CB41DC6234FC14500C2740B /* ClientIdClientServerTextFieldValidator.swift in Sources */,
 				BF_767B670EFD6E74785BD2212AF6B9A34A /* UIImageView.swift in Sources */,
 				BF_A263058FD57BCE7DECF1322ABBB1C729 /* UIPodcastSlider.swift in Sources */,
-				9CCA195923562096007B4C19 /* EntryPublisher.swift in Sources */,
 				BF_27B3C5BB859104CEF0AB1D52843622B4 /* WKWebView.swift in Sources */,
 				9C7AFE162353CE8B00FBF989 /* WallabagKitError.swift in Sources */,
 				BF_69A8B5C65C16A5031C7513FFCB6BCEBF /* Utils.swift in Sources */,
@@ -1370,7 +1388,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FR_D25A5811CCA84B9080305DDA9A796022 /* bagit-Release.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 235;
+				CURRENT_PROJECT_VERSION = 236;
 				MARKETING_VERSION = 5.0.0;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1393,7 +1411,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FR_3C63EF667F0034B52FD8C3A71EAA05F7 /* bagit-Debug.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 235;
+				CURRENT_PROJECT_VERSION = 236;
 				MARKETING_VERSION = 5.0.0;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1405,7 +1423,7 @@
 			baseConfigurationReference = FR_7ABC493E8F892DF451AABBB415AFE326 /* wallabag-Debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 235;
+				CURRENT_PROJECT_VERSION = 236;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1428,7 +1446,7 @@
 			baseConfigurationReference = FR_5DE83659FDAF5871759C0A7D752A7823 /* wallabag-Release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 235;
+				CURRENT_PROJECT_VERSION = 236;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

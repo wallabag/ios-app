@@ -8,14 +8,11 @@
 import SwiftUI
 
 struct ArchiveEntryButton: View {
-    @EnvironmentObject var appState: AppState
-    @EnvironmentObject var entryPublisher: EntryPublisher
     @ObservedObject var entry: Entry
     var showText: Bool = true
     var body: some View {
         Button(action: {
-            self.appState.session.update(self.entry, parameters: ["archive": (!self.entry.isArchived).int])
-            self.entryPublisher.toggleArchive(self.entry)
+            self.entry.toggleArchive()
         }, label: {
             if showText {
                 Text(entry.isArchived ? "Mark as unread" : "Mark as read")

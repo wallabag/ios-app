@@ -7,31 +7,31 @@
 
 import SwiftUI
 
+#warning("Need rework")
 struct RefreshButton: View {
-    @EnvironmentObject var appSync: AppSync
-    @EnvironmentObject var entryPublisher: EntryPublisher
+    @ObservedObject var appSync: AppSync
+    @State private var refreshing: Bool = false
 
     var body: some View {
         Button(
             action: {
+                self.refreshing = true
                 self.appSync.requestSync {
-                    self.entryPublisher.fetch()
+                    self.refreshing = false
                 }
             },
             label: {
                 Image(systemName: "arrow.counterclockwise")
                     .frame(width: 34, height: 34, alignment: .center)
-                    .rotationEffect(.degrees(appSync.inProgress ? 0 : 360))
+                    .rotationEffect(.degrees(refreshing ? 0 : 360))
                     .animation(Animation.spring().repeatForever(autoreverses: false))
             }
-        ).disabled(appSync.inProgress)
+        ).disabled(refreshing)
     }
 }
 
 struct RefreshButton_Previews: PreviewProvider {
     static var previews: some View {
-        RefreshButton()
-            .environmentObject(AppSync())
-            .environmentObject(EntryPublisher())
+        RefreshButton(appSync: AppSync())
     }
 }

@@ -5,17 +5,16 @@
 //  Created by Marinel Maxime on 16/10/2019.
 //
 
+import CoreData
 import SwiftUI
 
 struct DeleteEntryButton: View {
-    @EnvironmentObject var appState: AppState
-    @EnvironmentObject var entryPublisher: EntryPublisher
+    @Environment(\.managedObjectContext) var context: NSManagedObjectContext
     var entry: Entry
     var showText: Bool = true
     var body: some View {
         Button(action: {
-            self.appState.session.delete(entry: self.entry)
-            self.entryPublisher.delete(self.entry)
+            self.context.delete(self.entry)
         }, label: {
             if showText {
                 Text("Delete")

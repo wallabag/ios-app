@@ -28,9 +28,3 @@ struct EntryPicture: View {
         }
     }
 }
-
-/* struct EntryPicture_Previews: PreviewProvider {
- static var previews: some View {
- EntryPicture()
- }
- } */

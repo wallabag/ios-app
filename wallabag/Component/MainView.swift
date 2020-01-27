@@ -11,7 +11,7 @@ import SwiftUI
 struct MainView: View {
     @EnvironmentObject var appState: AppState
     @State private var showMenu: Bool = false
-    
+
     var body: some View {
         VStack {
             if appState.hasError {
@@ -27,7 +27,6 @@ struct MainView: View {
                         EntriesView(showMenu: self.$showMenu)
                             .environmentObject(AppSync())
                             .environmentObject(appState)
-                            .environmentObject(EntryPublisher())
                     }) :
                     ViewBuilder.buildEither(first: RegistrationView().environmentObject(appState)))
             PlayerView()
@@ -36,9 +35,9 @@ struct MainView: View {
 }
 
 #if DEBUG
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        Text("nothing")
+    struct MainView_Previews: PreviewProvider {
+        static var previews: some View {
+            Text("nothing")
+        }
     }
-}
 #endif

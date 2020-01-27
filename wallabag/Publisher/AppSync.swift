@@ -35,13 +35,14 @@ class AppSync: ObservableObject {
 
     func requestSync(completion: @escaping () -> Void) {
         inProgress = true
+        appState.refreshing = true
         sessionState = session.$state.sink { state in
             switch state {
             case .connected:
                 self.sync {
                     completion()
                 }
-            case .error(let reason):
+            case let .error(reason):
                 DispatchQueue.main.async {
                     self.appState.registred = false
                     self.appState.lastError = reason
@@ -60,13 +61,16 @@ class AppSync: ObservableObject {
         synchronizeEntries()
 
         dispatchGroup.notify(queue: syncQueue) {
+            Log("Sync end")
             do {
                 try self.backgroundContext.save()
                 self.backgroundContext.reset()
             } catch {}
             self.purge()
             DispatchQueue.main.async {
+                Log("Refresh end")
                 self.inProgress = false
+                self.appState.refreshing = false
                 completion()
             }
         }
