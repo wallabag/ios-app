@@ -26,6 +26,7 @@ public class WallabagKit {
         send(decodable: WallabagToken.self, to: WallabagOauth.request(clientId: clientId, clientSecret: clientSecret, username: username, password: password))
     }
 
+    // swiftlint:disable force_cast
     func send<T: Decodable>(decodable: T.Type, to: WallabagKitEndpoint, onQueue: DispatchQueue = .main) -> AnyPublisher<T, Error> {
         var urlRequest = URLRequest(url: URL(string: "\(host)\(to.endpoint())")!)
         urlRequest.httpMethod = to.method().rawValue

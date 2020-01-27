@@ -10,10 +10,9 @@ import SwiftUI
 
 struct EntriesListView: View {
     @FetchRequest var entries: FetchedResults<Entry>
-    
+
     init(predicate: NSPredicate) {
-        
-        self._entries = FetchRequest(entity: Entry.entity(), sortDescriptors: [NSSortDescriptor(key: "id", ascending: false)], predicate: predicate, animation: nil)
+        _entries = FetchRequest(entity: Entry.entity(), sortDescriptors: [NSSortDescriptor(key: "id", ascending: false)], predicate: predicate, animation: nil)
     }
 
     var body: some View {

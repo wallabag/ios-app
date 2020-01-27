@@ -45,7 +45,7 @@ class AppSync: ObservableObject {
                 self.sync {
                     completion()
                 }
-            case .error(let reason):
+            case let .error(reason):
                 DispatchQueue.main.async {
                     self.appState.registred = false
                     self.appState.lastError = reason

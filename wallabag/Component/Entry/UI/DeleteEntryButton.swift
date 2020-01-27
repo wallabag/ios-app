@@ -5,8 +5,8 @@
 //  Created by Marinel Maxime on 16/10/2019.
 //
 
-import SwiftUI
 import CoreData
+import SwiftUI
 
 struct DeleteEntryButton: View {
     @Environment(\.managedObjectContext) var context: NSManagedObjectContext
@@ -15,7 +15,7 @@ struct DeleteEntryButton: View {
     var body: some View {
         Button(action: {
             #warning("// TODO : move logic to obsersable")
-            //self.appState.session.delete(entry: self.entry)
+            // self.appState.session.delete(entry: self.entry)
             self.context.delete(self.entry)
         }, label: {
             if showText {

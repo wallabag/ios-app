@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MenuView: View {
     @EnvironmentObject var appState: AppState
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             Text("Menu")
