@@ -20,7 +20,7 @@ struct Setting<T> {
 
     var wrappedValue: T {
         get {
-            return userDefaults.object(forKey: key) as? T ?? defaultValue
+            userDefaults.object(forKey: key) as? T ?? defaultValue
         }
         set {
             userDefaults.set(newValue, forKey: key)

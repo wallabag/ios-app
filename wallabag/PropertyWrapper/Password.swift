@@ -12,7 +12,7 @@ struct Password {
     private var keychain: KeychainPasswordItem
 
     var wrappedValue: String {
-        get { return (try? keychain.readPassword()) ?? "" }
+        get { (try? keychain.readPassword()) ?? "" }
         set { try? keychain.savePassword(newValue) }
     }
 

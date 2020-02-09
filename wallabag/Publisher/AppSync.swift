@@ -150,7 +150,7 @@ class AppSync: ObservableObject {
 
     private func purge() {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Entry")
-        fetchRequest.predicate = NSPredicate(format: "NOT (id IN %@)", argumentArray: [self.entriesSynced])
+        fetchRequest.predicate = NSPredicate(format: "NOT (id IN %@)", argumentArray: [entriesSynced])
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         CoreData.shared.persistentContainer.performBackgroundTask { backgroundContext in
             do {

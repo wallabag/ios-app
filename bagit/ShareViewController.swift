@@ -45,9 +45,7 @@ class ShareViewController: UIViewController {
     }
 
     override func viewWillAppear(_: Bool) {
-        if WallabagUserDefaults.registred,
-            let attachments = getAttachments(),
-            !attachments.isEmpty {
+        if WallabagUserDefaults.registred {
             let kit = WallabagKit(host: WallabagUserDefaults.host)
             _ = kit.requestAuth(
                 clientId: WallabagUserDefaults.clientId,
@@ -62,52 +60,35 @@ class ShareViewController: UIViewController {
                 }
             }, receiveValue: { token in
                 kit.bearer = token.accessToken
-                attachments.forEach { attachment in
-                    self.getUrl(item: attachment) { [unowned self] shareURL in
-                        _ = kit.send(
-                            decodable: WallabagEntry.self,
-                            to: WallabagEntryEndpoint.add(url: shareURL)
-                        )
-                        .receive(on: DispatchQueue.main)
-                        .sink(receiveCompletion: { completion in
-                            if case .failure = completion {
-                                self.clearView(withError: true)
-                            }
-                        }, receiveValue: { _ in
-                            self.clearView()
-                        })
-                    }
+                self.getUrl { shareURL in
+                    _ = kit.send(
+                        decodable: WallabagEntry.self,
+                        to: WallabagEntryEndpoint.add(url: shareURL)
+                    )
+                    .receive(on: DispatchQueue.main)
+                    .sink(receiveCompletion: { completion in
+                        if case .failure = completion {
+                            self.clearView(withError: true)
+                        }
+                    }, receiveValue: { _ in
+                        self.clearView()
+                            })
                 }
-            })
+                })
         } else {
             clearView(withError: true)
         }
     }
 
-    private func getAttachments() -> [NSItemProvider]? {
-        var att: [NSItemProvider] = []
-        guard let items = extensionContext?.inputItems as? [NSExtensionItem] else {
-            return nil
-        }
-        for item in items {
-            for attachment in item.attachments ?? [] where attachment.hasItemConformingToTypeIdentifier(kUTTypeURL as String) || attachment.hasItemConformingToTypeIdentifier(kUTTypePlainText as String) {
-                att.append(attachment)
-            }
-        }
-        return att
-    }
+    private func getUrl(completion: @escaping (String) -> Void) {
+        guard let item = extensionContext?.inputItems.first as? NSExtensionItem else { return }
 
-    // swiftlint:disable force_cast
-    private func getUrl(item: NSItemProvider, completion: @escaping (String) -> Void) {
-        if item.hasItemConformingToTypeIdentifier(kUTTypePlainText as String) {
-            item.loadItem(forTypeIdentifier: kUTTypePlainText as String, options: nil) { (text, _) -> Void in
-                completion(text as! String)
+        item.attachments?.forEach { attachment in
+            if attachment.isURL {
+                attachment.getUrl { completion($0) }
             }
-        }
-
-        if item.hasItemConformingToTypeIdentifier(kUTTypeURL as String) {
-            item.loadItem(forTypeIdentifier: kUTTypeURL as String, options: nil) { (url, _) -> Void in
-                completion((url as? NSURL)!.absoluteString!)
+            if attachment.isText {
+                attachment.getText { completion($0) }
             }
         }
     }
