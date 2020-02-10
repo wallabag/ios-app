@@ -10,6 +10,26 @@ import MobileCoreServices
 import Social
 import UIKit
 
+enum ShareExtensionError: Error, LocalizedError {
+    case unregistredApp
+    case authError
+    case retrievingURL
+    case duringAdding
+
+    var localizedDescription: String {
+        switch self {
+        case .unregistredApp:
+            return "App not registred or configured"
+        case .authError:
+            return "Error during auth"
+        case .retrievingURL:
+            return "Error retrieve url from extension"
+        case .duringAdding:
+            return "Error during pushing to your wallabag server"
+        }
+    }
+}
+
 @objc(ShareViewController)
 class ShareViewController: UIViewController {
     lazy var extError = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "App maybe not configured"])
@@ -35,6 +55,8 @@ class ShareViewController: UIViewController {
         return back
     }()
 
+    var authCancellabe: AnyCancellable?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(backView)
@@ -47,41 +69,63 @@ class ShareViewController: UIViewController {
     override func viewWillAppear(_: Bool) {
         if WallabagUserDefaults.registred {
             let kit = WallabagKit(host: WallabagUserDefaults.host)
-            _ = kit.requestAuth(
-                clientId: WallabagUserDefaults.clientId,
-                clientSecret: WallabagUserDefaults.clientSecret,
-                username: WallabagUserDefaults.login,
-                password: WallabagUserDefaults.password
-            )
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { completion in
-                if case .failure = completion {
-                    self.clearView(withError: true)
-                }
-            }, receiveValue: { token in
-                kit.bearer = token.accessToken
-                self.getUrl { shareURL in
-                    _ = kit.send(
-                        decodable: WallabagEntry.self,
-                        to: WallabagEntryEndpoint.add(url: shareURL)
-                    )
-                    .receive(on: DispatchQueue.main)
-                    .sink(receiveCompletion: { completion in
-                        if case .failure = completion {
-                            self.clearView(withError: true)
+
+            // MARK: Auth
+            let connecPromise = Future<Void, ShareExtensionError> { promise in
+                _ = kit.requestAuth(
+                    clientId: WallabagUserDefaults.clientId,
+                    clientSecret: WallabagUserDefaults.clientSecret,
+                    username: WallabagUserDefaults.login,
+                    password: WallabagUserDefaults.password
+                )
+                .receive(on: DispatchQueue.main)
+                .sink(receiveCompletion: { completion in
+                    if case .failure = completion {
+                        promise(.failure(.authError))
+                    }
+                }, receiveValue: { token in
+                    kit.bearer = token.accessToken
+                    promise(.success(()))
+                    })
+            }
+
+            authCancellabe = connecPromise
+                .receive(on: DispatchQueue.main)
+                .sink(receiveCompletion: { completion in
+                    if case let .failure(error) = completion {
+                        self.clearView(withError: error)
+                    }
+                }, receiveValue: { _ in
+                    self.getUrl { shareURL in
+                        guard let shareURL = shareURL else {
+                            self.clearView(withError: .retrievingURL)
+                            return
                         }
-                    }, receiveValue: { _ in
-                        self.clearView()
+
+                        _ = kit.send(
+                            decodable: WallabagEntry.self,
+                            to: WallabagEntryEndpoint.add(url: shareURL)
+                        )
+                        .receive(on: DispatchQueue.main)
+                        .sink(receiveCompletion: { completion in
+                            if case .failure = completion {
+                                self.clearView(withError: .duringAdding)
+                            }
+                        }, receiveValue: { _ in
+                            self.clearView(withError: nil)
                             })
-                }
+                    }
                 })
         } else {
-            clearView(withError: true)
+            clearView(withError: .unregistredApp)
         }
     }
 
-    private func getUrl(completion: @escaping (String) -> Void) {
-        guard let item = extensionContext?.inputItems.first as? NSExtensionItem else { return }
+    private func getUrl(completion: @escaping (String?) -> Void) {
+        guard let item = extensionContext?.inputItems.first as? NSExtensionItem else {
+            completion(nil)
+            return
+        }
 
         item.attachments?.forEach { attachment in
             if attachment.isURL {
@@ -93,12 +137,12 @@ class ShareViewController: UIViewController {
         }
     }
 
-    private func clearView(withError: Bool = false) {
+    private func clearView(withError: ShareExtensionError?) {
         UIView.animate(withDuration: 1.0, animations: {
             self.notificationView.alpha = 0.0
         }, completion: { _ in
-            if withError {
-                let alertController = UIAlertController(title: "Error", message: "Please open app and try to add manually your url", preferredStyle: .alert)
+            if withError != nil {
+                let alertController = UIAlertController(title: "Error", message: withError?.localizedDescription, preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "Ok", style: .cancel) { _ in
                     self.extensionContext?.cancelRequest(withError: self.extError)
                 })
