@@ -99,6 +99,7 @@
 		9CCC4AFC22E3BFD400F73891 /* WallabagUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC4AFB22E3BFD400F73891 /* WallabagUserDefaults.swift */; };
 		9CCC4AFE22E5D92E00F73891 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC4AFD22E5D92E00F73891 /* Password.swift */; };
 		9CCEFF8C2264A37B00441A18 /* SettingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCEFF8B2264A37B00441A18 /* SettingMock.swift */; };
+		9CD4CEF623F1FD5200CF11EA /* ShareExtensionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4CEF523F1FD5200CF11EA /* ShareExtensionError.swift */; };
 		9CE32CBA234F648A004DD045 /* BundleKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE32CB9234F648A004DD045 /* BundleKey.swift */; };
 		9CF1ED952262796D00AF750F /* AnalyticsManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1ED942262796D00AF750F /* AnalyticsManagerMock.swift */; };
 		9CF1ED9722627D4500AF750F /* ClientIdViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1ED9622627D4500AF750F /* ClientIdViewControllerTests.swift */; };
@@ -272,6 +273,7 @@
 		9CCC4AFB22E3BFD400F73891 /* WallabagUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagUserDefaults.swift; sourceTree = "<group>"; };
 		9CCC4AFD22E5D92E00F73891 /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
 		9CCEFF8B2264A37B00441A18 /* SettingMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMock.swift; sourceTree = "<group>"; };
+		9CD4CEF523F1FD5200CF11EA /* ShareExtensionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareExtensionError.swift; sourceTree = "<group>"; };
 		9CE32CB9234F648A004DD045 /* BundleKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleKey.swift; sourceTree = "<group>"; };
 		9CF1ED942262796D00AF750F /* AnalyticsManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManagerMock.swift; sourceTree = "<group>"; };
 		9CF1ED9622627D4500AF750F /* ClientIdViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientIdViewControllerTests.swift; sourceTree = "<group>"; };
@@ -702,6 +704,7 @@
 				FR_B59475CCE7E9CDF9B6B6C979AF3EBC87 /* Media.xcassets */,
 				FR_39287A02F2B756958D56349AC317D33B /* ShareViewController.swift */,
 				9CB4A63B23F083C10062122A /* NSItemProvider.swift */,
+				9CD4CEF523F1FD5200CF11EA /* ShareExtensionError.swift */,
 			);
 			path = bagit;
 			sourceTree = "<group>";
@@ -1162,6 +1165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CD4CEF623F1FD5200CF11EA /* ShareExtensionError.swift in Sources */,
 				BF_F455B9C80CD63DD87EF42992438C4F82 /* ShareViewController.swift in Sources */,
 				9C1410572374610B0080B1AC /* WallabagUserDefaults.swift in Sources */,
 				9C141062237463110080B1AC /* HttpMethod.swift in Sources */,

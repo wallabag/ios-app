@@ -10,26 +10,6 @@ import MobileCoreServices
 import Social
 import UIKit
 
-enum ShareExtensionError: Error, LocalizedError {
-    case unregistredApp
-    case authError
-    case retrievingURL
-    case duringAdding
-
-    var localizedDescription: String {
-        switch self {
-        case .unregistredApp:
-            return "App not registred or configured"
-        case .authError:
-            return "Error during auth"
-        case .retrievingURL:
-            return "Error retrieve url from extension"
-        case .duringAdding:
-            return "Error during pushing to your wallabag server"
-        }
-    }
-}
-
 @objc(ShareViewController)
 class ShareViewController: UIViewController {
     lazy var extError = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: "App maybe not configured"])
@@ -71,6 +51,7 @@ class ShareViewController: UIViewController {
             let kit = WallabagKit(host: WallabagUserDefaults.host)
 
             // MARK: Auth
+
             let connecPromise = Future<Void, ShareExtensionError> { promise in
                 _ = kit.requestAuth(
                     clientId: WallabagUserDefaults.clientId,
