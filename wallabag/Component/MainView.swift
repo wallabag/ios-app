@@ -40,9 +40,6 @@ struct MainView: View {
             VStack {
                 header.padding(.horizontal)
                 ErrorView()
-                Button(action: {
-                    self.errorPublisher.lastError = .syncError("Test")
-                }, label: { Text("test error") })
                 if router.route == .tips {
                     TipView()
                 } else if router.route == .addEntry {
