@@ -7,9 +7,22 @@
 
 import SwiftUI
 
+private struct Menu {
+    let title: String
+    let img: String
+    let route: Route
+}
+
 struct MenuView: View {
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var router: Router
+
+    fileprivate let menus: [Menu] = [
+        .init(title: "Entries", img: "tray.full", route: .entries),
+        .init(title: "Add entry", img: "tray.and.arrow.down", route: .addEntry),
+        .init(title: "About", img: "questionmark", route: .about),
+        .init(title: "Tips", img: "heart", route: .tips),
+    ]
 
     // swiftlint:disable multiple_closures_with_trailing_closure
     var body: some View {
@@ -17,37 +30,15 @@ struct MenuView: View {
             Text("Menu")
                 .font(.title)
                 .fontWeight(.black)
-
-            HStack {
-                Button(action: {
-                    self.router.route = .entries
-                }) {
-                    Image(systemName: "tray.full")
-                    Text("Entries")
-                }
-            }
-            HStack {
-                Button(action: {
-                    self.router.route = .addEntry
-                }) {
-                    Image(systemName: "tray.and.arrow.down")
-                    Text("Add entry")
-                }
-            }
-            HStack {
-                Button(action: {
-                    self.router.route = .about
-                }) {
-                    Image(systemName: "questionmark")
-                    Text("About")
-                }
-            }
-            HStack {
-                Button(action: {
-                    self.router.route = .tips
-                }) {
-                    Image(systemName: "heart")
-                    Text("Tips")
+            ForEach(menus, id: \.title) { menu in
+                HStack {
+                    Button(action: {
+                        self.router.route = menu.route
+                    }) {
+                        Image(systemName: menu.img)
+                            .frame(width: 24)
+                        Text(menu.title)
+                    }
                 }
             }
             Spacer()
