@@ -15,6 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     @Injector var appState: AppState
     @Injector var router: Router
     @Injector var playerPublisher: PlayerPublisher
+    @Injector var errorPublisher: ErrorPublisher
 
     let coreDataSync = CoreDataSync()
 
@@ -26,6 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     .environmentObject(appState)
                     .environmentObject(playerPublisher)
                     .environmentObject(router)
+                    .environmentObject(errorPublisher)
                     .environment(\.managedObjectContext, CoreData.shared.viewContext))
             self.window = window
             window.makeKeyAndVisible()

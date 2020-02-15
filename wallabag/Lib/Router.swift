@@ -5,8 +5,8 @@
 //  Created by Marinel Maxime on 10/02/2020.
 //
 
-import Foundation
 import Combine
+import Foundation
 import SwiftUI
 
 enum Route {
@@ -37,6 +37,7 @@ enum Route {
     var showMenuButton: Bool {
         self != .registration
     }
+
     var showTraillingButton: Bool {
         self == .entries
     }
@@ -52,13 +53,12 @@ enum Route {
 }
 
 class Router: ObservableObject {
-
     @Injector var appState: AppState
 
     var objectWillChange = PassthroughSubject<Router, Never>()
 
     init() {
-        self.route = appState.registred ? .entries : .registration
+        route = appState.registred ? .entries : .registration
     }
 
     var route: Route = .entries {

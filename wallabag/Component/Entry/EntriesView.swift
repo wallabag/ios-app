@@ -34,7 +34,6 @@ struct EntriesView: View {
                 // MARK: WORKAROUND 13.2 navigation back crash
 
                 NavigationLink(destination: AddEntryView(), isActive: $showAddView, label: { Image(systemName: "plus") }).hidden()
-
             }
             .navigationBarTitle(Text("Entry"))
             .navigationBarHidden(true)

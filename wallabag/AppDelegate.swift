@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let container: Container = {
         let container = Container()
         container.register(AnalyticsManager.self) { _ in AnalyticsManager() }.inObjectScope(.container)
+        container.register(ErrorPublisher.self) { _ in ErrorPublisher() }.inObjectScope(.container)
         container.register(WallabagKit.self, factory: { _ in WallabagKit(host: WallabagUserDefaults.host) }).inObjectScope(.container)
         container.register(WallabagSession.self, factory: { _ in WallabagSession() })
         container.register(ArticlePlayer.self) { resolver in

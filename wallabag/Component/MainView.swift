@@ -11,6 +11,7 @@ import SwiftUI
 struct MainView: View {
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var router: Router
+    @EnvironmentObject var errorPublisher: ErrorPublisher
 
     var header: some View {
         HStack {
@@ -38,10 +39,10 @@ struct MainView: View {
             }
             VStack {
                 header.padding(.horizontal)
-                if appState.hasError {
-                    Text("\(appState.lastError ?? "")")
-                        .foregroundColor(.red)
-                }
+                ErrorView()
+                Button(action: {
+                    self.errorPublisher.lastError = .syncError("Test")
+                }, label: { Text("test error") })
                 if router.route == .tips {
                     TipView()
                 } else if router.route == .addEntry {
@@ -62,9 +63,9 @@ struct MainView: View {
 }
 
 #if DEBUG
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        Text("nothing")
+    struct MainView_Previews: PreviewProvider {
+        static var previews: some View {
+            Text("nothing")
+        }
     }
-}
 #endif

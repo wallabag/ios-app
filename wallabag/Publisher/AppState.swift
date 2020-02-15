@@ -16,17 +16,6 @@ class AppState: ObservableObject {
         }
     }
 
-    @Published var hasError: Bool = false
-    @Published var lastError: String? {
-        willSet {
-            hasError = true
-            DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-                self.hasError = false
-                self.lastError = nil
-            }
-        }
-    }
-
     @Published var showMenu: Bool = false
     @Published var showPlayer: Bool = false
     @Published var refreshing: Bool = false

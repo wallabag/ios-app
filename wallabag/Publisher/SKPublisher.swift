@@ -16,6 +16,7 @@ class SKPublisher: NSObject, ObservableObject {
             }
         }
     }
+
     @Published var transactionSuccess: Bool = false
     @Published var tipProduct: SKProduct?
 
@@ -44,7 +45,7 @@ class SKPublisher: NSObject, ObservableObject {
 }
 
 extension SKPublisher: SKProductsRequestDelegate {
-    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+    func productsRequest(_: SKProductsRequest, didReceive response: SKProductsResponse) {
         if response.products.count != 0 {
             response.products.first.map { product in
                 DispatchQueue.main.async { [unowned self] in
@@ -56,7 +57,7 @@ extension SKPublisher: SKProductsRequestDelegate {
 }
 
 extension SKPublisher: SKPaymentTransactionObserver {
-    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+    func paymentQueue(_: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         defer {
             transactionInProgress = false
         }

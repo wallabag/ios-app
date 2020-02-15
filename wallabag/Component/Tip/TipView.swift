@@ -23,7 +23,8 @@ struct TipView: View {
                         self.skPublisher.tipProduct.map { product in
                             Text(product.title)
                         }
-                    }).padding()
+                    }
+                ).padding()
             } else {
                 Text("It seems impossible to make a payment")
             }
