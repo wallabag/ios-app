@@ -1,0 +1,3 @@
+excluded: # paths to ignore during detecting. Takes precedence over `included`.
+  - Carthage
+  - Pods
