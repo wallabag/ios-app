@@ -11,7 +11,6 @@ import SwiftUI
 struct EntriesView: View {
     @ObservedObject var pasteBoardPublisher = PasteBoardPublisher()
     @EnvironmentObject var appSync: AppSync
-    @Binding var showMenu: Bool
     @State private var showAddView: Bool = false
     @State private var filter: RetrieveMode = RetrieveMode(fromCase: WallabagUserDefaults.defaultMode)
 
@@ -19,7 +18,7 @@ struct EntriesView: View {
 
     var body: some View {
         NavigationView {
-            Group {
+            VStack {
                 // MARK: Pasteboard
 
                 if pasteBoardPublisher.showPasteBoardView {
@@ -35,17 +34,12 @@ struct EntriesView: View {
                 // MARK: WORKAROUND 13.2 navigation back crash
 
                 NavigationLink(destination: AddEntryView(), isActive: $showAddView, label: { Image(systemName: "plus") }).hidden()
+
             }
-            .navigationBarTitle("Articles")
-            .navigationBarItems(
-                leading: Button(action: {
-                    withAnimation {
-                        self.showMenu.toggle()
-                    }
-                }, label: { Image(systemName: "list.bullet") }),
-                trailing:
+            .navigationBarTitle(Text("Entry"))
+            .navigationBarHidden(true)
+            .navigationBarItems(trailing:
                 HStack {
-                    RefreshButton(appSync: appSync)
                     Button(action: { self.showAddView = true }, label: { Image(systemName: "plus").frame(width: 34, height: 34, alignment: .center) })
                 }
             )
@@ -60,7 +54,7 @@ struct EntriesView: View {
 #if DEBUG
     struct ArticleListView_Previews: PreviewProvider {
         static var previews: some View {
-            EntriesView(showMenu: .constant(false))
+            EntriesView()
                 .environmentObject(PasteBoardPublisher())
                 .environmentObject(AppSync())
         }

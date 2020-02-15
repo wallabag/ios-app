@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }.inObjectScope(.container)
         container.register(ImageDownloader.self, factory: { _ in ImageDownloader.shared }).inObjectScope(.container)
         container.register(AppState.self, factory: { _ in AppState() }).inObjectScope(.container)
+        container.register(Router.self, factory: { _ in Router() }).inObjectScope(.container)
         container.register(PlayerPublisher.self, factory: { _ in PlayerPublisher() }).inObjectScope(.container)
 
         return container

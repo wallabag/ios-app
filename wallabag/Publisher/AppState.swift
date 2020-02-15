@@ -8,6 +8,7 @@
 import Combine
 import Foundation
 
+#warning("Need to clean router")
 class AppState: ObservableObject {
     @Published var registred: Bool = false {
         didSet {
@@ -26,10 +27,12 @@ class AppState: ObservableObject {
         }
     }
 
+    @Published var showMenu: Bool = false
     @Published var showPlayer: Bool = false
     @Published var refreshing: Bool = false
 
     @Injector var session: WallabagSession
+    @Injector var router: Router
 
     init() {
         registred = WallabagUserDefaults.registred
@@ -44,5 +47,6 @@ class AppState: ObservableObject {
 
     func logout() {
         registred = false
+        router.route = .registration
     }
 }

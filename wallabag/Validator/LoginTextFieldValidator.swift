@@ -8,12 +8,14 @@
 import Combine
 import Foundation
 
+#warning("Must be rewrite! So many thing!")
 class LoginTextFieldValidator: ObservableObject {
     @Published var login: String = ""
     @Published var password: String = ""
     @Published var error: String?
 
     @Injector var appState: AppState
+    @Injector var router: Router
 
     private(set) var isValid: Bool = false
     private var cancellable: AnyCancellable?
@@ -32,6 +34,7 @@ class LoginTextFieldValidator: ObservableObject {
             case .connected:
                 DispatchQueue.main.async {
                     self.appState.registred = true
+                    self.router.route = .entries
                 }
             case .unknown:
                 break

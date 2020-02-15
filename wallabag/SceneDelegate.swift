@@ -13,6 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
     @Injector var appState: AppState
+    @Injector var router: Router
     @Injector var playerPublisher: PlayerPublisher
 
     let coreDataSync = CoreDataSync()
@@ -24,6 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 MainView()
                     .environmentObject(appState)
                     .environmentObject(playerPublisher)
+                    .environmentObject(router)
                     .environment(\.managedObjectContext, CoreData.shared.viewContext))
             self.window = window
             window.makeKeyAndVisible()

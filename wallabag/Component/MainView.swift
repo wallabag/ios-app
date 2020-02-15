@@ -10,34 +10,61 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var appState: AppState
-    @State private var showMenu: Bool = false
+    @EnvironmentObject var router: Router
+
+    var header: some View {
+        HStack {
+            if router.route.showMenuButton {
+                Button(action: {
+                    withAnimation {
+                        self.appState.showMenu.toggle()
+                    }
+                }, label: { Image(systemName: "list.bullet") })
+            }
+            Text(router.route.title)
+                .font(.title)
+                .fontWeight(.black)
+            Spacer()
+            if router.route.showTraillingButton {
+                router.route.traillingButton
+            }
+        }
+    }
 
     var body: some View {
-        VStack {
-            if appState.hasError {
-                Text("\(appState.lastError ?? "")")
-                    .foregroundColor(.red)
+        HStack {
+            if appState.showMenu {
+                MenuView()
             }
-            ViewBuilder.buildBlock(
-                appState.registred ?
-                    ViewBuilder.buildEither(second: HStack {
-                        if self.showMenu {
-                            MenuView()
-                        }
-                        EntriesView(showMenu: self.$showMenu)
-                            .environmentObject(AppSync())
-                            .environmentObject(appState)
-                    }) :
-                    ViewBuilder.buildEither(first: RegistrationView().environmentObject(appState)))
-            PlayerView()
+            VStack {
+                header.padding(.horizontal)
+                if appState.hasError {
+                    Text("\(appState.lastError ?? "")")
+                        .foregroundColor(.red)
+                }
+                if router.route == .tips {
+                    TipView()
+                } else if router.route == .addEntry {
+                    AddEntryView()
+                } else if router.route == .about {
+                    AboutView()
+                } else if router.route == .entries {
+                    EntriesView()
+                        .environmentObject(AppSync())
+                        .environmentObject(appState)
+                    PlayerView()
+                } else if router.route == .registration {
+                    RegistrationView().environmentObject(appState)
+                }
+            }
         }
     }
 }
 
 #if DEBUG
-    struct MainView_Previews: PreviewProvider {
-        static var previews: some View {
-            Text("nothing")
-        }
+struct MainView_Previews: PreviewProvider {
+    static var previews: some View {
+        Text("nothing")
     }
+}
 #endif
