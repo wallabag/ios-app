@@ -487,8 +487,8 @@
 				9C73EC4622D79093008663B1 /* EntriesView.swift */,
 				9C9085F622DF3FF600D47262 /* EntryRowView.swift */,
 				9CA5D4C322E0906A00167574 /* EntryView.swift */,
-				9C1EB6E623573DB900A5E54B /* UI */,
 				9CA5D4C522E092B500167574 /* WebView.swift */,
+				9C1EB6E623573DB900A5E54B /* UI */,
 			);
 			path = Entry;
 			sourceTree = "<group>";
