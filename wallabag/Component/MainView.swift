@@ -38,7 +38,7 @@ struct MainView: View {
                 MenuView()
             }
             VStack {
-                header.padding(.horizontal)
+                header.padding(.horizontal).padding(.top, 15)
                 ErrorView()
                 if router.route == .tips {
                     TipView()
