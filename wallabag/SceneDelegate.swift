@@ -46,6 +46,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidEnterBackground(_: UIScene) {
         updateBadge()
+        CoreData.shared.saveContext()
     }
 
     private func updateBadge() {
