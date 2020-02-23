@@ -18,7 +18,7 @@ wallabag 2 official iOS is a companion app for [wallabag](https://www.wallabag.o
 
 wallabag has been made for you to comfortably read and archive your articles.
 You can download wallabag from wallabag.org and follow the instructions to install it on your own server.
-Alternatively, you can directly sign up for [wallabag.it](https://wallabag.it) or [Framabag](https://framabag.org).
+Alternatively, you can directly sign up for [wallabag.it](https://wallabag.it).
 
 This application allows you to put a link in your wallabag instance, letting you read your wallabag links offline.
 
