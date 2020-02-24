@@ -10,6 +10,7 @@ import SwiftUI
 
 struct EntriesListView: View {
     @FetchRequest var entries: FetchedResults<Entry>
+    @EnvironmentObject var router: Router
 
     init(predicate: NSPredicate) {
         _entries = FetchRequest(entity: Entry.entity(), sortDescriptors: [NSSortDescriptor(key: "id", ascending: false)], predicate: predicate, animation: nil)
@@ -17,13 +18,19 @@ struct EntriesListView: View {
 
     var body: some View {
         List(entries, id: \.id) { entry in
-            NavigationLink(destination: EntryView(entry: entry)) {
+            Button(action: {
+                self.router.route = .entry(entry)
+            }) {
                 EntryRowView(entry: entry).contextMenu {
                     ArchiveEntryButton(entry: entry)
                     StarEntryButton(entry: entry)
                     DeleteEntryButton(entry: entry)
                 }
             }
+            // NavigationLink(destination: EntryView(entry: entry)) {
+
+            // }
+            // }
         }
     }
 }

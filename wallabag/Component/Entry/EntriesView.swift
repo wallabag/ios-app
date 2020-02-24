@@ -11,7 +11,6 @@ import SwiftUI
 struct EntriesView: View {
     @ObservedObject var pasteBoardPublisher = PasteBoardPublisher()
     @EnvironmentObject var appSync: AppSync
-    @State private var showAddView: Bool = false
     @State private var filter: RetrieveMode = RetrieveMode(fromCase: WallabagUserDefaults.defaultMode)
 
     @FetchRequest(entity: Entry.entity(), sortDescriptors: []) var entries: FetchedResults<Entry>
@@ -28,20 +27,10 @@ struct EntriesView: View {
                 // MARK: Picker
 
                 RetrieveModePicker(filter: self.$filter)
-
                 EntriesListView(predicate: filter.predicate())
-
-                // MARK: WORKAROUND 13.2 navigation back crash
-
-                NavigationLink(destination: AddEntryView(), isActive: $showAddView, label: { Image(systemName: "plus") }).hidden()
             }
             .navigationBarTitle(Text("Entry"))
             .navigationBarHidden(true)
-            .navigationBarItems(trailing:
-                HStack {
-                    Button(action: { self.showAddView = true }, label: { Image(systemName: "plus").frame(width: 34, height: 34, alignment: .center) })
-                }
-            )
 
             // MARK: SplitView
 

@@ -26,7 +26,7 @@ enum WallabagOauth: WallabagKitEndpoint {
         }
     }
 
-    //swiftlint:disable force_try
+    // swiftlint:disable force_try
     func getBody() -> Data {
         switch self {
         case let .request(clientId, clientSecret, username, password):

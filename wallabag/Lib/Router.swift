@@ -9,11 +9,12 @@ import Combine
 import Foundation
 import SwiftUI
 
-enum Route {
+enum Route: Equatable {
     case none
     case tips
     case about
     case entries
+    case entry(Entry)
     case addEntry
     case registration
 
@@ -23,6 +24,8 @@ enum Route {
             return "Add entry"
         case .entries:
             return "Articles"
+        case .entry:
+            return "Article"
         case .tips:
             return "Tips"
         case .about:
@@ -36,6 +39,15 @@ enum Route {
 
     var showMenuButton: Bool {
         self != .registration
+    }
+
+    var showHeader: Bool {
+        switch self {
+        case .entry:
+            return false
+        default:
+            return true
+        }
     }
 
     var showTraillingButton: Bool {
