@@ -26,7 +26,8 @@ struct WebView: UIViewRepresentable {
         }
 
         func webView(_ webView: WKWebView, didFinish _: WKNavigation!) {
-            webView.scrollView.setContentOffset(CGPoint(x: 0.0, y: Double(self.webView.entry.screenPosition)), animated: true)
+            Log(self.webView.entry.screenPositionForWebView)
+            webView.scrollView.setContentOffset(CGPoint(x: 0.0, y: Double(self.webView.entry.screenPositionForWebView)), animated: true)
         }
 
         func webView(_: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {

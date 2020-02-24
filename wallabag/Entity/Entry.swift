@@ -78,4 +78,11 @@ extension Entry {
         isStarred.toggle()
         objectWillChange.send()
     }
+
+    var screenPositionForWebView: Double {
+        if screenPosition < 0 {
+            return 0.0
+        }
+        return Double(screenPosition)
+    }
 }
