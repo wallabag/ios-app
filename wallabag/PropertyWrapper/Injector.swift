@@ -10,7 +10,7 @@ import UIKit
 
 @propertyWrapper
 struct Injector<Service> {
-    private var service: Service?
+    var service: Service?
     var container: Resolver?
 
     var wrappedValue: Service {
