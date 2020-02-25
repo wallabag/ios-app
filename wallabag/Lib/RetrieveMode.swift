@@ -8,10 +8,10 @@
 import Foundation
 
 enum RetrieveMode: String, CaseIterable {
-    case allArticles = "All articles"
-    case archivedArticles = "Read articles"
-    case unarchivedArticles = "Unread articles"
-    case starredArticles = "Starred articles"
+    case allArticles = "All"
+    case archivedArticles = "Read"
+    case unarchivedArticles = "Unread"
+    case starredArticles = "Starred"
 
     init(fromCase: String) {
         switch fromCase {
