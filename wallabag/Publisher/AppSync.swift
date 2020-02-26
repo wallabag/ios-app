@@ -45,8 +45,10 @@ class AppSync: ObservableObject {
                 }
             case let .error(reason):
                 DispatchQueue.main.async {
+                    self.inProgress = false
                     self.appState.registred = false
                     self.errorPublisher.lastError = .syncError(reason)
+                    completion()
                 }
             default:
                 break
