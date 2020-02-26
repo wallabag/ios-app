@@ -20,11 +20,11 @@ extension WKWebView {
 
     func contentForWebView(_ entry: Entry, justify: Bool) -> String? {
         do {
-            guard let content = entry.content, let title = entry.title else { return nil }
+            guard let content = entry.content else { return nil }
             let html = try String(contentsOfFile: Bundle.main.path(forResource: "article", ofType: "html")!)
             let justify = justify ? "justify.css" : ""
 
-            return String(format: html, arguments: [justify, title, content])
+            return String(format: html, arguments: [justify, content])
         } catch {
             fatalError("Unable to load article view")
         }

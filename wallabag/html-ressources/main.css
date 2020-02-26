@@ -14,10 +14,6 @@ html {
   min-height: 100%;
 }
 
-.mbm {
-    display: none;
-}
-
 @media (prefers-color-scheme: dark) {
   body {
       color: #777;
@@ -100,7 +96,6 @@ h2:after {
 }
 
 #content {
-  margin-top: 1em;
   min-height: 30em;
 }
 
