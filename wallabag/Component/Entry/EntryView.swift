@@ -13,7 +13,6 @@ struct EntryView: View {
     @ObservedObject var entry: Entry
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var playerPublisher: PlayerPublisher
-    @Environment(\.presentationMode) var presentationMode
     @State var showTag: Bool = false
 
     var body: some View {
@@ -49,7 +48,7 @@ struct EntryView: View {
                 })
                 Spacer()
                 DeleteEntryButton(entry: entry, showText: false) {
-                    self.presentationMode.wrappedValue.dismiss()
+                    self.router.route = .entries
                 }
             }
             .padding()
