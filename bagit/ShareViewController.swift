@@ -78,6 +78,7 @@ class ShareViewController: UIViewController {
                     }
                 }, receiveValue: { _ in
                     self.getUrl { shareURL in
+                        Log(shareURL)
                         guard let shareURL = shareURL else {
                             self.clearView(withError: .retrievingURL)
                             return
@@ -113,7 +114,11 @@ class ShareViewController: UIViewController {
                 attachment.getUrl { completion($0) }
             }
             if attachment.isText {
-                attachment.getText { completion($0) }
+                attachment.getText { text in
+                    if text.hasPrefix("http") {
+                        completion(text)
+                    }
+                }
             }
         }
     }
