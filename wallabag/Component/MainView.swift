@@ -57,12 +57,10 @@ struct MainView: View {
             return AnyView(EntriesView()
                 .environmentObject(AppSync())
                 .environmentObject(appState)).id("entriesView")
-        case .tips:
-            return AnyView(TipView()).id("tipView")
-        case .none:
-            return AnyView(Text("Never")).id("Never")
         case let .entry(entry):
             return AnyView(EntryView(entry: entry)).id("entryView")
+        case .tips:
+            return AnyView(TipView()).id("tipView")
         case .registration:
             return AnyView(RegistrationView().environmentObject(appState)).id("Registration")
         }

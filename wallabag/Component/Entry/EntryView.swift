@@ -52,6 +52,7 @@ struct EntryView: View {
                 }
             }
             .padding()
+            PlayerView()
         }
     }
 }

@@ -10,7 +10,6 @@ import Foundation
 import SwiftUI
 
 enum Route: Equatable {
-    case none
     case tips
     case about
     case entries
@@ -32,8 +31,6 @@ enum Route: Equatable {
             return "About"
         case .registration:
             return "Registration"
-        default:
-            return "Test"
         }
     }
 

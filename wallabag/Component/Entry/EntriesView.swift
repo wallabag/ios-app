@@ -28,6 +28,7 @@ struct EntriesView: View {
 
                 RetrieveModePicker(filter: self.$filter)
                 EntriesListView(predicate: filter.predicate())
+                PlayerView()
             }
             .navigationBarTitle(Text("Entry"))
             .navigationBarHidden(true)
