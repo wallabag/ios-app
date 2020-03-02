@@ -40,19 +40,19 @@ struct EntryView: View {
                 }, label: {
                     Image(systemName: self.showTag ? "tag.fill" : "tag")
                 })
-                Button(action: {
+                /*Button(action: {
                     self.playerPublisher.load(self.entry)
                     self.appState.showPlayer = true
                 }, label: {
                     Image(systemName: "music.note.list")
-                })
+                })*/
                 Spacer()
                 DeleteEntryButton(entry: entry, showText: false) {
                     self.router.route = .entries
                 }
             }
             .padding()
-            PlayerView()
+            //PlayerView()
         }
     }
 }
