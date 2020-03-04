@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 #if DEBUG
+    //swiftlint:disable line_length
     extension AppDelegate {
         func populateApplication() {
             resetApplication()
