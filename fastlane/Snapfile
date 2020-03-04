@@ -2,10 +2,10 @@
 
 # A list of devices you want to take the screenshots from
  devices([
-   "iPhone 6 Plus",
+   "iPhone 11"
 #   "iPhone 6 Plus",
 #   "iPhone 5",
-   "iPad Pro (12.9 inch)"
+#   "iPad Pro (12.9 inch)"
 #   "iPad Pro (9.7 inch)"
 ])
 
@@ -14,7 +14,7 @@ languages([
 ])
 
 # The name of the scheme which contains the UI Tests
-# scheme "SchemeName"
+scheme "WallabagScreenshotTest"
 
 # Where should the resulting screenshots be stored?
 # output_directory "./screenshots"

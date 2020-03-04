@@ -47,6 +47,16 @@
                ReferencedContainer = "container:wallabag.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9C4C1F84240E7E340029FBC9"
+               BuildableName = "wallabagScreenshotTests.xctest"
+               BlueprintName = "wallabagScreenshotTests"
+               ReferencedContainer = "container:wallabag.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

@@ -39,6 +39,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
 
+        #if DEBUG
+        let args = ProcessInfo.processInfo.arguments
+
+        if args.contains("POPULATE_APPLICATION") {
+            populateApplication()
+        }
+        #endif
+
         requestBadge()
 
         return true
@@ -54,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func requestBadge() {
         if WallabagUserDefaults.badgeEnabled {
-            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in }
+            //UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in }
         }
     }
 }
