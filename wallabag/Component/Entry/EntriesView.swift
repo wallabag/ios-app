@@ -16,27 +16,21 @@ struct EntriesView: View {
     @FetchRequest(entity: Entry.entity(), sortDescriptors: []) var entries: FetchedResults<Entry>
 
     var body: some View {
-        NavigationView {
-            VStack {
-                // MARK: Pasteboard
+        VStack {
+            // MARK: Pasteboard
 
-                if pasteBoardPublisher.showPasteBoardView {
-                    PasteBoardView().environmentObject(pasteBoardPublisher)
-                }
-
-                // MARK: Picker
-
-                RetrieveModePicker(filter: self.$filter)
-                EntriesListView(predicate: filter.predicate())
-                //PlayerView()
+            if pasteBoardPublisher.showPasteBoardView {
+                PasteBoardView().environmentObject(pasteBoardPublisher)
             }
-            .navigationBarTitle(Text("Entry"))
-            .navigationBarHidden(true)
 
-            // MARK: SplitView
+            // MARK: Picker
 
-            entries.first.map { EntryView(entry: $0) }
+            RetrieveModePicker(filter: self.$filter)
+            EntriesListView(predicate: filter.predicate())
+            // PlayerView()
         }
+        .navigationBarTitle(Text("Entry"))
+        .navigationBarHidden(true)
     }
 }
 

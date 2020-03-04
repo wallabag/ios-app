@@ -8,7 +8,6 @@
 import XCTest
 
 class WallabagScreenshotTests: XCTestCase {
-
     var app: XCUIApplication!
     override func setUp() {
         continueAfterFailure = false
