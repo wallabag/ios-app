@@ -1,10 +1,10 @@
 La voici enfin!
-La mise à jour compatible avec ios13! 
+La mise à jour compatible avec iOS13! 
 
-L'application a été refondu avec SwiftUI et devrait simplifier les mises à jours.
+L'application a été réécrite avec SwiftUI. Ce chantier va simplifier les mises à jours à l'avenir. Nous prévoyons de faire des mises à jour plus petites et plus fréquentes maintenant que ce gros chantier est passé.
 
-Certaines fonctionnalités ont disparu pour le moment: le text to speech et la recherche, mais seront de retour rapidement!
+Certaines fonctionnalités ont disparu pour le moment : le text-to-speech et la recherche, mais seront de retour rapidement !
 
-Comme d'habitue le github est la pour remonter vos soucis avec cette derniere version.
+Comme d'habitude le github est la pour remonter vos soucis avec cette derniere version.
 
 Bonne lecture.
