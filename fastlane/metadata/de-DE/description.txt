@@ -1,7 +1,0 @@
-wallabag, eine selbst-gehostete Anwendung für das Speichern von Webseiten
-
-Im Vergleich zu anderen Diensten ist wallabag frei (wie in Freiheit) und Open-Source.
-
-Um diese Anwendung verwenden zu können, benötigen Sie eine Instanz von wallabag.
-
-Beispielsweise können Sie wallabag auf Ihrem eigenen Webserver installieren.

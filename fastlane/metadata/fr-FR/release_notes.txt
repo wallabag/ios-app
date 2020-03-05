@@ -1,5 +1,10 @@
-Nous avons amélioré le lecteur d'article, vous pouvez maintenant contrôler la lecture depuis le command center. Nous avons encore beaucoup d'idées pour améliorer la lecteur des articles.
+La voici enfin!
+La mise à jour compatible avec iOS13! 
 
-Egalement nous avons tenter de corriger certains crash.
+L'application a été réécrite avec SwiftUI. Ce chantier va simplifier les mises à jours à l'avenir. Nous prévoyons de faire des mises à jour plus petites et plus fréquentes maintenant que ce gros chantier est passé.
 
-Bonne lecture
+Certaines fonctionnalités ont disparu pour le moment : le text-to-speech et la recherche, mais seront de retour rapidement !
+
+Comme d'habitude le github est la pour remonter vos soucis avec cette derniere version.
+
+Bonne lecture.
