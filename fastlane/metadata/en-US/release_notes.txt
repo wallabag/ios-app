@@ -1,10 +1,10 @@
 Here it is finally!
-The update compatible with ios13!
+The iOS 13 compliant update!
 
-The application has been revamped with SwiftUI and should simplify the updates.
+The application has been revamped with SwiftUI, which should allow us to release smaller and more frequent updates!
 
-Some features have disappeared for the moment: text to speech and search, but will be back soon!
+Some features have disappeared for the moment: text-to-speech and search, but will be back soon!
 
 As usual the github is here to raise your concerns with this latest version.
 
-Good reading.
+Enjoy your articles
