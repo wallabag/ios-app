@@ -2,11 +2,10 @@
 
 # A list of devices you want to take the screenshots from
  devices([
-   "iPhone 11"
-#   "iPhone 6 Plus",
-#   "iPhone 5",
-#   "iPad Pro (12.9 inch)"
-#   "iPad Pro (9.7 inch)"
+ 	"5inch",
+    "6inch",
+    "pro2",
+    "pro3"
 ])
 
 languages([
