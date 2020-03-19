@@ -8,17 +8,21 @@
 import SwiftUI
 
 struct ClientIdClientSecretView: View {
-    @ObservedObject var clientIdClientSecretValidator = ClientIdClientSecretTextFieldValidator()
+    @ObservedObject var clientIdSecretViewHandler = RegistrationClientIdSecretViewHandler()
 
     var body: some View {
         Form {
             Section(header: Text("Client id")) {
-                TextField("Client id", text: $clientIdClientSecretValidator.clientId).disableAutocorrection(true).autocapitalization(.none)
+                TextField("Client id", text: $clientIdSecretViewHandler.clientId)
+                    .disableAutocorrection(true)
+                    .autocapitalization(.none)
             }
             Section(header: Text("Client secret")) {
-                TextField("Client secret", text: $clientIdClientSecretValidator.clientSecret).disableAutocorrection(true).autocapitalization(.none)
+                TextField("Client secret", text: $clientIdSecretViewHandler.clientSecret)
+                    .disableAutocorrection(true)
+                    .autocapitalization(.none)
             }
-            NavigationLink("Next", destination: LoginView()).disabled(!clientIdClientSecretValidator.isValid)
+            NavigationLink("Next", destination: LoginView()).disabled(!clientIdSecretViewHandler.isValid)
         }.navigationBarTitle("Client id & secret")
     }
 }

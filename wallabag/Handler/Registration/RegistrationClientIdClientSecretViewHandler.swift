@@ -9,7 +9,7 @@ import Combine
 import Foundation
 import SwiftUI
 
-class ClientIdClientSecretTextFieldValidator: ObservableObject {
+class RegistrationClientIdSecretViewHandler: ObservableObject {
     private(set) var isValid: Bool = false
 
     @Published var clientId: String = ""
@@ -24,8 +24,8 @@ class ClientIdClientSecretTextFieldValidator: ObservableObject {
         cancellable = Publishers.CombineLatest($clientId, $clientSecret).sink { clientId, clientSecret in
             self.isValid = !clientId.isEmpty && !clientSecret.isEmpty
             if self.isValid {
-                WallabagUserDefaults.clientId = clientId
-                WallabagUserDefaults.clientSecret = clientSecret
+                WallabagUserDefaults.clientId = clientId.trimmingCharacters(in: .whitespacesAndNewlines)
+                WallabagUserDefaults.clientSecret = clientSecret.trimmingCharacters(in: .whitespacesAndNewlines)
             }
         }
     }

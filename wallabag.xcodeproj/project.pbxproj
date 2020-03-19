@@ -96,9 +96,9 @@
 		9CA5D4C422E0906A00167574 /* EntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D4C322E0906A00167574 /* EntryView.swift */; };
 		9CA5D4C622E092B500167574 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA5D4C522E092B500167574 /* WebView.swift */; };
 		9CA8EA7E2357AFE100F149A9 /* AddEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA8EA7D2357AFE100F149A9 /* AddEntryView.swift */; };
-		9CB41DC4234FC03C00C2740B /* ServerTextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB41DC3234FC03C00C2740B /* ServerTextFieldValidator.swift */; };
-		9CB41DC6234FC14500C2740B /* ClientIdClientServerTextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB41DC5234FC14500C2740B /* ClientIdClientServerTextFieldValidator.swift */; };
-		9CB41DC8234FC23200C2740B /* LoginTextFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB41DC7234FC23200C2740B /* LoginTextFieldValidator.swift */; };
+		9CB41DC4234FC03C00C2740B /* RegistrationServerViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB41DC3234FC03C00C2740B /* RegistrationServerViewHandler.swift */; };
+		9CB41DC6234FC14500C2740B /* RegistrationClientIdClientSecretViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB41DC5234FC14500C2740B /* RegistrationClientIdClientSecretViewHandler.swift */; };
+		9CB41DC8234FC23200C2740B /* RegistrationLoginViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB41DC7234FC23200C2740B /* RegistrationLoginViewHandler.swift */; };
 		9CB41DCE234FC44200C2740B /* WallabagKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB41DCD234FC44200C2740B /* WallabagKit.swift */; };
 		9CB4A63C23F083C10062122A /* NSItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB4A63B23F083C10062122A /* NSItemProvider.swift */; };
 		9CBCAF3A23F603320042D22E /* SKProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBCAF3923F603320042D22E /* SKProduct.swift */; };
@@ -289,9 +289,9 @@
 		9CA5D4C322E0906A00167574 /* EntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryView.swift; sourceTree = "<group>"; };
 		9CA5D4C522E092B500167574 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		9CA8EA7D2357AFE100F149A9 /* AddEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryView.swift; sourceTree = "<group>"; };
-		9CB41DC3234FC03C00C2740B /* ServerTextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerTextFieldValidator.swift; sourceTree = "<group>"; };
-		9CB41DC5234FC14500C2740B /* ClientIdClientServerTextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientIdClientServerTextFieldValidator.swift; sourceTree = "<group>"; };
-		9CB41DC7234FC23200C2740B /* LoginTextFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextFieldValidator.swift; sourceTree = "<group>"; };
+		9CB41DC3234FC03C00C2740B /* RegistrationServerViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationServerViewHandler.swift; sourceTree = "<group>"; };
+		9CB41DC5234FC14500C2740B /* RegistrationClientIdClientSecretViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationClientIdClientSecretViewHandler.swift; sourceTree = "<group>"; };
+		9CB41DC7234FC23200C2740B /* RegistrationLoginViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationLoginViewHandler.swift; sourceTree = "<group>"; };
 		9CB41DCD234FC44200C2740B /* WallabagKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKit.swift; sourceTree = "<group>"; };
 		9CB4A63B23F083C10062122A /* NSItemProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSItemProvider.swift; sourceTree = "<group>"; };
 		9CBCAF3923F603320042D22E /* SKProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKProduct.swift; sourceTree = "<group>"; };
@@ -509,6 +509,24 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
+		9C5351B72423D4BB006E2918 /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				9C5351B82423D4C3006E2918 /* Registration */,
+			);
+			path = Handler;
+			sourceTree = "<group>";
+		};
+		9C5351B82423D4C3006E2918 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				9CB41DC3234FC03C00C2740B /* RegistrationServerViewHandler.swift */,
+				9CB41DC5234FC14500C2740B /* RegistrationClientIdClientSecretViewHandler.swift */,
+				9CB41DC7234FC23200C2740B /* RegistrationLoginViewHandler.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
 		9C5EDEE2234E810C00141DFD /* Entry */ = {
 			isa = PBXGroup;
 			children = (
@@ -635,9 +653,6 @@
 		9CB41DC2234FC00D00C2740B /* Validator */ = {
 			isa = PBXGroup;
 			children = (
-				9CB41DC3234FC03C00C2740B /* ServerTextFieldValidator.swift */,
-				9CB41DC5234FC14500C2740B /* ClientIdClientServerTextFieldValidator.swift */,
-				9CB41DC7234FC23200C2740B /* LoginTextFieldValidator.swift */,
 			);
 			path = Validator;
 			sourceTree = "<group>";
@@ -854,7 +869,6 @@
 		G_EE322AF580B12A5FAFB51DB68815824E /* wallabag */ = {
 			isa = PBXGroup;
 			children = (
-				9CB41DC9234FC3BA00C2740B /* WallabagSDK */,
 				9C90F62B2296B86F00C113EF /* Settings.bundle */,
 				FR_7F369F01648273740FFAC734BF79A78E /* wallabag.entitlements */,
 				FR_606AAB346453DED260A405BD16778883 /* Info.plist */,
@@ -866,6 +880,7 @@
 				G_BD722E6D6F9F896167754C6E90947E1F /* Entity */,
 				G_BFAC74A6E84ED8C37095B2C3988CA599 /* Extension */,
 				G_81C31EE82E6432EC5BD810AE60BAAAC2 /* Fonts */,
+				9C5351B72423D4BB006E2918 /* Handler */,
 				G_DFD8F6A37FD99EE890AF4FA2569F633D /* html-ressources */,
 				G_ED05746A8B318D93F5C59AFB3D2C703A /* Lib */,
 				VG_BEEC8418DD761BF3A09EDB772794FA5C /* Localizable.strings */,
@@ -874,6 +889,7 @@
 				G_60BF241AD87B2847EBA2C59F302A8DF3 /* Storyboard */,
 				G_E288595FB7758C59B0C10F1A195B1273 /* UI */,
 				9CB41DC2234FC00D00C2740B /* Validator */,
+				9CB41DC9234FC3BA00C2740B /* WallabagSDK */,
 				9C148528235E3FF00082D7BB /* wallabagStore.xcdatamodeld */,
 			);
 			path = wallabag;
@@ -1187,7 +1203,7 @@
 				9C3F13E42353D4C800303AA8 /* WallabagCollection.swift in Sources */,
 				9C03E4A1238474110060FF14 /* PlayerPublisher.swift in Sources */,
 				9C6D0741238BFEAD00FCF4FF /* SwipePlayerView.swift in Sources */,
-				9CB41DC8234FC23200C2740B /* LoginTextFieldValidator.swift in Sources */,
+				9CB41DC8234FC23200C2740B /* RegistrationLoginViewHandler.swift in Sources */,
 				9C0C3B8A2354890F008AD2C9 /* GeneralSetting.swift in Sources */,
 				9C37217122E107D200D363FB /* MainView.swift in Sources */,
 				9C7AFE0D2353C93E00FBF989 /* WallabagSession.swift in Sources */,
@@ -1219,7 +1235,7 @@
 				9C8F05EA23CFBD1500B98CCE /* MenuView.swift in Sources */,
 				9C4C1F92240E85680029FBC9 /* AppDelegateExtension.swift in Sources */,
 				9CBCAF3A23F603320042D22E /* SKProduct.swift in Sources */,
-				9CB41DC4234FC03C00C2740B /* ServerTextFieldValidator.swift in Sources */,
+				9CB41DC4234FC03C00C2740B /* RegistrationServerViewHandler.swift in Sources */,
 				9C327655238B031D0040D9D6 /* PasteBoardPublisher.swift in Sources */,
 				9C73EC4422D79037008663B1 /* SceneDelegate.swift in Sources */,
 				9CCC4AFC22E3BFD400F73891 /* WallabagUserDefaults.swift in Sources */,
@@ -1231,7 +1247,7 @@
 				9C66B6C5235680130068B968 /* ArchiveEntryButton.swift in Sources */,
 				9C37217322E1087800D363FB /* RegistrationView.swift in Sources */,
 				9C37217522E1134600D363FB /* ServerView.swift in Sources */,
-				9CB41DC6234FC14500C2740B /* ClientIdClientServerTextFieldValidator.swift in Sources */,
+				9CB41DC6234FC14500C2740B /* RegistrationClientIdClientSecretViewHandler.swift in Sources */,
 				BF_767B670EFD6E74785BD2212AF6B9A34A /* UIImageView.swift in Sources */,
 				BF_A263058FD57BCE7DECF1322ABBB1C729 /* UIPodcastSlider.swift in Sources */,
 				BF_27B3C5BB859104CEF0AB1D52843622B4 /* WKWebView.swift in Sources */,

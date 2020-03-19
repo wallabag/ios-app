@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct ServerView: View {
-    @EnvironmentObject var appState: AppState
-    @ObservedObject var serverValidator = ServerTextFieldValidator()
+    @ObservedObject var serverViewHandler = RegistrationServerViewHandler()
 
     var body: some View {
         Form {
             Section(header: Text("Server")) {
-                TextField("https://your-instance.domain", text: $serverValidator.url).disableAutocorrection(true).autocapitalization(.none)
+                TextField("https://your-instance.domain", text: $serverViewHandler.url)
+                    .disableAutocorrection(true)
+                    .autocapitalization(.none)
             }
             NavigationLink(destination: ClientIdClientSecretView()) {
                 Text("Next")
-            }.disabled(!serverValidator.isValid)
+            }.disabled(!serverViewHandler.isValid)
         }.navigationBarTitle("Server")
     }
 }
@@ -27,7 +28,7 @@ struct ServerView: View {
     struct ServerView_Previews: PreviewProvider {
         static var previews: some View {
             NavigationView {
-                ServerView().environmentObject(AppState())
+                ServerView()
             }
         }
     }

@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 #warning("Must be rewrite! So many thing!")
-class LoginTextFieldValidator: ObservableObject {
+class RegistrationLoginViewHandler: ObservableObject {
     @Published var login: String = ""
     @Published var password: String = ""
     @Published var error: String?
@@ -18,16 +18,15 @@ class LoginTextFieldValidator: ObservableObject {
     @Injector var router: Router
 
     private(set) var isValid: Bool = false
-    private var cancellable: AnyCancellable?
-    private var sessionCancellable: AnyCancellable?
+    private var cancellable = Set<AnyCancellable>()
 
     init() {
         login = WallabagUserDefaults.login
-        cancellable = Publishers.CombineLatest($login, $password).sink { login, password in
+        Publishers.CombineLatest($login, $password).sink { login, password in
             self.isValid = !login.isEmpty && !password.isEmpty
-        }
+        }.store(in: &cancellable)
 
-        sessionCancellable = appState.session.$state.sink { state in
+        appState.session.$state.sink { state in
             switch state {
             case let .error(reason):
                 self.error = reason
@@ -43,7 +42,7 @@ class LoginTextFieldValidator: ObservableObject {
             case .offline:
                 break
             }
-        }
+        }.store(in: &cancellable)
     }
 
     func tryLogin() {
@@ -53,7 +52,6 @@ class LoginTextFieldValidator: ObservableObject {
     }
 
     deinit {
-        cancellable?.cancel()
-        sessionCancellable?.cancel()
+        cancellable.forEach { $0.cancel() }
     }
 }
