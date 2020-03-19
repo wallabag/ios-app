@@ -40,7 +40,7 @@ enum Route: Equatable {
 
     var showHeader: Bool {
         switch self {
-        case .entry:
+        case .entry, .registration:
             return false
         default:
             return true
