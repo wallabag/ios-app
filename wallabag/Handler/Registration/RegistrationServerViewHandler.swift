@@ -18,7 +18,7 @@ class RegistrationServerViewHandler: ObservableObject {
 
     init() {
         url = WallabagUserDefaults.host
-        cancellable = $url.sink { url in
+        cancellable = $url.sink { [unowned self] url in
             self.isValid = self.validateServer(host: url)
             if self.isValid {
                 WallabagUserDefaults.host = url

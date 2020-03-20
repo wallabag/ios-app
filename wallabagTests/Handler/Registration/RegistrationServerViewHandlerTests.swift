@@ -28,4 +28,25 @@ class RegistrationServerViewHandlerTests: XCTestCase {
         XCTAssertTrue(handler.isValid)
         XCTAssertEqual("https://app.wallabag.it", WallabagUserDefaults.host)
     }
+
+    func testDeinit() throws {
+        class ClassUnderTest: RegistrationServerViewHandler {
+            var deinitCalled: (() -> Void)?
+            deinit { deinitCalled?() }
+        }
+
+        let exp = expectation(description: self.debugDescription)
+
+        var instance: ClassUnderTest? = ClassUnderTest()
+
+        instance?.deinitCalled = {
+            exp.fulfill()
+        }
+
+        DispatchQueue.global(qos: .background).async {
+            instance = nil
+        }
+
+        waitForExpectations(timeout: 10)
+    }
 }
