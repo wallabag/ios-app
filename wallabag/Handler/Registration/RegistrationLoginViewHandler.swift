@@ -8,7 +8,6 @@
 import Combine
 import Foundation
 
-#warning("Must be rewrite! So many thing!")
 class RegistrationLoginViewHandler: ObservableObject {
     @Published var login: String = ""
     @Published var password: String = ""
@@ -22,18 +21,18 @@ class RegistrationLoginViewHandler: ObservableObject {
 
     init() {
         login = WallabagUserDefaults.login
-        Publishers.CombineLatest($login, $password).sink { login, password in
+        Publishers.CombineLatest($login, $password).sink { [unowned self] login, password in
             self.isValid = !login.isEmpty && !password.isEmpty
         }.store(in: &cancellable)
 
-        appState.session.$state.sink { state in
+        appState.session.$state.sink { [unowned self] state in
             switch state {
             case let .error(reason):
                 self.error = reason
             case .connected:
-                DispatchQueue.main.async {
-                    self.appState.registred = true
-                    self.router.route = .entries
+                DispatchQueue.main.async { [weak self] in
+                    self?.appState.registred = true
+                    self?.router.route = .entries
                 }
             case .unknown:
                 break

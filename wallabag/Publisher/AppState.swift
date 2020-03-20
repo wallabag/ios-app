@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 #warning("Need to clean router")
-class AppState: ObservableObject {
+class AppState: NSObject, ObservableObject {
     @Published var registred: Bool = false {
         didSet {
             WallabagUserDefaults.registred = registred
@@ -23,7 +23,8 @@ class AppState: ObservableObject {
     @Injector var session: WallabagSession
     @Injector var router: Router
 
-    init() {
+    override init() {
+        super.init()
         registred = WallabagUserDefaults.registred
         if registred {
             initSession()
