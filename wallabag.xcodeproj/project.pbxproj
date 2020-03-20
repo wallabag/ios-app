@@ -663,11 +663,11 @@
 		G_121606438FEEA3CA4EBE0D933A35C03C /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				9C4D4B9B225B69C100FE3095 /* BoolTests.swift */,
+				9C4D4B9D225B6A2B00FE3095 /* DateTests.swift */,
 				FR_448862BF589F4829A648C0F56DC31F9A /* DictionaryTests.swift */,
 				FR_CB80D9AF5E152C1943DB3A301D670B91 /* IntTests.swift */,
 				FR_CB6C74A2C8026DC8DECD880DB6E11937 /* StringTests.swift */,
-				9C4D4B9B225B69C100FE3095 /* BoolTests.swift */,
-				9C4D4B9D225B6A2B00FE3095 /* DateTests.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -675,14 +675,14 @@
 		G_16D85DEB94463C22A0C313B23AE8C024 /* wallabagTests */ = {
 			isa = PBXGroup;
 			children = (
-				9CEDCE9024240A56005C2BD8 /* Handler */,
-				9C19F8E1227076EB009450F9 /* Lib */,
-				G_121606438FEEA3CA4EBE0D933A35C03C /* Extension */,
 				FR_EEA76C806A8451B9E073B5DD7C8E35F4 /* Info.plist */,
+				FR_C9900CB03BB06DCC825054DAFDE4D907 /* XCTExtension.swift */,
+				G_121606438FEEA3CA4EBE0D933A35C03C /* Extension */,
+				9CEDCE9024240A56005C2BD8 /* Handler */,
 				G_6B93B99B31A0305CA3A141EB734D8EF0 /* JSON */,
+				9C19F8E1227076EB009450F9 /* Lib */,
 				9CF1ED932262794B00AF750F /* Mock */,
 				G_7A59FC07F17EB220D3E123D5C4A411CC /* WallabagKit */,
-				FR_C9900CB03BB06DCC825054DAFDE4D907 /* XCTExtension.swift */,
 			);
 			path = wallabagTests;
 			sourceTree = "<group>";
@@ -771,6 +771,7 @@
 		G_BFAC74A6E84ED8C37095B2C3988CA599 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				9C4C1F91240E85680029FBC9 /* AppDelegateExtension.swift */,
 				FR_632A9CD2A020AD0A4DF6207A3AC2599E /* Bool.swift */,
 				FR_C16D1C5C72DB19E504BB13DC0273DD1D /* Date.swift */,
 				FR_F7BDFB5A5171A43D14D5E7009B3AF255 /* Dictionary.swift */,
@@ -780,7 +781,6 @@
 				FR_BC1A4543A5BCE695E19D56D0A17CE7C6 /* UIImageView.swift */,
 				9C6DC0F1224112480012486D /* UISearchBar.swift */,
 				FR_3996D9FD806100BF0335AAE1A4EE148E /* WKWebView.swift */,
-				9C4C1F91240E85680029FBC9 /* AppDelegateExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";

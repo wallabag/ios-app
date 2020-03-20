@@ -5,11 +5,10 @@
 //  Created by Marinel Maxime on 20/03/2020.
 //
 
-import XCTest
 @testable import wallabag
+import XCTest
 
 class RegistrationLoginViewHandlerTests: XCTestCase {
-
     override func setUp() {
         WallabagUserDefaults.login = ""
         WallabagUserDefaults.password = ""
@@ -52,6 +51,7 @@ class RegistrationLoginViewHandlerTests: XCTestCase {
         XCTAssertEqual("log", WallabagUserDefaults.login)
         XCTAssertEqual("pwd", WallabagUserDefaults.password)
     }
+
     /*
      func testHandlerObserveState() {
      let handler = RegistrationLoginViewHandler()
@@ -67,7 +67,6 @@ class RegistrationLoginViewHandlerTests: XCTestCase {
      XCTAssertEqual("error test", handler.error!)
 
      let appState = handler.appState
-
 
      handler.appState.session.state = .connected
      let cancellable = appState.$registred.sink { value in
@@ -86,7 +85,7 @@ class RegistrationLoginViewHandlerTests: XCTestCase {
             deinit { deinitCalled?() }
         }
 
-        let exp = expectation(description: self.debugDescription)
+        let exp = expectation(description: debugDescription)
 
         var instance: ClassUnderTest? = ClassUnderTest()
 
@@ -100,5 +99,4 @@ class RegistrationLoginViewHandlerTests: XCTestCase {
 
         waitForExpectations(timeout: 10)
     }
-
 }

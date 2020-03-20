@@ -83,18 +83,6 @@
             </BuildableReference>
             <SkippedTests>
                <Test
-                  Identifier = "BoolTests">
-               </Test>
-               <Test
-                  Identifier = "DateTests">
-               </Test>
-               <Test
-                  Identifier = "DictionaryTests">
-               </Test>
-               <Test
-                  Identifier = "IntTests">
-               </Test>
-               <Test
                   Identifier = "RetrieveModeTests">
                </Test>
                <Test

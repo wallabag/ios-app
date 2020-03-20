@@ -37,4 +37,23 @@ class StringTests: XCTestCase {
 
         XCTAssertEqual("test", string.lcFirst)
     }
+
+    func testWithoutHTML() {
+        XCTAssertEqual("hello world", "<p>hello world</p>".withoutHTML)
+    }
+
+    func testSpeakable() {
+        let speakable = "<p>hello world</p><p>Second</p>".speakable
+        XCTAssertEqual(2, speakable.count)
+    }
+
+    func testURL() {
+        XCTAssertNil("".url)
+        XCTAssertTrue("https://app.wallabag.it".url != nil)
+    }
+
+    func testIsValidURL() {
+        XCTAssertFalse("app".isValidURL)
+        XCTAssertTrue("https://app.wallabag.it".isValidURL)
+    }
 }

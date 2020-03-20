@@ -4,11 +4,10 @@
 //  Created by Marinel Maxime on 19/03/2020.
 //
 
-import XCTest
 @testable import wallabag
+import XCTest
 
 class RegistrationServerViewHandlerTests: XCTestCase {
-
     override func setUp() {
         WallabagUserDefaults.host = ""
     }
@@ -35,7 +34,7 @@ class RegistrationServerViewHandlerTests: XCTestCase {
             deinit { deinitCalled?() }
         }
 
-        let exp = expectation(description: self.debugDescription)
+        let exp = expectation(description: debugDescription)
 
         var instance: ClassUnderTest? = ClassUnderTest()
 

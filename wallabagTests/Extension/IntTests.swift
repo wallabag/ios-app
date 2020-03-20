@@ -15,4 +15,8 @@ class IntTests: XCTestCase {
         XCTAssertEqual("00:02:00", 2.readingTime)
         XCTAssertEqual("01:01:00", 61.readingTime)
     }
+
+    func testRgb() {
+        XCTAssertEqual(1, 255.rgb)
+    }
 }

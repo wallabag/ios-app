@@ -5,11 +5,10 @@
 //  Created by Marinel Maxime on 20/03/2020.
 //
 
-import XCTest
 @testable import wallabag
+import XCTest
 
 class RegistrationClientIdSecretViewHandlerTests: XCTestCase {
-
     override func setUp() {
         WallabagUserDefaults.clientId = ""
         WallabagUserDefaults.clientSecret = ""
@@ -53,7 +52,7 @@ class RegistrationClientIdSecretViewHandlerTests: XCTestCase {
             deinit { deinitCalled?() }
         }
 
-        let exp = expectation(description: self.debugDescription)
+        let exp = expectation(description: debugDescription)
 
         var instance: ClassUnderTest? = ClassUnderTest()
 

@@ -9,23 +9,23 @@
 import XCTest
 
 class RetrieveModeTests: XCTestCase {
-  /*  func testAllArticles() {
-        XCTAssertEqual("All articles", RetrieveMode.allArticles)
-        XCTAssertEqual("TRUEPREDICATE", RetrieveMode.allArticles.predicate().description)
-    }
+    /*  func testAllArticles() {
+         XCTAssertEqual("All articles", RetrieveMode.allArticles)
+         XCTAssertEqual("TRUEPREDICATE", RetrieveMode.allArticles.predicate().description)
+     }
 
-    func testArchivedArticles() {
-        XCTAssertEqual("Read articles", RetrieveMode.archivedArticles.humainReadable())
-        XCTAssertEqual("isArchived == 1", RetrieveMode.archivedArticles.predicate().description)
-    }
+     func testArchivedArticles() {
+         XCTAssertEqual("Read articles", RetrieveMode.archivedArticles.humainReadable())
+         XCTAssertEqual("isArchived == 1", RetrieveMode.archivedArticles.predicate().description)
+     }
 
-    func testUnarchivedArticles() {
-        XCTAssertEqual("Unread articles", RetrieveMode.unarchivedArticles.humainReadable())
-        XCTAssertEqual("isArchived == 0", RetrieveMode.unarchivedArticles.predicate().description)
-    }
+     func testUnarchivedArticles() {
+         XCTAssertEqual("Unread articles", RetrieveMode.unarchivedArticles.humainReadable())
+         XCTAssertEqual("isArchived == 0", RetrieveMode.unarchivedArticles.predicate().description)
+     }
 
-    func testStarredArticles() {
-        XCTAssertEqual("Starred articles", RetrieveMode.starredArticles.humainReadable())
-        XCTAssertEqual("isStarred == 1", RetrieveMode.starredArticles.predicate().description)
-    }*/
+     func testStarredArticles() {
+         XCTAssertEqual("Starred articles", RetrieveMode.starredArticles.humainReadable())
+         XCTAssertEqual("isStarred == 1", RetrieveMode.starredArticles.predicate().description)
+     }*/
 }
