@@ -7,8 +7,7 @@
 
 import AVFoundation
 import Foundation
-import WallabagCommon
-
+/*
 class SettingMock: SettingProtocol {
     var getValues: [String: Any]
     var settedValues: [String: String] = [:]
@@ -35,3 +34,4 @@ class SettingMock: SettingProtocol {
         AVSpeechSynthesisVoice(language: "FR_fr")
     }
 }
+*/

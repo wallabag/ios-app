@@ -7,11 +7,11 @@
 //
 
 @testable import wallabag
-@testable import WallabagKit
+
 import XCTest
 
 class TokenAdapterTests: XCTestCase {
-    func testAdapt() {
+   /* func testAdapt() {
         let adapter = TokenAdapter(accessToken: "my_token")
         let mainRequest = URLRequest(url: URL(string: "http://localhost")!)
 
@@ -21,5 +21,5 @@ class TokenAdapterTests: XCTestCase {
         } catch _ {
             XCTFail()
         }
-    }
+    }*/
 }

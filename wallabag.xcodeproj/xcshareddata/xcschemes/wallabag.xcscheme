@@ -20,6 +20,20 @@
                ReferencedContainer = "container:wallabag.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "NT_CB245D289C47CA3177DD28B514882F44"
+               BuildableName = "wallabagTests.xctest"
+               BlueprintName = "wallabagTests"
+               ReferencedContainer = "container:wallabag.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -38,7 +52,7 @@
       </MacroExpansion>
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9C961B2222770ECE009F80A4"
@@ -48,7 +62,7 @@
             </BuildableReference>
          </TestableReference>
          <TestableReference
-            skipped = "NO">
+            skipped = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9C4C1F84240E7E340029FBC9"
@@ -56,6 +70,51 @@
                BlueprintName = "wallabagScreenshotTests"
                ReferencedContainer = "container:wallabag.xcodeproj">
             </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "NT_CB245D289C47CA3177DD28B514882F44"
+               BuildableName = "wallabagTests.xctest"
+               BlueprintName = "wallabagTests"
+               ReferencedContainer = "container:wallabag.xcodeproj">
+            </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "BoolTests">
+               </Test>
+               <Test
+                  Identifier = "DateTests">
+               </Test>
+               <Test
+                  Identifier = "DictionaryTests">
+               </Test>
+               <Test
+                  Identifier = "IntTests">
+               </Test>
+               <Test
+                  Identifier = "RetrieveModeTests">
+               </Test>
+               <Test
+                  Identifier = "StringTests">
+               </Test>
+               <Test
+                  Identifier = "TokenAdapterTests">
+               </Test>
+               <Test
+                  Identifier = "WallabagAuthErrorTests">
+               </Test>
+               <Test
+                  Identifier = "WallabagAuthSuccessTests">
+               </Test>
+               <Test
+                  Identifier = "WallabagKitCollectionTests">
+               </Test>
+               <Test
+                  Identifier = "WallabagKitTests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>
