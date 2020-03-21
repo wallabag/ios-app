@@ -54,7 +54,7 @@ enum Route: Equatable {
     var traillingButton: AnyView? {
         switch self {
         case .entries:
-            return AnyView(RefreshButton(appSync: AppSync()))
+            return AnyView(RefreshButton())
         default:
             return nil
         }

@@ -55,7 +55,6 @@ struct MainView: View {
             return AnyView(AboutView()).id("aboutView")
         case .entries:
             return AnyView(EntriesView()
-                .environmentObject(AppSync())
                 .environmentObject(appState)).id("entriesView")
         case let .entry(entry):
             return AnyView(EntryView(entry: entry)).id("entryView")

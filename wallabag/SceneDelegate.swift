@@ -16,6 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     @Injector var router: Router
     @Injector var playerPublisher: PlayerPublisher
     @Injector var errorPublisher: ErrorPublisher
+    @Injector var appSync: AppSync
 
     let coreDataSync = CoreDataSync()
 
@@ -28,6 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     .environmentObject(playerPublisher)
                     .environmentObject(router)
                     .environmentObject(errorPublisher)
+                    .environmentObject(appSync)
                     .environment(\.managedObjectContext, CoreData.shared.viewContext))
             self.window = window
             window.makeKeyAndVisible()
@@ -41,12 +43,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillResignActive(_: UIScene) {}
 
     func sceneWillEnterForeground(_: UIScene) {
-        updateBadge()
+        appState.initSession()
     }
 
     func sceneDidEnterBackground(_: UIScene) {
-        updateBadge()
         CoreData.shared.saveContext()
+        updateBadge()
     }
 
     private func updateBadge() {

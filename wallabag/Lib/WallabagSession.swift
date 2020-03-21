@@ -20,6 +20,7 @@ class WallabagSession: ObservableObject {
     @Injector var kit: WallabagKit
 
     func requestSession() {
+        state = .connecting
         _ = kit.requestAuth(
             clientId: WallabagUserDefaults.clientId,
             clientSecret: WallabagUserDefaults.clientSecret,

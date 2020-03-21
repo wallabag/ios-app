@@ -10,7 +10,6 @@ import SwiftUI
 
 struct EntriesView: View {
     @ObservedObject var pasteBoardPublisher = PasteBoardPublisher()
-    @EnvironmentObject var appSync: AppSync
     @State private var filter: RetrieveMode = RetrieveMode(fromCase: WallabagUserDefaults.defaultMode)
 
     @FetchRequest(entity: Entry.entity(), sortDescriptors: []) var entries: FetchedResults<Entry>
@@ -39,7 +38,6 @@ struct EntriesView: View {
         static var previews: some View {
             EntriesView()
                 .environmentObject(PasteBoardPublisher())
-                .environmentObject(AppSync())
         }
     }
 #endif
