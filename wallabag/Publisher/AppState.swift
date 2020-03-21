@@ -18,7 +18,6 @@ class AppState: NSObject, ObservableObject {
 
     @Published var showMenu: Bool = false
     @Published var showPlayer: Bool = false
-    @Published var refreshing: Bool = false
 
     @Injector var session: WallabagSession
     @Injector var router: Router
@@ -26,13 +25,12 @@ class AppState: NSObject, ObservableObject {
     override init() {
         super.init()
         registred = WallabagUserDefaults.registred
-        if registred {
-            initSession()
-        }
     }
 
-    private func initSession() {
-        session.requestSession()
+    func initSession() {
+        if registred {
+            session.requestSession()
+        }
     }
 
     func logout() {
