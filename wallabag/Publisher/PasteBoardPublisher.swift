@@ -41,7 +41,7 @@ class PasteBoardPublisher: ObservableObject {
     }
 
     func addUrl() {
-        session.addEntry(url: pasteBoardUrl)
+        session.addEntry(url: pasteBoardUrl) {}
         showPasteBoardView = false
     }
 
