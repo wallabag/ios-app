@@ -58,7 +58,9 @@ struct MenuView: View {
                     Text("Logout")
                 }.foregroundColor(.red)
             }
-        }.padding()
+        }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 

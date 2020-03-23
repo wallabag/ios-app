@@ -12,6 +12,7 @@ struct MainView: View {
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var router: Router
     @EnvironmentObject var errorPublisher: ErrorPublisher
+    @State private var showMenu: Bool = false
 
     var header: some View {
         HStack {
@@ -33,16 +34,22 @@ struct MainView: View {
     }
 
     var body: some View {
-        HStack {
-            if appState.showMenu {
-                MenuView()
-            }
-            VStack {
-                if router.route.showHeader {
-                    header.padding(.horizontal).padding(.top, 15)
+        GeometryReader { geometry in
+            ZStack(alignment: .leading) {
+                VStack {
+                    if self.router.route.showHeader {
+                        self.header.padding(.horizontal).padding(.top, 15)
+                    }
+                    ErrorView()
+                    self.routedView()
+                }.frame(width: geometry.size.width, height: geometry.size.height)
+                    .offset(x: self.appState.showMenu ? geometry.size.width / 2 : 0)
+                    .disabled(self.appState.showMenu)
+                if self.appState.showMenu {
+                    MenuView()
+                        .frame(width: geometry.size.width / 2)
+                        .transition(.move(edge: .leading))
                 }
-                ErrorView()
-                routedView()
             }
         }
     }
