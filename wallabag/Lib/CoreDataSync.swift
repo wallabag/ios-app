@@ -44,7 +44,7 @@ class CoreDataSync {
 
     private func updatedObjects(_ updatedObjects: Set<NSManagedObject>) {
         updatedObjects.forEach { [unowned self] object in
-            var changedValues = object.changedValuesForCurrentEvent()
+            var changedValues = object.changedValues()
 
             // MARK: ENTRY
 
