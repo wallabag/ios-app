@@ -35,6 +35,13 @@ class AppState: NSObject, ObservableObject {
 
     func logout() {
         registred = false
+        session.state = .unknown
+        WallabagUserDefaults.host = ""
+        WallabagUserDefaults.accessToken = ""
+        WallabagUserDefaults.clientId = ""
+        WallabagUserDefaults.clientSecret = ""
+        WallabagUserDefaults.password = ""
+        WallabagUserDefaults.login = ""
         router.route = .registration
     }
 }
