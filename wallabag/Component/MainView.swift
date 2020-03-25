@@ -44,7 +44,6 @@ struct MainView: View {
                     self.routedView()
                 }.frame(width: geometry.size.width, height: geometry.size.height)
                     .offset(x: self.appState.showMenu ? geometry.size.width / 2 : 0)
-                    .disabled(self.appState.showMenu)
                 if self.appState.showMenu {
                     MenuView()
                         .frame(width: geometry.size.width / 2)
