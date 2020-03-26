@@ -104,9 +104,7 @@
 		9CD4CEF823F200CE00CF11EA /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4CEF723F200CE00CF11EA /* Router.swift */; };
 		9CE32CBA234F648A004DD045 /* BundleKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE32CB9234F648A004DD045 /* BundleKey.swift */; };
 		9CEDCE9324240A78005C2BD8 /* RegistrationServerViewHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEDCE9224240A78005C2BD8 /* RegistrationServerViewHandlerTests.swift */; };
-		9CF1ED952262796D00AF750F /* AnalyticsManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CF1ED942262796D00AF750F /* AnalyticsManagerMock.swift */; };
 		9CFA9E3123D270F0004C89E3 /* CoreDataSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFA9E3023D270F0004C89E3 /* CoreDataSync.swift */; };
-		BF_047B132AA818924F42C07857A48D5648 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_250D2539097D8AD4F65F91206902AF43 /* AnalyticsManager.swift */; };
 		BF_0576133F70765A88C0F8BD8FC41C19EE /* article.html in Resources */ = {isa = PBXBuildFile; fileRef = FR_317F9C93FC0631DF00AB2E1FAEF90DD8 /* article.html */; };
 		BF_0958BD47C0A373C73825495FA643F41D /* UbuntuTitling-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FR_1DE9D932C526142E220FFC665A0EC101 /* UbuntuTitling-Bold.ttf */; };
 		BF_20305CD3F44AD3F0A300A08D28D4712F /* EntriesCollection.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_89CBFB2A6488E68DF37E66008BC3A23A /* EntriesCollection.json */; };
@@ -122,7 +120,6 @@
 		BF_6501D4BDF703ADAC0E1EBB67937832A7 /* EmptyCollection.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_2BF273D49F4833BC11A86510154631AF /* EmptyCollection.json */; };
 		BF_69A8B5C65C16A5031C7513FFCB6BCEBF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_9904635DBD17CD8DEC268B0000282D5E /* Utils.swift */; };
 		BF_762B1448F05D92E507BBC9314D9CDA2E /* Entry.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_4F6DCF741037732F30E4ED36FA3E5984 /* Entry.json */; };
-		BF_767B670EFD6E74785BD2212AF6B9A34A /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_BC1A4543A5BCE695E19D56D0A17CE7C6 /* UIImageView.swift */; };
 		BF_7CC38D8557CAD849430D9776421E5E5E /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_CB6C74A2C8026DC8DECD880DB6E11937 /* StringTests.swift */; };
 		BF_83312011338DF667DC8174DD85C2A1B7 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_2E58EB127F216B99AAB45039FA033FD9 /* Int.swift */; };
 		BF_87E311661C0B3BA3247CC388C7CCD8AF /* WallabagKitCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_EFE6ED1C47DAA622DFB6E57FF56AB4B9 /* WallabagKitCollectionTests.swift */; };
@@ -289,13 +286,11 @@
 		9CD4CEF723F200CE00CF11EA /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		9CE32CB9234F648A004DD045 /* BundleKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleKey.swift; sourceTree = "<group>"; };
 		9CEDCE9224240A78005C2BD8 /* RegistrationServerViewHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationServerViewHandlerTests.swift; sourceTree = "<group>"; };
-		9CF1ED942262796D00AF750F /* AnalyticsManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManagerMock.swift; sourceTree = "<group>"; };
 		9CFA9E3023D270F0004C89E3 /* CoreDataSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSync.swift; sourceTree = "<group>"; };
 		FR_0D81D880CC2314E3DD84B9C8E00667AD /* wallabagUITests-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "wallabagUITests-Debug.xcconfig"; sourceTree = "<group>"; };
 		FR_0EF389E23F508F60AB1F657ECF52C8CF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FR_1BCA2B5D79E6386A16A4B6341BC136FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FR_1DE9D932C526142E220FFC665A0EC101 /* UbuntuTitling-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UbuntuTitling-Bold.ttf"; sourceTree = "<group>"; };
-		FR_250D2539097D8AD4F65F91206902AF43 /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		FR_26E374F0AF1D1FBEC022213E082366DF /* RetrieveMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveMode.swift; sourceTree = "<group>"; };
 		FR_290ECAC1FE613D28DF9CB4D061F101F9 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		FR_2BF273D49F4833BC11A86510154631AF /* EmptyCollection.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EmptyCollection.json; sourceTree = "<group>"; };
@@ -333,7 +328,6 @@
 		FR_ADF34B1BF3A7AF7D035A47CC6C5A02E3 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		FR_B3F20BFCCD3C9F0039EE2AC6D8D1A71B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FR_B59475CCE7E9CDF9B6B6C979AF3EBC87 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		FR_BC1A4543A5BCE695E19D56D0A17CE7C6 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		FR_C16D1C5C72DB19E504BB13DC0273DD1D /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		FR_C3CA4908C169B55F757B33B99B07B0D1 /* WallabagAuthErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuthErrorTests.swift; sourceTree = "<group>"; };
 		FR_C6ACC6D258ADB3D12E651FB3A8EA41AA /* ratatouille.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = ratatouille.css; sourceTree = "<group>"; };
@@ -604,13 +598,6 @@
 			path = wallabagUITests;
 			sourceTree = "<group>";
 		};
-		9CB41DC2234FC00D00C2740B /* Validator */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Validator;
-			sourceTree = "<group>";
-		};
 		9CB41DC9234FC3BA00C2740B /* WallabagSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -654,7 +641,6 @@
 		9CF1ED932262794B00AF750F /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				9CF1ED942262796D00AF750F /* AnalyticsManagerMock.swift */,
 				9CCEFF8B2264A37B00441A18 /* SettingMock.swift */,
 			);
 			path = Mock;
@@ -778,7 +764,6 @@
 				FR_2E58EB127F216B99AAB45039FA033FD9 /* Int.swift */,
 				9CBCAF3923F603320042D22E /* SKProduct.swift */,
 				FR_6121D1E9B47B792E1964E21692ED3F7D /* String.swift */,
-				FR_BC1A4543A5BCE695E19D56D0A17CE7C6 /* UIImageView.swift */,
 				9C6DC0F1224112480012486D /* UISearchBar.swift */,
 				FR_3996D9FD806100BF0335AAE1A4EE148E /* WKWebView.swift */,
 			);
@@ -821,7 +806,6 @@
 		G_ED05746A8B318D93F5C59AFB3D2C703A /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				FR_250D2539097D8AD4F65F91206902AF43 /* AnalyticsManager.swift */,
 				9C7CBD0622D60B8A00EE1DE3 /* ArticlePlayer.swift */,
 				9C148524235E3ED50082D7BB /* CoreData.swift */,
 				9CFA9E3023D270F0004C89E3 /* CoreDataSync.swift */,
@@ -859,7 +843,6 @@
 				9C5EDEE3234E83B000141DFD /* Publisher */,
 				G_60BF241AD87B2847EBA2C59F302A8DF3 /* Storyboard */,
 				G_E288595FB7758C59B0C10F1A195B1273 /* UI */,
-				9CB41DC2234FC00D00C2740B /* Validator */,
 				9CB41DC9234FC3BA00C2740B /* WallabagSDK */,
 				9C148528235E3FF00082D7BB /* wallabagStore.xcdatamodeld */,
 			);
@@ -1152,7 +1135,6 @@
 			files = (
 				9C5EDEEA234E889100141DFD /* AboutView.swift in Sources */,
 				9C55B12823719ADD0097FE27 /* EntryPicture.swift in Sources */,
-				BF_047B132AA818924F42C07857A48D5648 /* AnalyticsManager.swift in Sources */,
 				9C7CBD0722D60B8A00EE1DE3 /* ArticlePlayer.swift in Sources */,
 				9C7663F823F4439E00232B08 /* SKPublisher.swift in Sources */,
 				9C14852A235E3FF00082D7BB /* wallabagStore.xcdatamodeld in Sources */,
@@ -1219,7 +1201,6 @@
 				9C37217322E1087800D363FB /* RegistrationView.swift in Sources */,
 				9C37217522E1134600D363FB /* ServerView.swift in Sources */,
 				9CB41DC6234FC14500C2740B /* RegistrationClientIdClientSecretViewHandler.swift in Sources */,
-				BF_767B670EFD6E74785BD2212AF6B9A34A /* UIImageView.swift in Sources */,
 				BF_A263058FD57BCE7DECF1322ABBB1C729 /* UIPodcastSlider.swift in Sources */,
 				BF_27B3C5BB859104CEF0AB1D52843622B4 /* WKWebView.swift in Sources */,
 				9C52706F23F8AEF600DF0058 /* WallabagError.swift in Sources */,
@@ -1248,7 +1229,6 @@
 				BF_58567850CC932A049952E736EE61B0DE /* WallabagAuthErrorTests.swift in Sources */,
 				BF_3C34FF37F2AAB722ED3278184555355B /* WallabagAuthSuccessTests.swift in Sources */,
 				BF_87E311661C0B3BA3247CC388C7CCD8AF /* WallabagKitCollectionTests.swift in Sources */,
-				9CF1ED952262796D00AF750F /* AnalyticsManagerMock.swift in Sources */,
 				BF_C63B962A10CD74586351B9DB5E0FBBE1 /* WallabagKitTests.swift in Sources */,
 				BF_218B02857CD5370E001E1DEDBCD9DA81 /* XCTExtension.swift in Sources */,
 				9CEDCE9324240A78005C2BD8 /* RegistrationServerViewHandlerTests.swift in Sources */,

@@ -12,7 +12,6 @@ import MediaPlayer
 class ArticlePlayer {
     private var speecher: AVSpeechSynthesizer = AVSpeechSynthesizer()
 
-    var analytics: AnalyticsManagerProtocol!
     var isPlaying: Bool {
         speecher.isSpeaking
     }
@@ -55,7 +54,6 @@ class ArticlePlayer {
         guard let utterance = utterance else { return }
         if !speecher.isSpeaking {
             speecher.speak(utterance)
-            analytics.send(.synthesis(state: true))
         } else {
             if speecher.isPaused {
                 speecher.continueSpeaking()

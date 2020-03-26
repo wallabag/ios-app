@@ -9,7 +9,7 @@ import Combine
 import SwiftUI
 
 struct EntryPicture: View {
-    @State private var image: UIImage? = nil
+    @State private var image: UIImage?
 
     private let placeholderImage: UIImage = UIImage(systemName: "book")!
     let url: String?
