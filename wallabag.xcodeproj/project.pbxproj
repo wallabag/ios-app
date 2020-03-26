@@ -282,6 +282,7 @@
 		9CCC4AFB22E3BFD400F73891 /* WallabagUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagUserDefaults.swift; sourceTree = "<group>"; };
 		9CCC4AFD22E5D92E00F73891 /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
 		9CCEFF8B2264A37B00441A18 /* SettingMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMock.swift; sourceTree = "<group>"; };
+		9CCF9324242CE44300904D3B /* wallabag.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = wallabag.xctestplan; path = wallabag.xcodeproj/wallabag.xctestplan; sourceTree = "<group>"; };
 		9CD4CEF523F1FD5200CF11EA /* ShareExtensionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareExtensionError.swift; sourceTree = "<group>"; };
 		9CD4CEF723F200CE00CF11EA /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		9CE32CB9234F648A004DD045 /* BundleKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleKey.swift; sourceTree = "<group>"; };
@@ -773,6 +774,7 @@
 		G_D9112B40FBAA7D6E28EF1DE3BF37847D = {
 			isa = PBXGroup;
 			children = (
+				9CCF9324242CE44300904D3B /* wallabag.xctestplan */,
 				G_B507F86627987D54B7C8B4837197C891 /* bagit */,
 				G_39C6C9CFDD44BBB7BB8E0F812CE69E29 /* configs */,
 				G_EE322AF580B12A5FAFB51DB68815824E /* wallabag */,
