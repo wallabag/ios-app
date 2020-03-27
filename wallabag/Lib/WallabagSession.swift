@@ -8,6 +8,7 @@
 import Combine
 import CoreData
 import Foundation
+import SwiftyLogger
 
 class WallabagSession: ObservableObject {
     enum State {

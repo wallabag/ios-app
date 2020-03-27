@@ -8,6 +8,7 @@
 import Combine
 import CoreData
 import Foundation
+import SwiftyLogger
 
 class AppSync: ObservableObject {
     @Injector var session: WallabagSession

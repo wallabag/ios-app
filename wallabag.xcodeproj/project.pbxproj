@@ -100,6 +100,7 @@
 		9CCC4AFC22E3BFD400F73891 /* WallabagUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC4AFB22E3BFD400F73891 /* WallabagUserDefaults.swift */; };
 		9CCC4AFE22E5D92E00F73891 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC4AFD22E5D92E00F73891 /* Password.swift */; };
 		9CCEFF8C2264A37B00441A18 /* SettingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCEFF8B2264A37B00441A18 /* SettingMock.swift */; };
+		9CCF9327242D13FF00904D3B /* SwiftyLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 9CCF9326242D13FF00904D3B /* SwiftyLogger */; };
 		9CD4CEF623F1FD5200CF11EA /* ShareExtensionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4CEF523F1FD5200CF11EA /* ShareExtensionError.swift */; };
 		9CD4CEF823F200CE00CF11EA /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4CEF723F200CE00CF11EA /* Router.swift */; };
 		9CE32CBA234F648A004DD045 /* BundleKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE32CB9234F648A004DD045 /* BundleKey.swift */; };
@@ -388,6 +389,7 @@
 				9C677CAD227EF5A6006C7112 /* WebKit.framework in Frameworks */,
 				9C5EDEF0234E922D00141DFD /* Crashlytics.framework in Frameworks */,
 				9C5EDF00234E937100141DFD /* Swinject in Frameworks */,
+				9CCF9327242D13FF00904D3B /* SwiftyLogger in Frameworks */,
 				9C5EDEF2234E923700141DFD /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -915,6 +917,8 @@
 			dependencies = (
 			);
 			name = bagit;
+			packageProductDependencies = (
+			);
 			productName = bagit;
 			productReference = FR_A558DD3F249C938DA7F179688063D500 /* bagit.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -939,6 +943,7 @@
 			name = wallabag;
 			packageProductDependencies = (
 				9C5EDEFF234E937100141DFD /* Swinject */,
+				9CCF9326242D13FF00904D3B /* SwiftyLogger */,
 			);
 			productName = wallabag;
 			productReference = FR_7EF8E3725DA0867206C920EE5FBF277C /* wallabag.app */;
@@ -1009,6 +1014,7 @@
 			mainGroup = G_D9112B40FBAA7D6E28EF1DE3BF37847D;
 			packageReferences = (
 				9C5EDEFE234E937100141DFD /* XCRemoteSwiftPackageReference "Swinject" */,
+				9CCF9325242D13FF00904D3B /* XCRemoteSwiftPackageReference "SwiftyLogger" */,
 			);
 			productRefGroup = G_F9352AEEBDAE1173F665BDBED628DF2A /* Products */;
 			projectDirPath = "";
@@ -1765,6 +1771,14 @@
 				minimumVersion = 2.7.1;
 			};
 		};
+		9CCF9325242D13FF00904D3B /* XCRemoteSwiftPackageReference "SwiftyLogger" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/district-web/SwiftyLogger";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1772,6 +1786,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9C5EDEFE234E937100141DFD /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
+		};
+		9CCF9326242D13FF00904D3B /* SwiftyLogger */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9CCF9325242D13FF00904D3B /* XCRemoteSwiftPackageReference "SwiftyLogger" */;
+			productName = SwiftyLogger;
 		};
 /* End XCSwiftPackageProductDependency section */
 

@@ -9,6 +9,7 @@ import AVFoundation
 import Combine
 import Foundation
 import MediaPlayer
+import SwiftyLogger
 
 class PlayerPublisher: ObservableObject {
     @Published private(set) var isPlaying = false {
