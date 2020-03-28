@@ -103,6 +103,9 @@
 		9CCF9327242D13FF00904D3B /* SwiftyLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 9CCF9326242D13FF00904D3B /* SwiftyLogger */; };
 		9CD4CEF623F1FD5200CF11EA /* ShareExtensionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4CEF523F1FD5200CF11EA /* ShareExtensionError.swift */; };
 		9CD4CEF823F200CE00CF11EA /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4CEF723F200CE00CF11EA /* Router.swift */; };
+		9CD4F454242FC83B003B56CF /* BugReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4F453242FC83B003B56CF /* BugReportView.swift */; };
+		9CD4F456242FCC71003B56CF /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4F455242FCC71003B56CF /* URL.swift */; };
+		9CD4F458242FE510003B56CF /* URLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4F457242FE510003B56CF /* URLTests.swift */; };
 		9CE32CBA234F648A004DD045 /* BundleKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE32CB9234F648A004DD045 /* BundleKey.swift */; };
 		9CEDCE9324240A78005C2BD8 /* RegistrationServerViewHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEDCE9224240A78005C2BD8 /* RegistrationServerViewHandlerTests.swift */; };
 		9CFA9E3123D270F0004C89E3 /* CoreDataSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFA9E3023D270F0004C89E3 /* CoreDataSync.swift */; };
@@ -286,6 +289,9 @@
 		9CCF9324242CE44300904D3B /* wallabag.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = wallabag.xctestplan; path = wallabag.xcodeproj/wallabag.xctestplan; sourceTree = "<group>"; };
 		9CD4CEF523F1FD5200CF11EA /* ShareExtensionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareExtensionError.swift; sourceTree = "<group>"; };
 		9CD4CEF723F200CE00CF11EA /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		9CD4F453242FC83B003B56CF /* BugReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugReportView.swift; sourceTree = "<group>"; };
+		9CD4F455242FCC71003B56CF /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		9CD4F457242FE510003B56CF /* URLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLTests.swift; sourceTree = "<group>"; };
 		9CE32CB9234F648A004DD045 /* BundleKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleKey.swift; sourceTree = "<group>"; };
 		9CEDCE9224240A78005C2BD8 /* RegistrationServerViewHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationServerViewHandlerTests.swift; sourceTree = "<group>"; };
 		9CFA9E3023D270F0004C89E3 /* CoreDataSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSync.swift; sourceTree = "<group>"; };
@@ -547,6 +553,7 @@
 				9C37217022E107D200D363FB /* MainView.swift */,
 				9C8F05E923CFBD1500B98CCE /* MenuView.swift */,
 				9C5EDEE8234E887A00141DFD /* About */,
+				9CD4F452242FC822003B56CF /* BugReport */,
 				9C5EDEE2234E810C00141DFD /* Entry */,
 				9C52706B23F8AB6100DF0058 /* Error */,
 				9C66B6BE235678270068B968 /* Filter */,
@@ -623,6 +630,14 @@
 			path = Registration;
 			sourceTree = "<group>";
 		};
+		9CD4F452242FC822003B56CF /* BugReport */ = {
+			isa = PBXGroup;
+			children = (
+				9CD4F453242FC83B003B56CF /* BugReportView.swift */,
+			);
+			path = BugReport;
+			sourceTree = "<group>";
+		};
 		9CEDCE9024240A56005C2BD8 /* Handler */ = {
 			isa = PBXGroup;
 			children = (
@@ -657,6 +672,7 @@
 				FR_448862BF589F4829A648C0F56DC31F9A /* DictionaryTests.swift */,
 				FR_CB80D9AF5E152C1943DB3A301D670B91 /* IntTests.swift */,
 				FR_CB6C74A2C8026DC8DECD880DB6E11937 /* StringTests.swift */,
+				9CD4F457242FE510003B56CF /* URLTests.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -768,6 +784,7 @@
 				9CBCAF3923F603320042D22E /* SKProduct.swift */,
 				FR_6121D1E9B47B792E1964E21692ED3F7D /* String.swift */,
 				9C6DC0F1224112480012486D /* UISearchBar.swift */,
+				9CD4F455242FCC71003B56CF /* URL.swift */,
 				FR_3996D9FD806100BF0335AAE1A4EE148E /* WKWebView.swift */,
 			);
 			path = Extension;
@@ -1162,6 +1179,7 @@
 				9C66B6C9235681280068B968 /* DeleteEntryButton.swift in Sources */,
 				9C7AFE142353CE4500FBF989 /* WallabagOAuth.swift in Sources */,
 				9C3F13E42353D4C800303AA8 /* WallabagCollection.swift in Sources */,
+				9CD4F454242FC83B003B56CF /* BugReportView.swift in Sources */,
 				9C03E4A1238474110060FF14 /* PlayerPublisher.swift in Sources */,
 				9C6D0741238BFEAD00FCF4FF /* SwipePlayerView.swift in Sources */,
 				9CB41DC8234FC23200C2740B /* RegistrationLoginViewHandler.swift in Sources */,
@@ -1190,6 +1208,7 @@
 				BF_DB7F468621011B78AA80968FF9B4DD93 /* RetrieveMode.swift in Sources */,
 				9CFA9E3123D270F0004C89E3 /* CoreDataSync.swift in Sources */,
 				9C60DE2523606DAA00F78D02 /* TagRow.swift in Sources */,
+				9CD4F456242FCC71003B56CF /* URL.swift in Sources */,
 				BF_A31D94510D6C4BD65AC0122EB64626C8 /* String.swift in Sources */,
 				9C1EB6E823573DD700A5E54B /* EntryPictoImage.swift in Sources */,
 				9C5EDEE7234E848D00141DFD /* Injector.swift in Sources */,
@@ -1230,6 +1249,7 @@
 				BF_8DF5B0DFCF66D71D7A3C7EF0E10B2EEA /* DictionaryTests.swift in Sources */,
 				BF_A00A76038455E614969B0C4D0C0CF45B /* IntTests.swift in Sources */,
 				9C4D4B9E225B6A2B00FE3095 /* DateTests.swift in Sources */,
+				9CD4F458242FE510003B56CF /* URLTests.swift in Sources */,
 				9C18B70F242508C800804F4D /* RegistrationClientIdSecretViewHandlerTests.swift in Sources */,
 				9CCEFF8C2264A37B00441A18 /* SettingMock.swift in Sources */,
 				BF_7CC38D8557CAD849430D9776421E5E5E /* StringTests.swift in Sources */,

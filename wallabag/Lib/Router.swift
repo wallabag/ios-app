@@ -16,6 +16,7 @@ enum Route: Equatable {
     case entry(Entry)
     case addEntry
     case registration
+    case bugReport
 
     var title: String {
         switch self {
@@ -31,6 +32,8 @@ enum Route: Equatable {
             return "About"
         case .registration:
             return "Registration"
+        case .bugReport:
+            return "Bug report"
         }
     }
 

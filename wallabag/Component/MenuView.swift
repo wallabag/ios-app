@@ -44,6 +44,15 @@ struct MenuView: View {
             Spacer()
             HStack {
                 Button(action: {
+                    self.router.route = .bugReport
+                }) {
+                    Image(systemName: "ant")
+                        .frame(width: 24)
+                    Text("Bug report")
+                }
+            }
+            HStack {
+                Button(action: {
                     UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
                 }) {
                     Image(systemName: "gear")

@@ -68,6 +68,8 @@ struct MainView: View {
             return AnyView(TipView()).id("tipView")
         case .registration:
             return AnyView(RegistrationView().environmentObject(appState)).id("Registration")
+        case .bugReport:
+            return AnyView(BugReportView()).id("bugRetport")
         }
     }
 }
