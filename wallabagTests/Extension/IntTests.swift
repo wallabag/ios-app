@@ -19,4 +19,10 @@ class IntTests: XCTestCase {
     func testRgb() {
         XCTAssertEqual(1, 255.rgb)
     }
+
+    func testBool() {
+        XCTAssertFalse(0.bool)
+        XCTAssertTrue(1.bool)
+        XCTAssertFalse(2.bool)
+    }
 }

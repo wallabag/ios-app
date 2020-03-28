@@ -22,4 +22,8 @@ extension Int {
     var rgb: CGFloat {
         CGFloat(self) / 255.0
     }
+
+    var bool: Bool {
+        self == 1
+    }
 }

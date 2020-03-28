@@ -62,8 +62,8 @@ extension Entry {
         createdAt = Date.fromISOString(article.createdAt)
         updatedAt = Date.fromISOString(article.updatedAt)
         domainName = article.domainName
-        isArchived = article.isArchived == 1
-        isStarred = article.isStarred == 1
+        isArchived = article.isArchived.bool
+        isStarred = article.isStarred.bool
         previewPicture = article.previewPicture
         url = article.url
         readingTime = article.readingTime ?? 0
