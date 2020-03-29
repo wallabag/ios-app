@@ -8,6 +8,7 @@
 import Combine
 import Foundation
 import SwiftUI
+import Logging
 
 enum Route: Equatable {
     case tips
@@ -66,6 +67,7 @@ enum Route: Equatable {
 
 class Router: ObservableObject {
     @Injector var appState: AppState
+    @Injector var logger: Logger
 
     var objectWillChange = PassthroughSubject<Router, Never>()
 
@@ -75,6 +77,7 @@ class Router: ObservableObject {
 
     var route: Route = .entries {
         willSet {
+            logger.info("Router switch to route: \(route.title)")
             appState.showMenu = false
             objectWillChange.send(self)
         }

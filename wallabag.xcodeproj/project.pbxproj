@@ -30,6 +30,7 @@
 		9C18B71124251C7100804F4D /* RegistrationLoginViewHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C18B71024251C7100804F4D /* RegistrationLoginViewHandlerTests.swift */; };
 		9C19F8E322707707009450F9 /* RetrieveModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19F8E222707707009450F9 /* RetrieveModeTests.swift */; };
 		9C1EB6E823573DD700A5E54B /* EntryPictoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1EB6E723573DD700A5E54B /* EntryPictoImage.swift */; };
+		9C22CED82430B64D00B2C69F /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 9C22CED72430B64D00B2C69F /* Logging */; };
 		9C276C4C23856A8B006F590A /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C276C4B23856A8B006F590A /* Podcast.swift */; };
 		9C327655238B031D0040D9D6 /* PasteBoardPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C327654238B031D0040D9D6 /* PasteBoardPublisher.swift */; };
 		9C327658238B03720040D9D6 /* PasteBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C327657238B03720040D9D6 /* PasteBoardView.swift */; };
@@ -392,6 +393,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C22CED82430B64D00B2C69F /* Logging in Frameworks */,
 				9C677CAD227EF5A6006C7112 /* WebKit.framework in Frameworks */,
 				9C5EDEF0234E922D00141DFD /* Crashlytics.framework in Frameworks */,
 				9C5EDF00234E937100141DFD /* Swinject in Frameworks */,
@@ -961,6 +963,7 @@
 			packageProductDependencies = (
 				9C5EDEFF234E937100141DFD /* Swinject */,
 				9CCF9326242D13FF00904D3B /* SwiftyLogger */,
+				9C22CED72430B64D00B2C69F /* Logging */,
 			);
 			productName = wallabag;
 			productReference = FR_7EF8E3725DA0867206C920EE5FBF277C /* wallabag.app */;
@@ -1032,6 +1035,7 @@
 			packageReferences = (
 				9C5EDEFE234E937100141DFD /* XCRemoteSwiftPackageReference "Swinject" */,
 				9CCF9325242D13FF00904D3B /* XCRemoteSwiftPackageReference "SwiftyLogger" */,
+				9C22CED62430B64D00B2C69F /* XCRemoteSwiftPackageReference "swift-log" */,
 			);
 			productRefGroup = G_F9352AEEBDAE1173F665BDBED628DF2A /* Products */;
 			projectDirPath = "";
@@ -1783,6 +1787,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9C22CED62430B64D00B2C69F /* XCRemoteSwiftPackageReference "swift-log" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-log";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
 		9C5EDEFE234E937100141DFD /* XCRemoteSwiftPackageReference "Swinject" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swinject/Swinject";
@@ -1802,6 +1814,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9C22CED72430B64D00B2C69F /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C22CED62430B64D00B2C69F /* XCRemoteSwiftPackageReference "swift-log" */;
+			productName = Logging;
+		};
 		9C5EDEFF234E937100141DFD /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9C5EDEFE234E937100141DFD /* XCRemoteSwiftPackageReference "Swinject" */;

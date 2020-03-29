@@ -12,6 +12,7 @@ import Fabric
 import Swinject
 import UIKit
 import UserNotifications
+import Logging
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -26,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         container.register(AppState.self, factory: { _ in AppState() }).inObjectScope(.container)
         container.register(Router.self, factory: { _ in Router() }).inObjectScope(.container)
         container.register(PlayerPublisher.self, factory: { _ in PlayerPublisher() }).inObjectScope(.container)
+        container.register(Logger.self, factory: { _ in
+            Logger(label: "fr.district-web.wallabag")
+        }).inObjectScope(.container)
 
         return container
     }()
