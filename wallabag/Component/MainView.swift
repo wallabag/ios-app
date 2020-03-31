@@ -19,7 +19,7 @@ struct MainView: View {
             if router.route.showMenuButton {
                 Button(action: {
                     withAnimation {
-                        self.appState.showMenu.toggle()
+                        self.showMenu.toggle()
                     }
                 }, label: { Image(systemName: "list.bullet") })
             }
@@ -43,9 +43,9 @@ struct MainView: View {
                     ErrorView()
                     self.routedView()
                 }.frame(width: geometry.size.width, height: geometry.size.height)
-                    .offset(x: self.appState.showMenu ? geometry.size.width / 2 : 0)
-                if self.appState.showMenu {
-                    MenuView()
+                    .offset(x: self.showMenu ? geometry.size.width / 2 : 0)
+                if self.showMenu {
+                    MenuView(showMenu: self.$showMenu)
                         .frame(width: geometry.size.width / 2)
                         .transition(.move(edge: .leading))
                 }

@@ -16,6 +16,7 @@ private struct Menu {
 struct MenuView: View {
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var router: Router
+    @Binding var showMenu: Bool
 
     fileprivate let menus: [Menu] = [
         .init(title: "Entries", img: "tray.full", route: .entries),
@@ -34,6 +35,9 @@ struct MenuView: View {
                 HStack {
                     Button(action: {
                         self.router.route = menu.route
+                        withAnimation {
+                            self.showMenu = false
+                        }
                     }) {
                         Image(systemName: menu.img)
                             .frame(width: 24)
@@ -45,6 +49,9 @@ struct MenuView: View {
             HStack {
                 Button(action: {
                     self.router.route = .bugReport
+                    withAnimation {
+                        self.showMenu = false
+                    }
                 }) {
                     Image(systemName: "ant")
                         .frame(width: 24)
@@ -53,6 +60,9 @@ struct MenuView: View {
             }
             HStack {
                 Button(action: {
+                    withAnimation {
+                        self.showMenu = false
+                    }
                     UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
                 }) {
                     Image(systemName: "gear")
@@ -62,6 +72,9 @@ struct MenuView: View {
             HStack {
                 Button(action: {
                     self.appState.logout()
+                    withAnimation {
+                        self.showMenu = false
+                    }
                 }) {
                     Image(systemName: "person")
                     Text("Logout")
@@ -75,6 +88,6 @@ struct MenuView: View {
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView()
+        MenuView(showMenu: .constant(true))
     }
 }

@@ -18,7 +18,7 @@ class AppState: NSObject, ObservableObject {
         }
     }
 
-    @Published var showMenu: Bool = false
+    // @Published var showMenu: Bool = false
     @Published var showPlayer: Bool = false
 
     @Injector var session: WallabagSession

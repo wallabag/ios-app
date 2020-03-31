@@ -78,7 +78,6 @@ class Router: ObservableObject {
     var route: Route = .entries {
         willSet {
             logger.info("Router switch to route: \(newValue.title)")
-            appState.showMenu = false
             objectWillChange.send(self)
         }
     }
