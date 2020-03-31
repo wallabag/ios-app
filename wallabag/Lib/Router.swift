@@ -7,8 +7,8 @@
 
 import Combine
 import Foundation
-import SwiftUI
 import Logging
+import SwiftUI
 
 enum Route: Equatable {
     case tips
@@ -77,7 +77,7 @@ class Router: ObservableObject {
 
     var route: Route = .entries {
         willSet {
-            logger.info("Router switch to route: \(route.title)")
+            logger.info("Router switch to route: \(newValue.title)")
             appState.showMenu = false
             objectWillChange.send(self)
         }

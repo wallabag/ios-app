@@ -68,10 +68,34 @@ class WallabagSession: ObservableObject {
     }
 
     func add(tag: String, for entry: Entry) {
-        _ = kit.send(decodable: WallabagEntry.self, to: WallabagEntryEndpoint.addTag(tag: tag, entry: entry.id)).sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { value in Log(value) })
+        kit.send(decodable: WallabagEntry.self, to: WallabagEntryEndpoint.addTag(tag: tag, entry: entry.id))
+            .sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { wallabagEntry in
+                self.syncTag(for: entry, with: wallabagEntry)
+            })
+            .store(in: &cancellable)
     }
 
     func delete(tag: Tag, for entry: Entry) {
-        _ = kit.send(decodable: WallabagEntry.self, to: WallabagEntryEndpoint.deleteTag(tagId: tag.id, entry: entry.id)).sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { _ in })
+        kit.send(decodable: WallabagEntry.self, to: WallabagEntryEndpoint.deleteTag(tagId: tag.id, entry: entry.id)).sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { wallabagEntry in
+            self.syncTag(for: entry, with: wallabagEntry)
+        })
+            .store(in: &cancellable)
+    }
+
+    private func syncTag(for entry: Entry, with wallabagEntry: WallabagEntry) {
+        entry.tags.removeAll()
+
+        wallabagEntry.tags?.forEach { wallabagTag in
+            if let tag = try? self.coreDataContext.fetch(Tag.fetchOneById(wallabagTag.id)).first {
+                entry.tags.insert(tag)
+            } else {
+                let tag = Tag(context: self.coreDataContext)
+                tag.id = wallabagTag.id
+                tag.slug = wallabagTag.slug
+                tag.label = wallabagTag.label
+                entry.tags.insert(tag)
+            }
+        }
+        try? coreDataContext.save()
     }
 }

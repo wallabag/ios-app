@@ -32,6 +32,7 @@
 		9C1EB6E823573DD700A5E54B /* EntryPictoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1EB6E723573DD700A5E54B /* EntryPictoImage.swift */; };
 		9C22CED82430B64D00B2C69F /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 9C22CED72430B64D00B2C69F /* Logging */; };
 		9C276C4C23856A8B006F590A /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C276C4B23856A8B006F590A /* Podcast.swift */; };
+		9C2B7D172433473500723D09 /* TagsForEntryPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2B7D162433473500723D09 /* TagsForEntryPublisher.swift */; };
 		9C327655238B031D0040D9D6 /* PasteBoardPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C327654238B031D0040D9D6 /* PasteBoardPublisher.swift */; };
 		9C327658238B03720040D9D6 /* PasteBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C327657238B03720040D9D6 /* PasteBoardView.swift */; };
 		9C37217122E107D200D363FB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37217022E107D200D363FB /* MainView.swift */; };
@@ -217,6 +218,7 @@
 		9C19F8E222707707009450F9 /* RetrieveModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveModeTests.swift; sourceTree = "<group>"; };
 		9C1EB6E723573DD700A5E54B /* EntryPictoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPictoImage.swift; sourceTree = "<group>"; };
 		9C276C4B23856A8B006F590A /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
+		9C2B7D162433473500723D09 /* TagsForEntryPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsForEntryPublisher.swift; sourceTree = "<group>"; };
 		9C327654238B031D0040D9D6 /* PasteBoardPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteBoardPublisher.swift; sourceTree = "<group>"; };
 		9C327657238B03720040D9D6 /* PasteBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteBoardView.swift; sourceTree = "<group>"; };
 		9C37217022E107D200D363FB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -521,6 +523,7 @@
 				9C327654238B031D0040D9D6 /* PasteBoardPublisher.swift */,
 				9C7663F723F4439E00232B08 /* SKPublisher.swift */,
 				9C52706923F8AAED00DF0058 /* ErrorPublisher.swift */,
+				9C2B7D162433473500723D09 /* TagsForEntryPublisher.swift */,
 			);
 			path = Publisher;
 			sourceTree = "<group>";
@@ -1174,6 +1177,7 @@
 				9CCC4AFE22E5D92E00F73891 /* Password.swift in Sources */,
 				BF_B65C56029A480EC410440D0564ACCC07 /* Bool.swift in Sources */,
 				BF_C9F13CB7B3B557E809E6D9898B0791C2 /* Date.swift in Sources */,
+				9C2B7D172433473500723D09 /* TagsForEntryPublisher.swift in Sources */,
 				9C97F3D223B23E41004C682E /* EntriesListView.swift in Sources */,
 				BF_330993596D71B361978BE9F6CC8CE80C /* Dictionary.swift in Sources */,
 				BF_B9C6AF04850C3AB60715C3FF13432B78 /* Entry.swift in Sources */,
@@ -1643,7 +1647,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FR_D25A5811CCA84B9080305DDA9A796022 /* bagit-Release.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 253;
+				CURRENT_PROJECT_VERSION = 254;
 				MARKETING_VERSION = 5.0.1;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1666,7 +1670,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FR_3C63EF667F0034B52FD8C3A71EAA05F7 /* bagit-Debug.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 253;
+				CURRENT_PROJECT_VERSION = 254;
 				MARKETING_VERSION = 5.0.1;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1678,7 +1682,7 @@
 			baseConfigurationReference = FR_7ABC493E8F892DF451AABBB415AFE326 /* wallabag-Debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 253;
+				CURRENT_PROJECT_VERSION = 254;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1701,7 +1705,7 @@
 			baseConfigurationReference = FR_5DE83659FDAF5871759C0A7D752A7823 /* wallabag-Release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 253;
+				CURRENT_PROJECT_VERSION = 254;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

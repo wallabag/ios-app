@@ -11,13 +11,13 @@ struct BugReportView: View {
     var body: some View {
         VStack {
             Text("""
-Wallabag is an open source project.
-You can help this project and this application to be a better application.
+            Wallabag is an open source project.
+            You can help this project and this application to be a better application.
 
-Open source is not just writing the code, but a state of mind in which everyone can use their means to advance the application.
+            Open source is not just writing the code, but a state of mind in which everyone can use their means to advance the application.
 
-Reporting a bug is a big help! But you can also just suggest improvements for example.
-""")
+            Reporting a bug is a big help! But you can also just suggest improvements for example.
+            """)
             Spacer()
             Button(action: {
                 UIApplication.shared.open("https://github.com/wallabag/ios-app/issues")

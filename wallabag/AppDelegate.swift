@@ -9,10 +9,10 @@
 import CoreSpotlight
 import Crashlytics
 import Fabric
+import Logging
 import Swinject
 import UIKit
 import UserNotifications
-import Logging
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         container.register(WallabagKit.self, factory: { _ in WallabagKit(host: WallabagUserDefaults.host) }).inObjectScope(.container)
         container.register(WallabagSession.self, factory: { _ in WallabagSession() }).inObjectScope(.container)
         container.register(AppSync.self, factory: { _ in AppSync() }).inObjectScope(.container)
-        container.register(ArticlePlayer.self) { _ in ArticlePlayer()}.inObjectScope(.container)
+        container.register(ArticlePlayer.self) { _ in ArticlePlayer() }.inObjectScope(.container)
         container.register(ImageDownloader.self, factory: { _ in ImageDownloader.shared }).inObjectScope(.container)
         container.register(AppState.self, factory: { _ in AppState() }).inObjectScope(.container)
         container.register(Router.self, factory: { _ in Router() }).inObjectScope(.container)
