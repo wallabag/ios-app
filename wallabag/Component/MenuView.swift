@@ -53,9 +53,8 @@ struct MenuView: View {
                         self.showMenu = false
                     }
                 }) {
-                    Image(systemName: "ant")
-                        .frame(width: 24)
-                    Text("Bug report")
+                    Image(systemName: "ant").padding(.leading, 2)
+                    Text("Bug report").padding(.leading, 2)
                 }
             }
             HStack {
@@ -76,8 +75,8 @@ struct MenuView: View {
                         self.showMenu = false
                     }
                 }) {
-                    Image(systemName: "person")
-                    Text("Logout")
+                    Image(systemName: "person").padding(.leading, 2)
+                    Text("Logout").padding(.leading, 3)
                 }.foregroundColor(.red)
             }
         }

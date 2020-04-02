@@ -78,6 +78,7 @@ class Router: ObservableObject {
     var route: Route = .entries {
         willSet {
             logger.info("Router switch to route: \(newValue.title)")
+
             objectWillChange.send(self)
         }
     }
