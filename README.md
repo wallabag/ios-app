@@ -12,7 +12,7 @@ wallabag 2 official iOS is a companion app for [wallabag](https://www.wallabag.o
 	</a>
 </p>
 
-[Join TestFlight Beta](https://testflight.apple.com/join/RF9hzKHt)
+[Join TestFlight Beta](https://apple.co/2HRfIcY)
 
 ## About wallabag
 
