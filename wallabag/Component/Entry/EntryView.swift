@@ -29,9 +29,6 @@ struct EntryView: View {
                 Spacer()
             }.padding(.horizontal)
             WebView(entry: entry)
-            if showTag {
-                TagListFor(entry: entry)
-            }
             HStack {
                 ArchiveEntryButton(entry: entry, showText: false)
                 StarEntryButton(entry: entry, showText: false)
@@ -53,6 +50,11 @@ struct EntryView: View {
             }
             .padding()
             // PlayerView()
+        }.sheet(isPresented: $showTag) {
+            TagListFor(tagsForEntry: TagsForEntryPublisher(entry: self.entry))
+                // .environmentObject(self.appState)
+                // .environmentObject(self.entry)
+                .environment(\.managedObjectContext, CoreData.shared.viewContext)
         }
     }
 }

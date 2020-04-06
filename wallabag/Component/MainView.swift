@@ -12,13 +12,14 @@ struct MainView: View {
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var router: Router
     @EnvironmentObject var errorPublisher: ErrorPublisher
+    @State private var showMenu: Bool = false
 
     var header: some View {
         HStack {
             if router.route.showMenuButton {
                 Button(action: {
                     withAnimation {
-                        self.appState.showMenu.toggle()
+                        self.showMenu.toggle()
                     }
                 }, label: { Image(systemName: "list.bullet") })
             }
@@ -33,16 +34,21 @@ struct MainView: View {
     }
 
     var body: some View {
-        HStack {
-            if appState.showMenu {
-                MenuView()
-            }
-            VStack {
-                if router.route.showHeader {
-                    header.padding(.horizontal).padding(.top, 15)
+        GeometryReader { geometry in
+            ZStack(alignment: .leading) {
+                VStack {
+                    if self.router.route.showHeader {
+                        self.header.padding(.horizontal).padding(.top, 15)
+                    }
+                    ErrorView()
+                    self.routedView()
+                }.frame(width: geometry.size.width, height: geometry.size.height)
+                    .offset(x: self.showMenu ? geometry.size.width / 2 : 0)
+                if self.showMenu {
+                    MenuView(showMenu: self.$showMenu)
+                        .frame(width: geometry.size.width / 2)
+                        .transition(.move(edge: .leading))
                 }
-                ErrorView()
-                routedView()
             }
         }
     }
@@ -55,7 +61,6 @@ struct MainView: View {
             return AnyView(AboutView()).id("aboutView")
         case .entries:
             return AnyView(EntriesView()
-                .environmentObject(AppSync())
                 .environmentObject(appState)).id("entriesView")
         case let .entry(entry):
             return AnyView(EntryView(entry: entry)).id("entryView")
@@ -63,6 +68,8 @@ struct MainView: View {
             return AnyView(TipView()).id("tipView")
         case .registration:
             return AnyView(RegistrationView().environmentObject(appState)).id("Registration")
+        case .bugReport:
+            return AnyView(BugReportView()).id("bugRetport")
         }
     }
 }

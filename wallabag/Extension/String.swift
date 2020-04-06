@@ -43,4 +43,13 @@ extension String {
     var url: URL? {
         URL(string: self)
     }
+
+    /**
+     * Check if string is valid URL
+     */
+    var isValidURL: Bool {
+        let regEx = "((https|http)://)((\\w|-)+)(([.]|[/])((\\w|-)+))+(:\\d+)?"
+        let predicate = NSPredicate(format: "SELF MATCHES %@", argumentArray: [regEx])
+        return predicate.evaluate(with: self)
+    }
 }

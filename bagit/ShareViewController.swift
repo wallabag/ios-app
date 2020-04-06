@@ -78,7 +78,6 @@ class ShareViewController: UIViewController {
                     }
                 }, receiveValue: { _ in
                     self.getUrl { shareURL in
-                        Log(shareURL)
                         guard let shareURL = shareURL else {
                             self.clearView(withError: .retrievingURL)
                             return

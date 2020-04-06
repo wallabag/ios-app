@@ -8,7 +8,9 @@
 import CoreData
 import Foundation
 
-class Tag: NSManagedObject, Identifiable {}
+class Tag: NSManagedObject, Identifiable {
+    @Published var isChecked: Bool = false
+}
 
 extension Tag {
     @nonobjc public class func fetchRequestSorted() -> NSFetchRequest<Tag> {

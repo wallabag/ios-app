@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "1100"
-   version = "1.3">
+   version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -20,13 +20,28 @@
                ReferencedContainer = "container:wallabag.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "NT_CB245D289C47CA3177DD28B514882F44"
+               BuildableName = "wallabagTests.xctest"
+               BlueprintName = "wallabagTests"
+               ReferencedContainer = "container:wallabag.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
@@ -36,9 +51,15 @@
             ReferencedContainer = "container:wallabag.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <TestPlans>
+         <TestPlanReference
+            reference = "container:wallabag.xcodeproj/wallabag.xctestplan"
+            default = "YES">
+         </TestPlanReference>
+      </TestPlans>
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9C961B2222770ECE009F80A4"
@@ -48,7 +69,7 @@
             </BuildableReference>
          </TestableReference>
          <TestableReference
-            skipped = "NO">
+            skipped = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9C4C1F84240E7E340029FBC9"
@@ -56,6 +77,39 @@
                BlueprintName = "wallabagScreenshotTests"
                ReferencedContainer = "container:wallabag.xcodeproj">
             </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "NT_CB245D289C47CA3177DD28B514882F44"
+               BuildableName = "wallabagTests.xctest"
+               BlueprintName = "wallabagTests"
+               ReferencedContainer = "container:wallabag.xcodeproj">
+            </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "RetrieveModeTests">
+               </Test>
+               <Test
+                  Identifier = "StringTests">
+               </Test>
+               <Test
+                  Identifier = "TokenAdapterTests">
+               </Test>
+               <Test
+                  Identifier = "WallabagAuthErrorTests">
+               </Test>
+               <Test
+                  Identifier = "WallabagAuthSuccessTests">
+               </Test>
+               <Test
+                  Identifier = "WallabagKitCollectionTests">
+               </Test>
+               <Test
+                  Identifier = "WallabagKitTests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
    </TestAction>

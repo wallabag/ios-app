@@ -8,8 +8,11 @@
 import XCTest
 
 class BoolTests: XCTestCase {
-    func testInt() {
+    func testTrue() {
         XCTAssertEqual(1, true.int)
+    }
+
+    func testFalse() {
         XCTAssertEqual(0, false.int)
     }
 }

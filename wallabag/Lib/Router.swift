@@ -7,6 +7,7 @@
 
 import Combine
 import Foundation
+import Logging
 import SwiftUI
 
 enum Route: Equatable {
@@ -16,6 +17,7 @@ enum Route: Equatable {
     case entry(Entry)
     case addEntry
     case registration
+    case bugReport
 
     var title: String {
         switch self {
@@ -31,6 +33,8 @@ enum Route: Equatable {
             return "About"
         case .registration:
             return "Registration"
+        case .bugReport:
+            return "Bug report"
         }
     }
 
@@ -40,7 +44,7 @@ enum Route: Equatable {
 
     var showHeader: Bool {
         switch self {
-        case .entry:
+        case .entry, .registration:
             return false
         default:
             return true
@@ -54,7 +58,7 @@ enum Route: Equatable {
     var traillingButton: AnyView? {
         switch self {
         case .entries:
-            return AnyView(RefreshButton(appSync: AppSync()))
+            return AnyView(RefreshButton())
         default:
             return nil
         }
@@ -63,6 +67,7 @@ enum Route: Equatable {
 
 class Router: ObservableObject {
     @Injector var appState: AppState
+    @Injector var logger: Logger
 
     var objectWillChange = PassthroughSubject<Router, Never>()
 
@@ -72,7 +77,8 @@ class Router: ObservableObject {
 
     var route: Route = .entries {
         willSet {
-            appState.showMenu = false
+            logger.info("Router switch to route: \(newValue.title)")
+
             objectWillChange.send(self)
         }
     }

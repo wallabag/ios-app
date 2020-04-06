@@ -1,0 +1,54 @@
+{
+  "configurations" : [
+    {
+      "id" : "DCA44D9C-8C4A-4562-B6A8-D8F50B5F2D8F",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:wallabag.xcodeproj",
+      "identifier" : "NT_BD23E71198CA112A6681701D37EB5AFF",
+      "name" : "wallabag"
+    }
+  },
+  "testTargets" : [
+    {
+      "enabled" : false,
+      "target" : {
+        "containerPath" : "container:wallabag.xcodeproj",
+        "identifier" : "9C961B2222770ECE009F80A4",
+        "name" : "wallabagUITests"
+      }
+    },
+    {
+      "enabled" : false,
+      "target" : {
+        "containerPath" : "container:wallabag.xcodeproj",
+        "identifier" : "9C4C1F84240E7E340029FBC9",
+        "name" : "wallabagScreenshotTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "skippedTests" : [
+        "RetrieveModeTests",
+        "StringTests",
+        "TokenAdapterTests",
+        "WallabagAuthErrorTests",
+        "WallabagAuthSuccessTests",
+        "WallabagKitCollectionTests",
+        "WallabagKitTests"
+      ],
+      "target" : {
+        "containerPath" : "container:wallabag.xcodeproj",
+        "identifier" : "NT_CB245D289C47CA3177DD28B514882F44",
+        "name" : "wallabagTests"
+      }
+    }
+  ],
+  "version" : 1
+}

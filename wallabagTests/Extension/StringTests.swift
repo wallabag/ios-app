@@ -37,4 +37,33 @@ class StringTests: XCTestCase {
 
         XCTAssertEqual("test", string.lcFirst)
     }
+
+    func testWithoutHTML() {
+        XCTAssertEqual("hello world", "<p>hello world</p>".withoutHTML)
+    }
+
+    func testSpeakable() {
+        let speakable = "<p>hello world</p><p>Second</p>".speakable
+        XCTAssertEqual(2, speakable.count)
+    }
+
+    func testURL() {
+        XCTAssertNil("".url)
+        XCTAssertTrue("https://app.wallabag.it".url != nil)
+    }
+
+    func testIsValidURLFalse() {
+        XCTAssertFalse("app".isValidURL)
+        XCTAssertFalse("https://".isValidURL)
+    }
+
+    func testIsValidURL() {
+        XCTAssertFalse("app".isValidURL)
+        XCTAssertTrue("https://app.wallabag.it".isValidURL)
+    }
+
+    func testIsValidURLWithPort() {
+        XCTAssertFalse("app".isValidURL)
+        XCTAssertTrue("https://app.wallabag.it:9000".isValidURL)
+    }
 }

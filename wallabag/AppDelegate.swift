@@ -9,6 +9,7 @@
 import CoreSpotlight
 import Crashlytics
 import Fabric
+import Logging
 import Swinject
 import UIKit
 import UserNotifications
@@ -17,19 +18,18 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
     let container: Container = {
         let container = Container()
-        container.register(AnalyticsManager.self) { _ in AnalyticsManager() }.inObjectScope(.container)
         container.register(ErrorPublisher.self) { _ in ErrorPublisher() }.inObjectScope(.container)
         container.register(WallabagKit.self, factory: { _ in WallabagKit(host: WallabagUserDefaults.host) }).inObjectScope(.container)
-        container.register(WallabagSession.self, factory: { _ in WallabagSession() })
-        container.register(ArticlePlayer.self) { resolver in
-            let articlePlayer = ArticlePlayer()
-            articlePlayer.analytics = resolver.resolve(AnalyticsManager.self)
-            return articlePlayer
-        }.inObjectScope(.container)
+        container.register(WallabagSession.self, factory: { _ in WallabagSession() }).inObjectScope(.container)
+        container.register(AppSync.self, factory: { _ in AppSync() }).inObjectScope(.container)
+        container.register(ArticlePlayer.self) { _ in ArticlePlayer() }.inObjectScope(.container)
         container.register(ImageDownloader.self, factory: { _ in ImageDownloader.shared }).inObjectScope(.container)
         container.register(AppState.self, factory: { _ in AppState() }).inObjectScope(.container)
         container.register(Router.self, factory: { _ in Router() }).inObjectScope(.container)
         container.register(PlayerPublisher.self, factory: { _ in PlayerPublisher() }).inObjectScope(.container)
+        container.register(Logger.self, factory: { _ in
+            Logger(label: "fr.district-web.wallabag")
+        }).inObjectScope(.container)
 
         return container
     }()

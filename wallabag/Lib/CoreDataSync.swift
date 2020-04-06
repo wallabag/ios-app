@@ -8,18 +8,20 @@
 import Combine
 import CoreData
 import Foundation
+import SwiftyLogger
 
 class CoreDataSync {
     private var objectsDidChangeCancellable: AnyCancellable?
 
-    @Injector var appState: AppState
+    @Injector var appSync: AppSync
+    @Injector var wallabagSession: WallabagSession
 
     init() {
         objectsDidChangeCancellable = NotificationCenter.default
             .publisher(for: .NSManagedObjectContextObjectsDidChange)
             .receive(on: DispatchQueue.main)
             .sink { notification in
-                if !self.appState.refreshing {
+                if !self.appSync.inProgress {
                     if let updatedObjs = notification.userInfo?[NSUpdatedObjectsKey] as? Set<NSManagedObject>, !updatedObjs.isEmpty {
                         self.updatedObjects(updatedObjs)
                     }
@@ -37,13 +39,13 @@ class CoreDataSync {
             .filter { $0 is Entry }
             .map { entry -> Entry in entry as! Entry }
             .forEach { entry in
-                self.appState.session.delete(entry: entry)
+                self.wallabagSession.delete(entry: entry)
             }
     }
 
     private func updatedObjects(_ updatedObjects: Set<NSManagedObject>) {
         updatedObjects.forEach { [unowned self] object in
-            var changedValues = object.changedValuesForCurrentEvent()
+            var changedValues = object.changedValues()
 
             // MARK: ENTRY
 
@@ -52,7 +54,7 @@ class CoreDataSync {
                 changedValues.removeValue(forKey: "tags")
                 if changedValues.count > 0 {
                     Log("Push update entry \(entry.id) to remote")
-                    self.appState.session.update(
+                    self.wallabagSession.update(
                         entry,
                         parameters:
                         [
