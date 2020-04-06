@@ -52,8 +52,18 @@ class StringTests: XCTestCase {
         XCTAssertTrue("https://app.wallabag.it".url != nil)
     }
 
+    func testIsValidURLFalse() {
+        XCTAssertFalse("app".isValidURL)
+        XCTAssertFalse("https://".isValidURL)
+    }
+
     func testIsValidURL() {
         XCTAssertFalse("app".isValidURL)
         XCTAssertTrue("https://app.wallabag.it".isValidURL)
+    }
+
+    func testIsValidURLWithPort() {
+        XCTAssertFalse("app".isValidURL)
+        XCTAssertTrue("https://app.wallabag.it:9000".isValidURL)
     }
 }
