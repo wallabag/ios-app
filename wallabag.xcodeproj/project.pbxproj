@@ -112,7 +112,7 @@
 		BF_20305CD3F44AD3F0A300A08D28D4712F /* EntriesCollection.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_89CBFB2A6488E68DF37E66008BC3A23A /* EntriesCollection.json */; };
 		BF_218B02857CD5370E001E1DEDBCD9DA81 /* XCTExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_C9900CB03BB06DCC825054DAFDE4D907 /* XCTExtension.swift */; };
 		BF_27B3C5BB859104CEF0AB1D52843622B4 /* WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_3996D9FD806100BF0335AAE1A4EE148E /* WKWebView.swift */; };
-		BF_2B92FCD9D4DF3C35C6CEAE0D4A46F98F /* bagit.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FR_A558DD3F249C938DA7F179688063D500 /* bagit.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BF_2B92FCD9D4DF3C35C6CEAE0D4A46F98F /* bagit.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FR_A558DD3F249C938DA7F179688063D500 /* bagit.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BF_330993596D71B361978BE9F6CC8CE80C /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_F7BDFB5A5171A43D14D5E7009B3AF255 /* Dictionary.swift */; };
 		BF_3405357D2A8A06979EC0F11E7AEEBCF2 /* ratatouille.css in Resources */ = {isa = PBXBuildFile; fileRef = FR_C6ACC6D258ADB3D12E651FB3A8EA41AA /* ratatouille.css */; };
 		BF_3C34FF37F2AAB722ED3278184555355B /* WallabagAuthSuccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_709ED9B3B72198FF7033B14173B6DE6E /* WallabagAuthSuccessTests.swift */; };
@@ -1327,6 +1327,7 @@
 		};
 		TD_5C6AA7FEAE76C0A4A69DF856CAB03102 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = NT_489A0A0E84B6A7E06B0FAA10CDEBABA5 /* bagit */;
 			targetProxy = CIP_FA80C5FDD9AB4C553980D36FC3D391FA /* PBXContainerItemProxy */;
 		};
@@ -1682,7 +1683,8 @@
 			baseConfigurationReference = FR_3C63EF667F0034B52FD8C3A71EAA05F7 /* bagit-Debug.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 274;
-				MARKETING_VERSION = 5.1.2;
+				MARKETING_VERSION = 5.1.0;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1704,6 +1706,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 5.1.0;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
@@ -1726,6 +1729,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 5.1.0;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
