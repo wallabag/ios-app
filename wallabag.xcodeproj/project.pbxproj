@@ -1689,7 +1689,7 @@
 			baseConfigurationReference = FR_D25A5811CCA84B9080305DDA9A796022 /* bagit-Release.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 265;
-				MARKETING_VERSION = 5.0.2;
+				MARKETING_VERSION = 5.1.0;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1712,7 +1712,7 @@
 			baseConfigurationReference = FR_3C63EF667F0034B52FD8C3A71EAA05F7 /* bagit-Debug.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 265;
-				MARKETING_VERSION = 5.0.2;
+				MARKETING_VERSION = 5.1.2;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1733,7 +1733,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.0.2;
+				MARKETING_VERSION = 5.1.0;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
@@ -1755,7 +1755,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.0.2;
+				MARKETING_VERSION = 5.1.0;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
