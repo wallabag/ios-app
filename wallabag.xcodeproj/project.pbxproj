@@ -39,6 +39,7 @@
 		9C37217322E1087800D363FB /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37217222E1087800D363FB /* RegistrationView.swift */; };
 		9C37217522E1134600D363FB /* ServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37217422E1134600D363FB /* ServerView.swift */; };
 		9C37217722E1171100D363FB /* ClientIdClientSecretView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37217622E1171100D363FB /* ClientIdClientSecretView.swift */; };
+		9C39A4D724450CBA0041269B /* Publishers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C39A4D624450CBA0041269B /* Publishers.swift */; };
 		9C3F13E42353D4C800303AA8 /* WallabagCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F13E32353D4C800303AA8 /* WallabagCollection.swift */; };
 		9C40054A22E1DE3200A6E5CA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C40054922E1DE3200A6E5CA /* LoginView.swift */; };
 		9C45F6CB236069650021813B /* TagListFor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45F6CA236069650021813B /* TagListFor.swift */; };
@@ -225,6 +226,7 @@
 		9C37217222E1087800D363FB /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		9C37217422E1134600D363FB /* ServerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerView.swift; sourceTree = "<group>"; };
 		9C37217622E1171100D363FB /* ClientIdClientSecretView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientIdClientSecretView.swift; sourceTree = "<group>"; };
+		9C39A4D624450CBA0041269B /* Publishers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publishers.swift; sourceTree = "<group>"; };
 		9C3F13E32353D4C800303AA8 /* WallabagCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagCollection.swift; sourceTree = "<group>"; };
 		9C40054922E1DE3200A6E5CA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9C45F6CA236069650021813B /* TagListFor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListFor.swift; sourceTree = "<group>"; };
@@ -455,6 +457,14 @@
 			path = PasteBoard;
 			sourceTree = "<group>";
 		};
+		9C39A4D524450CA00041269B /* Publishers */ = {
+			isa = PBXGroup;
+			children = (
+				9C39A4D624450CBA0041269B /* Publishers.swift */,
+			);
+			path = Publishers;
+			sourceTree = "<group>";
+		};
 		9C45F6CC236069700021813B /* Tag */ = {
 			isa = PBXGroup;
 			children = (
@@ -519,10 +529,10 @@
 			children = (
 				9C5EDEE4234E842B00141DFD /* AppState.swift */,
 				9C66B6BC235667770068B968 /* AppSync.swift */,
-				9C03E4A0238474110060FF14 /* PlayerPublisher.swift */,
-				9C327654238B031D0040D9D6 /* PasteBoardPublisher.swift */,
-				9C7663F723F4439E00232B08 /* SKPublisher.swift */,
 				9C52706923F8AAED00DF0058 /* ErrorPublisher.swift */,
+				9C327654238B031D0040D9D6 /* PasteBoardPublisher.swift */,
+				9C03E4A0238474110060FF14 /* PlayerPublisher.swift */,
+				9C7663F723F4439E00232B08 /* SKPublisher.swift */,
 				9C2B7D162433473500723D09 /* TagsForEntryPublisher.swift */,
 			);
 			path = Publisher;
@@ -616,6 +626,7 @@
 		9CB41DC9234FC3BA00C2740B /* WallabagSDK */ = {
 			isa = PBXGroup;
 			children = (
+				9C39A4D524450CA00041269B /* Publishers */,
 				9C7AFE122353CE3400FBF989 /* Endpoint */,
 				9CB41DCD234FC44200C2740B /* WallabagKit.swift */,
 				9C7AFE0E2353CE0300FBF989 /* HttpMethod.swift */,
@@ -1231,6 +1242,7 @@
 				9C73EC4722D79093008663B1 /* EntriesView.swift in Sources */,
 				9C148527235E3F680082D7BB /* CoreDataViewContext.swift in Sources */,
 				9CA5D4C622E092B500167574 /* WebView.swift in Sources */,
+				9C39A4D724450CBA0041269B /* Publishers.swift in Sources */,
 				9CA8EA7E2357AFE100F149A9 /* AddEntryView.swift in Sources */,
 				9C66B6C5235680130068B968 /* ArchiveEntryButton.swift in Sources */,
 				9C37217322E1087800D363FB /* RegistrationView.swift in Sources */,
