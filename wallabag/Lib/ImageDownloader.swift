@@ -5,10 +5,9 @@
 //  Created by Marinel Maxime on 05/11/2019.
 //
 
+import Combine
 import Foundation
 import UIKit
-import Combine
-import CryptoKit
 
 class ImageDownloader {
     static var shared: ImageDownloader = ImageDownloader()

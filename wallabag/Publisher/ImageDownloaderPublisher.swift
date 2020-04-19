@@ -5,9 +5,9 @@
 //  Created by Marinel Maxime on 19/04/2020.
 //
 
+import Combine
 import Foundation
 import UIKit.UIImage
-import Combine
 
 class ImageDownloaderPublisher: ObservableObject {
     @Published var image: UIImage?

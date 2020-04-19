@@ -10,15 +10,14 @@ import UIKit.UIImage
 
 // Implement memory Warning?
 class ImageCache {
-
     static var shared = ImageCache()
 
     private var cache: NSCache<NSString, UIImage> = {
         let cache = NSCache<NSString, UIImage>()
-        //Using cost limit ?
-        //cache.totalCostLimit
-        //Using count limit ?
-        //cache.countLimit = 40
+        // Using cost limit ?
+        // cache.totalCostLimit
+        // Using count limit ?
+        // cache.countLimit = 40
         return cache
     }()
 
@@ -28,7 +27,7 @@ class ImageCache {
         get {
             if let imageCacheMemory = cache.object(forKey: name.NSString) {
                 return imageCacheMemory
-           }
+            }
 
             if let imageCacheDir = load(name: name) {
                 cache.setObject(imageCacheDir, forKey: name.NSString)

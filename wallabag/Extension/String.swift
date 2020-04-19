@@ -6,8 +6,8 @@
 //  Copyright © 2016 maxime marinel. All rights reserved.
 //
 
-import Foundation
 import CryptoKit
+import Foundation
 
 extension String {
     var date: Date? {
@@ -46,7 +46,7 @@ extension String {
     }
 
     var md5: String {
-        Insecure.MD5.hash(data: self.data(using: .utf8)!).map {
+        Insecure.MD5.hash(data: data(using: .utf8)!).map {
             String(format: "%02hhx", $0)
         }.joined()
     }
