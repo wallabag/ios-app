@@ -34,9 +34,15 @@ struct WebView: UIViewRepresentable {
                 decisionHandler(.cancel)
                 return
             }
+
             let urlAbsolute = urlTarget.absoluteString
 
             if urlAbsolute.hasPrefix(Bundle.main.bundleURL.absoluteString) || urlAbsolute == "about:blank" {
+                decisionHandler(.allow)
+                return
+            }
+
+            if navigationAction.targetFrame?.isMainFrame == false {
                 decisionHandler(.allow)
                 return
             }
