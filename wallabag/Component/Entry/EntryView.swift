@@ -11,8 +11,6 @@ import SwiftUI
 struct EntryView: View {
     @EnvironmentObject var router: Router
     @ObservedObject var entry: Entry
-    @EnvironmentObject var appState: AppState
-    @EnvironmentObject var playerPublisher: PlayerPublisher
     @State var showTag: Bool = false
 
     var body: some View {
@@ -30,30 +28,22 @@ struct EntryView: View {
             }.padding(.horizontal)
             WebView(entry: entry)
             HStack {
-                ArchiveEntryButton(entry: entry, showText: false)
-                StarEntryButton(entry: entry, showText: false)
+                DeleteEntryButton(entry: entry, showText: false) {
+                    self.router.route = .entries
+                }
+                Spacer()
                 Button(action: {
                     self.showTag.toggle()
                 }, label: {
                     Image(systemName: self.showTag ? "tag.fill" : "tag")
                 })
-                /* Button(action: {
-                     self.playerPublisher.load(self.entry)
-                     self.appState.showPlayer = true
-                 }, label: {
-                     Image(systemName: "music.note.list")
-                 }) */
-                Spacer()
-                DeleteEntryButton(entry: entry, showText: false) {
-                    self.router.route = .entries
-                }
-            }
-            .padding()
+                StarEntryButton(entry: entry, showText: false)
+                ArchiveEntryButton(entry: entry, showText: false)
+            }.font(.system(size: 20))
+                .padding()
             // PlayerView()
         }.sheet(isPresented: $showTag) {
             TagListFor(tagsForEntry: TagsForEntryPublisher(entry: self.entry))
-                // .environmentObject(self.appState)
-                // .environmentObject(self.entry)
                 .environment(\.managedObjectContext, CoreData.shared.viewContext)
         }
     }
@@ -62,7 +52,10 @@ struct EntryView: View {
 #if DEBUG
     struct EntryView_Previews: PreviewProvider {
         static var previews: some View {
-            EntryView(entry: Entry())
+            EntryView(entry: Entry(context: CoreData.shared.viewContext))
+                .environmentObject(PlayerPublisher())
+                .environmentObject(Router())
+                .environment(\.managedObjectContext, CoreData.shared.viewContext)
         }
     }
 #endif
