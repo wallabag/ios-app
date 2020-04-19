@@ -26,6 +26,8 @@
 		9C148525235E3ED50082D7BB /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C148524235E3ED50082D7BB /* CoreData.swift */; };
 		9C148527235E3F680082D7BB /* CoreDataViewContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C148526235E3F680082D7BB /* CoreDataViewContext.swift */; };
 		9C14852A235E3FF00082D7BB /* wallabagStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C148528235E3FF00082D7BB /* wallabagStore.xcdatamodeld */; };
+		9C1786AC244CE4AD00DD1995 /* ImageDownloaderPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1786AB244CE4AD00DD1995 /* ImageDownloaderPublisher.swift */; };
+		9C1786AE244CFD4D00DD1995 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1786AD244CFD4D00DD1995 /* ImageCache.swift */; };
 		9C18B70F242508C800804F4D /* RegistrationClientIdSecretViewHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C18B70E242508C800804F4D /* RegistrationClientIdSecretViewHandlerTests.swift */; };
 		9C18B71124251C7100804F4D /* RegistrationLoginViewHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C18B71024251C7100804F4D /* RegistrationLoginViewHandlerTests.swift */; };
 		9C19F8E322707707009450F9 /* RetrieveModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19F8E222707707009450F9 /* RetrieveModeTests.swift */; };
@@ -213,6 +215,8 @@
 		9C148524235E3ED50082D7BB /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		9C148526235E3F680082D7BB /* CoreDataViewContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewContext.swift; sourceTree = "<group>"; };
 		9C148529235E3FF00082D7BB /* wallabagStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabagStore.xcdatamodel; sourceTree = "<group>"; };
+		9C1786AB244CE4AD00DD1995 /* ImageDownloaderPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderPublisher.swift; sourceTree = "<group>"; };
+		9C1786AD244CFD4D00DD1995 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		9C18B70E242508C800804F4D /* RegistrationClientIdSecretViewHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationClientIdSecretViewHandlerTests.swift; sourceTree = "<group>"; };
 		9C18B71024251C7100804F4D /* RegistrationLoginViewHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationLoginViewHandlerTests.swift; sourceTree = "<group>"; };
 		9C19F8E222707707009450F9 /* RetrieveModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveModeTests.swift; sourceTree = "<group>"; };
@@ -519,10 +523,11 @@
 			children = (
 				9C5EDEE4234E842B00141DFD /* AppState.swift */,
 				9C66B6BC235667770068B968 /* AppSync.swift */,
-				9C03E4A0238474110060FF14 /* PlayerPublisher.swift */,
-				9C327654238B031D0040D9D6 /* PasteBoardPublisher.swift */,
-				9C7663F723F4439E00232B08 /* SKPublisher.swift */,
 				9C52706923F8AAED00DF0058 /* ErrorPublisher.swift */,
+				9C1786AB244CE4AD00DD1995 /* ImageDownloaderPublisher.swift */,
+				9C327654238B031D0040D9D6 /* PasteBoardPublisher.swift */,
+				9C03E4A0238474110060FF14 /* PlayerPublisher.swift */,
+				9C7663F723F4439E00232B08 /* SKPublisher.swift */,
 				9C2B7D162433473500723D09 /* TagsForEntryPublisher.swift */,
 			);
 			path = Publisher;
@@ -835,6 +840,7 @@
 				9C7CBD0622D60B8A00EE1DE3 /* ArticlePlayer.swift */,
 				9C148524235E3ED50082D7BB /* CoreData.swift */,
 				9CFA9E3023D270F0004C89E3 /* CoreDataSync.swift */,
+				9C1786AD244CFD4D00DD1995 /* ImageCache.swift */,
 				9CC7D8AF2371DB2F0055884D /* ImageDownloader.swift */,
 				FR_290ECAC1FE613D28DF9CB4D061F101F9 /* KeychainPasswordItem.swift */,
 				FR_26E374F0AF1D1FBEC022213E082366DF /* RetrieveMode.swift */,
@@ -1207,6 +1213,7 @@
 				9C327658238B03720040D9D6 /* PasteBoardView.swift in Sources */,
 				9C52706A23F8AAED00DF0058 /* ErrorPublisher.swift in Sources */,
 				9C03E49F238473F10060FF14 /* PlayerView.swift in Sources */,
+				9C1786AE244CFD4D00DD1995 /* ImageCache.swift in Sources */,
 				9C45F6CB236069650021813B /* TagListFor.swift in Sources */,
 				9C148525235E3ED50082D7BB /* CoreData.swift in Sources */,
 				9C40054A22E1DE3200A6E5CA /* LoginView.swift in Sources */,
@@ -1224,6 +1231,7 @@
 				9C4C1F92240E85680029FBC9 /* AppDelegateExtension.swift in Sources */,
 				9CBCAF3A23F603320042D22E /* SKProduct.swift in Sources */,
 				9CB41DC4234FC03C00C2740B /* RegistrationServerViewHandler.swift in Sources */,
+				9C1786AC244CE4AD00DD1995 /* ImageDownloaderPublisher.swift in Sources */,
 				9C327655238B031D0040D9D6 /* PasteBoardPublisher.swift in Sources */,
 				9C73EC4422D79037008663B1 /* SceneDelegate.swift in Sources */,
 				9CCC4AFC22E3BFD400F73891 /* WallabagUserDefaults.swift in Sources */,
