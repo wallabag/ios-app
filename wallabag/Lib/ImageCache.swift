@@ -5,8 +5,9 @@
 //  Created by Marinel Maxime on 19/04/2020.
 //
 
+import Combine
 import Foundation
-import UIKit.UIImage
+import UIKit
 
 // Implement memory Warning?
 class ImageCache {
@@ -21,7 +22,16 @@ class ImageCache {
         return cache
     }()
 
-    private init() {}
+    private var cancellable: Cancellable?
+
+    private init() {
+        cancellable = NotificationCenter.default.publisher(for: UIApplication.didReceiveMemoryWarningNotification)
+            .sink(receiveValue: clearCache)
+    }
+
+    private func clearCache(_: Notification) {
+        cache.removeAllObjects()
+    }
 
     subscript(name: String) -> UIImage? {
         get {
