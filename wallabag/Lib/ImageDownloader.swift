@@ -23,7 +23,10 @@ class ImageDownloader {
             return Just(imageCache).eraseToAnyPublisher()
         }
 
-        return URLSession.shared.dataTaskPublisher(for: url)
+        var request = URLRequest(url: url)
+        request.allowsConstrainedNetworkAccess = false
+
+        return URLSession.shared.dataTaskPublisher(for: request)
             .subscribe(on: dispatchQueue)
             .compactMap { [unowned self] in
                 guard let image = UIImage(data: $0.data) else { return nil }
