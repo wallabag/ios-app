@@ -9,16 +9,12 @@ import Combine
 import Foundation
 import UIKit
 
-// Implement memory Warning?
 class ImageCache {
     static var shared = ImageCache()
 
-    private var cache: NSCache<NSString, UIImage> = {
+    private var memoryCache: NSCache<NSString, UIImage> = {
         let cache = NSCache<NSString, UIImage>()
-        // Using cost limit ?
-        // cache.totalCostLimit
-        // Using count limit ?
-        // cache.countLimit = 40
+        // set limit?
         return cache
     }()
 
@@ -26,43 +22,62 @@ class ImageCache {
 
     private init() {
         cancellable = NotificationCenter.default.publisher(for: UIApplication.didReceiveMemoryWarningNotification)
-            .sink(receiveValue: clearCache)
+            .sink(receiveValue: clearMemoryCache)
     }
 
-    private func clearCache(_: Notification) {
-        cache.removeAllObjects()
+    private func clearMemoryCache(_: Notification?) {
+        memoryCache.removeAllObjects()
     }
 
     subscript(name: String) -> UIImage? {
         get {
-            if let imageCacheMemory = cache.object(forKey: name.NSString) {
-                return imageCacheMemory
-            }
-
-            if let imageCacheDir = load(name: name) {
-                cache.setObject(imageCacheDir, forKey: name.NSString)
-                return imageCacheDir
-            }
-
-            return nil
+            get(name: name)
         }
         set {
             guard let image = newValue else { return }
-            store(image: image, name: name)
+            set(image, for: name)
         }
     }
 
-    func store(image: UIImage, name: String) {
-        cache.setObject(image, forKey: name as NSString)
+    func set(_ image: UIImage, for name: String) {
+        memoryCache.setObject(image, forKey: name as NSString)
+
         let url = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
         let filename = url.appendingPathComponent("\(name.md5).png")
 
-        // Or Jpeg with compression?
         try? image.pngData()?.write(to: filename)
     }
 
-    private func load(name: String) -> UIImage? {
+    func get(name: String) -> UIImage? {
+        if let imageCacheMemory = memoryCache.object(forKey: name.NSString) {
+            return imageCacheMemory
+        }
+
         let dir = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
-        return UIImage(contentsOfFile: URL(fileURLWithPath: dir.absoluteString).appendingPathComponent("\(name.md5).png").path)
+        let imageCacheDir = UIImage(contentsOfFile: URL(fileURLWithPath: dir.absoluteString).appendingPathComponent("\(name.md5).png").path)
+
+        if imageCacheDir != nil {
+            memoryCache.setObject(imageCacheDir!, forKey: name.NSString)
+
+            return imageCacheDir
+        }
+
+        return nil
+    }
+
+    func purge() {
+        clearMemoryCache(nil)
+
+        let url = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+        do {
+            let files = try FileManager.default.contentsOfDirectory(atPath: url.path)
+            print(url.path)
+            try files.forEach {
+                print(url.appendingPathComponent($0).path)
+                try FileManager.default.removeItem(atPath: url.appendingPathComponent($0).path)
+            }
+        } catch {
+            print("Error in cache purge")
+        }
     }
 }
