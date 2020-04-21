@@ -6,6 +6,7 @@
 //  Copyright © 2016 maxime marinel. All rights reserved.
 //
 
+import CryptoKit
 import Foundation
 
 extension String {
@@ -42,6 +43,16 @@ extension String {
 
     var url: URL? {
         URL(string: self)
+    }
+
+    var md5: String {
+        Insecure.MD5.hash(data: data(using: .utf8)!).map {
+            String(format: "%02hhx", $0)
+        }.joined()
+    }
+
+    var NSString: NSString {
+        self as NSString
     }
 
     /**

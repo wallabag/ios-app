@@ -5,28 +5,35 @@
 //  Created by Marinel Maxime on 05/11/2019.
 //
 
+import Combine
 import Foundation
 import UIKit
 
-struct ImageDownloader {
+class ImageDownloader {
     static var shared: ImageDownloader = ImageDownloader()
 
-    private var cache = NSCache<NSString, UIImage>()
+    private var cacheStore = ImageCache.shared
+
     private var dispatchQueue = DispatchQueue(label: "fr.district-web.wallabag.image-downloader", qos: .background)
 
     private init() {}
 
-    func loadImage(url: URL, completion: @escaping (UIImage) -> Void) {
-        if let imageCache = cache.object(forKey: url.absoluteString as NSString) {
-            completion(imageCache)
-        } else {
-            dispatchQueue.async {
-                URLSession.shared.dataTask(with: url) { data, _, _ in
-                    guard let data = data, let image = UIImage(data: data) else { return }
-                    self.cache.setObject(image, forKey: url.absoluteString as NSString)
-                    completion(image)
-                }.resume()
-            }
+    func loadImage(url: URL) -> AnyPublisher<UIImage?, Never> {
+        if let imageCache = cacheStore[url.absoluteString] {
+            return Just(imageCache).eraseToAnyPublisher()
         }
+
+        var request = URLRequest(url: url)
+        request.allowsConstrainedNetworkAccess = false
+
+        return URLSession.shared.dataTaskPublisher(for: request)
+            .subscribe(on: dispatchQueue)
+            .compactMap { [unowned self] in
+                guard let image = UIImage(data: $0.data) else { return nil }
+                self.cacheStore[url.absoluteString] = image
+                return image
+            }
+            .replaceError(with: nil)
+            .eraseToAnyPublisher()
     }
 }
