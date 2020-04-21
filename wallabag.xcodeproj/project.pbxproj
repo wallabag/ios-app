@@ -115,6 +115,7 @@
 		9CEDCE9324240A78005C2BD8 /* RegistrationServerViewHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEDCE9224240A78005C2BD8 /* RegistrationServerViewHandlerTests.swift */; };
 		9CFA9E3123D270F0004C89E3 /* CoreDataSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFA9E3023D270F0004C89E3 /* CoreDataSync.swift */; };
 		9CFDB7BD244ECC28002B465E /* ImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFDB7BC244ECC28002B465E /* ImageCacheTests.swift */; };
+		9CFDB7BF244EE6A5002B465E /* ImageDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFDB7BE244EE6A5002B465E /* ImageDownloaderTests.swift */; };
 		BF_0576133F70765A88C0F8BD8FC41C19EE /* article.html in Resources */ = {isa = PBXBuildFile; fileRef = FR_317F9C93FC0631DF00AB2E1FAEF90DD8 /* article.html */; };
 		BF_0958BD47C0A373C73825495FA643F41D /* UbuntuTitling-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FR_1DE9D932C526142E220FFC665A0EC101 /* UbuntuTitling-Bold.ttf */; };
 		BF_20305CD3F44AD3F0A300A08D28D4712F /* EntriesCollection.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_89CBFB2A6488E68DF37E66008BC3A23A /* EntriesCollection.json */; };
@@ -306,6 +307,7 @@
 		9CEDCE9224240A78005C2BD8 /* RegistrationServerViewHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationServerViewHandlerTests.swift; sourceTree = "<group>"; };
 		9CFA9E3023D270F0004C89E3 /* CoreDataSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSync.swift; sourceTree = "<group>"; };
 		9CFDB7BC244ECC28002B465E /* ImageCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheTests.swift; sourceTree = "<group>"; };
+		9CFDB7BE244EE6A5002B465E /* ImageDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderTests.swift; sourceTree = "<group>"; };
 		FR_0D81D880CC2314E3DD84B9C8E00667AD /* wallabagUITests-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "wallabagUITests-Debug.xcconfig"; sourceTree = "<group>"; };
 		FR_0EF389E23F508F60AB1F657ECF52C8CF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FR_1BCA2B5D79E6386A16A4B6341BC136FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -439,6 +441,7 @@
 			children = (
 				9CFDB7BC244ECC28002B465E /* ImageCacheTests.swift */,
 				9C19F8E222707707009450F9 /* RetrieveModeTests.swift */,
+				9CFDB7BE244EE6A5002B465E /* ImageDownloaderTests.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -1292,6 +1295,7 @@
 				BF_C63B962A10CD74586351B9DB5E0FBBE1 /* WallabagKitTests.swift in Sources */,
 				BF_218B02857CD5370E001E1DEDBCD9DA81 /* XCTExtension.swift in Sources */,
 				9CEDCE9324240A78005C2BD8 /* RegistrationServerViewHandlerTests.swift in Sources */,
+				9CFDB7BF244EE6A5002B465E /* ImageDownloaderTests.swift in Sources */,
 				9C4D4B9C225B69C100FE3095 /* BoolTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

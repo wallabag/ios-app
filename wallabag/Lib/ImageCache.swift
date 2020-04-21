@@ -71,9 +71,7 @@ class ImageCache {
         let url = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
         do {
             let files = try FileManager.default.contentsOfDirectory(atPath: url.path)
-            print(url.path)
             try files.forEach {
-                print(url.appendingPathComponent($0).path)
                 try FileManager.default.removeItem(atPath: url.appendingPathComponent($0).path)
             }
         } catch {
