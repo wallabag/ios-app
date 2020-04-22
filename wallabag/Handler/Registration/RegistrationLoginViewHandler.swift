@@ -25,17 +25,14 @@ class RegistrationLoginViewHandler: ObservableObject {
             self.isValid = !login.isEmpty && !password.isEmpty
         }.store(in: &cancellable)
 
-        appState.session.$state.sink { [unowned self] state in
+        appState.session.$state.receive(on: DispatchQueue.main).sink { state in
             switch state {
             case let .error(reason):
-                DispatchQueue.main.async {
                     self.error = reason
-                }
             case .connected:
-                DispatchQueue.main.async { [weak self] in
-                    self?.appState.registred = true
-                    self?.router.route = .entries
-                }
+                    self.appState.registred = true
+                    self.router.route = .entries
+                
             case .unknown:
                 break
             case .connecting:
