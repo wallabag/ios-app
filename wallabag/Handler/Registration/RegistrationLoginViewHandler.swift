@@ -28,7 +28,9 @@ class RegistrationLoginViewHandler: ObservableObject {
         appState.session.$state.sink { [unowned self] state in
             switch state {
             case let .error(reason):
-                self.error = reason
+                DispatchQueue.main.async {
+                    self.error = reason
+                }
             case .connected:
                 DispatchQueue.main.async { [weak self] in
                     self?.appState.registred = true
