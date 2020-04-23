@@ -15,10 +15,10 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Run lint
-      uses: ./.github/actions/hello
-      id: hello
-      with:
-        who-to-greet: Mona the Octocat'
+      run: |
+        brew install swiftformat
+        swiftformat --lint .
+
 
     - name: Run tests
       run: xcodebuild clean test -scheme wallabag -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO | xcpretty
