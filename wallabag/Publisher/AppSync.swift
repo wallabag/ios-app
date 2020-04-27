@@ -18,7 +18,14 @@ class AppSync: ObservableObject {
     @Published private(set) var inProgress = false
     @Published private(set) var progress: Float = 0.0
 
-    private let syncQueue = DispatchQueue(label: "fr.district-web.wallabag.sync-queue", qos: .userInitiated)
+    private let operationQueue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.name = "fr.district-web.wallabag.sync-queue"
+        queue.qualityOfService = .userInitiated
+        queue.maxConcurrentOperationCount = 1
+        return queue
+    }()
+
     private var cancellable = Set<AnyCancellable>()
     private var backgroundContext: NSManagedObjectContext = {
         let context = CoreData.shared.persistentContainer.newBackgroundContext()
@@ -31,19 +38,7 @@ class AppSync: ObservableObject {
 
     func requestSync() {
         inProgress = true
-        session.$state.sink { state in
-            switch state {
-            case .connected:
-                self.sync()
-            case let .error(reason):
-                DispatchQueue.main.async {
-                    self.inProgress = false
-                    self.errorPublisher.lastError = .syncError(reason)
-                }
-            default:
-                break
-            }
-        }.store(in: &cancellable)
+        sync()
     }
 
     private func sync() {
@@ -56,9 +51,24 @@ class AppSync: ObservableObject {
 }
 
 // MARK: Entry
+
 extension AppSync {
     private func synchronizeEntries() {
-        let progressSubject = PassthroughSubject<Publishers.ScrollPublisher.Output, Error>()
+        let errorSubject = PassthroughSubject<Publishers.ScrollPublisher.Output, WallabagKitError>()
+        errorSubject
+            .mapError { WallabagError.wallabagKitError($0) }
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case let .failure(error):
+                    self.errorPublisher.lastError = error
+                case .finished:
+                    break
+                }
+            }, receiveValue: { _ in
+
+            }).store(in: &cancellable)
+        let progressSubject = PassthroughSubject<Publishers.ScrollPublisher.Output, WallabagKitError>()
         progressSubject.map { Float($0.0.0) / Float($0.0.1) * 100 }
             .replaceError(with: 0)
             .receive(on: DispatchQueue.main)
@@ -70,7 +80,7 @@ extension AppSync {
             .assign(to: \.progress, on: self)
             .store(in: &cancellable)
 
-        let entriesSubject = PassthroughSubject<Publishers.ScrollPublisher.Output, Error>()
+        let entriesSubject = PassthroughSubject<Publishers.ScrollPublisher.Output, WallabagKitError>()
         entriesSubject.map { $0.1 }
             .replaceError(with: [])
             .sink(receiveCompletion: { completion in
@@ -83,8 +93,11 @@ extension AppSync {
             .store(in: &cancellable)
 
         let scroll = Publishers.ScrollPublisher(kit: session.kit)
+            .subscribe(on: operationQueue)
             .share()
 
+        scroll.subscribe(errorSubject)
+            .store(in: &cancellable)
         scroll.subscribe(entriesSubject)
             .store(in: &cancellable)
         scroll.subscribe(progressSubject)
@@ -134,6 +147,7 @@ extension AppSync {
 }
 
 // MARK: Tag
+
 extension AppSync {
     private func applyTag(from wallabagEntry: WallabagEntry, to entry: Entry) {
         wallabagEntry.tags?.forEach { tag in
@@ -142,25 +156,22 @@ extension AppSync {
     }
 
     private func synchronizeTags() {
-        session.kit.send(
-            decodable: [WallabagTag].self,
-            to: WallabagTagEndpoint.get,
-            onQueue: syncQueue
-        )
-        .receive(on: syncQueue)
-        .sink(receiveCompletion: { _ in }, receiveValue: { tags in
-            tags.forEach { wallabagTag in
-                if let tag = try? self.backgroundContext.fetch(Tag.fetchOneById(wallabagTag.id)).first {
-                    self.tags[tag.id] = tag
-                } else {
-                    let tag = Tag(context: self.backgroundContext)
-                    tag.id = wallabagTag.id
-                    tag.label = wallabagTag.label
-                    tag.slug = wallabagTag.slug
-                    self.tags[wallabagTag.id] = tag
-                }
-            }
-            })
-        .store(in: &cancellable)
+        session.kit.send(to: WallabagTagEndpoint.get)
+            .subscribe(on: operationQueue)
+            .sink(receiveCompletion: { _ in },
+                  receiveValue: { (tags: [WallabagTag]) in
+                      tags.forEach { wallabagTag in
+                          if let tag = try? self.backgroundContext.fetch(Tag.fetchOneById(wallabagTag.id)).first {
+                              self.tags[tag.id] = tag
+                          } else {
+                              let tag = Tag(context: self.backgroundContext)
+                              tag.id = wallabagTag.id
+                              tag.label = wallabagTag.label
+                              tag.slug = wallabagTag.slug
+                              self.tags[wallabagTag.id] = tag
+                          }
+                      }
+              })
+            .store(in: &cancellable)
     }
 }
