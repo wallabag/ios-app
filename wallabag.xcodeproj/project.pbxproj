@@ -29,6 +29,8 @@
 		9C18B70F242508C800804F4D /* RegistrationClientIdSecretViewHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C18B70E242508C800804F4D /* RegistrationClientIdSecretViewHandlerTests.swift */; };
 		9C18B71124251C7100804F4D /* RegistrationLoginViewHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C18B71024251C7100804F4D /* RegistrationLoginViewHandlerTests.swift */; };
 		9C19F8E322707707009450F9 /* RetrieveModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19F8E222707707009450F9 /* RetrieveModeTests.swift */; };
+		9C1B481624578679005C75B1 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B481524578679005C75B1 /* Publisher.swift */; };
+		9C1B481724578805005C75B1 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B481524578679005C75B1 /* Publisher.swift */; };
 		9C1EB6E823573DD700A5E54B /* EntryPictoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1EB6E723573DD700A5E54B /* EntryPictoImage.swift */; };
 		9C22CED82430B64D00B2C69F /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 9C22CED72430B64D00B2C69F /* Logging */; };
 		9C276C4C23856A8B006F590A /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C276C4B23856A8B006F590A /* Podcast.swift */; };
@@ -217,6 +219,7 @@
 		9C18B70E242508C800804F4D /* RegistrationClientIdSecretViewHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationClientIdSecretViewHandlerTests.swift; sourceTree = "<group>"; };
 		9C18B71024251C7100804F4D /* RegistrationLoginViewHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationLoginViewHandlerTests.swift; sourceTree = "<group>"; };
 		9C19F8E222707707009450F9 /* RetrieveModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveModeTests.swift; sourceTree = "<group>"; };
+		9C1B481524578679005C75B1 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		9C1EB6E723573DD700A5E54B /* EntryPictoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPictoImage.swift; sourceTree = "<group>"; };
 		9C276C4B23856A8B006F590A /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 		9C2B7D162433473500723D09 /* TagsForEntryPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsForEntryPublisher.swift; sourceTree = "<group>"; };
@@ -457,12 +460,13 @@
 			path = PasteBoard;
 			sourceTree = "<group>";
 		};
-		9C39A4D524450CA00041269B /* Publishers */ = {
+		9C39A4D524450CA00041269B /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				9C39A4D624450CBA0041269B /* Publishers.swift */,
+				9C1B481524578679005C75B1 /* Publisher.swift */,
 			);
-			path = Publishers;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		9C45F6CC236069700021813B /* Tag */ = {
@@ -626,7 +630,7 @@
 		9CB41DC9234FC3BA00C2740B /* WallabagSDK */ = {
 			isa = PBXGroup;
 			children = (
-				9C39A4D524450CA00041269B /* Publishers */,
+				9C39A4D524450CA00041269B /* Extension */,
 				9C7AFE122353CE3400FBF989 /* Endpoint */,
 				9CB41DCD234FC44200C2740B /* WallabagKit.swift */,
 				9C7AFE0E2353CE0300FBF989 /* HttpMethod.swift */,
@@ -1226,6 +1230,7 @@
 				9CE32CBA234F648A004DD045 /* BundleKey.swift in Sources */,
 				BF_DB7F468621011B78AA80968FF9B4DD93 /* RetrieveMode.swift in Sources */,
 				9CFA9E3123D270F0004C89E3 /* CoreDataSync.swift in Sources */,
+				9C1B481624578679005C75B1 /* Publisher.swift in Sources */,
 				9C60DE2523606DAA00F78D02 /* TagRow.swift in Sources */,
 				9CD4F456242FCC71003B56CF /* URL.swift in Sources */,
 				BF_A31D94510D6C4BD65AC0122EB64626C8 /* String.swift in Sources */,
@@ -1288,6 +1293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C1B481724578805005C75B1 /* Publisher.swift in Sources */,
 				9CD4CEF623F1FD5200CF11EA /* ShareExtensionError.swift in Sources */,
 				BF_F455B9C80CD63DD87EF42992438C4F82 /* ShareViewController.swift in Sources */,
 				9C1410572374610B0080B1AC /* WallabagUserDefaults.swift in Sources */,

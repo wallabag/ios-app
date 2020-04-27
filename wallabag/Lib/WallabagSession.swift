@@ -31,7 +31,7 @@ class WallabagSession: ObservableObject {
         kit.password = WallabagUserDefaults.password
 
         state = .connecting
-        kit.getToken()
+        kit.requestToken()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 if case let .failure(error) = completion {
@@ -43,6 +43,7 @@ class WallabagSession: ObservableObject {
                     }
                 }
             }, receiveValue: { token in
+                guard let token = token else { self.state = .unknown; return }
                 WallabagUserDefaults.refreshToken = token.refreshToken
                 WallabagUserDefaults.accessToken = token.accessToken
                 self.kit.accessToken = token.accessToken

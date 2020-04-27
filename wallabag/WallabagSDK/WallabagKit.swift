@@ -41,26 +41,20 @@ public class WallabagKit {
         self.session = session
     }
 
-    // swiftlint:disable force_cast
-    func getToken() -> AnyPublisher<WallabagToken, WallabagKitError> {
-        let to = WallabagOauth.request(
+    func requestToken() -> AnyPublisher<WallabagToken?, WallabagKitError> {
+        let urlRequest = request(for: WallabagOauth.request(
             clientId: clientId ?? "",
             clientSecret: clientSecret ?? "",
             username: username ?? "",
             password: password ?? ""
-        )
-        var urlRequest = URLRequest(url: URL(string: "\(host)\(to.endpoint())")!)
-        urlRequest.httpMethod = to.method().rawValue
-        urlRequest.httpBody = to.getBody()
-        urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
-        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        ))
 
         return session.dataTaskPublisher(for: urlRequest)
-            .tryMap { data, response in
-                let res = response as! HTTPURLResponse
-                if 400 ... 401 ~= res.statusCode {
-                    if let poc = try? self.decoder.decode(WallabagJsonError.self, from: data) {
-                        throw WallabagKitError.jsonError(json: poc)
+            .tryMap { data, response -> Data in
+                guard let response = response as? HTTPURLResponse else { fatalError() }
+                if 400 ... 401 ~= response.statusCode {
+                    if let jsonError = try? self.decoder.decode(WallabagJsonError.self, from: data) {
+                        throw WallabagKitError.jsonError(json: jsonError)
                     } else {
                         throw WallabagKitError.unknown
                     }
@@ -68,59 +62,35 @@ public class WallabagKit {
                 return data
             }
             .decode(type: WallabagToken.self, decoder: decoder)
-            .mapError { error in
-                if let error = error as? WallabagKitError {
-                    return error
-                }
-
-                return WallabagKitError.wrap(error: error)
-            }
-            .eraseToAnyPublisher()
-    }
-
-    func requestToken() -> AnyPublisher<Bool, Never> {
-        let to = WallabagOauth.request(
-            clientId: clientId ?? "",
-            clientSecret: clientSecret ?? "",
-            username: username ?? "",
-            password: password ?? ""
-        )
-        var urlRequest = URLRequest(url: URL(string: "\(host)\(to.endpoint())")!)
-        urlRequest.httpMethod = to.method().rawValue
-        urlRequest.httpBody = to.getBody()
-        urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
-        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        return session.dataTaskPublisher(for: urlRequest)
-            .map { $0.data }
-            .decode(type: WallabagToken.self, decoder: decoder)
-            .map { token -> Bool in
+            .mapErrorToWallabagKitError()
+            .map { token in
                 self.accessToken = token.accessToken
                 self.refreshToken = token.refreshToken
-                return true
+                return token
             }
-            .replaceError(with: false)
             .eraseToAnyPublisher()
     }
 
-    // swiftlint:disable force_cast
-    func fetch(to: WallabagKitEndpoint) -> AnyPublisher<Data, WallabagKitError> {
-        var urlRequest = URLRequest(url: URL(string: "\(host)\(to.endpoint())")!)
-        urlRequest.httpMethod = to.method().rawValue
-        urlRequest.httpBody = to.getBody()
-        urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
-        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    func send<T: Decodable>(to: WallabagKitEndpoint) -> AnyPublisher<T, WallabagKitError> {
+        fetch(to: to)
+            .decode(type: T.self, decoder: decoder)
+            .mapErrorToWallabagKitError()
+            .eraseToAnyPublisher()
+    }
+
+    private func fetch(to: WallabagKitEndpoint) -> AnyPublisher<Data, WallabagKitError> {
+        var urlRequest = request(for: to)
         urlRequest.setValue("Bearer \(accessToken ?? "")", forHTTPHeaderField: "Authorization")
 
         return session.dataTaskPublisher(for: urlRequest)
             .tryMap { data, response in
-                let res = response as! HTTPURLResponse
+                guard let response = response as? HTTPURLResponse else { fatalError() }
 
-                if 401 == res.statusCode {
+                if 401 == response.statusCode {
                     throw WallabagKitError.authenticationRequired
                 }
 
-                if 400 ... 401 ~= res.statusCode {
+                if 400 ... 401 ~= response.statusCode {
                     if let poc = try? self.decoder.decode(WallabagJsonError.self, from: data) {
                         throw WallabagKitError.jsonError(json: poc)
                     } else {
@@ -131,8 +101,8 @@ public class WallabagKit {
             }
             .tryCatch { error in
                 self.requestToken()
-                    .tryMap { success -> AnyPublisher<Data, WallabagKitError> in
-                        if success {
+                    .tryMap { token -> AnyPublisher<Data, WallabagKitError> in
+                        if token != nil {
                             return self.fetch(to: to)
                         }
                         print("Refresh failed")
@@ -142,26 +112,17 @@ public class WallabagKit {
                     .switchToLatest()
                     .eraseToAnyPublisher()
             }
-            .mapError { error in
-                if let error = error as? WallabagKitError {
-                    return error
-                }
-
-                return WallabagKitError.wrap(error: error)
-            }
+            .mapErrorToWallabagKitError()
             .eraseToAnyPublisher()
     }
 
-    func send<T: Decodable>(to: WallabagKitEndpoint) -> AnyPublisher<T, WallabagKitError> {
-        fetch(to: to)
-            .decode(type: T.self, decoder: decoder)
-            .mapError { error in
-                if error is DecodingError {
-                    return WallabagKitError.decodingJSON
-                }
+    private func request(for endpoint: WallabagKitEndpoint) -> URLRequest {
+        var urlRequest = URLRequest(url: URL(string: "\(host)\(endpoint.endpoint())")!)
+        urlRequest.httpMethod = endpoint.method().rawValue
+        urlRequest.httpBody = endpoint.getBody()
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
-                return WallabagKitError.wrap(error: error)
-            }
-            .eraseToAnyPublisher()
+        return urlRequest
     }
 }
