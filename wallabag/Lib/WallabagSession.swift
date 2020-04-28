@@ -64,11 +64,13 @@ class WallabagSession: ObservableObject {
     }
 
     func update(_ entry: Entry, parameters: WallabagKit.Parameters) {
-        _ = kit.send(to: WallabagEntryEndpoint.update(id: entry.id, parameters: parameters)).sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { (_: WallabagEntry) in })
+        kit.send(to: WallabagEntryEndpoint.update(id: entry.id, parameters: parameters)).sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { (_: WallabagEntry) in })
+        .store(in: &cancellable)
     }
 
     func delete(entry: Entry) {
-        _ = kit.send(to: WallabagEntryEndpoint.delete(id: entry.id)).sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { (_: WallabagEntry) in })
+        kit.send(to: WallabagEntryEndpoint.delete(id: entry.id)).sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { (_: WallabagEntry) in })
+        .store(in: &cancellable)
     }
 
     func add(tag: String, for entry: Entry) {

@@ -83,13 +83,14 @@ extension AppSync {
         let entriesSubject = PassthroughSubject<Publishers.ScrollPublisher.Output, WallabagKitError>()
         entriesSubject.map { $0.1 }
             .replaceError(with: [])
-            .sink(receiveCompletion: { completion in
+            .handleEvents(receiveCompletion: { completion in
                 if completion == .finished {
+                    self.purge()
                     try? self.backgroundContext.save()
                     self.backgroundContext.reset()
-                    self.purge()
-                }
-            }, receiveValue: handleEntries(_:))
+
+                } })
+            .sink(receiveValue: handleEntries(_:))
             .store(in: &cancellable)
 
         let scroll = Publishers.ScrollPublisher(kit: session.kit)
@@ -127,21 +128,22 @@ extension AppSync {
     }
 
     private func purge() {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Entry")
-        fetchRequest.predicate = NSPredicate(format: "NOT (id IN %@)", argumentArray: [entriesSynced])
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        CoreData.shared.persistentContainer.performBackgroundTask { backgroundContext in
-            do {
-                let batchDeleteResult = try backgroundContext.execute(deleteRequest) as? NSBatchDeleteResult
+        if entriesSynced.count == 0 {
+            return
+        }
 
-                if let deletedObjectIDs = batchDeleteResult?.result as? [NSManagedObjectID] {
-                    NSManagedObjectContext.mergeChanges(fromRemoteContextSave: [NSDeletedObjectsKey: deletedObjectIDs],
-                                                        into: [self.coreDataContext])
-                }
-                try? backgroundContext.save()
-            } catch {
-                Log("Error in batch delete")
+        let fetchRequest = Entry.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "NOT (id IN %@)", argumentArray: [entriesSynced])
+
+        do {
+            let entriesToDelete = try backgroundContext.fetch(fetchRequest)
+            for entryToDelete in entriesToDelete {
+                guard let entryToDelete = entryToDelete as? NSManagedObject else { fatalError() }
+
+                backgroundContext.delete(entryToDelete)
             }
+        } catch {
+            Log("Error in batch delete")
         }
     }
 }
@@ -150,8 +152,9 @@ extension AppSync {
 
 extension AppSync {
     private func applyTag(from wallabagEntry: WallabagEntry, to entry: Entry) {
-        wallabagEntry.tags?.forEach { tag in
-            entry.tags.insert(self.tags[tag.id]!)
+        wallabagEntry.tags?.forEach { wallabagTag in
+            guard let tag = self.tags[wallabagTag.id] else { return }
+            entry.tags.insert(tag)
         }
     }
 
@@ -160,18 +163,18 @@ extension AppSync {
             .subscribe(on: operationQueue)
             .sink(receiveCompletion: { _ in },
                   receiveValue: { (tags: [WallabagTag]) in
-                      tags.forEach { wallabagTag in
-                          if let tag = try? self.backgroundContext.fetch(Tag.fetchOneById(wallabagTag.id)).first {
-                              self.tags[tag.id] = tag
-                          } else {
-                              let tag = Tag(context: self.backgroundContext)
-                              tag.id = wallabagTag.id
-                              tag.label = wallabagTag.label
-                              tag.slug = wallabagTag.slug
-                              self.tags[wallabagTag.id] = tag
-                          }
-                      }
-              })
+                    tags.forEach { wallabagTag in
+                        if let tag = try? self.backgroundContext.fetch(Tag.fetchOneById(wallabagTag.id)).first {
+                            self.tags[tag.id] = tag
+                        } else {
+                            let tag = Tag(context: self.backgroundContext)
+                            tag.id = wallabagTag.id
+                            tag.label = wallabagTag.label
+                            tag.slug = wallabagTag.slug
+                            self.tags[wallabagTag.id] = tag
+                        }
+                    }
+            })
             .store(in: &cancellable)
     }
 }
