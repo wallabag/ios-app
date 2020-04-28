@@ -44,8 +44,11 @@ class RegistrationLoginViewHandler: ObservableObject {
     }
 
     func tryLogin() {
+        error = nil
         WallabagUserDefaults.login = login
         WallabagUserDefaults.password = password
+        appState.session.kit.username = login
+        appState.session.kit.password = password
         appState.session.requestSession()
     }
 

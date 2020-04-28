@@ -35,7 +35,7 @@ class ShareViewController: UIViewController {
         return back
     }()
 
-    var authCancellabe: AnyCancellable?
+    private var requestCancellable: AnyCancellable?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,54 +49,30 @@ class ShareViewController: UIViewController {
     override func viewWillAppear(_: Bool) {
         if WallabagUserDefaults.registred {
             let kit = WallabagKit(host: WallabagUserDefaults.host)
+            kit.clientId = WallabagUserDefaults.clientId
+            kit.clientSecret = WallabagUserDefaults.clientSecret
+            kit.username = WallabagUserDefaults.login
+            kit.password = WallabagUserDefaults.password
 
-            // MARK: Auth
+            getUrl { shareURL in
+                guard let shareURL = shareURL else {
+                    self.clearView(withError: .retrievingURL)
+                    return
+                }
 
-            let connecPromise = Future<Void, ShareExtensionError> { promise in
-                _ = kit.requestAuth(
-                    clientId: WallabagUserDefaults.clientId,
-                    clientSecret: WallabagUserDefaults.clientSecret,
-                    username: WallabagUserDefaults.login,
-                    password: WallabagUserDefaults.password
-                )
-                .receive(on: DispatchQueue.main)
-                .sink(receiveCompletion: { completion in
-                    if case .failure = completion {
-                        promise(.failure(.authError))
-                    }
-                }, receiveValue: { token in
-                    kit.bearer = token.accessToken
-                    promise(.success(()))
-                    })
-            }
-
-            authCancellabe = connecPromise
-                .receive(on: DispatchQueue.main)
-                .sink(receiveCompletion: { completion in
-                    if case let .failure(error) = completion {
-                        self.clearView(withError: error)
-                    }
-                }, receiveValue: { _ in
-                    self.getUrl { shareURL in
-                        guard let shareURL = shareURL else {
-                            self.clearView(withError: .retrievingURL)
-                            return
-                        }
-
-                        _ = kit.send(
-                            decodable: WallabagEntry.self,
-                            to: WallabagEntryEndpoint.add(url: shareURL)
-                        )
-                        .receive(on: DispatchQueue.main)
-                        .sink(receiveCompletion: { completion in
-                            if case .failure = completion {
-                                self.clearView(withError: .duringAdding)
-                            }
-                        }, receiveValue: { _ in
+                self.requestCancellable = kit.send(to: WallabagEntryEndpoint.add(url: shareURL))
+                    .receive(on: DispatchQueue.main)
+                    .sink(receiveCompletion: { completion in
+                        switch completion {
+                        case .finished:
                             self.clearView(withError: nil)
-                            })
-                    }
+                        case .failure:
+                            self.clearView(withError: .duringAdding)
+                        }
+                    }, receiveValue: { (_: WallabagEntry) in
+
                 })
+            }
         } else {
             clearView(withError: .unregistredApp)
         }
