@@ -88,8 +88,8 @@ extension AppSync {
                     self.purge()
                     try? self.backgroundContext.save()
                     self.backgroundContext.reset()
-
-                } })
+                }
+            })
             .sink(receiveValue: handleEntries(_:))
             .store(in: &cancellable)
 
@@ -163,17 +163,17 @@ extension AppSync {
             .subscribe(on: operationQueue)
             .sink(receiveCompletion: { _ in },
                   receiveValue: { (tags: [WallabagTag]) in
-                    tags.forEach { wallabagTag in
-                        if let tag = try? self.backgroundContext.fetch(Tag.fetchOneById(wallabagTag.id)).first {
-                            self.tags[tag.id] = tag
-                        } else {
-                            let tag = Tag(context: self.backgroundContext)
-                            tag.id = wallabagTag.id
-                            tag.label = wallabagTag.label
-                            tag.slug = wallabagTag.slug
-                            self.tags[wallabagTag.id] = tag
-                        }
-                    }
+                      tags.forEach { wallabagTag in
+                          if let tag = try? self.backgroundContext.fetch(Tag.fetchOneById(wallabagTag.id)).first {
+                              self.tags[tag.id] = tag
+                          } else {
+                              let tag = Tag(context: self.backgroundContext)
+                              tag.id = wallabagTag.id
+                              tag.label = wallabagTag.label
+                              tag.slug = wallabagTag.slug
+                              self.tags[wallabagTag.id] = tag
+                          }
+                      }
             })
             .store(in: &cancellable)
     }
