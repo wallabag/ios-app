@@ -5,6 +5,7 @@
 //  Created by Marinel Maxime on 18/07/2019.
 //
 
+import Combine
 import CoreData
 import SafariServices
 import SwiftUI
@@ -12,21 +13,34 @@ import WebKit
 
 struct WebView: UIViewRepresentable {
     var entry: Entry
+    private(set) var wkWebView = WKWebView(frame: .zero)
 
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
 
     class Coordinator: NSObject, WKNavigationDelegate, UIScrollViewDelegate {
-        var webView: WebView
         @CoreDataViewContext var context: NSManagedObjectContext
+
+        private var webView: WebView
+        private var cancellable: AnyCancellable?
 
         init(_ webView: WebView) {
             self.webView = webView
+            super.init()
+
+            cancellable = NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)
+                .sink(receiveValue: webViewToLastPosition)
+        }
+
+        func webViewToLastPosition(_: Notification?) {
+            DispatchQueue.main.async {
+                self.webView.wkWebView.scrollView.setContentOffset(CGPoint(x: 0.0, y: self.webView.entry.screenPositionForWebView), animated: true)
+            }
         }
 
         func webView(_ webView: WKWebView, didFinish _: WKNavigation!) {
-            webView.scrollView.setContentOffset(CGPoint(x: 0.0, y: self.webView.entry.screenPositionForWebView), animated: true)
+            webViewToLastPosition(nil)
         }
 
         func webView(_: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
@@ -54,7 +68,7 @@ struct WebView: UIViewRepresentable {
             decisionHandler(.cancel)
         }
 
-        func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
             context.perform {
                 self.webView.entry.screenPosition = Float(scrollView.contentOffset.y)
                 try? self.context.save()
@@ -63,15 +77,14 @@ struct WebView: UIViewRepresentable {
     }
 
     func makeUIView(context: Context) -> WKWebView {
-        let webview = WKWebView(frame: .zero)
-        webview.navigationDelegate = context.coordinator
-        webview.scrollView.delegate = context.coordinator
-        return webview
+        wkWebView.navigationDelegate = context.coordinator
+        wkWebView.scrollView.delegate = context.coordinator
+        wkWebView.load(entry: entry, justify: false)
+
+        return wkWebView
     }
 
-    func updateUIView(_ view: WKWebView, context _: Context) {
-        view.load(entry: entry, justify: false)
-    }
+    func updateUIView(_: WKWebView, context _: Context) {}
 }
 
 #if DEBUG
