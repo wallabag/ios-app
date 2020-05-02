@@ -11,13 +11,32 @@ import Logging
 import SwiftUI
 
 enum Route: Equatable {
-    case tips
     case about
+    case addEntry
+    case bugReport
     case entries
     case entry(Entry)
-    case addEntry
     case registration
-    case bugReport
+    case tips
+
+    var id: String {
+        switch self {
+        case .about:
+            return "about"
+        case .addEntry:
+            return "addEntry"
+        case .bugReport:
+            return "bugReport"
+        case .entries:
+            return "entries"
+        case .entry:
+            return "entry"
+        case .registration:
+            return "registration"
+        case .tips:
+            return "tips"
+        }
+    }
 
     var title: String {
         switch self {
@@ -35,6 +54,25 @@ enum Route: Equatable {
             return "Registration"
         case .bugReport:
             return "Bug report"
+        }
+    }
+
+    var view: AnyView {
+        switch self {
+        case .about:
+            return AnyView(AboutView())
+        case .addEntry:
+            return AnyView(AddEntryView())
+        case .bugReport:
+            return AnyView(BugReportView())
+        case .entries:
+            return AnyView(EntriesView())
+        case let .entry(entry):
+            return AnyView(EntryView(entry: entry))
+        case .registration:
+            return AnyView(RegistrationView())
+        case .tips:
+            return AnyView(TipView())
         }
     }
 
@@ -66,20 +104,29 @@ enum Route: Equatable {
 }
 
 class Router: ObservableObject {
-    @Injector var appState: AppState
-    @Injector var logger: Logger
+    @Injector private var appState: AppState
+    @Injector private var logger: Logger
 
-    var objectWillChange = PassthroughSubject<Router, Never>()
+    @Published var currentView: PresentedView?
+
+    private(set) var route: Route = .registration
 
     init() {
-        route = appState.registred ? .entries : .registration
-    }
-
-    var route: Route = .entries {
-        willSet {
-            logger.info("Router switch to route: \(newValue.title)")
-
-            objectWillChange.send(self)
+        if appState.registred {
+            load(.entries)
+        } else {
+            load(.registration)
         }
     }
+
+    func load(_ route: Route) {
+        logger.info("Load route \(route.id)")
+        self.route = route
+        currentView = PresentedView(id: route.id, wrappedView: route.view)
+    }
+}
+
+struct PresentedView: Identifiable {
+    let id: String
+    let wrappedView: AnyView
 }
