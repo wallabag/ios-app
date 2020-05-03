@@ -49,9 +49,9 @@ extension SKPublisher: SKProductsRequestDelegate {
     func productsRequest(_: SKProductsRequest, didReceive response: SKProductsResponse) {
         if response.products.count != 0 {
             response.products.first.map { product in
-                DispatchQueue.main.async { [unowned self] in
+                DispatchQueue.main.async { [weak self] in
                     withAnimation {
-                        self.tipProduct = product
+                        self?.tipProduct = product
                     }
                 }
             }
