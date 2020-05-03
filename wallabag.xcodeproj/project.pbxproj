@@ -58,6 +58,7 @@
 		9C52706D23F8AB6A00DF0058 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C52706C23F8AB6A00DF0058 /* ErrorView.swift */; };
 		9C52706F23F8AEF600DF0058 /* WallabagError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C52706E23F8AEF600DF0058 /* WallabagError.swift */; };
 		9C55B12823719ADD0097FE27 /* EntryPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C55B12723719ADD0097FE27 /* EntryPicture.swift */; };
+		9C5AE834245CC95700823EE6 /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5AE833245CC95700823EE6 /* RouterView.swift */; };
 		9C5EDEE5234E842B00141DFD /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5EDEE4234E842B00141DFD /* AppState.swift */; };
 		9C5EDEE7234E848D00141DFD /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5EDEE6234E848D00141DFD /* Injector.swift */; };
 		9C5EDEEA234E889100141DFD /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5EDEE9234E889100141DFD /* AboutView.swift */; };
@@ -250,6 +251,7 @@
 		9C52706C23F8AB6A00DF0058 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		9C52706E23F8AEF600DF0058 /* WallabagError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagError.swift; sourceTree = "<group>"; };
 		9C55B12723719ADD0097FE27 /* EntryPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPicture.swift; sourceTree = "<group>"; };
+		9C5AE833245CC95700823EE6 /* RouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
 		9C5EDEE4234E842B00141DFD /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		9C5EDEE6234E848D00141DFD /* Injector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
 		9C5EDEE9234E889100141DFD /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -529,6 +531,14 @@
 			path = Registration;
 			sourceTree = "<group>";
 		};
+		9C5AE832245CC94000823EE6 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				9C5AE833245CC95700823EE6 /* RouterView.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		9C5EDEE2234E810C00141DFD /* Entry */ = {
 			isa = PBXGroup;
 			children = (
@@ -585,6 +595,7 @@
 		9C73EC4522D7907E008663B1 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				9C5AE832245CC94000823EE6 /* Router */,
 				9C37217022E107D200D363FB /* MainView.swift */,
 				9C8F05E923CFBD1500B98CCE /* MenuView.swift */,
 				9C5EDEE8234E887A00141DFD /* About */,
@@ -1267,6 +1278,7 @@
 				BF_27B3C5BB859104CEF0AB1D52843622B4 /* WKWebView.swift in Sources */,
 				9C52706F23F8AEF600DF0058 /* WallabagError.swift in Sources */,
 				9C7AFE162353CE8B00FBF989 /* WallabagKitError.swift in Sources */,
+				9C5AE834245CC95700823EE6 /* RouterView.swift in Sources */,
 				9CD4CEF823F200CE00CF11EA /* Router.swift in Sources */,
 				9C6DC0F2224112480012486D /* UISearchBar.swift in Sources */,
 				9C7AFE182353CEBA00FBF989 /* WallabagEntry.swift in Sources */,

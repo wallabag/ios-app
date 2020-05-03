@@ -31,8 +31,7 @@ class RegistrationLoginViewHandler: ObservableObject {
                 self.error = reason
             case .connected:
                 self.appState.registred = true
-                self.router.route = .entries
-
+                self.router.load(.entries)
             case .unknown:
                 break
             case .connecting:

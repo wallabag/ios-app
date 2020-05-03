@@ -17,7 +17,7 @@ struct EntryView: View {
         VStack {
             HStack {
                 Button(action: {
-                    self.router.route = .entries
+                    self.router.load(.entries)
                 }, label: {
                     Text("Back")
                 })
@@ -29,7 +29,7 @@ struct EntryView: View {
             WebView(entry: entry)
             HStack {
                 DeleteEntryButton(entry: entry, showText: false) {
-                    self.router.route = .entries
+                    self.router.load(.entries)
                 }
                 Spacer()
                 Button(action: {

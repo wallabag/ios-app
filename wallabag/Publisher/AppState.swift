@@ -41,6 +41,6 @@ class AppState: NSObject, ObservableObject {
         logger.debug("Logout called")
         registred = false
         session.state = .unknown
-        router.route = .registration
+        router.load(.registration)
     }
 }
