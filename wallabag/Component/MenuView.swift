@@ -93,6 +93,6 @@ struct MenuView: View {
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView(showMenu: .constant(true)).background(Color.red)
+        MenuView(showMenu: .constant(true))
     }
 }
