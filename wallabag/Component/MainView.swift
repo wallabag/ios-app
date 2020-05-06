@@ -15,7 +15,7 @@ struct MainView: View {
     @State private var showMenu: Bool = false
     @State private var menuOffsetX = CGFloat(0.0)
 
-    func getDragGesture(_ offsetClose: CGFloat) -> some Gesture {
+    func getMenuCloseGesture(_ offsetClose: CGFloat) -> some Gesture {
         DragGesture()
             .onChanged { value in
                 let newOffsetX = value.location.x - value.startLocation.x
@@ -79,7 +79,7 @@ struct MainView: View {
                         .frame(width: geometry.size.width / 2)
                         .offset(x: self.menuOffsetX)
                         .transition(.move(edge: .leading))
-                        .gesture(self.getDragGesture(geometry.size.width / 4))
+                        .gesture(self.getMenuCloseGesture(geometry.size.width / 4))
                 }
             }
         }
