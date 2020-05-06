@@ -31,6 +31,11 @@ struct MenuView: View {
             Text("Menu")
                 .font(.title)
                 .fontWeight(.black)
+                .onTapGesture {
+                    withAnimation {
+                        self.showMenu = false
+                    }
+                }
             ForEach(menus, id: \.title) { menu in
                 HStack {
                     Button(action: {
@@ -38,7 +43,7 @@ struct MenuView: View {
                         withAnimation {
                             self.showMenu = false
                         }
-                    }) {
+                        }) {
                         Image(systemName: menu.img)
                             .frame(width: 24)
                         Text(menu.title)
@@ -52,7 +57,7 @@ struct MenuView: View {
                     withAnimation {
                         self.showMenu = false
                     }
-                }) {
+                    }) {
                     Image(systemName: "ant").padding(.leading, 2)
                     Text("Bug report").padding(.leading, 2)
                 }
@@ -63,7 +68,7 @@ struct MenuView: View {
                         self.showMenu = false
                     }
                     UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
-                }) {
+                    }) {
                     Image(systemName: "gear")
                     Text("Setting")
                 }
@@ -74,7 +79,7 @@ struct MenuView: View {
                     withAnimation {
                         self.showMenu = false
                     }
-                }) {
+                    }) {
                     Image(systemName: "person").padding(.leading, 2)
                     Text("Logout").padding(.leading, 3)
                 }.foregroundColor(.red)
@@ -82,11 +87,12 @@ struct MenuView: View {
         }
         .padding()
         .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(UIColor.systemBackground))
     }
 }
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView(showMenu: .constant(true))
+        MenuView(showMenu: .constant(true)).background(Color.red)
     }
 }
