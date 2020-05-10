@@ -25,15 +25,13 @@ class RegistrationLoginViewHandler: ObservableObject {
             self.isValid = !login.isEmpty && !password.isEmpty
         }.store(in: &cancellable)
 
-        appState.session.$state.sink { [unowned self] state in
+        appState.session.$state.receive(on: DispatchQueue.main).sink { [unowned self] state in
             switch state {
             case let .error(reason):
                 self.error = reason
             case .connected:
-                DispatchQueue.main.async { [weak self] in
-                    self?.appState.registred = true
-                    self?.router.route = .entries
-                }
+                self.appState.registred = true
+                self.router.load(.entries)
             case .unknown:
                 break
             case .connecting:
@@ -45,8 +43,11 @@ class RegistrationLoginViewHandler: ObservableObject {
     }
 
     func tryLogin() {
+        error = nil
         WallabagUserDefaults.login = login
         WallabagUserDefaults.password = password
+        appState.session.kit.username = login
+        appState.session.kit.password = password
         appState.session.requestSession()
     }
 

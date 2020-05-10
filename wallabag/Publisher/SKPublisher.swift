@@ -7,6 +7,7 @@
 
 import Foundation
 import StoreKit
+import SwiftUI
 
 class SKPublisher: NSObject, ObservableObject {
     @Published var canMakePayments: Bool = false {
@@ -48,8 +49,10 @@ extension SKPublisher: SKProductsRequestDelegate {
     func productsRequest(_: SKProductsRequest, didReceive response: SKProductsResponse) {
         if response.products.count != 0 {
             response.products.first.map { product in
-                DispatchQueue.main.async { [unowned self] in
-                    self.tipProduct = product
+                DispatchQueue.main.async { [weak self] in
+                    withAnimation {
+                        self?.tipProduct = product
+                    }
                 }
             }
         }

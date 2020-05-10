@@ -41,7 +41,9 @@ struct MainView: View {
                         self.header.padding(.horizontal).padding(.top, 15)
                     }
                     ErrorView()
-                    self.routedView()
+                    RouterView {
+                        Text("Start routerView")
+                    }
                 }.frame(width: geometry.size.width, height: geometry.size.height)
                     .offset(x: self.showMenu ? geometry.size.width / 2 : 0)
                 if self.showMenu {
@@ -50,26 +52,6 @@ struct MainView: View {
                         .transition(.move(edge: .leading))
                 }
             }
-        }
-    }
-
-    private func routedView() -> some View {
-        switch router.route {
-        case .addEntry:
-            return AnyView(AddEntryView()).id("addEntryView")
-        case .about:
-            return AnyView(AboutView()).id("aboutView")
-        case .entries:
-            return AnyView(EntriesView()
-                .environmentObject(appState)).id("entriesView")
-        case let .entry(entry):
-            return AnyView(EntryView(entry: entry)).id("entryView")
-        case .tips:
-            return AnyView(TipView()).id("tipView")
-        case .registration:
-            return AnyView(RegistrationView().environmentObject(appState)).id("Registration")
-        case .bugReport:
-            return AnyView(BugReportView()).id("bugRetport")
         }
     }
 }

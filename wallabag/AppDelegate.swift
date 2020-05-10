@@ -19,7 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let container: Container = {
         let container = Container()
         container.register(ErrorPublisher.self) { _ in ErrorPublisher() }.inObjectScope(.container)
-        container.register(WallabagKit.self, factory: { _ in WallabagKit(host: WallabagUserDefaults.host) }).inObjectScope(.container)
+        container.register(WallabagKit.self, factory: { _ in
+            let kit = WallabagKit(host: WallabagUserDefaults.host)
+            kit.clientId = WallabagUserDefaults.clientId
+            kit.clientSecret = WallabagUserDefaults.clientSecret
+            kit.username = WallabagUserDefaults.login
+            kit.password = WallabagUserDefaults.password
+            kit.accessToken = WallabagUserDefaults.accessToken
+            kit.refreshToken = WallabagUserDefaults.refreshToken
+
+            return kit
+        }).inObjectScope(.container)
         container.register(WallabagSession.self, factory: { _ in WallabagSession() }).inObjectScope(.container)
         container.register(AppSync.self, factory: { _ in AppSync() }).inObjectScope(.container)
         container.register(ArticlePlayer.self) { _ in ArticlePlayer() }.inObjectScope(.container)

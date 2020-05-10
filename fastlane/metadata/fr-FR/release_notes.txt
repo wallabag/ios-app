@@ -1,10 +1,9 @@
-La voici enfin!
-La mise à jour compatible avec iOS13! 
-
-L'application a été réécrite avec SwiftUI. Ce chantier va simplifier les mises à jours à l'avenir. Nous prévoyons de faire des mises à jour plus petites et plus fréquentes maintenant que ce gros chantier est passé.
-
-Certaines fonctionnalités ont disparu pour le moment : le text-to-speech et la recherche, mais seront de retour rapidement !
-
-Comme d'habitude le github est la pour remonter vos soucis avec cette derniere version.
-
-Bonne lecture.
+La mise à jour corrective est enfin disponible.
+Au menu:
+Arrangement des boutons dans un article
+L'article est de nouveau ouvert à la meme position
+Arrangement de la page don (merci à vous)
+Correction d'un probleme UI (avienne)
+Rework de la synchronisation (grace à la lecture d'un livre suite à vos dons)
+Correction d'un article contenant une video
+Correctif gestion memoire

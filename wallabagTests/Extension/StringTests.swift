@@ -66,4 +66,8 @@ class StringTests: XCTestCase {
         XCTAssertFalse("app".isValidURL)
         XCTAssertTrue("https://app.wallabag.it:9000".isValidURL)
     }
+
+    func testMD5() {
+        XCTAssertEqual("098f6bcd4621d373cade4e832627b4f6", "test".md5)
+    }
 }

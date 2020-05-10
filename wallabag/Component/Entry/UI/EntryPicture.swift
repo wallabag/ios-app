@@ -9,22 +9,17 @@ import Combine
 import SwiftUI
 
 struct EntryPicture: View {
-    @State private var image: UIImage?
-
     private let placeholderImage: UIImage = UIImage(systemName: "book")!
-    let url: String?
 
-    var body: some View {
-        Image(uiImage: image ?? placeholderImage)
-            .resizable()
-            .scaledToFit()
-            .onAppear(perform: loadEntryPicture)
+    @ObservedObject var imagePublisher: ImageDownloaderPublisher
+
+    init(url: String?) {
+        imagePublisher = ImageDownloaderPublisher(url: url)
     }
 
-    private func loadEntryPicture() {
-        guard let url = url?.url else { return }
-        ImageDownloader.shared.loadImage(url: url) { image in
-            self.image = image
-        }
+    var body: some View {
+        Image(uiImage: imagePublisher.image ?? placeholderImage)
+            .resizable()
+            .scaledToFit()
     }
 }

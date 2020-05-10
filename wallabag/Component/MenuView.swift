@@ -34,7 +34,7 @@ struct MenuView: View {
             ForEach(menus, id: \.title) { menu in
                 HStack {
                     Button(action: {
-                        self.router.route = menu.route
+                        self.router.load(menu.route)
                         withAnimation {
                             self.showMenu = false
                         }
@@ -48,7 +48,7 @@ struct MenuView: View {
             Spacer()
             HStack {
                 Button(action: {
-                    self.router.route = .bugReport
+                    self.router.load(.bugReport)
                     withAnimation {
                         self.showMenu = false
                     }

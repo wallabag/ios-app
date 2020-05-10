@@ -12,8 +12,6 @@ struct EntriesView: View {
     @ObservedObject var pasteBoardPublisher = PasteBoardPublisher()
     @State private var filter: RetrieveMode = RetrieveMode(fromCase: WallabagUserDefaults.defaultMode)
 
-    @FetchRequest(entity: Entry.entity(), sortDescriptors: []) var entries: FetchedResults<Entry>
-
     var body: some View {
         VStack {
             // MARK: Pasteboard

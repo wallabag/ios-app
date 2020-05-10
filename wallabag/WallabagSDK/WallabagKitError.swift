@@ -8,8 +8,11 @@
 import Foundation
 
 public enum WallabagKitError: Error {
+    case authenticationRequired
     case unknown
+    case serverError
     case jsonError(json: WallabagJsonError)
+    case decodingJSON
     case wrap(error: Error)
 }
 

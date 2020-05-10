@@ -19,7 +19,7 @@ struct EntriesListView: View {
     var body: some View {
         List(entries, id: \.id) { entry in
             Button(action: {
-                self.router.route = .entry(entry)
+                self.router.load(.entry(entry))
             }, label: {
                 EntryRowView(entry: entry).contextMenu {
                     ArchiveEntryButton(entry: entry)

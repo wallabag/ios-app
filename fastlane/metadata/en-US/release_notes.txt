@@ -1,10 +1,9 @@
-Here it is finally!
-The iOS 13 compliant update!
-
-The application has been revamped with SwiftUI, which should allow us to release smaller and more frequent updates!
-
-Some features have disappeared for the moment: text-to-speech and search, but will be back soon!
-
-As usual the github is here to raise your concerns with this latest version.
-
-Enjoy your articles
+The corrective update is finally available.
+On the menu:
+Arrangement of buttons in an article
+The article is opened again in the same position
+Donation page arrangement (thank you)
+Correction of a UI problem (avienne)
+Rework of synchronization (thanks to reading a book following your donations)
+Correction of an article containing a video
+Memory management patch

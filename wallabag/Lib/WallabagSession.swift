@@ -25,33 +25,37 @@ class WallabagSession: ObservableObject {
     private var cancellable = Set<AnyCancellable>()
 
     func requestSession() {
+        kit.clientId = WallabagUserDefaults.clientId
+        kit.clientSecret = WallabagUserDefaults.clientSecret
+        kit.username = WallabagUserDefaults.login
+        kit.password = WallabagUserDefaults.password
+
         state = .connecting
-        _ = kit.requestAuth(
-            clientId: WallabagUserDefaults.clientId,
-            clientSecret: WallabagUserDefaults.clientSecret,
-            username: WallabagUserDefaults.login,
-            password: WallabagUserDefaults.password
-        ).sink(receiveCompletion: { completion in
-            if case let .failure(error) = completion {
-                switch error {
-                case let WallabagKitError.jsonError(jsonError):
-                    self.state = .error(reason: jsonError.errorDescription)
-                default:
-                    self.state = .error(reason: "Unknow error")
+        kit.requestToken()
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                if case let .failure(error) = completion {
+                    switch error {
+                    case let WallabagKitError.jsonError(jsonError):
+                        self.state = .error(reason: jsonError.errorDescription)
+                    default:
+                        self.state = .error(reason: "Unknow error")
+                    }
                 }
-            }
-        }, receiveValue: { token in
-            WallabagUserDefaults.refreshToken = token.refreshToken
-            WallabagUserDefaults.accessToken = token.accessToken
-            self.kit.bearer = token.accessToken
-            self.state = .connected
-        })
+            }, receiveValue: { token in
+                guard let token = token else { self.state = .unknown; return }
+                WallabagUserDefaults.refreshToken = token.refreshToken
+                WallabagUserDefaults.accessToken = token.accessToken
+                self.kit.accessToken = token.accessToken
+                self.kit.refreshToken = token.refreshToken
+                self.state = .connected
+        }).store(in: &cancellable)
     }
 
     func addEntry(url: String, completion: @escaping () -> Void) {
-        kit.send(decodable: WallabagEntry.self, to: WallabagEntryEndpoint.add(url: url))
+        kit.send(to: WallabagEntryEndpoint.add(url: url))
             .catch { _ in Empty<WallabagEntry, Never>() }
-            .sink { [unowned self] wallabagEntry in
+            .sink { [unowned self] (wallabagEntry: WallabagEntry) in
                 let entry = Entry(context: self.coreDataContext)
                 entry.hydrate(from: wallabagEntry)
                 completion()
@@ -60,23 +64,25 @@ class WallabagSession: ObservableObject {
     }
 
     func update(_ entry: Entry, parameters: WallabagKit.Parameters) {
-        _ = kit.send(decodable: WallabagEntry.self, to: WallabagEntryEndpoint.update(id: entry.id, parameters: parameters)).sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { _ in })
+        kit.send(to: WallabagEntryEndpoint.update(id: entry.id, parameters: parameters)).sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { (_: WallabagEntry) in })
+            .store(in: &cancellable)
     }
 
     func delete(entry: Entry) {
-        _ = kit.send(decodable: WallabagEntry.self, to: WallabagEntryEndpoint.delete(id: entry.id)).sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { _ in })
+        kit.send(to: WallabagEntryEndpoint.delete(id: entry.id)).sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { (_: WallabagEntry) in })
+            .store(in: &cancellable)
     }
 
     func add(tag: String, for entry: Entry) {
-        kit.send(decodable: WallabagEntry.self, to: WallabagEntryEndpoint.addTag(tag: tag, entry: entry.id))
-            .sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { wallabagEntry in
+        kit.send(to: WallabagEntryEndpoint.addTag(tag: tag, entry: entry.id))
+            .sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { (wallabagEntry: WallabagEntry) in
                 self.syncTag(for: entry, with: wallabagEntry)
             })
             .store(in: &cancellable)
     }
 
     func delete(tag: Tag, for entry: Entry) {
-        kit.send(decodable: WallabagEntry.self, to: WallabagEntryEndpoint.deleteTag(tagId: tag.id, entry: entry.id)).sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { wallabagEntry in
+        kit.send(to: WallabagEntryEndpoint.deleteTag(tagId: tag.id, entry: entry.id)).sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { (wallabagEntry: WallabagEntry) in
             self.syncTag(for: entry, with: wallabagEntry)
         })
             .store(in: &cancellable)

@@ -17,7 +17,7 @@ import UIKit
 
             let appState = container.resolve(AppState.self)!
             appState.registred = true
-            appState.router.route = .entries
+            appState.router.load(.entries)
             WallabagUserDefaults.defaultMode = "allArticles"
             WallabagUserDefaults.badgeEnabled = false
 
