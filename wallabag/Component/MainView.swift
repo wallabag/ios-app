@@ -70,7 +70,7 @@ struct MainView: View {
                 if self.showMenu {
                     Rectangle()
                         .opacity(0.1)
-                        .edgesIgnoringSafeArea(.bottom)
+                        .edgesIgnoringSafeArea(.all)
                         .onTapGesture {
                             withAnimation {
                                 self.showMenu = false
@@ -81,7 +81,7 @@ struct MainView: View {
                         .offset(x: self.menuOffsetX)
                         .transition(.move(edge: .leading))
                         .gesture(self.getMenuCloseGesture(geometry.size.width / 4))
-                        .edgesIgnoringSafeArea(.bottom)
+                        .edgesIgnoringSafeArea(.all)
                 }
             }
         }
