@@ -119,6 +119,8 @@
 		9CFA9E3123D270F0004C89E3 /* CoreDataSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFA9E3023D270F0004C89E3 /* CoreDataSync.swift */; };
 		9CFDB7BD244ECC28002B465E /* ImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFDB7BC244ECC28002B465E /* ImageCacheTests.swift */; };
 		9CFDB7BF244EE6A5002B465E /* ImageDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFDB7BE244EE6A5002B465E /* ImageDownloaderTests.swift */; };
+		9CFEE5F2246D70F1009C15DD /* SearchPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEE5F1246D70F1009C15DD /* SearchPublisher.swift */; };
+		9CFEE5F4246D7189009C15DD /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEE5F3246D7189009C15DD /* SearchView.swift */; };
 		BF_0576133F70765A88C0F8BD8FC41C19EE /* article.html in Resources */ = {isa = PBXBuildFile; fileRef = FR_317F9C93FC0631DF00AB2E1FAEF90DD8 /* article.html */; };
 		BF_0958BD47C0A373C73825495FA643F41D /* UbuntuTitling-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FR_1DE9D932C526142E220FFC665A0EC101 /* UbuntuTitling-Bold.ttf */; };
 		BF_20305CD3F44AD3F0A300A08D28D4712F /* EntriesCollection.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_89CBFB2A6488E68DF37E66008BC3A23A /* EntriesCollection.json */; };
@@ -312,6 +314,8 @@
 		9CFA9E3023D270F0004C89E3 /* CoreDataSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSync.swift; sourceTree = "<group>"; };
 		9CFDB7BC244ECC28002B465E /* ImageCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheTests.swift; sourceTree = "<group>"; };
 		9CFDB7BE244EE6A5002B465E /* ImageDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderTests.swift; sourceTree = "<group>"; };
+		9CFEE5F1246D70F1009C15DD /* SearchPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPublisher.swift; sourceTree = "<group>"; };
+		9CFEE5F3246D7189009C15DD /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		FR_0D81D880CC2314E3DD84B9C8E00667AD /* wallabagUITests-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "wallabagUITests-Debug.xcconfig"; sourceTree = "<group>"; };
 		FR_0EF389E23F508F60AB1F657ECF52C8CF /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FR_1BCA2B5D79E6386A16A4B6341BC136FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -457,6 +461,7 @@
 				9C55B12723719ADD0097FE27 /* EntryPicture.swift */,
 				9CA42AD32359CAC500EF1BF6 /* RefreshButton.swift */,
 				9C66B6C62356806E0068B968 /* StarEntryButton.swift */,
+				9CFEE5F3246D7189009C15DD /* SearchView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -562,6 +567,7 @@
 				9C1786AB244CE4AD00DD1995 /* ImageDownloaderPublisher.swift */,
 				9C327654238B031D0040D9D6 /* PasteBoardPublisher.swift */,
 				9C03E4A0238474110060FF14 /* PlayerPublisher.swift */,
+				9CFEE5F1246D70F1009C15DD /* SearchPublisher.swift */,
 				9C7663F723F4439E00232B08 /* SKPublisher.swift */,
 				9C2B7D162433473500723D09 /* TagsForEntryPublisher.swift */,
 			);
@@ -1212,6 +1218,7 @@
 				9CCC4AFE22E5D92E00F73891 /* Password.swift in Sources */,
 				BF_B65C56029A480EC410440D0564ACCC07 /* Bool.swift in Sources */,
 				BF_C9F13CB7B3B557E809E6D9898B0791C2 /* Date.swift in Sources */,
+				9CFEE5F2246D70F1009C15DD /* SearchPublisher.swift in Sources */,
 				9C2B7D172433473500723D09 /* TagsForEntryPublisher.swift in Sources */,
 				9C97F3D223B23E41004C682E /* EntriesListView.swift in Sources */,
 				BF_330993596D71B361978BE9F6CC8CE80C /* Dictionary.swift in Sources */,
@@ -1239,6 +1246,7 @@
 				9C9085F722DF3FF600D47262 /* EntryRowView.swift in Sources */,
 				9C52706D23F8AB6A00DF0058 /* ErrorView.swift in Sources */,
 				9C7AFE0F2353CE0300FBF989 /* HttpMethod.swift in Sources */,
+				9CFEE5F4246D7189009C15DD /* SearchView.swift in Sources */,
 				9C327658238B03720040D9D6 /* PasteBoardView.swift in Sources */,
 				9C52706A23F8AAED00DF0058 /* ErrorPublisher.swift in Sources */,
 				9C03E49F238473F10060FF14 /* PlayerView.swift in Sources */,
