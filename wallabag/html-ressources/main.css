@@ -14,40 +14,6 @@ html {
   min-height: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-      color: #777;
-      background: #000;
-  }
-
-  ::selection {
-      color: #777;
-      background: #000;
-  }
-
-  p, li {
-      color: #555;
-  }
-
-  a {
-      color: #137fb3;
-  }
-
-  blockquote {
-      background: #111;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  body {
-    background: #FFF;
-  }
-  
-  a {
-    color: #000;
-  }
-}
-
 /* ==========================================================================
    1 = Style Guide
    ========================================================================== */
@@ -152,5 +118,39 @@ blockquote {
 
   video {
       width: 100%
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+      color: #FFF;
+      background: #000;
+  }
+
+  ::selection {
+      color: #777;
+      background: #000;
+  }
+
+  p, li {
+      color: #FFF;
+  }
+
+  a {
+      color: #137fb3;
+  }
+
+  blockquote {
+      background: #111;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background: #FFF;
+  }
+
+  a {
+    color: #000;
   }
 }
