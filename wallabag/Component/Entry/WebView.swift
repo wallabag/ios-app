@@ -39,7 +39,7 @@ struct WebView: UIViewRepresentable {
             }
         }
 
-        func webView(_ webView: WKWebView, didFinish _: WKNavigation!) {
+        func webView(_: WKWebView, didFinish _: WKNavigation!) {
             webViewToLastPosition(nil)
         }
 
