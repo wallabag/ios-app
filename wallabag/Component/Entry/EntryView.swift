@@ -22,10 +22,11 @@ struct EntryView: View {
                     Text("Back")
                 })
                 Text(entry.title ?? "Entry")
+                    .font(.title)
                     .fontWeight(.black)
                     .lineLimit(1)
                 Spacer()
-            }.padding(.horizontal)
+            }.padding()
             WebView(entry: entry)
             HStack {
                 DeleteEntryButton(entry: entry, showText: false) {
