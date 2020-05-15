@@ -5,8 +5,8 @@
 //  Created by Marinel Maxime on 14/05/2020.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 class SearchPublisher: ObservableObject {
     @Published var search: String = ""

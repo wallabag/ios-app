@@ -25,7 +25,7 @@ struct SearchView: View {
                     TextField("Search", text: $searchPublisher.search)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
-                        .padding(.leading) 
+                        .padding(.leading)
                 } else {
                     RetrieveModePicker(filter: $searchPublisher.retrieveMode)
                 }
