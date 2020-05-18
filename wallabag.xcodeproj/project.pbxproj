@@ -62,8 +62,6 @@
 		9C5EDEE5234E842B00141DFD /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5EDEE4234E842B00141DFD /* AppState.swift */; };
 		9C5EDEE7234E848D00141DFD /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5EDEE6234E848D00141DFD /* Injector.swift */; };
 		9C5EDEEA234E889100141DFD /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5EDEE9234E889100141DFD /* AboutView.swift */; };
-		9C5EDEF0234E922D00141DFD /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5EDEEF234E922D00141DFD /* Crashlytics.framework */; };
-		9C5EDEF2234E923700141DFD /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5EDEF1234E923700141DFD /* Fabric.framework */; };
 		9C5EDF00234E937100141DFD /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 9C5EDEFF234E937100141DFD /* Swinject */; };
 		9C5EDF08234E982600141DFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C5EDF07234E982600141DFD /* LaunchScreen.storyboard */; };
 		9C60DE2523606DAA00F78D02 /* TagRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60DE2423606DAA00F78D02 /* TagRow.swift */; };
@@ -255,8 +253,6 @@
 		9C5EDEE4234E842B00141DFD /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		9C5EDEE6234E848D00141DFD /* Injector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
 		9C5EDEE9234E889100141DFD /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
-		9C5EDEEF234E922D00141DFD /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		9C5EDEF1234E923700141DFD /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		9C5EDF07234E982600141DFD /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9C60DE2423606DAA00F78D02 /* TagRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagRow.swift; sourceTree = "<group>"; };
 		9C60DE2623606F9800F78D02 /* WallabagTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagTag.swift; sourceTree = "<group>"; };
@@ -409,10 +405,8 @@
 			files = (
 				9C22CED82430B64D00B2C69F /* Logging in Frameworks */,
 				9C677CAD227EF5A6006C7112 /* WebKit.framework in Frameworks */,
-				9C5EDEF0234E922D00141DFD /* Crashlytics.framework in Frameworks */,
 				9C5EDF00234E937100141DFD /* Swinject in Frameworks */,
 				9CCF9327242D13FF00904D3B /* SwiftyLogger in Frameworks */,
-				9C5EDEF2234E923700141DFD /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,8 +416,6 @@
 		502725B2BF8026EB5E2005F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9C5EDEEF234E922D00141DFD /* Crashlytics.framework */,
-				9C5EDEF1234E923700141DFD /* Fabric.framework */,
 				9C677CAC227EF5A6006C7112 /* WebKit.framework */,
 			);
 			name = Frameworks;

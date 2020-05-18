@@ -7,8 +7,6 @@
 //
 
 import CoreSpotlight
-import Crashlytics
-import Fabric
 import Logging
 import Swinject
 import UIKit
@@ -47,8 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        Fabric.with([Crashlytics.self])
-
         #if DEBUG
             let args = ProcessInfo.processInfo.arguments
 
