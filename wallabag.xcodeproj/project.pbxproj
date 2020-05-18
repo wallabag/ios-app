@@ -26,6 +26,7 @@
 		9C148525235E3ED50082D7BB /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C148524235E3ED50082D7BB /* CoreData.swift */; };
 		9C148527235E3F680082D7BB /* CoreDataViewContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C148526235E3F680082D7BB /* CoreDataViewContext.swift */; };
 		9C14852A235E3FF00082D7BB /* wallabagStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C148528235E3FF00082D7BB /* wallabagStore.xcdatamodeld */; };
+		9C159AC3247276FE0001EEE0 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C159AC2247276FE0001EEE0 /* View.swift */; };
 		9C1786AC244CE4AD00DD1995 /* ImageDownloaderPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1786AB244CE4AD00DD1995 /* ImageDownloaderPublisher.swift */; };
 		9C1786AE244CFD4D00DD1995 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1786AD244CFD4D00DD1995 /* ImageCache.swift */; };
 		9C18B70F242508C800804F4D /* RegistrationClientIdSecretViewHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C18B70E242508C800804F4D /* RegistrationClientIdSecretViewHandlerTests.swift */; };
@@ -219,6 +220,7 @@
 		9C148524235E3ED50082D7BB /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		9C148526235E3F680082D7BB /* CoreDataViewContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewContext.swift; sourceTree = "<group>"; };
 		9C148529235E3FF00082D7BB /* wallabagStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabagStore.xcdatamodel; sourceTree = "<group>"; };
+		9C159AC2247276FE0001EEE0 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		9C1786AB244CE4AD00DD1995 /* ImageDownloaderPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderPublisher.swift; sourceTree = "<group>"; };
 		9C1786AD244CFD4D00DD1995 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		9C18B70E242508C800804F4D /* RegistrationClientIdSecretViewHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationClientIdSecretViewHandlerTests.swift; sourceTree = "<group>"; };
@@ -833,6 +835,7 @@
 				FR_6121D1E9B47B792E1964E21692ED3F7D /* String.swift */,
 				9C6DC0F1224112480012486D /* UISearchBar.swift */,
 				9CD4F455242FCC71003B56CF /* URL.swift */,
+				9C159AC2247276FE0001EEE0 /* View.swift */,
 				FR_3996D9FD806100BF0335AAE1A4EE148E /* WKWebView.swift */,
 			);
 			path = Extension;
@@ -1268,6 +1271,7 @@
 				9C7AFE112353CE1D00FBF989 /* WallabagKitEndpoint.swift in Sources */,
 				9C73EC4722D79093008663B1 /* EntriesView.swift in Sources */,
 				9C148527235E3F680082D7BB /* CoreDataViewContext.swift in Sources */,
+				9C159AC3247276FE0001EEE0 /* View.swift in Sources */,
 				9CA5D4C622E092B500167574 /* WebView.swift in Sources */,
 				9C39A4D724450CBA0041269B /* Publishers.swift in Sources */,
 				9CA8EA7E2357AFE100F149A9 /* AddEntryView.swift in Sources */,

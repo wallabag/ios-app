@@ -33,6 +33,11 @@ struct EntryView: View {
                 }
                 Spacer()
                 Button(action: {
+                    self.openInSafari(self.entry.url)
+                }, label: {
+                    Image(systemName: "safari")
+                })
+                Button(action: {
                     self.showTag.toggle()
                 }, label: {
                     Image(systemName: self.showTag ? "tag.fill" : "tag")
