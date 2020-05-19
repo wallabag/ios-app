@@ -34,6 +34,8 @@
 		9C1B481624578679005C75B1 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B481524578679005C75B1 /* Publisher.swift */; };
 		9C1B481724578805005C75B1 /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1B481524578679005C75B1 /* Publisher.swift */; };
 		9C1EB6E823573DD700A5E54B /* EntryPictoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1EB6E723573DD700A5E54B /* EntryPictoImage.swift */; };
+		9C1EF9C424747FD600152BB5 /* HapticNotificationButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1EF9C324747FD600152BB5 /* HapticNotificationButtonStyle.swift */; };
+		9C1EF9C72474800700152BB5 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1EF9C62474800700152BB5 /* View.swift */; };
 		9C22CED82430B64D00B2C69F /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 9C22CED72430B64D00B2C69F /* Logging */; };
 		9C276C4C23856A8B006F590A /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C276C4B23856A8B006F590A /* Podcast.swift */; };
 		9C2B7D172433473500723D09 /* TagsForEntryPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2B7D162433473500723D09 /* TagsForEntryPublisher.swift */; };
@@ -226,6 +228,8 @@
 		9C19F8E222707707009450F9 /* RetrieveModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveModeTests.swift; sourceTree = "<group>"; };
 		9C1B481524578679005C75B1 /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		9C1EB6E723573DD700A5E54B /* EntryPictoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPictoImage.swift; sourceTree = "<group>"; };
+		9C1EF9C324747FD600152BB5 /* HapticNotificationButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticNotificationButtonStyle.swift; sourceTree = "<group>"; };
+		9C1EF9C62474800700152BB5 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		9C276C4B23856A8B006F590A /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 		9C2B7D162433473500723D09 /* TagsForEntryPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsForEntryPublisher.swift; sourceTree = "<group>"; };
 		9C2D5242244E312600CD5655 /* ErrorPublisherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPublisherTests.swift; sourceTree = "<group>"; };
@@ -459,6 +463,31 @@
 				9C66B6C62356806E0068B968 /* StarEntryButton.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		9C1EF9C124747FB400152BB5 /* Haptic */ = {
+			isa = PBXGroup;
+			children = (
+				9C1EF9C524747FFE00152BB5 /* Extension */,
+				9C1EF9C224747FC500152BB5 /* ButtonStyle */,
+			);
+			path = Haptic;
+			sourceTree = "<group>";
+		};
+		9C1EF9C224747FC500152BB5 /* ButtonStyle */ = {
+			isa = PBXGroup;
+			children = (
+				9C1EF9C324747FD600152BB5 /* HapticNotificationButtonStyle.swift */,
+			);
+			path = ButtonStyle;
+			sourceTree = "<group>";
+		};
+		9C1EF9C524747FFE00152BB5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9C1EF9C62474800700152BB5 /* View.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		9C2D5241244E306300CD5655 /* Publisher */ = {
@@ -867,6 +896,7 @@
 		G_ED05746A8B318D93F5C59AFB3D2C703A /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				9C1EF9C124747FB400152BB5 /* Haptic */,
 				9C7CBD0622D60B8A00EE1DE3 /* ArticlePlayer.swift */,
 				9C148524235E3ED50082D7BB /* CoreData.swift */,
 				9CFA9E3023D270F0004C89E3 /* CoreDataSync.swift */,
@@ -1251,6 +1281,7 @@
 				9CE32CBA234F648A004DD045 /* BundleKey.swift in Sources */,
 				BF_DB7F468621011B78AA80968FF9B4DD93 /* RetrieveMode.swift in Sources */,
 				9CFA9E3123D270F0004C89E3 /* CoreDataSync.swift in Sources */,
+				9C1EF9C424747FD600152BB5 /* HapticNotificationButtonStyle.swift in Sources */,
 				9C1B481624578679005C75B1 /* Publisher.swift in Sources */,
 				9C60DE2523606DAA00F78D02 /* TagRow.swift in Sources */,
 				9CD4F456242FCC71003B56CF /* URL.swift in Sources */,
@@ -1271,6 +1302,7 @@
 				9CA5D4C622E092B500167574 /* WebView.swift in Sources */,
 				9C39A4D724450CBA0041269B /* Publishers.swift in Sources */,
 				9CA8EA7E2357AFE100F149A9 /* AddEntryView.swift in Sources */,
+				9C1EF9C72474800700152BB5 /* View.swift in Sources */,
 				9C66B6C5235680130068B968 /* ArchiveEntryButton.swift in Sources */,
 				9C37217322E1087800D363FB /* RegistrationView.swift in Sources */,
 				9C37217522E1134600D363FB /* ServerView.swift in Sources */,
@@ -1688,7 +1720,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FR_D25A5811CCA84B9080305DDA9A796022 /* bagit-Release.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 266;
+				CURRENT_PROJECT_VERSION = 267;
 				MARKETING_VERSION = 5.1.0;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1711,7 +1743,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FR_3C63EF667F0034B52FD8C3A71EAA05F7 /* bagit-Debug.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 266;
+				CURRENT_PROJECT_VERSION = 267;
 				MARKETING_VERSION = 5.1.2;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1723,7 +1755,7 @@
 			baseConfigurationReference = FR_7ABC493E8F892DF451AABBB415AFE326 /* wallabag-Debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 266;
+				CURRENT_PROJECT_VERSION = 267;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1746,7 +1778,7 @@
 			baseConfigurationReference = FR_5DE83659FDAF5871759C0A7D752A7823 /* wallabag-Release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 266;
+				CURRENT_PROJECT_VERSION = 267;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
