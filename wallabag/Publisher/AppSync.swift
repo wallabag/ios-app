@@ -61,7 +61,7 @@ extension AppSync {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case let .failure(error):
-                    self.errorPublisher.lastError = error
+                    self.errorPublisher.setLast(error)
                 case .finished:
                     break
                 }
