@@ -23,6 +23,7 @@ struct SearchView: View {
             HStack {
                 if showSearchBar {
                     TextField("Search", text: $searchPublisher.search)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
                         .padding(.leading)
