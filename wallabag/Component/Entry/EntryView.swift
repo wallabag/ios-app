@@ -31,15 +31,15 @@ struct EntryView: View {
             HStack {
                 DeleteEntryButton(entry: entry, showText: false) {
                     self.router.load(.entries)
-                }
+                }.hapticNotification(.warning)
                 Spacer()
                 Button(action: {
                     self.showTag.toggle()
                 }, label: {
                     Image(systemName: self.showTag ? "tag.fill" : "tag")
-                })
-                StarEntryButton(entry: entry, showText: false)
-                ArchiveEntryButton(entry: entry, showText: false)
+                }).buttonStyle(PlainButtonStyle())
+                StarEntryButton(entry: entry, showText: false).hapticNotification(.success)
+                ArchiveEntryButton(entry: entry, showText: false).hapticNotification(.success)
             }.font(.system(size: 20))
                 .padding()
             // PlayerView()
