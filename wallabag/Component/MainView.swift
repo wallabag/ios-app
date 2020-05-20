@@ -13,6 +13,26 @@ struct MainView: View {
     @EnvironmentObject var router: Router
     @EnvironmentObject var errorPublisher: ErrorPublisher
     @State private var showMenu: Bool = false
+    @State private var menuOffsetX = CGFloat(0.0)
+
+    func getMenuCloseGesture(_ offsetClose: CGFloat) -> some Gesture {
+        DragGesture()
+            .onChanged { value in
+                let newOffsetX = value.location.x - value.startLocation.x
+                if newOffsetX < 0 {
+                    self.menuOffsetX = newOffsetX
+                }
+            }
+            .onEnded { value in
+                withAnimation {
+                    let finalOffsetX = value.location.x - value.startLocation.x
+                    if finalOffsetX < -offsetClose {
+                        self.showMenu = false
+                    }
+                    self.menuOffsetX = 0
+                }
+            }
+    }
 
     var header: some View {
         HStack {
@@ -45,11 +65,23 @@ struct MainView: View {
                         Text("Start routerView")
                     }
                 }.frame(width: geometry.size.width, height: geometry.size.height)
-                    .offset(x: self.showMenu ? geometry.size.width / 2 : 0)
+                    .blur(radius: self.showMenu ? 10 : 0)
+
                 if self.showMenu {
+                    Rectangle()
+                        .opacity(0.1)
+                        .edgesIgnoringSafeArea(.all)
+                        .onTapGesture {
+                            withAnimation {
+                                self.showMenu = false
+                            }
+                        }
                     MenuView(showMenu: self.$showMenu)
                         .frame(width: geometry.size.width / 2)
+                        .offset(x: self.menuOffsetX)
                         .transition(.move(edge: .leading))
+                        .gesture(self.getMenuCloseGesture(geometry.size.width / 4))
+                        .edgesIgnoringSafeArea(.all)
                 }
             }
         }

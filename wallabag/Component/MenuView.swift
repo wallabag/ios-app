@@ -27,61 +27,71 @@ struct MenuView: View {
 
     // swiftlint:disable multiple_closures_with_trailing_closure
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Menu")
-                .font(.title)
-                .fontWeight(.black)
-            ForEach(menus, id: \.title) { menu in
-                HStack {
-                    Button(action: {
-                        self.router.load(menu.route)
+        GeometryReader { geometry in
+            VStack(alignment: .leading) {
+                Text("Menu")
+                    .font(.title)
+                    .fontWeight(.black)
+                    .onTapGesture {
                         withAnimation {
                             self.showMenu = false
                         }
-                    }) {
-                        Image(systemName: menu.img)
-                            .frame(width: 24)
-                        Text(menu.title)
+                    }
+                ForEach(self.menus, id: \.title) { menu in
+                    HStack {
+                        Button(action: {
+                            self.router.load(menu.route)
+                            withAnimation {
+                                self.showMenu = false
+                            }
+                            }) {
+                            Image(systemName: menu.img)
+                                .frame(width: 24)
+                            Text(menu.title)
+                        }
                     }
                 }
-            }
-            Spacer()
-            HStack {
-                Button(action: {
-                    self.router.load(.bugReport)
-                    withAnimation {
-                        self.showMenu = false
+                Spacer()
+                HStack {
+                    Button(action: {
+                        self.router.load(.bugReport)
+                        withAnimation {
+                            self.showMenu = false
+                        }
+                        }) {
+                        Image(systemName: "ant").padding(.leading, 2)
+                        Text("Bug report").padding(.leading, 2)
                     }
-                }) {
-                    Image(systemName: "ant").padding(.leading, 2)
-                    Text("Bug report").padding(.leading, 2)
+                }
+                HStack {
+                    Button(action: {
+                        withAnimation {
+                            self.showMenu = false
+                        }
+                        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
+                        }) {
+                        Image(systemName: "gear")
+                        Text("Setting")
+                    }
+                }
+                HStack {
+                    Button(action: {
+                        self.appState.logout()
+                        withAnimation {
+                            self.showMenu = false
+                        }
+                        }) {
+                        Image(systemName: "person").padding(.leading, 2)
+                        Text("Logout").padding(.leading, 3)
+                    }.foregroundColor(.red)
                 }
             }
-            HStack {
-                Button(action: {
-                    withAnimation {
-                        self.showMenu = false
-                    }
-                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
-                }) {
-                    Image(systemName: "gear")
-                    Text("Setting")
-                }
-            }
-            HStack {
-                Button(action: {
-                    self.appState.logout()
-                    withAnimation {
-                        self.showMenu = false
-                    }
-                }) {
-                    Image(systemName: "person").padding(.leading, 2)
-                    Text("Logout").padding(.leading, 3)
-                }.foregroundColor(.red)
-            }
+            .padding(.top, geometry.safeAreaInsets.top)
+            .padding(.bottom, geometry.safeAreaInsets.bottom == 0 ? 25 : geometry.safeAreaInsets.bottom)
+            .padding(.horizontal)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Color(UIColor.systemBackground))
         }
-        .padding()
-        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 
