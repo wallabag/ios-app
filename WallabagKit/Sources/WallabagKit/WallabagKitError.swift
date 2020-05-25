@@ -9,14 +9,14 @@ import Foundation
 
 public enum WallabagKitError: Error {
     case authenticationRequired
-    case unknown
-    case serverError
-    case jsonError(json: WallabagJsonError)
-    case decodingJSON
-    case wrap(error: Error)
+     case unknown
+     case serverError
+     case jsonError(json: WallabagJsonError)
+     case decodingJSON
+     case wrap(error: Error)
 }
 
 public struct WallabagJsonError: Decodable {
-    let error: String
-    let errorDescription: String
+    public let error: String
+    public let errorDescription: String
 }

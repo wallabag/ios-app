@@ -11,6 +11,7 @@ import Logging
 import Swinject
 import UIKit
 import UserNotifications
+import WallabagKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

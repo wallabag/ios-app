@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct WallabagToken: Decodable {
-    let accessToken: String
-    let expiresIn: Int
-    let tokenType: String
-    let refreshToken: String
+public struct WallabagToken: Decodable {
+    public let accessToken: String
+    public let expiresIn: Int
+    public let tokenType: String
+    public let refreshToken: String
 }
 
 enum WallabagOauth: WallabagKitEndpoint {
