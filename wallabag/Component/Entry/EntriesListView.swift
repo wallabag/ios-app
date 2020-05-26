@@ -21,11 +21,13 @@ struct EntriesListView: View {
             Button(action: {
                 self.router.load(.entry(entry))
             }, label: {
-                EntryRowView(entry: entry).contextMenu {
-                    ArchiveEntryButton(entry: entry)
-                    StarEntryButton(entry: entry)
-                    DeleteEntryButton(entry: entry)
-                }
+                EntryRowView(entry: entry)
+                    .contentShape(Rectangle())
+                    .contextMenu {
+                        ArchiveEntryButton(entry: entry)
+                        StarEntryButton(entry: entry)
+                        DeleteEntryButton(entry: entry)
+                    }
             }).buttonStyle(PlainButtonStyle())
         }
     }
