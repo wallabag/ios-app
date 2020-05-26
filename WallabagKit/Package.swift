@@ -6,20 +6,23 @@ import PackageDescription
 let package = Package(
     name: "WallabagKit",
     platforms: [
-        .iOS(.v13)
+        .iOS(.v13),
     ],
     products: [
         .library(
             name: "WallabagKit",
-            targets: ["WallabagKit"]),
+            targets: ["WallabagKit"]
+        ),
     ],
     dependencies: [],
     targets: [
         .target(
             name: "WallabagKit",
-            dependencies: []),
+            dependencies: []
+        ),
         .testTarget(
             name: "WallabagKitTests",
-            dependencies: ["WallabagKit"]),
+            dependencies: ["WallabagKit"]
+        ),
     ]
 )

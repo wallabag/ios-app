@@ -1,5 +1,5 @@
-import XCTest
 @testable import WallabagKit
+import XCTest
 
 final class WallabagKitTests: XCTestCase {
     func testExample() {
