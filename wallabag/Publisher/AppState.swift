@@ -9,7 +9,6 @@ import Combine
 import Foundation
 import Logging
 
-#warning("Need to clean router")
 class AppState: NSObject, ObservableObject {
     @Published var registred: Bool = false {
         didSet {
@@ -18,7 +17,6 @@ class AppState: NSObject, ObservableObject {
         }
     }
 
-    // @Published var showMenu: Bool = false
     @Published var showPlayer: Bool = false
 
     @Injector var session: WallabagSession
