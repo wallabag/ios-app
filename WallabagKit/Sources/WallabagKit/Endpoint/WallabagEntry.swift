@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum WallabagEntryEndpoint: WallabagKitEndpoint {
+public enum WallabagEntryEndpoint: WallabagKitEndpoint {
     case get(page: Int = 1, perPage: Int = 30)
     case add(url: String)
     case addTag(tag: String, entry: Int)
@@ -15,7 +15,7 @@ enum WallabagEntryEndpoint: WallabagKitEndpoint {
     case deleteTag(tagId: Int, entry: Int)
     case update(id: Int, parameters: WallabagKit.Parameters)
 
-    func method() -> HttpMethod {
+    public func method() -> HttpMethod {
         switch self {
         case .get:
             return .get
@@ -28,7 +28,7 @@ enum WallabagEntryEndpoint: WallabagKitEndpoint {
         }
     }
 
-    func endpoint() -> String {
+    public func endpoint() -> String {
         switch self {
         case let .get(page, perPage):
             var request = URLComponents()
@@ -52,7 +52,7 @@ enum WallabagEntryEndpoint: WallabagKitEndpoint {
     }
 
     // swiftlint:disable force_try
-    func getBody() -> Data {
+    public func getBody() -> Data {
         switch self {
         case let .add(url):
             return try! JSONSerialization.data(withJSONObject: ["url": url], options: .prettyPrinted)
@@ -65,7 +65,7 @@ enum WallabagEntryEndpoint: WallabagKitEndpoint {
         }
     }
 
-    func requireAuth() -> Bool {
+    public func requireAuth() -> Bool {
         true
     }
 }

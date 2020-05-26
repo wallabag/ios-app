@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-extension Publishers {
+public extension Publishers {
     class ScrollSubscription<S: Subscriber>: Subscription where S.Input == ((Int, Int), [WallabagEntry]), S.Failure == WallabagKitError {
         private var subscriber: S?
         private let kit: WallabagKit
@@ -19,9 +19,9 @@ extension Publishers {
             sendRequest()
         }
 
-        func request(_: Subscribers.Demand) {}
+        public func request(_: Subscribers.Demand) {}
 
-        func cancel() {
+        public func cancel() {
             subscriber = nil
             // cancellable.forEach(cancel)
         }
@@ -51,17 +51,17 @@ extension Publishers {
 
     // swiftlint:disable nesting
     struct ScrollPublisher: Publisher {
-        typealias Progress = (Int, Int)
-        typealias Output = (Progress, [WallabagEntry])
-        typealias Failure = WallabagKitError
+        public typealias Progress = (Int, Int)
+        public typealias Output = (Progress, [WallabagEntry])
+        public typealias Failure = WallabagKitError
 
         private let kit: WallabagKit
 
-        init(kit: WallabagKit) {
+        public init(kit: WallabagKit) {
             self.kit = kit
         }
 
-        func receive<S: Subscriber>(subscriber: S) where
+        public func receive<S: Subscriber>(subscriber: S) where
             ScrollPublisher.Failure == S.Failure, ScrollPublisher.Output == S.Input {
             let subscription = ScrollSubscription(kit, subscriber: subscriber)
             subscriber.receive(subscription: subscription)

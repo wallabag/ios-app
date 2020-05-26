@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 public class WallabagKit {
-    typealias Parameters = [String: Any]
+    public typealias Parameters = [String: Any]
 
     private var decoder: JSONDecoder = {
         let decoder = JSONDecoder()
@@ -26,22 +26,22 @@ public class WallabagKit {
 
     // MARK: User information
 
-    var clientId: String?
-    var clientSecret: String?
-    var username: String?
-    var password: String?
+    public var clientId: String?
+    public var clientSecret: String?
+    public var username: String?
+    public var password: String?
 
     // MARK: Token
 
-    var accessToken: String?
-    var refreshToken: String?
+    public var accessToken: String?
+    public var refreshToken: String?
 
-    init(host: String, session: URLSession = .shared) {
+    public init(host: String, session: URLSession = .shared) {
         self.host = host
         self.session = session
     }
 
-    func requestToken() -> AnyPublisher<WallabagToken?, WallabagKitError> {
+    public func requestToken() -> AnyPublisher<WallabagToken?, WallabagKitError> {
         let urlRequest = request(for: WallabagOauth.request(
             clientId: clientId ?? "",
             clientSecret: clientSecret ?? "",
@@ -71,7 +71,7 @@ public class WallabagKit {
             .eraseToAnyPublisher()
     }
 
-    func send<T: Decodable>(to: WallabagKitEndpoint) -> AnyPublisher<T, WallabagKitError> {
+    public func send<T: Decodable>(to: WallabagKitEndpoint) -> AnyPublisher<T, WallabagKitError> {
         fetch(to: to)
             .decode(type: T.self, decoder: decoder)
             .mapErrorToWallabagKitError()
