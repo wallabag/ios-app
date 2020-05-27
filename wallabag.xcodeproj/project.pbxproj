@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C012C3E247F001A0080FEF6 /* FontSizeSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C012C3D247F001A0080FEF6 /* FontSizeSelectorView.swift */; };
 		9C03E49F238473F10060FF14 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C03E49E238473F10060FF14 /* PlayerView.swift */; };
 		9C03E4A1238474110060FF14 /* PlayerPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C03E4A0238474110060FF14 /* PlayerPublisher.swift */; };
 		9C0C3B8A2354890F008AD2C9 /* GeneralSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0C3B892354890F008AD2C9 /* GeneralSetting.swift */; };
@@ -199,6 +200,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9C012C3D247F001A0080FEF6 /* FontSizeSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeSelectorView.swift; sourceTree = "<group>"; };
 		9C03E49E238473F10060FF14 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		9C03E4A0238474110060FF14 /* PlayerPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPublisher.swift; sourceTree = "<group>"; };
 		9C0C3B892354890F008AD2C9 /* GeneralSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSetting.swift; sourceTree = "<group>"; };
@@ -433,9 +435,10 @@
 				9C66B6C8235681280068B968 /* DeleteEntryButton.swift */,
 				9C1EB6E723573DD700A5E54B /* EntryPictoImage.swift */,
 				9C55B12723719ADD0097FE27 /* EntryPicture.swift */,
+				9C012C3D247F001A0080FEF6 /* FontSizeSelectorView.swift */,
 				9CA42AD32359CAC500EF1BF6 /* RefreshButton.swift */,
-				9C66B6C62356806E0068B968 /* StarEntryButton.swift */,
 				9CFEE5F3246D7189009C15DD /* SearchView.swift */,
+				9C66B6C62356806E0068B968 /* StarEntryButton.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -542,8 +545,8 @@
 				9C73EC4622D79093008663B1 /* EntriesView.swift */,
 				9C9085F622DF3FF600D47262 /* EntryRowView.swift */,
 				9CA5D4C322E0906A00167574 /* EntryView.swift */,
-				9CA5D4C522E092B500167574 /* WebView.swift */,
 				9C1EB6E623573DB900A5E54B /* UI */,
+				9CA5D4C522E092B500167574 /* WebView.swift */,
 			);
 			path = Entry;
 			sourceTree = "<group>";
@@ -1232,6 +1235,7 @@
 				9C5EDEE7234E848D00141DFD /* Injector.swift in Sources */,
 				9C8F05EA23CFBD1500B98CCE /* MenuView.swift in Sources */,
 				9C4C1F92240E85680029FBC9 /* AppDelegateExtension.swift in Sources */,
+				9C012C3E247F001A0080FEF6 /* FontSizeSelectorView.swift in Sources */,
 				9CBCAF3A23F603320042D22E /* SKProduct.swift in Sources */,
 				9CB41DC4234FC03C00C2740B /* RegistrationServerViewHandler.swift in Sources */,
 				9C1786AC244CE4AD00DD1995 /* ImageDownloaderPublisher.swift in Sources */,

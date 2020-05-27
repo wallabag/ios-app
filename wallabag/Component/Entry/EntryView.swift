@@ -12,7 +12,7 @@ struct EntryView: View {
     @EnvironmentObject var router: Router
     @ObservedObject var entry: Entry
     @State var showTag: Bool = false
-    @State var size: Double = 100
+    @State private var webFontSizePercent: Double = 100
 
     var body: some View {
         VStack {
@@ -28,7 +28,7 @@ struct EntryView: View {
                     .lineLimit(1)
                 Spacer()
             }.padding()
-            WebView(entry: entry, size: $size)
+            WebView(entry: entry, fontSizePercent: $webFontSizePercent)
             bottomBar
             // PlayerView()
         }.sheet(isPresented: $showTag) {
@@ -38,23 +38,16 @@ struct EntryView: View {
     }
 
     private var bottomBar: some View {
-        HStack {
-            Group {
-            Button(action: {
-                self.size += 25
-            }, label: {
-                Image(systemName: "plus.rectangle.fill")
-            })
-            Button(action: {
-                self.size -= 25
-            }, label: {
-                Image(systemName: "minus.rectangle.fill")
-            })
-            }
+        HStack(alignment: .bottom) {
             DeleteEntryButton(entry: entry, showText: false) {
                 self.router.load(.entries)
             }.hapticNotification(.warning)
-            Spacer()
+            Group {
+                Spacer()
+                FontSizeSelectorView(webFontSizePercent: $webFontSizePercent)
+                    .buttonStyle(PlainButtonStyle())
+                Spacer()
+            }
             Button(action: {
                 self.openInSafari(self.entry.url)
             }, label: {

@@ -29,4 +29,9 @@ extension WKWebView {
             fatalError("Unable to load article view")
         }
     }
+
+    func fontSizePercent(_ fontSize: Double) {
+        let js = "document.getElementsByTagName('body')[0].style.fontSize='\(fontSize)%'"
+        evaluateJavaScript(js, completionHandler: nil)
+    }
 }
