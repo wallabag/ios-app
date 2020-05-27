@@ -14,19 +14,22 @@ import WebKit
 struct WebView: UIViewRepresentable {
     var entry: Entry
     private(set) var wkWebView = WKWebView(frame: .zero)
+    @Binding var fontSizePercent: Double
 
     func makeCoordinator() -> Coordinator {
-        Coordinator(self)
+        Coordinator(self, fontSizePercent: $fontSizePercent)
     }
 
     class Coordinator: NSObject, WKNavigationDelegate, UIScrollViewDelegate {
         @CoreDataViewContext var context: NSManagedObjectContext
+        @Binding var fontSizePercent: Double
 
         private var webView: WebView
         private var cancellable: AnyCancellable?
 
-        init(_ webView: WebView) {
+        init(_ webView: WebView, fontSizePercent: Binding<Double>) {
             self.webView = webView
+            _fontSizePercent = fontSizePercent
             super.init()
 
             cancellable = NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)
@@ -39,8 +42,9 @@ struct WebView: UIViewRepresentable {
             }
         }
 
-        func webView(_: WKWebView, didFinish _: WKNavigation!) {
+        func webView(_ webView: WKWebView, didFinish _: WKNavigation!) {
             webViewToLastPosition(nil)
+            webView.fontSizePercent(self.webView.fontSizePercent)
         }
 
         func webView(_: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
@@ -84,7 +88,9 @@ struct WebView: UIViewRepresentable {
         return wkWebView
     }
 
-    func updateUIView(_: WKWebView, context _: Context) {}
+    func updateUIView(_ webView: WKWebView, context _: Context) {
+        webView.fontSizePercent(fontSizePercent)
+    }
 }
 
 #if DEBUG
@@ -98,8 +104,14 @@ struct WebView: UIViewRepresentable {
 
         static var previews: some View {
             Group {
-                WebView(entry: entry).colorScheme(.light)
-                WebView(entry: entry).colorScheme(.dark)
+                WebView(
+                    entry: entry,
+                    fontSizePercent: .constant(100)
+                ).colorScheme(.light)
+                WebView(
+                    entry: entry,
+                    fontSizePercent: .constant(100)
+                ).colorScheme(.dark)
             }
         }
     }
