@@ -87,7 +87,7 @@
 		9CB41DC4234FC03C00C2740B /* RegistrationServerViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB41DC3234FC03C00C2740B /* RegistrationServerViewHandler.swift */; };
 		9CB41DC6234FC14500C2740B /* RegistrationClientIdClientSecretViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB41DC5234FC14500C2740B /* RegistrationClientIdClientSecretViewHandler.swift */; };
 		9CB41DC8234FC23200C2740B /* RegistrationLoginViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB41DC7234FC23200C2740B /* RegistrationLoginViewHandler.swift */; };
-		9CB4A63C23F083C10062122A /* NSItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB4A63B23F083C10062122A /* NSItemProvider.swift */; };
+		9CB41DCE234FC44200C2740B /* WallabagKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB41DCD234FC44200C2740B /* WallabagKit.swift */; };
 		9CBCAF3A23F603320042D22E /* SKProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CBCAF3923F603320042D22E /* SKProduct.swift */; };
 		9CC7D8B02371DB2F0055884D /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC7D8AF2371DB2F0055884D /* ImageDownloader.swift */; };
 		9CCC4AFC22E3BFD400F73891 /* WallabagUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC4AFB22E3BFD400F73891 /* WallabagUserDefaults.swift */; };
@@ -99,6 +99,7 @@
 		9CD4F454242FC83B003B56CF /* BugReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4F453242FC83B003B56CF /* BugReportView.swift */; };
 		9CD4F456242FCC71003B56CF /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4F455242FCC71003B56CF /* URL.swift */; };
 		9CD4F458242FE510003B56CF /* URLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4F457242FE510003B56CF /* URLTests.swift */; };
+		9CDEE2F0248847D5002B998D /* ExtensionClass.js in Resources */ = {isa = PBXBuildFile; fileRef = 9CDEE2EF248847D5002B998D /* ExtensionClass.js */; };
 		9CE32CBA234F648A004DD045 /* BundleKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE32CB9234F648A004DD045 /* BundleKey.swift */; };
 		9CEDCE9324240A78005C2BD8 /* RegistrationServerViewHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEDCE9224240A78005C2BD8 /* RegistrationServerViewHandlerTests.swift */; };
 		9CFA9E3123D270F0004C89E3 /* CoreDataSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFA9E3023D270F0004C89E3 /* CoreDataSync.swift */; };
@@ -275,7 +276,7 @@
 		9CB41DC3234FC03C00C2740B /* RegistrationServerViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationServerViewHandler.swift; sourceTree = "<group>"; };
 		9CB41DC5234FC14500C2740B /* RegistrationClientIdClientSecretViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationClientIdClientSecretViewHandler.swift; sourceTree = "<group>"; };
 		9CB41DC7234FC23200C2740B /* RegistrationLoginViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationLoginViewHandler.swift; sourceTree = "<group>"; };
-		9CB4A63B23F083C10062122A /* NSItemProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSItemProvider.swift; sourceTree = "<group>"; };
+		9CB41DCD234FC44200C2740B /* WallabagKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKit.swift; sourceTree = "<group>"; };
 		9CBCAF3923F603320042D22E /* SKProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKProduct.swift; sourceTree = "<group>"; };
 		9CC7D8AF2371DB2F0055884D /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		9CCC4AFB22E3BFD400F73891 /* WallabagUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagUserDefaults.swift; sourceTree = "<group>"; };
@@ -287,6 +288,7 @@
 		9CD4F453242FC83B003B56CF /* BugReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugReportView.swift; sourceTree = "<group>"; };
 		9CD4F455242FCC71003B56CF /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
 		9CD4F457242FE510003B56CF /* URLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLTests.swift; sourceTree = "<group>"; };
+		9CDEE2EF248847D5002B998D /* ExtensionClass.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = ExtensionClass.js; sourceTree = "<group>"; };
 		9CE32CB9234F648A004DD045 /* BundleKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleKey.swift; sourceTree = "<group>"; };
 		9CEDCE9224240A78005C2BD8 /* RegistrationServerViewHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationServerViewHandlerTests.swift; sourceTree = "<group>"; };
 		9CFA9E3023D270F0004C89E3 /* CoreDataSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSync.swift; sourceTree = "<group>"; };
@@ -780,8 +782,8 @@
 				FR_CE8F1CAE55A402D667F085B074B8B384 /* Info.plist */,
 				FR_B59475CCE7E9CDF9B6B6C979AF3EBC87 /* Media.xcassets */,
 				FR_39287A02F2B756958D56349AC317D33B /* ShareViewController.swift */,
-				9CB4A63B23F083C10062122A /* NSItemProvider.swift */,
 				9CD4CEF523F1FD5200CF11EA /* ShareExtensionError.swift */,
+				9CDEE2EF248847D5002B998D /* ExtensionClass.js */,
 			);
 			path = bagit;
 			sourceTree = "<group>";
@@ -1086,6 +1088,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF_B19FB0956CC0285F9184C852A8AF8964 /* Assets.xcassets in Resources */,
+				9CDEE2F0248847D5002B998D /* ExtensionClass.js in Resources */,
 				BF_3D48DCA00E8CF928EC9C14036EEFD36B /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1297,7 +1300,6 @@
 				9C1410572374610B0080B1AC /* WallabagUserDefaults.swift in Sources */,
 				9C141058237461E60080B1AC /* Setting.swift in Sources */,
 				9C14105A237462000080B1AC /* Password.swift in Sources */,
-				9CB4A63C23F083C10062122A /* NSItemProvider.swift in Sources */,
 				9C141059237461F50080B1AC /* GeneralSetting.swift in Sources */,
 				9C14105B237462090080B1AC /* KeychainPasswordItem.swift in Sources */,
 			);
