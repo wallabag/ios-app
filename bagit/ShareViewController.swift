@@ -84,17 +84,24 @@ class ShareViewController: UIViewController {
             return
         }
 
-        item.attachments?.forEach { attachment in
-            if attachment.isURL {
-                attachment.getUrl { completion($0) }
-            }
-            if attachment.isText {
-                attachment.getText { text in
-                    if text.hasPrefix("http") {
-                        completion(text)
+        let propertyList = String(kUTTypePropertyList)
+
+        for attachment in item.attachments! where attachment.hasItemConformingToTypeIdentifier(propertyList) {
+            attachment.loadItem(
+                forTypeIdentifier: propertyList,
+                options: nil,
+                completionHandler: { (item, _) -> Void in
+
+                    guard let dictionary = item as? NSDictionary,
+                        let results = dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
+                        let href = results["href"] as? String else {
+                        completion(nil)
+                        return
                     }
+
+                    completion(href)
                 }
-            }
+            )
         }
     }
 

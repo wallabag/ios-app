@@ -42,6 +42,8 @@
                 ).@count == 1
             ).@count > 0
             </string>
+            <key>NSExtensionJavaScriptPreprocessingFile</key>
+            <string>ExtensionClass</string>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.share-services</string>
