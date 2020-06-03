@@ -10,6 +10,7 @@ import CoreData
 import CoreSpotlight
 import Foundation
 import MobileCoreServices
+import WallabagKit
 
 class Entry: NSManagedObject, Identifiable {}
 

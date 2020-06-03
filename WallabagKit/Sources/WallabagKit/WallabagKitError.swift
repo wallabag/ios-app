@@ -17,6 +17,6 @@ public enum WallabagKitError: Error {
 }
 
 public struct WallabagJsonError: Decodable {
-    let error: String
-    let errorDescription: String
+    public let error: String
+    public let errorDescription: String
 }

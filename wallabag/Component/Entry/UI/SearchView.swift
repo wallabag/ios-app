@@ -35,7 +35,8 @@ struct SearchView: View {
                         self.showSearchBar = !self.showSearchBar
                     }
                 }, label: {
-                    Image(systemName: "magnifyingglass").padding(.trailing)
+                    Image(systemName: self.showSearchBar ? "list.bullet.below.rectangle" : "magnifyingglass")
+                        .padding(.trailing)
                 })
             }
         }

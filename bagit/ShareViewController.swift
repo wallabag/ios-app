@@ -9,6 +9,7 @@ import Combine
 import MobileCoreServices
 import Social
 import UIKit
+import WallabagKit
 
 @objc(ShareViewController)
 class ShareViewController: UIViewController {

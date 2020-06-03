@@ -23,6 +23,7 @@ struct EntryRowView: View {
                     EntryPictoImage(entry: entry, keyPath: \.isStarred, picto: "star")
                     Text(entry.domainName ?? "")
                         .font(.footnote)
+                    Spacer()
                 }
             }
         }
@@ -30,7 +31,14 @@ struct EntryRowView: View {
 }
 
 struct ArticleRowView_Previews: PreviewProvider {
+    static var entry: Entry {
+        let entry = Entry(context: CoreData.shared.viewContext)
+        entry.title = "Marc Zuckerberg devrait être passible d'une peine de prison pour mensonges répétés au sujet de la protection de la vie privée des utilisateurs Facebook, d'après le sénateur américain Ron Wyden"
+
+        return entry
+    }
+
     static var previews: some View {
-        EntryRowView(entry: Entry()).previewLayout(.fixed(width: 300, height: 70))
+        EntryRowView(entry: entry).previewLayout(.fixed(width: 300, height: 70))
     }
 }
