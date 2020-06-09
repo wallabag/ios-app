@@ -19,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     @Injector var appSync: AppSync
 
     let coreDataSync = CoreDataSync()
+    let appSetting = AppSetting()
 
     func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene.ConnectionOptions) {
         if let windowScene = scene as? UIWindowScene {
@@ -30,6 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     .environmentObject(router)
                     .environmentObject(errorPublisher)
                     .environmentObject(appSync)
+                    .environmentObject(appSetting)
                     .environment(\.managedObjectContext, CoreData.shared.viewContext))
             self.window = window
             window.makeKeyAndVisible()
