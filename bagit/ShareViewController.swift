@@ -48,6 +48,7 @@ class ShareViewController: UIViewController {
     }
 
     override func viewWillAppear(_: Bool) {
+        print(WallabagUserDefaults.registred)
         if WallabagUserDefaults.registred {
             let kit = WallabagKit(host: WallabagUserDefaults.host)
             kit.clientId = WallabagUserDefaults.clientId
@@ -74,6 +75,8 @@ class ShareViewController: UIViewController {
 
                 })
             }
+            // Missing clearView
+
         } else {
             clearView(withError: .unregistredApp)
         }
@@ -86,28 +89,40 @@ class ShareViewController: UIViewController {
         }
 
         let propertyList = String(kUTTypePropertyList)
+        let publicURL = String(kUTTypeURL)
 
-        for attachment in item.attachments! where attachment.hasItemConformingToTypeIdentifier(propertyList) {
-            attachment.loadItem(
-                forTypeIdentifier: propertyList,
-                options: nil,
-                completionHandler: { (item, _) -> Void in
+        for attachment in item.attachments! {
+            print(attachment.hasItemConformingToTypeIdentifier(String(kUTTypeURL)))
+        }
 
-                    guard let dictionary = item as? NSDictionary,
-                        let results = dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
-                        let href = results["href"] as? String else {
-                        completion(nil)
-                        return
+        item.attachments?.forEach { attachment in
+            if attachment.hasItemConformingToTypeIdentifier(propertyList) {
+                attachment.loadItem(
+                    forTypeIdentifier: propertyList,
+                    options: nil,
+                    completionHandler: { (item, _) -> Void in
+                        guard let dictionary = item as? NSDictionary,
+                            let results = dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
+                            let href = results["href"] as? String else {
+                            completion(nil)
+                            return
+                        }
+
+                        completion(href)
                     }
+                )
+            }
 
-                    completion(href)
+            if attachment.hasItemConformingToTypeIdentifier(publicURL) {
+                attachment.loadItem(forTypeIdentifier: publicURL, options: nil) { item, _ in
+                    completion((item as? NSURL)!.absoluteString!)
                 }
-            )
+            }
         }
     }
 
     private func clearView(withError: ShareExtensionError?) {
-        UIView.animate(withDuration: 1.0, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             self.notificationView.alpha = 0.0
         }, completion: { _ in
             if withError != nil {
