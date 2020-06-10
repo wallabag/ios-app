@@ -9,19 +9,19 @@ import Combine
 import Foundation
 
 class ErrorPublisher: ObservableObject {
-    private var resetAfter: DispatchTime
+    private var resetAfter: Double
 
-    init(_ resetAfter: DispatchTime = .now() + 10) {
+    init(_ resetAfter: Double = 10) {
         self.resetAfter = resetAfter
     }
 
-    @Published var lastError: WallabagError? {
-        willSet {
-            if nil != newValue {
-                DispatchQueue.main.asyncAfter(deadline: resetAfter) { [weak self] in
-                    self?.lastError = nil
-                }
-            }
+    @Published private(set) var lastError: WallabagError?
+
+    func setLast(_ error: WallabagError) {
+        lastError = error
+        DispatchQueue.main.asyncAfter(deadline: .now() + resetAfter) { [weak self] in
+            print("async")
+            self?.lastError = nil
         }
     }
 }

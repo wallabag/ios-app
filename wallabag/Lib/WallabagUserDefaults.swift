@@ -46,4 +46,7 @@ struct WallabagUserDefaults {
 
     @GeneralSetting("defaultMode", defaultValue: "allArticles")
     static var defaultMode: String
+
+    @Setting("webFontSizePercent", defaultValue: 100)
+    static var webFontSizePercent: Double
 }

@@ -22,30 +22,48 @@ struct EntryView: View {
                     Text("Back")
                 })
                 Text(entry.title ?? "Entry")
+                    .font(.title)
                     .fontWeight(.black)
                     .lineLimit(1)
                 Spacer()
-            }.padding(.horizontal)
+            }.padding()
             WebView(entry: entry)
-            HStack {
-                DeleteEntryButton(entry: entry, showText: false) {
-                    self.router.load(.entries)
-                }
-                Spacer()
-                Button(action: {
-                    self.showTag.toggle()
-                }, label: {
-                    Image(systemName: self.showTag ? "tag.fill" : "tag")
-                })
-                StarEntryButton(entry: entry, showText: false)
-                ArchiveEntryButton(entry: entry, showText: false)
-            }.font(.system(size: 20))
-                .padding()
+            bottomBar
             // PlayerView()
         }.sheet(isPresented: $showTag) {
             TagListFor(tagsForEntry: TagsForEntryPublisher(entry: self.entry))
                 .environment(\.managedObjectContext, CoreData.shared.viewContext)
         }
+    }
+
+    private var bottomBar: some View {
+        HStack(alignment: .bottom) {
+            DeleteEntryButton(entry: entry, showText: false) {
+                self.router.load(.entries)
+            }.hapticNotification(.warning)
+            Group {
+                Spacer()
+                FontSizeSelectorView()
+                    .buttonStyle(PlainButtonStyle())
+                Spacer()
+            }
+            Button(action: {
+                self.openInSafari(self.entry.url)
+            }, label: {
+                Image(systemName: "safari")
+                }).buttonStyle(PlainButtonStyle())
+            Spacer()
+            Button(action: {
+                self.showTag.toggle()
+            }, label: {
+                Image(systemName: self.showTag ? "tag.fill" : "tag")
+            }).buttonStyle(PlainButtonStyle())
+            Spacer()
+            StarEntryButton(entry: entry, showText: false).hapticNotification(.success)
+            Spacer()
+            ArchiveEntryButton(entry: entry, showText: false).hapticNotification(.success)
+        }.font(.system(size: 20))
+            .padding()
     }
 }
 

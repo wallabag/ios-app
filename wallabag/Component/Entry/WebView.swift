@@ -14,19 +14,22 @@ import WebKit
 struct WebView: UIViewRepresentable {
     var entry: Entry
     private(set) var wkWebView = WKWebView(frame: .zero)
+    @EnvironmentObject var appSetting: AppSetting
 
     func makeCoordinator() -> Coordinator {
-        Coordinator(self)
+        Coordinator(self, appSetting: appSetting)
     }
 
     class Coordinator: NSObject, WKNavigationDelegate, UIScrollViewDelegate {
         @CoreDataViewContext var context: NSManagedObjectContext
+        var appSetting: AppSetting
 
         private var webView: WebView
         private var cancellable: AnyCancellable?
 
-        init(_ webView: WebView) {
+        init(_ webView: WebView, appSetting: AppSetting) {
             self.webView = webView
+            self.appSetting = appSetting
             super.init()
 
             cancellable = NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)
@@ -39,8 +42,9 @@ struct WebView: UIViewRepresentable {
             }
         }
 
-        func webView(_: WKWebView, didFinish _: WKNavigation!) {
+        func webView(_ webView: WKWebView, didFinish _: WKNavigation!) {
             webViewToLastPosition(nil)
+            webView.fontSizePercent(appSetting.webFontSizePercent)
         }
 
         func webView(_: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
@@ -84,7 +88,9 @@ struct WebView: UIViewRepresentable {
         return wkWebView
     }
 
-    func updateUIView(_: WKWebView, context _: Context) {}
+    func updateUIView(_ webView: WKWebView, context _: Context) {
+        webView.fontSizePercent(appSetting.webFontSizePercent)
+    }
 }
 
 #if DEBUG
@@ -98,8 +104,12 @@ struct WebView: UIViewRepresentable {
 
         static var previews: some View {
             Group {
-                WebView(entry: entry).colorScheme(.light)
-                WebView(entry: entry).colorScheme(.dark)
+                WebView(
+                    entry: entry
+                ).colorScheme(.light)
+                WebView(
+                    entry: entry
+                ).colorScheme(.dark)
             }
         }
     }

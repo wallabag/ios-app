@@ -5,12 +5,13 @@
 //  Created by Marinel Maxime on 11/07/2019.
 //
 
+import Combine
 import CoreData
 import SwiftUI
 
 struct EntriesView: View {
     @ObservedObject var pasteBoardPublisher = PasteBoardPublisher()
-    @State private var filter: RetrieveMode = RetrieveMode(fromCase: WallabagUserDefaults.defaultMode)
+    @ObservedObject var searchPublisher = SearchPublisher()
 
     var body: some View {
         VStack {
@@ -22,8 +23,8 @@ struct EntriesView: View {
 
             // MARK: Picker
 
-            RetrieveModePicker(filter: self.$filter)
-            EntriesListView(predicate: filter.predicate())
+            SearchView(searchPublisher: searchPublisher)
+            EntriesListView(predicate: searchPublisher.predicate)
             // PlayerView()
         }
         .navigationBarTitle(Text("Entry"))

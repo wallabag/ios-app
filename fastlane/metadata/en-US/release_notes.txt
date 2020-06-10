@@ -1,9 +1,6 @@
-The corrective update is finally available.
-On the menu:
-Arrangement of buttons in an article
-The article is opened again in the same position
-Donation page arrangement (thank you)
-Correction of a UI problem (avienne)
-Rework of synchronization (thanks to reading a book following your donations)
-Correction of an article containing a video
-Memory management patch
+The search is back on the application.
+We have reviewed the ergonomics of the reading page a bit, you can now adapt the size of the text, open the original article directly in Safari.
+The sharing extension has been reworked, it now accepts pdf links, and should also block less often.
+The menu display has been reworked (avienne)
+
+Small fixes and improvements
