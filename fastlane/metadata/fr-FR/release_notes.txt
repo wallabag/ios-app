@@ -1,9 +1,6 @@
-La mise à jour corrective est enfin disponible.
-Au menu:
-Arrangement des boutons dans un article
-L'article est de nouveau ouvert à la meme position
-Arrangement de la page don (merci à vous)
-Correction d'un probleme UI (avienne)
-Rework de la synchronisation (grace à la lecture d'un livre suite à vos dons)
-Correction d'un article contenant une video
-Correctif gestion memoire
+La recherche est de retour sur l'application.
+Nous avons revu un peu l'ergonomie de la page de lecture, vous pouvez maintenant adapter la taille du texte, ouvrir l'article original directement dans safari.
+L'extension de partage a été retravaillé, elle accepte maintenant les liens pdf, et devrait aussi moins souvent bloquer.
+L'affichage du menu a été retravaillé (avienne)
+
+Des petits fix et amélirations 
