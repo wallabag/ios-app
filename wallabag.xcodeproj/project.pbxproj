@@ -25,6 +25,7 @@
 		9C18B70F242508C800804F4D /* RegistrationClientIdSecretViewHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C18B70E242508C800804F4D /* RegistrationClientIdSecretViewHandlerTests.swift */; };
 		9C18B71124251C7100804F4D /* RegistrationLoginViewHandlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C18B71024251C7100804F4D /* RegistrationLoginViewHandlerTests.swift */; };
 		9C19F8E322707707009450F9 /* RetrieveModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C19F8E222707707009450F9 /* RetrieveModeTests.swift */; };
+		9C1B8935249BBC8A006C76BB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C1B8937249BBC8A006C76BB /* Localizable.strings */; };
 		9C1EB6E823573DD700A5E54B /* EntryPictoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1EB6E723573DD700A5E54B /* EntryPictoImage.swift */; };
 		9C1EF9C424747FD600152BB5 /* HapticNotificationButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1EF9C324747FD600152BB5 /* HapticNotificationButtonStyle.swift */; };
 		9C1EF9C72474800700152BB5 /* View+haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1EF9C62474800700152BB5 /* View+haptic.swift */; };
@@ -137,7 +138,6 @@
 		BF_C63B962A10CD74586351B9DB5E0FBBE1 /* WallabagKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_AAAE3FAEDFB1E2658F53DC3C5B9D5F2A /* WallabagKitTests.swift */; };
 		BF_C9F13CB7B3B557E809E6D9898B0791C2 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_C16D1C5C72DB19E504BB13DC0273DD1D /* Date.swift */; };
 		BF_DB7F468621011B78AA80968FF9B4DD93 /* RetrieveMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_26E374F0AF1D1FBEC022213E082366DF /* RetrieveMode.swift */; };
-		BF_DD384BCC5299EA5EEB8825713EBE508F /* Localizable.plist in Resources */ = {isa = PBXBuildFile; fileRef = FR_F21BD2487093365E104F75BAF6110063 /* Localizable.plist */; };
 		BF_E6040E8172A1379E9F3BF5092595589A /* AuthSuccess.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_EA8F1AFA4AAA4DA7100F817954FA4F9F /* AuthSuccess.json */; };
 		BF_F2ADFB3B4C1B0836F13DB4A1DE5406A7 /* TokenAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_AB15CF3A73378A512C3D9BBC9F7ECD65 /* TokenAdapterTests.swift */; };
 		BF_F455B9C80CD63DD87EF42992438C4F82 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_39287A02F2B756958D56349AC317D33B /* ShareViewController.swift */; };
@@ -213,6 +213,7 @@
 		9C18B70E242508C800804F4D /* RegistrationClientIdSecretViewHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationClientIdSecretViewHandlerTests.swift; sourceTree = "<group>"; };
 		9C18B71024251C7100804F4D /* RegistrationLoginViewHandlerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationLoginViewHandlerTests.swift; sourceTree = "<group>"; };
 		9C19F8E222707707009450F9 /* RetrieveModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveModeTests.swift; sourceTree = "<group>"; };
+		9C1B8936249BBC8A006C76BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9C1EB6E723573DD700A5E54B /* EntryPictoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryPictoImage.swift; sourceTree = "<group>"; };
 		9C1EF9C324747FD600152BB5 /* HapticNotificationButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticNotificationButtonStyle.swift; sourceTree = "<group>"; };
 		9C1EF9C62474800700152BB5 /* View+haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+haptic.swift"; sourceTree = "<group>"; };
@@ -344,7 +345,6 @@
 		FR_EEA76C806A8451B9E073B5DD7C8E35F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FR_EFE6ED1C47DAA622DFB6E57FF56AB4B9 /* WallabagKitCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitCollectionTests.swift; sourceTree = "<group>"; };
 		FR_F00BE02B4B3D06E908BEFCE4144D6CEB /* wallabagTests-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "wallabagTests-Debug.xcconfig"; sourceTree = "<group>"; };
-		FR_F21BD2487093365E104F75BAF6110063 /* Localizable.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Localizable.plist; sourceTree = "<group>"; };
 		FR_F7BDFB5A5171A43D14D5E7009B3AF255 /* Dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		FR_F94DA63289F6177D1927EB1C68054CF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -860,7 +860,6 @@
 				9C90F62B2296B86F00C113EF /* Settings.bundle */,
 				FR_7F369F01648273740FFAC734BF79A78E /* wallabag.entitlements */,
 				FR_606AAB346453DED260A405BD16778883 /* Info.plist */,
-				FR_F21BD2487093365E104F75BAF6110063 /* Localizable.plist */,
 				FR_9600E47FC00A35A057E5DE937EDBFDF3 /* AppDelegate.swift */,
 				9C73EC4322D79037008663B1 /* SceneDelegate.swift */,
 				FR_F94DA63289F6177D1927EB1C68054CF9 /* Assets.xcassets */,
@@ -875,6 +874,7 @@
 				9C5EDEE3234E83B000141DFD /* Publisher */,
 				G_60BF241AD87B2847EBA2C59F302A8DF3 /* Storyboard */,
 				9C148528235E3FF00082D7BB /* wallabagStore.xcdatamodeld */,
+				9C1B8937249BBC8A006C76BB /* Localizable.strings */,
 			);
 			path = wallabag;
 			sourceTree = "<group>";
@@ -1099,10 +1099,10 @@
 			files = (
 				BF_C34B818DF3810583F726069B8FF3F5D3 /* Assets.xcassets in Resources */,
 				9C90F62C2296B86F00C113EF /* Settings.bundle in Resources */,
-				BF_DD384BCC5299EA5EEB8825713EBE508F /* Localizable.plist in Resources */,
 				BF_42EE562310F74101FFA47579EB427A90 /* Main.storyboard in Resources */,
 				BF_0958BD47C0A373C73825495FA643F41D /* UbuntuTitling-Bold.ttf in Resources */,
 				BF_0576133F70765A88C0F8BD8FC41C19EE /* article.html in Resources */,
+				9C1B8935249BBC8A006C76BB /* Localizable.strings in Resources */,
 				9C5EDF08234E982600141DFD /* LaunchScreen.storyboard in Resources */,
 				BF_B1157D4BF6AD7D39E2F5385157298795 /* justify.css in Resources */,
 				BF_B103129BE6658829E2C3D2A06000273C /* main.css in Resources */,
@@ -1319,6 +1319,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		9C1B8937249BBC8A006C76BB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C1B8936249BBC8A006C76BB /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		VG_6CD892D2BBF5FE25B74443256D4272AA /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
