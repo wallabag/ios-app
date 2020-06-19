@@ -5,6 +5,7 @@
 //  Created by Marinel Maxime on 17/07/2019.
 //
 
+import HTMLEntities
 import SwiftUI
 
 struct EntryRowView: View {
@@ -14,7 +15,7 @@ struct EntryRowView: View {
         HStack {
             EntryPicture(url: entry.previewPicture).frame(width: 50, height: 50, alignment: .center)
             VStack(alignment: .leading) {
-                Text(entry.title ?? "")
+                Text(entry.title?.htmlUnescape() ?? "")
                     .font(.headline)
                 Text(String(format: "Reading time %@".localized, arguments: [Int(entry.readingTime).readingTime]))
                     .font(.footnote)

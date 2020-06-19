@@ -57,6 +57,7 @@
 		9C5EDEEA234E889100141DFD /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5EDEE9234E889100141DFD /* AboutView.swift */; };
 		9C5EDF00234E937100141DFD /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 9C5EDEFF234E937100141DFD /* Swinject */; };
 		9C5EDF08234E982600141DFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C5EDF07234E982600141DFD /* LaunchScreen.storyboard */; };
+		9C6038A8249CC1E900F4FD2D /* HTMLEntities in Frameworks */ = {isa = PBXBuildFile; productRef = 9C6038A7249CC1E900F4FD2D /* HTMLEntities */; };
 		9C60DE2523606DAA00F78D02 /* TagRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C60DE2423606DAA00F78D02 /* TagRow.swift */; };
 		9C66B6BD235667770068B968 /* AppSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C66B6BC235667770068B968 /* AppSync.swift */; };
 		9C66B6C2235678780068B968 /* RetrieveModePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C66B6C1235678780068B968 /* RetrieveModePicker.swift */; };
@@ -385,6 +386,7 @@
 			files = (
 				9C22CED82430B64D00B2C69F /* Logging in Frameworks */,
 				9C677CAD227EF5A6006C7112 /* WebKit.framework in Frameworks */,
+				9C6038A8249CC1E900F4FD2D /* HTMLEntities in Frameworks */,
 				9C5EDF00234E937100141DFD /* Swinject in Frameworks */,
 				9C6C37502477D6F200D2228F /* WallabagKit in Frameworks */,
 				9CCF9327242D13FF00904D3B /* SwiftyLogger in Frameworks */,
@@ -973,6 +975,7 @@
 				9CCF9326242D13FF00904D3B /* SwiftyLogger */,
 				9C22CED72430B64D00B2C69F /* Logging */,
 				9C6C374F2477D6F200D2228F /* WallabagKit */,
+				9C6038A7249CC1E900F4FD2D /* HTMLEntities */,
 			);
 			productName = wallabag;
 			productReference = FR_7EF8E3725DA0867206C920EE5FBF277C /* wallabag.app */;
@@ -1042,6 +1045,7 @@
 				9C5EDEFE234E937100141DFD /* XCRemoteSwiftPackageReference "Swinject" */,
 				9CCF9325242D13FF00904D3B /* XCRemoteSwiftPackageReference "SwiftyLogger" */,
 				9C22CED62430B64D00B2C69F /* XCRemoteSwiftPackageReference "swift-log" */,
+				9C6038A6249CC1E900F4FD2D /* XCRemoteSwiftPackageReference "swift-html-entities" */,
 			);
 			productRefGroup = G_F9352AEEBDAE1173F665BDBED628DF2A /* Products */;
 			projectDirPath = "";
@@ -1797,6 +1801,14 @@
 				minimumVersion = 2.7.1;
 			};
 		};
+		9C6038A6249CC1E900F4FD2D /* XCRemoteSwiftPackageReference "swift-html-entities" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/IBM-Swift/swift-html-entities.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 3.0.14;
+			};
+		};
 		9CCF9325242D13FF00904D3B /* XCRemoteSwiftPackageReference "SwiftyLogger" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/district-web/SwiftyLogger";
@@ -1817,6 +1829,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9C5EDEFE234E937100141DFD /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
+		};
+		9C6038A7249CC1E900F4FD2D /* HTMLEntities */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C6038A6249CC1E900F4FD2D /* XCRemoteSwiftPackageReference "swift-html-entities" */;
+			productName = HTMLEntities;
 		};
 		9C6C374F2477D6F200D2228F /* WallabagKit */ = {
 			isa = XCSwiftPackageProductDependency;

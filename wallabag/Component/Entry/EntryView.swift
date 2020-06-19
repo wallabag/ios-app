@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import HTMLEntities
 import SwiftUI
 
 struct EntryView: View {
@@ -21,7 +22,7 @@ struct EntryView: View {
                 }, label: {
                     Text("Back")
                 })
-                Text(entry.title ?? "Entry")
+                Text(entry.title?.htmlUnescape() ?? "Entry")
                     .font(.title)
                     .fontWeight(.black)
                     .lineLimit(1)
