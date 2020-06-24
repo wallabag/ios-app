@@ -19,11 +19,7 @@ struct BugReportView: View {
             Reporting a bug is a big help! But you can also just suggest improvements for example.
             """)
             Spacer()
-            Button(action: {
-                UIApplication.shared.open("https://github.com/wallabag/ios-app/issues")
-            }, label: {
-                Text("Report issue")
-            })
+            Link("Report issue", destination: "https://github.com/wallabag/ios-app/issues")
         }
     }
 }
