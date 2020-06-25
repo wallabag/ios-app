@@ -86,7 +86,7 @@ struct MenuView: View {
                     }.foregroundColor(.red)
                 }
             }
-            .padding(.top, geometry.safeAreaInsets.top)
+            .padding(.top, 40)
             .padding(.bottom, geometry.safeAreaInsets.bottom == 0 ? 25 : geometry.safeAreaInsets.bottom)
             .padding(.horizontal)
             .frame(maxWidth: .infinity, alignment: .leading)
