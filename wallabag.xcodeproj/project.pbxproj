@@ -69,8 +69,8 @@
 		9C6C37522477D73A00D2228F /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9C6C37512477D73A00D2228F /* WallabagKit */; };
 		9C6D0741238BFEAD00FCF4FF /* SwipePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D0740238BFEAD00FCF4FF /* SwipePlayerView.swift */; };
 		9C6DC0F2224112480012486D /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6DC0F1224112480012486D /* UISearchBar.swift */; };
-		9C73EC4422D79037008663B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C73EC4322D79037008663B1 /* SceneDelegate.swift */; };
 		9C73EC4722D79093008663B1 /* EntriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C73EC4622D79093008663B1 /* EntriesView.swift */; };
+		9C75FFF124A491C7004ECC54 /* WallabagApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C75FFF024A491C7004ECC54 /* WallabagApp.swift */; };
 		9C7663F623F43EAB00232B08 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7663F523F43EAB00232B08 /* TipView.swift */; };
 		9C7663F823F4439E00232B08 /* SKPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7663F723F4439E00232B08 /* SKPublisher.swift */; };
 		9C78B9D4235BBD8F00BDEFEB /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_290ECAC1FE613D28DF9CB4D061F101F9 /* KeychainPasswordItem.swift */; };
@@ -256,8 +256,8 @@
 		9C6C374E2477D69500D2228F /* WallabagKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WallabagKit; sourceTree = "<group>"; };
 		9C6D0740238BFEAD00FCF4FF /* SwipePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipePlayerView.swift; sourceTree = "<group>"; };
 		9C6DC0F1224112480012486D /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
-		9C73EC4322D79037008663B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9C73EC4622D79093008663B1 /* EntriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesView.swift; sourceTree = "<group>"; };
+		9C75FFF024A491C7004ECC54 /* WallabagApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagApp.swift; sourceTree = "<group>"; };
 		9C7663F523F43EAB00232B08 /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 		9C7663F723F4439E00232B08 /* SKPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKPublisher.swift; sourceTree = "<group>"; };
 		9C7AFE0C2353C93E00FBF989 /* WallabagSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagSession.swift; sourceTree = "<group>"; };
@@ -863,7 +863,7 @@
 				FR_7F369F01648273740FFAC734BF79A78E /* wallabag.entitlements */,
 				FR_606AAB346453DED260A405BD16778883 /* Info.plist */,
 				FR_9600E47FC00A35A057E5DE937EDBFDF3 /* AppDelegate.swift */,
-				9C73EC4322D79037008663B1 /* SceneDelegate.swift */,
+				9C75FFF024A491C7004ECC54 /* WallabagApp.swift */,
 				FR_F94DA63289F6177D1927EB1C68054CF9 /* Assets.xcassets */,
 				9C73EC4522D7907E008663B1 /* Component */,
 				G_BD722E6D6F9F896167754C6E90947E1F /* Entity */,
@@ -872,11 +872,11 @@
 				9C5351B72423D4BB006E2918 /* Handler */,
 				G_DFD8F6A37FD99EE890AF4FA2569F633D /* html-ressources */,
 				G_ED05746A8B318D93F5C59AFB3D2C703A /* Lib */,
+				9C1B8937249BBC8A006C76BB /* Localizable.strings */,
 				9C889E7D22E66BB000B9F767 /* PropertyWrapper */,
 				9C5EDEE3234E83B000141DFD /* Publisher */,
 				G_60BF241AD87B2847EBA2C59F302A8DF3 /* Storyboard */,
 				9C148528235E3FF00082D7BB /* wallabagStore.xcdatamodeld */,
-				9C1B8937249BBC8A006C76BB /* Localizable.strings */,
 			);
 			path = wallabag;
 			sourceTree = "<group>";
@@ -1223,6 +1223,7 @@
 				BF_DB7F468621011B78AA80968FF9B4DD93 /* RetrieveMode.swift in Sources */,
 				9CFA9E3123D270F0004C89E3 /* CoreDataSync.swift in Sources */,
 				9C1EF9C424747FD600152BB5 /* HapticNotificationButtonStyle.swift in Sources */,
+				9C75FFF124A491C7004ECC54 /* WallabagApp.swift in Sources */,
 				9C60DE2523606DAA00F78D02 /* TagRow.swift in Sources */,
 				9CD4F456242FCC71003B56CF /* URL.swift in Sources */,
 				BF_A31D94510D6C4BD65AC0122EB64626C8 /* String.swift in Sources */,
@@ -1235,7 +1236,6 @@
 				9CB41DC4234FC03C00C2740B /* RegistrationServerViewHandler.swift in Sources */,
 				9C1786AC244CE4AD00DD1995 /* ImageDownloaderPublisher.swift in Sources */,
 				9C327655238B031D0040D9D6 /* PasteBoardPublisher.swift in Sources */,
-				9C73EC4422D79037008663B1 /* SceneDelegate.swift in Sources */,
 				9CCC4AFC22E3BFD400F73891 /* WallabagUserDefaults.swift in Sources */,
 				9C73EC4722D79093008663B1 /* EntriesView.swift in Sources */,
 				9C148527235E3F680082D7BB /* CoreDataViewContext.swift in Sources */,
@@ -1622,7 +1622,7 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = G97URPCGB8;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1655,7 +1655,7 @@
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				DEVELOPMENT_TEAM = G97URPCGB8;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;

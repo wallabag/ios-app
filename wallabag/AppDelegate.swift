@@ -13,9 +13,10 @@ import UIKit
 import UserNotifications
 import WallabagKit
 
-@UIApplicationMain
+// @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    let container: Container = {
+    @available(*, deprecated, message: "Move to singleton")
+    static let container: Container = {
         let container = Container()
         container.register(ErrorPublisher.self) { _ in ErrorPublisher() }.inObjectScope(.container)
         container.register(WallabagKit.self, factory: { _ in
@@ -43,8 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return container
     }()
 
-    var window: UIWindow?
-
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         #if DEBUG
             let args = ProcessInfo.processInfo.arguments
@@ -54,22 +53,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         #endif
 
-        requestBadge()
-
         return true
-    }
-
-    func application(_: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options _: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    func applicationDidFinishLaunching(_: UIApplication) {
-        UIApplication.shared.beginReceivingRemoteControlEvents()
-    }
-
-    private func requestBadge() {
-        if WallabagUserDefaults.badgeEnabled {
-            // UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in }
-        }
     }
 }

@@ -16,8 +16,7 @@ struct Injector<Service> {
     var wrappedValue: Service {
         mutating get {
             if service == nil {
-                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { fatalError() }
-                service = appDelegate.container.resolve(Service.self)
+                service = AppDelegate.container.resolve(Service.self)
             }
 
             return service!

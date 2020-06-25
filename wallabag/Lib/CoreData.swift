@@ -5,13 +5,25 @@
 //  Created by Marinel Maxime on 21/10/2019.
 //
 
+import Combine
 import CoreData
 import Foundation
+import UIKit.UIApplication
 
 final class CoreData {
     static let shared = CoreData()
 
-    private init() {}
+    private var cancellables = Set<AnyCancellable>()
+
+    private init() {
+        NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)
+            .sink(receiveValue: didEnterBackgroundNotification)
+            .store(in: &cancellables)
+    }
+
+    private func didEnterBackgroundNotification(_: Notification) {
+        saveContext()
+    }
 
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "wallabagStore")
