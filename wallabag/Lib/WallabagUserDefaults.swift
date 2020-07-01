@@ -49,4 +49,7 @@ struct WallabagUserDefaults {
 
     @Setting("webFontSizePercent", defaultValue: 100)
     static var webFontSizePercent: Double
+
+    @GeneralSetting("showImageInList", defaultValue: true)
+    static var showImageInList: Bool
 }

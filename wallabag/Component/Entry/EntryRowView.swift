@@ -13,7 +13,9 @@ struct EntryRowView: View {
 
     var body: some View {
         HStack {
-            EntryPicture(url: entry.previewPicture).frame(width: 50, height: 50, alignment: .center)
+            if WallabagUserDefaults.showImageInList {
+                EntryPicture(url: entry.previewPicture).frame(width: 50, height: 50, alignment: .center)
+            }
             VStack(alignment: .leading) {
                 Text(entry.title?.htmlUnescape() ?? "")
                     .font(.headline)

@@ -60,6 +60,16 @@
 				<string>unarchivedArticles</string>
 			</array>
 		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Show image in list</string>
+			<key>Key</key>
+			<string>showImageInList</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
 	</array>
 </dict>
 </plist>
