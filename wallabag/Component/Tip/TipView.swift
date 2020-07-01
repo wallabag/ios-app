@@ -30,7 +30,7 @@ struct TipView: View {
                     Text("Loading...")
                 }
             } else {
-                Text("It seems impossible to make a payment")
+                Text("It seems impossible to make a payment.")
             }
             Spacer()
         }

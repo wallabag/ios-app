@@ -2,3 +2,8 @@
 // Menu
 "Menu" = "Menu";
 "Entries" = "Articles";
+"Add entry" = "Ajouter un article";
+
+// Common
+"Back" = "Retour";
+"Submit" = "Envoyer";

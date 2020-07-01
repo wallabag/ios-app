@@ -9,8 +9,9 @@ import SwiftUI
 
 private struct Menu: Identifiable {
     var id: String {
-        route.title
+        "\(route.title)"
     }
+
     let title: LocalizedStringKey
     let img: String
     let route: Route

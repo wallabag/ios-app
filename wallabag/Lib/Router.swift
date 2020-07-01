@@ -38,7 +38,7 @@ enum Route: Equatable {
         }
     }
 
-    var title: String {
+    var title: LocalizedStringKey {
         switch self {
         case .addEntry:
             return "Add entry"

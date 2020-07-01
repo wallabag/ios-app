@@ -8,3 +8,23 @@
 "Bug report" = "Bug report";
 "Setting" = "Setting";
 "Logout" = "Logout";
+
+// Mode picker
+"All" = "All";
+"Starred" = "Starred";
+"Unread" = "Unread";
+"Read" = "Read";
+
+// Add View
+"Add entry" = "Add entry";
+
+// Tip View
+"This application is developed on free time" = "This application is developed on free time";
+"It is free and will remain so." = "It is free and will remain so.";
+"But you can contribute financially by making a donation whenever you want to support the project." = "But you can contribute financially by making a donation whenever you want to support the project.";
+"Loading..." = "Loading...";
+"It seems impossible to make a payment." = "It seems impossible to make a payment.";
+
+// Common
+"Submit" = "Submit";
+"Back" = "Back";
