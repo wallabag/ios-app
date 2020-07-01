@@ -7,8 +7,11 @@
 
 import SwiftUI
 
-private struct Menu {
-    let title: String
+private struct Menu: Identifiable {
+    var id: String {
+        route.title
+    }
+    let title: LocalizedStringKey
     let img: String
     let route: Route
 }
@@ -37,7 +40,7 @@ struct MenuView: View {
                             self.showMenu = false
                         }
                     }
-                ForEach(self.menus, id: \.title) { menu in
+                ForEach(self.menus) { menu in
                     HStack {
                         Button(action: {
                             self.router.load(menu.route)

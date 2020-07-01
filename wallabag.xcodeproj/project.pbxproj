@@ -229,6 +229,7 @@
 		9C37217422E1134600D363FB /* ServerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerView.swift; sourceTree = "<group>"; };
 		9C37217622E1171100D363FB /* ClientIdClientSecretView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientIdClientSecretView.swift; sourceTree = "<group>"; };
 		9C40054922E1DE3200A6E5CA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		9C452B6624ACE318000B1EB0 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9C45F6CA236069650021813B /* TagListFor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagListFor.swift; sourceTree = "<group>"; };
 		9C4C1F85240E7E340029FBC9 /* wallabagScreenshotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagScreenshotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C4C1F87240E7E350029FBC9 /* wallabagScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wallabagScreenshotTests.swift; sourceTree = "<group>"; };
@@ -1040,6 +1041,7 @@
 			knownRegions = (
 				Base,
 				en,
+				fr,
 			);
 			mainGroup = G_D9112B40FBAA7D6E28EF1DE3BF37847D;
 			packageReferences = (
@@ -1329,6 +1331,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9C1B8936249BBC8A006C76BB /* en */,
+				9C452B6624ACE318000B1EB0 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

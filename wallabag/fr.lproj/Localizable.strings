@@ -1,43 +1,4 @@
-/* 
-  Localizable.strings
-  wallabag
 
-  Created by maxime marinel on 09/06/2017.
-  Copyright © 2017 maxime marinel. All rights reserved.
-*/
-
-//Common
-"Error" = "Erreur";
-"Cancel" = "Annuler";
-"Are you sure?" = "Etes vous sûr?";
-"Authentication error" = "Erreur d'authentification";
-"Disconnect" = "Déconnecter";
-
-//ArticleTableViewCell
-"Reading time %@" = "Temps de lecture %@";
-
-//AboutViewController
-"Version %@ build %@" = "Version %@ build %@";
-
-//ArticlesTableViewController
-"Delete" = "Supprimer";
-"Unstar" = "Retirer\n des favoris";
-"Star" = "Favoris";
-"Unread" = "Non lu";
-"Read" = "Lu";
-"Add link" = "Ajouter un lien";
-"Add" = "Ajouter";
-"Url" = "Adresse";
-"All articles" = "Tous les articles";
-"Read articles" = "Articles lus";
-"Starred articles" = "Articles favoris";
-"Unread articles" = "Articles non lus";
-
-//ClientIdViewController
-"Well, now the client_id and client_secret. This token are secret and can be found in your developer page, And create a new client or use an already existing token" = "Bien, maintenant le clientId et clientSecret.\n\nCes jetons sont secrets et peuvent être trouvées dans votre page développeur, Vous pouvez créer un nouveau jeton ou utiliser un existant";
-
-//ServerViewController
-"Whoops looks like something went wrong. Check the url, don't forget http or https" = "Oops, on dirait qu'il y a eu un problème. Vérifiez l'url, n'oubliez pas http ou https";
-
-//TipViewController
-"This application is developed on free time, it is free and will remain so. But you can contribute financially by making a donation whenever you want to support the project." = "Cette application est développée sur le temps libre, elle est gratuite et la restera ainsi.Mais vous pouvez contribuer financièrement en faisant un don chaque fois que vous souhaitez soutenir le projet.";
+// Menu
+"Menu" = "Menu";
+"Entries" = "Articles";
