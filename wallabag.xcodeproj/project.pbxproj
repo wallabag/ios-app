@@ -40,6 +40,7 @@
 		9C37217522E1134600D363FB /* ServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37217422E1134600D363FB /* ServerView.swift */; };
 		9C37217722E1171100D363FB /* ClientIdClientSecretView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C37217622E1171100D363FB /* ClientIdClientSecretView.swift */; };
 		9C40054A22E1DE3200A6E5CA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C40054922E1DE3200A6E5CA /* LoginView.swift */; };
+		9C452B6524ACE1E2000B1EB0 /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9C452B6424ACE1E2000B1EB0 /* WallabagKit */; };
 		9C45F6CB236069650021813B /* TagListFor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C45F6CA236069650021813B /* TagListFor.swift */; };
 		9C4C1F88240E7E350029FBC9 /* wallabagScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C1F87240E7E350029FBC9 /* wallabagScreenshotTests.swift */; };
 		9C4C1F90240E81500029FBC9 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4C1F8F240E81500029FBC9 /* SnapshotHelper.swift */; };
@@ -253,7 +254,6 @@
 		9C66B6C62356806E0068B968 /* StarEntryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarEntryButton.swift; sourceTree = "<group>"; };
 		9C66B6C8235681280068B968 /* DeleteEntryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteEntryButton.swift; sourceTree = "<group>"; };
 		9C677CAC227EF5A6006C7112 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		9C6C374E2477D69500D2228F /* WallabagKit */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WallabagKit; sourceTree = "<group>"; };
 		9C6D0740238BFEAD00FCF4FF /* SwipePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipePlayerView.swift; sourceTree = "<group>"; };
 		9C6DC0F1224112480012486D /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
 		9C73EC4322D79037008663B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -388,6 +388,7 @@
 				9C677CAD227EF5A6006C7112 /* WebKit.framework in Frameworks */,
 				9C6038A8249CC1E900F4FD2D /* HTMLEntities in Frameworks */,
 				9C5EDF00234E937100141DFD /* Swinject in Frameworks */,
+				9C452B6524ACE1E2000B1EB0 /* WallabagKit in Frameworks */,
 				9C6C37502477D6F200D2228F /* WallabagKit in Frameworks */,
 				9CCF9327242D13FF00904D3B /* SwiftyLogger in Frameworks */,
 			);
@@ -814,7 +815,6 @@
 			isa = PBXGroup;
 			children = (
 				9CCF9324242CE44300904D3B /* wallabag.xctestplan */,
-				9C6C374E2477D69500D2228F /* WallabagKit */,
 				G_B507F86627987D54B7C8B4837197C891 /* bagit */,
 				G_39C6C9CFDD44BBB7BB8E0F812CE69E29 /* configs */,
 				G_EE322AF580B12A5FAFB51DB68815824E /* wallabag */,
@@ -976,6 +976,7 @@
 				9C22CED72430B64D00B2C69F /* Logging */,
 				9C6C374F2477D6F200D2228F /* WallabagKit */,
 				9C6038A7249CC1E900F4FD2D /* HTMLEntities */,
+				9C452B6424ACE1E2000B1EB0 /* WallabagKit */,
 			);
 			productName = wallabag;
 			productReference = FR_7EF8E3725DA0867206C920EE5FBF277C /* wallabag.app */;
@@ -1046,6 +1047,7 @@
 				9CCF9325242D13FF00904D3B /* XCRemoteSwiftPackageReference "SwiftyLogger" */,
 				9C22CED62430B64D00B2C69F /* XCRemoteSwiftPackageReference "swift-log" */,
 				9C6038A6249CC1E900F4FD2D /* XCRemoteSwiftPackageReference "swift-html-entities" */,
+				9C452B6324ACE1E2000B1EB0 /* XCRemoteSwiftPackageReference "WallabagKit" */,
 			);
 			productRefGroup = G_F9352AEEBDAE1173F665BDBED628DF2A /* Products */;
 			projectDirPath = "";
@@ -1793,6 +1795,14 @@
 				minimumVersion = 1.2.0;
 			};
 		};
+		9C452B6324ACE1E2000B1EB0 /* XCRemoteSwiftPackageReference "WallabagKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/wallabag/WallabagKit.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		9C5EDEFE234E937100141DFD /* XCRemoteSwiftPackageReference "Swinject" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swinject/Swinject";
@@ -1824,6 +1834,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9C22CED62430B64D00B2C69F /* XCRemoteSwiftPackageReference "swift-log" */;
 			productName = Logging;
+		};
+		9C452B6424ACE1E2000B1EB0 /* WallabagKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C452B6324ACE1E2000B1EB0 /* XCRemoteSwiftPackageReference "WallabagKit" */;
+			productName = WallabagKit;
 		};
 		9C5EDEFF234E937100141DFD /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;

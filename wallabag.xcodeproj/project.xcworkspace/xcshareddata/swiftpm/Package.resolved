@@ -36,6 +36,15 @@
           "revision": "8a76d2c74bafbb455763487cc6a08e91bad1f78b",
           "version": "2.7.1"
         }
+      },
+      {
+        "package": "WallabagKit",
+        "repositoryURL": "https://github.com/wallabag/WallabagKit.git",
+        "state": {
+          "branch": "master",
+          "revision": "dab424522f4cceb4d5e5a5ae8d37ba975f34332d",
+          "version": null
+        }
       }
     ]
   },
