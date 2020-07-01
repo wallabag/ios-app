@@ -15,6 +15,9 @@
 "Unread" = "Unread";
 "Read" = "Read";
 
+// PasteBoard View
+"New url in pasteboard detected" = "New url in pasteboard detected";
+
 // Tip View
 "This application is developed on free time" = "This application is developed on free time";
 "It is free and will remain so." = "It is free and will remain so.";
@@ -25,3 +28,5 @@
 // Common
 "Submit" = "Submit";
 "Back" = "Back";
+"Add" = "Add";
+"Cancel" = "Cancel";
