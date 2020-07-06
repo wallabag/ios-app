@@ -8,8 +8,7 @@ jobs:
     runs-on: macos-latest
     strategy:
         matrix:
-          destination: ['platform=iOS Simulator,OS=13.3,name=iPhone 11']
-    
+          destination: ['platform=iOS Simulator,OS=13.5,name=iPhone 11']    
 
     steps:
     - uses: actions/checkout@v2
@@ -21,6 +20,6 @@ jobs:
 
 
     - name: Run tests
-      run: xcodebuild clean test -scheme wallabag -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO | xcpretty
+      run: xcodebuild clean test -scheme wallabag -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
       env: 
          destination: ${{ matrix.destination }}
