@@ -78,6 +78,17 @@
 		9C7AFE0D2353C93E00FBF989 /* WallabagSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7AFE0C2353C93E00FBF989 /* WallabagSession.swift */; };
 		9C7CBD0722D60B8A00EE1DE3 /* ArticlePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7CBD0622D60B8A00EE1DE3 /* ArticlePlayer.swift */; };
 		9C889E7F22E66BCA00B9F767 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C889E7E22E66BCA00B9F767 /* Setting.swift */; };
+		9C8CF06B24AD35E100F59AA4 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8CF06A24AD35E100F59AA4 /* IntentHandler.swift */; };
+		9C8CF08024AD35E100F59AA4 /* Shortcuts.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C8CF06824AD35E100F59AA4 /* Shortcuts.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9C8CF08824AD361C00F59AA4 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 9C8CF08724AD361C00F59AA4 /* Intents.intentdefinition */; };
+		9C8CF08924AD365800F59AA4 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 9C8CF08724AD361C00F59AA4 /* Intents.intentdefinition */; };
+		9C8CF08B24AD394500F59AA4 /* AddEntryIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8CF08A24AD394500F59AA4 /* AddEntryIntentHandler.swift */; };
+		9C8CF08C24AD45D800F59AA4 /* WallabagUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC4AFB22E3BFD400F73891 /* WallabagUserDefaults.swift */; };
+		9C8CF08D24AD45ED00F59AA4 /* GeneralSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C0C3B892354890F008AD2C9 /* GeneralSetting.swift */; };
+		9C8CF08E24AD45F000F59AA4 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C889E7E22E66BCA00B9F767 /* Setting.swift */; };
+		9C8CF08F24AD460000F59AA4 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC4AFD22E5D92E00F73891 /* Password.swift */; };
+		9C8CF09024AD460A00F59AA4 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_290ECAC1FE613D28DF9CB4D061F101F9 /* KeychainPasswordItem.swift */; };
+		9C8CF09224AD462800F59AA4 /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9C8CF09124AD462800F59AA4 /* WallabagKit */; };
 		9C8F05EA23CFBD1500B98CCE /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F05E923CFBD1500B98CCE /* MenuView.swift */; };
 		9C9085F722DF3FF600D47262 /* EntryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9085F622DF3FF600D47262 /* EntryRowView.swift */; };
 		9C90F62C2296B86F00C113EF /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9C90F62B2296B86F00C113EF /* Settings.bundle */; };
@@ -154,6 +165,13 @@
 			remoteGlobalIDString = NT_BD23E71198CA112A6681701D37EB5AFF;
 			remoteInfo = wallabag;
 		};
+		9C8CF07E24AD35E100F59AA4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = P_EDC2B1D3872816D6335919C238A9EA25 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C8CF06724AD35E100F59AA4;
+			remoteInfo = Shortcuts;
+		};
 		9C961B2822770ECE009F80A4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = P_EDC2B1D3872816D6335919C238A9EA25 /* Project object */;
@@ -185,6 +203,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				BF_2B92FCD9D4DF3C35C6CEAE0D4A46F98F /* bagit.appex in Embed App Extensions */,
+				9C8CF08024AD35E100F59AA4 /* Shortcuts.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +283,13 @@
 		9C7AFE0C2353C93E00FBF989 /* WallabagSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagSession.swift; sourceTree = "<group>"; };
 		9C7CBD0622D60B8A00EE1DE3 /* ArticlePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePlayer.swift; sourceTree = "<group>"; };
 		9C889E7E22E66BCA00B9F767 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		9C8CF06824AD35E100F59AA4 /* Shortcuts.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Shortcuts.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C8CF06A24AD35E100F59AA4 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		9C8CF06C24AD35E100F59AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C8CF07224AD35E100F59AA4 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		9C8CF08724AD361C00F59AA4 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
+		9C8CF08A24AD394500F59AA4 /* AddEntryIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryIntentHandler.swift; sourceTree = "<group>"; };
+		9C8CF09324AD478300F59AA4 /* Shortcuts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Shortcuts.entitlements; sourceTree = "<group>"; };
 		9C8F05E923CFBD1500B98CCE /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		9C9085F622DF3FF600D47262 /* EntryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryRowView.swift; sourceTree = "<group>"; };
 		9C90F62B2296B86F00C113EF /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
@@ -366,6 +392,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9C8CF06524AD35E100F59AA4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C8CF09224AD462800F59AA4 /* WallabagKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9C961B2022770ECE009F80A4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -402,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				9C677CAC227EF5A6006C7112 /* WebKit.framework */,
+				9C8CF07224AD35E100F59AA4 /* IntentsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -630,6 +665,18 @@
 			path = PropertyWrapper;
 			sourceTree = "<group>";
 		};
+		9C8CF06924AD35E100F59AA4 /* Shortcuts */ = {
+			isa = PBXGroup;
+			children = (
+				9C8CF09324AD478300F59AA4 /* Shortcuts.entitlements */,
+				9C8CF06A24AD35E100F59AA4 /* IntentHandler.swift */,
+				9C8CF06C24AD35E100F59AA4 /* Info.plist */,
+				9C8CF08724AD361C00F59AA4 /* Intents.intentdefinition */,
+				9C8CF08A24AD394500F59AA4 /* AddEntryIntentHandler.swift */,
+			);
+			path = Shortcuts;
+			sourceTree = "<group>";
+		};
 		9C961B2422770ECE009F80A4 /* wallabagUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -822,6 +869,7 @@
 				G_16D85DEB94463C22A0C313B23AE8C024 /* wallabagTests */,
 				9C961B2422770ECE009F80A4 /* wallabagUITests */,
 				9C4C1F86240E7E350029FBC9 /* wallabagScreenshotTests */,
+				9C8CF06924AD35E100F59AA4 /* Shortcuts */,
 				G_F9352AEEBDAE1173F665BDBED628DF2A /* Products */,
 				502725B2BF8026EB5E2005F7 /* Frameworks */,
 			);
@@ -890,6 +938,7 @@
 				FR_5259EA32015B0B9F139FF20E34F493C3 /* wallabagTests.xctest */,
 				9C961B2322770ECE009F80A4 /* wallabagUITests.xctest */,
 				9C4C1F85240E7E340029FBC9 /* wallabagScreenshotTests.xctest */,
+				9C8CF06824AD35E100F59AA4 /* Shortcuts.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -914,6 +963,26 @@
 			productName = wallabagScreenshotTests;
 			productReference = 9C4C1F85240E7E340029FBC9 /* wallabagScreenshotTests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		9C8CF06724AD35E100F59AA4 /* Shortcuts */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C8CF08624AD35E200F59AA4 /* Build configuration list for PBXNativeTarget "Shortcuts" */;
+			buildPhases = (
+				9C8CF06424AD35E100F59AA4 /* Sources */,
+				9C8CF06524AD35E100F59AA4 /* Frameworks */,
+				9C8CF06624AD35E100F59AA4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Shortcuts;
+			packageProductDependencies = (
+				9C8CF09124AD462800F59AA4 /* WallabagKit */,
+			);
+			productName = Shortcuts;
+			productReference = 9C8CF06824AD35E100F59AA4 /* Shortcuts.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 		9C961B2222770ECE009F80A4 /* wallabagUITests */ = {
 			isa = PBXNativeTarget;
@@ -969,6 +1038,7 @@
 			);
 			dependencies = (
 				TD_5C6AA7FEAE76C0A4A69DF856CAB03102 /* PBXTargetDependency */,
+				9C8CF07F24AD35E100F59AA4 /* PBXTargetDependency */,
 			);
 			name = wallabag;
 			packageProductDependencies = (
@@ -1007,12 +1077,15 @@
 		P_EDC2B1D3872816D6335919C238A9EA25 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1100;
 				TargetAttributes = {
 					9C4C1F84240E7E340029FBC9 = {
 						CreatedOnToolsVersion = 11.3.1;
 						TestTargetID = NT_BD23E71198CA112A6681701D37EB5AFF;
+					};
+					9C8CF06724AD35E100F59AA4 = {
+						CreatedOnToolsVersion = 11.5;
 					};
 					9C961B2222770ECE009F80A4 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -1060,12 +1133,20 @@
 				NT_CB245D289C47CA3177DD28B514882F44 /* wallabagTests */,
 				9C961B2222770ECE009F80A4 /* wallabagUITests */,
 				9C4C1F84240E7E340029FBC9 /* wallabagScreenshotTests */,
+				9C8CF06724AD35E100F59AA4 /* Shortcuts */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9C4C1F83240E7E340029FBC9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C8CF06624AD35E100F59AA4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1165,6 +1246,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9C8CF06424AD35E100F59AA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C8CF08824AD361C00F59AA4 /* Intents.intentdefinition in Sources */,
+				9C8CF08D24AD45ED00F59AA4 /* GeneralSetting.swift in Sources */,
+				9C8CF08E24AD45F000F59AA4 /* Setting.swift in Sources */,
+				9C8CF09024AD460A00F59AA4 /* KeychainPasswordItem.swift in Sources */,
+				9C8CF08F24AD460000F59AA4 /* Password.swift in Sources */,
+				9C8CF08B24AD394500F59AA4 /* AddEntryIntentHandler.swift in Sources */,
+				9C8CF06B24AD35E100F59AA4 /* IntentHandler.swift in Sources */,
+				9C8CF08C24AD45D800F59AA4 /* WallabagUserDefaults.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9C961B1F22770ECE009F80A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1234,6 +1330,7 @@
 				9C5EDEE7234E848D00141DFD /* Injector.swift in Sources */,
 				9C8F05EA23CFBD1500B98CCE /* MenuView.swift in Sources */,
 				9C4C1F92240E85680029FBC9 /* AppDelegateExtension.swift in Sources */,
+				9C8CF08924AD365800F59AA4 /* Intents.intentdefinition in Sources */,
 				9C012C3E247F001A0080FEF6 /* FontSizeSelectorView.swift in Sources */,
 				9CBCAF3A23F603320042D22E /* SKProduct.swift in Sources */,
 				9CB41DC4234FC03C00C2740B /* RegistrationServerViewHandler.swift in Sources */,
@@ -1308,6 +1405,11 @@
 			isa = PBXTargetDependency;
 			target = NT_BD23E71198CA112A6681701D37EB5AFF /* wallabag */;
 			targetProxy = 9C4C1F8A240E7E350029FBC9 /* PBXContainerItemProxy */;
+		};
+		9C8CF07F24AD35E100F59AA4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C8CF06724AD35E100F59AA4 /* Shortcuts */;
+			targetProxy = 9C8CF07E24AD35E100F59AA4 /* PBXContainerItemProxy */;
 		};
 		9C961B2922770ECE009F80A4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1482,6 +1584,143 @@
 			};
 			name = Release;
 		};
+		9C8CF08124AD35E200F59AA4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = Shortcuts/Shortcuts.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Shortcuts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag.Shortcuts";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9C8CF08224AD35E200F59AA4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = Shortcuts/Shortcuts.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Shortcuts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag.Shortcuts";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		9C961B2B22770ECE009F80A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1646,8 +1885,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FR_D25A5811CCA84B9080305DDA9A796022 /* bagit-Release.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 275;
-				MARKETING_VERSION = 5.1.1;
+				CURRENT_PROJECT_VERSION = 276;
+				MARKETING_VERSION = 5.2.0;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1669,8 +1908,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FR_3C63EF667F0034B52FD8C3A71EAA05F7 /* bagit-Debug.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 275;
-				MARKETING_VERSION = 5.1.1;
+				CURRENT_PROJECT_VERSION = 276;
+				MARKETING_VERSION = 5.2.0;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1680,8 +1919,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FR_7ABC493E8F892DF451AABBB415AFE326 /* wallabag-Debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 275;
+				CURRENT_PROJECT_VERSION = 276;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1691,7 +1931,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.1.1;
+				MARKETING_VERSION = 5.2.0;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
@@ -1703,8 +1943,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FR_5DE83659FDAF5871759C0A7D752A7823 /* wallabag-Release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 275;
+				CURRENT_PROJECT_VERSION = 276;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1713,7 +1954,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.1.1;
+				MARKETING_VERSION = 5.2.0;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
@@ -1738,6 +1979,15 @@
 			buildConfigurations = (
 				9C4C1F8C240E7E350029FBC9 /* Debug */,
 				9C4C1F8D240E7E350029FBC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9C8CF08624AD35E200F59AA4 /* Build configuration list for PBXNativeTarget "Shortcuts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C8CF08124AD35E200F59AA4 /* Debug */,
+				9C8CF08224AD35E200F59AA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -1859,6 +2109,11 @@
 		};
 		9C6C37512477D73A00D2228F /* WallabagKit */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = WallabagKit;
+		};
+		9C8CF09124AD462800F59AA4 /* WallabagKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C452B6324ACE1E2000B1EB0 /* XCRemoteSwiftPackageReference "WallabagKit" */;
 			productName = WallabagKit;
 		};
 		9CCF9326242D13FF00904D3B /* SwiftyLogger */ = {
