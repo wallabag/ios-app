@@ -10,10 +10,10 @@ import XCTest
 
 class ErrorPublisherTests: XCTestCase {
     func testError() throws {
-        let errorPublisher = ErrorPublisher(.now() + 1)
+        let errorPublisher = ErrorPublisher(1)
         XCTAssertNil(errorPublisher.lastError)
 
-        errorPublisher.lastError = .syncError("Error test")
+        errorPublisher.setLast(.syncError("Error test"))
 
         let exp = expectation(description: "test")
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
