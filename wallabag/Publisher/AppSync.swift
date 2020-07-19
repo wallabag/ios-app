@@ -175,7 +175,7 @@ extension AppSync {
                               self.tags[wallabagTag.id] = tag
                           }
                       }
-            })
+                  })
             .store(in: &cancellable)
     }
 }

@@ -33,7 +33,7 @@ class ImageDownloaderTests: XCTestCase {
                     expect.fulfill()
                 }
             }, receiveValue: { _ in
-        })
+            })
 
         wait(for: [expect], timeout: 5)
     }
@@ -47,7 +47,7 @@ class ImageDownloaderTests: XCTestCase {
             .sink(receiveValue: { image in
                 expect.fulfill()
                 XCTAssertNotNil(image)
-        })
+            })
 
         wait(for: [expect], timeout: 5)
     }

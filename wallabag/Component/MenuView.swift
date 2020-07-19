@@ -48,7 +48,7 @@ struct MenuView: View {
                             withAnimation {
                                 self.showMenu = false
                             }
-                            }) {
+                        }) {
                             Image(systemName: menu.img)
                                 .frame(width: 24)
                             Text(menu.title)
@@ -62,7 +62,7 @@ struct MenuView: View {
                         withAnimation {
                             self.showMenu = false
                         }
-                        }) {
+                    }) {
                         Image(systemName: "ant").padding(.leading, 2)
                         Text("Bug report").padding(.leading, 2)
                     }
@@ -73,7 +73,7 @@ struct MenuView: View {
                             self.showMenu = false
                         }
                         UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
-                        }) {
+                    }) {
                         Image(systemName: "gear")
                         Text("Setting")
                     }
@@ -84,7 +84,7 @@ struct MenuView: View {
                         withAnimation {
                             self.showMenu = false
                         }
-                        }) {
+                    }) {
                         Image(systemName: "person").padding(.leading, 2)
                         Text("Logout").padding(.leading, 3)
                     }.foregroundColor(.red)

@@ -73,7 +73,7 @@ class ShareViewController: UIViewController {
                         }
                     }, receiveValue: { (_: WallabagEntry) in
 
-                })
+                    })
             }
             // Missing clearView
 

@@ -32,7 +32,7 @@ class AddEntryIntentHandler: NSObject, AddEntryIntentHandling {
                     }
                 }, receiveValue: { (_: WallabagEntry) in
 
-            })
+                })
         } else {
             completion(.failure(error: "Unable to add url"))
         }

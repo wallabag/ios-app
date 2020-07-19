@@ -50,7 +50,7 @@ class WallabagSession: ObservableObject {
                 self.kit.accessToken = token.accessToken
                 self.kit.refreshToken = token.refreshToken
                 self.state = .connected
-        }).store(in: &cancellable)
+            }).store(in: &cancellable)
     }
 
     func addEntry(url: String, completion: @escaping () -> Void) {

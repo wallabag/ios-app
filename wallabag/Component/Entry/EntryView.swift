@@ -52,7 +52,7 @@ struct EntryView: View {
                 self.openInSafari(self.entry.url)
             }, label: {
                 Image(systemName: "safari")
-                }).buttonStyle(PlainButtonStyle())
+            }).buttonStyle(PlainButtonStyle())
             Spacer()
             Button(action: {
                 self.showTag.toggle()
