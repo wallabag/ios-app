@@ -1130,10 +1130,10 @@
 			targets = (
 				NT_489A0A0E84B6A7E06B0FAA10CDEBABA5 /* bagit */,
 				NT_BD23E71198CA112A6681701D37EB5AFF /* wallabag */,
+				9C8CF06724AD35E100F59AA4 /* Shortcuts */,
 				NT_CB245D289C47CA3177DD28B514882F44 /* wallabagTests */,
 				9C961B2222770ECE009F80A4 /* wallabagUITests */,
 				9C4C1F84240E7E340029FBC9 /* wallabagScreenshotTests */,
-				9C8CF06724AD35E100F59AA4 /* Shortcuts */,
 			);
 		};
 /* End PBXProject section */
@@ -1885,7 +1885,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FR_D25A5811CCA84B9080305DDA9A796022 /* bagit-Release.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 276;
+				CURRENT_PROJECT_VERSION = 277;
 				MARKETING_VERSION = 5.2.0;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1908,7 +1908,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FR_3C63EF667F0034B52FD8C3A71EAA05F7 /* bagit-Debug.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 276;
+				CURRENT_PROJECT_VERSION = 277;
 				MARKETING_VERSION = 5.2.0;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1921,7 +1921,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 276;
+				CURRENT_PROJECT_VERSION = 277;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1945,7 +1945,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 276;
+				CURRENT_PROJECT_VERSION = 277;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
