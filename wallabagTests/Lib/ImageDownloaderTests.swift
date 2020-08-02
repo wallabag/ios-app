@@ -22,7 +22,7 @@ class ImageDownloaderTests: XCTestCase {
         ImageCache.shared.purge()
     }
 
-    func testLoadInvalidImage() throws {
+    func xtestLoadInvalidImage() throws {
         let imageDownloader = ImageDownloader.shared
 
         let expect = expectation(description: #function)
@@ -38,7 +38,7 @@ class ImageDownloaderTests: XCTestCase {
         wait(for: [expect], timeout: 5)
     }
 
-    func testLoadValidImage() throws {
+    func xtestLoadValidImage() throws {
         let imageDownloader = ImageDownloader.shared
 
         let expect = expectation(description: #function)
