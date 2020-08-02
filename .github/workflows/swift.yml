@@ -19,6 +19,6 @@ jobs:
         swiftformat --lint .
 
     - name: Run tests
-      run: xcodebuild clean test -scheme wallabag -destination "${destination}" -testPlan wallabag CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+      run: xcodebuild clean test -scheme wallabag -destination "${destination}" -testPlan wallabag CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO | xcpretty && exit ${PIPESTATUS[0]}
       env: 
          destination: ${{ matrix.destination }}
