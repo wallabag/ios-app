@@ -103,7 +103,8 @@ class ShareViewController: UIViewController {
                     completionHandler: { (item, _) -> Void in
                         guard let dictionary = item as? NSDictionary,
                             let results = dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
-                            let href = results["href"] as? String else {
+                            let href = results["href"] as? String
+                        else {
                             completion(nil)
                             return
                         }

@@ -82,7 +82,7 @@ extension AppSync {
             .store(in: &cancellable)
 
         let entriesSubject = PassthroughSubject<Publishers.ScrollPublisher.Output, WallabagKitError>()
-        entriesSubject.map { $0.1 }
+        entriesSubject.map(\.1)
             .replaceError(with: [])
             .handleEvents(receiveCompletion: { completion in
                 if completion == .finished {
