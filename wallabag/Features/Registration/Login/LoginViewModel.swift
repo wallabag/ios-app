@@ -1,5 +1,4 @@
 //
-//  LoginTextFieldValidator.swift
 //  wallabag
 //
 //  Created by Marinel Maxime on 10/10/2019.
@@ -8,7 +7,7 @@
 import Combine
 import Foundation
 
-class RegistrationLoginViewHandler: ObservableObject {
+class LoginViewModel: ObservableObject {
     @Published var login: String = ""
     @Published var password: String = ""
     @Published var error: String?

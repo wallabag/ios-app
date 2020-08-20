@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PasteBoardView: View {
-    @EnvironmentObject var pasteBoardPublisher: PasteBoardPublisher
+    @EnvironmentObject var pasteBoardViewModel: PasteBoardViewModel
 
     var body: some View {
         HStack(alignment: .center) {
@@ -16,16 +16,16 @@ struct PasteBoardView: View {
             VStack {
                 Text("New url in pasteboard detected")
                     .font(.headline)
-                Text(pasteBoardPublisher.pasteBoardUrl)
+                Text(pasteBoardViewModel.pasteBoardUrl)
                     .lineLimit(1)
                 HStack {
                     Button(action: {
-                        self.pasteBoardPublisher.addUrl()
+                        self.pasteBoardViewModel.addUrl()
                     }, label: {
                         Text("Add")
                     })
                     Button(action: {
-                        self.pasteBoardPublisher.hide()
+                        self.pasteBoardViewModel.hide()
                     }, label: {
                         Text("Cancel")
                     })
@@ -36,8 +36,8 @@ struct PasteBoardView: View {
 }
 
 struct PasteBoardView_Previews: PreviewProvider {
-    static var publisher: PasteBoardPublisher = {
-        let pub = PasteBoardPublisher()
+    static var publisher: PasteBoardViewModel = {
+        let pub = PasteBoardViewModel()
         pub.pasteBoardUrl = "http://wallabag-with-a-long-url.org"
         return pub
     }()

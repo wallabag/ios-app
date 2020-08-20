@@ -8,22 +8,22 @@
 import SwiftUI
 
 struct LoginView: View {
-    @ObservedObject var loginViewHandler = RegistrationLoginViewHandler()
+    @ObservedObject var loginViewModel = LoginViewModel()
 
     var body: some View {
         Form {
             Section(header: Text("Login")) {
-                TextField("Login", text: $loginViewHandler.login)
+                TextField("Login", text: $loginViewModel.login)
                     .disableAutocorrection(true)
                     .autocapitalization(.none)
             }
             Section(header: Text("Password")) {
-                SecureField("Password", text: $loginViewHandler.password)
+                SecureField("Password", text: $loginViewModel.password)
             }
             Button("Login") {
-                self.loginViewHandler.tryLogin()
-            }.disabled(!loginViewHandler.isValid)
-            loginViewHandler.error.map {
+                self.loginViewModel.tryLogin()
+            }.disabled(!loginViewModel.isValid)
+            loginViewModel.error.map {
                 Text($0).foregroundColor(.red)
             }
         }.navigationBarTitle("Login & Password")

@@ -9,7 +9,7 @@ import Foundation
 import StoreKit
 import SwiftUI
 
-class SKPublisher: NSObject, ObservableObject {
+class TipViewModel: NSObject, ObservableObject {
     @Published var canMakePayments: Bool = false {
         didSet {
             if canMakePayments {
@@ -45,7 +45,7 @@ class SKPublisher: NSObject, ObservableObject {
     }
 }
 
-extension SKPublisher: SKProductsRequestDelegate {
+extension TipViewModel: SKProductsRequestDelegate {
     func productsRequest(_: SKProductsRequest, didReceive response: SKProductsResponse) {
         if response.products.count != 0 {
             response.products.first.map { product in
@@ -59,7 +59,7 @@ extension SKPublisher: SKProductsRequestDelegate {
     }
 }
 
-extension SKPublisher: SKPaymentTransactionObserver {
+extension TipViewModel: SKPaymentTransactionObserver {
     func paymentQueue(_: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         defer {
             transactionInProgress = false

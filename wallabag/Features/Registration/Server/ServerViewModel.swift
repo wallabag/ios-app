@@ -9,7 +9,7 @@ import Combine
 import Foundation
 import SwiftUI
 
-class RegistrationServerViewHandler: ObservableObject {
+class ServerViewModel: ObservableObject {
     private(set) var isValid: Bool = false
 
     @Published var url: String = ""

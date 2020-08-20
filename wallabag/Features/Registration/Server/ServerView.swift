@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct ServerView: View {
-    @ObservedObject var serverViewHandler = RegistrationServerViewHandler()
+    @ObservedObject var serverViewModel = ServerViewModel()
 
     var body: some View {
         Form {
             Section(header: Text("Server")) {
-                TextField("https://your-instance.domain", text: $serverViewHandler.url)
+                TextField("https://your-instance.domain", text: $serverViewModel.url)
                     .disableAutocorrection(true)
                     .autocapitalization(.none)
             }
             NavigationLink(destination: ClientIdClientSecretView()) {
                 Text("Next")
-            }.disabled(!serverViewHandler.isValid)
+            }.disabled(!serverViewModel.isValid)
         }.navigationBarTitle("Server")
     }
 }

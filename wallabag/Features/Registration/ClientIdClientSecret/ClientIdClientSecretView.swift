@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct ClientIdClientSecretView: View {
-    @ObservedObject var clientIdSecretViewHandler = RegistrationClientIdSecretViewHandler()
+    @ObservedObject var clientIdSecretViewModel = ClientIdSecretViewModel()
 
     var body: some View {
         Form {
             Section(header: Text("Client id")) {
-                TextField("Client id", text: $clientIdSecretViewHandler.clientId)
+                TextField("Client id", text: $clientIdSecretViewModel.clientId)
                     .disableAutocorrection(true)
                     .autocapitalization(.none)
             }
             Section(header: Text("Client secret")) {
-                TextField("Client secret", text: $clientIdSecretViewHandler.clientSecret)
+                TextField("Client secret", text: $clientIdSecretViewModel.clientSecret)
                     .disableAutocorrection(true)
                     .autocapitalization(.none)
             }
-            NavigationLink("Next", destination: LoginView()).disabled(!clientIdSecretViewHandler.isValid)
+            NavigationLink("Next", destination: LoginView()).disabled(!clientIdSecretViewModel.isValid)
         }.navigationBarTitle("Client id & secret")
     }
 }

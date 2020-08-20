@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TipView: View {
-    @ObservedObject var skPublisher = SKPublisher()
+    @ObservedObject var tipViewModel = TipViewModel()
 
     var body: some View {
         VStack {
@@ -16,12 +16,12 @@ struct TipView: View {
             Text("This application is developed on free time")
             Text("It is free and will remain so.")
             Text("But you can contribute financially by making a donation whenever you want to support the project.")
-            if skPublisher.canMakePayments {
-                if self.skPublisher.tipProduct != nil {
+            if tipViewModel.canMakePayments {
+                if self.tipViewModel.tipProduct != nil {
                     Button(
-                        action: { self.skPublisher.purchaseTip() },
+                        action: { self.tipViewModel.purchaseTip() },
                         label: {
-                            self.skPublisher.tipProduct.map { product in
+                            self.tipViewModel.tipProduct.map { product in
                                 Text(product.title)
                             }
                         }

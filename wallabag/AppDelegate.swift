@@ -17,7 +17,7 @@ import WallabagKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     let container: Container = {
         let container = Container()
-        container.register(ErrorPublisher.self) { _ in ErrorPublisher() }.inObjectScope(.container)
+        container.register(ErrorViewModel.self) { _ in ErrorViewModel() }.inObjectScope(.container)
         container.register(WallabagKit.self, factory: { _ in
             let kit = WallabagKit(host: WallabagUserDefaults.host)
             kit.clientId = WallabagUserDefaults.clientId

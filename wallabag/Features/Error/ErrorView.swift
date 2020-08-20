@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ErrorView: View {
-    @EnvironmentObject var errorPublisher: ErrorPublisher
+    @EnvironmentObject var errorViewModel: ErrorViewModel
     var body: some View {
-        errorPublisher.lastError.map {
+        errorViewModel.lastError.map {
             Text($0.localizedDescription)
                 .foregroundColor(.red)
         }

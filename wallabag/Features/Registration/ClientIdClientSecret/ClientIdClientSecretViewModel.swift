@@ -1,5 +1,4 @@
 //
-//  ClientIdClientServerTextFieldValidator.swift
 //  wallabag
 //
 //  Created by Marinel Maxime on 10/10/2019.
@@ -9,7 +8,7 @@ import Combine
 import Foundation
 import SwiftUI
 
-class RegistrationClientIdSecretViewHandler: ObservableObject {
+class ClientIdSecretViewModel: ObservableObject {
     private(set) var isValid: Bool = false
 
     @Published var clientId: String = ""

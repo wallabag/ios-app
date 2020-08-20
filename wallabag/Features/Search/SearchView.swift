@@ -9,11 +9,11 @@ import Foundation
 import SwiftUI
 
 struct SearchView: View {
-    @ObservedObject var searchPublisher: SearchPublisher
+    @ObservedObject var searchViewModel: SearchViewModel
     @State private var showSearchBar: Bool = false {
         willSet {
             if newValue == false {
-                searchPublisher.search = ""
+                searchViewModel.search = ""
             }
         }
     }
@@ -22,13 +22,13 @@ struct SearchView: View {
         VStack {
             HStack {
                 if showSearchBar {
-                    TextField("Search", text: $searchPublisher.search)
+                    TextField("Search", text: $searchViewModel.search)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
                         .padding(.leading)
                 } else {
-                    RetrieveModePicker(filter: $searchPublisher.retrieveMode)
+                    RetrieveModePicker(filter: $searchViewModel.retrieveMode)
                 }
                 Button(action: {
                     withAnimation {

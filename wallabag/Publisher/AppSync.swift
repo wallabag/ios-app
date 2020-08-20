@@ -13,7 +13,7 @@ import WallabagKit
 
 class AppSync: ObservableObject {
     @Injector var session: WallabagSession
-    @Injector var errorPublisher: ErrorPublisher
+    @Injector var errorViewModel: ErrorViewModel
     @CoreDataViewContext var coreDataContext: NSManagedObjectContext
 
     @Published private(set) var inProgress = false
@@ -62,7 +62,7 @@ extension AppSync {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case let .failure(error):
-                    self.errorPublisher.setLast(error)
+                    self.errorViewModel.setLast(error)
                 case .finished:
                     break
                 }

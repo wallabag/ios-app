@@ -1,5 +1,5 @@
 //
-//  SearchPublisher.swift
+//  SearchViewModel.swift
 //  wallabag
 //
 //  Created by Marinel Maxime on 14/05/2020.
@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-class SearchPublisher: ObservableObject {
+class SearchViewModel: ObservableObject {
     @Published var search: String = ""
     @Published var retrieveMode: RetrieveMode = RetrieveMode(fromCase: WallabagUserDefaults.defaultMode)
 

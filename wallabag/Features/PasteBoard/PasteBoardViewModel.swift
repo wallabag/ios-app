@@ -9,7 +9,7 @@ import Combine
 import Foundation
 import UIKit
 
-class PasteBoardPublisher: ObservableObject {
+class PasteBoardViewModel: ObservableObject {
     @Published var showPasteBoardView: Bool = false {
         willSet {
             if newValue {

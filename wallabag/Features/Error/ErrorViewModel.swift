@@ -1,5 +1,5 @@
 //
-//  ErrorPublisher.swift
+//  ErrorViewModel.swift
 //  wallabag
 //
 //  Created by Marinel Maxime on 15/02/2020.
@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-class ErrorPublisher: ObservableObject {
+class ErrorViewModel: ObservableObject {
     private var resetAfter: Double
 
     init(_ resetAfter: Double = 10) {
