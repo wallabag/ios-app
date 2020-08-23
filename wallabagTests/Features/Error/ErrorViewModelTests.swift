@@ -8,9 +8,9 @@
 @testable import wallabag
 import XCTest
 
-class ErrorPublisherTests: XCTestCase {
+class ErrorViewModelTests: XCTestCase {
     func testError() throws {
-        let errorPublisher = ErrorPublisher(1)
+        let errorPublisher = ErrorViewModel(1)
         XCTAssertNil(errorPublisher.lastError)
 
         errorPublisher.setLast(.syncError("Error test"))

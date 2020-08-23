@@ -7,13 +7,13 @@
 @testable import wallabag
 import XCTest
 
-class RegistrationServerViewHandlerTests: XCTestCase {
+class ServerViewModelTests: XCTestCase {
     override func setUp() {
         WallabagUserDefaults.host = ""
     }
 
     func testHandlerWithInvalidURL() throws {
-        let handler = RegistrationServerViewHandler()
+        let handler = ServerViewModel()
         XCTAssertFalse(handler.isValid)
         handler.url = "app.wallabag.it"
         XCTAssertFalse(handler.isValid)
@@ -21,7 +21,7 @@ class RegistrationServerViewHandlerTests: XCTestCase {
     }
 
     func testHandlerWithValidURL() throws {
-        let handler = RegistrationServerViewHandler()
+        let handler = ServerViewModel()
         XCTAssertFalse(handler.isValid)
         handler.url = "https://app.wallabag.it"
         XCTAssertTrue(handler.isValid)
@@ -29,7 +29,7 @@ class RegistrationServerViewHandlerTests: XCTestCase {
     }
 
     func testDeinit() throws {
-        class ClassUnderTest: RegistrationServerViewHandler {
+        class ClassUnderTest: ServerViewModel {
             var deinitCalled: (() -> Void)?
             deinit { deinitCalled?() }
         }

@@ -8,14 +8,14 @@
 @testable import wallabag
 import XCTest
 
-class RegistrationLoginViewHandlerTests: XCTestCase {
+class LoginViewModelTests: XCTestCase {
     override func setUp() {
         WallabagUserDefaults.login = ""
         WallabagUserDefaults.password = ""
     }
 
     func testHandlerWithInvalidValue() {
-        let handler = RegistrationLoginViewHandler()
+        let handler = LoginViewModel()
 
         XCTAssertFalse(handler.isValid)
 
@@ -29,7 +29,7 @@ class RegistrationLoginViewHandlerTests: XCTestCase {
     }
 
     func testHandlerWithValidValue() {
-        let handler = RegistrationLoginViewHandler()
+        let handler = LoginViewModel()
 
         XCTAssertFalse(handler.isValid)
         handler.login = "login"
@@ -39,7 +39,7 @@ class RegistrationLoginViewHandlerTests: XCTestCase {
     }
 
     func testTryLogin() {
-        let handler = RegistrationLoginViewHandler()
+        let handler = LoginViewModel()
 
         XCTAssertEqual("", WallabagUserDefaults.login)
         XCTAssertEqual("", WallabagUserDefaults.password)
@@ -80,7 +80,7 @@ class RegistrationLoginViewHandlerTests: XCTestCase {
      }
      */
     func testDeinit() throws {
-        class ClassUnderTest: RegistrationLoginViewHandler {
+        class ClassUnderTest: LoginViewModel {
             var deinitCalled: (() -> Void)?
             deinit { deinitCalled?() }
         }

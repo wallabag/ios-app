@@ -8,14 +8,14 @@
 @testable import wallabag
 import XCTest
 
-class RegistrationClientIdSecretViewHandlerTests: XCTestCase {
+class ClientIdSecretViewModelTests: XCTestCase {
     override func setUp() {
         WallabagUserDefaults.clientId = ""
         WallabagUserDefaults.clientSecret = ""
     }
 
     func testHandlerWithInvalidValue() throws {
-        let handler = RegistrationClientIdSecretViewHandler()
+        let handler = ClientIdSecretViewModel()
 
         XCTAssertFalse(handler.isValid)
 
@@ -34,7 +34,7 @@ class RegistrationClientIdSecretViewHandlerTests: XCTestCase {
     }
 
     func testHandlerWithValidValue() throws {
-        let handler = RegistrationClientIdSecretViewHandler()
+        let handler = ClientIdSecretViewModel()
 
         XCTAssertFalse(handler.isValid)
 
@@ -47,7 +47,7 @@ class RegistrationClientIdSecretViewHandlerTests: XCTestCase {
     }
 
     func testDeinit() throws {
-        class ClassUnderTest: RegistrationClientIdSecretViewHandler {
+        class ClassUnderTest: ClientIdSecretViewModel {
             var deinitCalled: (() -> Void)?
             deinit { deinitCalled?() }
         }
