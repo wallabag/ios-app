@@ -31,7 +31,7 @@ extension WKWebView {
     }
 
     func fontSizePercent(_ fontSize: Double) {
-        let js = "document.getElementsByTagName('body')[0].style.fontSize='\(fontSize)%'"
-        evaluateJavaScript(js, completionHandler: nil)
+        let javascript = "document.getElementsByTagName('body')[0].style.fontSize='\(fontSize)%'"
+        evaluateJavaScript(javascript, completionHandler: nil)
     }
 }

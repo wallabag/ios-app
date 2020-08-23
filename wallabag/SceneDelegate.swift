@@ -15,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     @Injector var appState: AppState
     @Injector var router: Router
     @Injector var playerPublisher: PlayerPublisher
-    @Injector var errorPublisher: ErrorPublisher
+    @Injector var errorViewModel: ErrorViewModel
     @Injector var appSync: AppSync
 
     let coreDataSync = CoreDataSync()
@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     .environmentObject(appState)
                     .environmentObject(playerPublisher)
                     .environmentObject(router)
-                    .environmentObject(errorPublisher)
+                    .environmentObject(errorViewModel)
                     .environmentObject(appSync)
                     .environmentObject(appSetting)
                     .environment(\.managedObjectContext, CoreData.shared.viewContext))
