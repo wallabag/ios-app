@@ -91,6 +91,8 @@
 		9C8CF09224AD462800F59AA4 /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9C8CF09124AD462800F59AA4 /* WallabagKit */; };
 		9C8E34EB24EF23B800BED3F4 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E34EA24EF23B800BED3F4 /* Route.swift */; };
 		9C8E34ED24EF23F100BED3F4 /* PresentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8E34EC24EF23F100BED3F4 /* PresentedView.swift */; };
+		9C8E34F224F1ACE000BED3F4 /* AppSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C93AD5C248FDBD0009415EF /* AppSetting.swift */; };
+		9C8E34F324F1ACE000BED3F4 /* AppSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C93AD5C248FDBD0009415EF /* AppSetting.swift */; };
 		9C8F05EA23CFBD1500B98CCE /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8F05E923CFBD1500B98CCE /* MenuView.swift */; };
 		9C9085F722DF3FF600D47262 /* EntryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9085F622DF3FF600D47262 /* EntryRowView.swift */; };
 		9C90F62C2296B86F00C113EF /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9C90F62B2296B86F00C113EF /* Settings.bundle */; };
@@ -474,7 +476,6 @@
 				9C66B6C8235681280068B968 /* DeleteEntryButton.swift */,
 				9C1EB6E723573DD700A5E54B /* EntryPictoImage.swift */,
 				9C012C3D247F001A0080FEF6 /* FontSizeSelectorView.swift */,
-				9CA42AD32359CAC500EF1BF6 /* RefreshButton.swift */,
 				9C66B6C62356806E0068B968 /* StarEntryButton.swift */,
 			);
 			path = UI;
@@ -526,6 +527,7 @@
 			isa = PBXGroup;
 			children = (
 				9C45F6CA236069650021813B /* TagListFor.swift */,
+				9C2B7D162433473500723D09 /* TagsForEntryPublisher.swift */,
 				9C60DE2423606DAA00F78D02 /* TagRow.swift */,
 			);
 			path = Tag;
@@ -578,10 +580,7 @@
 		9C5EDEE3234E83B000141DFD /* Publisher */ = {
 			isa = PBXGroup;
 			children = (
-				9C93AD5C248FDBD0009415EF /* AppSetting.swift */,
 				9C5EDEE4234E842B00141DFD /* AppState.swift */,
-				9C66B6BC235667770068B968 /* AppSync.swift */,
-				9C2B7D162433473500723D09 /* TagsForEntryPublisher.swift */,
 			);
 			path = Publisher;
 			sourceTree = "<group>";
@@ -613,6 +612,8 @@
 		9C73EC4522D7907E008663B1 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				9C8E34F124F1ACCC00BED3F4 /* Setting */,
+				9C8E34F024F1ABE600BED3F4 /* Sync */,
 				9C37217022E107D200D363FB /* MainView.swift */,
 				9C8F05E923CFBD1500B98CCE /* MenuView.swift */,
 				9C5EDEE8234E887A00141DFD /* About */,
@@ -710,6 +711,25 @@
 				9CFEE5F1246D70F1009C15DD /* SearchViewModel.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		9C8E34F024F1ABE600BED3F4 /* Sync */ = {
+			isa = PBXGroup;
+			children = (
+				9CA42AD32359CAC500EF1BF6 /* RefreshButton.swift */,
+				9C66B6BC235667770068B968 /* AppSync.swift */,
+				9CFA9E3023D270F0004C89E3 /* CoreDataSync.swift */,
+			);
+			path = Sync;
+			sourceTree = "<group>";
+		};
+		9C8E34F124F1ACCC00BED3F4 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				9CCC4AFB22E3BFD400F73891 /* WallabagUserDefaults.swift */,
+				9C93AD5C248FDBD0009415EF /* AppSetting.swift */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		9C961B2422770ECE009F80A4 /* wallabagUITests */ = {
@@ -926,12 +946,10 @@
 			children = (
 				9C1EF9C124747FB400152BB5 /* Haptic */,
 				9C148524235E3ED50082D7BB /* CoreData.swift */,
-				9CFA9E3023D270F0004C89E3 /* CoreDataSync.swift */,
 				FR_290ECAC1FE613D28DF9CB4D061F101F9 /* KeychainPasswordItem.swift */,
 				FR_26E374F0AF1D1FBEC022213E082366DF /* RetrieveMode.swift */,
 				9C52706E23F8AEF600DF0058 /* WallabagError.swift */,
 				9C7AFE0C2353C93E00FBF989 /* WallabagSession.swift */,
-				9CCC4AFB22E3BFD400F73891 /* WallabagUserDefaults.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -1285,6 +1303,7 @@
 				9C8CF08E24AD45F000F59AA4 /* Setting.swift in Sources */,
 				9C8CF09024AD460A00F59AA4 /* KeychainPasswordItem.swift in Sources */,
 				9C8CF08F24AD460000F59AA4 /* Password.swift in Sources */,
+				9C8E34F224F1ACE000BED3F4 /* AppSetting.swift in Sources */,
 				9C8CF08B24AD394500F59AA4 /* AddEntryIntentHandler.swift in Sources */,
 				9C8CF06B24AD35E100F59AA4 /* IntentHandler.swift in Sources */,
 				9C8CF08C24AD45D800F59AA4 /* WallabagUserDefaults.swift in Sources */,
@@ -1422,6 +1441,7 @@
 			files = (
 				9CD4CEF623F1FD5200CF11EA /* ShareExtensionError.swift in Sources */,
 				BF_F455B9C80CD63DD87EF42992438C4F82 /* ShareViewController.swift in Sources */,
+				9C8E34F324F1ACE000BED3F4 /* AppSetting.swift in Sources */,
 				9C1410572374610B0080B1AC /* WallabagUserDefaults.swift in Sources */,
 				9C141058237461E60080B1AC /* Setting.swift in Sources */,
 				9C14105A237462000080B1AC /* Password.swift in Sources */,
