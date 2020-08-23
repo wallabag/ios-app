@@ -7,16 +7,6 @@
 
 import SwiftUI
 
-private struct Menu: Identifiable {
-    var id: String {
-        "\(route.title)"
-    }
-
-    let title: LocalizedStringKey
-    let img: String
-    let route: Route
-}
-
 struct MenuView: View {
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var router: Router
