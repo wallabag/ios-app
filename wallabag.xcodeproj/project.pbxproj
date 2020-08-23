@@ -577,14 +577,6 @@
 			path = Entry;
 			sourceTree = "<group>";
 		};
-		9C5EDEE3234E83B000141DFD /* Publisher */ = {
-			isa = PBXGroup;
-			children = (
-				9C5EDEE4234E842B00141DFD /* AppState.swift */,
-			);
-			path = Publisher;
-			sourceTree = "<group>";
-		};
 		9C5EDEE8234E887A00141DFD /* About */ = {
 			isa = PBXGroup;
 			children = (
@@ -612,8 +604,6 @@
 		9C73EC4522D7907E008663B1 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				9C8E34F124F1ACCC00BED3F4 /* Setting */,
-				9C8E34F024F1ABE600BED3F4 /* Sync */,
 				9C37217022E107D200D363FB /* MainView.swift */,
 				9C8F05E923CFBD1500B98CCE /* MenuView.swift */,
 				9C5EDEE8234E887A00141DFD /* About */,
@@ -621,11 +611,14 @@
 				9C5EDEE2234E810C00141DFD /* Entry */,
 				9C52706B23F8AB6100DF0058 /* Error */,
 				9C66B6BE235678270068B968 /* Filter */,
+				9C1EF9C124747FB400152BB5 /* Haptic */,
 				9C327656238B034D0040D9D6 /* PasteBoard */,
 				9C03E49D238473D20060FF14 /* Player */,
 				9CB4D03F22E8A9220078BD1C /* Registration */,
 				9C5AE832245CC94000823EE6 /* Router */,
 				9C8E34EF24EF2B0200BED3F4 /* Search */,
+				9C8E34F124F1ACCC00BED3F4 /* Setting */,
+				9C8E34F024F1ABE600BED3F4 /* Sync */,
 				9C45F6CC236069700021813B /* Tag */,
 				9C7663F423F43E9B00232B08 /* Tip */,
 			);
@@ -920,13 +913,13 @@
 				9CCF9324242CE44300904D3B /* wallabag.xctestplan */,
 				G_B507F86627987D54B7C8B4837197C891 /* bagit */,
 				G_39C6C9CFDD44BBB7BB8E0F812CE69E29 /* configs */,
+				502725B2BF8026EB5E2005F7 /* Frameworks */,
+				G_F9352AEEBDAE1173F665BDBED628DF2A /* Products */,
+				9C8CF06924AD35E100F59AA4 /* Shortcuts */,
 				G_EE322AF580B12A5FAFB51DB68815824E /* wallabag */,
+				9C4C1F86240E7E350029FBC9 /* wallabagScreenshotTests */,
 				G_16D85DEB94463C22A0C313B23AE8C024 /* wallabagTests */,
 				9C961B2422770ECE009F80A4 /* wallabagUITests */,
-				9C4C1F86240E7E350029FBC9 /* wallabagScreenshotTests */,
-				9C8CF06924AD35E100F59AA4 /* Shortcuts */,
-				G_F9352AEEBDAE1173F665BDBED628DF2A /* Products */,
-				502725B2BF8026EB5E2005F7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -944,7 +937,7 @@
 		G_ED05746A8B318D93F5C59AFB3D2C703A /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				9C1EF9C124747FB400152BB5 /* Haptic */,
+				9C5EDEE4234E842B00141DFD /* AppState.swift */,
 				9C148524235E3ED50082D7BB /* CoreData.swift */,
 				FR_290ECAC1FE613D28DF9CB4D061F101F9 /* KeychainPasswordItem.swift */,
 				FR_26E374F0AF1D1FBEC022213E082366DF /* RetrieveMode.swift */,
@@ -970,7 +963,6 @@
 				G_DFD8F6A37FD99EE890AF4FA2569F633D /* html-ressources */,
 				G_ED05746A8B318D93F5C59AFB3D2C703A /* Lib */,
 				9C889E7D22E66BB000B9F767 /* PropertyWrapper */,
-				9C5EDEE3234E83B000141DFD /* Publisher */,
 				G_60BF241AD87B2847EBA2C59F302A8DF3 /* Storyboard */,
 				9C148528235E3FF00082D7BB /* wallabagStore.xcdatamodeld */,
 				9C1B8937249BBC8A006C76BB /* Localizable.strings */,
