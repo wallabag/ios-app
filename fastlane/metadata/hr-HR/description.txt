@@ -1,0 +1,7 @@
+wallabag, program za spremanje web-stranica na vlastitom poslužitelju
+
+Za razliku od ostalih usluga, wallabag is slobodan program otvorenog koda.
+
+Za pokretanje programa, trebaš vlastiti primjerak wallabaga.
+
+Na primjer, wallabag možeš instalirati na vlastitom web-poslužitelju.

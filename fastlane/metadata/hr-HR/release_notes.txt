@@ -1,0 +1,6 @@
+Mogućnost pretrage je vraćena u program.
+Malo smo pregledali ergonomiju stranice za čitanje, sada je moguće prilagoditi veličinu teksta, izvorni članak se može otvoriti izravno u Safariju.
+Proširenje dijeljenja je prepravljeno, sada prihvaća pdf poveznice te bi trebalo rjeđe blokirati.
+Prikaz izbornika je prerađen (avienne)
+
+Manji ispravci i poboljšanja
