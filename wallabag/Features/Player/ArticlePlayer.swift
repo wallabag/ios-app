@@ -10,7 +10,7 @@ import Foundation
 import MediaPlayer
 
 class ArticlePlayer {
-    private var speecher: AVSpeechSynthesizer = AVSpeechSynthesizer()
+    private var speecher = AVSpeechSynthesizer()
 
     var isPlaying: Bool {
         speecher.isSpeaking

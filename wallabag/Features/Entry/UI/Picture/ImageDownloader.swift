@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class ImageDownloader {
-    static var shared: ImageDownloader = ImageDownloader()
+    static var shared = ImageDownloader()
 
     private var cacheStore = ImageCache.shared
 

@@ -11,7 +11,7 @@ import Foundation
 struct Setting<T> {
     let key: String
     let defaultValue: T
-    let userDefaults: UserDefaults = UserDefaults(suiteName: "group.wallabag.share_extension")!
+    let userDefaults = UserDefaults(suiteName: "group.wallabag.share_extension")!
 
     init(_ key: String, defaultValue: T) {
         self.key = key

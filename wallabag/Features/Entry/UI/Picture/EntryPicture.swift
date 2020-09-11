@@ -9,7 +9,7 @@ import Combine
 import SwiftUI
 
 struct EntryPicture: View {
-    private let placeholderImage: UIImage = UIImage(systemName: "book")!
+    private let placeholderImage = UIImage(systemName: "book")!
 
     @ObservedObject var imagePublisher: ImageDownloaderPublisher
 

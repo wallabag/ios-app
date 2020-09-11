@@ -23,14 +23,7 @@ struct MenuView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack(alignment: .leading) {
-                Text("Menu")
-                    .font(.title)
-                    .fontWeight(.black)
-                    .onTapGesture {
-                        withAnimation {
-                            self.showMenu = false
-                        }
-                    }
+                self.header()
                 ForEach(self.menus) { menu in
                     HStack {
                         Button(action: {
@@ -42,8 +35,9 @@ struct MenuView: View {
                             Image(systemName: menu.img)
                                 .frame(width: 24)
                             Text(menu.title)
-                        }
+                        }.padding(.vertical, 4)
                     }
+                    Divider()
                 }
                 Spacer()
                 HStack {
@@ -55,8 +49,9 @@ struct MenuView: View {
                     }) {
                         Image(systemName: "ant").padding(.leading, 2)
                         Text("Bug report").padding(.leading, 2)
-                    }
+                    }.padding(.vertical, 4)
                 }
+                Divider()
                 HStack {
                     Button(action: {
                         withAnimation {
@@ -66,8 +61,9 @@ struct MenuView: View {
                     }) {
                         Image(systemName: "gear")
                         Text("Setting")
-                    }
+                    }.padding(.vertical, 4)
                 }
+                Divider()
                 HStack {
                     Button(action: {
                         self.appState.logout()
@@ -87,10 +83,34 @@ struct MenuView: View {
             .background(Color(UIColor.systemBackground))
         }
     }
+
+    func header() -> AnyView {
+        if #available(iOS 14.0, *) {
+            return AnyView(Text("Menu")
+                .font(.title)
+                .fontWeight(.black)
+                .onTapGesture {
+                    withAnimation {
+                        self.showMenu = false
+                    }
+                }.padding(.top, 44))
+        } else {
+            return AnyView(Text("Menu")
+                .font(.title)
+                .fontWeight(.black)
+                .onTapGesture {
+                    withAnimation {
+                        self.showMenu = false
+                    }
+                }
+            )
+        }
+    }
 }
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
         MenuView(showMenu: .constant(true))
+            .previewLayout(.sizeThatFits)
     }
 }

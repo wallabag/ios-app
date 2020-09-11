@@ -24,7 +24,7 @@ class PlayerPublisher: ObservableObject {
 
     @Published var podcast: Podcast?
 
-    private var speecher: AVSpeechSynthesizer = AVSpeechSynthesizer()
+    private var speecher = AVSpeechSynthesizer()
     private var utterance: AVSpeechUtterance?
 
     func load(_ entry: Entry) {
