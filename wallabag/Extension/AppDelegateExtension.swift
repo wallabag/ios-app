@@ -15,7 +15,7 @@ import UIKit
         func populateApplication() {
             resetApplication()
 
-            let appState = container.resolve(AppState.self)!
+            let appState = DependencyInjection.container.resolve(AppState.self)!
             appState.registred = true
             appState.router.load(.entries)
             WallabagUserDefaults.defaultMode = "allArticles"

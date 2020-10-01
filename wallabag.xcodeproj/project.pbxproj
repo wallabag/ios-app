@@ -78,6 +78,7 @@
 		9C78B9D4235BBD8F00BDEFEB /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_290ECAC1FE613D28DF9CB4D061F101F9 /* KeychainPasswordItem.swift */; };
 		9C7AFE0D2353C93E00FBF989 /* WallabagSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7AFE0C2353C93E00FBF989 /* WallabagSession.swift */; };
 		9C7CBD0722D60B8A00EE1DE3 /* ArticlePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7CBD0622D60B8A00EE1DE3 /* ArticlePlayer.swift */; };
+		9C8859522526238300A4FFBA /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8859512526238300A4FFBA /* DependencyInjection.swift */; };
 		9C889E7F22E66BCA00B9F767 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C889E7E22E66BCA00B9F767 /* Setting.swift */; };
 		9C8CF06B24AD35E100F59AA4 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8CF06A24AD35E100F59AA4 /* IntentHandler.swift */; };
 		9C8CF08024AD35E100F59AA4 /* Shortcuts.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9C8CF06824AD35E100F59AA4 /* Shortcuts.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -288,6 +289,7 @@
 		9C7663F723F4439E00232B08 /* TipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewModel.swift; sourceTree = "<group>"; };
 		9C7AFE0C2353C93E00FBF989 /* WallabagSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagSession.swift; sourceTree = "<group>"; };
 		9C7CBD0622D60B8A00EE1DE3 /* ArticlePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePlayer.swift; sourceTree = "<group>"; };
+		9C8859512526238300A4FFBA /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
 		9C889E7E22E66BCA00B9F767 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		9C8CF06824AD35E100F59AA4 /* Shortcuts.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Shortcuts.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8CF06A24AD35E100F59AA4 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
@@ -978,6 +980,7 @@
 				FR_26E374F0AF1D1FBEC022213E082366DF /* RetrieveMode.swift */,
 				9C52706E23F8AEF600DF0058 /* WallabagError.swift */,
 				9C7AFE0C2353C93E00FBF989 /* WallabagSession.swift */,
+				9C8859512526238300A4FFBA /* DependencyInjection.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -1387,6 +1390,7 @@
 				BF_83312011338DF667DC8174DD85C2A1B7 /* Int.swift in Sources */,
 				9CA5D4C422E0906A00167574 /* EntryView.swift in Sources */,
 				9C9085F722DF3FF600D47262 /* EntryRowView.swift in Sources */,
+				9C8859522526238300A4FFBA /* DependencyInjection.swift in Sources */,
 				9C52706D23F8AB6A00DF0058 /* ErrorView.swift in Sources */,
 				9CFEE5F4246D7189009C15DD /* SearchView.swift in Sources */,
 				9C327658238B03720040D9D6 /* PasteBoardView.swift in Sources */,
