@@ -20,7 +20,6 @@ class ErrorViewModel: ObservableObject {
     func setLast(_ error: WallabagError) {
         lastError = error
         DispatchQueue.main.asyncAfter(deadline: .now() + resetAfter) { [weak self] in
-            print("async")
             self?.lastError = nil
         }
     }
