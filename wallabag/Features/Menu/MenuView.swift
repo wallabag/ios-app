@@ -23,7 +23,7 @@ struct MenuView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack(alignment: .leading) {
-                self.header()
+                header
                 ForEach(self.menus) { menu in
                     HStack {
                         Button(action: {
@@ -32,9 +32,7 @@ struct MenuView: View {
                                 self.showMenu = false
                             }
                         }) {
-                            Image(systemName: menu.img)
-                                .frame(width: 24)
-                            Text(menu.title)
+                            Label(menu.title, systemImage: menu.img)
                         }.padding(.vertical, 4)
                     }
                     Divider()
@@ -47,8 +45,7 @@ struct MenuView: View {
                             self.showMenu = false
                         }
                     }) {
-                        Image(systemName: "ant").padding(.leading, 2)
-                        Text("Bug report").padding(.leading, 2)
+                        Label("Bug report", systemImage: "ant")
                     }.padding(.vertical, 4)
                 }
                 Divider()
@@ -59,8 +56,7 @@ struct MenuView: View {
                         }
                         UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
                     }) {
-                        Image(systemName: "gear")
-                        Text("Setting")
+                        Label("Setting", systemImage: "gear")
                     }.padding(.vertical, 4)
                 }
                 Divider()
@@ -71,8 +67,7 @@ struct MenuView: View {
                             self.showMenu = false
                         }
                     }) {
-                        Image(systemName: "person").padding(.leading, 2)
-                        Text("Logout").padding(.leading, 3)
+                        Label("Logout", systemImage: "person")
                     }.foregroundColor(.red)
                 }
             }
@@ -84,27 +79,16 @@ struct MenuView: View {
         }
     }
 
-    func header() -> AnyView {
-        if #available(iOS 14.0, *) {
-            return AnyView(Text("Menu")
-                .font(.title)
-                .fontWeight(.black)
-                .onTapGesture {
-                    withAnimation {
-                        self.showMenu = false
-                    }
-                }.padding(.top, 44))
-        } else {
-            return AnyView(Text("Menu")
-                .font(.title)
-                .fontWeight(.black)
-                .onTapGesture {
-                    withAnimation {
-                        self.showMenu = false
-                    }
+    var header: some View {
+        Text("Menu")
+            .font(.title)
+            .fontWeight(.black)
+            .onTapGesture {
+                withAnimation {
+                    self.showMenu = false
                 }
-            )
-        }
+            }
+            .padding(.top, 44)
     }
 }
 
