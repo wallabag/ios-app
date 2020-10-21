@@ -49,8 +49,8 @@ public struct KeychainPasswordItem {
         guard status == noErr else { throw KeychainError.unhandledError(status: status) }
 
         guard let existingItem = queryResult as? [String: AnyObject],
-            let passwordData = existingItem[kSecValueData as String] as? Data,
-            let password = String(data: passwordData, encoding: String.Encoding.utf8)
+              let passwordData = existingItem[kSecValueData as String] as? Data,
+              let password = String(data: passwordData, encoding: String.Encoding.utf8)
         else {
             throw KeychainError.unexpectedPasswordData
         }
