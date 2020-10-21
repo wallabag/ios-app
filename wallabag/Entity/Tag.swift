@@ -12,7 +12,7 @@ class Tag: NSManagedObject, Identifiable {
     @Published var isChecked: Bool = false
 }
 
-public extension Tag {
+extension Tag {
     @nonobjc class func fetchRequestSorted() -> NSFetchRequest<Tag> {
         let fetchRequest = NSFetchRequest<Tag>(entityName: "Tag")
         let sortDescriptor = NSSortDescriptor(key: "label", ascending: true)

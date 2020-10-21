@@ -14,7 +14,7 @@ import WallabagKit
 
 class Entry: NSManagedObject, Identifiable {}
 
-public extension Entry {
+extension Entry {
     @nonobjc class func fetchRequestSorted() -> NSFetchRequest<Entry> {
         let fetchRequest = NSFetchRequest<Entry>(entityName: "Entry")
         let sortDescriptor = NSSortDescriptor(key: "id", ascending: false)
