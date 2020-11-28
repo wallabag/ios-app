@@ -137,7 +137,6 @@
 		BF_3405357D2A8A06979EC0F11E7AEEBCF2 /* ratatouille.css in Resources */ = {isa = PBXBuildFile; fileRef = FR_C6ACC6D258ADB3D12E651FB3A8EA41AA /* ratatouille.css */; };
 		BF_3C34FF37F2AAB722ED3278184555355B /* WallabagAuthSuccessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_709ED9B3B72198FF7033B14173B6DE6E /* WallabagAuthSuccessTests.swift */; };
 		BF_3D48DCA00E8CF928EC9C14036EEFD36B /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FR_B59475CCE7E9CDF9B6B6C979AF3EBC87 /* Media.xcassets */; };
-		BF_42EE562310F74101FFA47579EB427A90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = VG_6CD892D2BBF5FE25B74443256D4272AA /* Main.storyboard */; };
 		BF_58567850CC932A049952E736EE61B0DE /* WallabagAuthErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_C3CA4908C169B55F757B33B99B07B0D1 /* WallabagAuthErrorTests.swift */; };
 		BF_6501D4BDF703ADAC0E1EBB67937832A7 /* EmptyCollection.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_2BF273D49F4833BC11A86510154631AF /* EmptyCollection.json */; };
 		BF_762B1448F05D92E507BBC9314D9CDA2E /* Entry.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_4F6DCF741037732F30E4ED36FA3E5984 /* Entry.json */; };
@@ -247,6 +246,7 @@
 		9C1EF9C62474800700152BB5 /* View+haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+haptic.swift"; sourceTree = "<group>"; };
 		9C276C4B23856A8B006F590A /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 		9C2B7D162433473500723D09 /* TagsForEntryPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsForEntryPublisher.swift; sourceTree = "<group>"; };
+		9C2CB5902572F95800F2F29E /* StoreKitConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = StoreKitConfiguration.storekit; sourceTree = "<group>"; };
 		9C2D5242244E312600CD5655 /* ErrorViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModelTests.swift; sourceTree = "<group>"; };
 		9C327654238B031D0040D9D6 /* PasteBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteBoardViewModel.swift; sourceTree = "<group>"; };
 		9C327657238B03720040D9D6 /* PasteBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteBoardView.swift; sourceTree = "<group>"; };
@@ -367,7 +367,6 @@
 		FR_AAAE3FAEDFB1E2658F53DC3C5B9D5F2A /* WallabagKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitTests.swift; sourceTree = "<group>"; };
 		FR_AB15CF3A73378A512C3D9BBC9F7ECD65 /* TokenAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenAdapterTests.swift; sourceTree = "<group>"; };
 		FR_ADF34B1BF3A7AF7D035A47CC6C5A02E3 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
-		FR_B3F20BFCCD3C9F0039EE2AC6D8D1A71B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FR_B59475CCE7E9CDF9B6B6C979AF3EBC87 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		FR_C16D1C5C72DB19E504BB13DC0273DD1D /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		FR_C3CA4908C169B55F757B33B99B07B0D1 /* WallabagAuthErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagAuthErrorTests.swift; sourceTree = "<group>"; };
@@ -865,7 +864,6 @@
 		G_60BF241AD87B2847EBA2C59F302A8DF3 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				VG_6CD892D2BBF5FE25B74443256D4272AA /* Main.storyboard */,
 				9C5EDF07234E982600141DFD /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
@@ -1004,6 +1002,7 @@
 				9C148528235E3FF00082D7BB /* wallabagStore.xcdatamodeld */,
 				9C1B8937249BBC8A006C76BB /* Localizable.strings */,
 				9C68A06F2572EC4A0002C326 /* WallabagApp.swift */,
+				9C2CB5902572F95800F2F29E /* StoreKitConfiguration.storekit */,
 			);
 			path = wallabag;
 			sourceTree = "<group>";
@@ -1267,7 +1266,6 @@
 			files = (
 				BF_C34B818DF3810583F726069B8FF3F5D3 /* Assets.xcassets in Resources */,
 				9C90F62C2296B86F00C113EF /* Settings.bundle in Resources */,
-				BF_42EE562310F74101FFA47579EB427A90 /* Main.storyboard in Resources */,
 				BF_0958BD47C0A373C73825495FA643F41D /* UbuntuTitling-Bold.ttf in Resources */,
 				BF_0576133F70765A88C0F8BD8FC41C19EE /* article.html in Resources */,
 				9C1B8935249BBC8A006C76BB /* Localizable.strings in Resources */,
@@ -1521,14 +1519,6 @@
 				9C452B6624ACE318000B1EB0 /* fr */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		VG_6CD892D2BBF5FE25B74443256D4272AA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FR_B3F20BFCCD3C9F0039EE2AC6D8D1A71B /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
