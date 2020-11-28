@@ -11,6 +11,8 @@ import Logging
 import SwiftUI
 
 final class Router: ObservableObject {
+    static var shared = Router()
+
     @Injector private var appState: AppState
     @Injector private var logger: Logger
 

@@ -12,6 +12,7 @@ import SwiftyLogger
 import WallabagKit
 
 class AppSync: ObservableObject {
+    static var shared = AppSync()
     @Injector var session: WallabagSession
     @Injector var errorViewModel: ErrorViewModel
     @CoreDataViewContext var coreDataContext: NSManagedObjectContext

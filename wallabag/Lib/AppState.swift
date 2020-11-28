@@ -10,6 +10,8 @@ import Foundation
 import Logging
 
 class AppState: NSObject, ObservableObject {
+    static var shared = AppState()
+
     @Published var registred: Bool = false {
         didSet {
             logger.info("App state registred \(registred)")

@@ -12,6 +12,8 @@ import MediaPlayer
 import SwiftyLogger
 
 class PlayerPublisher: ObservableObject {
+    static var shared = PlayerPublisher()
+
     @Published private(set) var isPlaying = false {
         willSet {
             if newValue {

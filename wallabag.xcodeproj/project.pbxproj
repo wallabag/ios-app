@@ -67,11 +67,11 @@
 		9C66B6C72356806E0068B968 /* StarEntryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C66B6C62356806E0068B968 /* StarEntryButton.swift */; };
 		9C66B6C9235681280068B968 /* DeleteEntryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C66B6C8235681280068B968 /* DeleteEntryButton.swift */; };
 		9C677CAD227EF5A6006C7112 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C677CAC227EF5A6006C7112 /* WebKit.framework */; };
+		9C68A0702572EC4A0002C326 /* WallabagApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C68A06F2572EC4A0002C326 /* WallabagApp.swift */; };
 		9C6C37502477D6F200D2228F /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9C6C374F2477D6F200D2228F /* WallabagKit */; };
 		9C6C37522477D73A00D2228F /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 9C6C37512477D73A00D2228F /* WallabagKit */; };
 		9C6D0741238BFEAD00FCF4FF /* SwipePlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6D0740238BFEAD00FCF4FF /* SwipePlayerView.swift */; };
 		9C6DC0F2224112480012486D /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6DC0F1224112480012486D /* UISearchBar.swift */; };
-		9C73EC4422D79037008663B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C73EC4322D79037008663B1 /* SceneDelegate.swift */; };
 		9C73EC4722D79093008663B1 /* EntriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C73EC4622D79093008663B1 /* EntriesView.swift */; };
 		9C7663F623F43EAB00232B08 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7663F523F43EAB00232B08 /* TipView.swift */; };
 		9C7663F823F4439E00232B08 /* TipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C7663F723F4439E00232B08 /* TipViewModel.swift */; };
@@ -281,9 +281,9 @@
 		9C66B6C62356806E0068B968 /* StarEntryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarEntryButton.swift; sourceTree = "<group>"; };
 		9C66B6C8235681280068B968 /* DeleteEntryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteEntryButton.swift; sourceTree = "<group>"; };
 		9C677CAC227EF5A6006C7112 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		9C68A06F2572EC4A0002C326 /* WallabagApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagApp.swift; sourceTree = "<group>"; };
 		9C6D0740238BFEAD00FCF4FF /* SwipePlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipePlayerView.swift; sourceTree = "<group>"; };
 		9C6DC0F1224112480012486D /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
-		9C73EC4322D79037008663B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		9C73EC4622D79093008663B1 /* EntriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesView.swift; sourceTree = "<group>"; };
 		9C7663F523F43EAB00232B08 /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 		9C7663F723F4439E00232B08 /* TipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipViewModel.swift; sourceTree = "<group>"; };
@@ -992,7 +992,6 @@
 				FR_7F369F01648273740FFAC734BF79A78E /* wallabag.entitlements */,
 				FR_606AAB346453DED260A405BD16778883 /* Info.plist */,
 				FR_9600E47FC00A35A057E5DE937EDBFDF3 /* AppDelegate.swift */,
-				9C73EC4322D79037008663B1 /* SceneDelegate.swift */,
 				FR_F94DA63289F6177D1927EB1C68054CF9 /* Assets.xcassets */,
 				9C73EC4522D7907E008663B1 /* Features */,
 				G_BD722E6D6F9F896167754C6E90947E1F /* Entity */,
@@ -1004,6 +1003,7 @@
 				G_60BF241AD87B2847EBA2C59F302A8DF3 /* Storyboard */,
 				9C148528235E3FF00082D7BB /* wallabagStore.xcdatamodeld */,
 				9C1B8937249BBC8A006C76BB /* Localizable.strings */,
+				9C68A06F2572EC4A0002C326 /* WallabagApp.swift */,
 			);
 			path = wallabag;
 			sourceTree = "<group>";
@@ -1377,6 +1377,7 @@
 				9CD4F454242FC83B003B56CF /* BugReportView.swift in Sources */,
 				9C03E4A1238474110060FF14 /* PlayerPublisher.swift in Sources */,
 				9C6D0741238BFEAD00FCF4FF /* SwipePlayerView.swift in Sources */,
+				9C68A0702572EC4A0002C326 /* WallabagApp.swift in Sources */,
 				9CB41DC8234FC23200C2740B /* LoginViewModel.swift in Sources */,
 				9C0C3B8A2354890F008AD2C9 /* GeneralSetting.swift in Sources */,
 				9C37217122E107D200D363FB /* MainView.swift in Sources */,
@@ -1420,7 +1421,6 @@
 				9CB41DC4234FC03C00C2740B /* ServerViewModel.swift in Sources */,
 				9C1786AC244CE4AD00DD1995 /* ImageDownloaderPublisher.swift in Sources */,
 				9C327655238B031D0040D9D6 /* PasteBoardViewModel.swift in Sources */,
-				9C73EC4422D79037008663B1 /* SceneDelegate.swift in Sources */,
 				9CCC4AFC22E3BFD400F73891 /* WallabagUserDefaults.swift in Sources */,
 				9C73EC4722D79093008663B1 /* EntriesView.swift in Sources */,
 				9C148527235E3F680082D7BB /* CoreDataViewContext.swift in Sources */,
