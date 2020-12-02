@@ -1,1 +1,35 @@
 
+
+
+"Cancel" = "Odustani";
+"Add" = "Dodaj";
+"Back" = "Natrag";
+
+// Common
+"Submit" = "Pošalji";
+"It seems impossible to make a payment." = "Čini se da nije moguće izvršiti plaćanje.";
+"Loading..." = "Učitavanje …";
+"But you can contribute financially by making a donation whenever you want to support the project." = "Ali možeš doprinijeti donacijom kad god želiš podržati projekt.";
+"It is free and will remain so." = "Besplatan je i tako će i ostati.";
+
+// Tip View
+"This application is developed on free time" = "Ovaj se program razvija u slobodno vrijeme";
+
+// PasteBoard View
+"New url in pasteboard detected" = "Otkriven je novi URL u međuspremniku";
+"Read" = "Pročitani";
+"Unread" = "Nepročitani";
+"Starred" = "Označeni";
+
+// Mode picker
+"All" = "Sve";
+"Logout" = "Odjava";
+"Setting" = "Postava";
+"Bug report" = "Izvještaj o grešci";
+"Tips" = "Savjeti";
+"About" = "Informacije";
+"Entries" = "Zapisi";
+"Add entry" = "Dodaj zapis";
+
+// Menu
+"Menu" = "Izbornik";
