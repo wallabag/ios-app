@@ -1,10 +1,3 @@
-//
-//  LoginView.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 19/07/2019.
-//
-
 import SwiftUI
 
 struct LoginView: View {

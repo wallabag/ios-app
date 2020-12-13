@@ -1,10 +1,3 @@
-//
-//  ErrorViewModel.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 15/02/2020.
-//
-
 import Combine
 import Foundation
 

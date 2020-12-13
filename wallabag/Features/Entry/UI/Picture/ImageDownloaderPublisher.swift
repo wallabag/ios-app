@@ -1,10 +1,3 @@
-//
-//  ImageDownloaderPublisher.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 19/04/2020.
-//
-
 import Combine
 import Foundation
 import UIKit.UIImage

@@ -1,10 +1,3 @@
-//
-//  RetrieveModePicker.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 15/10/2019.
-//
-
 import SwiftUI
 
 struct RetrieveModePicker: View {

@@ -1,10 +1,3 @@
-//
-//  EntryArchiveImage.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 16/10/2019.
-//
-
 import SwiftUI
 
 struct EntryPictoImage: View {

@@ -1,10 +1,3 @@
-//
-//  EntryPicture.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 05/11/2019.
-//
-
 import Combine
 import SwiftUI
 

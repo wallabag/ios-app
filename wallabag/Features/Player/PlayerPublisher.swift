@@ -1,10 +1,3 @@
-//
-//  PlayerPublisher.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 19/11/2019.
-//
-
 import AVFoundation
 import Combine
 import Foundation

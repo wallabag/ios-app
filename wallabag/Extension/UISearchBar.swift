@@ -1,10 +1,3 @@
-//
-//  UISearchBar.swift
-//  wallabag
-//
-//  Created by maxime marinel on 19/03/2019.
-//
-
 import UIKit
 
 extension UISearchBar {

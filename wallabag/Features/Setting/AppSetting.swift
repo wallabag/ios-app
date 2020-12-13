@@ -1,10 +1,3 @@
-//
-//  AppSetting.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 09/06/2020.
-//
-
 import Combine
 import Foundation
 

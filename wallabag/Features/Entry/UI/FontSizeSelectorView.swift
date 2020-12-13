@@ -1,10 +1,3 @@
-//
-//  FontSizeSelectorView.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 27/05/2020.
-//
-
 import Foundation
 import SwiftUI
 

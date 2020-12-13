@@ -1,10 +1,3 @@
-//
-//  SettingMock.swift
-//  wallabagTests
-//
-//  Created by maxime marinel on 15/04/2019.
-//
-
 import AVFoundation
 import Foundation
 /*

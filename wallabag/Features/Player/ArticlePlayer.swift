@@ -1,10 +1,3 @@
-//
-//  ArticlePlayer.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 10/07/2019.
-//
-
 import AVFoundation
 import Foundation
 import MediaPlayer

@@ -1,10 +1,3 @@
-//
-//  SKProduct.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 13/02/2020.
-//
-
 import Foundation
 import StoreKit
 

@@ -1,10 +1,3 @@
-//
-//  BundleKey.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 10/10/2019.
-//
-
 import Foundation
 
 @propertyWrapper

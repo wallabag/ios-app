@@ -1,10 +1,3 @@
-//
-//  View.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 19/05/2020.
-//
-
 import SwiftUI
 
 extension View {

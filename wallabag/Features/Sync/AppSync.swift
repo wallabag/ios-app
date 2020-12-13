@@ -1,10 +1,3 @@
-//
-//  AppSync.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 15/10/2019.
-//
-
 import Combine
 import CoreData
 import Foundation

@@ -1,10 +1,3 @@
-//
-//  ShareExtensionError.swift
-//  bagit
-//
-//  Created by Marinel Maxime on 10/02/2020.
-//
-
 import Foundation
 
 enum ShareExtensionError: Error, LocalizedError {

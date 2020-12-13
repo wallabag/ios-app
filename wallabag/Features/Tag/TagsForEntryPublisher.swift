@@ -1,10 +1,3 @@
-//
-//  TagsForEntryPublisher.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 31/03/2020.
-//
-
 import Combine
 import CoreData
 import Foundation

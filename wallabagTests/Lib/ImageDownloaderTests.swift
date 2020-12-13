@@ -1,10 +1,3 @@
-//
-//  ImageDownloaderTests.swift
-//  wallabagTests
-//
-//  Created by Marinel Maxime on 21/04/2020.
-//
-
 import Combine
 @testable import wallabag
 import XCTest

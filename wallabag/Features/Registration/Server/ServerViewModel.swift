@@ -1,10 +1,3 @@
-//
-//  ServerTextFieldValidator.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 10/10/2019.
-//
-
 import Combine
 import Foundation
 import SwiftUI

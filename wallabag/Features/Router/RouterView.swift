@@ -1,10 +1,3 @@
-//
-//  RouterView.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 01/05/2020.
-//
-
 import Foundation
 import SwiftUI
 

@@ -1,10 +1,3 @@
-//
-//  WallabagError.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 15/02/2020.
-//
-
 import Foundation
 
 enum WallabagError: Error {

@@ -1,10 +1,3 @@
-//
-//  IntentHandler.swift
-//  Shortcuts
-//
-//  Created by Marinel Maxime on 01/07/2020.
-//
-
 import Intents
 
 class IntentHandler: INExtension {

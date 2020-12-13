@@ -1,10 +1,3 @@
-//
-//  EntriesListView.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 24/12/2019.
-//
-
 import Foundation
 import SwiftUI
 

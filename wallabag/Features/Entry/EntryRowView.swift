@@ -1,10 +1,3 @@
-//
-//  ArticleRowView.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 17/07/2019.
-//
-
 import HTMLEntities
 import SwiftUI
 

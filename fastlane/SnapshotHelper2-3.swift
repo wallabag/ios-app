@@ -1,13 +1,3 @@
-//
-//  SnapshotHelper.swift
-//  Example
-//
-//  Created by Felix Krause on 10/8/15.
-//  Copyright © 2015 Felix Krause. All rights reserved.
-//
-
-// This file should be used if your UI Tests are written in Swift 2.3
-
 import Foundation
 import XCTest
 

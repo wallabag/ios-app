@@ -1,10 +1,3 @@
-//
-//  ErrorPublisherTests.swift
-//  wallabagTests
-//
-//  Created by Marinel Maxime on 20/04/2020.
-//
-
 @testable import wallabag
 import XCTest
 

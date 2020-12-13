@@ -1,10 +1,3 @@
-//
-//  RetrieveMode.swift
-//  wallabag
-//
-//  Created by maxime marinel on 04/09/2018.
-//
-
 import Foundation
 
 enum RetrieveMode: String, CaseIterable {

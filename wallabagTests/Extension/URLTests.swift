@@ -1,10 +1,3 @@
-//
-//  URLTests.swift
-//  wallabagTests
-//
-//  Created by Marinel Maxime on 28/03/2020.
-//
-
 @testable import wallabag
 import XCTest
 

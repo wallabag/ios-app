@@ -1,10 +1,3 @@
-//
-//  ImageCacheTests.swift
-//  wallabagTests
-//
-//  Created by Marinel Maxime on 21/04/2020.
-//
-
 @testable import wallabag
 import XCTest
 

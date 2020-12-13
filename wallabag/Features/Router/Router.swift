@@ -1,10 +1,3 @@
-//
-//  Router.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 10/02/2020.
-//
-
 import Combine
 import Foundation
 import Logging

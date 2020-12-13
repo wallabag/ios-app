@@ -1,11 +1,3 @@
-//
-//  UIWebView.swift
-//  wallabag
-//
-//  Created by maxime marinel on 11/06/2018.
-//  Copyright © 2018 maxime marinel. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import WebKit

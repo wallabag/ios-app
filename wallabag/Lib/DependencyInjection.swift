@@ -1,10 +1,3 @@
-//
-//  DependencyInjection.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 01/10/2020.
-//
-
 import Foundation
 import Logging
 import SwiftyLogger

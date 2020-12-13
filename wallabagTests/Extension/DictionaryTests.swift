@@ -1,11 +1,3 @@
-//
-//  DictionaryTests.swift
-//  wallabag
-//
-//  Created by maxime marinel on 10/11/2016.
-//  Copyright © 2016 maxime marinel. All rights reserved.
-//
-
 @testable import wallabag
 import XCTest
 

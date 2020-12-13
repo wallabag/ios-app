@@ -1,10 +1,3 @@
-//
-//  Injector.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 09/10/2019.
-//
-
 import Swinject
 
 @propertyWrapper

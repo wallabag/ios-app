@@ -1,10 +1,3 @@
-//
-//  ServerView.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 18/07/2019.
-//
-
 import SwiftUI
 
 struct ServerView: View {

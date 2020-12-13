@@ -1,10 +1,3 @@
-//
-//  PasteBoardPublisher.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 24/11/2019.
-//
-
 import Combine
 import Foundation
 import UIKit

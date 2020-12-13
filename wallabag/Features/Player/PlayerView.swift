@@ -1,10 +1,3 @@
-//
-//  PlayerView.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 19/11/2019.
-//
-
 import SwiftUI
 
 struct PlayerView: View {

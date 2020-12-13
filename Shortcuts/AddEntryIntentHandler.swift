@@ -1,10 +1,3 @@
-//
-//  AddUrlIntentHandler.swift
-//  Shortcuts
-//
-//  Created by Marinel Maxime on 01/07/2020.
-//
-
 import Combine
 import Foundation
 import Intents

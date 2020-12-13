@@ -1,10 +1,3 @@
-//
-//  wallabagUITests.swift
-//  wallabagUITests
-//
-//  Created by Marinel Maxime on 29/04/2019.
-//
-
 import XCTest
 
 class WallabagUITests: XCTestCase {

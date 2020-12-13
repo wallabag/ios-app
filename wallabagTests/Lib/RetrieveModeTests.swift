@@ -1,10 +1,3 @@
-//
-//  RetrieveModeTests.swift
-//  wallabagTests
-//
-//  Created by maxime marinel on 24/04/2019.
-//
-
 @testable import wallabag
 import XCTest
 

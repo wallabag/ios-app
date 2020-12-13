@@ -1,10 +1,3 @@
-//
-//  PasteBoardView.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 24/11/2019.
-//
-
 import SwiftUI
 
 struct PasteBoardView: View {

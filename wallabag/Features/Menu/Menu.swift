@@ -1,10 +1,3 @@
-//
-//  Menu.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 23/08/2020.
-//
-
 import Foundation
 import SwiftUI
 

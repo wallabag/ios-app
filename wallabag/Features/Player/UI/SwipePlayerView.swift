@@ -1,10 +1,3 @@
-//
-//  SwipePlayerView.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 25/11/2019.
-//
-
 import SwiftUI
 
 struct SwipePlayerView: View {

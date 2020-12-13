@@ -1,10 +1,3 @@
-//
-//  TagListFor.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 23/10/2019.
-//
-
 import CoreData
 import SwiftUI
 

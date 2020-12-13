@@ -1,10 +1,3 @@
-//
-//  Tag.swift
-//  wallabag
-//
-//  Created by maxime marinel on 08/05/2019.
-//
-
 import CoreData
 import Foundation
 

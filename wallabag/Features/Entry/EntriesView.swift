@@ -1,10 +1,3 @@
-//
-//  ArticleListView.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 11/07/2019.
-//
-
 import Combine
 import CoreData
 import SwiftUI

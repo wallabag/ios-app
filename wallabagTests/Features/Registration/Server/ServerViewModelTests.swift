@@ -1,9 +1,3 @@
-//
-//  wallabagTests
-//
-//  Created by Marinel Maxime on 19/03/2020.
-//
-
 @testable import wallabag
 import XCTest
 

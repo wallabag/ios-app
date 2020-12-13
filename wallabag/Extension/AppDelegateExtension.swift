@@ -1,10 +1,3 @@
-//
-//  AppDelegateExtension.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 03/03/2020.
-//
-
 import CoreData
 import Foundation
 import UIKit

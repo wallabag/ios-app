@@ -1,10 +1,3 @@
-//
-//  RefreshButton.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 18/10/2019.
-//
-
 import SwiftUI
 
 struct RefreshButton: View {

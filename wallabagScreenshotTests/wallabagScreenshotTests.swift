@@ -1,10 +1,3 @@
-//
-//  wallabagScreenshotTests.swift
-//  wallabagScreenshotTests
-//
-//  Created by Marinel Maxime on 03/03/2020.
-//
-
 import XCTest
 
 class WallabagScreenshotTests: XCTestCase {
