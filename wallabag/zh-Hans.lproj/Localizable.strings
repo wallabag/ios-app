@@ -19,7 +19,7 @@
 "New url in pasteboard detected" = "检测到粘贴板中的新 url";
 "Read" = "已读";
 "Unread" = "未读";
-"Starred" = "已标星";
+"Starred" = "标星";
 
 // Mode picker
 "All" = "全部";
