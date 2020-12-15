@@ -9,7 +9,7 @@ struct MenuView: View {
         .init(title: "Entries", img: "tray.full", route: .entries),
         .init(title: "Add entry", img: "tray.and.arrow.down", route: .addEntry),
         .init(title: "About", img: "questionmark", route: .about),
-        .init(title: "Tips", img: "heart", route: .tips),
+        .init(title: "Don", img: "heart", route: .tips),
     ]
 
     // swiftlint:disable multiple_closures_with_trailing_closure
