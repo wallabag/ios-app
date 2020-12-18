@@ -128,7 +128,6 @@
 		9CFEE5F2246D70F1009C15DD /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEE5F1246D70F1009C15DD /* SearchViewModel.swift */; };
 		9CFEE5F4246D7189009C15DD /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEE5F3246D7189009C15DD /* SearchView.swift */; };
 		BF_0576133F70765A88C0F8BD8FC41C19EE /* article.html in Resources */ = {isa = PBXBuildFile; fileRef = FR_317F9C93FC0631DF00AB2E1FAEF90DD8 /* article.html */; };
-		BF_0958BD47C0A373C73825495FA643F41D /* UbuntuTitling-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FR_1DE9D932C526142E220FFC665A0EC101 /* UbuntuTitling-Bold.ttf */; };
 		BF_20305CD3F44AD3F0A300A08D28D4712F /* EntriesCollection.json in Resources */ = {isa = PBXBuildFile; fileRef = FR_89CBFB2A6488E68DF37E66008BC3A23A /* EntriesCollection.json */; };
 		BF_218B02857CD5370E001E1DEDBCD9DA81 /* XCTExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_C9900CB03BB06DCC825054DAFDE4D907 /* XCTExtension.swift */; };
 		BF_27B3C5BB859104CEF0AB1D52843622B4 /* WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_3996D9FD806100BF0335AAE1A4EE148E /* WKWebView.swift */; };
@@ -335,7 +334,6 @@
 		9CFEE5F1246D70F1009C15DD /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		9CFEE5F3246D7189009C15DD /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		FR_0D81D880CC2314E3DD84B9C8E00667AD /* wallabagUITests-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "wallabagUITests-Debug.xcconfig"; sourceTree = "<group>"; };
-		FR_1DE9D932C526142E220FFC665A0EC101 /* UbuntuTitling-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UbuntuTitling-Bold.ttf"; sourceTree = "<group>"; };
 		FR_26E374F0AF1D1FBEC022213E082366DF /* RetrieveMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetrieveMode.swift; sourceTree = "<group>"; };
 		FR_290ECAC1FE613D28DF9CB4D061F101F9 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		FR_2BF273D49F4833BC11A86510154631AF /* EmptyCollection.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = EmptyCollection.json; sourceTree = "<group>"; };
@@ -893,14 +891,6 @@
 			path = WallabagKit;
 			sourceTree = "<group>";
 		};
-		G_81C31EE82E6432EC5BD810AE60BAAAC2 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				FR_1DE9D932C526142E220FFC665A0EC101 /* UbuntuTitling-Bold.ttf */,
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
 		G_B507F86627987D54B7C8B4837197C891 /* bagit */ = {
 			isa = PBXGroup;
 			children = (
@@ -996,7 +986,6 @@
 				G_BD722E6D6F9F896167754C6E90947E1F /* Entity */,
 				G_BFAC74A6E84ED8C37095B2C3988CA599 /* Extension */,
 				9C73EC4522D7907E008663B1 /* Features */,
-				G_81C31EE82E6432EC5BD810AE60BAAAC2 /* Fonts */,
 				G_DFD8F6A37FD99EE890AF4FA2569F633D /* html-ressources */,
 				G_ED05746A8B318D93F5C59AFB3D2C703A /* Lib */,
 				9C1B8937249BBC8A006C76BB /* Localizable.strings */,
@@ -1266,7 +1255,6 @@
 			files = (
 				BF_C34B818DF3810583F726069B8FF3F5D3 /* Assets.xcassets in Resources */,
 				9C90F62C2296B86F00C113EF /* Settings.bundle in Resources */,
-				BF_0958BD47C0A373C73825495FA643F41D /* UbuntuTitling-Bold.ttf in Resources */,
 				BF_0576133F70765A88C0F8BD8FC41C19EE /* article.html in Resources */,
 				9C1B8935249BBC8A006C76BB /* Localizable.strings in Resources */,
 				9C5EDF08234E982600141DFD /* LaunchScreen.storyboard in Resources */,
