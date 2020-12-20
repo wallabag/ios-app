@@ -6,7 +6,7 @@ struct RefreshButton: View {
     var body: some View {
         HStack {
             if appSync.inProgress {
-                Text("\(Int(appSync.progress))%")
+                ProgressView(value: appSync.progress, total: 100)
             }
 
             Button(
