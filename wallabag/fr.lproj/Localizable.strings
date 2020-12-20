@@ -30,3 +30,19 @@
 "Bug report" = "Rapport d'erreur";
 "Don" = "Don";
 "About" = "À propos";
+
+// Search
+"Search" = "Rechercher";
+
+// Picker
+"All" = "Tous";
+"Starred" = "Favoris";
+"Unread" = "Non lus";
+"Read" = "Lus";
+
+// Entry
+"Reading time %@" = "Temps de lecture %@";
+
+// About
+"Project page" = "Page du projet";
+"Made by Maxime Marinel @bourvill" = "Fait par Maxime Marinel @bourvill";

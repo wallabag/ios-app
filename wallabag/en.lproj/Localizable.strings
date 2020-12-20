@@ -30,3 +30,19 @@
 "Back" = "Back";
 "Add" = "Add";
 "Cancel" = "Cancel";
+
+// Search
+"Search" = "Search";
+
+// Picker
+"All" = "All";
+"Starred" = "Starred";
+"Unread" = "Unread";
+"Read" = "Read";
+
+// Entry
+"Reading time %@" = "Reading time %@";
+
+// About
+"Project page" = "Project page";
+"Made by Maxime Marinel @bourvill" = "Made by Maxime Marinel @bourvill";

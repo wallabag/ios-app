@@ -5,10 +5,10 @@ struct RetrieveModePicker: View {
 
     var body: some View {
         Picker(selection: $filter, label: Text("Filter"), content: {
-            Text(RetrieveMode.allArticles.rawValue).tag(RetrieveMode.allArticles)
-            Text(RetrieveMode.starredArticles.rawValue).tag(RetrieveMode.starredArticles)
-            Text(RetrieveMode.unarchivedArticles.rawValue).tag(RetrieveMode.unarchivedArticles)
-            Text(RetrieveMode.archivedArticles.rawValue).tag(RetrieveMode.archivedArticles)
+            Text(LocalizedStringKey(RetrieveMode.allArticles.rawValue)).tag(RetrieveMode.allArticles)
+            Text(LocalizedStringKey(RetrieveMode.starredArticles.rawValue)).tag(RetrieveMode.starredArticles)
+            Text(LocalizedStringKey(RetrieveMode.unarchivedArticles.rawValue)).tag(RetrieveMode.unarchivedArticles)
+            Text(LocalizedStringKey(RetrieveMode.archivedArticles.rawValue)).tag(RetrieveMode.archivedArticles)
         }).pickerStyle(SegmentedPickerStyle())
     }
 }
