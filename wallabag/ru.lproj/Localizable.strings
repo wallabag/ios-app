@@ -30,3 +30,13 @@
 
 // Menu
 "Menu" = "Меню";
+"Made by Maxime Marinel @bourvill" = "Сделано Максимом Маринелем @bourvill";
+
+// About
+"Project page" = "Страница проекта";
+
+// Entry
+"Reading time %@" = "Время чтения %@";
+
+// Search
+"Search" = "Поиск";
