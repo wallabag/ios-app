@@ -45,7 +45,7 @@ class AppSync: ObservableObject {
     }
 }
 
-// MARK: Entry
+// MARK:- Entry
 
 extension AppSync {
     private func synchronizeEntries() {
@@ -141,9 +141,13 @@ extension AppSync {
             Log("Error in batch delete")
         }
     }
+
+    func refresh(entry: Entry) {
+        session.refresh(entry: entry)
+    }
 }
 
-// MARK: Tag
+// MARK:- Tag
 
 extension AppSync {
     private func applyTag(from wallabagEntry: WallabagEntry, to entry: Entry) {

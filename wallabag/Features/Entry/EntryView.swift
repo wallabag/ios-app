@@ -3,6 +3,7 @@ import HTMLEntities
 import SwiftUI
 
 struct EntryView: View {
+    @EnvironmentObject var appSync: AppSync
     @EnvironmentObject var router: Router
     @ObservedObject var entry: Entry
     @State var showTag: Bool = false
@@ -41,11 +42,19 @@ struct EntryView: View {
                     .buttonStyle(PlainButtonStyle())
                 Spacer()
             }
-            Button(action: {
-                self.openInSafari(self.entry.url)
-            }, label: {
-                Image(systemName: "safari")
-            }).buttonStyle(PlainButtonStyle())
+            Group {
+                Button(action: {
+                    appSync.refresh(entry: entry)
+                }, label: {
+                    Image(systemName: "arrow.counterclockwise")
+                }).buttonStyle(PlainButtonStyle())
+                Spacer()
+                Button(action: {
+                    self.openInSafari(self.entry.url)
+                }, label: {
+                    Image(systemName: "safari")
+                }).buttonStyle(PlainButtonStyle())
+            }
             Spacer()
             Button(action: {
                 self.showTag.toggle()

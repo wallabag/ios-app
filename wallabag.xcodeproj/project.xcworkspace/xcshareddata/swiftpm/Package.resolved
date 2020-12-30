@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/IBM-Swift/swift-html-entities.git",
         "state": {
           "branch": null,
-          "revision": "744c094976355aa96ca61b9b60ef0a38e979feb7",
-          "version": "3.0.14"
+          "revision": "2b14531d0c36dbb7c1c45a4d38db9c2e7898a307",
+          "version": "3.0.200"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/apple/swift-log",
         "state": {
           "branch": null,
-          "revision": "74d7b91ceebc85daf387ebb206003f78813f71aa",
-          "version": "1.2.0"
+          "revision": "173f567a2dfec11d74588eea82cecea555bdc0bc",
+          "version": "1.4.0"
         }
       },
       {
@@ -42,7 +42,7 @@
         "repositoryURL": "https://github.com/wallabag/WallabagKit.git",
         "state": {
           "branch": "master",
-          "revision": "dab424522f4cceb4d5e5a5ae8d37ba975f34332d",
+          "revision": "6f83586b893f876e447ae68d1f7c0508bdc8a3bb",
           "version": null
         }
       }

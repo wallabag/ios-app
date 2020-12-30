@@ -75,6 +75,14 @@ class WallabagSession: ObservableObject {
             .store(in: &cancellable)
     }
 
+    func refresh(entry: Entry) {
+        kit.send(to: WallabagEntryEndpoint.reload(id: entry.id))
+            .sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { (wallabagEntry: WallabagEntry) in
+                entry.hydrate(from: wallabagEntry)
+            })
+            .store(in: &cancellable)
+    }
+
     func delete(tag: Tag, for entry: Entry) {
         kit.send(to: WallabagEntryEndpoint.deleteTag(tagId: tag.id, entry: entry.id)).sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { (wallabagEntry: WallabagEntry) in
             self.syncTag(for: entry, with: wallabagEntry)
