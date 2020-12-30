@@ -33,3 +33,13 @@
 
 // Menu
 "Menu" = "菜单";
+"Made by Maxime Marinel @bourvill" = "由 Maxime Marinel @bourvill 打造";
+
+// About
+"Project page" = "项目页面";
+
+// Entry
+"Reading time %@" = "阅读时间 %@";
+
+// Search
+"Search" = "搜索";

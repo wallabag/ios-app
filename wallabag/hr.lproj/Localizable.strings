@@ -24,7 +24,7 @@
 // Mode picker
 "All" = "Sve";
 "Logout" = "Odjava";
-"Setting" = "Postava";
+"Setting" = "Postavke";
 "Bug report" = "Izvještaj o grešci";
 "Tips" = "Savjeti";
 "About" = "Informacije";
@@ -33,3 +33,14 @@
 
 // Menu
 "Menu" = "Izbornik";
+"Don" = "Don";
+"Made by Maxime Marinel @bourvill" = "Autor: Maxime Marinel @bourvill";
+
+// About
+"Project page" = "Stranica projekta";
+
+// Entry
+"Reading time %@" = "Vrijeme za čitanje %@";
+
+// Search
+"Search" = "Traži";
