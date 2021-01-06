@@ -1,5 +1,8 @@
 import Foundation
+import os
 import SwiftUI
+
+let logger = Logger(subsystem: "fr.district-web.wallabag", category: "main")
 
 @main
 struct WallabagApp: App {

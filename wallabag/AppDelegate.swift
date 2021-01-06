@@ -1,5 +1,4 @@
 import CoreSpotlight
-import Logging
 import MetricKit
 import Swinject
 import UIKit

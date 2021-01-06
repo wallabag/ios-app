@@ -1,7 +1,6 @@
 import Combine
 import CoreData
 import Foundation
-import SwiftyLogger
 
 class CoreDataSync {
     private var objectsDidChangeCancellable: AnyCancellable?
@@ -46,7 +45,7 @@ class CoreDataSync {
                 // skip tag at this time
                 changedValues.removeValue(forKey: "tags")
                 if changedValues.count > 0 {
-                    Log("Push update entry \(entry.id) to remote")
+                    logger.debug("Push update entry \(entry.id) to remote")
                     self.wallabagSession.update(
                         entry,
                         parameters:

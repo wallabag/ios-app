@@ -1,6 +1,4 @@
 import Foundation
-import Logging
-import SwiftyLogger
 import Swinject
 import WallabagKit
 
@@ -26,9 +24,6 @@ final class DependencyInjection {
         container.register(AppState.self, factory: { _ in AppState.shared }).inObjectScope(.container)
         container.register(Router.self, factory: { _ in Router.shared }).inObjectScope(.container)
         container.register(PlayerPublisher.self, factory: { _ in PlayerPublisher.shared }).inObjectScope(.container)
-        container.register(Logger.self, factory: { _ in
-            Logger(label: "fr.district-web.wallabag")
-        }).inObjectScope(.container)
 
         return container
     }()

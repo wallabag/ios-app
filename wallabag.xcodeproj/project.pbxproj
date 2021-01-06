@@ -30,7 +30,6 @@
 		9C1EB6E823573DD700A5E54B /* EntryPictoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1EB6E723573DD700A5E54B /* EntryPictoImage.swift */; };
 		9C1EF9C424747FD600152BB5 /* HapticNotificationButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1EF9C324747FD600152BB5 /* HapticNotificationButtonStyle.swift */; };
 		9C1EF9C72474800700152BB5 /* View+haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1EF9C62474800700152BB5 /* View+haptic.swift */; };
-		9C22CED82430B64D00B2C69F /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 9C22CED72430B64D00B2C69F /* Logging */; };
 		9C276C4C23856A8B006F590A /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C276C4B23856A8B006F590A /* Podcast.swift */; };
 		9C2B7D172433473500723D09 /* TagsForEntryPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2B7D162433473500723D09 /* TagsForEntryPublisher.swift */; };
 		9C2D5243244E312600CD5655 /* ErrorViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2D5242244E312600CD5655 /* ErrorViewModelTests.swift */; };
@@ -113,7 +112,6 @@
 		9CCC4AFC22E3BFD400F73891 /* WallabagUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC4AFB22E3BFD400F73891 /* WallabagUserDefaults.swift */; };
 		9CCC4AFE22E5D92E00F73891 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCC4AFD22E5D92E00F73891 /* Password.swift */; };
 		9CCEFF8C2264A37B00441A18 /* SettingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CCEFF8B2264A37B00441A18 /* SettingMock.swift */; };
-		9CCF9327242D13FF00904D3B /* SwiftyLogger in Frameworks */ = {isa = PBXBuildFile; productRef = 9CCF9326242D13FF00904D3B /* SwiftyLogger */; };
 		9CD4CEF623F1FD5200CF11EA /* ShareExtensionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4CEF523F1FD5200CF11EA /* ShareExtensionError.swift */; };
 		9CD4CEF823F200CE00CF11EA /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4CEF723F200CE00CF11EA /* Router.swift */; };
 		9CD4F454242FC83B003B56CF /* BugReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD4F453242FC83B003B56CF /* BugReportView.swift */; };
@@ -426,13 +424,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C22CED82430B64D00B2C69F /* Logging in Frameworks */,
 				9C677CAD227EF5A6006C7112 /* WebKit.framework in Frameworks */,
 				9C6038A8249CC1E900F4FD2D /* HTMLEntities in Frameworks */,
 				9C5EDF00234E937100141DFD /* Swinject in Frameworks */,
 				9C452B6524ACE1E2000B1EB0 /* WallabagKit in Frameworks */,
 				9C6C37502477D6F200D2228F /* WallabagKit in Frameworks */,
-				9CCF9327242D13FF00904D3B /* SwiftyLogger in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1109,8 +1105,6 @@
 			name = wallabag;
 			packageProductDependencies = (
 				9C5EDEFF234E937100141DFD /* Swinject */,
-				9CCF9326242D13FF00904D3B /* SwiftyLogger */,
-				9C22CED72430B64D00B2C69F /* Logging */,
 				9C6C374F2477D6F200D2228F /* WallabagKit */,
 				9C6038A7249CC1E900F4FD2D /* HTMLEntities */,
 				9C452B6424ACE1E2000B1EB0 /* WallabagKit */,
@@ -1186,8 +1180,6 @@
 			mainGroup = G_D9112B40FBAA7D6E28EF1DE3BF37847D;
 			packageReferences = (
 				9C5EDEFE234E937100141DFD /* XCRemoteSwiftPackageReference "Swinject" */,
-				9CCF9325242D13FF00904D3B /* XCRemoteSwiftPackageReference "SwiftyLogger" */,
-				9C22CED62430B64D00B2C69F /* XCRemoteSwiftPackageReference "swift-log" */,
 				9C6038A6249CC1E900F4FD2D /* XCRemoteSwiftPackageReference "swift-html-entities" */,
 				9C452B6324ACE1E2000B1EB0 /* XCRemoteSwiftPackageReference "WallabagKit" */,
 			);
@@ -2107,14 +2099,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9C22CED62430B64D00B2C69F /* XCRemoteSwiftPackageReference "swift-log" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-log";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.0;
-			};
-		};
 		9C452B6324ACE1E2000B1EB0 /* XCRemoteSwiftPackageReference "WallabagKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/wallabag/WallabagKit.git";
@@ -2139,22 +2123,9 @@
 				minimumVersion = 3.0.14;
 			};
 		};
-		9CCF9325242D13FF00904D3B /* XCRemoteSwiftPackageReference "SwiftyLogger" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/district-web/SwiftyLogger";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9C22CED72430B64D00B2C69F /* Logging */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9C22CED62430B64D00B2C69F /* XCRemoteSwiftPackageReference "swift-log" */;
-			productName = Logging;
-		};
 		9C452B6424ACE1E2000B1EB0 /* WallabagKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9C452B6324ACE1E2000B1EB0 /* XCRemoteSwiftPackageReference "WallabagKit" */;
@@ -2182,11 +2153,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9C452B6324ACE1E2000B1EB0 /* XCRemoteSwiftPackageReference "WallabagKit" */;
 			productName = WallabagKit;
-		};
-		9CCF9326242D13FF00904D3B /* SwiftyLogger */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9CCF9325242D13FF00904D3B /* XCRemoteSwiftPackageReference "SwiftyLogger" */;
-			productName = SwiftyLogger;
 		};
 /* End XCSwiftPackageProductDependency section */
 

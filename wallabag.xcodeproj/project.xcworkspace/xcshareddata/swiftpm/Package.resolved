@@ -11,24 +11,6 @@
         }
       },
       {
-        "package": "swift-log",
-        "repositoryURL": "https://github.com/apple/swift-log",
-        "state": {
-          "branch": null,
-          "revision": "173f567a2dfec11d74588eea82cecea555bdc0bc",
-          "version": "1.4.0"
-        }
-      },
-      {
-        "package": "SwiftyLogger",
-        "repositoryURL": "https://github.com/district-web/SwiftyLogger",
-        "state": {
-          "branch": "master",
-          "revision": "86ab7c966b928ec49a90db85124d46ba25880e95",
-          "version": null
-        }
-      },
-      {
         "package": "Swinject",
         "repositoryURL": "https://github.com/Swinject/Swinject",
         "state": {

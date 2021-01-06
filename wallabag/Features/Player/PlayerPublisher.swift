@@ -2,7 +2,6 @@ import AVFoundation
 import Combine
 import Foundation
 import MediaPlayer
-import SwiftyLogger
 
 final class PlayerPublisher: ObservableObject {
     static var shared = PlayerPublisher()
@@ -30,7 +29,6 @@ final class PlayerPublisher: ObservableObject {
 
     func togglePlaying() {
         isPlaying = !isPlaying
-        Log("\(isPlaying.int)")
     }
 
     func play() {

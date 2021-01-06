@@ -1,5 +1,4 @@
 import SwiftUI
-import SwiftyLogger
 
 struct TagRow: View {
     @ObservedObject var tag: Tag

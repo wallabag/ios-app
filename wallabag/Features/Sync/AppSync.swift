@@ -1,7 +1,6 @@
 import Combine
 import CoreData
 import Foundation
-import SwiftyLogger
 import WallabagKit
 
 class AppSync: ObservableObject {
@@ -138,7 +137,7 @@ extension AppSync {
                 backgroundContext.delete(entryToDelete)
             }
         } catch {
-            Log("Error in batch delete")
+            logger.error("Error in batch delete")
         }
     }
 

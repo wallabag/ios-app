@@ -1,6 +1,5 @@
 import Combine
 import Foundation
-import Logging
 
 class AppState: NSObject, ObservableObject {
     static var shared = AppState()
@@ -16,7 +15,6 @@ class AppState: NSObject, ObservableObject {
 
     @Injector var session: WallabagSession
     @Injector var router: Router
-    @Injector var logger: Logger
 
     override init() {
         super.init()

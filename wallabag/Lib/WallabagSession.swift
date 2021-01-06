@@ -1,7 +1,6 @@
 import Combine
 import CoreData
 import Foundation
-import SwiftyLogger
 import WallabagKit
 
 class WallabagSession: ObservableObject {
@@ -58,18 +57,18 @@ class WallabagSession: ObservableObject {
     }
 
     func update(_ entry: Entry, parameters: WallabagKit.Parameters) {
-        kit.send(to: WallabagEntryEndpoint.update(id: entry.id, parameters: parameters)).sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { (_: WallabagEntry) in })
+        kit.send(to: WallabagEntryEndpoint.update(id: entry.id, parameters: parameters)).sink(receiveCompletion: { _ in }, receiveValue: { (_: WallabagEntry) in })
             .store(in: &cancellable)
     }
 
     func delete(entry: Entry) {
-        kit.send(to: WallabagEntryEndpoint.delete(id: entry.id)).sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { (_: WallabagEntry) in })
+        kit.send(to: WallabagEntryEndpoint.delete(id: entry.id)).sink(receiveCompletion: { _ in }, receiveValue: { (_: WallabagEntry) in })
             .store(in: &cancellable)
     }
 
     func add(tag: String, for entry: Entry) {
         kit.send(to: WallabagEntryEndpoint.addTag(tag: tag, entry: entry.id))
-            .sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { (wallabagEntry: WallabagEntry) in
+            .sink(receiveCompletion: { _ in }, receiveValue: { (wallabagEntry: WallabagEntry) in
                 self.syncTag(for: entry, with: wallabagEntry)
             })
             .store(in: &cancellable)
@@ -77,14 +76,14 @@ class WallabagSession: ObservableObject {
 
     func refresh(entry: Entry) {
         kit.send(to: WallabagEntryEndpoint.reload(id: entry.id))
-            .sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { (wallabagEntry: WallabagEntry) in
+            .sink(receiveCompletion: { _ in }, receiveValue: { (wallabagEntry: WallabagEntry) in
                 entry.hydrate(from: wallabagEntry)
             })
             .store(in: &cancellable)
     }
 
     func delete(tag: Tag, for entry: Entry) {
-        kit.send(to: WallabagEntryEndpoint.deleteTag(tagId: tag.id, entry: entry.id)).sink(receiveCompletion: { completion in Log(completion) }, receiveValue: { (wallabagEntry: WallabagEntry) in
+        kit.send(to: WallabagEntryEndpoint.deleteTag(tagId: tag.id, entry: entry.id)).sink(receiveCompletion: { _ in }, receiveValue: { (wallabagEntry: WallabagEntry) in
             self.syncTag(for: entry, with: wallabagEntry)
         })
             .store(in: &cancellable)

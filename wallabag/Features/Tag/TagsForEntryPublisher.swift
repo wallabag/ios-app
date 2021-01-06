@@ -1,7 +1,6 @@
 import Combine
 import CoreData
 import Foundation
-import SwiftyLogger
 
 // swiftlint:disable all
 class TagsForEntryPublisher: ObservableObject {
