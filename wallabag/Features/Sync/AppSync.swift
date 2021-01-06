@@ -45,7 +45,7 @@ class AppSync: ObservableObject {
     }
 }
 
-// MARK:- Entry
+// MARK: - Entry
 
 extension AppSync {
     private func synchronizeEntries() {
@@ -147,7 +147,7 @@ extension AppSync {
     }
 }
 
-// MARK:- Tag
+// MARK: - Tag
 
 extension AppSync {
     private func applyTag(from wallabagEntry: WallabagEntry, to entry: Entry) {

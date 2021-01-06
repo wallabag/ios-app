@@ -5,6 +5,7 @@ import SwiftUI
 struct EntryView: View {
     @EnvironmentObject var appSync: AppSync
     @EnvironmentObject var router: Router
+    @EnvironmentObject var player: PlayerPublisher
     @ObservedObject var entry: Entry
     @State var showTag: Bool = false
 
@@ -24,7 +25,7 @@ struct EntryView: View {
             }.padding()
             WebView(entry: entry)
             bottomBar
-            // PlayerView()
+            PlayerView()
         }.sheet(isPresented: $showTag) {
             TagListFor(tagsForEntry: TagsForEntryPublisher(entry: self.entry))
                 .environment(\.managedObjectContext, CoreData.shared.viewContext)
@@ -55,13 +56,20 @@ struct EntryView: View {
                     Image(systemName: "safari")
                 }).buttonStyle(PlainButtonStyle())
             }
-            Spacer()
+            Group {
+                Spacer()
+                Button(action: {
+                    self.showTag.toggle()
+                }, label: {
+                    Image(systemName: self.showTag ? "tag.fill" : "tag")
+                }).buttonStyle(PlainButtonStyle())
+                Spacer()
+            }
             Button(action: {
-                self.showTag.toggle()
+                player.load(entry)
             }, label: {
-                Image(systemName: self.showTag ? "tag.fill" : "tag")
-            }).buttonStyle(PlainButtonStyle())
-            Spacer()
+                Text("Load player")
+            })
             StarEntryButton(entry: entry, showText: false).hapticNotification(.success)
             Spacer()
             ArchiveEntryButton(entry: entry, showText: false).hapticNotification(.success)

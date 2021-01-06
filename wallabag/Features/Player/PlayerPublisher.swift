@@ -4,7 +4,7 @@ import Foundation
 import MediaPlayer
 import SwiftyLogger
 
-class PlayerPublisher: ObservableObject {
+final class PlayerPublisher: ObservableObject {
     static var shared = PlayerPublisher()
 
     @Published private(set) var isPlaying = false {
@@ -23,6 +23,7 @@ class PlayerPublisher: ObservableObject {
     private var utterance: AVSpeechUtterance?
 
     func load(_ entry: Entry) {
+        isPlaying = false
         podcast = Podcast(id: entry.id, title: entry.title ?? "Title", content: entry.content?.withoutHTML ?? "", picture: entry.previewPicture!)
         utterance = AVSpeechUtterance(string: podcast!.content)
     }
