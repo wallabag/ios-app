@@ -1,1 +1,25 @@
 
+
+
+// Common
+"Submit" = "送信";
+
+// Search
+"Search" = "検索";
+"Cancel" = "キャンセル";
+"Add" = "追加";
+"Back" = "戻る";
+"Read" = "既読";
+"Unread" = "未読";
+
+// Picker
+"All" = "全て";
+"Logout" = "ログアウト";
+"Bug report" = "バグを報告";
+"About" = "アプリについて";
+"Add entry" = "記事を追加";
+"Entries" = "記事";
+"Setting" = "設定";
+
+// Menu
+"Menu" = "メニュー";
