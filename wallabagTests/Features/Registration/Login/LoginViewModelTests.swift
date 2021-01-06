@@ -72,24 +72,4 @@ class LoginViewModelTests: XCTestCase {
 
      }
      */
-    func testDeinit() throws {
-        class ClassUnderTest: LoginViewModel {
-            var deinitCalled: (() -> Void)?
-            deinit { deinitCalled?() }
-        }
-
-        let exp = expectation(description: debugDescription)
-
-        var instance: ClassUnderTest? = ClassUnderTest()
-
-        instance?.deinitCalled = {
-            exp.fulfill()
-        }
-
-        DispatchQueue.global(qos: .background).async {
-            instance = nil
-        }
-
-        waitForExpectations(timeout: 10)
-    }
 }
