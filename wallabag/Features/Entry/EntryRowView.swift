@@ -12,7 +12,7 @@ struct EntryRowView: View {
             VStack(alignment: .leading) {
                 Text(entry.title?.htmlUnescape() ?? "")
                     .font(.headline)
-                Text(String(format: "Reading time %@".localized, arguments: [Int(entry.readingTime).readingTime]))
+                Text("Reading time \(Int(entry.readingTime).readingTime)")
                     .font(.footnote)
                 HStack {
                     EntryPictoImage(entry: entry, keyPath: \.isArchived, picto: "book")
