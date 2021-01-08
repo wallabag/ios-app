@@ -30,6 +30,7 @@
 "Back" = "Back";
 "Add" = "Add";
 "Cancel" = "Cancel";
+"Confirm delete?" = "Confirm delete?";
 
 // Search
 "Search" = "Search";
