@@ -6,7 +6,6 @@ class AppState: NSObject, ObservableObject {
 
     @Published var registred: Bool = false {
         didSet {
-            logger.info("App state registred \(registred)")
             WallabagUserDefaults.registred = registred
         }
     }
