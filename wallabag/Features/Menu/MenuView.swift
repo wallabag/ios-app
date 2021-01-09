@@ -14,11 +14,11 @@ struct MenuView: View {
 
     // swiftlint:disable multiple_closures_with_trailing_closure
     var body: some View {
-        GeometryReader { geometry in
-            VStack(alignment: .leading) {
-                header
-                ForEach(self.menus) { menu in
-                    HStack {
+        VStack(alignment: .leading) {
+            header
+            List {
+                Section {
+                    ForEach(self.menus) { menu in
                         Button(action: {
                             self.router.load(menu.route)
                             withAnimation {
@@ -26,12 +26,8 @@ struct MenuView: View {
                             }
                         }) {
                             Label(menu.title, systemImage: menu.img)
-                        }.padding(.vertical, 4)
+                        }
                     }
-                    Divider()
-                }
-                Spacer()
-                HStack {
                     Button(action: {
                         self.router.load(.bugReport)
                         withAnimation {
@@ -39,10 +35,7 @@ struct MenuView: View {
                         }
                     }) {
                         Label("Bug report", systemImage: "ant")
-                    }.padding(.vertical, 4)
-                }
-                Divider()
-                HStack {
+                    }
                     Button(action: {
                         withAnimation {
                             self.showMenu = false
@@ -50,10 +43,7 @@ struct MenuView: View {
                         UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
                     }) {
                         Label("Setting", systemImage: "gear")
-                    }.padding(.vertical, 4)
-                }
-                Divider()
-                HStack {
+                    }
                     Button(action: {
                         self.appState.logout()
                         withAnimation {
@@ -64,12 +54,8 @@ struct MenuView: View {
                     }.foregroundColor(.red)
                 }
             }
-            .padding(.top, geometry.safeAreaInsets.top)
-            .padding(.bottom, geometry.safeAreaInsets.bottom == 0 ? 25 : geometry.safeAreaInsets.bottom)
-            .padding(.horizontal)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color(UIColor.systemBackground))
         }
+        .background(Color(UIColor.systemBackground))
     }
 
     var header: some View {
@@ -82,6 +68,7 @@ struct MenuView: View {
                 }
             }
             .padding(.top, 44)
+            .padding(.horizontal)
     }
 }
 

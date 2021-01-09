@@ -70,7 +70,7 @@ struct MainView: View {
                             }
                         }
                     MenuView(showMenu: self.$showMenu)
-                        .frame(width: geometry.size.width / 2)
+                        .frame(width: geometry.size.width / 1.5)
                         .offset(x: self.menuOffsetX)
                         .transition(.move(edge: .leading))
                         .gesture(self.getMenuCloseGesture(geometry.size.width / 4))
