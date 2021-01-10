@@ -43,4 +43,5 @@
 
 // Search
 "Search" = "Suchen";
-"Don" = "Don";
+"Don" = "Spenden";
+"Confirm delete?" = "Löschen bestätigen?";
