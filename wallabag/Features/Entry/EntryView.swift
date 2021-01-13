@@ -75,13 +75,14 @@ struct EntryView: View {
                 }, label: {
                     Image(systemName: self.showTag ? "tag.fill" : "tag")
                 }).buttonStyle(PlainButtonStyle())
-                Spacer()
             }
+            Spacer()
             Button(action: {
                 player.load(entry)
             }, label: {
-                Text("Load player")
-            })
+                Image(systemName: "music.note")
+            }).buttonStyle(PlainButtonStyle())
+            Spacer()
             StarEntryButton(entry: entry, showText: false).hapticNotification(.success)
             Spacer()
             ArchiveEntryButton(entry: entry, showText: false).hapticNotification(.success)
