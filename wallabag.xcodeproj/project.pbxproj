@@ -288,6 +288,7 @@
 		9C7CBD0622D60B8A00EE1DE3 /* ArticlePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlePlayer.swift; sourceTree = "<group>"; };
 		9C8859512526238300A4FFBA /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
 		9C889E7E22E66BCA00B9F767 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		9C89C30E25ABA4A80048CFB7 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9C8CF06824AD35E100F59AA4 /* Shortcuts.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Shortcuts.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8CF06A24AD35E100F59AA4 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		9C8CF06C24AD35E100F59AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1176,6 +1177,7 @@
 				Base,
 				en,
 				fr,
+				de,
 			);
 			mainGroup = G_D9112B40FBAA7D6E28EF1DE3BF37847D;
 			packageReferences = (
@@ -1497,6 +1499,7 @@
 			children = (
 				9C1B8936249BBC8A006C76BB /* en */,
 				9C452B6624ACE318000B1EB0 /* fr */,
+				9C89C30E25ABA4A80048CFB7 /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1943,7 +1946,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FR_D25A5811CCA84B9080305DDA9A796022 /* bagit-Release.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 291;
+				CURRENT_PROJECT_VERSION = 293;
 				MARKETING_VERSION = 6.0.0;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1967,7 +1970,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FR_3C63EF667F0034B52FD8C3A71EAA05F7 /* bagit-Debug.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 291;
+				CURRENT_PROJECT_VERSION = 293;
 				MARKETING_VERSION = 6.0.0;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1980,7 +1983,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 291;
+				CURRENT_PROJECT_VERSION = 293;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2004,7 +2007,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 291;
+				CURRENT_PROJECT_VERSION = 293;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
