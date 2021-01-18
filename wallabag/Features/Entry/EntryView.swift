@@ -51,37 +51,37 @@ struct EntryView: View {
             FontSizeSelectorView()
                 .buttonStyle(PlainButtonStyle())
             Spacer()
-        SwiftUI.Menu(content: {
-            Button(action: {
-                self.showDeleteConfirm = true
+            SwiftUI.Menu(content: {
+                Button(action: {
+                    self.showDeleteConfirm = true
+                }, label: {
+                    Label("Delete", systemImage: "trash")
+                })
+                Button(action: {
+                    self.openInSafari(self.entry.url)
+                }, label: {
+                    Label("Open in safari", systemImage: "safari")
+                })
+                Button(action: {
+                    self.showTag.toggle()
+                }, label: {
+                    Label("Tag", systemImage: self.showTag ? "tag.fill" : "tag")
+                })
+                Button(action: {
+                    appSync.refresh(entry: entry)
+                }, label: {
+                    Label("Refresh", systemImage: "arrow.counterclockwise")
+                })
+                StarEntryButton(entry: entry, showText: true).hapticNotification(.success)
+                ArchiveEntryButton(entry: entry, showText: true).hapticNotification(.success)
+                Button(action: {
+                    player.load(entry)
+                }, label: {
+                    Label("Load entry", systemImage: "music.note")
+                })
             }, label: {
-                Label("Delete", systemImage: "trash")
+                Image(systemName: "filemenu.and.selection")
             })
-            Button(action: {
-                self.openInSafari(self.entry.url)
-            }, label: {
-                Label("Open in safari", systemImage: "safari")
-            })
-            Button(action: {
-                self.showTag.toggle()
-            }, label: {
-                Label("Tag", systemImage: self.showTag ? "tag.fill" : "tag")
-            }).buttonStyle(PlainButtonStyle())
-            Button(action: {
-                appSync.refresh(entry: entry)
-            }, label: {
-                Label("Refresh", systemImage: "arrow.counterclockwise")
-            })
-            StarEntryButton(entry: entry, showText: true).hapticNotification(.success)
-            ArchiveEntryButton(entry: entry, showText: true).hapticNotification(.success)
-            Button(action: {
-                player.load(entry)
-            }, label: {
-                Label("Load entry", systemImage: "music.note")
-            }).buttonStyle(PlainButtonStyle())
-        }, label: {
-            Image(systemName: "filemenu.and.selection")
-        })
         }.padding()
     }
 }

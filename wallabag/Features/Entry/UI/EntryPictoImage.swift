@@ -1,6 +1,5 @@
 import SwiftUI
 
-@available(*, deprecated)
 struct EntryPictoImage: View {
     @ObservedObject var entry: Entry
     var keyPath: KeyPath<Entry, Bool>
