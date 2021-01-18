@@ -8,9 +8,13 @@ struct ArchiveEntryButton: View {
             self.entry.toggleArchive()
         }, label: {
             if showText {
-                Text(entry.isArchived ? "Mark as unread" : "Mark as read")
+                Label(
+                    entry.isArchived ? "Mark as unread" : "Mark as read",
+                    systemImage: entry.isArchived ? "book.fill" : "book"
+                )
+            } else {
+                EntryPictoImage(entry: entry, keyPath: \.isArchived, picto: "book")
             }
-            EntryPictoImage(entry: entry, keyPath: \.isArchived, picto: "book")
         })
     }
 }

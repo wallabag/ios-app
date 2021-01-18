@@ -6,11 +6,7 @@ struct FontSizeSelectorView: View {
     @EnvironmentObject var appSetting: AppSetting
 
     var body: some View {
-        VStack {
-            if showSelector {
-                Slider(value: $appSetting.webFontSizePercent, in: 50 ... 200, step: 25)
-                    .frame(width: 150)
-            }
+        HStack {
             Button(action: {
                 withAnimation {
                     self.showSelector = !self.showSelector
@@ -18,6 +14,10 @@ struct FontSizeSelectorView: View {
             }, label: {
                 Image(systemName: "textformat.size")
             })
+            if showSelector {
+                Slider(value: $appSetting.webFontSizePercent, in: 50 ... 200, step: 25)
+                    .frame(width: 150)
+            }
         }
     }
 }

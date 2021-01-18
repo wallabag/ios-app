@@ -47,47 +47,42 @@ struct EntryView: View {
     }
 
     private var bottomBar: some View {
-        HStack(alignment: .bottom) {
-            DeleteEntryButton(showConfirm: $showDeleteConfirm, showText: false).hapticNotification(.warning)
-            Group {
-                Spacer()
-                FontSizeSelectorView()
-                    .buttonStyle(PlainButtonStyle())
-                Spacer()
-            }
-            Group {
-                Button(action: {
-                    appSync.refresh(entry: entry)
-                }, label: {
-                    Image(systemName: "arrow.counterclockwise")
-                }).buttonStyle(PlainButtonStyle())
-                Spacer()
-                Button(action: {
-                    self.openInSafari(self.entry.url)
-                }, label: {
-                    Image(systemName: "safari")
-                }).buttonStyle(PlainButtonStyle())
-            }
-            Group {
-                Spacer()
-                Button(action: {
-                    self.showTag.toggle()
-                }, label: {
-                    Image(systemName: self.showTag ? "tag.fill" : "tag")
-                }).buttonStyle(PlainButtonStyle())
-            }
+        HStack {
+            FontSizeSelectorView()
+                .buttonStyle(PlainButtonStyle())
             Spacer()
+        SwiftUI.Menu(content: {
+            Button(action: {
+                self.showDeleteConfirm = true
+            }, label: {
+                Label("Delete", systemImage: "trash")
+            })
+            Button(action: {
+                self.openInSafari(self.entry.url)
+            }, label: {
+                Label("Open in safari", systemImage: "safari")
+            })
+            Button(action: {
+                self.showTag.toggle()
+            }, label: {
+                Label("Tag", systemImage: self.showTag ? "tag.fill" : "tag")
+            }).buttonStyle(PlainButtonStyle())
+            Button(action: {
+                appSync.refresh(entry: entry)
+            }, label: {
+                Label("Refresh", systemImage: "arrow.counterclockwise")
+            })
+            StarEntryButton(entry: entry, showText: true).hapticNotification(.success)
+            ArchiveEntryButton(entry: entry, showText: true).hapticNotification(.success)
             Button(action: {
                 player.load(entry)
             }, label: {
-                Image(systemName: "music.note")
+                Label("Load entry", systemImage: "music.note")
             }).buttonStyle(PlainButtonStyle())
-            Spacer()
-            StarEntryButton(entry: entry, showText: false).hapticNotification(.success)
-            Spacer()
-            ArchiveEntryButton(entry: entry, showText: false).hapticNotification(.success)
-        }.font(.system(size: 20))
-            .padding()
+        }, label: {
+            Image(systemName: "filemenu.and.selection")
+        })
+        }.padding()
     }
 }
 

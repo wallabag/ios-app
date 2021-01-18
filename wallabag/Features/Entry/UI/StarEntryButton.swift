@@ -8,9 +8,13 @@ struct StarEntryButton: View {
             self.entry.toggleStarred()
         }, label: {
             if showText {
-                Text(entry.isStarred ? "Unstar" : "Mark as favorite")
+                Label(
+                    entry.isStarred ? "Unstar" : "Mark as favorite",
+                    systemImage: entry.isStarred ? "star.fill" : "star"
+                )
+            } else {
+                EntryPictoImage(entry: entry, keyPath: \.isStarred, picto: "star")
             }
-            EntryPictoImage(entry: entry, keyPath: \.isStarred, picto: "star")
         })
     }
 }
