@@ -7,9 +7,7 @@ final class Router: ObservableObject {
 
     @Injector private var appState: AppState
 
-    @Published var currentView: PresentedView?
-
-    private(set) var route: Route = .registration
+    @Published private(set) var route: Route = .registration
 
     init() {
         if appState.registred {
@@ -22,6 +20,5 @@ final class Router: ObservableObject {
     func load(_ route: Route) {
         logger.info("Load route \(route.id)")
         self.route = route
-        currentView = PresentedView(id: route.id, wrappedView: route.view)
     }
 }

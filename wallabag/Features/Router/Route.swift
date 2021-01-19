@@ -48,22 +48,23 @@ enum Route: Equatable {
         }
     }
 
-    var view: AnyView {
+    @ViewBuilder
+    var view: some View {
         switch self {
         case .about:
-            return AnyView(AboutView())
+            AboutView()
         case .addEntry:
-            return AnyView(AddEntryView())
+            AddEntryView()
         case .bugReport:
-            return AnyView(BugReportView())
+            BugReportView()
         case .entries:
-            return AnyView(EntriesView())
+            EntriesView()
         case let .entry(entry):
-            return AnyView(EntryView(entry: entry))
+            EntryView(entry: entry)
         case .registration:
-            return AnyView(RegistrationView())
+            RegistrationView()
         case .tips:
-            return AnyView(TipView())
+            TipView()
         }
     }
 
@@ -84,12 +85,12 @@ enum Route: Equatable {
         self == .entries
     }
 
-    var traillingButton: AnyView? {
+    var traillingButton: some View {
         switch self {
         case .entries:
-            return AnyView(RefreshButton())
+            return RefreshButton()
         default:
-            return nil
+            fatalError("call trailling button")
         }
     }
 }

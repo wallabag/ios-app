@@ -54,9 +54,7 @@ struct MainView: View {
                         self.header.padding(.horizontal).padding(.top, 15)
                     }
                     ErrorView()
-                    RouterView {
-                        Text("Start routerView")
-                    }
+                    RouterView()
                 }.frame(width: geometry.size.width, height: geometry.size.height)
                     .blur(radius: self.showMenu ? 10 : 0)
 
