@@ -18,7 +18,6 @@ struct EntriesView: View {
 
             SearchView(searchViewModel: searchViewModel)
             EntriesListView(predicate: searchViewModel.predicate)
-            PlayerView()
         }
         .navigationBarTitle(Text("Entry"))
         .navigationBarHidden(true)

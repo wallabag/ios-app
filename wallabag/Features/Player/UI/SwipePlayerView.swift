@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(*, deprecated, message: "Old swipe player view")
 struct SwipePlayerView: View {
     @EnvironmentObject var appState: AppState
 
@@ -10,9 +11,9 @@ struct SwipePlayerView: View {
             .cornerRadius(5)
             .gesture(DragGesture().onEnded { value in
                 if value.startLocation.y > value.location.y {
-                    self.appState.showPlayer = true
+                    // self.appState.showPlayer = true
                 } else {
-                    self.appState.showPlayer = false
+                    // self.appState.showPlayer = false
                 }
             })
     }

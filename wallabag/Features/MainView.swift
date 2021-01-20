@@ -5,6 +5,7 @@ struct MainView: View {
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var router: Router
     @EnvironmentObject var errorViewModel: ErrorViewModel
+    @EnvironmentObject var player: PlayerPublisher
     @State private var showMenu: Bool = false
     @State private var menuOffsetX = CGFloat(0.0)
 
@@ -43,6 +44,13 @@ struct MainView: View {
             if router.route.showTraillingButton {
                 router.route.traillingButton
             }
+            Button(action: {
+                withAnimation {
+                    player.togglePlayer()
+                }
+            }, label: {
+                Image(systemName: "music.note")
+            })
         }
     }
 
@@ -73,6 +81,12 @@ struct MainView: View {
                         .transition(.move(edge: .leading))
                         .gesture(self.getMenuCloseGesture(geometry.size.width / 4))
                         .edgesIgnoringSafeArea(.all)
+                }
+                if player.showPlayer {
+                    PlayerView()
+                        .frame(width: geometry.size.width, height: geometry.size.height, alignment: .topTrailing)
+                        .transition(.move(edge: .trailing))
+                        .offset(x: 0, y: 60)
                 }
             }
         }

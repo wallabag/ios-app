@@ -2,6 +2,7 @@ import AVFoundation
 import Foundation
 import MediaPlayer
 
+@available(*, deprecated, message: "Old player, migrate and remove them")
 class ArticlePlayer {
     private var speecher = AVSpeechSynthesizer()
 

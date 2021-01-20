@@ -10,8 +10,6 @@ class AppState: NSObject, ObservableObject {
         }
     }
 
-    @Published var showPlayer: Bool = false
-
     @Injector var session: WallabagSession
     @Injector var router: Router
 

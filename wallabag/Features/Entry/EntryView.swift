@@ -27,7 +27,6 @@ struct EntryView: View {
             }.padding()
             WebView(entry: entry)
             bottomBar
-            PlayerView()
         }.sheet(isPresented: $showTag) {
             TagListFor(tagsForEntry: TagsForEntryPublisher(entry: self.entry))
                 .environment(\.managedObjectContext, CoreData.shared.viewContext)
