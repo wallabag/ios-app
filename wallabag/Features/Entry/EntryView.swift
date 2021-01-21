@@ -79,7 +79,7 @@ struct EntryView: View {
                     Label("Load entry", systemImage: "music.note")
                 })
             }, label: {
-                Image(systemName: "filemenu.and.selection")
+                Image(systemName: "filemenu.and.selection").foregroundColor(.primary)
             })
         }.padding()
     }
