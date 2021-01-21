@@ -3,8 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
+
+/* Begin PBXAggregateTarget section */
+		091221DC25B87EFB006D29DD /* Periphery */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 091221DD25B87EFB006D29DD /* Build configuration list for PBXAggregateTarget "Periphery" */;
+			buildPhases = (
+				091221E625B87F01006D29DD /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Periphery;
+			productName = Periphery;
+		};
+/* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
 		9C012C3E247F001A0080FEF6 /* FontSizeSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C012C3D247F001A0080FEF6 /* FontSizeSelectorView.swift */; };
@@ -1096,7 +1110,6 @@
 				CFBP_BBB4D336DFE3473638D4284D25266CBD /* Embed App Extensions */,
 				CFBP_FB6EE7002903288EA097197B26A1C90A /* Embed Frameworks */,
 				SSBP_59F8FB275EB4E6831F8FEA98BB26B420 /* Swiftlint */,
-				9CB515DC23D9D741008C9AD6 /* Pecker */,
 			);
 			buildRules = (
 			);
@@ -1142,6 +1155,9 @@
 				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
+					091221DC25B87EFB006D29DD = {
+						CreatedOnToolsVersion = 12.3;
+					};
 					9C4C1F84240E7E340029FBC9 = {
 						CreatedOnToolsVersion = 11.3.1;
 						TestTargetID = NT_BD23E71198CA112A6681701D37EB5AFF;
@@ -1197,6 +1213,7 @@
 				NT_CB245D289C47CA3177DD28B514882F44 /* wallabagTests */,
 				9C961B2222770ECE009F80A4 /* wallabagUITests */,
 				9C4C1F84240E7E340029FBC9 /* wallabagScreenshotTests */,
+				091221DC25B87EFB006D29DD /* Periphery */,
 			);
 		};
 /* End PBXProject section */
@@ -1263,7 +1280,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9CB515DC23D9D741008C9AD6 /* Pecker */ = {
+		091221E625B87F01006D29DD /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1272,17 +1289,17 @@
 			);
 			inputPaths = (
 			);
-			name = Pecker;
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which pecker >/dev/null; then\n  pecker\nelse\n  echo \"warning: Pecker not installed, download from https://github.com/woshiccm/Pecker\"\nfi\n";
+			shellScript = "/opt/homebrew/bin/periphery scan \\\n  --project \"wallabag.xcodeproj/\" \\\n  --schemes \"wallabag\" \\\n  --targets \"wallabag\" \\\n  --retain-objc-accessible \\\n  --retain-public \\\n  --format xcode\n  \n";
 		};
 		SSBP_59F8FB275EB4E6831F8FEA98BB26B420 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -1293,7 +1310,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "if which /opt/homebrew/bin/swiftlint >/dev/null; then\n  /opt/homebrew/bin/swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1510,6 +1527,22 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		091221DE25B87EFB006D29DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		091221DF25B87EFB006D29DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		9C4C1F8C240E7E350029FBC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2039,6 +2072,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		091221DD25B87EFB006D29DD /* Build configuration list for PBXAggregateTarget "Periphery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				091221DE25B87EFB006D29DD /* Debug */,
+				091221DF25B87EFB006D29DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		9C4C1F8E240E7E350029FBC9 /* Build configuration list for PBXNativeTarget "wallabagScreenshotTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

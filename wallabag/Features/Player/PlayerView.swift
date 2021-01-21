@@ -41,6 +41,11 @@ struct PlayerView: View {
         .background(Color.white)
         .cornerRadius(6)
         .shadow(radius: 10)
+        .gesture(DragGesture().onEnded { swipe in
+            if swipe.startLocation.x < swipe.location.x {
+                playerPublisher.showPlayer = false
+            }
+        })
     }
 }
 
