@@ -15,7 +15,7 @@ struct FontSizeSelectorView: View {
                 Image(systemName: "textformat.size")
             })
             if showSelector {
-                Slider(value: $appSetting.webFontSizePercent, in: 50 ... 200, step: 25)
+                Slider(value: $appSetting.webFontSizePercent, in: 50 ... 200, step: 10)
                     .frame(width: 150)
             }
         }
