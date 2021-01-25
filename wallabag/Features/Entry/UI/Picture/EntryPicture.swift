@@ -2,8 +2,6 @@ import Combine
 import SwiftUI
 
 struct EntryPicture: View {
-    private let placeholderImage = UIImage(systemName: "book")!
-
     @ObservedObject var imagePublisher: ImageDownloaderPublisher
 
     init(url: String?) {
@@ -11,8 +9,14 @@ struct EntryPicture: View {
     }
 
     var body: some View {
-        Image(uiImage: imagePublisher.image ?? placeholderImage)
-            .resizable()
-            .scaledToFit()
+        if imagePublisher.image != nil {
+            Image(uiImage: imagePublisher.image!)
+                .resizable()
+                .scaledToFit()
+        } else {
+            Image(systemName: "book")
+                .resizable()
+                .scaledToFit()
+        }
     }
 }

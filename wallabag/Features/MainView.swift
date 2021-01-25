@@ -35,7 +35,7 @@ struct MainView: View {
                     withAnimation {
                         self.showMenu.toggle()
                     }
-                }, label: { Image(systemName: "list.bullet") })
+                }, label: { Image(systemName: "list.bullet") }).buttonStyle(PlainButtonStyle())
             }
             Text(router.route.title)
                 .font(.title)
@@ -50,7 +50,7 @@ struct MainView: View {
                 }
             }, label: {
                 Image(systemName: "music.note")
-            })
+            }).buttonStyle(PlainButtonStyle())
         }
     }
 

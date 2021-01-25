@@ -10,6 +10,7 @@ struct PlayerView: View {
                     VStack {
                         EntryPicture(url: podcast.picture).frame(width: 100, alignment: .center)
                         Text(podcast.title)
+                            .padding(4)
                         HStack {
                             Button(action: {
                                 playerPublisher.togglePlaying()
@@ -21,13 +22,14 @@ struct PlayerView: View {
                             }, label: {
                                 Image(systemName: "stop.circle")
                             }).font(.system(size: 30))
-                        }
+                        }.buttonStyle(PlainButtonStyle())
                     }.padding()
                 }
             } else {
                 VStack {
                     EntryPicture(url: nil).frame(width: 100, alignment: .center)
                     Text("Select one entry")
+                        .padding(4)
                     HStack {
                         Button(action: {}, label: {
                             Image(systemName: "play.circle")
@@ -38,7 +40,7 @@ struct PlayerView: View {
             }
         }
         .frame(width: 200, height: 200, alignment: .center)
-        .background(Color.white)
+        .background(Color.primary.colorInvert())
         .cornerRadius(6)
         .shadow(radius: 10)
         .gesture(DragGesture().onEnded { swipe in
@@ -50,7 +52,20 @@ struct PlayerView: View {
 }
 
 struct PlayerView_Previews: PreviewProvider {
+    static var player: PlayerPublisher = {
+        let player = PlayerPublisher()
+        let entry = Entry(context: CoreData.shared.viewContext)
+        player.load(entry)
+        return player
+    }()
+
     static var previews: some View {
         PlayerView()
+            .environmentObject(PlayerPublisher())
+            .previewLayout(.sizeThatFits)
+
+        PlayerView()
+            .environmentObject(player)
+            .previewLayout(.sizeThatFits)
     }
 }

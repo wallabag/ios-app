@@ -18,6 +18,7 @@ struct RefreshButton: View {
                         .animation(Animation.spring().repeatForever(autoreverses: false))
                 }
             ).disabled(appSync.inProgress)
+                .buttonStyle(PlainButtonStyle())
         }
     }
 }

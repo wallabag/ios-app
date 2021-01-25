@@ -30,7 +30,7 @@ struct SearchView: View {
                 }, label: {
                     Image(systemName: self.showSearchBar ? "list.bullet.below.rectangle" : "magnifyingglass")
                         .padding(.trailing)
-                })
+                }).buttonStyle(PlainButtonStyle())
             }
         }
     }
