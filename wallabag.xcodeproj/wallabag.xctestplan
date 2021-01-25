@@ -36,6 +36,7 @@
       "parallelizable" : true,
       "skippedTests" : [
         "RetrieveModeTests",
+        "ServerViewModelTests\/testDeinit()",
         "StringTests",
         "TokenAdapterTests",
         "WallabagAuthErrorTests",
