@@ -39,6 +39,12 @@ final class PlayerPublisher: ObservableObject {
         showPlayer = true
         podcast = Podcast(id: entry.id, title: entry.title ?? "Title", content: entry.content?.withoutHTML ?? "", picture: entry.previewPicture)
         utterance = AVSpeechUtterance(string: podcast!.content)
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = [
+            MPMediaItemPropertyTitle: entry.title,
+            MPMediaItemPropertyArtist: "Wallabag",
+        ]
+        try? AVAudioSession.sharedInstance().setActive(true)
+        try? AVAudioSession.sharedInstance().setCategory(.playback)
     }
 
     func togglePlaying() {
