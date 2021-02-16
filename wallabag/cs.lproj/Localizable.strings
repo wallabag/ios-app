@@ -1,1 +1,19 @@
 
+
+"Entries" = "Položky";
+"Add entry" = "Přidat položku";
+"Cancel" = "Zrušit";
+"Add" = "Přidat";
+"Back" = "Zpět";
+"Loading..." = "Načítání…";
+"Read" = "Přečtené";
+"Logout" = "Odhlásit se";
+"Unread" = "Nepřečtené";
+
+// Picker
+"All" = "Vše";
+"Setting" = "Nastavení";
+"Bug report" = "Hlášení chyb";
+
+// Menu
+"Menu" = "Nabídka";
