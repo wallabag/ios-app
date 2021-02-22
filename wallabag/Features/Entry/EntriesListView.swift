@@ -9,7 +9,7 @@ struct EntriesListView: View {
     @State private var showDeleteConfirm = false
 
     init(predicate: NSPredicate) {
-        _entries = FetchRequest(entity: Entry.entity(), sortDescriptors: [NSSortDescriptor(key: "id", ascending: false)], predicate: predicate, animation: nil)
+        _entries = FetchRequest(entity: Entry.entity(), sortDescriptors: [NSSortDescriptor(key: #keyPath(Entry.createdAt), ascending: false)], predicate: predicate, animation: nil)
     }
 
     var body: some View {

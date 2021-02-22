@@ -5,7 +5,7 @@ class SearchViewModel: ObservableObject {
     @Published var search: String = ""
     @Published var retrieveMode = RetrieveMode(fromCase: WallabagUserDefaults.defaultMode)
 
-    @Published var predicate = NSPredicate(value: true)
+    @Published var predicate: NSPredicate = RetrieveMode(fromCase: WallabagUserDefaults.defaultMode).predicate()
 
     var cancellable = Set<AnyCancellable>()
 
