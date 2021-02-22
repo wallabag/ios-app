@@ -2,6 +2,7 @@ import Combine
 import CoreData
 import Foundation
 import WallabagKit
+import SwiftUI
 
 class AppSync: ObservableObject {
     static var shared = AppSync()
@@ -31,7 +32,9 @@ class AppSync: ObservableObject {
     private var tags: [Int: Tag] = [:]
 
     func requestSync() {
-        inProgress = true
+        withAnimation {
+            inProgress = true
+        }
         sync()
     }
 
