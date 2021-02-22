@@ -1,8 +1,8 @@
 import Combine
 import CoreData
 import Foundation
-import WallabagKit
 import SwiftUI
+import WallabagKit
 
 class AppSync: ObservableObject {
     static var shared = AppSync()
