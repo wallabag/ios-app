@@ -1,1 +1,48 @@
 
+
+
+// Menu
+"Menu" = "Μενού";
+
+//Player
+"Select one entry" = "Επιλογή μιας καταχώρισης";
+"Made by Maxime Marinel @bourvill" = "Δημιουργήθηκε από τον Maxime Marinel @bourvill";
+
+// About
+"Project page" = "Σελίδα του εγχειρήματος";
+
+// Entry
+"Reading time %@" = "Χρόνος ανάγνωσης %@";
+
+// Search
+"Search" = "Αναζήτηση";
+"Confirm delete?" = "Επιβεβαίωση διαγραφής;";
+"Cancel" = "Ακύρωση";
+"Add" = "Προσθήκη";
+"Back" = "Επιστροφή";
+
+// Common
+"Submit" = "Υποβολή";
+"It seems impossible to make a payment." = "Φαίνεται ότι είναι αδύνατο να γίνει πληρωμή.";
+"Loading..." = "Φόρτωση...";
+"But you can contribute financially by making a donation whenever you want to support the project." = "Μπορείτε όμως να συνεισφέρετε οικονομικά κάνοντας δωρεά όποτε θέλετε να στηρίξετε το εγχείρημα.";
+"It is free and will remain so." = "Είναι δωρεάν και θα παραμείνει ως έτσι.";
+
+// Tip View
+"This application is developed on free time" = "Αυτή η εφαρμογή αναπτύσσεται στον ελεύθερο χρόνο των προγραμματιστών";
+
+// PasteBoard View
+"New url in pasteboard detected" = "Εντοπίστηκε νέο URL στο πρόχειρο";
+"Read" = "Αναγνωσμένα";
+"Unread" = "Μη αναγνωσμένα";
+"Starred" = "Αγαπημένα";
+
+// Picker
+"All" = "Όλα";
+"Logout" = "Αποσύνδεση";
+"Setting" = "Ρυθμίσεις";
+"Bug report" = "Αναφορά σφάλματος";
+"Don" = "Δωρεά";
+"About" = "Σχετικά";
+"Add entry" = "Προσθήκη άρθρου";
+"Entries" = "Άρθρα";
