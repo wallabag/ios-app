@@ -42,3 +42,7 @@
 
 // Menu
 "Menu" = "菜單";
+
+//Player
+"Select one entry" = "請選擇一個項目";
+"Confirm delete?" = "確認刪除？";
