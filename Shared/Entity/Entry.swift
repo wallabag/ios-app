@@ -40,13 +40,13 @@ extension Entry {
         "\(Bundle.main.bundleIdentifier!).spotlight.\(Int(id))"
     }
 
-    var searchableItemAttributeSet: CSSearchableItemAttributeSet {
-        let searchableItemAttributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeText as String)
-        searchableItemAttributeSet.title = title
-        searchableItemAttributeSet.contentDescription = content?.withoutHTML
+    /* var searchableItemAttributeSet: CSSearchableItemAttributeSet {
+         let searchableItemAttributeSet = CSSearchableItemAttributeSet(itemContentType: kUTTypeText as String)
+         searchableItemAttributeSet.title = title
+         searchableItemAttributeSet.contentDescription = content?.withoutHTML
 
-        return searchableItemAttributeSet
-    }
+         return searchableItemAttributeSet
+     } */
 
     func hydrate(from article: WallabagEntry) {
         id = article.id

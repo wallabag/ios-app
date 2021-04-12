@@ -1,0 +1,50 @@
+
+
+
+"Cancel" = "取消";
+"Add" = "添加";
+"Back" = "返回";
+
+// Common
+"Submit" = "提交";
+"It seems impossible to make a payment." = "似乎无法完成支付。";
+"Loading..." = "加载中…";
+"But you can contribute financially by making a donation whenever you want to support the project." = "但不论何时只要你想支持这个项目，你都可以通过捐款来提供资金。";
+"It is free and will remain so." = "它是免费的，而且将一直如此。";
+
+// Tip View
+"This application is developed on free time" = "这个应用程序是在空闲时间开发的";
+
+// PasteBoard View
+"New url in pasteboard detected" = "检测到粘贴板中的新 url";
+"Read" = "已读";
+"Unread" = "未读";
+"Starred" = "标星";
+
+// Mode picker
+"All" = "全部";
+"Logout" = "退出";
+"Setting" = "设置";
+"Bug report" = "Bug 报告";
+"Tips" = "提示";
+"About" = "关于";
+"Add entry" = "添加条目";
+"Entries" = "条目";
+
+// Menu
+"Menu" = "菜单";
+"Made by Maxime Marinel @bourvill" = "由 Maxime Marinel @bourvill 打造";
+
+// About
+"Project page" = "项目页面";
+
+// Entry
+"Reading time %@" = "阅读时间 %@";
+
+// Search
+"Search" = "搜索";
+"Don" = "捐赠";
+"Confirm delete?" = "确认删除？";
+
+//Player
+"Select one entry" = "选择一个条目";

@@ -1,6 +1,8 @@
 import Combine
 import Foundation
-import UIKit
+#if canImport(UIKit)
+    import UIKit
+#endif
 
 class ImageDownloader {
     static var shared = ImageDownloader()

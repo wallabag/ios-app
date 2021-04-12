@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="ratatouille.css" media="all" id="extra-theme">
+    <link rel="stylesheet" href="main.css" media="all" id="main-theme">
+    <link rel="stylesheet" href="%@" media="all" id="justify-theme">
+  </head>
+  <body>
+    <div id="main">
+        <div id="content" class="w600p center">
+          <div id="article">
+              <article> %@</article>
+          </div>
+        </div>
+    </div>
+    <script>
+        var imgs = document.getElementsByTagName("img");
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].removeAttribute("srcset");
+        }
+    </script>
+  </body>
+</html>

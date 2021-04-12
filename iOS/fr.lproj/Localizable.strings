@@ -1,0 +1,52 @@
+
+// Menu
+"Menu" = "Menu";
+"Entries" = "Articles";
+"Add entry" = "Ajouter un article";
+
+// Common
+"Back" = "Retour";
+"Submit" = "Soumettre";
+"Cancel" = "Annuler";
+"Add" = "Ajouter";
+"It seems impossible to make a payment." = "Il semble impossible d'effectuer un paiement.";
+"Loading..." = "Chargement…";
+"But you can contribute financially by making a donation whenever you want to support the project." = "Mais vous pouvez contribuer financièrement en faisant un don chaque fois que vous souhaitez soutenir le projet.";
+"It is free and will remain so." = "Elle est gratuite et le restera.";
+
+// Tip View
+"This application is developed on free time" = "Cette application est développée sur le temps libre";
+
+// PasteBoard View
+"New url in pasteboard detected" = "Nouvelle URL détectée dans le presse-papier";
+"Read" = "Lus";
+
+// Mode picker
+"All" = "Tous";
+"Unread" = "Non lus";
+"Starred" = "Favoris";
+"Logout" = "Se déconnecter";
+"Setting" = "Paramètres";
+"Bug report" = "Rapport d'erreur";
+"Don" = "Don";
+"About" = "À propos";
+
+// Search
+"Search" = "Rechercher";
+
+// Picker
+"All" = "Tous";
+"Starred" = "Favoris";
+"Unread" = "Non lus";
+"Read" = "Lus";
+
+// Entry
+"Reading time %@" = "Temps de lecture %@";
+
+// About
+"Project page" = "Page du projet";
+"Made by Maxime Marinel @bourvill" = "Fait par Maxime Marinel @bourvill";
+
+//Player
+"Select one entry" = "Sélectionnez une entrée";
+"Confirm delete?" = "Confirmer la suppression ?";

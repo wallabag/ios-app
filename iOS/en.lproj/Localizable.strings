@@ -1,0 +1,52 @@
+
+// Menu
+"Menu" = "Menu";
+"Entries" = "Entries";
+"Add entry" = "Add entry";
+"About" = "About";
+"Don" = "Donation";
+"Bug report" = "Bug report";
+"Setting" = "Setting";
+"Logout" = "Logout";
+
+// Mode picker
+"All" = "All";
+"Starred" = "Starred";
+"Unread" = "Unread";
+"Read" = "Read";
+
+// PasteBoard View
+"New url in pasteboard detected" = "New url in pasteboard detected";
+
+// Tip View
+"This application is developed on free time" = "This application is developed on free time";
+"It is free and will remain so." = "It is free and will remain so.";
+"But you can contribute financially by making a donation whenever you want to support the project." = "But you can contribute financially by making a donation whenever you want to support the project.";
+"Loading..." = "Loading...";
+"It seems impossible to make a payment." = "It seems impossible to make a payment.";
+
+// Common
+"Submit" = "Submit";
+"Back" = "Back";
+"Add" = "Add";
+"Cancel" = "Cancel";
+"Confirm delete?" = "Confirm delete?";
+
+// Search
+"Search" = "Search";
+
+// Picker
+"All" = "All";
+"Starred" = "Starred";
+"Unread" = "Unread";
+"Read" = "Read";
+
+// Entry
+"Reading time %@" = "Reading time %@";
+
+// About
+"Project page" = "Project page";
+"Made by Maxime Marinel @bourvill" = "Made by Maxime Marinel @bourvill";
+
+//Player
+"Select one entry" = "Select one entry";

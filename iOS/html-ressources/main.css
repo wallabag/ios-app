@@ -1,0 +1,156 @@
+/* ==========================================================================
+   Sommaire
+
+   1 = Style Guide
+   2 = Layout
+   3 = Pictos
+   4 = Messages
+   5 = Article
+   6 = Media queries
+
+   ========================================================================== */
+
+html {
+  min-height: 100%;
+}
+
+/* ==========================================================================
+   1 = Style Guide
+   ========================================================================== */
+
+::selection {
+  color: #FFF;
+  background: #000;
+}
+
+a {
+  font-weight: bold;
+}
+
+h2, h3, h4 {
+  font-family: 'PT Sans', sans-serif;
+  text-transform: uppercase;
+}
+
+p, li {
+  color: #666;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+h2:after {
+  content: "";
+  height: 4px;
+  width: 70px;
+  background: #000;
+  display: block;
+}
+
+
+/* ==========================================================================
+   2 = Layout
+   ========================================================================== */
+
+#main {
+    margin-left: 13em;
+    position: relative;
+    z-index: 10;
+    padding-right: 5%;
+    padding-bottom: 1em;
+}
+
+#content {
+  min-height: 30em;
+}
+
+
+/* ==========================================================================
+   5 = Article
+   ========================================================================== */
+
+#article {
+  width: 70%;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+blockquote {
+  background: #FFF;
+  padding: 1em;
+  margin: 0;
+}
+
+#article h2, #article h3, #article h4 {
+  text-transform: none;
+}
+
+
+/* ==========================================================================
+   6 = Media Queries
+   ========================================================================== */
+
+
+@media screen {
+  body > header {
+    background: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 3em;
+    z-index: 11;
+  }
+
+  #main {
+    margin-left: 1.5em;
+    padding-right: 1.5em;
+    position: static;
+  }
+
+  #article {
+    width: 100%;
+  }
+
+  #article h1 {
+    font-size: 1.2em;
+  }
+
+  video {
+      width: 100%
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+      color: #FFF;
+      background: #000;
+  }
+
+  ::selection {
+      color: #777;
+      background: #000;
+  }
+
+  p, li {
+      color: #FFF;
+  }
+
+  a {
+      color: #137fb3;
+  }
+
+  blockquote {
+      background: #111;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background: #FFF;
+  }
+
+  a {
+    color: #000;
+  }
+}

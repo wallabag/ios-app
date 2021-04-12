@@ -1,31 +1,32 @@
 import SwiftUI
 
 struct SidebarView: View {
-    @ObservedObject var store: EntriesStore
-    @Binding var selectedMenu: String?
-    @Binding var selectedEntry: EntryMac?
-
     var body: some View {
-        List(selection: $selectedMenu) {
-            Section {
-                NavigationLink(destination: EntriesListView(entries: store.entries, selectedEntry: $selectedEntry)) {
-                    Text("Entries")
+        Section {
+            List {
+                ForEach(RetrieveMode.allCases, id: \.self) { retrieveMode in
+                    NavigationLink(destination: EntriesListView(predicate: retrieveMode.predicate())) {
+                        Label(LocalizedStringKey(retrieveMode.rawValue), systemImage: "tray")
+                    }
                 }
-            }
-            Section {
-                NavigationLink(destination: Register()) {
-                    Text("Register")
+            }.listStyle(SidebarListStyle())
+        }
+        Divider()
+        Section {
+            List {
+                Button(action: {
+                    Router.shared.load(.registration)
+                }) {
+                    Label("Account", systemImage: "person")
                 }
-            }
-        }.listStyle(SidebarListStyle())
+            }.listStyle(SidebarListStyle())
+        }
     }
 }
 
 struct SidebarView_Previews: PreviewProvider {
     static var previews: some View {
-        SidebarView(
-            store: EntriesStore(), selectedMenu: .constant("test"), selectedEntry: .constant(.init(title: "test", content: "test"))
-        )
+        SidebarView()
     }
 }
 

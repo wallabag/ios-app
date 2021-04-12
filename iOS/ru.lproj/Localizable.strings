@@ -1,0 +1,42 @@
+
+
+
+"Setting" = "Настройки";
+"Tips" = "Подсказки";
+"Cancel" = "Отмена";
+"Add" = "Добавить";
+"Back" = "Назад";
+
+// Common
+"Submit" = "Отправить";
+"It seems impossible to make a payment." = "Похоже, платёж произвести невозможно.";
+"Loading..." = "…";
+"But you can contribute financially by making a donation whenever you want to support the project." = "Но вы можете внести финансовый вклад, сделав пожертвование, когда захотите поддержать проект.";
+"It is free and will remain so." = "Это бесплатно и таковым останется.";
+
+// Tip View
+"This application is developed on free time" = "Это приложение разрабатывается в свободное время";
+"Read" = "Прочитанные";
+"Unread" = "Непрочитанные";
+"Starred" = "Помеченные";
+
+// Mode picker
+"All" = "Все";
+"Logout" = "Выход";
+"Bug report" = "Отчёт об ошибке";
+"About" = "О приложении";
+"Add entry" = "Добавить запись";
+"Entries" = "Записи";
+
+// Menu
+"Menu" = "Меню";
+"Made by Maxime Marinel @bourvill" = "Сделано Максимом Маринелем @bourvill";
+
+// About
+"Project page" = "Страница проекта";
+
+// Entry
+"Reading time %@" = "Время чтения %@";
+
+// Search
+"Search" = "Поиск";

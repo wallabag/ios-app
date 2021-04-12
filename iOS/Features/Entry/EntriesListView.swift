@@ -6,7 +6,6 @@ struct EntriesListView: View {
     @Environment(\.managedObjectContext) var context: NSManagedObjectContext
     @FetchRequest var entries: FetchedResults<Entry>
     @EnvironmentObject var router: Router
-    @State private var showDeleteConfirm = false
 
     init(predicate: NSPredicate) {
         _entries = FetchRequest(entity: Entry.entity(), sortDescriptors: [NSSortDescriptor(key: "id", ascending: false)], predicate: predicate, animation: nil)
@@ -22,18 +21,6 @@ struct EntriesListView: View {
                     .contextMenu {
                         ArchiveEntryButton(entry: entry)
                         StarEntryButton(entry: entry)
-                        DeleteEntryButton(showConfirm: $showDeleteConfirm)
-                    }
-                    .actionSheet(isPresented: $showDeleteConfirm) {
-                        ActionSheet(
-                            title: Text("Confirm delete?"),
-                            buttons: [
-                                .destructive(Text("Delete")) {
-                                    self.context.delete(entry)
-                                },
-                                .cancel(),
-                            ]
-                        )
                     }
             }).buttonStyle(PlainButtonStyle())
         }

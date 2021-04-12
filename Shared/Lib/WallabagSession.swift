@@ -17,11 +17,11 @@ class WallabagSession: ObservableObject {
     @CoreDataViewContext var coreDataContext: NSManagedObjectContext
     private var cancellable = Set<AnyCancellable>()
 
-    func requestSession() {
-        kit.clientId = WallabagUserDefaults.clientId
-        kit.clientSecret = WallabagUserDefaults.clientSecret
-        kit.username = WallabagUserDefaults.login
-        kit.password = WallabagUserDefaults.password
+    func requestSession(clientId: String, clientSecret: String, username: String, password: String) {
+        kit.clientId = clientId
+        kit.clientSecret = clientSecret
+        kit.username = username
+        kit.password = password
 
         state = .connecting
         kit.requestToken()
@@ -32,7 +32,7 @@ class WallabagSession: ObservableObject {
                     case let WallabagKitError.jsonError(jsonError):
                         self.state = .error(reason: jsonError.errorDescription)
                     default:
-                        self.state = .error(reason: "Unknow error")
+                        self.state = .error(reason: "Unknown error")
                     }
                 }
             }, receiveValue: { token in
@@ -103,6 +103,6 @@ class WallabagSession: ObservableObject {
                 entry.tags.insert(tag)
             }
         }
-        try? coreDataContext.save()
+        // try? coreDataContext.save()
     }
 }
