@@ -1,0 +1,26 @@
+excluded:
+  - Pods
+  - Carthage
+  - wallabagTests
+  - wallabag/Model/Server.swift
+  - wallabag/Lib/CoreData.swift 
+  - wallabag/Entity/Entry+CoreDataProperties.swift
+  - wallabag/Controller/ArticlesTableViewController.swift
+  - wallabag/Lib/ArticleSync.swift
+  - wallabag/Entity/Entry+CoreDataClass.swift
+  - wallabag/Lib/Utils.swift
+  - wallabagScreenshotUITests/SnapshotHelper.swift
+  - SnapshotHelper.swift
+  - fastlane/SnapshotHelper.swift
+  - MyPlayground.playground
+line_length: 300
+identifier_name:
+  excluded:
+    - id
+    - to
+    - at
+#force_cast: warning # implicitly
+force_try:
+  severity: warning # explicitly
+disabled_rules:
+  - trailing_comma

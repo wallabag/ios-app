@@ -4,7 +4,7 @@ import SwiftUI
 let logger = Logger(subsystem: "fr.district-web.wallabag", category: "main")
 
 @main
-struct wallabagMacApp: App {
+struct WallabagMacApp: App {
     @StateObject var appState = AppState.shared
 
     var body: some Scene {
