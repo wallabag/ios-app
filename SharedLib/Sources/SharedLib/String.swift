@@ -1,7 +1,7 @@
 import CryptoKit
 import Foundation
 
-extension String {
+public extension String {
     var date: Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
@@ -37,6 +37,7 @@ extension String {
         URL(string: self)
     }
 
+    @available(iOS 13.0, *)
     var md5: String {
         Insecure.MD5.hash(data: data(using: .utf8)!).map {
             String(format: "%02hhx", $0)

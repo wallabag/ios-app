@@ -1,7 +1,7 @@
 import Foundation
 import StoreKit
 
-extension SKProduct {
+public extension SKProduct {
     var title: String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency

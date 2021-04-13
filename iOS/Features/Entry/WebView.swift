@@ -76,7 +76,7 @@ struct WebView: UIViewRepresentable {
     func makeUIView(context: Context) -> WKWebView {
         wkWebView.navigationDelegate = context.coordinator
         wkWebView.scrollView.delegate = context.coordinator
-        wkWebView.load(entry: entry, justify: false)
+        wkWebView.load(content: entry.content, justify: false)
 
         return wkWebView
     }

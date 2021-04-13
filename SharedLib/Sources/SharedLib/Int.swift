@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-extension Int {
+public extension Int {
     var readingTime: String {
         let date = Date(timeIntervalSince1970: TimeInterval(self * 60))
         let dayTimePeriodFormatter = DateFormatter()

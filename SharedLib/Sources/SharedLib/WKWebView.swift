@@ -2,17 +2,17 @@ import Foundation
 import UIKit
 import WebKit
 
-extension WKWebView {
-    func load(entry: Entry, justify: Bool) {
+public extension WKWebView {
+    func load(content: String?, justify: Bool) {
         DispatchQueue.main.async { [weak self] in
-            guard let content = self?.contentForWebView(entry, justify: justify) else { return }
+            guard let content = self?.contentForWebView(content, justify: justify) else { return }
             self?.loadHTMLString(content, baseURL: Bundle.main.bundleURL)
         }
     }
 
-    func contentForWebView(_ entry: Entry, justify: Bool) -> String? {
+    func contentForWebView(_ content: String?, justify: Bool) -> String? {
         do {
-            guard let content = entry.content else { return nil }
+            guard let content = content else { return nil }
             let html = try String(contentsOfFile: Bundle.main.path(forResource: "article", ofType: "html")!)
             let justify = justify ? "justify.css" : ""
 

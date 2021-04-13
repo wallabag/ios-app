@@ -1,6 +1,7 @@
 import Combine
 import CoreData
 import Foundation
+import SharedLib
 
 class CoreDataSync {
     private var objectsDidChangeCancellable: AnyCancellable?

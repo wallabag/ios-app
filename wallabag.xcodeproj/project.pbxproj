@@ -26,6 +26,7 @@
 		093D13FC262640C0008C2150 /* GeneralSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B4125C94E2B000FFDA1 /* GeneralSetting.swift */; };
 		093D1403262640C9008C2150 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B3925C94E03000FFDA1 /* KeychainPasswordItem.swift */; };
 		093D14172626418B008C2150 /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 093D14162626418B008C2150 /* WallabagKit */; };
+		093D145E26264AA5008C2150 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 093D145D26264AA5008C2150 /* SharedLib */; };
 		09644AD125C94825000FFDA1 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644AD025C94825000FFDA1 /* ShareViewController.swift */; };
 		09644AD425C94825000FFDA1 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09644AD225C94825000FFDA1 /* MainInterface.storyboard */; };
 		09644AD825C94825000FFDA1 /* bagit.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 09644ACE25C94825000FFDA1 /* bagit.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -70,16 +71,6 @@
 		09644BFA25C983F8000FFDA1 /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644BF725C983F8000FFDA1 /* Podcast.swift */; };
 		09644BFB25C983F8000FFDA1 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644BF825C983F8000FFDA1 /* Tag.swift */; };
 		09644BFC25C983F8000FFDA1 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644BF925C983F8000FFDA1 /* Entry.swift */; };
-		09644C0425C9841B000FFDA1 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644C0325C9841B000FFDA1 /* String.swift */; };
-		09644C1425C9844C000FFDA1 /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644C0A25C9844C000FFDA1 /* URL.swift */; };
-		09644C1525C9844C000FFDA1 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644C0B25C9844C000FFDA1 /* Int.swift */; };
-		09644C1725C9844C000FFDA1 /* SKProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644C0D25C9844C000FFDA1 /* SKProduct.swift */; };
-		09644C1825C9844C000FFDA1 /* WKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644C0E25C9844C000FFDA1 /* WKWebView.swift */; };
-		09644C1925C9844C000FFDA1 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644C0F25C9844C000FFDA1 /* UISearchBar.swift */; };
-		09644C1A25C9844C000FFDA1 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644C1025C9844C000FFDA1 /* Dictionary.swift */; };
-		09644C1B25C9844C000FFDA1 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644C1125C9844C000FFDA1 /* View.swift */; };
-		09644C1C25C9844C000FFDA1 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644C1225C9844C000FFDA1 /* Date.swift */; };
-		09644C1D25C9844C000FFDA1 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644C1325C9844C000FFDA1 /* Bool.swift */; };
 		09644C4F25C9850D000FFDA1 /* CoreDataViewContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644C4E25C9850D000FFDA1 /* CoreDataViewContext.swift */; };
 		09644C5C25C98596000FFDA1 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644C5625C98596000FFDA1 /* WebView.swift */; };
 		09644C5D25C98596000FFDA1 /* AddEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644C5725C98596000FFDA1 /* AddEntryView.swift */; };
@@ -143,11 +134,6 @@
 		097F824625CB1ADF006C85F6 /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F824525CB1ADF006C85F6 /* DependencyInjection.swift */; };
 		097F825225CB1B2E006C85F6 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644BF925C983F8000FFDA1 /* Entry.swift */; };
 		097F825825CB1B33006C85F6 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644BF825C983F8000FFDA1 /* Tag.swift */; };
-		097F825E25CB1B4A006C85F6 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644C1325C9844C000FFDA1 /* Bool.swift */; };
-		097F826425CB1B4C006C85F6 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644C1225C9844C000FFDA1 /* Date.swift */; };
-		097F826A25CB1B4F006C85F6 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644C1025C9844C000FFDA1 /* Dictionary.swift */; };
-		097F827025CB1B51006C85F6 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644C0B25C9844C000FFDA1 /* Int.swift */; };
-		097F827625CB1B66006C85F6 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644C0325C9841B000FFDA1 /* String.swift */; };
 		09AD75A12624F93D00708A1E /* article.html in Resources */ = {isa = PBXBuildFile; fileRef = 09AD759D2624F93D00708A1E /* article.html */; };
 		09AD75A22624F93D00708A1E /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 09AD759E2624F93D00708A1E /* main.css */; };
 		09AD75A32624F93D00708A1E /* ratatouille.css in Resources */ = {isa = PBXBuildFile; fileRef = 09AD759F2624F93D00708A1E /* ratatouille.css */; };
@@ -219,6 +205,7 @@
 		093D13D026263B2E008C2150 /* Shortcuts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Shortcuts.entitlements; sourceTree = "<group>"; };
 		093D13D726263CC4008C2150 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
 		093D13EB26263F81008C2150 /* AddEntryIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryIntentHandler.swift; sourceTree = "<group>"; };
+		093D145626264A7C008C2150 /* SharedLib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SharedLib; sourceTree = "<group>"; };
 		09644ACE25C94825000FFDA1 /* bagit.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = bagit.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		09644AD025C94825000FFDA1 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		09644AD325C94825000FFDA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -256,16 +243,6 @@
 		09644BF725C983F8000FFDA1 /* Podcast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 		09644BF825C983F8000FFDA1 /* Tag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		09644BF925C983F8000FFDA1 /* Entry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
-		09644C0325C9841B000FFDA1 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		09644C0A25C9844C000FFDA1 /* URL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
-		09644C0B25C9844C000FFDA1 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
-		09644C0D25C9844C000FFDA1 /* SKProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKProduct.swift; sourceTree = "<group>"; };
-		09644C0E25C9844C000FFDA1 /* WKWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WKWebView.swift; sourceTree = "<group>"; };
-		09644C0F25C9844C000FFDA1 /* UISearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
-		09644C1025C9844C000FFDA1 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
-		09644C1125C9844C000FFDA1 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
-		09644C1225C9844C000FFDA1 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		09644C1325C9844C000FFDA1 /* Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
 		09644C4E25C9850D000FFDA1 /* CoreDataViewContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataViewContext.swift; sourceTree = "<group>"; };
 		09644C5625C98596000FFDA1 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		09644C5725C98596000FFDA1 /* AddEntryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEntryView.swift; sourceTree = "<group>"; };
@@ -374,6 +351,7 @@
 				09644AFF25C94BF4000FFDA1 /* WallabagKit in Frameworks */,
 				09644B0725C94C14000FFDA1 /* Swinject in Frameworks */,
 				09644B0F25C94C6B000FFDA1 /* HTMLEntities in Frameworks */,
+				093D145E26264AA5008C2150 /* SharedLib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,23 +551,6 @@
 			children = (
 			);
 			path = Entity;
-			sourceTree = "<group>";
-		};
-		09644C0225C9840F000FFDA1 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				09644C1325C9844C000FFDA1 /* Bool.swift */,
-				09644C1225C9844C000FFDA1 /* Date.swift */,
-				09644C1025C9844C000FFDA1 /* Dictionary.swift */,
-				09644C0B25C9844C000FFDA1 /* Int.swift */,
-				09644C0D25C9844C000FFDA1 /* SKProduct.swift */,
-				09644C0F25C9844C000FFDA1 /* UISearchBar.swift */,
-				09644C0A25C9844C000FFDA1 /* URL.swift */,
-				09644C1125C9844C000FFDA1 /* View.swift */,
-				09644C0E25C9844C000FFDA1 /* WKWebView.swift */,
-				09644C0325C9841B000FFDA1 /* String.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		09644C5525C9858B000FFDA1 /* Entry */ = {
@@ -840,6 +801,7 @@
 		09BFB27425C8348E00E12B4D = {
 			isa = PBXGroup;
 			children = (
+				093D145626264A7C008C2150 /* SharedLib */,
 				09AD75962624F4E800708A1E /* wallabag.entitlements */,
 				09BFB27925C8348E00E12B4D /* Shared */,
 				09BFB28625C8348E00E12B4D /* iOS */,
@@ -859,7 +821,6 @@
 				097F827C25CB1C06006C85F6 /* Features */,
 				09BFB27F25C8348E00E12B4D /* Assets.xcassets */,
 				097F824C25CB1B17006C85F6 /* Entity */,
-				09644C0225C9840F000FFDA1 /* Extension */,
 				09644B1D25C94D71000FFDA1 /* Lib */,
 				09644B2525C94DB5000FFDA1 /* PropertyWrapper */,
 				09BFB27A25C8348E00E12B4D /* wallabag.xcdatamodeld */,
@@ -993,6 +954,7 @@
 				09644AFE25C94BF4000FFDA1 /* WallabagKit */,
 				09644B0625C94C14000FFDA1 /* Swinject */,
 				09644B0E25C94C6B000FFDA1 /* HTMLEntities */,
+				093D145D26264AA5008C2150 /* SharedLib */,
 			);
 			productName = "wallabag (iOS)";
 			productReference = 09BFB28425C8348E00E12B4D /* wallabag.app */;
@@ -1242,7 +1204,6 @@
 				09644B5E25C98116000FFDA1 /* AppDelegate.swift in Sources */,
 				09644D1825C98755000FFDA1 /* AppDelegateExtension.swift in Sources */,
 				09644BD825C9833E000FFDA1 /* DependencyInjection.swift in Sources */,
-				09644C1825C9844C000FFDA1 /* WKWebView.swift in Sources */,
 				09644B5725C9810A000FFDA1 /* WallabagApp.swift in Sources */,
 				09644B9925C9819F000FFDA1 /* ArticlePlayer.swift in Sources */,
 				09644C6F25C985A9000FFDA1 /* EntryPictoImage.swift in Sources */,
@@ -1254,20 +1215,16 @@
 				09644B9725C9819F000FFDA1 /* PlayerView.swift in Sources */,
 				09644BCB25C98252000FFDA1 /* KeychainPasswordItem.swift in Sources */,
 				09644C9725C98609000FFDA1 /* RetrieveModePicker.swift in Sources */,
-				09644C1A25C9844C000FFDA1 /* Dictionary.swift in Sources */,
 				09644CF225C986EE000FFDA1 /* SearchViewModel.swift in Sources */,
-				09644C1B25C9844C000FFDA1 /* View.swift in Sources */,
 				09644BA325C981B4000FFDA1 /* ErrorViewModel.swift in Sources */,
 				09644C4F25C9850D000FFDA1 /* CoreDataViewContext.swift in Sources */,
 				09644BC425C98248000FFDA1 /* Setting.swift in Sources */,
-				09644C1425C9844C000FFDA1 /* URL.swift in Sources */,
 				09644C5E25C98596000FFDA1 /* EntriesView.swift in Sources */,
 				09644CA725C98639000FFDA1 /* View+haptic.swift in Sources */,
 				09644BBD25C98240000FFDA1 /* WallabagUserDefaults.swift in Sources */,
 				09644BC325C98248000FFDA1 /* GeneralSetting.swift in Sources */,
 				09644B7E25C98152000FFDA1 /* AppState.swift in Sources */,
 				09644C6E25C985A9000FFDA1 /* DeleteEntryButton.swift in Sources */,
-				09644C1C25C9844C000FFDA1 /* Date.swift in Sources */,
 				09644B8C25C98176000FFDA1 /* Route.swift in Sources */,
 				09644BAD25C98213000FFDA1 /* CoreDataSync.swift in Sources */,
 				09644BDE25C9833E000FFDA1 /* WallabagSession.swift in Sources */,
@@ -1275,13 +1232,10 @@
 				09644C7D25C985B8000FFDA1 /* ImageCache.swift in Sources */,
 				09644CC225C98674000FFDA1 /* PasteBoardView.swift in Sources */,
 				09644CC325C98674000FFDA1 /* PasteBoardViewModel.swift in Sources */,
-				09644C1D25C9844C000FFDA1 /* Bool.swift in Sources */,
 				09644BE625C98350000FFDA1 /* Injector.swift in Sources */,
-				09644C1525C9844C000FFDA1 /* Int.swift in Sources */,
 				09644C6D25C985A9000FFDA1 /* StarEntryButton.swift in Sources */,
 				09644C6125C98596000FFDA1 /* EntriesListView.swift in Sources */,
 				09644CF325C986EE000FFDA1 /* SearchView.swift in Sources */,
-				09644C1925C9844C000FFDA1 /* UISearchBar.swift in Sources */,
 				09644C5F25C98596000FFDA1 /* EntryRowView.swift in Sources */,
 				09644CE925C986CC000FFDA1 /* ServerViewModel.swift in Sources */,
 				09644CD725C986C0000FFDA1 /* ClientIdClientSecretViewModel.swift in Sources */,
@@ -1301,7 +1255,6 @@
 				09644C7E25C985B8000FFDA1 /* EntryPicture.swift in Sources */,
 				09644BA225C981B4000FFDA1 /* ErrorView.swift in Sources */,
 				09644B9825C9819F000FFDA1 /* PlayerPublisher.swift in Sources */,
-				09644C1725C9844C000FFDA1 /* SKProduct.swift in Sources */,
 				09644C7C25C985B8000FFDA1 /* ImageDownloader.swift in Sources */,
 				09644D0825C9871A000FFDA1 /* TipView.swift in Sources */,
 				09644B8B25C98176000FFDA1 /* PresentedView.swift in Sources */,
@@ -1314,7 +1267,6 @@
 				09644BDA25C9833E000FFDA1 /* WallabagError.swift in Sources */,
 				09644CDF25C986C6000FFDA1 /* LoginViewModel.swift in Sources */,
 				09644C5D25C98596000FFDA1 /* AddEntryView.swift in Sources */,
-				09644C0425C9841B000FFDA1 /* String.swift in Sources */,
 				09644C6025C98596000FFDA1 /* EntryView.swift in Sources */,
 				09644CFF25C9870C000FFDA1 /* TagsForEntryPublisher.swift in Sources */,
 				09644D1025C9872F000FFDA1 /* BundleKey.swift in Sources */,
@@ -1332,21 +1284,16 @@
 				097F820C25CB1A0C006C85F6 /* Password.swift in Sources */,
 				097F825225CB1B2E006C85F6 /* Entry.swift in Sources */,
 				0916CDBC25F0E04D000DC311 /* wallabagStore.xcdatamodeld in Sources */,
-				097F827625CB1B66006C85F6 /* String.swift in Sources */,
 				097F821225CB1A0F006C85F6 /* GeneralSetting.swift in Sources */,
 				097F81AA25CB1108006C85F6 /* Route.swift in Sources */,
 				097F821E25CB1A4C006C85F6 /* WallabagSession.swift in Sources */,
 				097F823F25CB1ABB006C85F6 /* CoreData.swift in Sources */,
 				097F825825CB1B33006C85F6 /* Tag.swift in Sources */,
-				097F827025CB1B51006C85F6 /* Int.swift in Sources */,
 				097F822C25CB1A93006C85F6 /* Injector.swift in Sources */,
 				097F824625CB1ADF006C85F6 /* DependencyInjection.swift in Sources */,
 				097F818525CAEA79006C85F6 /* wallabagMacApp.swift in Sources */,
 				097F81F225CB1996006C85F6 /* Router.swift in Sources */,
-				097F826A25CB1B4F006C85F6 /* Dictionary.swift in Sources */,
-				097F826425CB1B4C006C85F6 /* Date.swift in Sources */,
 				0916CDE725F0E54C000DC311 /* RegistrationView.swift in Sources */,
-				097F825E25CB1B4A006C85F6 /* Bool.swift in Sources */,
 				097F81FA25CB19F6006C85F6 /* AppState.swift in Sources */,
 				09BFB2A725C8348E00E12B4D /* wallabag.xcdatamodeld in Sources */,
 				0916CD8E25F0D47A000DC311 /* EntryRowView.swift in Sources */,
@@ -1931,6 +1878,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 09644AFD25C94BF4000FFDA1 /* XCRemoteSwiftPackageReference "WallabagKit" */;
 			productName = WallabagKit;
+		};
+		093D145D26264AA5008C2150 /* SharedLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SharedLib;
 		};
 		09644AFE25C94BF4000FFDA1 /* WallabagKit */ = {
 			isa = XCSwiftPackageProductDependency;
