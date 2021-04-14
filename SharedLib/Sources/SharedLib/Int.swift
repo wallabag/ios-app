@@ -1,5 +1,4 @@
 import Foundation
-import UIKit
 
 public extension Int {
     var readingTime: String {
@@ -9,10 +8,6 @@ public extension Int {
         dayTimePeriodFormatter.dateFormat = "HH:mm:ss"
 
         return dayTimePeriodFormatter.string(from: date as Date)
-    }
-
-    var rgb: CGFloat {
-        CGFloat(self) / 255.0
     }
 
     var bool: Bool {

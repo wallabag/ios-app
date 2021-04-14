@@ -27,6 +27,7 @@
 		093D1403262640C9008C2150 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B3925C94E03000FFDA1 /* KeychainPasswordItem.swift */; };
 		093D14172626418B008C2150 /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 093D14162626418B008C2150 /* WallabagKit */; };
 		093D145E26264AA5008C2150 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 093D145D26264AA5008C2150 /* SharedLib */; };
+		093D14BA26264D62008C2150 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 093D14B926264D62008C2150 /* SharedLib */; };
 		09644AD125C94825000FFDA1 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644AD025C94825000FFDA1 /* ShareViewController.swift */; };
 		09644AD425C94825000FFDA1 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09644AD225C94825000FFDA1 /* MainInterface.storyboard */; };
 		09644AD825C94825000FFDA1 /* bagit.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 09644ACE25C94825000FFDA1 /* bagit.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -362,6 +363,7 @@
 				097F822625CB1A62006C85F6 /* WallabagKit in Frameworks */,
 				097F823325CB1A9A006C85F6 /* Swinject in Frameworks */,
 				0916CDB625F0D5D6000DC311 /* HTMLEntities in Frameworks */,
+				093D14BA26264D62008C2150 /* SharedLib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,13 +546,6 @@
 				09644D0F25C9872F000FFDA1 /* BundleKey.swift */,
 			);
 			path = PropertyWrapper;
-			sourceTree = "<group>";
-		};
-		09644BF625C983EF000FFDA1 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		09644C5525C9858B000FFDA1 /* Entry */ = {
@@ -803,15 +798,15 @@
 			children = (
 				093D145626264A7C008C2150 /* SharedLib */,
 				09AD75962624F4E800708A1E /* wallabag.entitlements */,
-				09BFB27925C8348E00E12B4D /* Shared */,
+				09644ACF25C94825000FFDA1 /* bagit */,
+				09644B1525C94CA6000FFDA1 /* Frameworks */,
 				09BFB28625C8348E00E12B4D /* iOS */,
 				09BFB28D25C8348E00E12B4D /* macOS */,
+				09BFB28525C8348E00E12B4D /* Products */,
+				09BFB27925C8348E00E12B4D /* Shared */,
+				093D13A026263B05008C2150 /* Shortcuts */,
 				09BFB29725C8348E00E12B4D /* Tests iOS */,
 				09BFB2A225C8348E00E12B4D /* Tests macOS */,
-				09644ACF25C94825000FFDA1 /* bagit */,
-				093D13A026263B05008C2150 /* Shortcuts */,
-				09BFB28525C8348E00E12B4D /* Products */,
-				09644B1525C94CA6000FFDA1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -851,7 +846,6 @@
 				09BFB28725C8348E00E12B4D /* Info.plist */,
 				09644B5D25C98116000FFDA1 /* AppDelegate.swift */,
 				09644B5625C9810A000FFDA1 /* WallabagApp.swift */,
-				09644BF625C983EF000FFDA1 /* Entity */,
 				09644B8425C98161000FFDA1 /* Features */,
 				09644B7C25C9814C000FFDA1 /* Lib */,
 				09644BE425C98343000FFDA1 /* PropertyWrapper */,
@@ -977,6 +971,7 @@
 				097F822525CB1A62006C85F6 /* WallabagKit */,
 				097F823225CB1A9A006C85F6 /* Swinject */,
 				0916CDB525F0D5D6000DC311 /* HTMLEntities */,
+				093D14B926264D62008C2150 /* SharedLib */,
 			);
 			productName = "wallabag (macOS)";
 			productReference = 09BFB28C25C8348E00E12B4D /* wallabag.app */;
@@ -1880,6 +1875,10 @@
 			productName = WallabagKit;
 		};
 		093D145D26264AA5008C2150 /* SharedLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SharedLib;
+		};
+		093D14B926264D62008C2150 /* SharedLib */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SharedLib;
 		};

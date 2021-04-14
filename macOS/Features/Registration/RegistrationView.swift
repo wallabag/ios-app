@@ -28,6 +28,7 @@ final class RegistrationModel: ObservableObject {
         host = WallabagUserDefaults.host
         clientId = WallabagUserDefaults.clientId
         clientSecret = WallabagUserDefaults.clientSecret
+        login = WallabagUserDefaults.login
     }
 }
 

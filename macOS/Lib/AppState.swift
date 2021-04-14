@@ -21,7 +21,12 @@ class AppState: NSObject, ObservableObject {
     func initSession() {
         if registred {
             logger.info("App state request session")
-            session.requestSession()
+            session.requestSession(
+                clientId: WallabagUserDefaults.clientId,
+                clientSecret: WallabagUserDefaults.clientSecret,
+                username: WallabagUserDefaults.login,
+                password: WallabagUserDefaults.password
+            )
         }
     }
 

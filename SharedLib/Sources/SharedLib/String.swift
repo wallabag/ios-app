@@ -37,7 +37,7 @@ public extension String {
         URL(string: self)
     }
 
-    @available(iOS 13.0, *)
+    @available(iOS 13.0, macOS 10.15, *)
     var md5: String {
         Insecure.MD5.hash(data: data(using: .utf8)!).map {
             String(format: "%02hhx", $0)

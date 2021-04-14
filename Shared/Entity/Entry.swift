@@ -1,6 +1,7 @@
 import CoreData
 import CoreSpotlight
 import Foundation
+import SharedLib
 // import MobileCoreServices
 import WallabagKit
 
