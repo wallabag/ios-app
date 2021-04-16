@@ -1,0 +1,26 @@
+name: Swift
+
+on:
+  push:
+    branches:
+      - "multiplatform"
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Select Xcode Version
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: latest-stable
+#    - name: Run lint
+#      run: |
+#        brew install swiftformat
+#        swiftformat --lint .
+    - name: Bundle install
+      run: |
+        bundle install
+    - name: Run tests 
+      run: |
+        bundle exec fastlane test
