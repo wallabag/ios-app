@@ -13,6 +13,7 @@ excluded:
   - SnapshotHelper.swift
   - fastlane/SnapshotHelper.swift
   - MyPlayground.playground
+  - vendor
 line_length: 300
 identifier_name:
   excluded:
