@@ -1,12 +1,12 @@
 import Foundation
 
-enum RetrieveMode: String, CaseIterable {
+public enum RetrieveMode: String, CaseIterable {
     case allArticles = "All"
     case archivedArticles = "Read"
     case unarchivedArticles = "Unread"
     case starredArticles = "Starred"
 
-    init(fromCase: String) {
+    public init(fromCase: String) {
         switch fromCase {
         case "allArticles":
             self = .allArticles
@@ -21,7 +21,7 @@ enum RetrieveMode: String, CaseIterable {
         }
     }
 
-    func predicate() -> NSPredicate {
+    public func predicate() -> NSPredicate {
         switch self {
         case .unarchivedArticles:
             return NSPredicate(format: "isArchived == NO")

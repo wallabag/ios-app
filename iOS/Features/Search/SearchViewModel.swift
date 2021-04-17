@@ -1,5 +1,6 @@
 import Combine
 import Foundation
+import SharedLib
 
 class SearchViewModel: ObservableObject {
     @Published var search: String = ""

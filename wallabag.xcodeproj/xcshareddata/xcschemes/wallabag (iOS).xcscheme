@@ -48,6 +48,16 @@
                ReferencedContainer = "container:SharedLib">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "094AA03A2629EB1F006E5605"
+               BuildableName = "wallabagTests.xctest"
+               BlueprintName = "wallabagTests"
+               ReferencedContainer = "container:wallabag.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

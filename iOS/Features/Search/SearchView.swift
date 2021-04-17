@@ -1,4 +1,5 @@
 import Foundation
+import SharedLib
 import SwiftUI
 
 struct SearchView: View {

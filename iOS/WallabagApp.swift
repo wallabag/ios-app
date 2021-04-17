@@ -1,5 +1,6 @@
 import Foundation
 import os
+import SharedLib
 import SwiftUI
 
 let logger = Logger(subsystem: "fr.district-web.wallabag", category: "main")

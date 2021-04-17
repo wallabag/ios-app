@@ -103,6 +103,6 @@ class WallabagSession: ObservableObject {
                 entry.tags.insert(tag)
             }
         }
-        // try? coreDataContext.save()
+        try? coreDataContext.save()
     }
 }
