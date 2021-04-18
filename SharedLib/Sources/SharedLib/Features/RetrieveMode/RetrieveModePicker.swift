@@ -1,6 +1,6 @@
 import SwiftUI
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 public struct RetrieveModePicker: View {
     @Binding var filter: RetrieveMode
 
@@ -18,7 +18,7 @@ public struct RetrieveModePicker: View {
     }
 }
 
-@available(iOS 13.0, *)
+@available(iOS 13.0, macOS 10.15, *)
 struct RetrieveModePicker_Previews: PreviewProvider {
     static var previews: some View {
         RetrieveModePicker(filter: .constant(.archivedArticles)).previewLayout(.fixed(width: 300, height: 70))
