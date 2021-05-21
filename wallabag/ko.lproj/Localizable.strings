@@ -1,1 +1,48 @@
 
+
+"Starred" = "즐겨찾기";
+"Bug report" = "버그 신고";
+"Unread" = "읽지않음";
+
+//Player
+"Select one entry" = "항목 하나를 선택하세요";
+"Made by Maxime Marinel @bourvill" = "만든 사람 Maxime Marinel @bourvill";
+
+// About
+"Project page" = "프로젝트 페이지";
+
+// Entry
+"Reading time %@" = "읽은 시간 %@";
+
+// Search
+"Search" = "검색";
+"Confirm delete?" = "삭제하시겠습니까?";
+"Cancel" = "취소";
+"Add" = "추가";
+"Back" = "뒤로가기";
+
+// Common
+"Submit" = "보내기";
+"It seems impossible to make a payment." = "결제할 수 없는 것 같습니다.";
+"Loading..." = "로드 중...";
+"But you can contribute financially by making a donation whenever you want to support the project." = "하지만, 이 앱이 훌륭하다고 생각한다면 기부를 통해, 이 프로젝트를 재정적으로 지원 할 수 있습니다.";
+"It is free and will remain so." = "무료이며, 그대로 유지됩니다.";
+
+// Tip View
+"This application is developed on free time" = "이 프로그램은 자유 시간에 개발되었습니다";
+
+// PasteBoard View
+"New url in pasteboard detected" = "클립보드에서 새로운 URL을 발견했습니다";
+"Read" = "읽음";
+
+// Picker
+"All" = "모두";
+"Logout" = "로그아웃";
+"Setting" = "설정";
+"Don" = "기부";
+"About" = "앱 정보";
+"Add entry" = "기사 추가";
+"Entries" = "기사";
+
+// Menu
+"Menu" = "메뉴";

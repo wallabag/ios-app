@@ -17,3 +17,32 @@
 
 // Menu
 "Menu" = "Nabídka";
+
+//Player
+"Select one entry" = "Vyberte jednu položku";
+"Made by Maxime Marinel @bourvill" = "Vytvořil Maxime Marinel @bourvill";
+
+// About
+"Project page" = "Stránka projektu";
+
+// Entry
+"Reading time %@" = "Čas čtení %@";
+
+// Search
+"Search" = "Hledat";
+"Confirm delete?" = "Potvrdit odstranění?";
+
+// Common
+"Submit" = "Odeslat";
+"It seems impossible to make a payment." = "Zdá se, že není možné provést platbu.";
+"But you can contribute financially by making a donation whenever you want to support the project." = "Můžete však přispět finančním darem, kdykoliv budete chtít projekt podpořit.";
+"It is free and will remain so." = "Je zdarma, a tak to zůstane.";
+
+// Tip View
+"This application is developed on free time" = "Tato aplikace je vyvíjena ve volném čase";
+
+// PasteBoard View
+"New url in pasteboard detected" = "Na odkládací ploše byla rozpoznána nová adresa URL";
+"Starred" = "Označené hvězdičkou";
+"Don" = "Darovat";
+"About" = "O aplikaci";
