@@ -93,7 +93,7 @@ class ShareViewController: UIViewController {
                 attachment.loadItem(
                     forTypeIdentifier: propertyList,
                     options: nil,
-                    completionHandler: { (item, _) -> Void in
+                    completionHandler: { item, _ -> Void in
                         guard let dictionary = item as? NSDictionary,
                               let results = dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
                               let href = results["href"] as? String
