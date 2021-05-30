@@ -5,6 +5,8 @@ struct RegistrationView: View {
         NavigationView {
             VStack {
                 Image("logo")
+                    .resizable()
+                    .scaledToFit()
                 Text("Wallabag").font(.title)
                 NavigationLink("Log in", destination: ServerView())
             }.navigationBarHidden(true)

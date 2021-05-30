@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ServerView: View {
-    @ObservedObject var serverViewModel = ServerViewModel()
+    @StateObject var serverViewModel = ServerViewModel()
 
     var body: some View {
         Form {

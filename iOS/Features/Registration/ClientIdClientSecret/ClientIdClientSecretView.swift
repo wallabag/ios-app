@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ClientIdClientSecretView: View {
-    @ObservedObject var clientIdSecretViewModel = ClientIdSecretViewModel()
+    @StateObject var clientIdSecretViewModel = ClientIdSecretViewModel()
 
     var body: some View {
         Form {
