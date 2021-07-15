@@ -25,7 +25,7 @@ class LoginViewModel: ObservableObject {
             case .connected:
                 self.appState.registred = true
                 #warning("Fix router load")
-            // self.router.load(.entries)
+                self.router.load(.entries)
             case .unknown:
                 break
             case .connecting:

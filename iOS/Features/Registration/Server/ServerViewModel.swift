@@ -11,9 +11,8 @@ class ServerViewModel: ObservableObject {
 
     init() {
         url = WallabagUserDefaults.host
-        cancellable = $url.print().sink { [unowned self] url in
+        cancellable = $url.sink { [unowned self] url in
             self.isValid = self.validateServer(host: url)
-            print(isValid)
             if self.isValid {
                 WallabagUserDefaults.host = url
             }

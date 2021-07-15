@@ -53,7 +53,7 @@ struct MenuView: View {
                         Label("Logout", systemImage: "person")
                     }.foregroundColor(.red)
                 }
-            }
+            }.listStyle(InsetListStyle())
         }
         .background(Color(UIColor.systemBackground))
     }

@@ -24,5 +24,6 @@ struct EntriesListView: View {
                     }
             }).buttonStyle(PlainButtonStyle())
         }
+        .listStyle(InsetListStyle())
     }
 }
