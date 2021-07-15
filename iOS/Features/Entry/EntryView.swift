@@ -4,6 +4,7 @@ import SwiftUI
 
 struct EntryView: View {
     @Environment(\.managedObjectContext) var context: NSManagedObjectContext
+    @Environment(\.openURL) var openURL
     @EnvironmentObject var appSync: AppSync
     @EnvironmentObject var router: Router
     @EnvironmentObject var player: PlayerPublisher
@@ -57,7 +58,7 @@ struct EntryView: View {
                     Label("Delete", systemImage: "trash")
                 })
                 Button(action: {
-                    self.openInSafari(self.entry.url)
+                    openURL(self.entry.url!.url!)
                 }, label: {
                     Label("Open in safari", systemImage: "safari")
                 })

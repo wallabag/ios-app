@@ -2,6 +2,7 @@ import SwiftUI
 
 struct MenuView: View {
     @EnvironmentObject var appState: AppState
+    @Environment(\.openURL) var openURL
     @EnvironmentObject var router: Router
     @Binding var showMenu: Bool
 
@@ -40,7 +41,7 @@ struct MenuView: View {
                         withAnimation {
                             self.showMenu = false
                         }
-                        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
+                        openURL(URL(string: UIApplication.openSettingsURLString)!)
                     }) {
                         Label("Setting", systemImage: "gear")
                     }

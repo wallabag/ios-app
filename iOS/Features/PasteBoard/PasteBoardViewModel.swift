@@ -19,7 +19,7 @@ class PasteBoardViewModel: ObservableObject {
 
     init() {
         cancellableNotification = NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)
-            .map { (_) -> Bool in
+            .map { _ -> Bool in
                 guard let pasteBoardUrl = UIPasteboard.general.url,
                       pasteBoardUrl.absoluteString != WallabagUserDefaults.previousPasteBoardUrl
                 else {
