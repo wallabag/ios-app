@@ -17,7 +17,7 @@ struct TipView: View {
                             action: { self.tipViewModel.purchaseTip() },
                             label: {
                                 self.tipViewModel.tipProduct.map { product in
-                                    Text(product.title)
+                                    Text(product.displayName)
                                 }
                             }
                         )

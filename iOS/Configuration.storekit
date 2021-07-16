@@ -1,0 +1,33 @@
+{
+  "identifier" : "98370847",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "FE8C892D",
+      "localizations" : [
+        {
+          "description" : "tips1",
+          "displayName" : "tips1",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "tips1",
+      "referenceName" : "tips1",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 1,
+    "minor" : 1
+  }
+}
