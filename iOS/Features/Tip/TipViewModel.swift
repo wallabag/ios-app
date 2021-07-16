@@ -1,19 +1,14 @@
 import Foundation
 import StoreKit
-import SwiftUI
 
-class TipViewModel: NSObject, ObservableObject {
+final class TipViewModel: ObservableObject {
     @Published var canMakePayments: Bool = false
-
-    @Published var transactionSuccess: Bool = false
     @Published var tipProduct: Product?
+    @Published var paymentSuccess = false
 
-    var transactionInProgress: Bool = false
+    var taskHandle: Task<Void, Error>?
 
-    override init() {
-        super.init()
-        SKPaymentQueue.default().add(self)
-
+    init() {
         canMakePayments = SKPaymentQueue.canMakePayments()
         if canMakePayments {
             Task {
@@ -21,59 +16,56 @@ class TipViewModel: NSObject, ObservableObject {
                 tipProduct = product?.first
             }
         }
+
+        taskHandle = listenForTransactions()
     }
 
+    @MainActor
     private func requestProduct() async throws -> [Product] {
-        return try await Product.products(for: ["tips1"])
-        let productRequest = SKProductsRequest(productIdentifiers: ["tips1"])
-        productRequest.delegate = self
-        productRequest.start()
+        try await Product.products(for: ["tips1"])
     }
 
-    func purchaseTip() {
-        guard let product = tipProduct else { return }
-
-        Task {
-            let result = try await product.purchase()
-        }
-
-        /*let payment = SKPayment(product: product)
-        SKPaymentQueue.default().add(payment)*/
-        transactionInProgress = true
-    }
-}
-
-extension TipViewModel: SKProductsRequestDelegate {
-    func productsRequest(_: SKProductsRequest, didReceive response: SKProductsResponse) {
-        if response.products.count != 0 {
-            response.products.first.map { product in
-                DispatchQueue.main.async { [weak self] in
-                    withAnimation {
-                        //self?.tipProduct = product
-                    }
+    func listenForTransactions() -> Task<Void, Error> {
+        Task.detached {
+            for await result in Transaction.updates {
+                do {
+                    let transaction = try self.checkVerified(result)
+                    await transaction.finish()
+                } catch {
+                    print("Transaction failed verification")
                 }
             }
         }
     }
-}
 
-extension TipViewModel: SKPaymentTransactionObserver {
-    func paymentQueue(_: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-        defer {
-            transactionInProgress = false
-        }
-
-        transactions.forEach { transaction in
-            switch transaction.transactionState {
-            case .purchased:
-                SKPaymentQueue.default().finishTransaction(transaction)
-                self.transactionSuccess = true
-            case .failed:
-                SKPaymentQueue.default().finishTransaction(transaction)
-
-            default:
-                break
-            }
+    func checkVerified<T>(_ result: VerificationResult<T>) throws -> T {
+        switch result {
+        case .unverified:
+            throw StoreError.failedVerification
+        case let .verified(safe):
+            return safe
         }
     }
+
+    func purchaseTip() async throws -> StoreKit.Transaction? {
+        guard let product = tipProduct else { return nil }
+
+        let result = try await product.purchase()
+
+        switch result {
+        case let .success(verification):
+            let transaction = try checkVerified(verification)
+            await transaction.finish()
+            paymentSuccess = true
+            return transaction
+        case .userCancelled, .pending:
+            return nil
+        default:
+            return nil
+        }
+    }
+}
+
+public enum StoreError: Error {
+    case failedVerification
 }

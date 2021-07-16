@@ -2,7 +2,7 @@
   "object": {
     "pins": [
       {
-        "package": "swift-html-entities",
+        "package": "HTMLEntities",
         "repositoryURL": "https://github.com/IBM-Swift/swift-html-entities.git",
         "state": {
           "branch": null,
