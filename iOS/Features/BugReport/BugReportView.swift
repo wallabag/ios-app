@@ -13,7 +13,7 @@ struct BugReportView: View {
             """)
             Spacer()
             Link("Report issue", destination: "https://github.com/wallabag/ios-app/issues")
-        }
+        }.padding()
     }
 }
 
