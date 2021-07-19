@@ -16,9 +16,9 @@ struct SidebarView: View {
             List {
                 Button(action: {
                     Router.shared.load(.registration)
-                }) {
+                }, label: {
                     Label("Account", systemImage: "person")
-                }
+                })
             }.listStyle(SidebarListStyle())
         }
     }
@@ -27,16 +27,5 @@ struct SidebarView: View {
 struct SidebarView_Previews: PreviewProvider {
     static var previews: some View {
         SidebarView()
-    }
-}
-
-struct Register: View {
-    @State var server: String = ""
-    var body: some View {
-        Form {
-            Section {
-                TextField("Server", text: $server)
-            }
-        }
     }
 }
