@@ -15,7 +15,7 @@ struct RefreshButton: View {
                     Image(systemName: "arrow.counterclockwise")
                         .frame(width: 34, height: 34, alignment: .center)
                         .rotationEffect(.degrees(appSync.inProgress ? 0 : 360))
-                        .animation(Animation.spring().repeatForever(autoreverses: false))
+                        .animation(.spring().repeatForever(autoreverses: false), value: appSync.inProgress)
                 }
             ).disabled(appSync.inProgress)
                 .buttonStyle(PlainButtonStyle())
