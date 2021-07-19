@@ -1,19 +1,13 @@
 import CoreSpotlight
-import MetricKit
 import Swinject
 import UIKit
 import UserNotifications
 import WallabagKit
 
-extension AppDelegate: MXMetricManagerSubscriber {
-    func didReceive(_: [MXMetricPayload]) {}
-}
-
 final class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        MXMetricManager.shared.add(self)
         #if DEBUG
             let args = ProcessInfo.processInfo.arguments
 
@@ -32,7 +26,6 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_: UIApplication) {
-        MXMetricManager.shared.remove(self)
     }
 
     private func requestBadge() {
