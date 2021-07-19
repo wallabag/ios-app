@@ -19,7 +19,6 @@ final class DependencyInjection {
         }).inObjectScope(.container)
         container.register(WallabagSession.self, factory: { _ in WallabagSession() }).inObjectScope(.container)
         container.register(AppSync.self, factory: { _ in AppSync.shared }).inObjectScope(.container)
-        container.register(ArticlePlayer.self) { _ in ArticlePlayer() }.inObjectScope(.container)
         container.register(ImageDownloader.self, factory: { _ in ImageDownloader.shared }).inObjectScope(.container)
         container.register(AppState.self, factory: { _ in AppState.shared }).inObjectScope(.container)
         container.register(Router.self, factory: { _ in Router.shared }).inObjectScope(.container)

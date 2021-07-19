@@ -53,7 +53,6 @@
 		09644B8C25C98176000FFDA1 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B8825C98176000FFDA1 /* Route.swift */; };
 		09644B9725C9819F000FFDA1 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B9425C9819F000FFDA1 /* PlayerView.swift */; };
 		09644B9825C9819F000FFDA1 /* PlayerPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B9525C9819F000FFDA1 /* PlayerPublisher.swift */; };
-		09644B9925C9819F000FFDA1 /* ArticlePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B9625C9819F000FFDA1 /* ArticlePlayer.swift */; };
 		09644BA225C981B4000FFDA1 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644BA025C981B4000FFDA1 /* ErrorView.swift */; };
 		09644BA325C981B4000FFDA1 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644BA125C981B4000FFDA1 /* ErrorViewModel.swift */; };
 		09644BAD25C98213000FFDA1 /* CoreDataSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644BAA25C98213000FFDA1 /* CoreDataSync.swift */; };
@@ -240,7 +239,6 @@
 		09644B8825C98176000FFDA1 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		09644B9425C9819F000FFDA1 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		09644B9525C9819F000FFDA1 /* PlayerPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerPublisher.swift; sourceTree = "<group>"; };
-		09644B9625C9819F000FFDA1 /* ArticlePlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlePlayer.swift; sourceTree = "<group>"; };
 		09644BA025C981B4000FFDA1 /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		09644BA125C981B4000FFDA1 /* ErrorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 		09644BAA25C98213000FFDA1 /* CoreDataSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataSync.swift; sourceTree = "<group>"; };
@@ -557,7 +555,6 @@
 		09644B9325C98191000FFDA1 /* Player */ = {
 			isa = PBXGroup;
 			children = (
-				09644B9625C9819F000FFDA1 /* ArticlePlayer.swift */,
 				09644B9525C9819F000FFDA1 /* PlayerPublisher.swift */,
 				09644B9425C9819F000FFDA1 /* PlayerView.swift */,
 			);
@@ -1285,7 +1282,6 @@
 				09644D1825C98755000FFDA1 /* AppDelegateExtension.swift in Sources */,
 				09644BD825C9833E000FFDA1 /* DependencyInjection.swift in Sources */,
 				09644B5725C9810A000FFDA1 /* WallabagApp.swift in Sources */,
-				09644B9925C9819F000FFDA1 /* ArticlePlayer.swift in Sources */,
 				09644C6F25C985A9000FFDA1 /* EntryPictoImage.swift in Sources */,
 				09644C9E25C98615000FFDA1 /* MainView.swift in Sources */,
 				09644CB825C98660000FFDA1 /* Menu.swift in Sources */,
