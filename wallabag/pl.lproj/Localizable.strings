@@ -1,1 +1,48 @@
 
+
+"Read" = "Czytaj";
+
+//Player
+"Select one entry" = "Wybierz jeden wpis";
+"Made by Maxime Marinel @bourvill" = "Wykonane przez Maxime Marinel @bourvill";
+
+// About
+"Project page" = "Strona projektu";
+
+// Entry
+"Reading time %@" = "Czas czytania %@";
+
+// Search
+"Search" = "Szukaj";
+"Confirm delete?" = "Potwierdzić usunięcie?";
+"Cancel" = "Anuluj";
+"Add" = "Dodaj";
+"Back" = "Cofnij";
+
+// Common
+"Submit" = "Zatwierdź";
+"It seems impossible to make a payment." = "Wygląda na to, że nie można wykonać płatności.";
+"Loading..." = "Ładowanie...";
+"But you can contribute financially by making a donation whenever you want to support the project." = "Możesz jednak wesprzeć projekt finansowo, wpłacając darowiznę, kiedy tylko chcesz.";
+"It is free and will remain so." = "Jest wolna i tak pozostanie.";
+
+// Tip View
+"This application is developed on free time" = "Ta aplikacja została napisana w wolnym czasie";
+
+// PasteBoard View
+"New url in pasteboard detected" = "Wykryto nowy adres URL w schowku";
+"Don" = "Darowizna";
+"About" = "O nas";
+"Add entry" = "Dodaj wpis";
+"Starred" = "Wyróżnione";
+"Bug report" = "Raport błędu";
+"Entries" = "Wpisy";
+"Unread" = "Nieprzeczytane";
+
+// Picker
+"All" = "Wszystko";
+"Logout" = "Wyloguj się";
+"Setting" = "Ustawienie";
+
+// Menu
+"Menu" = "Menu";
