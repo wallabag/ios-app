@@ -2,7 +2,7 @@
   "object": {
     "pins": [
       {
-        "package": "swift-html-entities",
+        "package": "HTMLEntities",
         "repositoryURL": "https://github.com/IBM-Swift/swift-html-entities.git",
         "state": {
           "branch": null,
@@ -17,15 +17,6 @@
           "branch": null,
           "revision": "8a76d2c74bafbb455763487cc6a08e91bad1f78b",
           "version": "2.7.1"
-        }
-      },
-      {
-        "package": "WallabagKit",
-        "repositoryURL": "https://github.com/wallabag/WallabagKit.git",
-        "state": {
-          "branch": "master",
-          "revision": "6f83586b893f876e447ae68d1f7c0508bdc8a3bb",
-          "version": null
         }
       }
     ]
