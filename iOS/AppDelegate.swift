@@ -25,8 +25,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.beginReceivingRemoteControlEvents()
     }
 
-    func applicationWillTerminate(_: UIApplication) {
-    }
+    func applicationWillTerminate(_: UIApplication) {}
 
     private func requestBadge() {
         if WallabagUserDefaults.badgeEnabled {

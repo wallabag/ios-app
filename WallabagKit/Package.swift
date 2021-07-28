@@ -3,22 +3,23 @@
 import PackageDescription
 
 let package = Package(
-    name: "SharedLib",
+    name: "WallabagKit",
+    platforms: [.iOS(.v15), .macOS(.v11)],
     products: [
         .library(
-            name: "SharedLib",
-            targets: ["SharedLib"]
+            name: "WallabagKit",
+            targets: ["WallabagKit"]
         ),
     ],
     dependencies: [],
     targets: [
         .target(
-            name: "SharedLib",
+            name: "WallabagKit",
             dependencies: []
         ),
         .testTarget(
-            name: "SharedLibTests",
-            dependencies: ["SharedLib"]
+            name: "WallabagKitTests",
+            dependencies: ["WallabagKit"]
         ),
     ]
 )

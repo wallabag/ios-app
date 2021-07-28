@@ -12,7 +12,6 @@ struct RegistrationView: View {
                 NavigationLink("Log in", destination: ServerView())
             }.navigationBarHidden(true)
         }.navigationViewStyle(StackNavigationViewStyle())
-        #warning("Fix navigation style")
     }
 }
 

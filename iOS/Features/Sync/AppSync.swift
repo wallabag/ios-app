@@ -3,7 +3,58 @@ import CoreData
 import Foundation
 import WallabagKit
 
+extension WallabagKit {
+    func requestTest(to: WallabagKitEndpoint) -> URLRequest {
+        var urlRequest = URLRequest(url: URL(string: "https://wallabag.maxime.marinel.me\(to.endpoint())")!)
+        urlRequest.httpMethod = to.method().rawValue
+        urlRequest.httpBody = to.getBody()
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue("Bearer \(accessToken ?? "")", forHTTPHeaderField: "Authorization")
+
+        return urlRequest
+    }
+}
+
+struct EntriesFetcher: AsyncSequence, AsyncIteratorProtocol {
+    typealias Element = [WallabagEntry]
+    @Injector var session: WallabagSession
+    private var page = 1
+    private var perPage = 50
+
+    mutating func next() async throws -> [WallabagEntry]? {
+        try await fetchData()
+    }
+
+    private mutating func fetchData() async throws -> [WallabagEntry]? {
+        defer {
+            page += 1
+        }
+        let request = session.kit.requestTest(to: WallabagEntryEndpoint.get(page: page, perPage: perPage))
+        let (data, _) = try await URLSession.shared.data(for: request)
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return try decoder.decode(WallabagCollection<WallabagEntry>.self, from: data).items
+    }
+
+    func makeAsyncIterator() -> EntriesFetcher {
+        self
+    }
+}
+
 class AppSync: ObservableObject {
+    func fetchEntries() async {
+        let sequence = EntriesFetcher()
+        do {
+            for try await data in sequence {
+                handleEntries(data)
+            }
+        } catch {
+            print(error)
+            print("error")
+        }
+    }
+
     static var shared = AppSync()
     @Injector var session: WallabagSession
     @Injector var errorViewModel: ErrorViewModel
@@ -31,16 +82,19 @@ class AppSync: ObservableObject {
     private var tags: [Int: Tag] = [:]
 
     func requestSync() {
-        inProgress = true
-        sync()
+        Task {
+            await fetchEntries()
+        }
+        /* inProgress = true
+         sync() */
     }
 
     private func sync() {
-        progress = 0.0
-        entriesSynced = []
+        /* progress = 0.0
+         entriesSynced = []
 
-        synchronizeTags()
-        synchronizeEntries()
+         synchronizeTags()
+         synchronizeEntries() */
     }
 }
 

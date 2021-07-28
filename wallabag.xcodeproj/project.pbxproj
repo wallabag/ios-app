@@ -211,7 +211,6 @@
 		093D13D026263B2E008C2150 /* Shortcuts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Shortcuts.entitlements; sourceTree = "<group>"; };
 		093D13D726263CC4008C2150 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
 		093D13EB26263F81008C2150 /* AddEntryIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryIntentHandler.swift; sourceTree = "<group>"; };
-		093D145626264A7C008C2150 /* SharedLib */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SharedLib; sourceTree = "<group>"; };
 		094A9FED2629E6BB006E5605 /* ImageCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheTests.swift; sourceTree = "<group>"; };
 		094AA00F2629E739006E5605 /* ImageDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderTests.swift; sourceTree = "<group>"; };
 		094AA03B2629EB1F006E5605 /* wallabagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -833,7 +832,6 @@
 		09BFB27425C8348E00E12B4D = {
 			isa = PBXGroup;
 			children = (
-				093D145626264A7C008C2150 /* SharedLib */,
 				09AD75962624F4E800708A1E /* wallabag.entitlements */,
 				09644ACF25C94825000FFDA1 /* bagit */,
 				09644B1525C94CA6000FFDA1 /* Frameworks */,
@@ -1462,7 +1460,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = Shortcuts/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1484,7 +1482,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = Shortcuts/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1553,7 +1551,7 @@
 				CURRENT_PROJECT_VERSION = 305;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = bagit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1577,7 +1575,7 @@
 				CURRENT_PROJECT_VERSION = 305;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = bagit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
