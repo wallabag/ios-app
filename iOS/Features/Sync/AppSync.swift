@@ -3,58 +3,7 @@ import CoreData
 import Foundation
 import WallabagKit
 
-extension WallabagKit {
-    func requestTest(to: WallabagKitEndpoint) -> URLRequest {
-        var urlRequest = URLRequest(url: URL(string: "https://wallabag.maxime.marinel.me\(to.endpoint())")!)
-        urlRequest.httpMethod = to.method().rawValue
-        urlRequest.httpBody = to.getBody()
-        urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
-        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        urlRequest.setValue("Bearer \(accessToken ?? "")", forHTTPHeaderField: "Authorization")
-
-        return urlRequest
-    }
-}
-
-struct EntriesFetcher: AsyncSequence, AsyncIteratorProtocol {
-    typealias Element = [WallabagEntry]
-    @Injector var session: WallabagSession
-    private var page = 1
-    private var perPage = 50
-
-    mutating func next() async throws -> [WallabagEntry]? {
-        try await fetchData()
-    }
-
-    private mutating func fetchData() async throws -> [WallabagEntry]? {
-        defer {
-            page += 1
-        }
-        let request = session.kit.requestTest(to: WallabagEntryEndpoint.get(page: page, perPage: perPage))
-        let (data, _) = try await URLSession.shared.data(for: request)
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        return try decoder.decode(WallabagCollection<WallabagEntry>.self, from: data).items
-    }
-
-    func makeAsyncIterator() -> EntriesFetcher {
-        self
-    }
-}
-
 class AppSync: ObservableObject {
-    func fetchEntries() async {
-        let sequence = EntriesFetcher()
-        do {
-            for try await data in sequence {
-                handleEntries(data)
-            }
-        } catch {
-            print(error)
-            print("error")
-        }
-    }
-
     static var shared = AppSync()
     @Injector var session: WallabagSession
     @Injector var errorViewModel: ErrorViewModel
@@ -63,15 +12,6 @@ class AppSync: ObservableObject {
     @Published private(set) var inProgress = false
     @Published private(set) var progress: Float = 0.0
 
-    private let operationQueue: OperationQueue = {
-        let queue = OperationQueue()
-        queue.name = "fr.district-web.wallabag.sync-queue"
-        queue.qualityOfService = .userInitiated
-        queue.maxConcurrentOperationCount = 1
-        return queue
-    }()
-
-    private var cancellable = Set<AnyCancellable>()
     private var backgroundContext: NSManagedObjectContext = {
         let context = CoreData.shared.persistentContainer.newBackgroundContext()
         context.mergePolicy = NSOverwriteMergePolicy
@@ -82,75 +22,36 @@ class AppSync: ObservableObject {
     private var tags: [Int: Tag] = [:]
 
     func requestSync() {
+        progress = 0
+        entriesSynced = []
         Task {
-            await fetchEntries()
+            await synchronizeEntries()
+            await synchronizeTags()
+            purge()
+            await MainActor.run {
+                self.inProgress = false
+            }
         }
-        /* inProgress = true
-         sync() */
-    }
-
-    private func sync() {
-        /* progress = 0.0
-         entriesSynced = []
-
-         synchronizeTags()
-         synchronizeEntries() */
+        inProgress = true
     }
 }
 
 // MARK: - Entry
 
 extension AppSync {
-    private func synchronizeEntries() {
-        let errorSubject = PassthroughSubject<Publishers.ScrollPublisher.Output, WallabagKitError>()
-        errorSubject
-            .mapError { WallabagError.wallabagKitError($0) }
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case let .failure(error):
-                    self.errorViewModel.setLast(error)
-                case .finished:
-                    break
+    func synchronizeEntries() async {
+        let sequence = EntriesFetcher(session.kit)
+        do {
+            for try await data in sequence {
+                handleEntries(data.0)
+                await MainActor.run {
+                    self.progress = data.1
                 }
-            }, receiveValue: { _ in
-
-            }).store(in: &cancellable)
-        let progressSubject = PassthroughSubject<Publishers.ScrollPublisher.Output, WallabagKitError>()
-        progressSubject.map { Float($0.0.0) / Float($0.0.1) * 100 }
-            .replaceError(with: 0)
-            .receive(on: DispatchQueue.main)
-            .handleEvents(receiveCompletion: { completion in
-                if completion == .finished {
-                    self.inProgress = false
-                }
-            })
-            .assign(to: \.progress, on: self)
-            .store(in: &cancellable)
-
-        let entriesSubject = PassthroughSubject<Publishers.ScrollPublisher.Output, WallabagKitError>()
-        entriesSubject.map(\.1)
-            .replaceError(with: [])
-            .handleEvents(receiveCompletion: { completion in
-                if completion == .finished {
-                    self.purge()
-                    try? self.backgroundContext.save()
-                    self.backgroundContext.reset()
-                }
-            })
-            .sink(receiveValue: handleEntries(_:))
-            .store(in: &cancellable)
-
-        let scroll = Publishers.ScrollPublisher(kit: session.kit)
-            .subscribe(on: operationQueue)
-            .share()
-
-        scroll.subscribe(errorSubject)
-            .store(in: &cancellable)
-        scroll.subscribe(entriesSubject)
-            .store(in: &cancellable)
-        scroll.subscribe(progressSubject)
-            .store(in: &cancellable)
+            }
+        } catch {
+            print(error)
+            print("error")
+        }
     }
 
     private func handleEntries(_ wallabagEntries: [WallabagEntry]) {
@@ -210,23 +111,25 @@ extension AppSync {
         }
     }
 
-    private func synchronizeTags() {
-        session.kit.send(to: WallabagTagEndpoint.get)
-            .subscribe(on: operationQueue)
-            .sink(receiveCompletion: { _ in },
-                  receiveValue: { (tags: [WallabagTag]) in
-                      tags.forEach { wallabagTag in
-                          if let tag = try? self.backgroundContext.fetch(Tag.fetchOneById(wallabagTag.id)).first {
-                              self.tags[tag.id] = tag
-                          } else {
-                              let tag = Tag(context: self.backgroundContext)
-                              tag.id = wallabagTag.id
-                              tag.label = wallabagTag.label
-                              tag.slug = wallabagTag.slug
-                              self.tags[wallabagTag.id] = tag
-                          }
-                      }
-                  })
-            .store(in: &cancellable)
+    private func fetchTags() async throws -> [WallabagTag] {
+        let request = session.kit.request(for: WallabagTagEndpoint.get)
+        let (data, _) = try await URLSession.shared.data(for: request)
+        return try session.kit.decoder.decode([WallabagTag].self, from: data)
+    }
+
+    private func synchronizeTags() async {
+        do {
+            try await fetchTags().forEach { wallabagTag in
+                if let tag = try? self.backgroundContext.fetch(Tag.fetchOneById(wallabagTag.id)).first {
+                    self.tags[tag.id] = tag
+                } else {
+                    let tag = Tag(context: self.backgroundContext)
+                    tag.id = wallabagTag.id
+                    tag.label = wallabagTag.label
+                    tag.slug = wallabagTag.slug
+                    self.tags[wallabagTag.id] = tag
+                }
+            }
+        } catch _ {}
     }
 }

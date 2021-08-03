@@ -11,7 +11,7 @@ import Foundation
 public class WallabagKit {
     public typealias Parameters = [String: Any]
 
-    private var decoder: JSONDecoder = {
+    public var decoder: JSONDecoder = {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         return decoder
@@ -79,10 +79,7 @@ public class WallabagKit {
     }
 
     private func fetch(to: WallabagKitEndpoint) -> AnyPublisher<Data, WallabagKitError> {
-        var urlRequest = request(for: to)
-        urlRequest.setValue("Bearer \(accessToken ?? "")", forHTTPHeaderField: "Authorization")
-
-        return session.dataTaskPublisher(for: urlRequest)
+        session.dataTaskPublisher(for: request(for: to, withAuth: true))
             .tryMap { data, response in
                 guard let response = response as? HTTPURLResponse else { fatalError() }
 
@@ -116,12 +113,16 @@ public class WallabagKit {
             .eraseToAnyPublisher()
     }
 
-    private func request(for endpoint: WallabagKitEndpoint) -> URLRequest {
+    public func request(for endpoint: WallabagKitEndpoint, withAuth: Bool = false) -> URLRequest {
         var urlRequest = URLRequest(url: URL(string: "\(host)\(endpoint.endpoint())")!)
         urlRequest.httpMethod = endpoint.method().rawValue
         urlRequest.httpBody = endpoint.getBody()
         urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        if withAuth {
+            urlRequest.setValue("Bearer \(accessToken ?? "")", forHTTPHeaderField: "Authorization")
+        }
 
         return urlRequest
     }
