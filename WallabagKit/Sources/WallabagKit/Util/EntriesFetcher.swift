@@ -22,6 +22,7 @@ public struct EntriesFetcher: AsyncSequence, AsyncIteratorProtocol {
         let request = kit.request(for: WallabagEntryEndpoint.get(page: page, perPage: perPage), withAuth: true)
         let (data, _) = try await URLSession.shared.data(for: request)
         let result = try kit.decoder.decode(WallabagCollection<WallabagEntry>.self, from: data)
+        guard result.pages > page else { return nil }
         return (result.items, (Float(result.page) / Float(result.pages)) * 100)
     }
 

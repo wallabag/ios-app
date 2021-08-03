@@ -24,7 +24,7 @@ class AppSync: ObservableObject {
     func requestSync() {
         progress = 0
         entriesSynced = []
-        Task {
+        Task(priority: .background) {
             await synchronizeEntries()
             await synchronizeTags()
             purge()
@@ -49,8 +49,7 @@ extension AppSync {
                 }
             }
         } catch {
-            print(error)
-            print("error")
+            errorViewModel.setLast(.wallabagKitError(error))
         }
     }
 
