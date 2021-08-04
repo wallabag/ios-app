@@ -1,10 +1,3 @@
-//
-//  WallabagTag.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 23/10/2019.
-//
-
 import Foundation
 
 public enum WallabagTagEndpoint: WallabagKitEndpoint {
@@ -25,10 +18,4 @@ public enum WallabagTagEndpoint: WallabagKitEndpoint {
     public func requireAuth() -> Bool {
         true
     }
-}
-
-public struct WallabagTag: Decodable {
-    public let id: Int
-    public let label: String
-    public let slug: String
 }

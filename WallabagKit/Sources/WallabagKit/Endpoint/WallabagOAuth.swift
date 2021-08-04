@@ -1,18 +1,4 @@
-//
-//  WallabagOAuth.swift
-//  wallabag
-//
-//  Created by Marinel Maxime on 13/10/2019.
-//
-
 import Foundation
-
-public struct WallabagToken: Decodable {
-    public let accessToken: String
-    public let expiresIn: Int
-    public let tokenType: String
-    public let refreshToken: String
-}
 
 enum WallabagOauth: WallabagKitEndpoint {
     func method() -> HttpMethod {
