@@ -40,3 +40,11 @@
 
 // Search
 "Search" = "Поиск";
+
+//Player
+"Select one entry" = "Выберите одну запись";
+"Confirm delete?" = "Подтвердить удаление?";
+
+// PasteBoard View
+"New url in pasteboard detected" = "Обнаружен новый url в панели вставки";
+"Don" = "Пожертвование";
