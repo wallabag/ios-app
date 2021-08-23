@@ -60,7 +60,7 @@ struct EntryView: View {
                 Button(action: {
                     openURL(self.entry.url!.url!)
                 }, label: {
-                    Label("Open in safari", systemImage: "safari")
+                    Label("Open in Safari", systemImage: "safari")
                 })
                 Button(action: {
                     self.showTag.toggle()
