@@ -14,6 +14,7 @@
 		0916CDBC25F0E04D000DC311 /* wallabagStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09644D1E25C98782000FFDA1 /* wallabagStore.xcdatamodeld */; };
 		0916CDE725F0E54C000DC311 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0916CDE625F0E54C000DC311 /* RegistrationView.swift */; };
 		0916CDF725F0E5BD000DC311 /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B8625C98176000FFDA1 /* RouterView.swift */; };
+		093621A927027A940066682A /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 093621A827027A940066682A /* WallabagKit */; };
 		093D139F26263B05008C2150 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093D139E26263B05008C2150 /* Intents.framework */; };
 		093D13A226263B05008C2150 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093D13A126263B05008C2150 /* IntentHandler.swift */; };
 		093D13B626263B05008C2150 /* Shortcuts.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 093D139D26263B05008C2150 /* Shortcuts.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -36,7 +37,6 @@
 		09644AE325C94863000FFDA1 /* ShareExtensionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644AE225C94863000FFDA1 /* ShareExtensionError.swift */; };
 		09644AEA25C94879000FFDA1 /* ExtensionClass.js in Resources */ = {isa = PBXBuildFile; fileRef = 09644AE925C94879000FFDA1 /* ExtensionClass.js */; };
 		09644AF725C94982000FFDA1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09644AF625C94982000FFDA1 /* Media.xcassets */; };
-		09644AFF25C94BF4000FFDA1 /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09644AFE25C94BF4000FFDA1 /* WallabagKit */; };
 		09644B0725C94C14000FFDA1 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 09644B0625C94C14000FFDA1 /* Swinject */; };
 		09644B0F25C94C6B000FFDA1 /* HTMLEntities in Frameworks */ = {isa = PBXBuildFile; productRef = 09644B0E25C94C6B000FFDA1 /* HTMLEntities */; };
 		09644B1725C94CA6000FFDA1 /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09644B1625C94CA6000FFDA1 /* WallabagKit */; };
@@ -362,9 +362,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09644AFF25C94BF4000FFDA1 /* WallabagKit in Frameworks */,
 				09644B0725C94C14000FFDA1 /* Swinject in Frameworks */,
 				09644B0F25C94C6B000FFDA1 /* HTMLEntities in Frameworks */,
+				093621A927027A940066682A /* WallabagKit in Frameworks */,
 				093D145E26264AA5008C2150 /* SharedLib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -877,17 +877,17 @@
 			isa = PBXGroup;
 			children = (
 				09AD75AA2624FBA900708A1E /* Settings.bundle */,
-				09AD759C2624F93D00708A1E /* html-ressources */,
-				09644D1E25C98782000FFDA1 /* wallabagStore.xcdatamodeld */,
-				09644D1625C9874D000FFDA1 /* Extension */,
 				09BFB28725C8348E00E12B4D /* Info.plist */,
+				9C1103B626A0852F00E50F26 /* Configuration.storekit */,
 				09644B5D25C98116000FFDA1 /* AppDelegate.swift */,
 				09644B5625C9810A000FFDA1 /* WallabagApp.swift */,
+				09644D1625C9874D000FFDA1 /* Extension */,
 				09644B8425C98161000FFDA1 /* Features */,
+				09AD759C2624F93D00708A1E /* html-ressources */,
 				09644B7C25C9814C000FFDA1 /* Lib */,
-				09644BE425C98343000FFDA1 /* PropertyWrapper */,
 				09AD75C02624FEEE00708A1E /* Localizable.strings */,
-				9C1103B626A0852F00E50F26 /* Configuration.storekit */,
+				09644BE425C98343000FFDA1 /* PropertyWrapper */,
+				09644D1E25C98782000FFDA1 /* wallabagStore.xcdatamodeld */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -1001,10 +1001,10 @@
 			);
 			name = "wallabag (iOS)";
 			packageProductDependencies = (
-				09644AFE25C94BF4000FFDA1 /* WallabagKit */,
 				09644B0625C94C14000FFDA1 /* Swinject */,
 				09644B0E25C94C6B000FFDA1 /* HTMLEntities */,
 				093D145D26264AA5008C2150 /* SharedLib */,
+				093621A827027A940066682A /* WallabagKit */,
 			);
 			productName = "wallabag (iOS)";
 			productReference = 09BFB28425C8348E00E12B4D /* wallabag.app */;
@@ -1548,7 +1548,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = bagit/bagit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 305;
+				CURRENT_PROJECT_VERSION = 307;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = bagit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1572,7 +1572,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = bagit/bagit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 305;
+				CURRENT_PROJECT_VERSION = 307;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = bagit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1726,6 +1726,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag";
 				PRODUCT_NAME = wallabag;
 				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1750,6 +1751,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag";
 				PRODUCT_NAME = wallabag;
 				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -2007,6 +2009,10 @@
 			package = 09644B0D25C94C6B000FFDA1 /* XCRemoteSwiftPackageReference "swift-html-entities" */;
 			productName = HTMLEntities;
 		};
+		093621A827027A940066682A /* WallabagKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WallabagKit;
+		};
 		093D14162626418B008C2150 /* WallabagKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 09644AFD25C94BF4000FFDA1 /* XCRemoteSwiftPackageReference "WallabagKit" */;
@@ -2019,11 +2025,6 @@
 		093D14B926264D62008C2150 /* SharedLib */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SharedLib;
-		};
-		09644AFE25C94BF4000FFDA1 /* WallabagKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 09644AFD25C94BF4000FFDA1 /* XCRemoteSwiftPackageReference "WallabagKit" */;
-			productName = WallabagKit;
 		};
 		09644B0625C94C14000FFDA1 /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;

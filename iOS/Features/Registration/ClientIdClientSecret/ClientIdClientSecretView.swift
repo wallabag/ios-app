@@ -1,3 +1,4 @@
+import SharedLib
 import SwiftUI
 
 struct ClientIdClientSecretView: View {
@@ -17,6 +18,10 @@ struct ClientIdClientSecretView: View {
             }
             NavigationLink("Next", destination: LoginView()).disabled(!clientIdSecretViewModel.isValid)
         }.navigationBarTitle("Client id & secret")
+            .navigationBarItems(trailing:
+                Link(destination: Bundle.infoForKey("DOCUMENTATION_URL")!.url!) {
+                    Text("Open documentation")
+                })
     }
 }
 

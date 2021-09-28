@@ -20,6 +20,10 @@ struct LoginView: View {
                 Text($0).foregroundColor(.red)
             }
         }.navigationBarTitle("Login & Password")
+            .navigationBarItems(trailing:
+                Link(destination: Bundle.infoForKey("DOCUMENTATION_URL")!.url!) {
+                    Text("Open documentation")
+                })
     }
 }
 

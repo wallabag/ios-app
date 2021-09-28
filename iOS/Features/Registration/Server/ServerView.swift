@@ -14,6 +14,10 @@ struct ServerView: View {
                 Text("Next")
             }.disabled(!serverViewModel.isValid)
         }.navigationBarTitle("Server")
+            .navigationBarItems(trailing:
+                Link(destination: Bundle.infoForKey("DOCUMENTATION_URL")!.url!) {
+                    Text("Open documentation")
+                })
     }
 }
 
