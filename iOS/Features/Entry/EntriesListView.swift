@@ -4,6 +4,7 @@ import SwiftUI
 
 struct EntriesListView: View {
     @Environment(\.managedObjectContext) var context: NSManagedObjectContext
+    @EnvironmentObject var appSync: AppSync
     @FetchRequest var entries: FetchedResults<Entry>
     @EnvironmentObject var router: Router
 
@@ -23,7 +24,7 @@ struct EntriesListView: View {
                         StarEntryButton(entry: entry)
                     }
             }).buttonStyle(PlainButtonStyle())
-        }
-        .listStyle(InsetListStyle())
+        }.refreshable { appSync.requestSync() }
+            .listStyle(InsetListStyle())
     }
 }

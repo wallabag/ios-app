@@ -14,7 +14,6 @@
 		0916CDBC25F0E04D000DC311 /* wallabagStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09644D1E25C98782000FFDA1 /* wallabagStore.xcdatamodeld */; };
 		0916CDE725F0E54C000DC311 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0916CDE625F0E54C000DC311 /* RegistrationView.swift */; };
 		0916CDF725F0E5BD000DC311 /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B8625C98176000FFDA1 /* RouterView.swift */; };
-		093621A927027A940066682A /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 093621A827027A940066682A /* WallabagKit */; };
 		093D139F26263B05008C2150 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093D139E26263B05008C2150 /* Intents.framework */; };
 		093D13A226263B05008C2150 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093D13A126263B05008C2150 /* IntentHandler.swift */; };
 		093D13B626263B05008C2150 /* Shortcuts.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 093D139D26263B05008C2150 /* Shortcuts.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -25,9 +24,13 @@
 		093D13FB262640C0008C2150 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B3225C94DEB000FFDA1 /* Password.swift */; };
 		093D13FC262640C0008C2150 /* GeneralSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B4125C94E2B000FFDA1 /* GeneralSetting.swift */; };
 		093D1403262640C9008C2150 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B3925C94E03000FFDA1 /* KeychainPasswordItem.swift */; };
-		093D14172626418B008C2150 /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 093D14162626418B008C2150 /* WallabagKit */; };
-		093D145E26264AA5008C2150 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 093D145D26264AA5008C2150 /* SharedLib */; };
 		093D14BA26264D62008C2150 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 093D14B926264D62008C2150 /* SharedLib */; };
+		09483CC7270498C20084CEB2 /* SharedLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09483CC6270498C20084CEB2 /* SharedLib.framework */; };
+		09483CC8270498C20084CEB2 /* SharedLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 09483CC6270498C20084CEB2 /* SharedLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		09483CCD270499120084CEB2 /* WallabagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09483CCC270499120084CEB2 /* WallabagKit.framework */; };
+		09483CCE270499120084CEB2 /* WallabagKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 09483CCC270499120084CEB2 /* WallabagKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		09483CD027049B3E0084CEB2 /* WallabagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09483CCF27049B3E0084CEB2 /* WallabagKit.framework */; };
+		09483CD427049B5F0084CEB2 /* WallabagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09483CD327049B5F0084CEB2 /* WallabagKit.framework */; };
 		094AA03E2629EB1F006E5605 /* wallabagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094AA03D2629EB1F006E5605 /* wallabagTests.swift */; };
 		094AA05A2629EB60006E5605 /* ImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094A9FED2629E6BB006E5605 /* ImageCacheTests.swift */; };
 		094AA0692629EB98006E5605 /* ImageDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094AA00F2629E739006E5605 /* ImageDownloaderTests.swift */; };
@@ -39,7 +42,6 @@
 		09644AF725C94982000FFDA1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09644AF625C94982000FFDA1 /* Media.xcassets */; };
 		09644B0725C94C14000FFDA1 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 09644B0625C94C14000FFDA1 /* Swinject */; };
 		09644B0F25C94C6B000FFDA1 /* HTMLEntities in Frameworks */ = {isa = PBXBuildFile; productRef = 09644B0E25C94C6B000FFDA1 /* HTMLEntities */; };
-		09644B1725C94CA6000FFDA1 /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09644B1625C94CA6000FFDA1 /* WallabagKit */; };
 		09644B1F25C94D9C000FFDA1 /* WallabagUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B1E25C94D9C000FFDA1 /* WallabagUserDefaults.swift */; };
 		09644B2725C94DD2000FFDA1 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B2625C94DD2000FFDA1 /* Setting.swift */; };
 		09644B3325C94DEB000FFDA1 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B3225C94DEB000FFDA1 /* Password.swift */; };
@@ -125,7 +127,6 @@
 		097F821225CB1A0F006C85F6 /* GeneralSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B4125C94E2B000FFDA1 /* GeneralSetting.swift */; };
 		097F821825CB1A16006C85F6 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B3925C94E03000FFDA1 /* KeychainPasswordItem.swift */; };
 		097F821E25CB1A4C006C85F6 /* WallabagSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644BD725C9833E000FFDA1 /* WallabagSession.swift */; };
-		097F822625CB1A62006C85F6 /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 097F822525CB1A62006C85F6 /* WallabagKit */; };
 		097F822C25CB1A93006C85F6 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644BE525C98350000FFDA1 /* Injector.swift */; };
 		097F823325CB1A9A006C85F6 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 097F823225CB1A9A006C85F6 /* Swinject */; };
 		097F823925CB1AB1006C85F6 /* CoreDataViewContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644C4E25C9850D000FFDA1 /* CoreDataViewContext.swift */; };
@@ -186,6 +187,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		09483CC9270498C20084CEB2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				09483CCE270499120084CEB2 /* WallabagKit.framework in Embed Frameworks */,
+				09483CC8270498C20084CEB2 /* SharedLib.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		09644AD925C94825000FFDA1 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -211,6 +224,10 @@
 		093D13D026263B2E008C2150 /* Shortcuts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Shortcuts.entitlements; sourceTree = "<group>"; };
 		093D13D726263CC4008C2150 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
 		093D13EB26263F81008C2150 /* AddEntryIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryIntentHandler.swift; sourceTree = "<group>"; };
+		09483CC6270498C20084CEB2 /* SharedLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SharedLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		09483CCC270499120084CEB2 /* WallabagKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WallabagKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		09483CCF27049B3E0084CEB2 /* WallabagKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WallabagKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		09483CD327049B5F0084CEB2 /* WallabagKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WallabagKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		094A9FED2629E6BB006E5605 /* ImageCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheTests.swift; sourceTree = "<group>"; };
 		094AA00F2629E739006E5605 /* ImageDownloaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloaderTests.swift; sourceTree = "<group>"; };
 		094AA03B2629EB1F006E5605 /* wallabagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -338,7 +355,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				093D14172626418B008C2150 /* WallabagKit in Frameworks */,
+				09483CD027049B3E0084CEB2 /* WallabagKit.framework in Frameworks */,
 				093D139F26263B05008C2150 /* Intents.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,7 +371,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09644B1725C94CA6000FFDA1 /* WallabagKit in Frameworks */,
+				09483CD427049B5F0084CEB2 /* WallabagKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,10 +379,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09483CCD270499120084CEB2 /* WallabagKit.framework in Frameworks */,
 				09644B0725C94C14000FFDA1 /* Swinject in Frameworks */,
+				09483CC7270498C20084CEB2 /* SharedLib.framework in Frameworks */,
 				09644B0F25C94C6B000FFDA1 /* HTMLEntities in Frameworks */,
-				093621A927027A940066682A /* WallabagKit in Frameworks */,
-				093D145E26264AA5008C2150 /* SharedLib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,7 +390,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				097F822625CB1A62006C85F6 /* WallabagKit in Frameworks */,
 				097F823325CB1A9A006C85F6 /* Swinject in Frameworks */,
 				0916CDB625F0D5D6000DC311 /* HTMLEntities in Frameworks */,
 				093D14BA26264D62008C2150 /* SharedLib in Frameworks */,
@@ -477,6 +493,10 @@
 		09644B1525C94CA6000FFDA1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09483CD327049B5F0084CEB2 /* WallabagKit.framework */,
+				09483CCF27049B3E0084CEB2 /* WallabagKit.framework */,
+				09483CCC270499120084CEB2 /* WallabagKit.framework */,
+				09483CC6270498C20084CEB2 /* SharedLib.framework */,
 				093D137226263A96008C2150 /* IntentsUI.framework */,
 				093D139E26263B05008C2150 /* Intents.framework */,
 			);
@@ -939,7 +959,6 @@
 			);
 			name = Shortcuts;
 			packageProductDependencies = (
-				093D14162626418B008C2150 /* WallabagKit */,
 			);
 			productName = Shortcuts;
 			productReference = 093D139D26263B05008C2150 /* Shortcuts.appex */;
@@ -977,7 +996,6 @@
 			);
 			name = bagit;
 			packageProductDependencies = (
-				09644B1625C94CA6000FFDA1 /* WallabagKit */,
 			);
 			productName = bagit;
 			productReference = 09644ACE25C94825000FFDA1 /* bagit.appex */;
@@ -992,6 +1010,7 @@
 				09BFB28225C8348E00E12B4D /* Resources */,
 				09644AD925C94825000FFDA1 /* Embed App Extensions */,
 				093D142A262643CA008C2150 /* Swiftlint */,
+				09483CC9270498C20084CEB2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1003,8 +1022,6 @@
 			packageProductDependencies = (
 				09644B0625C94C14000FFDA1 /* Swinject */,
 				09644B0E25C94C6B000FFDA1 /* HTMLEntities */,
-				093D145D26264AA5008C2150 /* SharedLib */,
-				093621A827027A940066682A /* WallabagKit */,
 			);
 			productName = "wallabag (iOS)";
 			productReference = 09BFB28425C8348E00E12B4D /* wallabag.app */;
@@ -1024,7 +1041,6 @@
 			);
 			name = "wallabag (macOS)";
 			packageProductDependencies = (
-				097F822525CB1A62006C85F6 /* WallabagKit */,
 				097F823225CB1A9A006C85F6 /* Swinject */,
 				0916CDB525F0D5D6000DC311 /* HTMLEntities */,
 				093D14B926264D62008C2150 /* SharedLib */,
@@ -1125,7 +1141,6 @@
 			);
 			mainGroup = 09BFB27425C8348E00E12B4D;
 			packageReferences = (
-				09644AFD25C94BF4000FFDA1 /* XCRemoteSwiftPackageReference "WallabagKit" */,
 				09644B0525C94C14000FFDA1 /* XCRemoteSwiftPackageReference "Swinject" */,
 				09644B0D25C94C6B000FFDA1 /* XCRemoteSwiftPackageReference "swift-html-entities" */,
 			);
@@ -1548,7 +1563,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = bagit/bagit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 307;
+				CURRENT_PROJECT_VERSION = 309;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = bagit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1572,7 +1587,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = bagit/bagit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 307;
+				CURRENT_PROJECT_VERSION = 309;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = bagit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1977,14 +1992,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		09644AFD25C94BF4000FFDA1 /* XCRemoteSwiftPackageReference "WallabagKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/wallabag/WallabagKit.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		09644B0525C94C14000FFDA1 /* XCRemoteSwiftPackageReference "Swinject" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swinject/Swinject";
@@ -2009,19 +2016,6 @@
 			package = 09644B0D25C94C6B000FFDA1 /* XCRemoteSwiftPackageReference "swift-html-entities" */;
 			productName = HTMLEntities;
 		};
-		093621A827027A940066682A /* WallabagKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = WallabagKit;
-		};
-		093D14162626418B008C2150 /* WallabagKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 09644AFD25C94BF4000FFDA1 /* XCRemoteSwiftPackageReference "WallabagKit" */;
-			productName = WallabagKit;
-		};
-		093D145D26264AA5008C2150 /* SharedLib */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SharedLib;
-		};
 		093D14B926264D62008C2150 /* SharedLib */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SharedLib;
@@ -2035,16 +2029,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 09644B0D25C94C6B000FFDA1 /* XCRemoteSwiftPackageReference "swift-html-entities" */;
 			productName = HTMLEntities;
-		};
-		09644B1625C94CA6000FFDA1 /* WallabagKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 09644AFD25C94BF4000FFDA1 /* XCRemoteSwiftPackageReference "WallabagKit" */;
-			productName = WallabagKit;
-		};
-		097F822525CB1A62006C85F6 /* WallabagKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 09644AFD25C94BF4000FFDA1 /* XCRemoteSwiftPackageReference "WallabagKit" */;
-			productName = WallabagKit;
 		};
 		097F823225CB1A9A006C85F6 /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;

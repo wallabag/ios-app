@@ -2,12 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:SharedLib">
-   </FileRef>
-   <FileRef
-      location = "group:WallabagKit">
-   </FileRef>
-   <FileRef
       location = "container:wallabag.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:WallabagKit/WallabagKit.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SharedLib/SharedLib.xcodeproj">
    </FileRef>
 </Workspace>
