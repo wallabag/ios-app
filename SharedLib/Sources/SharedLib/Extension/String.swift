@@ -52,7 +52,7 @@ public extension String {
      * Check if string is valid URL
      */
     var isValidURL: Bool {
-        let regEx = "((https|http)://)((\\w|-)+)(([.]|[/])((\\w|-)+))+(:\\d+)?"
+        let regEx = "((https|http)://)((\\w|-)+)(([.]|[/]|[:\\d+])((\\w|-)+))+"
         let predicate = NSPredicate(format: "SELF MATCHES %@", argumentArray: [regEx])
         return predicate.evaluate(with: self)
     }

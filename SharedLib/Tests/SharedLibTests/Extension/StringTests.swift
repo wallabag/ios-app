@@ -58,6 +58,11 @@ class StringTests: XCTestCase {
         XCTAssertTrue("https://app.wallabag.it:9000".isValidURL)
     }
 
+    func testIsValidURLWithPortAndPath() {
+        XCTAssertFalse("app".isValidURL)
+        XCTAssertTrue("https://app.wallabag.it:9000/wallabag".isValidURL)
+    }
+
     func testMD5() {
         if #available(iOS 13.0, *) {
             XCTAssertEqual("098f6bcd4621d373cade4e832627b4f6", "test".md5)
