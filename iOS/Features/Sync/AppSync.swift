@@ -48,6 +48,7 @@ extension AppSync {
                     self.progress = data.1
                 }
             }
+            try backgroundContext.save()
         } catch {
             errorViewModel.setLast(.wallabagKitError(error))
         }
