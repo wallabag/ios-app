@@ -7,3 +7,36 @@
 "Add entry" = "Pridėti įrašą";
 "About" = "Apie";
 "Don" = "Dovanojimas";
+"Bug report" = "Pranešimas apie klaidą";
+"Setting" = "Nustatymas";
+"Logout" = "Atsijungti";
+
+// Picker
+"All" = "Visi";
+"Starred" = "Pažymėta";
+"Unread" = "Neskaityta";
+"Read" = "Skaityti";
+
+// Tip View
+"This application is developed on free time" = "Ši programa sukurta laisvalaikiu";
+"It is free and will remain so." = "Ji nemokama ir tokia liks.";
+"But you can contribute financially by making a donation whenever you want to support the project." = "Bet jūs galite finansiškai prisidėti aukodami, kai tik norite paremti projektą.";
+"Loading..." = "Įkeliama ...";
+"It seems impossible to make a payment." = "Atrodo neįmanoma sumokėti.";
+
+// Common
+"Submit" = "Pateikti";
+"Back" = "Atgal";
+"Add" = "Papildyti";
+"Cancel" = "Atšaukti";
+"Confirm delete?" = "Patvirtinti ištrynimą?";
+
+// Search
+"Search" = "Paieška";
+
+// About
+"Project page" = "Projekto puslapis";
+"Made by Maxime Marinel @bourvill" = "Pagaminta Maxime Marinel @bourvill";
+
+//Player
+"Select one entry" = "Pasirinkite vieną įrašą";
