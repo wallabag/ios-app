@@ -1,24 +1,46 @@
 import SwiftUI
 
 struct AddEntryView: View {
-    @EnvironmentObject var appState: AppState
-    @State private var url: String = ""
-    @State private var submitting: Bool = false
+    @StateObject private var model = AddEntryModel()
 
     var body: some View {
         Form {
-            TextField("Url", text: $url)
+            TextField("Url", text: $model.url)
                 .autocapitalization(.none)
                 .disableAutocorrection(true)
             HStack {
-                Button(submitting ? "Submitting..." : "Submit") {
-                    self.submitting = true
-                    self.appState.session.addEntry(url: self.url) {
-                        self.submitting = false
-                    }
-                }.disabled(submitting)
+                Button(model.submitting ? "Submitting..." : "Submit") {
+                    model.addEntry()
+                }.disabled(model.submitting)
+            }.disabled(model.url.isEmpty)
+            if model.succeeded {
+                Text("Great! Entry was added")
             }
-        }.navigationBarTitle("Add url")
+        }
+    }
+}
+
+private class AddEntryModel: ObservableObject {
+    @Injector var session: WallabagSession
+
+    @Published var url: String = ""
+    @Published var submitting: Bool = false
+    @Published var succeeded: Bool = false
+
+    func addEntry() {
+        submitting = true
+        session.addEntry(url: url) {
+            DispatchQueue.main.async {
+                self.url = ""
+                self.submitting = false
+                withAnimation {
+                    self.succeeded = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                        self.succeeded = false
+                    }
+                }
+            }
+        }
     }
 }
 
