@@ -10,6 +10,8 @@ struct RegistrationView: View {
                 Text("Wallabag")
                     .font(.title)
                 NavigationLink("Log in", destination: ServerView())
+                    .buttonStyle(.borderedProminent)
+                    .buttonBorderShape(.capsule)
             }.navigationBarHidden(true)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
