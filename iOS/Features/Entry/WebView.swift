@@ -1,4 +1,3 @@
-import Combine
 import CoreData
 import SafariServices
 import SwiftUI
@@ -18,25 +17,21 @@ struct WebView: UIViewRepresentable {
         var appSetting: AppSetting
 
         private var webView: WebView
-        private var cancellable: AnyCancellable?
 
         init(_ webView: WebView, appSetting: AppSetting) {
             self.webView = webView
             self.appSetting = appSetting
             super.init()
-
-            cancellable = NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)
-                .sink(receiveValue: webViewToLastPosition)
         }
 
-        func webViewToLastPosition(_: Notification?) {
+        func webViewToLastPosition() {
             DispatchQueue.main.async {
                 self.webView.wkWebView.scrollView.setContentOffset(CGPoint(x: 0.0, y: self.webView.entry.screenPositionForWebView), animated: true)
             }
         }
 
         func webView(_ webView: WKWebView, didFinish _: WKNavigation!) {
-            webViewToLastPosition(nil)
+            webViewToLastPosition()
             webView.fontSizePercent(appSetting.webFontSizePercent)
         }
 
