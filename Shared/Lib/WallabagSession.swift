@@ -86,7 +86,7 @@ class WallabagSession: ObservableObject {
         kit.send(to: WallabagEntryEndpoint.deleteTag(tagId: tag.id, entry: entry.id)).sink(receiveCompletion: { _ in }, receiveValue: { (wallabagEntry: WallabagEntry) in
             self.syncTag(for: entry, with: wallabagEntry)
         })
-            .store(in: &cancellable)
+        .store(in: &cancellable)
     }
 
     private func syncTag(for entry: Entry, with wallabagEntry: WallabagEntry) {

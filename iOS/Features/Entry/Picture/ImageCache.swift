@@ -4,7 +4,7 @@ import Foundation
     import UIKit
 #endif
 
-class ImageCache {
+actor ImageCache {
     static var shared = ImageCache()
 
     private var memoryCache: NSCache<NSString, UIImage> = {
@@ -16,8 +16,8 @@ class ImageCache {
     private var cancellable: Cancellable?
 
     private init() {
-        cancellable = NotificationCenter.default.publisher(for: UIApplication.didReceiveMemoryWarningNotification)
-            .sink(receiveValue: clearMemoryCache)
+        // cancellable = NotificationCenter.default.publisher(for: UIApplication.didReceiveMemoryWarningNotification)
+        //     .sink(receiveValue: clearMemoryCache)
     }
 
     private func clearMemoryCache(_: Notification?) {
