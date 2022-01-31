@@ -8,8 +8,8 @@ struct EntryPicture: View {
 
     var body: some View {
         Group {
-            if imagePublisher.image != nil {
-                Image(uiImage: imagePublisher.image!)
+            if let image = imagePublisher.image {
+                Image(uiImage: image)
                     .resizable()
                     .scaledToFit()
             } else {

@@ -13,12 +13,7 @@ actor ImageCache {
         return cache
     }()
 
-    private var cancellable: Cancellable?
-
-    private init() {
-        // cancellable = NotificationCenter.default.publisher(for: UIApplication.didReceiveMemoryWarningNotification)
-        //     .sink(receiveValue: clearMemoryCache)
-    }
+    private init() {}
 
     private func clearMemoryCache(_: Notification?) {
         memoryCache.removeAllObjects()
