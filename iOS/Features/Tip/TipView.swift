@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct TipView: View {
-    @ObservedObject var tipViewModel = TipViewModel()
+    @StateObject var tipViewModel = TipViewModel()
 
     var body: some View {
         VStack(alignment: .leading) {
