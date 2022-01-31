@@ -27,9 +27,7 @@ final class CoreData {
         return container
     }()
 
-    lazy var viewContext: NSManagedObjectContext = {
-        self.persistentContainer.viewContext
-    }()
+    lazy var viewContext: NSManagedObjectContext = self.persistentContainer.viewContext
 
     func saveContext() {
         let context = persistentContainer.viewContext

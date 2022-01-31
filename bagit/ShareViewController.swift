@@ -2,6 +2,7 @@ import Combine
 import MobileCoreServices
 import Social
 import UIKit
+import UniformTypeIdentifiers
 import WallabagKit
 
 @objc(ShareViewController)
@@ -81,19 +82,15 @@ class ShareViewController: UIViewController {
             return
         }
 
-        let propertyList = String(kUTTypePropertyList)
-        let publicURL = String(kUTTypeURL)
-
-        for attachment in item.attachments! {
-            print(attachment.hasItemConformingToTypeIdentifier(String(kUTTypeURL)))
-        }
+        let propertyList = UTType.propertyList.identifier
+        let publicURL = UTType.url.identifier
 
         item.attachments?.forEach { attachment in
             if attachment.hasItemConformingToTypeIdentifier(propertyList) {
                 attachment.loadItem(
                     forTypeIdentifier: propertyList,
                     options: nil,
-                    completionHandler: { item, _ -> Void in
+                    completionHandler: { item, _ in
                         guard let dictionary = item as? NSDictionary,
                               let results = dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
                               let href = results["href"] as? String
