@@ -35,7 +35,10 @@ struct MainView: View {
                     withAnimation {
                         self.showMenu.toggle()
                     }
-                }, label: { Image(systemName: "list.bullet") }).buttonStyle(PlainButtonStyle())
+                }, label: { Image(systemName: "list.bullet") })
+                    .buttonStyle(PlainButtonStyle())
+                    .accessibilityLabel("Menu")
+                    .accessibilityHidden(showMenu)
             }
             Text(router.route.title)
                 .font(.title)
@@ -51,6 +54,7 @@ struct MainView: View {
             }, label: {
                 Image(systemName: "music.note")
             }).buttonStyle(PlainButtonStyle())
+                .accessibilityLabel("Entries player")
         }
     }
 
@@ -60,9 +64,11 @@ struct MainView: View {
                 VStack {
                     if self.router.route.showHeader {
                         self.header.padding(.horizontal).padding(.top, 15)
+                            .accessibilityHidden(showMenu)
                     }
                     ErrorView()
                     RouterView()
+                        .accessibilityHidden(showMenu)
                 }.frame(width: geometry.size.width, height: geometry.size.height)
                     .blur(radius: self.showMenu ? 10 : 0)
 

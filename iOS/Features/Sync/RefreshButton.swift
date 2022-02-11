@@ -19,6 +19,8 @@ struct RefreshButton: View {
                 }
             ).disabled(appSync.inProgress)
                 .buttonStyle(PlainButtonStyle())
+                .accessibilityLabel("Refresh")
+                .accessibilityHint("Refres entries from server")
         }
     }
 }

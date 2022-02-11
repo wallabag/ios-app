@@ -21,34 +21,30 @@ struct MenuView: View {
                 Section {
                     ForEach(self.menus) { menu in
                         Button(action: {
-                            self.router.load(menu.route)
-                            withAnimation {
-                                self.showMenu = false
+                            tapButtonMenu {
+                                router.load(menu.route)
                             }
                         }) {
                             Label(menu.title, systemImage: menu.img)
                         }
                     }
                     Button(action: {
-                        self.router.load(.bugReport)
-                        withAnimation {
-                            self.showMenu = false
+                        tapButtonMenu {
+                            router.load(.bugReport)
                         }
                     }) {
                         Label("Bug report", systemImage: "ant")
                     }
                     Button(action: {
-                        withAnimation {
-                            self.showMenu = false
+                        tapButtonMenu {
+                            openURL(URL(string: UIApplication.openSettingsURLString)!)
                         }
-                        openURL(URL(string: UIApplication.openSettingsURLString)!)
                     }) {
                         Label("Setting", systemImage: "gear")
                     }
-                    Button(action: {
-                        self.appState.logout()
-                        withAnimation {
-                            self.showMenu = false
+                    Button(role: .destructive, action: {
+                        tapButtonMenu {
+                            self.appState.logout()
                         }
                     }) {
                         Label("Logout", systemImage: "person")
@@ -59,7 +55,7 @@ struct MenuView: View {
         .background(Color(UIColor.systemBackground))
     }
 
-    var header: some View {
+    private var header: some View {
         Text("Menu")
             .font(.title)
             .fontWeight(.black)
@@ -70,6 +66,13 @@ struct MenuView: View {
             }
             .padding(.top, 44)
             .padding(.horizontal)
+    }
+
+    private func tapButtonMenu(_ action: () -> Void) {
+        withAnimation {
+            showMenu = false
+        }
+        action()
     }
 }
 

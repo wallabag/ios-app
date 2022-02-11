@@ -17,6 +17,8 @@ struct FontSizeSelectorView: View {
             if showSelector {
                 Slider(value: $appSetting.webFontSizePercent, in: 50 ... 200, step: 10)
                     .frame(width: 150)
+                    .accessibilityLabel("Text size")
+                    .accessibilityHint("Change entry text size")
             }
         }
     }
