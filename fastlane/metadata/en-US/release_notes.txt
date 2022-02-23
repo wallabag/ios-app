@@ -1,1 +1,7 @@
-
+Fix: Enhance add entry ux
+Fix: potential scroll progress reset
+Fix: Server URL with port fails syntax check
+Fix: Welcome page look ugly in dark mode
+Fix: When switching apps, wallabag scrolls up to start of section
+Add: Pull down for refresh
+Add: Add link to documentation on login page
