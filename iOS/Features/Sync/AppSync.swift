@@ -112,7 +112,7 @@ extension AppSync {
     }
 
     private func fetchTags() async throws -> [WallabagTag] {
-        let request = session.kit.request(for: WallabagTagEndpoint.get)
+        let request = session.kit.request(for: WallabagTagEndpoint.get, withAuth: true)
         let (data, _) = try await URLSession.shared.data(for: request)
         return try session.kit.decoder.decode([WallabagTag].self, from: data)
     }
