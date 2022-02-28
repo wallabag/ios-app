@@ -1563,7 +1563,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = bagit/bagit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 314;
+				CURRENT_PROJECT_VERSION = 315;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = bagit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1587,7 +1587,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = bagit/bagit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 314;
+				CURRENT_PROJECT_VERSION = 315;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = bagit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
