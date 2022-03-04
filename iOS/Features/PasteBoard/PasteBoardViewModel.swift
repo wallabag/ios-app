@@ -6,8 +6,10 @@ class PasteBoardViewModel: ObservableObject {
     @Published var showPasteBoardView: Bool = false {
         willSet {
             if newValue {
-                WallabagUserDefaults.previousPasteBoardUrl = UIPasteboard.general.url?.absoluteString ?? ""
-                pasteBoardUrl = UIPasteboard.general.url?.absoluteString ?? ""
+                if let pasteBoardString = UIPasteboard.general.string, let newPasteBoardUrl = URL(string: pasteBoardString) {
+                    WallabagUserDefaults.previousPasteBoardUrl = newPasteBoardUrl.absoluteString
+                    pasteBoardUrl = newPasteBoardUrl.absoluteString
+                }
             }
         }
     }
@@ -20,7 +22,7 @@ class PasteBoardViewModel: ObservableObject {
     init() {
         cancellableNotification = NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)
             .map { _ -> Bool in
-                guard let pasteBoardUrl = UIPasteboard.general.url,
+                guard let pasteBoardString = UIPasteboard.general.string, let pasteBoardUrl = URL(string: pasteBoardString),
                       pasteBoardUrl.absoluteString != WallabagUserDefaults.previousPasteBoardUrl
                 else {
                     return false

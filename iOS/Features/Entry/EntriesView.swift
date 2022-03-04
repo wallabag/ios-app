@@ -3,8 +3,8 @@ import CoreData
 import SwiftUI
 
 struct EntriesView: View {
-    @ObservedObject var pasteBoardViewModel = PasteBoardViewModel()
-    @ObservedObject var searchViewModel = SearchViewModel()
+    @StateObject var pasteBoardViewModel = PasteBoardViewModel()
+    @StateObject var searchViewModel = SearchViewModel()
 
     var body: some View {
         VStack {
