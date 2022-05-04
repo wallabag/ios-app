@@ -22,7 +22,7 @@ public class WallabagKit {
 
     // MARK: Server information
 
-    private var host: String
+    public var host: String
 
     // MARK: User information
 

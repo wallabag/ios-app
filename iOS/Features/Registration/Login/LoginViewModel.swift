@@ -39,8 +39,7 @@ class LoginViewModel: ObservableObject {
         error = nil
         WallabagUserDefaults.login = login
         WallabagUserDefaults.password = password
-        appState.session.kit.username = login
-        appState.session.kit.password = password
+        appState.session.kit.host = WallabagUserDefaults.host
         appState.session.requestSession(
             clientId: WallabagUserDefaults.clientId,
             clientSecret: WallabagUserDefaults.clientSecret,
