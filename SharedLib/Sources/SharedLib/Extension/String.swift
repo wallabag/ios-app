@@ -56,4 +56,8 @@ public extension String {
         let predicate = NSPredicate(format: "SELF MATCHES %@", argumentArray: [regEx])
         return predicate.evaluate(with: self)
     }
+
+    var int: Int? {
+        Int(self)
+    }
 }

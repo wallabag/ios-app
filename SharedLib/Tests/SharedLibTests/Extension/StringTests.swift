@@ -70,4 +70,8 @@ class StringTests: XCTestCase {
             // Fallback on earlier versions
         }
     }
+
+    func testInt() {
+        XCTAssertEqual(2, "2".int)
+    }
 }

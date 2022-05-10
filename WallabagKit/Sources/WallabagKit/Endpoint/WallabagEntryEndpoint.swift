@@ -32,6 +32,7 @@ public enum WallabagEntryEndpoint: WallabagKitEndpoint {
             request.queryItems = [
                 URLQueryItem(name: "page", value: "\(page)"),
                 URLQueryItem(name: "perPage", value: "\(perPage)"),
+                URLQueryItem(name: "order", value: "desc"),
             ]
             return request.url!.relativeString
         case .add:

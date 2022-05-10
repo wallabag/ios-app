@@ -40,7 +40,8 @@ class AppSync: ObservableObject {
 
 extension AppSync {
     func synchronizeEntries() async {
-        let sequence = EntriesFetcher(session.kit)
+        let itemPerPages = WallabagUserDefaults.itemPerPageDuringSync
+        let sequence = EntriesFetcher(session.kit, perPage: itemPerPages.int ?? 50)
         do {
             for try await data in sequence {
                 handleEntries(data.0)

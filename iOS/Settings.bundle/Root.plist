@@ -8,6 +8,18 @@
 	<array>
 		<dict>
 			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Title</key>
+			<string>Item per page during fetch</string>
+			<key>DefaultValue</key>
+			<string>50</string>
+			<key>KeyboardType</key>
+			<string>NumberPad</string>
+			<key>Key</key>
+			<string>itemPerPageDuringSync</string>
+		</dict>
+		<dict>
+			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
 			<string>Badge</string>

@@ -7,8 +7,9 @@ public struct EntriesFetcher: AsyncSequence, AsyncIteratorProtocol {
     private var perPage = 50
     private var kit: WallabagKit
 
-    public init(_ kit: WallabagKit) {
+    public init(_ kit: WallabagKit, perPage: Int = 50) {
         self.kit = kit
+        self.perPage = perPage
     }
 
     public mutating func next() async throws -> ([WallabagEntry], SyncProgress)? {
