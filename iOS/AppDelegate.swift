@@ -1,8 +1,4 @@
-import CoreSpotlight
-import Swinject
 import UIKit
-import UserNotifications
-import WallabagKit
 
 final class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
@@ -16,8 +12,6 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         #endif
 
-        requestBadge()
-
         return true
     }
 
@@ -26,10 +20,4 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillTerminate(_: UIApplication) {}
-
-    private func requestBadge() {
-        if WallabagUserDefaults.badgeEnabled {
-            // UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in }
-        }
-    }
 }
