@@ -23,6 +23,8 @@ final class DependencyInjection {
         container.register(AppState.self, factory: { _ in AppState.shared }).inObjectScope(.container)
         container.register(Router.self, factory: { _ in Router.shared }).inObjectScope(.container)
         container.register(PlayerPublisher.self, factory: { _ in PlayerPublisher.shared }).inObjectScope(.container)
+        container.register(CoreDataSync.self, factory: { _ in CoreDataSync() }).inObjectScope(.container)
+        container.register(AppSetting.self, factory: { _ in AppSetting() }).inObjectScope(.container)
 
         return container
     }()

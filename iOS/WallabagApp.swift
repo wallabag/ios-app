@@ -10,13 +10,13 @@ struct WallabagApp: App {
     @Environment(\.scenePhase) var scenePhase
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
 
-    var appState = AppState.shared
-    var router = Router.shared
-    var playerPublisher = PlayerPublisher.shared
-    var errorViewModel = ErrorViewModel.shared
-    var appSync = AppSync.shared
-    let coreDataSync = CoreDataSync()
-    let appSetting = AppSetting()
+    let appState: AppState = DependencyInjection.container.resolve(AppState.self)!
+    let router: Router = DependencyInjection.container.resolve(Router.self)!
+    let playerPublisher: PlayerPublisher = DependencyInjection.container.resolve(PlayerPublisher.self)!
+    let errorViewModel: ErrorViewModel = DependencyInjection.container.resolve(ErrorViewModel.self)!
+    let appSync: AppSync = DependencyInjection.container.resolve(AppSync.self)!
+    let coreDataSync: CoreDataSync = DependencyInjection.container.resolve(CoreDataSync.self)!
+    let appSetting: AppSetting = DependencyInjection.container.resolve(AppSetting.self)!
 
     var body: some Scene {
         WindowGroup {
