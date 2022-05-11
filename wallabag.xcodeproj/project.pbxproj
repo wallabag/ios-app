@@ -140,6 +140,7 @@
 		09AD75A42624F93D00708A1E /* justify.css in Resources */ = {isa = PBXBuildFile; fileRef = 09AD75A02624F93D00708A1E /* justify.css */; };
 		09AD75AB2624FBA900708A1E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 09AD75AA2624FBA900708A1E /* Settings.bundle */; };
 		09AD75BE2624FEEE00708A1E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09AD75C02624FEEE00708A1E /* Localizable.strings */; };
+		09BCBBD4282BD46A00B234CB /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BCBBD3282BD46A00B234CB /* RouterTests.swift */; };
 		09BFB29925C8348E00E12B4D /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BFB29825C8348E00E12B4D /* Tests_iOS.swift */; };
 		09BFB2A425C8348E00E12B4D /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BFB2A325C8348E00E12B4D /* Tests_macOS.swift */; };
 		09BFB2A625C8348E00E12B4D /* wallabag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09BFB27A25C8348E00E12B4D /* wallabag.xcdatamodeld */; };
@@ -334,6 +335,7 @@
 		09AD75D32624FF5600708A1E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		09AD75D42624FF5F00708A1E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		09AD75D52624FF6900708A1E /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		09BCBBD3282BD46A00B234CB /* RouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
 		09BFB27B25C8348E00E12B4D /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		09BFB27F25C8348E00E12B4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09BFB28425C8348E00E12B4D /* wallabag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wallabag.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -444,6 +446,7 @@
 		094A9FEC2629E6A3006E5605 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				09BCBBD2282BD44100B234CB /* Router */,
 				094AA0012629E700006E5605 /* Entry */,
 			);
 			path = Features;
@@ -847,6 +850,14 @@
 				09AD75A02624F93D00708A1E /* justify.css */,
 			);
 			path = "html-ressources";
+			sourceTree = "<group>";
+		};
+		09BCBBD2282BD44100B234CB /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				09BCBBD3282BD46A00B234CB /* RouterTests.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		09BFB27425C8348E00E12B4D = {
@@ -1263,6 +1274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09BCBBD4282BD46A00B234CB /* RouterTests.swift in Sources */,
 				094AA05A2629EB60006E5605 /* ImageCacheTests.swift in Sources */,
 				094AA03E2629EB1F006E5605 /* wallabagTests.swift in Sources */,
 				094AA0692629EB98006E5605 /* ImageDownloaderTests.swift in Sources */,
@@ -1520,7 +1532,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = wallabagTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1542,7 +1554,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = wallabagTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1830,7 +1842,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = "Tests iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1853,7 +1865,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				INFOPLIST_FILE = "Tests iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

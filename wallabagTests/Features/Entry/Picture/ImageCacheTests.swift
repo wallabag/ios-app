@@ -3,26 +3,34 @@ import XCTest
 
 class ImageCacheTests: XCTestCase {
     override func setUp() {
-        ImageCache.shared.purge()
+        Task {
+            await ImageCache.shared.purge()
+        }
     }
 
     override func tearDown() {
-        ImageCache.shared.purge()
+        Task {
+            await ImageCache.shared.purge()
+        }
     }
 
-    func testImageCache() throws {
-        XCTAssertNil(ImageCache.shared.get(name: "test"))
+    func testImageCache() async throws {
+        let result = await ImageCache.shared.get(name: "test")
+        XCTAssertNil(result)
 
-        ImageCache.shared.set(UIImage(systemName: "book")!, for: "test")
+        await ImageCache.shared.set(UIImage(systemName: "book")!, for: "test")
 
-        XCTAssertNotNil(ImageCache.shared.get(name: "test"))
+        let result1 = await ImageCache.shared.get(name: "test")
+        XCTAssertNotNil(result1)
     }
 
-    func testSubscriptImageCache() throws {
-        XCTAssertNil(ImageCache.shared["test"])
+    func testSubscriptImageCache() async throws {
+        let result = await ImageCache.shared["test"]
+        XCTAssertNil(result)
 
-        ImageCache.shared["test"] = UIImage(systemName: "book")!
+        await ImageCache.shared.set(UIImage(systemName: "book")!, for: "test")
 
-        XCTAssertNotNil(ImageCache.shared["test"])
+        let result1 = await ImageCache.shared["test"]
+        XCTAssertNotNil(result1)
     }
 }

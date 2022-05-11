@@ -21,10 +21,15 @@ final class DependencyInjection {
         container.register(AppSync.self, factory: { _ in AppSync.shared }).inObjectScope(.container)
         container.register(ImageDownloader.self, factory: { _ in ImageDownloader.shared }).inObjectScope(.container)
         container.register(AppState.self, factory: { _ in AppState.shared }).inObjectScope(.container)
-        container.register(Router.self, factory: { _ in Router.shared }).inObjectScope(.container)
+        container.register(Router.self, factory: { factory in
+            let appState: AppState = factory.resolve(AppState.self)!
+            let router = Router(defaultRoute: appState.registred ? .entries : .registration)
+            return router
+        }).inObjectScope(.container)
         container.register(PlayerPublisher.self, factory: { _ in PlayerPublisher.shared }).inObjectScope(.container)
         container.register(CoreDataSync.self, factory: { _ in CoreDataSync() }).inObjectScope(.container)
         container.register(AppSetting.self, factory: { _ in AppSetting() }).inObjectScope(.container)
+        container.register(CoreData.self, factory: { _ in CoreData.shared }).inObjectScope(.container)
 
         return container
     }()
