@@ -1,5 +1,6 @@
 import Combine
 import Foundation
+import WallabagKit
 
 class AppState: NSObject, ObservableObject {
     static var shared = AppState()
@@ -13,6 +14,8 @@ class AppState: NSObject, ObservableObject {
     @Injector var session: WallabagSession
     @Injector var router: Router
 
+    private(set) var wallabagConfig: WallabagConfig?
+
     override init() {
         super.init()
         registred = WallabagUserDefaults.registred
@@ -22,6 +25,10 @@ class AppState: NSObject, ObservableObject {
         if registred {
             logger.info("App state request session")
             session.requestSession(clientId: WallabagUserDefaults.clientId, clientSecret: WallabagUserDefaults.clientSecret, username: WallabagUserDefaults.login, password: WallabagUserDefaults.password)
+
+            session.config { [weak self] config in
+                self?.wallabagConfig = config
+            }
         }
     }
 
