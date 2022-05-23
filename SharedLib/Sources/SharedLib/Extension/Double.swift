@@ -1,6 +1,6 @@
 import Foundation
 
-public extension Int {
+public extension Double {
     var readingTime: String {
         let date = Date(timeIntervalSince1970: TimeInterval(self * 60))
         let dayTimePeriodFormatter = DateFormatter()
@@ -8,9 +8,5 @@ public extension Int {
         dayTimePeriodFormatter.dateFormat = "HH:mm:ss"
 
         return dayTimePeriodFormatter.string(from: date as Date)
-    }
-
-    var bool: Bool {
-        self == 1
     }
 }
