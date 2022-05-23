@@ -1,5 +1,6 @@
 import Combine
 import Foundation
+import SwiftUI
 import WallabagKit
 
 class AppState: NSObject, ObservableObject {
@@ -14,7 +15,7 @@ class AppState: NSObject, ObservableObject {
     @Injector var session: WallabagSession
     @Injector var router: Router
 
-    private(set) var wallabagConfig: WallabagConfig?
+    @AppStorage("readingSpeed") var readingSpeed: Double = 200
 
     override init() {
         super.init()
@@ -26,9 +27,7 @@ class AppState: NSObject, ObservableObject {
             logger.info("App state request session")
             session.requestSession(clientId: WallabagUserDefaults.clientId, clientSecret: WallabagUserDefaults.clientSecret, username: WallabagUserDefaults.login, password: WallabagUserDefaults.password)
 
-            session.config { [weak self] config in
-                self?.wallabagConfig = config
-            }
+            fetchConfig()
         }
     }
 
@@ -37,5 +36,16 @@ class AppState: NSObject, ObservableObject {
         registred = false
         session.state = .unknown
         router.load(.registration)
+    }
+
+    private func fetchConfig() {
+        logger.info("Fetch user config")
+        session.config { [weak self] config in
+            guard let config = config else { return }
+            logger.debug("User config available")
+            DispatchQueue.main.async {
+                self?.readingSpeed = config.readingSpeed
+            }
+        }
     }
 }

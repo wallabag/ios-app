@@ -4,6 +4,7 @@ import SwiftUI
 struct EntryRowView: View {
     @ObservedObject var entry: Entry
     @EnvironmentObject var appState: AppState
+    @AppStorage("readingSpeed") var readingSpeed: Double = 200
 
     var body: some View {
         HStack {
@@ -27,11 +28,7 @@ struct EntryRowView: View {
     }
 
     private func readingTime() -> String {
-        guard let config = appState.wallabagConfig else {
-            return Int(entry.readingTime).readingTime
-        }
-
-        let readingTime = Double(entry.readingTime) / config.readingSpeed * 200.0
+        let readingTime = Double(entry.readingTime) / readingSpeed * 200.0
         return readingTime.readingTime
     }
 }
