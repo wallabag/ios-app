@@ -92,7 +92,7 @@ struct EntryView: View {
         static var previews: some View {
             EntryView(entry: Entry(context: CoreData.shared.viewContext))
                 .environmentObject(PlayerPublisher())
-                .environmentObject(Router())
+                .environmentObject(Router(defaultRoute: .entries))
                 .environment(\.managedObjectContext, CoreData.shared.viewContext)
         }
     }

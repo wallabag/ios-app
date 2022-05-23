@@ -6,42 +6,30 @@ class ImageDownloaderTests: XCTestCase {
     var cancellable: AnyCancellable?
 
     override func setUp() {
-        // Mock this
-        ImageCache.shared.purge()
+        Task {
+            await ImageCache.shared.purge()
+        }
     }
 
     override func tearDown() {
-        // Mock this
-        ImageCache.shared.purge()
+        Task {
+            await ImageCache.shared.purge()
+        }
     }
 
-    func xtestLoadInvalidImage() throws {
+    func testLoadInvalidImage() async throws {
         let imageDownloader = ImageDownloader.shared
 
-        let expect = expectation(description: #function)
+        let image = await imageDownloader.loadImage(url: .init(string: "https://wallabag.it/")!)
 
-        cancellable = imageDownloader.loadImage(url: URL(string: "https://wallabag.it/")!)
-            .sink(receiveCompletion: { completion in
-                if completion == .finished {
-                    expect.fulfill()
-                }
-            }, receiveValue: { _ in
-            })
-
-        wait(for: [expect], timeout: 5)
+        XCTAssertNil(image)
     }
 
-    func xtestLoadValidImage() throws {
+    func testLoadValidImage() async throws {
         let imageDownloader = ImageDownloader.shared
 
-        let expect = expectation(description: #function)
+        let image = await imageDownloader.loadImage(url: .init(string: "https://www.wallabag.it/user/themes/alpha/assets/images/wallabagit.png")!)
 
-        cancellable = imageDownloader.loadImage(url: URL(string: "https://www.wallabag.it/user/themes/alpha/assets/images/wallabagit.png")!)
-            .sink(receiveValue: { image in
-                expect.fulfill()
-                XCTAssertNotNil(image)
-            })
-
-        wait(for: [expect], timeout: 5)
+        XCTAssertNotNil(image)
     }
 }

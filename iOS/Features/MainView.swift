@@ -2,9 +2,7 @@ import Combine
 import SwiftUI
 
 struct MainView: View {
-    @EnvironmentObject var appState: AppState
     @EnvironmentObject var router: Router
-    @EnvironmentObject var errorViewModel: ErrorViewModel
     @EnvironmentObject var player: PlayerPublisher
     @State private var showMenu: Bool = false
     @State private var menuOffsetX = CGFloat(0.0)
