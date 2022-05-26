@@ -3,6 +3,8 @@ import SwiftUI
 
 struct EntryRowView: View {
     @ObservedObject var entry: Entry
+    @EnvironmentObject var appState: AppState
+    @AppStorage("readingSpeed") var readingSpeed: Double = 200
 
     var body: some View {
         HStack {
@@ -12,7 +14,7 @@ struct EntryRowView: View {
             VStack(alignment: .leading) {
                 Text(entry.title?.htmlUnescape() ?? "")
                     .font(.headline)
-                Text("Reading time \(Int(entry.readingTime).readingTime)")
+                Text("Reading time \(readingTime())")
                     .font(.footnote)
                 HStack {
                     EntryPictoImage(entry: entry, keyPath: \.isArchived, picto: "book")
@@ -23,6 +25,11 @@ struct EntryRowView: View {
                 }
             }
         }
+    }
+
+    private func readingTime() -> String {
+        let readingTime = Double(entry.readingTime) / readingSpeed * 200.0
+        return readingTime.readingTime
     }
 }
 

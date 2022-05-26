@@ -105,4 +105,13 @@ class WallabagSession: ObservableObject {
         }
         try? coreDataContext.save()
     }
+
+    /// try retrieve wallabag config (available on server 2.5)
+    func config(completion: @escaping (WallabagConfig?) -> Void) {
+        kit.send(to: WallabagConfigEndpoint.get)
+            .replaceError(with: nil)
+            .sink(receiveValue: { (config: WallabagConfig?) in
+                completion(config)
+            }).store(in: &cancellable)
+    }
 }

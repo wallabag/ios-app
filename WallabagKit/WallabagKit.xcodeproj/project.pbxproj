@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		09A5DDCF283BA1E400494B1E /* WallabagConfigEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A5DDCE283BA1E400494B1E /* WallabagConfigEndpoint.swift */; };
+		09A5DDD1283BA23F00494B1E /* WallabagConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A5DDD0283BA23F00494B1E /* WallabagConfig.swift */; };
 		OBJ_38 /* WallabagEntryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* WallabagEntryEndpoint.swift */; };
 		OBJ_39 /* WallabagKitEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* WallabagKitEndpoint.swift */; };
 		OBJ_40 /* WallabagOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* WallabagOAuth.swift */; };
@@ -57,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09A5DDCE283BA1E400494B1E /* WallabagConfigEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagConfigEndpoint.swift; sourceTree = "<group>"; };
+		09A5DDD0283BA23F00494B1E /* WallabagConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagConfig.swift; sourceTree = "<group>"; };
 		OBJ_10 /* WallabagEntryEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagEntryEndpoint.swift; sourceTree = "<group>"; };
 		OBJ_11 /* WallabagKitEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagKitEndpoint.swift; sourceTree = "<group>"; };
 		OBJ_12 /* WallabagOAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagOAuth.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 				OBJ_19 /* WallabagEntry.swift */,
 				OBJ_20 /* WallabagTag.swift */,
 				OBJ_21 /* WallabagToken.swift */,
+				09A5DDD0283BA23F00494B1E /* WallabagConfig.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				OBJ_11 /* WallabagKitEndpoint.swift */,
 				OBJ_12 /* WallabagOAuth.swift */,
 				OBJ_13 /* WallabagTagEndpoint.swift */,
+				09A5DDCE283BA1E400494B1E /* WallabagConfigEndpoint.swift */,
 			);
 			path = Endpoint;
 			sourceTree = "<group>";
@@ -292,6 +298,8 @@
 				OBJ_48 /* EntriesFetcher.swift in Sources */,
 				OBJ_49 /* WallabagKit.swift in Sources */,
 				OBJ_50 /* WallabagKitError.swift in Sources */,
+				09A5DDD1283BA23F00494B1E /* WallabagConfig.swift in Sources */,
+				09A5DDCF283BA1E400494B1E /* WallabagConfigEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
