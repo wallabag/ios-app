@@ -38,6 +38,8 @@ class AppState: NSObject, ObservableObject {
         router.load(.registration)
     }
 
+    /// Fetch user config from server
+    /// *Require server running version 2.5*
     private func fetchConfig() {
         logger.info("Fetch user config")
         session.config { [weak self] config in
