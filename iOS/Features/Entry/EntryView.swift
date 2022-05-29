@@ -81,9 +81,12 @@ struct EntryView: View {
                 })
                 .accessibilityHint("Load entry in text-to-speech player")
             }, label: {
-                Image(systemName: "filemenu.and.selection").foregroundColor(.primary)
+                Label("Entry option", systemImage: "filemenu.and.selection")
+                    .foregroundColor(.primary)
+                    .labelStyle(.iconOnly)
+                    .frame(width: 28, height: 28)
             }).accessibilityLabel("Entry option")
-        }.padding()
+        }.padding(.horizontal)
     }
 }
 
