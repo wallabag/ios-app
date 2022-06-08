@@ -31,6 +31,8 @@ class WallabagSession: ObservableObject {
                     switch error {
                     case let WallabagKitError.jsonError(jsonError):
                         self.state = .error(reason: jsonError.errorDescription)
+                    case WallabagKitError.invalidApiEndpoint:
+                        self.state = .error(reason: "Invalid api endpoint, check your host configuration")
                     default:
                         self.state = .error(reason: "Unknown error")
                     }

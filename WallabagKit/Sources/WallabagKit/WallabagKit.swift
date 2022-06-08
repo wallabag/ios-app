@@ -59,6 +59,9 @@ public class WallabagKit {
                         throw WallabagKitError.unknown
                     }
                 }
+                if response.statusCode == 404 {
+                    throw WallabagKitError.invalidApiEndpoint
+                }
                 return data
             }
             .decode(type: WallabagToken.self, decoder: decoder)
