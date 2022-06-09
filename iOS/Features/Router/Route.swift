@@ -9,6 +9,7 @@ enum Route: Equatable {
     case entry(Entry)
     case registration
     case tips
+    case setting
 
     var id: String {
         switch self {
@@ -26,6 +27,8 @@ enum Route: Equatable {
             return "registration"
         case .tips:
             return "tips"
+        case .setting:
+            return "setting"
         }
     }
 
@@ -45,6 +48,8 @@ enum Route: Equatable {
             return "Registration"
         case .bugReport:
             return "Bug report"
+        case .setting:
+            return "Setting"
         }
     }
 
@@ -65,6 +70,8 @@ enum Route: Equatable {
             RegistrationView()
         case .tips:
             TipView()
+        case .setting:
+            SettingView()
         }
     }
 

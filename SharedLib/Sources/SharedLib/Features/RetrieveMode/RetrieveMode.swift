@@ -17,7 +17,20 @@ public enum RetrieveMode: String, CaseIterable {
         case "starredArticles":
             self = .starredArticles
         default:
-            fatalError()
+            self = .allArticles
+        }
+    }
+
+    public var settingCase: String {
+        switch self {
+        case .allArticles:
+            return "allArticles"
+        case .archivedArticles:
+            return "archivedArticles"
+        case .unarchivedArticles:
+            return "unarchivedArticles"
+        case .starredArticles:
+            return "starredArticles"
         }
     }
 

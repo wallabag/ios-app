@@ -34,6 +34,7 @@
 		094AA03E2629EB1F006E5605 /* wallabagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094AA03D2629EB1F006E5605 /* wallabagTests.swift */; };
 		094AA05A2629EB60006E5605 /* ImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094A9FED2629E6BB006E5605 /* ImageCacheTests.swift */; };
 		094AA0692629EB98006E5605 /* ImageDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094AA00F2629E739006E5605 /* ImageDownloaderTests.swift */; };
+		09564E0D2851C57200D39E95 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09564E0C2851C57200D39E95 /* SettingView.swift */; };
 		09644AD125C94825000FFDA1 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644AD025C94825000FFDA1 /* ShareViewController.swift */; };
 		09644AD425C94825000FFDA1 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09644AD225C94825000FFDA1 /* MainInterface.storyboard */; };
 		09644AD825C94825000FFDA1 /* bagit.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 09644ACE25C94825000FFDA1 /* bagit.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -234,6 +235,7 @@
 		094AA03B2629EB1F006E5605 /* wallabagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		094AA03D2629EB1F006E5605 /* wallabagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wallabagTests.swift; sourceTree = "<group>"; };
 		094AA03F2629EB1F006E5605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09564E0C2851C57200D39E95 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		09644ACE25C94825000FFDA1 /* bagit.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = bagit.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		09644AD025C94825000FFDA1 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		09644AD325C94825000FFDA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -603,6 +605,7 @@
 			isa = PBXGroup;
 			children = (
 				09644BB625C98232000FFDA1 /* AppSetting.swift */,
+				09564E0C2851C57200D39E95 /* SettingView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -1333,6 +1336,7 @@
 				09644C6D25C985A9000FFDA1 /* StarEntryButton.swift in Sources */,
 				09644C6125C98596000FFDA1 /* EntriesListView.swift in Sources */,
 				09644CF325C986EE000FFDA1 /* SearchView.swift in Sources */,
+				09564E0D2851C57200D39E95 /* SettingView.swift in Sources */,
 				09644C5F25C98596000FFDA1 /* EntryRowView.swift in Sources */,
 				09644CE925C986CC000FFDA1 /* ServerViewModel.swift in Sources */,
 				09644CD725C986C0000FFDA1 /* ClientIdClientSecretViewModel.swift in Sources */,
