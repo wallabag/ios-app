@@ -11,6 +11,7 @@ struct MenuView: View {
         .init(title: "Add entry", img: "tray.and.arrow.down", route: .addEntry),
         .init(title: "About", img: "questionmark", route: .about),
         .init(title: "Don", img: "heart", route: .tips),
+        .init(title: "Setting", img: "gear", route: .setting),
     ]
 
     // swiftlint:disable multiple_closures_with_trailing_closure
@@ -34,13 +35,6 @@ struct MenuView: View {
                         }
                     }) {
                         Label("Bug report", systemImage: "ant")
-                    }
-                    Button(action: {
-                        tapButtonMenu {
-                            openURL(URL(string: UIApplication.openSettingsURLString)!)
-                        }
-                    }) {
-                        Label("Setting", systemImage: "gear")
                     }
                     Button(role: .destructive, action: {
                         tapButtonMenu {

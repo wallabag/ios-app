@@ -46,6 +46,6 @@ struct WallabagUserDefaults {
     @GeneralSetting("showImageInList", defaultValue: true)
     static var showImageInList: Bool
 
-    @GeneralSetting("itemPerPageDuringSync", defaultValue: "50")
-    static var itemPerPageDuringSync: String
+    @GeneralSetting("itemPerPageDuringSync", defaultValue: 50)
+    static var itemPerPageDuringSync: Int
 }
