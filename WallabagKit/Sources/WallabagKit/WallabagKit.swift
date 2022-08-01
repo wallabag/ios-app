@@ -52,16 +52,9 @@ public class WallabagKit {
         return session.dataTaskPublisher(for: urlRequest)
             .tryMap { data, response -> Data in
                 guard let response = response as? HTTPURLResponse else { fatalError() }
-                if 400 ... 401 ~= response.statusCode {
-                    if let jsonError = try? self.decoder.decode(WallabagJsonError.self, from: data) {
-                        throw WallabagKitError.jsonError(json: jsonError)
-                    } else {
-                        throw WallabagKitError.unknown
-                    }
-                }
-                if response.statusCode == 404 {
-                    throw WallabagKitError.invalidApiEndpoint
-                }
+
+                try self.handleStatusCode(from: response, with: data)
+
                 return data
             }
             .decode(type: WallabagToken.self, decoder: decoder)
@@ -86,17 +79,8 @@ public class WallabagKit {
             .tryMap { data, response in
                 guard let response = response as? HTTPURLResponse else { fatalError() }
 
-                if response.statusCode == 401 {
-                    throw WallabagKitError.authenticationRequired
-                }
+                try self.handleStatusCode(from: response, with: data)
 
-                if 400 ... 401 ~= response.statusCode {
-                    if let poc = try? self.decoder.decode(WallabagJsonError.self, from: data) {
-                        throw WallabagKitError.jsonError(json: poc)
-                    } else {
-                        throw WallabagKitError.unknown
-                    }
-                }
                 return data
             }
             .tryCatch { error in
@@ -105,8 +89,7 @@ public class WallabagKit {
                         if token != nil {
                             return self.fetch(to: to)
                         }
-                        print("Refresh failed")
-                        throw WallabagKitError.unknown
+                        throw WallabagKitError.invalidToken
                     }
                     .mapError { error in WallabagKitError.wrap(error: error) }
                     .switchToLatest()
@@ -128,5 +111,27 @@ public class WallabagKit {
         }
 
         return urlRequest
+    }
+
+    private func handleStatusCode(from response: HTTPURLResponse, with data: Data) throws {
+        if 400 ... 401 ~= response.statusCode {
+            if let jsonError = try? decoder.decode(WallabagJsonError.self, from: data) {
+                throw WallabagKitError.jsonError(json: jsonError)
+            } else {
+                throw WallabagKitError.decodingJSON
+            }
+        }
+
+        if response.statusCode == 401 {
+            throw WallabagKitError.authenticationRequired
+        }
+
+        if response.statusCode == 404 {
+            throw WallabagKitError.invalidApiEndpoint
+        }
+
+        if response.statusCode == 500 {
+            throw WallabagKitError.serverError
+        }
     }
 }

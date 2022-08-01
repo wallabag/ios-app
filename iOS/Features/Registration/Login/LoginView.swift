@@ -16,8 +16,11 @@ struct LoginView: View {
             Button("Login") {
                 self.loginViewModel.tryLogin()
             }.disabled(!loginViewModel.isValid)
-            loginViewModel.error.map {
-                Text($0).foregroundColor(.red)
+            loginViewModel.error.map { error in
+                VStack {
+                    Text(error).foregroundColor(.red)
+                    Link("Report issue", destination: "https://github.com/wallabag/ios-app/issues")
+                }
             }
         }.navigationBarTitle("Login & Password")
             .navigationBarItems(trailing:

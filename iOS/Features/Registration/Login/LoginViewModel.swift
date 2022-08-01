@@ -25,11 +25,7 @@ class LoginViewModel: ObservableObject {
             case .connected:
                 self.appState.registred = true
                 self.router.load(.entries)
-            case .unknown:
-                break
-            case .connecting:
-                break
-            case .offline:
+            case .unknown, .connecting, .offline:
                 break
             }
         }.store(in: &cancellable)

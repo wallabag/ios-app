@@ -9,11 +9,11 @@ import Foundation
 
 public enum WallabagKitError: Error {
     case authenticationRequired
-    case unknown
     case serverError
     case invalidApiEndpoint
     case jsonError(json: WallabagJsonError)
     case decodingJSON
+    case invalidToken
     case wrap(error: Error)
 }
 
