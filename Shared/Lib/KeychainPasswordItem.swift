@@ -125,11 +125,11 @@ public struct KeychainPasswordItem {
         query[kSecClass as String] = kSecClassGenericPassword
         query[kSecAttrService as String] = service as AnyObject?
 
-        if let account = account {
+        if let account {
             query[kSecAttrAccount as String] = account as AnyObject?
         }
 
-        if let accessGroup = accessGroup {
+        if let accessGroup {
             query[kSecAttrAccessGroup as String] = accessGroup as AnyObject?
         }
 

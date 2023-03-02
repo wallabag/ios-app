@@ -43,7 +43,7 @@ class AppState: NSObject, ObservableObject {
     private func fetchConfig() {
         logger.info("Fetch user config")
         session.config { [weak self] config in
-            guard let config = config else { return }
+            guard let config else { return }
             logger.debug("User config available")
             DispatchQueue.main.async {
                 self?.readingSpeed = config.readingSpeed

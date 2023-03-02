@@ -51,7 +51,7 @@ class ShareViewController: UIViewController {
             kit.password = WallabagUserDefaults.password
 
             getUrl { shareURL in
-                guard let shareURL = shareURL else {
+                guard let shareURL else {
                     self.clearView(withError: .retrievingURL)
                     return
                 }

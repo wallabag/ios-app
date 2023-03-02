@@ -7,16 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0916CD7C25F0D1F1000DC311 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0916CD7B25F0D1F1000DC311 /* Menu.swift */; };
-		0916CD8825F0D450000DC311 /* EntriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644C5B25C98596000FFDA1 /* EntriesListView.swift */; };
-		0916CD8E25F0D47A000DC311 /* EntryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644C5925C98596000FFDA1 /* EntryRowView.swift */; };
-		0916CDB625F0D5D6000DC311 /* HTMLEntities in Frameworks */ = {isa = PBXBuildFile; productRef = 0916CDB525F0D5D6000DC311 /* HTMLEntities */; };
-		0916CDBC25F0E04D000DC311 /* wallabagStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09644D1E25C98782000FFDA1 /* wallabagStore.xcdatamodeld */; };
-		0916CDE725F0E54C000DC311 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0916CDE625F0E54C000DC311 /* RegistrationView.swift */; };
-		0916CDF725F0E5BD000DC311 /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B8625C98176000FFDA1 /* RouterView.swift */; };
 		093D139F26263B05008C2150 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093D139E26263B05008C2150 /* Intents.framework */; };
 		093D13A226263B05008C2150 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093D13A126263B05008C2150 /* IntentHandler.swift */; };
-		093D13B626263B05008C2150 /* Shortcuts.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 093D139D26263B05008C2150 /* Shortcuts.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		093D13B626263B05008C2150 /* Shortcuts.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 093D139D26263B05008C2150 /* Shortcuts.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		093D13D826263CC4008C2150 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 093D13D726263CC4008C2150 /* Intents.intentdefinition */; };
 		093D13EC26263F81008C2150 /* AddEntryIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093D13EB26263F81008C2150 /* AddEntryIntentHandler.swift */; };
 		093D13F3262640B7008C2150 /* WallabagUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B1E25C94D9C000FFDA1 /* WallabagUserDefaults.swift */; };
@@ -24,7 +17,6 @@
 		093D13FB262640C0008C2150 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B3225C94DEB000FFDA1 /* Password.swift */; };
 		093D13FC262640C0008C2150 /* GeneralSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B4125C94E2B000FFDA1 /* GeneralSetting.swift */; };
 		093D1403262640C9008C2150 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B3925C94E03000FFDA1 /* KeychainPasswordItem.swift */; };
-		093D14BA26264D62008C2150 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 093D14B926264D62008C2150 /* SharedLib */; };
 		09483CC7270498C20084CEB2 /* SharedLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09483CC6270498C20084CEB2 /* SharedLib.framework */; };
 		09483CC8270498C20084CEB2 /* SharedLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 09483CC6270498C20084CEB2 /* SharedLib.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		09483CCD270499120084CEB2 /* WallabagKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09483CCC270499120084CEB2 /* WallabagKit.framework */; };
@@ -37,7 +29,7 @@
 		09564E0D2851C57200D39E95 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09564E0C2851C57200D39E95 /* SettingView.swift */; };
 		09644AD125C94825000FFDA1 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644AD025C94825000FFDA1 /* ShareViewController.swift */; };
 		09644AD425C94825000FFDA1 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09644AD225C94825000FFDA1 /* MainInterface.storyboard */; };
-		09644AD825C94825000FFDA1 /* bagit.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 09644ACE25C94825000FFDA1 /* bagit.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		09644AD825C94825000FFDA1 /* bagit.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 09644ACE25C94825000FFDA1 /* bagit.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		09644AE325C94863000FFDA1 /* ShareExtensionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644AE225C94863000FFDA1 /* ShareExtensionError.swift */; };
 		09644AEA25C94879000FFDA1 /* ExtensionClass.js in Resources */ = {isa = PBXBuildFile; fileRef = 09644AE925C94879000FFDA1 /* ExtensionClass.js */; };
 		09644AF725C94982000FFDA1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09644AF625C94982000FFDA1 /* Media.xcassets */; };
@@ -116,25 +108,7 @@
 		09644D1025C9872F000FFDA1 /* BundleKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644D0F25C9872F000FFDA1 /* BundleKey.swift */; };
 		09644D1825C98755000FFDA1 /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644D1725C98755000FFDA1 /* AppDelegateExtension.swift */; };
 		09644D2025C98782000FFDA1 /* wallabagStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09644D1E25C98782000FFDA1 /* wallabagStore.xcdatamodeld */; };
-		097F818525CAEA79006C85F6 /* wallabagMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F818425CAEA79006C85F6 /* wallabagMacApp.swift */; };
-		097F819D25CAF9FE006C85F6 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F819C25CAF9FE006C85F6 /* SidebarView.swift */; };
-		097F81AA25CB1108006C85F6 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F81A925CB1108006C85F6 /* Route.swift */; };
 		097F81EB25CB18BA006C85F6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F81DF25CB187B006C85F6 /* Router.swift */; };
-		097F81F225CB1996006C85F6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F81F125CB1996006C85F6 /* Router.swift */; };
-		097F81FA25CB19F6006C85F6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F81F925CB19F6006C85F6 /* AppState.swift */; };
-		097F820025CB1A04006C85F6 /* WallabagUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B1E25C94D9C000FFDA1 /* WallabagUserDefaults.swift */; };
-		097F820625CB1A0A006C85F6 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B2625C94DD2000FFDA1 /* Setting.swift */; };
-		097F820C25CB1A0C006C85F6 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B3225C94DEB000FFDA1 /* Password.swift */; };
-		097F821225CB1A0F006C85F6 /* GeneralSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B4125C94E2B000FFDA1 /* GeneralSetting.swift */; };
-		097F821825CB1A16006C85F6 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B3925C94E03000FFDA1 /* KeychainPasswordItem.swift */; };
-		097F821E25CB1A4C006C85F6 /* WallabagSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644BD725C9833E000FFDA1 /* WallabagSession.swift */; };
-		097F822C25CB1A93006C85F6 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644BE525C98350000FFDA1 /* Injector.swift */; };
-		097F823325CB1A9A006C85F6 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 097F823225CB1A9A006C85F6 /* Swinject */; };
-		097F823925CB1AB1006C85F6 /* CoreDataViewContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644C4E25C9850D000FFDA1 /* CoreDataViewContext.swift */; };
-		097F823F25CB1ABB006C85F6 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644BD625C9833E000FFDA1 /* CoreData.swift */; };
-		097F824625CB1ADF006C85F6 /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F824525CB1ADF006C85F6 /* DependencyInjection.swift */; };
-		097F825225CB1B2E006C85F6 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644BF925C983F8000FFDA1 /* Entry.swift */; };
-		097F825825CB1B33006C85F6 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644BF825C983F8000FFDA1 /* Tag.swift */; };
 		09AD75A12624F93D00708A1E /* article.html in Resources */ = {isa = PBXBuildFile; fileRef = 09AD759D2624F93D00708A1E /* article.html */; };
 		09AD75A22624F93D00708A1E /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 09AD759E2624F93D00708A1E /* main.css */; };
 		09AD75A32624F93D00708A1E /* ratatouille.css in Resources */ = {isa = PBXBuildFile; fileRef = 09AD759F2624F93D00708A1E /* ratatouille.css */; };
@@ -142,11 +116,8 @@
 		09AD75BE2624FEEE00708A1E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09AD75C02624FEEE00708A1E /* Localizable.strings */; };
 		09BCBBD4282BD46A00B234CB /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BCBBD3282BD46A00B234CB /* RouterTests.swift */; };
 		09BFB29925C8348E00E12B4D /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BFB29825C8348E00E12B4D /* Tests_iOS.swift */; };
-		09BFB2A425C8348E00E12B4D /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BFB2A325C8348E00E12B4D /* Tests_macOS.swift */; };
 		09BFB2A625C8348E00E12B4D /* wallabag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09BFB27A25C8348E00E12B4D /* wallabag.xcdatamodeld */; };
-		09BFB2A725C8348E00E12B4D /* wallabag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09BFB27A25C8348E00E12B4D /* wallabag.xcdatamodeld */; };
 		09BFB2AE25C8348E00E12B4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09BFB27F25C8348E00E12B4D /* Assets.xcassets */; };
-		09BFB2AF25C8348E00E12B4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09BFB27F25C8348E00E12B4D /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,13 +149,6 @@
 			remoteGlobalIDString = 09BFB28325C8348E00E12B4D;
 			remoteInfo = "wallabag (iOS)";
 		};
-		09BFB2A025C8348E00E12B4D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 09BFB27525C8348E00E12B4D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 09BFB28B25C8348E00E12B4D;
-			remoteInfo = "wallabag (macOS)";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -200,23 +164,21 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		09644AD925C94825000FFDA1 /* Embed App Extensions */ = {
+		09644AD925C94825000FFDA1 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				09644AD825C94825000FFDA1 /* bagit.appex in Embed App Extensions */,
-				093D13B626263B05008C2150 /* Shortcuts.appex in Embed App Extensions */,
+				09644AD825C94825000FFDA1 /* bagit.appex in Embed Foundation Extensions */,
+				093D13B626263B05008C2150 /* Shortcuts.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0916CD7B25F0D1F1000DC311 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
-		0916CDE625F0E54C000DC311 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		093D137226263A96008C2150 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = Library/Frameworks/IntentsUI.framework; sourceTree = DEVELOPER_DIR; };
 		093D139D26263B05008C2150 /* Shortcuts.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Shortcuts.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		093D139E26263B05008C2150 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
@@ -311,13 +273,7 @@
 		09644D0F25C9872F000FFDA1 /* BundleKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleKey.swift; sourceTree = "<group>"; };
 		09644D1725C98755000FFDA1 /* AppDelegateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
 		09644D1F25C98782000FFDA1 /* wallabagStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabagStore.xcdatamodel; sourceTree = "<group>"; };
-		097F818425CAEA79006C85F6 /* wallabagMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wallabagMacApp.swift; sourceTree = "<group>"; };
-		097F819C25CAF9FE006C85F6 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
-		097F81A925CB1108006C85F6 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		097F81DF25CB187B006C85F6 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		097F81F125CB1996006C85F6 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		097F81F925CB19F6006C85F6 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		097F824525CB1ADF006C85F6 /* DependencyInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjection.swift; sourceTree = "<group>"; };
 		09AD75962624F4E800708A1E /* wallabag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wallabag.entitlements; sourceTree = "<group>"; };
 		09AD759D2624F93D00708A1E /* article.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = article.html; sourceTree = "<group>"; };
 		09AD759E2624F93D00708A1E /* main.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
@@ -340,15 +296,9 @@
 		09BFB27F25C8348E00E12B4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09BFB28425C8348E00E12B4D /* wallabag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wallabag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09BFB28725C8348E00E12B4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09BFB28C25C8348E00E12B4D /* wallabag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wallabag.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		09BFB28E25C8348E00E12B4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09BFB28F25C8348E00E12B4D /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		09BFB29425C8348E00E12B4D /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09BFB29825C8348E00E12B4D /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
 		09BFB29A25C8348E00E12B4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09BFB29F25C8348E00E12B4D /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		09BFB2A325C8348E00E12B4D /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
-		09BFB2A525C8348E00E12B4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C1103B626A0852F00E50F26 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -388,24 +338,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		09BFB28925C8348E00E12B4D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				097F823325CB1A9A006C85F6 /* Swinject in Frameworks */,
-				0916CDB625F0D5D6000DC311 /* HTMLEntities in Frameworks */,
-				093D14BA26264D62008C2150 /* SharedLib in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		09BFB29125C8348E00E12B4D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		09BFB29C25C8348E00E12B4D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -415,14 +348,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0916CDE525F0E524000DC311 /* Registration */ = {
-			isa = PBXGroup;
-			children = (
-				0916CDE625F0E54C000DC311 /* RegistrationView.swift */,
-			);
-			path = Registration;
-			sourceTree = "<group>";
-		};
 		0916CDF625F0E5B6000DC311 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -776,43 +701,6 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		097F819525CAEBB9006C85F6 /* Features */ = {
-			isa = PBXGroup;
-			children = (
-				0916CDE525F0E524000DC311 /* Registration */,
-				097F81A825CB10F4006C85F6 /* Router */,
-				097F819B25CAF9C2006C85F6 /* Sidebar */,
-			);
-			path = Features;
-			sourceTree = "<group>";
-		};
-		097F819B25CAF9C2006C85F6 /* Sidebar */ = {
-			isa = PBXGroup;
-			children = (
-				097F819C25CAF9FE006C85F6 /* SidebarView.swift */,
-				0916CD7B25F0D1F1000DC311 /* Menu.swift */,
-			);
-			path = Sidebar;
-			sourceTree = "<group>";
-		};
-		097F81A825CB10F4006C85F6 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				097F81A925CB1108006C85F6 /* Route.swift */,
-				097F81F125CB1996006C85F6 /* Router.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		097F81F825CB19ED006C85F6 /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-				097F81F925CB19F6006C85F6 /* AppState.swift */,
-				097F824525CB1ADF006C85F6 /* DependencyInjection.swift */,
-			);
-			path = Lib;
-			sourceTree = "<group>";
-		};
 		097F824C25CB1B17006C85F6 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -868,12 +756,10 @@
 				09644ACF25C94825000FFDA1 /* bagit */,
 				09644B1525C94CA6000FFDA1 /* Frameworks */,
 				09BFB28625C8348E00E12B4D /* iOS */,
-				09BFB28D25C8348E00E12B4D /* macOS */,
 				09BFB28525C8348E00E12B4D /* Products */,
 				09BFB27925C8348E00E12B4D /* Shared */,
 				093D13A026263B05008C2150 /* Shortcuts */,
 				09BFB29725C8348E00E12B4D /* Tests iOS */,
-				09BFB2A225C8348E00E12B4D /* Tests macOS */,
 				094AA03C2629EB1F006E5605 /* wallabagTests */,
 			);
 			sourceTree = "<group>";
@@ -895,9 +781,7 @@
 			isa = PBXGroup;
 			children = (
 				09BFB28425C8348E00E12B4D /* wallabag.app */,
-				09BFB28C25C8348E00E12B4D /* wallabag.app */,
 				09BFB29425C8348E00E12B4D /* Tests iOS.xctest */,
-				09BFB29F25C8348E00E12B4D /* Tests macOS.xctest */,
 				09644ACE25C94825000FFDA1 /* bagit.appex */,
 				093D139D26263B05008C2150 /* Shortcuts.appex */,
 				094AA03B2629EB1F006E5605 /* wallabagTests.xctest */,
@@ -923,18 +807,6 @@
 			path = iOS;
 			sourceTree = "<group>";
 		};
-		09BFB28D25C8348E00E12B4D /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				097F81F825CB19ED006C85F6 /* Lib */,
-				097F819525CAEBB9006C85F6 /* Features */,
-				09BFB28E25C8348E00E12B4D /* Info.plist */,
-				09BFB28F25C8348E00E12B4D /* macOS.entitlements */,
-				097F818425CAEA79006C85F6 /* wallabagMacApp.swift */,
-			);
-			path = macOS;
-			sourceTree = "<group>";
-		};
 		09BFB29725C8348E00E12B4D /* Tests iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -942,15 +814,6 @@
 				09BFB29A25C8348E00E12B4D /* Info.plist */,
 			);
 			path = "Tests iOS";
-			sourceTree = "<group>";
-		};
-		09BFB2A225C8348E00E12B4D /* Tests macOS */ = {
-			isa = PBXGroup;
-			children = (
-				09BFB2A325C8348E00E12B4D /* Tests_macOS.swift */,
-				09BFB2A525C8348E00E12B4D /* Info.plist */,
-			);
-			path = "Tests macOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1019,7 +882,7 @@
 				09BFB28025C8348E00E12B4D /* Sources */,
 				09BFB28125C8348E00E12B4D /* Frameworks */,
 				09BFB28225C8348E00E12B4D /* Resources */,
-				09644AD925C94825000FFDA1 /* Embed App Extensions */,
+				09644AD925C94825000FFDA1 /* Embed Foundation Extensions */,
 				093D142A262643CA008C2150 /* Swiftlint */,
 				09483CC9270498C20084CEB2 /* Embed Frameworks */,
 			);
@@ -1036,28 +899,6 @@
 			);
 			productName = "wallabag (iOS)";
 			productReference = 09BFB28425C8348E00E12B4D /* wallabag.app */;
-			productType = "com.apple.product-type.application";
-		};
-		09BFB28B25C8348E00E12B4D /* wallabag (macOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 09BFB2B525C8348E00E12B4D /* Build configuration list for PBXNativeTarget "wallabag (macOS)" */;
-			buildPhases = (
-				09BFB28825C8348E00E12B4D /* Sources */,
-				09BFB28925C8348E00E12B4D /* Frameworks */,
-				09BFB28A25C8348E00E12B4D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "wallabag (macOS)";
-			packageProductDependencies = (
-				097F823225CB1A9A006C85F6 /* Swinject */,
-				0916CDB525F0D5D6000DC311 /* HTMLEntities */,
-				093D14B926264D62008C2150 /* SharedLib */,
-			);
-			productName = "wallabag (macOS)";
-			productReference = 09BFB28C25C8348E00E12B4D /* wallabag.app */;
 			productType = "com.apple.product-type.application";
 		};
 		09BFB29325C8348E00E12B4D /* Tests iOS */ = {
@@ -1078,24 +919,6 @@
 			productReference = 09BFB29425C8348E00E12B4D /* Tests iOS.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		09BFB29E25C8348E00E12B4D /* Tests macOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 09BFB2BB25C8348E00E12B4D /* Build configuration list for PBXNativeTarget "Tests macOS" */;
-			buildPhases = (
-				09BFB29B25C8348E00E12B4D /* Sources */,
-				09BFB29C25C8348E00E12B4D /* Frameworks */,
-				09BFB29D25C8348E00E12B4D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				09BFB2A125C8348E00E12B4D /* PBXTargetDependency */,
-			);
-			name = "Tests macOS";
-			productName = "Tests macOS";
-			productReference = 09BFB29F25C8348E00E12B4D /* Tests macOS.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1103,7 +926,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1300;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					093D139C26263B05008C2150 = {
 						CreatedOnToolsVersion = 12.4;
@@ -1118,16 +941,9 @@
 					09BFB28325C8348E00E12B4D = {
 						CreatedOnToolsVersion = 12.4;
 					};
-					09BFB28B25C8348E00E12B4D = {
-						CreatedOnToolsVersion = 12.4;
-					};
 					09BFB29325C8348E00E12B4D = {
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = 09BFB28325C8348E00E12B4D;
-					};
-					09BFB29E25C8348E00E12B4D = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 09BFB28B25C8348E00E12B4D;
 					};
 				};
 			};
@@ -1160,10 +976,8 @@
 			projectRoot = "";
 			targets = (
 				09BFB28325C8348E00E12B4D /* wallabag (iOS) */,
-				09BFB28B25C8348E00E12B4D /* wallabag (macOS) */,
 				09644ACD25C94825000FFDA1 /* bagit */,
 				093D139C26263B05008C2150 /* Shortcuts */,
-				09BFB29E25C8348E00E12B4D /* Tests macOS */,
 				09BFB29325C8348E00E12B4D /* Tests iOS */,
 				094AA03A2629EB1F006E5605 /* wallabagTests */,
 			);
@@ -1208,22 +1022,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		09BFB28A25C8348E00E12B4D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				09BFB2AF25C8348E00E12B4D /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		09BFB29225C8348E00E12B4D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		09BFB29D25C8348E00E12B4D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1372,50 +1171,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		09BFB28825C8348E00E12B4D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0916CDF725F0E5BD000DC311 /* RouterView.swift in Sources */,
-				097F820C25CB1A0C006C85F6 /* Password.swift in Sources */,
-				097F825225CB1B2E006C85F6 /* Entry.swift in Sources */,
-				0916CDBC25F0E04D000DC311 /* wallabagStore.xcdatamodeld in Sources */,
-				097F821225CB1A0F006C85F6 /* GeneralSetting.swift in Sources */,
-				097F81AA25CB1108006C85F6 /* Route.swift in Sources */,
-				097F821E25CB1A4C006C85F6 /* WallabagSession.swift in Sources */,
-				097F823F25CB1ABB006C85F6 /* CoreData.swift in Sources */,
-				097F825825CB1B33006C85F6 /* Tag.swift in Sources */,
-				097F822C25CB1A93006C85F6 /* Injector.swift in Sources */,
-				097F824625CB1ADF006C85F6 /* DependencyInjection.swift in Sources */,
-				097F818525CAEA79006C85F6 /* wallabagMacApp.swift in Sources */,
-				097F81F225CB1996006C85F6 /* Router.swift in Sources */,
-				0916CDE725F0E54C000DC311 /* RegistrationView.swift in Sources */,
-				097F81FA25CB19F6006C85F6 /* AppState.swift in Sources */,
-				09BFB2A725C8348E00E12B4D /* wallabag.xcdatamodeld in Sources */,
-				0916CD8E25F0D47A000DC311 /* EntryRowView.swift in Sources */,
-				0916CD8825F0D450000DC311 /* EntriesListView.swift in Sources */,
-				097F823925CB1AB1006C85F6 /* CoreDataViewContext.swift in Sources */,
-				097F819D25CAF9FE006C85F6 /* SidebarView.swift in Sources */,
-				097F820625CB1A0A006C85F6 /* Setting.swift in Sources */,
-				097F820025CB1A04006C85F6 /* WallabagUserDefaults.swift in Sources */,
-				0916CD7C25F0D1F1000DC311 /* Menu.swift in Sources */,
-				097F821825CB1A16006C85F6 /* KeychainPasswordItem.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		09BFB29025C8348E00E12B4D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				09BFB29925C8348E00E12B4D /* Tests_iOS.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		09BFB29B25C8348E00E12B4D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				09BFB2A425C8348E00E12B4D /* Tests_macOS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1441,11 +1201,6 @@
 			isa = PBXTargetDependency;
 			target = 09BFB28325C8348E00E12B4D /* wallabag (iOS) */;
 			targetProxy = 09BFB29525C8348E00E12B4D /* PBXContainerItemProxy */;
-		};
-		09BFB2A125C8348E00E12B4D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 09BFB28B25C8348E00E12B4D /* wallabag (macOS) */;
-			targetProxy = 09BFB2A025C8348E00E12B4D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1654,6 +1409,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -1715,6 +1471,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1753,6 +1510,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag";
 				PRODUCT_NAME = wallabag;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1778,60 +1538,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag";
 				PRODUCT_NAME = wallabag;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		09BFB2B625C8348E00E12B4D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = G97URPCGB8;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = macOS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag";
-				PRODUCT_NAME = wallabag;
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		09BFB2B725C8348E00E12B4D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = G97URPCGB8;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = macOS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag";
-				PRODUCT_NAME = wallabag;
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1879,50 +1592,6 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "wallabag (iOS)";
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		09BFB2BC25C8348E00E12B4D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = G97URPCGB8;
-				INFOPLIST_FILE = "Tests macOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.Tests-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = "wallabag (macOS)";
-			};
-			name = Debug;
-		};
-		09BFB2BD25C8348E00E12B4D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = G97URPCGB8;
-				INFOPLIST_FILE = "Tests macOS/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.Tests-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = "wallabag (macOS)";
 			};
 			name = Release;
 		};
@@ -1974,29 +1643,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		09BFB2B525C8348E00E12B4D /* Build configuration list for PBXNativeTarget "wallabag (macOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				09BFB2B625C8348E00E12B4D /* Debug */,
-				09BFB2B725C8348E00E12B4D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		09BFB2B825C8348E00E12B4D /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				09BFB2B925C8348E00E12B4D /* Debug */,
 				09BFB2BA25C8348E00E12B4D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		09BFB2BB25C8348E00E12B4D /* Build configuration list for PBXNativeTarget "Tests macOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				09BFB2BC25C8348E00E12B4D /* Debug */,
-				09BFB2BD25C8348E00E12B4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2023,15 +1674,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0916CDB525F0D5D6000DC311 /* HTMLEntities */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 09644B0D25C94C6B000FFDA1 /* XCRemoteSwiftPackageReference "swift-html-entities" */;
-			productName = HTMLEntities;
-		};
-		093D14B926264D62008C2150 /* SharedLib */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SharedLib;
-		};
 		09644B0625C94C14000FFDA1 /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 09644B0525C94C14000FFDA1 /* XCRemoteSwiftPackageReference "Swinject" */;
@@ -2041,11 +1683,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 09644B0D25C94C6B000FFDA1 /* XCRemoteSwiftPackageReference "swift-html-entities" */;
 			productName = HTMLEntities;
-		};
-		097F823225CB1A9A006C85F6 /* Swinject */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 09644B0525C94C14000FFDA1 /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = Swinject;
 		};
 /* End XCSwiftPackageProductDependency section */
 

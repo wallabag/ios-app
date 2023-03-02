@@ -52,7 +52,7 @@ final class PlayerPublisher: ObservableObject {
     }
 
     func play() {
-        guard let utterance = utterance else { return }
+        guard let utterance else { return }
         if !speecher.isSpeaking {
             speecher.speak(utterance)
         } else {

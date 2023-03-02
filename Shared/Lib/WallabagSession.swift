@@ -38,7 +38,7 @@ class WallabagSession: ObservableObject {
                     }
                 }
             }, receiveValue: { token in
-                guard let token = token else { self.state = .unknown; return }
+                guard let token else { self.state = .unknown; return }
                 WallabagUserDefaults.refreshToken = token.refreshToken
                 WallabagUserDefaults.accessToken = token.accessToken
                 self.kit.accessToken = token.accessToken
