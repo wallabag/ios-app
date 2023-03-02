@@ -5,9 +5,9 @@
       location = "container:wallabag.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:WallabagKit/WallabagKit.xcodeproj">
+      location = "group:WallabagKit">
    </FileRef>
    <FileRef
-      location = "group:SharedLib/SharedLib.xcodeproj">
+      location = "group:SharedLib">
    </FileRef>
 </Workspace>
