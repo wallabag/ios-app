@@ -1,13 +1,15 @@
 import Combine
+import Factory
 import Foundation
 
 class LoginViewModel: ObservableObject {
+    @Injected(\.appState) private var appState
+    @Injected(\.wallabagSession) private var session
+    @Injected(\.router) private var router
+
     @Published var login: String = ""
     @Published var password: String = ""
     @Published var error: String?
-
-    @Injector var appState: AppState
-    @Injector var router: Router
 
     private(set) var isValid: Bool = false
     private var cancellable = Set<AnyCancellable>()
@@ -18,7 +20,7 @@ class LoginViewModel: ObservableObject {
             self.isValid = !login.isEmpty && !password.isEmpty
         }.store(in: &cancellable)
 
-        appState.session.$state.receive(on: DispatchQueue.main).sink { [unowned self] state in
+        session.$state.receive(on: DispatchQueue.main).sink { [unowned self] state in
             switch state {
             case let .error(reason):
                 self.error = reason
@@ -35,8 +37,8 @@ class LoginViewModel: ObservableObject {
         error = nil
         WallabagUserDefaults.login = login
         WallabagUserDefaults.password = password
-        appState.session.kit.host = WallabagUserDefaults.host
-        appState.session.requestSession(
+        session.kit.host = WallabagUserDefaults.host
+        session.requestSession(
             clientId: WallabagUserDefaults.clientId,
             clientSecret: WallabagUserDefaults.clientSecret,
             username: login,

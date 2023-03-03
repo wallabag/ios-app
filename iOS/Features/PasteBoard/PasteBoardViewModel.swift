@@ -1,4 +1,5 @@
 import Combine
+import Factory
 import Foundation
 import UIKit
 
@@ -15,7 +16,7 @@ class PasteBoardViewModel: ObservableObject {
     }
 
     @Published var pasteBoardUrl: String = ""
-    @Injector var session: WallabagSession
+    @Injected(\.wallabagSession) var session
 
     private var cancellableNotification: AnyCancellable?
 

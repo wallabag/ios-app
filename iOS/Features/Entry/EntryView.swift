@@ -1,4 +1,5 @@
 import CoreData
+import Factory
 import HTMLEntities
 import SwiftUI
 
@@ -30,7 +31,7 @@ struct EntryView: View {
             bottomBar
         }.sheet(isPresented: $showTag) {
             TagListFor(tagsForEntry: TagsForEntryPublisher(entry: self.entry))
-                .environment(\.managedObjectContext, CoreData.shared.viewContext)
+                .environment(\.managedObjectContext, context)
         }
         .actionSheet(isPresented: $showDeleteConfirm) {
             ActionSheet(
@@ -93,10 +94,11 @@ struct EntryView: View {
 #if DEBUG
     struct EntryView_Previews: PreviewProvider {
         static var previews: some View {
-            EntryView(entry: Entry(context: CoreData.shared.viewContext))
+            let coreData = Container.shared.coreData()
+            EntryView(entry: Entry(context: coreData.viewContext))
                 .environmentObject(PlayerPublisher())
                 .environmentObject(Router(defaultRoute: .entries))
-                .environment(\.managedObjectContext, CoreData.shared.viewContext)
+                .environment(\.managedObjectContext, coreData.viewContext)
         }
     }
 #endif

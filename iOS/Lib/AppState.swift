@@ -1,20 +1,18 @@
 import Combine
+import Factory
 import Foundation
 import SwiftUI
 import WallabagKit
 
-class AppState: NSObject, ObservableObject {
-    static var shared = AppState()
+final class AppState: NSObject, ObservableObject {
+    @Injected(\.wallabagSession) private var session
+    @Injected(\.router) private var router: Router
 
     @Published var registred: Bool = false {
         didSet {
             WallabagUserDefaults.registred = registred
         }
     }
-
-    @Injector var session: WallabagSession
-    @Injector var router: Router
-
     @AppStorage("readingSpeed") var readingSpeed: Double = 200
 
     override init() {

@@ -1,5 +1,6 @@
 import Combine
 import CoreData
+import Factory
 import Foundation
 import WallabagKit
 
@@ -13,7 +14,7 @@ class WallabagSession: ObservableObject {
     }
 
     @Published var state: State = .unknown
-    @Injector var kit: WallabagKit
+    @Injected(\.wallabagKit) var kit
     @CoreDataViewContext var coreDataContext: NSManagedObjectContext
     private var cancellable = Set<AnyCancellable>()
 

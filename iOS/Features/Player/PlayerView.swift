@@ -1,3 +1,4 @@
+import Factory
 import SwiftUI
 
 struct PlayerView: View {
@@ -53,8 +54,9 @@ struct PlayerView: View {
 
 struct PlayerView_Previews: PreviewProvider {
     static var player: PlayerPublisher = {
+        let coreData = Container.shared.coreData()
         let player = PlayerPublisher()
-        let entry = Entry(context: CoreData.shared.viewContext)
+        let entry = Entry(context: coreData.viewContext)
         player.load(entry)
         return player
     }()
