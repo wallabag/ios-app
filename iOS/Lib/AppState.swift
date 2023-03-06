@@ -6,13 +6,13 @@ import WallabagKit
 
 final class AppState: NSObject, ObservableObject {
     @Injected(\.wallabagSession) private var session
-    @Injected(\.router) private var router: Router
 
     @Published var registred: Bool = false {
         didSet {
             WallabagUserDefaults.registred = registred
         }
     }
+
     @AppStorage("readingSpeed") var readingSpeed: Double = 200
 
     override init() {
@@ -33,7 +33,6 @@ final class AppState: NSObject, ObservableObject {
         logger.debug("Logout called")
         registred = false
         session.state = .unknown
-        router.load(.registration)
     }
 
     /// Fetch user config from server

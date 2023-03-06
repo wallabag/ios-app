@@ -39,6 +39,7 @@ struct MenuView: View {
                     Button(role: .destructive, action: {
                         tapButtonMenu {
                             self.appState.logout()
+                            self.router.load(.registration)
                         }
                     }) {
                         Label("Logout", systemImage: "person")
