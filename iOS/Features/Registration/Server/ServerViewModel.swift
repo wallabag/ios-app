@@ -1,6 +1,7 @@
 import Combine
 import Foundation
 import SwiftUI
+import SharedLib
 
 class ServerViewModel: ObservableObject {
     @Published private(set) var isValid: Bool = false

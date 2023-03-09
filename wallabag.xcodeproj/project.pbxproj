@@ -12,11 +12,6 @@
 		093D13B626263B05008C2150 /* Shortcuts.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 093D139D26263B05008C2150 /* Shortcuts.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		093D13D826263CC4008C2150 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 093D13D726263CC4008C2150 /* Intents.intentdefinition */; };
 		093D13EC26263F81008C2150 /* AddEntryIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093D13EB26263F81008C2150 /* AddEntryIntentHandler.swift */; };
-		093D13F3262640B7008C2150 /* WallabagUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B1E25C94D9C000FFDA1 /* WallabagUserDefaults.swift */; };
-		093D13FA262640C0008C2150 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B2625C94DD2000FFDA1 /* Setting.swift */; };
-		093D13FB262640C0008C2150 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B3225C94DEB000FFDA1 /* Password.swift */; };
-		093D13FC262640C0008C2150 /* GeneralSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B4125C94E2B000FFDA1 /* GeneralSetting.swift */; };
-		093D1403262640C9008C2150 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B3925C94E03000FFDA1 /* KeychainPasswordItem.swift */; };
 		094AA03E2629EB1F006E5605 /* wallabagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094AA03D2629EB1F006E5605 /* wallabagTests.swift */; };
 		094AA05A2629EB60006E5605 /* ImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094A9FED2629E6BB006E5605 /* ImageCacheTests.swift */; };
 		094AA0692629EB98006E5605 /* ImageDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094AA00F2629E739006E5605 /* ImageDownloaderTests.swift */; };
@@ -28,15 +23,9 @@
 		09644AEA25C94879000FFDA1 /* ExtensionClass.js in Resources */ = {isa = PBXBuildFile; fileRef = 09644AE925C94879000FFDA1 /* ExtensionClass.js */; };
 		09644AF725C94982000FFDA1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09644AF625C94982000FFDA1 /* Media.xcassets */; };
 		09644B0F25C94C6B000FFDA1 /* HTMLEntities in Frameworks */ = {isa = PBXBuildFile; productRef = 09644B0E25C94C6B000FFDA1 /* HTMLEntities */; };
-		09644B1F25C94D9C000FFDA1 /* WallabagUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B1E25C94D9C000FFDA1 /* WallabagUserDefaults.swift */; };
-		09644B2725C94DD2000FFDA1 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B2625C94DD2000FFDA1 /* Setting.swift */; };
-		09644B3325C94DEB000FFDA1 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B3225C94DEB000FFDA1 /* Password.swift */; };
-		09644B3A25C94E03000FFDA1 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B3925C94E03000FFDA1 /* KeychainPasswordItem.swift */; };
-		09644B4225C94E2B000FFDA1 /* GeneralSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B4125C94E2B000FFDA1 /* GeneralSetting.swift */; };
 		09644B5725C9810A000FFDA1 /* WallabagApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B5625C9810A000FFDA1 /* WallabagApp.swift */; };
 		09644B5E25C98116000FFDA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B5D25C98116000FFDA1 /* AppDelegate.swift */; };
 		09644B7E25C98152000FFDA1 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B7D25C98152000FFDA1 /* AppState.swift */; };
-		09644B8A25C98176000FFDA1 /* RouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B8625C98176000FFDA1 /* RouterView.swift */; };
 		09644B8C25C98176000FFDA1 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B8825C98176000FFDA1 /* Route.swift */; };
 		09644B9725C9819F000FFDA1 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B9425C9819F000FFDA1 /* PlayerView.swift */; };
 		09644B9825C9819F000FFDA1 /* PlayerPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B9525C9819F000FFDA1 /* PlayerPublisher.swift */; };
@@ -46,11 +35,6 @@
 		09644BAE25C98213000FFDA1 /* AppSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644BAB25C98213000FFDA1 /* AppSync.swift */; };
 		09644BAF25C98213000FFDA1 /* RefreshButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644BAC25C98213000FFDA1 /* RefreshButton.swift */; };
 		09644BB725C98232000FFDA1 /* AppSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644BB625C98232000FFDA1 /* AppSetting.swift */; };
-		09644BBD25C98240000FFDA1 /* WallabagUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B1E25C94D9C000FFDA1 /* WallabagUserDefaults.swift */; };
-		09644BC325C98248000FFDA1 /* GeneralSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B4125C94E2B000FFDA1 /* GeneralSetting.swift */; };
-		09644BC425C98248000FFDA1 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B2625C94DD2000FFDA1 /* Setting.swift */; };
-		09644BC525C98248000FFDA1 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B3225C94DEB000FFDA1 /* Password.swift */; };
-		09644BCB25C98252000FFDA1 /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B3925C94E03000FFDA1 /* KeychainPasswordItem.swift */; };
 		09644BD825C9833E000FFDA1 /* DependencyInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644BD125C9833D000FFDA1 /* DependencyInjection.swift */; };
 		09644BDA25C9833E000FFDA1 /* WallabagError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644BD325C9833D000FFDA1 /* WallabagError.swift */; };
 		09644BDD25C9833E000FFDA1 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644BD625C9833E000FFDA1 /* CoreData.swift */; };
@@ -79,8 +63,6 @@
 		09644C9E25C98615000FFDA1 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644C9D25C98615000FFDA1 /* MainView.swift */; };
 		09644CA725C98639000FFDA1 /* View+haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644CA625C98639000FFDA1 /* View+haptic.swift */; };
 		09644CAF25C98648000FFDA1 /* HapticNotificationButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644CAE25C98648000FFDA1 /* HapticNotificationButtonStyle.swift */; };
-		09644CB825C98660000FFDA1 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644CB625C98660000FFDA1 /* Menu.swift */; };
-		09644CB925C98660000FFDA1 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644CB725C98660000FFDA1 /* MenuView.swift */; };
 		09644CC225C98674000FFDA1 /* PasteBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644CC025C98674000FFDA1 /* PasteBoardView.swift */; };
 		09644CC325C98674000FFDA1 /* PasteBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644CC125C98674000FFDA1 /* PasteBoardViewModel.swift */; };
 		09644CCB25C9869D000FFDA1 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644CCA25C9869D000FFDA1 /* RegistrationView.swift */; };
@@ -101,6 +83,8 @@
 		09644D1825C98755000FFDA1 /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644D1725C98755000FFDA1 /* AppDelegateExtension.swift */; };
 		09644D2025C98782000FFDA1 /* wallabagStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09644D1E25C98782000FFDA1 /* wallabagStore.xcdatamodeld */; };
 		097F81EB25CB18BA006C85F6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F81DF25CB187B006C85F6 /* Router.swift */; };
+		09800D8D29B9DE9E00DAB403 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 09800D8C29B9DE9E00DAB403 /* SharedLib */; };
+		09800D8F29B9DEFE00DAB403 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 09800D8E29B9DEFE00DAB403 /* SharedLib */; };
 		09AD75A12624F93D00708A1E /* article.html in Resources */ = {isa = PBXBuildFile; fileRef = 09AD759D2624F93D00708A1E /* article.html */; };
 		09AD75A22624F93D00708A1E /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 09AD759E2624F93D00708A1E /* main.css */; };
 		09AD75A32624F93D00708A1E /* ratatouille.css in Resources */ = {isa = PBXBuildFile; fileRef = 09AD759F2624F93D00708A1E /* ratatouille.css */; };
@@ -190,15 +174,9 @@
 		09644AE925C94879000FFDA1 /* ExtensionClass.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = ExtensionClass.js; sourceTree = "<group>"; };
 		09644AF025C9494D000FFDA1 /* bagit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bagit.entitlements; sourceTree = "<group>"; };
 		09644AF625C94982000FFDA1 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		09644B1E25C94D9C000FFDA1 /* WallabagUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagUserDefaults.swift; sourceTree = "<group>"; };
-		09644B2625C94DD2000FFDA1 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
-		09644B3225C94DEB000FFDA1 /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
-		09644B3925C94E03000FFDA1 /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
-		09644B4125C94E2B000FFDA1 /* GeneralSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSetting.swift; sourceTree = "<group>"; };
 		09644B5625C9810A000FFDA1 /* WallabagApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallabagApp.swift; sourceTree = "<group>"; };
 		09644B5D25C98116000FFDA1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09644B7D25C98152000FFDA1 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		09644B8625C98176000FFDA1 /* RouterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterView.swift; sourceTree = "<group>"; };
 		09644B8825C98176000FFDA1 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		09644B9425C9819F000FFDA1 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		09644B9525C9819F000FFDA1 /* PlayerPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerPublisher.swift; sourceTree = "<group>"; };
@@ -236,8 +214,6 @@
 		09644C9D25C98615000FFDA1 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		09644CA625C98639000FFDA1 /* View+haptic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+haptic.swift"; sourceTree = "<group>"; };
 		09644CAE25C98648000FFDA1 /* HapticNotificationButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HapticNotificationButtonStyle.swift; sourceTree = "<group>"; };
-		09644CB625C98660000FFDA1 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
-		09644CB725C98660000FFDA1 /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		09644CC025C98674000FFDA1 /* PasteBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasteBoardView.swift; sourceTree = "<group>"; };
 		09644CC125C98674000FFDA1 /* PasteBoardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasteBoardViewModel.swift; sourceTree = "<group>"; };
 		09644CCA25C9869D000FFDA1 /* RegistrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
@@ -293,6 +269,7 @@
 			files = (
 				09AE6ECE29B13ABC0025DF93 /* WallabagKit in Frameworks */,
 				093D139F26263B05008C2150 /* Intents.framework in Frameworks */,
+				09800D8D29B9DE9E00DAB403 /* SharedLib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09AE6ECC29B13AAE0025DF93 /* WallabagKit in Frameworks */,
+				09800D8F29B9DEFE00DAB403 /* SharedLib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,14 +310,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0916CDF625F0E5B6000DC311 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				09644B8625C98176000FFDA1 /* RouterView.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
 		093D13A026263B05008C2150 /* Shortcuts */ = {
 			isa = PBXGroup;
 			children = (
@@ -415,31 +385,11 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		09644B1D25C94D71000FFDA1 /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-				09644BD725C9833E000FFDA1 /* WallabagSession.swift */,
-				09644B1E25C94D9C000FFDA1 /* WallabagUserDefaults.swift */,
-				09644B3925C94E03000FFDA1 /* KeychainPasswordItem.swift */,
-				09644BD625C9833E000FFDA1 /* CoreData.swift */,
-			);
-			path = Lib;
-			sourceTree = "<group>";
-		};
-		09644B2525C94DB5000FFDA1 /* PropertyWrapper */ = {
-			isa = PBXGroup;
-			children = (
-				09644B2625C94DD2000FFDA1 /* Setting.swift */,
-				09644B3225C94DEB000FFDA1 /* Password.swift */,
-				09644B4125C94E2B000FFDA1 /* GeneralSetting.swift */,
-				09644C4E25C9850D000FFDA1 /* CoreDataViewContext.swift */,
-			);
-			path = PropertyWrapper;
-			sourceTree = "<group>";
-		};
 		09644B7C25C9814C000FFDA1 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				09644BD725C9833E000FFDA1 /* WallabagSession.swift */,
+				09644BD625C9833E000FFDA1 /* CoreData.swift */,
 				09644B7D25C98152000FFDA1 /* AppState.swift */,
 				09644BD125C9833D000FFDA1 /* DependencyInjection.swift */,
 				09644BD325C9833D000FFDA1 /* WallabagError.swift */,
@@ -456,7 +406,6 @@
 				09644C5525C9858B000FFDA1 /* Entry */,
 				09644B9F25C981A9000FFDA1 /* Error */,
 				09644CA425C98626000FFDA1 /* Haptic */,
-				09644CB525C98653000FFDA1 /* Menu */,
 				09644CBF25C98668000FFDA1 /* PasteBoard */,
 				09644B9325C98191000FFDA1 /* Player */,
 				097F827D25CB1C12006C85F6 /* Registration */,
@@ -519,6 +468,7 @@
 		09644BE425C98343000FFDA1 /* PropertyWrapper */ = {
 			isa = PBXGroup;
 			children = (
+				09644C4E25C9850D000FFDA1 /* CoreDataViewContext.swift */,
 				09644D0F25C9872F000FFDA1 /* BundleKey.swift */,
 			);
 			path = PropertyWrapper;
@@ -603,15 +553,6 @@
 			path = ButtonStyle;
 			sourceTree = "<group>";
 		};
-		09644CB525C98653000FFDA1 /* Menu */ = {
-			isa = PBXGroup;
-			children = (
-				09644CB625C98660000FFDA1 /* Menu.swift */,
-				09644CB725C98660000FFDA1 /* MenuView.swift */,
-			);
-			path = Menu;
-			sourceTree = "<group>";
-		};
 		09644CBF25C98668000FFDA1 /* PasteBoard */ = {
 			isa = PBXGroup;
 			children = (
@@ -694,14 +635,6 @@
 			path = Entity;
 			sourceTree = "<group>";
 		};
-		097F827C25CB1C06006C85F6 /* Features */ = {
-			isa = PBXGroup;
-			children = (
-				0916CDF625F0E5B6000DC311 /* Router */,
-			);
-			path = Features;
-			sourceTree = "<group>";
-		};
 		097F827D25CB1C12006C85F6 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
@@ -740,24 +673,10 @@
 				09644B1525C94CA6000FFDA1 /* Frameworks */,
 				09BFB28625C8348E00E12B4D /* iOS */,
 				09BFB28525C8348E00E12B4D /* Products */,
-				09BFB27925C8348E00E12B4D /* Shared */,
 				093D13A026263B05008C2150 /* Shortcuts */,
 				09BFB29725C8348E00E12B4D /* Tests iOS */,
 				094AA03C2629EB1F006E5605 /* wallabagTests */,
 			);
-			sourceTree = "<group>";
-		};
-		09BFB27925C8348E00E12B4D /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				097F827C25CB1C06006C85F6 /* Features */,
-				09BFB27F25C8348E00E12B4D /* Assets.xcassets */,
-				097F824C25CB1B17006C85F6 /* Entity */,
-				09644B1D25C94D71000FFDA1 /* Lib */,
-				09644B2525C94DB5000FFDA1 /* PropertyWrapper */,
-				09BFB27A25C8348E00E12B4D /* wallabag.xcdatamodeld */,
-			);
-			path = Shared;
 			sourceTree = "<group>";
 		};
 		09BFB28525C8348E00E12B4D /* Products */ = {
@@ -775,10 +694,13 @@
 		09BFB28625C8348E00E12B4D /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				09BFB27A25C8348E00E12B4D /* wallabag.xcdatamodeld */,
+				09BFB27F25C8348E00E12B4D /* Assets.xcassets */,
 				09BFB28725C8348E00E12B4D /* Info.plist */,
 				9C1103B626A0852F00E50F26 /* Configuration.storekit */,
 				09644B5D25C98116000FFDA1 /* AppDelegate.swift */,
 				09644B5625C9810A000FFDA1 /* WallabagApp.swift */,
+				097F824C25CB1B17006C85F6 /* Entity */,
 				09644D1625C9874D000FFDA1 /* Extension */,
 				09644B8425C98161000FFDA1 /* Features */,
 				09AD759C2624F93D00708A1E /* html-ressources */,
@@ -817,6 +739,7 @@
 			name = Shortcuts;
 			packageProductDependencies = (
 				09AE6ECD29B13ABC0025DF93 /* WallabagKit */,
+				09800D8C29B9DE9E00DAB403 /* SharedLib */,
 			);
 			productName = Shortcuts;
 			productReference = 093D139D26263B05008C2150 /* Shortcuts.appex */;
@@ -855,6 +778,7 @@
 			name = bagit;
 			packageProductDependencies = (
 				09AE6ECB29B13AAE0025DF93 /* WallabagKit */,
+				09800D8E29B9DEFE00DAB403 /* SharedLib */,
 			);
 			productName = bagit;
 			productReference = 09644ACE25C94825000FFDA1 /* bagit.appex */;
@@ -1044,14 +968,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				093D13FB262640C0008C2150 /* Password.swift in Sources */,
-				093D13FA262640C0008C2150 /* Setting.swift in Sources */,
 				093D13EC26263F81008C2150 /* AddEntryIntentHandler.swift in Sources */,
-				093D1403262640C9008C2150 /* KeychainPasswordItem.swift in Sources */,
-				093D13FC262640C0008C2150 /* GeneralSetting.swift in Sources */,
 				093D13D826263CC4008C2150 /* Intents.intentdefinition in Sources */,
 				093D13A226263B05008C2150 /* IntentHandler.swift in Sources */,
-				093D13F3262640B7008C2150 /* WallabagUserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1070,13 +989,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09644B1F25C94D9C000FFDA1 /* WallabagUserDefaults.swift in Sources */,
 				09644AE325C94863000FFDA1 /* ShareExtensionError.swift in Sources */,
-				09644B2725C94DD2000FFDA1 /* Setting.swift in Sources */,
-				09644B4225C94E2B000FFDA1 /* GeneralSetting.swift in Sources */,
-				09644B3325C94DEB000FFDA1 /* Password.swift in Sources */,
 				09644AD125C94825000FFDA1 /* ShareViewController.swift in Sources */,
-				09644B3A25C94E03000FFDA1 /* KeychainPasswordItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1091,20 +1005,15 @@
 				09644B5725C9810A000FFDA1 /* WallabagApp.swift in Sources */,
 				09644C6F25C985A9000FFDA1 /* EntryPictoImage.swift in Sources */,
 				09644C9E25C98615000FFDA1 /* MainView.swift in Sources */,
-				09644CB825C98660000FFDA1 /* Menu.swift in Sources */,
 				09644C8F25C985E8000FFDA1 /* BugReportView.swift in Sources */,
 				09644BFB25C983F8000FFDA1 /* Tag.swift in Sources */,
 				09644CD625C986C0000FFDA1 /* ClientIdClientSecretView.swift in Sources */,
 				09644B9725C9819F000FFDA1 /* PlayerView.swift in Sources */,
-				09644BCB25C98252000FFDA1 /* KeychainPasswordItem.swift in Sources */,
 				09644CF225C986EE000FFDA1 /* SearchViewModel.swift in Sources */,
 				09644BA325C981B4000FFDA1 /* ErrorViewModel.swift in Sources */,
 				09644C4F25C9850D000FFDA1 /* CoreDataViewContext.swift in Sources */,
-				09644BC425C98248000FFDA1 /* Setting.swift in Sources */,
 				09644C5E25C98596000FFDA1 /* EntriesView.swift in Sources */,
 				09644CA725C98639000FFDA1 /* View+haptic.swift in Sources */,
-				09644BBD25C98240000FFDA1 /* WallabagUserDefaults.swift in Sources */,
-				09644BC325C98248000FFDA1 /* GeneralSetting.swift in Sources */,
 				09644B7E25C98152000FFDA1 /* AppState.swift in Sources */,
 				09644C6E25C985A9000FFDA1 /* DeleteEntryButton.swift in Sources */,
 				09644B8C25C98176000FFDA1 /* Route.swift in Sources */,
@@ -1121,12 +1030,10 @@
 				09644C5F25C98596000FFDA1 /* EntryRowView.swift in Sources */,
 				09644CE925C986CC000FFDA1 /* ServerViewModel.swift in Sources */,
 				09644CD725C986C0000FFDA1 /* ClientIdClientSecretViewModel.swift in Sources */,
-				09644CB925C98660000FFDA1 /* MenuView.swift in Sources */,
 				09644CCB25C9869D000FFDA1 /* RegistrationView.swift in Sources */,
 				09644CFE25C9870C000FFDA1 /* TagRow.swift in Sources */,
 				09644BFC25C983F8000FFDA1 /* Entry.swift in Sources */,
 				097F81EB25CB18BA006C85F6 /* Router.swift in Sources */,
-				09644BC525C98248000FFDA1 /* Password.swift in Sources */,
 				09644BB725C98232000FFDA1 /* AppSetting.swift in Sources */,
 				09644C7F25C985B8000FFDA1 /* ImageDownloaderPublisher.swift in Sources */,
 				09644CE825C986CC000FFDA1 /* ServerView.swift in Sources */,
@@ -1152,7 +1059,6 @@
 				09644CFF25C9870C000FFDA1 /* TagsForEntryPublisher.swift in Sources */,
 				09644D1025C9872F000FFDA1 /* BundleKey.swift in Sources */,
 				09644BAF25C98213000FFDA1 /* RefreshButton.swift in Sources */,
-				09644B8A25C98176000FFDA1 /* RouterView.swift in Sources */,
 				09644C7025C985A9000FFDA1 /* ArchiveEntryButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1676,6 +1582,14 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 09644B0D25C94C6B000FFDA1 /* XCRemoteSwiftPackageReference "swift-html-entities" */;
 			productName = HTMLEntities;
+		};
+		09800D8C29B9DE9E00DAB403 /* SharedLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SharedLib;
+		};
+		09800D8E29B9DEFE00DAB403 /* SharedLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SharedLib;
 		};
 		09AE6ECB29B13AAE0025DF93 /* WallabagKit */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -6,30 +6,24 @@ import SwiftUI
 struct EntryView: View {
     @Environment(\.managedObjectContext) var context: NSManagedObjectContext
     @Environment(\.openURL) var openURL
+    @Environment(\.dismiss) private var dismiss
     @EnvironmentObject var appSync: AppSync
-    @EnvironmentObject var router: Router
     @EnvironmentObject var player: PlayerPublisher
     @ObservedObject var entry: Entry
     @State var showTag: Bool = false
     @State private var showDeleteConfirm = false
 
     var body: some View {
-        VStack {
-            HStack {
-                Button(action: {
-                    self.router.load(.entries)
-                }, label: {
-                    Text("Back")
-                })
-                Text(entry.title?.htmlUnescape() ?? "Entry")
-                    .font(.title)
-                    .fontWeight(.black)
-                    .lineLimit(1)
-                Spacer()
-            }.padding()
+        VStack(alignment: .leading) {
+            Text(entry.title?.htmlUnescape() ?? "Entry")
+                .font(.title)
+                .fontWeight(.black)
+                .lineLimit(2)
+                .padding(.horizontal)
             WebView(entry: entry)
             bottomBar
-        }.sheet(isPresented: $showTag) {
+        }
+        .sheet(isPresented: $showTag) {
             TagListFor(tagsForEntry: TagsForEntryPublisher(entry: self.entry))
                 .environment(\.managedObjectContext, context)
         }
@@ -39,12 +33,13 @@ struct EntryView: View {
                 buttons: [
                     .destructive(Text("Delete")) {
                         self.context.delete(entry)
-                        self.router.load(.entries)
+                        dismiss()
                     },
                     .cancel(),
                 ]
             )
         }
+        .navigationBarTitleDisplayMode(.inline)
     }
 
     private var bottomBar: some View {
@@ -97,7 +92,6 @@ struct EntryView: View {
             let coreData = Container.shared.coreData()
             EntryView(entry: Entry(context: coreData.viewContext))
                 .environmentObject(PlayerPublisher())
-                .environmentObject(Router(defaultRoute: .entries))
                 .environment(\.managedObjectContext, coreData.viewContext)
         }
     }

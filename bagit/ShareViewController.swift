@@ -4,6 +4,7 @@ import Social
 import UIKit
 import UniformTypeIdentifiers
 import WallabagKit
+import SharedLib
 
 @objc(ShareViewController)
 class ShareViewController: UIViewController {

@@ -3,24 +3,15 @@ import CoreData
 import SwiftUI
 
 struct EntriesView: View {
-    @StateObject var pasteBoardViewModel = PasteBoardViewModel()
     @StateObject var searchViewModel = SearchViewModel()
 
     var body: some View {
         VStack {
-            // MARK: Pasteboard
-
-            if pasteBoardViewModel.showPasteBoardView {
-                PasteBoardView().environmentObject(pasteBoardViewModel)
-            }
-
-            // MARK: Picker
-
+            PasteBoardView()
             SearchView(searchViewModel: searchViewModel)
             EntriesListView(predicate: searchViewModel.predicate)
         }
-        .navigationBarTitle(Text("Entry"))
-        .navigationBarHidden(true)
+        .navigationTitle("Entries")
     }
 }
 

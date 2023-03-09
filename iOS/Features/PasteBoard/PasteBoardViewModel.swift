@@ -2,12 +2,13 @@ import Combine
 import Factory
 import Foundation
 import UIKit
+import SharedLib
 
 class PasteBoardViewModel: ObservableObject {
     @Published var showPasteBoardView: Bool = false {
         willSet {
             if newValue {
-                if let pasteBoardString = UIPasteboard.general.string, let newPasteBoardUrl = URL(string: pasteBoardString) {
+                if let newPasteBoardUrl = UIPasteboard.general.url {
                     WallabagUserDefaults.previousPasteBoardUrl = newPasteBoardUrl.absoluteString
                     pasteBoardUrl = newPasteBoardUrl.absoluteString
                 }

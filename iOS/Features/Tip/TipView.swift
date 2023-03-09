@@ -42,7 +42,9 @@ struct TipView: View {
                 Spacer()
             }
             Spacer()
-        }.padding()
+        }
+        .padding()
+        .navigationTitle("Don")
     }
 
     @MainActor

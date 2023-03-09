@@ -7,8 +7,8 @@ struct RefreshButton: View {
         HStack {
             if appSync.inProgress {
                 ProgressView(value: appSync.progress, total: 100)
+                    .frame(width: 50)
             }
-
             Button(
                 action: appSync.requestSync,
                 label: {

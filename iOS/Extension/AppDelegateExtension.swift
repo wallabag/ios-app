@@ -2,6 +2,7 @@ import CoreData
 import Factory
 import Foundation
 import UIKit
+import SharedLib
 
 #if DEBUG
     // swiftlint:disable line_length
@@ -11,7 +12,6 @@ import UIKit
 
             let appState = Container.shared.appState()
             appState.registred = true
-            Container.shared.router().load(.entries)
             WallabagUserDefaults.defaultMode = "allArticles"
             WallabagUserDefaults.badgeEnabled = false
 

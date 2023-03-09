@@ -3,6 +3,7 @@ import CoreData
 import Factory
 import Foundation
 import WallabagKit
+import SharedLib
 
 final class AppSync: ObservableObject {
     @Injected(\.wallabagSession) private var session

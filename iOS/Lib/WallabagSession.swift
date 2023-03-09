@@ -3,6 +3,7 @@ import CoreData
 import Factory
 import Foundation
 import WallabagKit
+import SharedLib
 
 class WallabagSession: ObservableObject {
     enum State {

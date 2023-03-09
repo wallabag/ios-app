@@ -1,98 +1,71 @@
 import Combine
 import SwiftUI
 
-struct MainView: View {
+struct Main2View: View {
     @EnvironmentObject var router: Router
-    @EnvironmentObject var player: PlayerPublisher
-    @State private var showMenu: Bool = false
-    @State private var menuOffsetX = CGFloat(0.0)
-
-    func getMenuCloseGesture(_ offsetClose: CGFloat) -> some Gesture {
-        DragGesture()
-            .onChanged { value in
-                let newOffsetX = value.location.x - value.startLocation.x
-                if newOffsetX < 0 {
-                    self.menuOffsetX = newOffsetX
-                }
-            }
-            .onEnded { value in
-                withAnimation {
-                    let finalOffsetX = value.location.x - value.startLocation.x
-                    if finalOffsetX < -offsetClose {
-                        self.showMenu = false
-                    }
-                    self.menuOffsetX = 0
-                }
-            }
-    }
-
-    var header: some View {
-        HStack {
-            if router.route.showMenuButton {
-                Button(action: {
-                    withAnimation {
-                        self.showMenu.toggle()
-                    }
-                }, label: { Image(systemName: "list.bullet") })
-                    .buttonStyle(PlainButtonStyle())
-                    .accessibilityLabel("Menu")
-                    .accessibilityHidden(showMenu)
-            }
-            Text(router.route.title)
-                .font(.title)
-                .fontWeight(.black)
-            Spacer()
-            if router.route.showTraillingButton {
-                router.route.traillingButton
-            }
-            Button(action: {
-                withAnimation {
-                    player.togglePlayer()
-                }
-            }, label: {
-                Image(systemName: "music.note")
-            }).buttonStyle(PlainButtonStyle())
-                .accessibilityLabel("Entries player")
-        }
-    }
+    @EnvironmentObject var appState: AppState
 
     var body: some View {
-        GeometryReader { geometry in
-            ZStack(alignment: .leading) {
-                VStack {
-                    if self.router.route.showHeader {
-                        self.header.padding(.horizontal).padding(.top, 15)
-                            .accessibilityHidden(showMenu)
-                    }
-                    ErrorView()
-                    RouterView()
-                        .accessibilityHidden(showMenu)
-                }.frame(width: geometry.size.width, height: geometry.size.height)
-                    .blur(radius: self.showMenu ? 10 : 0)
-
-                if self.showMenu {
-                    Rectangle()
-                        .opacity(0.1)
-                        .edgesIgnoringSafeArea(.all)
-                        .onTapGesture {
-                            withAnimation {
-                                self.showMenu = false
-                            }
+        if appState.registred {
+            NavigationStack(path: $router.path) {
+                EntriesView()
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            RefreshButton()
                         }
-                    MenuView(showMenu: self.$showMenu)
-                        .frame(width: geometry.size.width / 1.5)
-                        .offset(x: self.menuOffsetX)
-                        .transition(.move(edge: .leading))
-                        .gesture(self.getMenuCloseGesture(geometry.size.width / 4))
-                        .edgesIgnoringSafeArea(.all)
-                }
-                if player.showPlayer {
-                    PlayerView()
-                        .frame(width: geometry.size.width, height: geometry.size.height, alignment: .topTrailing)
-                        .transition(.move(edge: .trailing))
-                        .offset(x: 0, y: 60)
-                }
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            SwiftUI.Menu(content: {
+                                Button(action: {
+                                    router.path.append(RoutePath.addEntry)
+                                }, label: {
+                                    Label("Add entry", systemImage: "tray.and.arrow.down")
+                                })
+                                Button(action: {
+                                    router.path.append(RoutePath.about)
+                                }, label: {
+                                    Label("About", systemImage: "questionmark")
+                                })
+                                Button(action: {
+                                    router.path.append(RoutePath.tips)
+                                }, label: {
+                                    Label("Don", systemImage: "heart")
+                                })
+                                Divider()
+                                Button(action: {
+                                    router.path.append(RoutePath.setting)
+                                }, label: {
+                                    Label("Setting", systemImage: "gear")
+                                })
+                                Divider()
+                                Button(role: .destructive, action: {
+                                    self.appState.logout()
+                                }) {
+                                    Label("Logout", systemImage: "person")
+                                }.foregroundColor(.red)
+                            }, label: {
+                                Label("Menu", systemImage: "line.3.horizontal.decrease.circle")
+                            })
+                        }
+                    }
+                    .navigationDestination(for: RoutePath.self) { route in
+                        switch route {
+                        case .addEntry:
+                            AddEntryView()
+                        case let .entry(entry):
+                            EntryView(entry: entry)
+                        case .about:
+                            AboutView()
+                        case .tips:
+                            TipView()
+                        case .setting:
+                            SettingView()
+                        default:
+                            Text("test")
+                        }
+                    }
             }
+        } else {
+            RegistrationView()
         }
     }
 }

@@ -16,6 +16,7 @@ struct AboutView: View {
             Spacer()
             Text("Made by Maxime Marinel @bourvill")
         }
+        .navigationTitle("About")
     }
 }
 

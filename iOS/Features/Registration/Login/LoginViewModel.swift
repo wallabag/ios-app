@@ -1,6 +1,7 @@
 import Combine
 import Factory
 import Foundation
+import SharedLib
 
 class LoginViewModel: ObservableObject {
     @Injected(\.appState) private var appState
@@ -26,7 +27,6 @@ class LoginViewModel: ObservableObject {
                 self.error = reason
             case .connected:
                 self.appState.registred = true
-                self.router.load(.entries)
             case .unknown, .connecting, .offline:
                 break
             }

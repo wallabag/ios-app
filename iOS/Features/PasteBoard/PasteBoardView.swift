@@ -1,27 +1,29 @@
 import SwiftUI
 
 struct PasteBoardView: View {
-    @EnvironmentObject var pasteBoardViewModel: PasteBoardViewModel
+    @StateObject var pasteBoardViewModel = PasteBoardViewModel()
 
     var body: some View {
-        HStack(alignment: .center) {
-            Image(systemName: "doc.on.clipboard")
-            VStack {
-                Text("New url in pasteboard detected")
-                    .font(.headline)
-                Text(pasteBoardViewModel.pasteBoardUrl)
-                    .lineLimit(1)
-                HStack {
-                    Button(action: {
-                        self.pasteBoardViewModel.addUrl()
-                    }, label: {
-                        Text("Add")
-                    })
-                    Button(action: {
-                        self.pasteBoardViewModel.hide()
-                    }, label: {
-                        Text("Cancel")
-                    })
+        if pasteBoardViewModel.showPasteBoardView {
+            HStack(alignment: .center) {
+                Image(systemName: "doc.on.clipboard")
+                VStack {
+                    Text("New url in pasteboard detected")
+                        .font(.headline)
+                    Text(pasteBoardViewModel.pasteBoardUrl)
+                        .lineLimit(1)
+                    HStack {
+                        Button(action: {
+                            self.pasteBoardViewModel.addUrl()
+                        }, label: {
+                            Text("Add")
+                        })
+                        Button(action: {
+                            self.pasteBoardViewModel.hide()
+                        }, label: {
+                            Text("Cancel")
+                        })
+                    }
                 }
             }
         }

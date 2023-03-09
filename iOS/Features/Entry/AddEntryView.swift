@@ -18,6 +18,7 @@ struct AddEntryView: View {
                 Text("Great! Entry was added")
             }
         }
+        .navigationTitle("Add entry")
     }
 }
 

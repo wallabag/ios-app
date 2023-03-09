@@ -1,6 +1,7 @@
 import Factory
 import Foundation
 import WallabagKit
+import SharedLib
 
 extension Container {
     var appState: Factory<AppState> {
@@ -11,9 +12,7 @@ extension Container {
 
     var router: Factory<Router> {
         Factory(self) {
-            let appState = self.appState()
-            let router = Router(defaultRoute: appState.registred ? .entries : .registration)
-            return router
+            Router()
         }.scope(.singleton)
     }
 

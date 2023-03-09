@@ -2,6 +2,7 @@ import Combine
 import Factory
 import Foundation
 import SwiftUI
+import SharedLib
 import WallabagKit
 
 final class AppState: NSObject, ObservableObject {

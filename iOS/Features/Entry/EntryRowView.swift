@@ -1,6 +1,7 @@
 import Factory
 import HTMLEntities
 import SwiftUI
+import SharedLib
 
 struct EntryRowView: View {
     @ObservedObject var entry: Entry

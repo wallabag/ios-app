@@ -13,25 +13,25 @@ struct EntriesListView: View {
     }
 
     var body: some View {
-        List(entries, id: \.id) { entry in
-            Button(action: {
-                self.router.load(.entry(entry))
-            }, label: {
-                EntryRowView(entry: entry)
-                    .contentShape(Rectangle())
-                    .contextMenu {
+        List {
+            ForEach(entries, id: \.id) { entry in
+                NavigationLink(value: RoutePath.entry(entry)) {
+                    EntryRowView(entry: entry)
+                        .contentShape(Rectangle())
+                        .contextMenu {
+                            ArchiveEntryButton(entry: entry)
+                            StarEntryButton(entry: entry)
+                        }
+                }.buttonStyle(PlainButtonStyle())
+                    .swipeActions(allowsFullSwipe: false, content: {
                         ArchiveEntryButton(entry: entry)
+                            .tint(.blue)
+                            .labelStyle(.iconOnly)
                         StarEntryButton(entry: entry)
-                    }
-            }).buttonStyle(PlainButtonStyle())
-                .swipeActions(allowsFullSwipe: false, content: {
-                    ArchiveEntryButton(entry: entry)
-                        .tint(.blue)
-                        .labelStyle(.iconOnly)
-                    StarEntryButton(entry: entry)
-                        .tint(.orange)
-                        .labelStyle(.iconOnly)
-                })
+                            .tint(.orange)
+                            .labelStyle(.iconOnly)
+                    })
+            }
         }.refreshable { appSync.requestSync() }
             .listStyle(InsetListStyle())
     }

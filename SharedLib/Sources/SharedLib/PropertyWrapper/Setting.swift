@@ -1,7 +1,7 @@
 import Foundation
 
 @propertyWrapper
-struct Setting<T> {
+public struct Setting<T> {
     let key: String
     let defaultValue: T
     let userDefaults = UserDefaults(suiteName: "group.wallabag.share_extension")!
@@ -11,7 +11,7 @@ struct Setting<T> {
         self.defaultValue = defaultValue
     }
 
-    var wrappedValue: T {
+    public var wrappedValue: T {
         get {
             userDefaults.object(forKey: key) as? T ?? defaultValue
         }
