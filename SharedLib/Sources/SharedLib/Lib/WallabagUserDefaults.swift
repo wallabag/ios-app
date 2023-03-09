@@ -1,6 +1,6 @@
 import Foundation
 
-public struct WallabagUserDefaults {
+public enum WallabagUserDefaults {
     @Setting("host", defaultValue: "")
     public static var host: String
 

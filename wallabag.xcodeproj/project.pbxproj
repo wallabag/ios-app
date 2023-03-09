@@ -94,7 +94,6 @@
 		09AE6ECE29B13ABC0025DF93 /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09AE6ECD29B13ABC0025DF93 /* WallabagKit */; };
 		09AEBEA029B1D2C500050BBE /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 09AEBE9F29B1D2C500050BBE /* Factory */; };
 		09BCBBD4282BD46A00B234CB /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BCBBD3282BD46A00B234CB /* RouterTests.swift */; };
-		09BFB29925C8348E00E12B4D /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BFB29825C8348E00E12B4D /* Tests_iOS.swift */; };
 		09BFB2A625C8348E00E12B4D /* wallabag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09BFB27A25C8348E00E12B4D /* wallabag.xcdatamodeld */; };
 		09BFB2AE25C8348E00E12B4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09BFB27F25C8348E00E12B4D /* Assets.xcassets */; };
 		09C34C7C29B1398B00B5C927 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 09C34C7B29B1398B00B5C927 /* SharedLib */; };
@@ -122,13 +121,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 09644ACD25C94825000FFDA1;
 			remoteInfo = bagit;
-		};
-		09BFB29525C8348E00E12B4D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 09BFB27525C8348E00E12B4D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 09BFB28325C8348E00E12B4D;
-			remoteInfo = "wallabag (iOS)";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -256,9 +248,6 @@
 		09BFB27F25C8348E00E12B4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09BFB28425C8348E00E12B4D /* wallabag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wallabag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09BFB28725C8348E00E12B4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09BFB29425C8348E00E12B4D /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		09BFB29825C8348E00E12B4D /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
-		09BFB29A25C8348E00E12B4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C1103B626A0852F00E50F26 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -297,13 +286,6 @@
 				09644B0F25C94C6B000FFDA1 /* HTMLEntities in Frameworks */,
 				09C34C7E29B1399100B5C927 /* WallabagKit in Frameworks */,
 				09C34C7C29B1398B00B5C927 /* SharedLib in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		09BFB29125C8348E00E12B4D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -674,7 +656,6 @@
 				09BFB28625C8348E00E12B4D /* iOS */,
 				09BFB28525C8348E00E12B4D /* Products */,
 				093D13A026263B05008C2150 /* Shortcuts */,
-				09BFB29725C8348E00E12B4D /* Tests iOS */,
 				094AA03C2629EB1F006E5605 /* wallabagTests */,
 			);
 			sourceTree = "<group>";
@@ -683,7 +664,6 @@
 			isa = PBXGroup;
 			children = (
 				09BFB28425C8348E00E12B4D /* wallabag.app */,
-				09BFB29425C8348E00E12B4D /* Tests iOS.xctest */,
 				09644ACE25C94825000FFDA1 /* bagit.appex */,
 				093D139D26263B05008C2150 /* Shortcuts.appex */,
 				094AA03B2629EB1F006E5605 /* wallabagTests.xctest */,
@@ -710,15 +690,6 @@
 				09644D1E25C98782000FFDA1 /* wallabagStore.xcdatamodeld */,
 			);
 			path = iOS;
-			sourceTree = "<group>";
-		};
-		09BFB29725C8348E00E12B4D /* Tests iOS */ = {
-			isa = PBXGroup;
-			children = (
-				09BFB29825C8348E00E12B4D /* Tests_iOS.swift */,
-				09BFB29A25C8348E00E12B4D /* Info.plist */,
-			);
-			path = "Tests iOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -811,24 +782,6 @@
 			productReference = 09BFB28425C8348E00E12B4D /* wallabag.app */;
 			productType = "com.apple.product-type.application";
 		};
-		09BFB29325C8348E00E12B4D /* Tests iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 09BFB2B825C8348E00E12B4D /* Build configuration list for PBXNativeTarget "Tests iOS" */;
-			buildPhases = (
-				09BFB29025C8348E00E12B4D /* Sources */,
-				09BFB29125C8348E00E12B4D /* Frameworks */,
-				09BFB29225C8348E00E12B4D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				09BFB29625C8348E00E12B4D /* PBXTargetDependency */,
-			);
-			name = "Tests iOS";
-			productName = "Tests iOS";
-			productReference = 09BFB29425C8348E00E12B4D /* Tests iOS.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -850,10 +803,6 @@
 					};
 					09BFB28325C8348E00E12B4D = {
 						CreatedOnToolsVersion = 12.4;
-					};
-					09BFB29325C8348E00E12B4D = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 09BFB28325C8348E00E12B4D;
 					};
 				};
 			};
@@ -888,7 +837,6 @@
 				09BFB28325C8348E00E12B4D /* wallabag (iOS) */,
 				09644ACD25C94825000FFDA1 /* bagit */,
 				093D139C26263B05008C2150 /* Shortcuts */,
-				09BFB29325C8348E00E12B4D /* Tests iOS */,
 				094AA03A2629EB1F006E5605 /* wallabagTests */,
 			);
 		};
@@ -929,13 +877,6 @@
 				09AD75BE2624FEEE00708A1E /* Localizable.strings in Resources */,
 				09AD75A42624F93D00708A1E /* justify.css in Resources */,
 				09AD75A22624F93D00708A1E /* main.css in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		09BFB29225C8348E00E12B4D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1063,14 +1004,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		09BFB29025C8348E00E12B4D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				09BFB29925C8348E00E12B4D /* Tests_iOS.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1088,11 +1021,6 @@
 			isa = PBXTargetDependency;
 			target = 09644ACD25C94825000FFDA1 /* bagit */;
 			targetProxy = 09644AD625C94825000FFDA1 /* PBXContainerItemProxy */;
-		};
-		09BFB29625C8348E00E12B4D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 09BFB28325C8348E00E12B4D /* wallabag (iOS) */;
-			targetProxy = 09BFB29525C8348E00E12B4D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1446,59 +1374,6 @@
 			};
 			name = Release;
 		};
-		09BFB2B925C8348E00E12B4D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G97URPCGB8;
-				INFOPLIST_FILE = "Tests iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.Tests-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "wallabag (iOS)";
-			};
-			name = Debug;
-		};
-		09BFB2BA25C8348E00E12B4D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G97URPCGB8;
-				INFOPLIST_FILE = "Tests iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.Tests-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "wallabag (iOS)";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1543,15 +1418,6 @@
 			buildConfigurations = (
 				09BFB2B325C8348E00E12B4D /* Debug */,
 				09BFB2B425C8348E00E12B4D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		09BFB2B825C8348E00E12B4D /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				09BFB2B925C8348E00E12B4D /* Debug */,
-				09BFB2BA25C8348E00E12B4D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

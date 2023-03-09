@@ -22,7 +22,7 @@ struct WallabagApp: App {
 
     var body: some Scene {
         WindowGroup {
-            Main2View()
+            MainView()
                 .environmentObject(appState)
                 .environmentObject(playerPublisher)
                 .environmentObject(router)

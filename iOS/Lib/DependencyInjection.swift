@@ -1,7 +1,7 @@
 import Factory
 import Foundation
-import WallabagKit
 import SharedLib
+import WallabagKit
 
 extension Container {
     var appState: Factory<AppState> {

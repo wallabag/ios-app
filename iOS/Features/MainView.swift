@@ -1,7 +1,7 @@
 import Combine
 import SwiftUI
 
-struct Main2View: View {
+struct MainView: View {
     @EnvironmentObject var router: Router
     @EnvironmentObject var appState: AppState
 
@@ -14,7 +14,7 @@ struct Main2View: View {
                             RefreshButton()
                         }
                         ToolbarItem(placement: .navigationBarLeading) {
-                            SwiftUI.Menu(content: {
+                            Menu(content: {
                                 Button(action: {
                                     router.path.append(RoutePath.addEntry)
                                 }, label: {

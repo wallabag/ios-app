@@ -1,8 +1,8 @@
 import Combine
 import Foundation
 import Intents
-import WallabagKit
 import SharedLib
+import WallabagKit
 
 class AddEntryIntentHandler: NSObject, AddEntryIntentHandling {
     private var cancellable: AnyCancellable?

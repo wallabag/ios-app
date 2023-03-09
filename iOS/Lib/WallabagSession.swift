@@ -2,8 +2,8 @@ import Combine
 import CoreData
 import Factory
 import Foundation
-import WallabagKit
 import SharedLib
+import WallabagKit
 
 class WallabagSession: ObservableObject {
     enum State {

@@ -1,8 +1,8 @@
 import CoreData
 import Factory
 import Foundation
-import UIKit
 import SharedLib
+import UIKit
 
 #if DEBUG
     // swiftlint:disable line_length

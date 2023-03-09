@@ -1,7 +1,7 @@
 import Combine
 import Foundation
-import SwiftUI
 import SharedLib
+import SwiftUI
 
 class ClientIdSecretViewModel: ObservableObject {
     private(set) var isValid: Bool = false
