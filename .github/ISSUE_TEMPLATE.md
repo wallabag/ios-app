@@ -1,8 +1,8 @@
 | Q             | A
 | ------------- | ---
 | Device?       | iPhone/iPad
-| Device Os version    | 9.0/10.0
-| App Version   | 2.0
+| Device Os version    | 14.0
+| App Version   | 6.0
 | Wallabag server version | 2.0
 
 
