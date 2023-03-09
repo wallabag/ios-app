@@ -2,23 +2,29 @@ import Combine
 import SwiftUI
 
 struct EntryPicture: View {
-    @StateObject var imagePublisher = ImageDownloaderPublisher()
+    #if os(iOS)
+        @StateObject var imagePublisher = ImageDownloaderPublisher()
+    #endif
 
     var url: String?
 
     var body: some View {
         Group {
-            if let image = imagePublisher.image {
-                Image(uiImage: image)
-                    .resizable()
-                    .scaledToFit()
-            } else {
-                Image(systemName: "book")
-                    .resizable()
-                    .scaledToFit()
-            }
+            #if os(iOS)
+                if let image = imagePublisher.image {
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFit()
+                } else {
+                    Image(systemName: "book")
+                        .resizable()
+                        .scaledToFit()
+                }
+            #endif
         }.task {
-            await imagePublisher.loadImage(url: url)
+            #if os(iOS)
+                await imagePublisher.loadImage(url: url)
+            #endif
         }
     }
 }

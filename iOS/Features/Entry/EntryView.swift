@@ -8,7 +8,9 @@ struct EntryView: View {
     @Environment(\.openURL) var openURL
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject var appSync: AppSync
-    @EnvironmentObject var player: PlayerPublisher
+    #if os(iOS)
+        @EnvironmentObject var player: PlayerPublisher
+    #endif
     @ObservedObject var entry: Entry
     @State var showTag: Bool = false
     @State private var showDeleteConfirm = false
@@ -20,13 +22,16 @@ struct EntryView: View {
                 .fontWeight(.black)
                 .lineLimit(2)
                 .padding(.horizontal)
-            WebView(entry: entry)
+            #if os(iOS)
+                WebView(entry: entry)
+            #endif
             bottomBar
         }
         .sheet(isPresented: $showTag) {
             TagListFor(tagsForEntry: TagsForEntryPublisher(entry: self.entry))
                 .environment(\.managedObjectContext, context)
         }
+        #if os(iOS)
         .actionSheet(isPresented: $showDeleteConfirm) {
             ActionSheet(
                 title: Text("Confirm delete?"),
@@ -40,6 +45,7 @@ struct EntryView: View {
             )
         }
         .navigationBarTitleDisplayMode(.inline)
+        #endif
     }
 
     private var bottomBar: some View {
@@ -68,14 +74,22 @@ struct EntryView: View {
                 }, label: {
                     Label("Refresh", systemImage: "arrow.counterclockwise")
                 })
-                StarEntryButton(entry: entry, showText: true).hapticNotification(.success)
-                ArchiveEntryButton(entry: entry, showText: true).hapticNotification(.success)
-                Button(action: {
-                    player.load(entry)
-                }, label: {
-                    Label("Load entry", systemImage: "music.note")
-                })
-                .accessibilityHint("Load entry in text-to-speech player")
+                StarEntryButton(entry: entry, showText: true)
+                #if os(iOS)
+                    .hapticNotification(.success)
+                #endif
+                ArchiveEntryButton(entry: entry, showText: true)
+                #if os(iOS)
+                    .hapticNotification(.success)
+                #endif
+                #if os(iOS)
+                    Button(action: {
+                        player.load(entry)
+                    }, label: {
+                        Label("Load entry", systemImage: "music.note")
+                    })
+                    .accessibilityHint("Load entry in text-to-speech player")
+                #endif
             }, label: {
                 Label("Entry option", systemImage: "filemenu.and.selection")
                     .foregroundColor(.primary)
@@ -91,7 +105,9 @@ struct EntryView: View {
         static var previews: some View {
             let coreData = Container.shared.coreData()
             EntryView(entry: Entry(context: coreData.viewContext))
+            #if os(iOS)
                 .environmentObject(PlayerPublisher())
+            #endif
                 .environment(\.managedObjectContext, coreData.viewContext)
         }
     }

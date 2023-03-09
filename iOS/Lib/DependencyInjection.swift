@@ -22,11 +22,13 @@ extension Container {
         }.scope(.singleton)
     }
 
-    var playerPublisher: Factory<PlayerPublisher> {
-        Factory(self) {
-            PlayerPublisher()
-        }.scope(.singleton)
-    }
+    #if os(iOS)
+        var playerPublisher: Factory<PlayerPublisher> {
+            Factory(self) {
+                PlayerPublisher()
+            }.scope(.singleton)
+        }
+    #endif
 
     var appSync: Factory<AppSync> {
         Factory(self) {

@@ -2,13 +2,15 @@ import Combine
 import Factory
 import Foundation
 
-final class ImageDownloaderPublisher: ObservableObject {
-    @Injected(\.imageDownloader) private var imageDownloader
-    @Published var image: UIImage?
+#if os(iOS)
+    final class ImageDownloaderPublisher: ObservableObject {
+        @Injected(\.imageDownloader) private var imageDownloader
+        @Published var image: UIImage?
 
-    @MainActor
-    func loadImage(url: String?) async {
-        guard let url = url?.url else { return }
-        image = await imageDownloader.loadImage(url: url)
+        @MainActor
+        func loadImage(url: String?) async {
+            guard let url = url?.url else { return }
+            image = await imageDownloader.loadImage(url: url)
+        }
     }
-}
+#endif

@@ -7,7 +7,9 @@ struct AddEntryView: View {
     var body: some View {
         Form {
             TextField("Url", text: $model.url)
+            #if os(iOS)
                 .autocapitalization(.none)
+            #endif
                 .disableAutocorrection(true)
             HStack {
                 Button(model.submitting ? "Submitting..." : "Submit") {

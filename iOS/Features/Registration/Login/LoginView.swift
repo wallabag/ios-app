@@ -7,8 +7,10 @@ struct LoginView: View {
         Form {
             Section(header: Text("Login")) {
                 TextField("Login", text: $loginViewModel.login)
+                #if os(iOS)
                     .disableAutocorrection(true)
                     .autocapitalization(.none)
+                #endif
             }
             Section(header: Text("Password")) {
                 SecureField("Password", text: $loginViewModel.password)
@@ -22,11 +24,14 @@ struct LoginView: View {
                     Link("Report issue", destination: "https://github.com/wallabag/ios-app/issues")
                 }
             }
-        }.navigationBarTitle("Login & Password")
-            .navigationBarItems(trailing:
-                Link(destination: Bundle.infoForKey("DOCUMENTATION_URL")!.url!) {
-                    Text("Open documentation")
-                })
+        }
+        #if os(iOS)
+        .navigationBarTitle("Login & Password")
+        .navigationBarItems(trailing:
+            Link(destination: Bundle.infoForKey("DOCUMENTATION_URL")!.url!) {
+                Text("Open documentation")
+            })
+        #endif
     }
 }
 

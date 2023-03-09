@@ -9,11 +9,15 @@ let logger = Logger(subsystem: "fr.district-web.wallabag", category: "main")
 @main
 struct WallabagApp: App {
     @Environment(\.scenePhase) var scenePhase
-    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
+    #if os(iOS)
+        @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
+    #endif
 
     @Injected(\.appState) private var appState
     @Injected(\.router) private var router
-    @Injected(\.playerPublisher) private var playerPublisher
+    #if os(iOS)
+        @Injected(\.playerPublisher) private var playerPublisher
+    #endif
     @Injected(\.errorHandler) private var errorHandler
     @Injected(\.appSync) private var appSync
     @Injected(\.coreDataSync) private var coreDataSync
@@ -24,7 +28,9 @@ struct WallabagApp: App {
         WindowGroup {
             MainView()
                 .environmentObject(appState)
+            #if os(iOS)
                 .environmentObject(playerPublisher)
+            #endif
                 .environmentObject(router)
                 .environmentObject(errorHandler)
                 .environmentObject(appSync)
@@ -37,24 +43,28 @@ struct WallabagApp: App {
 
             if state == .background {
                 coreData.saveContext()
-                updateBadge()
+                #if os(iOS)
+                    updateBadge()
+                #endif
             }
         }
     }
 
-    private func updateBadge() {
-        if !WallabagUserDefaults.badgeEnabled {
-            UIApplication.shared.applicationIconBadgeNumber = 0
-            return
-        }
+    #if os(iOS)
+        private func updateBadge() {
+            if !WallabagUserDefaults.badgeEnabled {
+                UIApplication.shared.applicationIconBadgeNumber = 0
+                return
+            }
 
-        do {
-            let fetchRequest = Entry.fetchRequestSorted()
-            fetchRequest.predicate = RetrieveMode(fromCase: WallabagUserDefaults.defaultMode).predicate()
-            let entries = try coreData.viewContext.fetch(fetchRequest)
-            UIApplication.shared.applicationIconBadgeNumber = entries.count
-        } catch {
-            fatalError(error.localizedDescription)
+            do {
+                let fetchRequest = Entry.fetchRequestSorted()
+                fetchRequest.predicate = RetrieveMode(fromCase: WallabagUserDefaults.defaultMode).predicate()
+                let entries = try coreData.viewContext.fetch(fetchRequest)
+                UIApplication.shared.applicationIconBadgeNumber = entries.count
+            } catch {
+                fatalError(error.localizedDescription)
+            }
         }
-    }
+    #endif
 }

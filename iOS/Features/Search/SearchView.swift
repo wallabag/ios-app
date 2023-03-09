@@ -19,7 +19,9 @@ struct SearchView: View {
                     TextField("Search", text: $searchViewModel.search)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .disableAutocorrection(true)
+                    #if os(iOS)
                         .autocapitalization(.none)
+                    #endif
                         .padding(.leading)
                 } else {
                     RetrieveModePicker(filter: $searchViewModel.retrieveMode)

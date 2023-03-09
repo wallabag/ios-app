@@ -11,8 +11,10 @@ struct RegistrationView: View {
                     .font(.title)
                 NavigationLink("Log in", destination: ServerView())
                     .buttonStyle(.borderedProminent)
-                    .buttonBorderShape(.capsule)
-            }.navigationBarHidden(true)
+            }
+            #if os(iOS)
+            .navigationBarHidden(true)
+            #endif
         }
     }
 }

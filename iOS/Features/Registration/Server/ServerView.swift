@@ -8,16 +8,21 @@ struct ServerView: View {
             Section(header: Text("Server")) {
                 TextField("https://your-instance.domain", text: $serverViewModel.url)
                     .disableAutocorrection(true)
+                #if os(iOS)
                     .autocapitalization(.none)
+                #endif
             }
             NavigationLink(destination: ClientIdClientSecretView()) {
                 Text("Next")
             }.disabled(!serverViewModel.isValid)
-        }.navigationBarTitle("Server")
-            .navigationBarItems(trailing:
-                Link(destination: Bundle.infoForKey("DOCUMENTATION_URL")!.url!) {
-                    Text("Open documentation")
-                })
+        }
+        #if os(iOS)
+        .navigationBarTitle("Server")
+        .navigationBarItems(trailing:
+            Link(destination: Bundle.infoForKey("DOCUMENTATION_URL")!.url!) {
+                Text("Open documentation")
+            })
+        #endif
     }
 }
 

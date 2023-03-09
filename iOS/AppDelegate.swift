@@ -1,25 +1,25 @@
 #if os(iOS)
-import UIKit
+    import UIKit
 
-final class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
+    final class AppDelegate: UIResponder, UIApplicationDelegate {
+        var window: UIWindow?
 
-    func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        #if DEBUG
-            let args = ProcessInfo.processInfo.arguments
+        func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+            #if DEBUG
+                let args = ProcessInfo.processInfo.arguments
 
-            if args.contains("POPULATE_APPLICATION") {
-                populateApplication()
-            }
-        #endif
+                if args.contains("POPULATE_APPLICATION") {
+                    populateApplication()
+                }
+            #endif
 
-        return true
+            return true
+        }
+
+        func applicationDidFinishLaunching(_: UIApplication) {
+            UIApplication.shared.beginReceivingRemoteControlEvents()
+        }
+
+        func applicationWillTerminate(_: UIApplication) {}
     }
-
-    func applicationDidFinishLaunching(_: UIApplication) {
-        UIApplication.shared.beginReceivingRemoteControlEvents()
-    }
-
-    func applicationWillTerminate(_: UIApplication) {}
-}
 #endif

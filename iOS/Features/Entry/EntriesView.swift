@@ -7,7 +7,9 @@ struct EntriesView: View {
 
     var body: some View {
         VStack {
-            PasteBoardView()
+            #if os(iOS)
+                PasteBoardView()
+            #endif
             SearchView(searchViewModel: searchViewModel)
             EntriesListView(predicate: searchViewModel.predicate)
         }
@@ -19,7 +21,9 @@ struct EntriesView: View {
     struct ArticleListView_Previews: PreviewProvider {
         static var previews: some View {
             EntriesView()
+            #if os(iOS)
                 .environmentObject(PasteBoardViewModel())
+            #endif
         }
     }
 #endif
