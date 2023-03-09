@@ -1,3 +1,4 @@
+#if os(iOS)
 import CoreData
 import Factory
 import Foundation
@@ -52,4 +53,6 @@ import UIKit
             }
         }
     }
+#endif
+
 #endif

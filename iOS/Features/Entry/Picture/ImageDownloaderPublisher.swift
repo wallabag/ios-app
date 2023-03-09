@@ -1,7 +1,6 @@
 import Combine
 import Factory
 import Foundation
-import UIKit.UIImage
 
 final class ImageDownloaderPublisher: ObservableObject {
     @Injected(\.imageDownloader) private var imageDownloader

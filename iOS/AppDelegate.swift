@@ -1,3 +1,4 @@
+#if os(iOS)
 import UIKit
 
 final class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,3 +22,4 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_: UIApplication) {}
 }
+#endif

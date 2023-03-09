@@ -2,7 +2,6 @@ import Combine
 import Factory
 import Foundation
 import SharedLib
-import UIKit
 
 class PasteBoardViewModel: ObservableObject {
     @Published var showPasteBoardView: Bool = false {
