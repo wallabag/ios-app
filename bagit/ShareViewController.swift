@@ -1,5 +1,6 @@
 import Combine
 import MobileCoreServices
+import SharedLib
 import Social
 import UIKit
 import UniformTypeIdentifiers
@@ -51,7 +52,7 @@ class ShareViewController: UIViewController {
             kit.password = WallabagUserDefaults.password
 
             getUrl { shareURL in
-                guard let shareURL = shareURL else {
+                guard let shareURL else {
                     self.clearView(withError: .retrievingURL)
                     return
                 }

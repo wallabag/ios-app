@@ -1,12 +1,14 @@
 import Combine
+import Factory
 import Foundation
+import SharedLib
 import UIKit
 
 class PasteBoardViewModel: ObservableObject {
     @Published var showPasteBoardView: Bool = false {
         willSet {
             if newValue {
-                if let pasteBoardString = UIPasteboard.general.string, let newPasteBoardUrl = URL(string: pasteBoardString) {
+                if let newPasteBoardUrl = UIPasteboard.general.url {
                     WallabagUserDefaults.previousPasteBoardUrl = newPasteBoardUrl.absoluteString
                     pasteBoardUrl = newPasteBoardUrl.absoluteString
                 }
@@ -15,14 +17,14 @@ class PasteBoardViewModel: ObservableObject {
     }
 
     @Published var pasteBoardUrl: String = ""
-    @Injector var session: WallabagSession
+    @Injected(\.wallabagSession) var session
 
     private var cancellableNotification: AnyCancellable?
 
     init() {
         cancellableNotification = NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)
             .map { _ -> Bool in
-                guard let pasteBoardString = UIPasteboard.general.string, let pasteBoardUrl = URL(string: pasteBoardString),
+                guard let pasteBoardUrl = UIPasteboard.general.url,
                       pasteBoardUrl.absoluteString != WallabagUserDefaults.previousPasteBoardUrl
                 else {
                     return false

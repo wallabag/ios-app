@@ -1,13 +1,14 @@
 import Combine
 import CoreData
+import Factory
 import Foundation
 import SharedLib
 
 class CoreDataSync {
     private var objectsDidChangeCancellable: AnyCancellable?
 
-    @Injector var appSync: AppSync
-    @Injector var wallabagSession: WallabagSession
+    @Injected(\.appSync) private var appSync
+    @Injected(\.wallabagSession) var wallabagSession
 
     init() {
         objectsDidChangeCancellable = NotificationCenter.default

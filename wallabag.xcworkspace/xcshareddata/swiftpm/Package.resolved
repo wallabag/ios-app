@@ -1,21 +1,21 @@
 {
   "pins" : [
     {
+      "identity" : "factory",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:hmlongco/Factory.git",
+      "state" : {
+        "revision" : "718466174b5e8eb0dc6548260f447d2b5b639111",
+        "version" : "2.0.0"
+      }
+    },
+    {
       "identity" : "swift-html-entities",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/IBM-Swift/swift-html-entities.git",
       "state" : {
         "revision" : "2b14531d0c36dbb7c1c45a4d38db9c2e7898a307",
         "version" : "3.0.200"
-      }
-    },
-    {
-      "identity" : "swinject",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Swinject/Swinject",
-      "state" : {
-        "revision" : "8a76d2c74bafbb455763487cc6a08e91bad1f78b",
-        "version" : "2.7.1"
       }
     }
   ],

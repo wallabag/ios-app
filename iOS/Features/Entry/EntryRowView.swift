@@ -1,4 +1,6 @@
+import Factory
 import HTMLEntities
+import SharedLib
 import SwiftUI
 
 struct EntryRowView: View {
@@ -35,7 +37,8 @@ struct EntryRowView: View {
 
 struct ArticleRowView_Previews: PreviewProvider {
     static var entry: Entry {
-        let entry = Entry(context: CoreData.shared.viewContext)
+        let coreData = Container.shared.coreData()
+        let entry = Entry(context: coreData.viewContext)
         entry.title = "Marc Zuckerberg devrait être passible d'une peine de prison pour mensonges répétés au sujet de la protection de la vie privée des utilisateurs Facebook, d'après le sénateur américain Ron Wyden"
 
         return entry

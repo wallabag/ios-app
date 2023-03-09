@@ -1,3 +1,4 @@
+import Factory
 import SwiftUI
 
 struct AddEntryView: View {
@@ -17,11 +18,12 @@ struct AddEntryView: View {
                 Text("Great! Entry was added")
             }
         }
+        .navigationTitle("Add entry")
     }
 }
 
 private class AddEntryModel: ObservableObject {
-    @Injector var session: WallabagSession
+    @Injected(\.wallabagSession) private var session
 
     @Published var url: String = ""
     @Published var submitting: Bool = false

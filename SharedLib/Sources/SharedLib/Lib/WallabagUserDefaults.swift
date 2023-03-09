@@ -1,51 +1,51 @@
 import Foundation
 
-struct WallabagUserDefaults {
+public enum WallabagUserDefaults {
     @Setting("host", defaultValue: "")
-    static var host: String
+    public static var host: String
 
     @Setting("clientId", defaultValue: "")
-    static var clientId: String
+    public static var clientId: String
 
     @Setting("clientSecret", defaultValue: "")
-    static var clientSecret: String
+    public static var clientSecret: String
 
     @Setting("username", defaultValue: "")
-    static var login: String
+    public static var login: String
 
     @Password()
-    static var password: String
+    public static var password: String
 
     @Setting("registred", defaultValue: false)
-    static var registred: Bool
+    public static var registred: Bool
 
     @Setting("accessToken", defaultValue: nil)
-    static var accessToken: String?
+    public static var accessToken: String?
 
     @Setting("refreshToken", defaultValue: nil)
-    static var refreshToken: String?
+    public static var refreshToken: String?
 
     @Setting("expiresIn", defaultValue: nil)
-    static var expiresIn: Int?
+    public static var expiresIn: Int?
 
     @Setting("previousPasteBoardUrl", defaultValue: "")
-    static var previousPasteBoardUrl: String
+    public static var previousPasteBoardUrl: String
 
     @GeneralSetting("justifyArticle", defaultValue: true)
-    static var justifyArticle: Bool
+    public static var justifyArticle: Bool
 
     @GeneralSetting("badge", defaultValue: true)
-    static var badgeEnabled: Bool
+    public static var badgeEnabled: Bool
 
     @GeneralSetting("defaultMode", defaultValue: "allArticles")
-    static var defaultMode: String
+    public static var defaultMode: String
 
     @Setting("webFontSizePercent", defaultValue: 100)
-    static var webFontSizePercent: Double
+    public static var webFontSizePercent: Double
 
     @GeneralSetting("showImageInList", defaultValue: true)
-    static var showImageInList: Bool
+    public static var showImageInList: Bool
 
     @GeneralSetting("itemPerPageDuringSync", defaultValue: 50)
-    static var itemPerPageDuringSync: Int
+    public static var itemPerPageDuringSync: Int
 }

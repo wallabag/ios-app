@@ -1,6 +1,8 @@
 import Combine
 import CoreData
+import Factory
 import Foundation
+import SharedLib
 import WallabagKit
 
 class WallabagSession: ObservableObject {
@@ -13,7 +15,7 @@ class WallabagSession: ObservableObject {
     }
 
     @Published var state: State = .unknown
-    @Injector var kit: WallabagKit
+    @Injected(\.wallabagKit) var kit
     @CoreDataViewContext var coreDataContext: NSManagedObjectContext
     private var cancellable = Set<AnyCancellable>()
 
@@ -38,7 +40,7 @@ class WallabagSession: ObservableObject {
                     }
                 }
             }, receiveValue: { token in
-                guard let token = token else { self.state = .unknown; return }
+                guard let token else { self.state = .unknown; return }
                 WallabagUserDefaults.refreshToken = token.refreshToken
                 WallabagUserDefaults.accessToken = token.accessToken
                 self.kit.accessToken = token.accessToken

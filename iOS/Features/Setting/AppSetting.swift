@@ -1,5 +1,6 @@
 import Combine
 import Foundation
+import SharedLib
 
 final class AppSetting: ObservableObject {
     @Published var webFontSizePercent: Double

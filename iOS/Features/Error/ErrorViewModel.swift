@@ -1,9 +1,7 @@
 import Combine
 import Foundation
 
-class ErrorViewModel: ObservableObject {
-    static var shared = ErrorViewModel()
-
+final class ErrorViewModel: ObservableObject {
     private var resetAfter: Double
 
     init(_ resetAfter: Double = 10) {

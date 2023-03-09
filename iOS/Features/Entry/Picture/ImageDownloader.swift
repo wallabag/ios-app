@@ -5,13 +5,9 @@ import Foundation
 #endif
 
 final class ImageDownloader {
-    static var shared = ImageDownloader()
-
     private var cacheStore = ImageCache.shared
 
     private var dispatchQueue = DispatchQueue(label: "fr.district-web.wallabag.image-downloader", qos: .background)
-
-    private init() {}
 
     func loadImage(url: URL) async -> UIImage? {
         if let imageCache = await cacheStore[url.absoluteString] {

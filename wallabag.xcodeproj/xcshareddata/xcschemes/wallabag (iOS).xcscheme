@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1320"
+   LastUpgradeVersion = "1420"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -32,16 +32,6 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "09BFB29325C8348E00E12B4D"
-               BuildableName = "Tests iOS.xctest"
-               BlueprintName = "Tests iOS"
-               ReferencedContainer = "container:wallabag.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "SharedLibTests"
                BuildableName = "SharedLibTests"
                BlueprintName = "SharedLibTests"
@@ -56,6 +46,16 @@
                BuildableName = "wallabagTests.xctest"
                BlueprintName = "wallabagTests"
                ReferencedContainer = "container:wallabag.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "WallabagKitTests"
+               BuildableName = "WallabagKitTests"
+               BlueprintName = "WallabagKitTests"
+               ReferencedContainer = "container:WallabagKit">
             </BuildableReference>
          </TestableReference>
       </Testables>

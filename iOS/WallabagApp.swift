@@ -1,3 +1,4 @@
+import Factory
 import Foundation
 import os
 import SharedLib
@@ -10,14 +11,14 @@ struct WallabagApp: App {
     @Environment(\.scenePhase) var scenePhase
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
 
-    let appState: AppState = DependencyInjection.container.resolve(AppState.self)!
-    let router: Router = DependencyInjection.container.resolve(Router.self)!
-    let playerPublisher: PlayerPublisher = DependencyInjection.container.resolve(PlayerPublisher.self)!
-    let errorViewModel: ErrorViewModel = DependencyInjection.container.resolve(ErrorViewModel.self)!
-    let appSync: AppSync = DependencyInjection.container.resolve(AppSync.self)!
-    let coreDataSync: CoreDataSync = DependencyInjection.container.resolve(CoreDataSync.self)!
-    let appSetting: AppSetting = DependencyInjection.container.resolve(AppSetting.self)!
-    let coreData: CoreData = DependencyInjection.container.resolve(CoreData.self)!
+    @Injected(\.appState) private var appState
+    @Injected(\.router) private var router
+    @Injected(\.playerPublisher) private var playerPublisher
+    @Injected(\.errorHandler) private var errorHandler
+    @Injected(\.appSync) private var appSync
+    @Injected(\.coreDataSync) private var coreDataSync
+    @Injected(\.appSetting) private var appSetting
+    @Injected(\.coreData) private var coreData
 
     var body: some Scene {
         WindowGroup {
@@ -25,7 +26,7 @@ struct WallabagApp: App {
                 .environmentObject(appState)
                 .environmentObject(playerPublisher)
                 .environmentObject(router)
-                .environmentObject(errorViewModel)
+                .environmentObject(errorHandler)
                 .environmentObject(appSync)
                 .environmentObject(appSetting)
                 .environment(\.managedObjectContext, coreData.viewContext)

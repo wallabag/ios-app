@@ -2,7 +2,7 @@ import SwiftUI
 
 struct RegistrationView: View {
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 Image("logo")
                     .resizable()
@@ -13,7 +13,7 @@ struct RegistrationView: View {
                     .buttonStyle(.borderedProminent)
                     .buttonBorderShape(.capsule)
             }.navigationBarHidden(true)
-        }.navigationViewStyle(StackNavigationViewStyle())
+        }
     }
 }
 

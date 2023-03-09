@@ -1,19 +1,21 @@
 import Combine
 import CoreData
+import Factory
 import Foundation
+import SharedLib
 import WallabagKit
 
-class AppSync: ObservableObject {
-    static var shared = AppSync()
-    @Injector var session: WallabagSession
-    @Injector var errorViewModel: ErrorViewModel
+final class AppSync: ObservableObject {
+    @Injected(\.wallabagSession) private var session
+    @Injected(\.errorHandler) private var errorViewModel
+    @Injected(\.coreData) private var coreData
     @CoreDataViewContext var coreDataContext: NSManagedObjectContext
 
     @Published private(set) var inProgress = false
     @Published private(set) var progress: Float = 0.0
 
-    private var backgroundContext: NSManagedObjectContext = {
-        let context = CoreData.shared.persistentContainer.newBackgroundContext()
+    private lazy var backgroundContext: NSManagedObjectContext = {
+        let context = coreData.persistentContainer.newBackgroundContext()
         context.mergePolicy = NSOverwriteMergePolicy
         return context
     }()

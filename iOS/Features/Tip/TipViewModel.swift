@@ -11,7 +11,7 @@ final class TipViewModel: ObservableObject {
     init() {
         canMakePayments = SKPaymentQueue.canMakePayments()
         if canMakePayments {
-            Task {
+            Task { @MainActor in
                 let product = try? await requestProduct()
                 tipProduct = product?.first
             }
@@ -20,13 +20,12 @@ final class TipViewModel: ObservableObject {
         taskHandle = listenForTransactions()
     }
 
-    @MainActor
     private func requestProduct() async throws -> [Product] {
         try await Product.products(for: ["tips1"])
     }
 
     func listenForTransactions() -> Task<Void, Error> {
-        Task.detached {
+        Task {
             for await result in Transaction.updates {
                 do {
                     let transaction = try self.checkVerified(result)

@@ -1,5 +1,6 @@
 import Combine
 import Foundation
+import SharedLib
 import SwiftUI
 
 class ClientIdSecretViewModel: ObservableObject {

@@ -1,12 +1,71 @@
+import Factory
 import Foundation
-import Swinject
+import SharedLib
 import WallabagKit
 
-final class DependencyInjection {
-    static let container: Container = {
-        let container = Container()
-        container.register(ErrorViewModel.self) { _ in ErrorViewModel.shared }.inObjectScope(.container)
-        container.register(WallabagKit.self, factory: { _ in
+extension Container {
+    var appState: Factory<AppState> {
+        Factory(self) {
+            AppState()
+        }.scope(.singleton)
+    }
+
+    var router: Factory<Router> {
+        Factory(self) {
+            Router()
+        }.scope(.singleton)
+    }
+
+    var errorHandler: Factory<ErrorViewModel> {
+        Factory(self) {
+            ErrorViewModel()
+        }.scope(.singleton)
+    }
+
+    var playerPublisher: Factory<PlayerPublisher> {
+        Factory(self) {
+            PlayerPublisher()
+        }.scope(.singleton)
+    }
+
+    var appSync: Factory<AppSync> {
+        Factory(self) {
+            AppSync()
+        }.scope(.singleton)
+    }
+
+    var wallabagSession: Factory<WallabagSession> {
+        Factory(self) {
+            WallabagSession()
+        }.scope(.singleton)
+    }
+
+    var imageDownloader: Factory<ImageDownloader> {
+        Factory(self) {
+            ImageDownloader()
+        }.scope(.singleton)
+    }
+
+    var coreDataSync: Factory<CoreDataSync> {
+        Factory(self) {
+            CoreDataSync()
+        }.scope(.singleton)
+    }
+
+    var appSetting: Factory<AppSetting> {
+        Factory(self) {
+            AppSetting()
+        }.scope(.singleton)
+    }
+
+    var coreData: Factory<CoreData> {
+        Factory(self) {
+            CoreData()
+        }.scope(.singleton)
+    }
+
+    var wallabagKit: Factory<WallabagKit> {
+        Factory(self) {
             let kit = WallabagKit(host: WallabagUserDefaults.host)
             kit.clientId = WallabagUserDefaults.clientId
             kit.clientSecret = WallabagUserDefaults.clientSecret
@@ -16,21 +75,6 @@ final class DependencyInjection {
             kit.refreshToken = WallabagUserDefaults.refreshToken
 
             return kit
-        }).inObjectScope(.container)
-        container.register(WallabagSession.self, factory: { _ in WallabagSession() }).inObjectScope(.container)
-        container.register(AppSync.self, factory: { _ in AppSync.shared }).inObjectScope(.container)
-        container.register(ImageDownloader.self, factory: { _ in ImageDownloader.shared }).inObjectScope(.container)
-        container.register(AppState.self, factory: { _ in AppState.shared }).inObjectScope(.container)
-        container.register(Router.self, factory: { factory in
-            let appState: AppState = factory.resolve(AppState.self)!
-            let router = Router(defaultRoute: appState.registred ? .entries : .registration)
-            return router
-        }).inObjectScope(.container)
-        container.register(PlayerPublisher.self, factory: { _ in PlayerPublisher.shared }).inObjectScope(.container)
-        container.register(CoreDataSync.self, factory: { _ in CoreDataSync() }).inObjectScope(.container)
-        container.register(AppSetting.self, factory: { _ in AppSetting() }).inObjectScope(.container)
-        container.register(CoreData.self, factory: { _ in CoreData.shared }).inObjectScope(.container)
-
-        return container
-    }()
+        }.scope(.singleton)
+    }
 }

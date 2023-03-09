@@ -1,19 +1,18 @@
 import Combine
+import Factory
 import Foundation
+import SharedLib
 import SwiftUI
 import WallabagKit
 
-class AppState: NSObject, ObservableObject {
-    static var shared = AppState()
+final class AppState: NSObject, ObservableObject {
+    @Injected(\.wallabagSession) private var session
 
     @Published var registred: Bool = false {
         didSet {
             WallabagUserDefaults.registred = registred
         }
     }
-
-    @Injector var session: WallabagSession
-    @Injector var router: Router
 
     @AppStorage("readingSpeed") var readingSpeed: Double = 200
 
@@ -35,7 +34,6 @@ class AppState: NSObject, ObservableObject {
         logger.debug("Logout called")
         registred = false
         session.state = .unknown
-        router.load(.registration)
     }
 
     /// Fetch user config from server
@@ -43,7 +41,7 @@ class AppState: NSObject, ObservableObject {
     private func fetchConfig() {
         logger.info("Fetch user config")
         session.config { [weak self] config in
-            guard let config = config else { return }
+            guard let config else { return }
             logger.debug("User config available")
             DispatchQueue.main.async {
                 self?.readingSpeed = config.readingSpeed

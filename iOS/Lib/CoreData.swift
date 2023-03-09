@@ -2,10 +2,6 @@ import CoreData
 import Foundation
 
 final class CoreData {
-    static let shared = CoreData()
-
-    private init() {}
-
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "wallabagStore")
 

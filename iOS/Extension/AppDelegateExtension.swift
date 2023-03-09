@@ -1,5 +1,7 @@
 import CoreData
+import Factory
 import Foundation
+import SharedLib
 import UIKit
 
 #if DEBUG
@@ -8,13 +10,12 @@ import UIKit
         func populateApplication() {
             resetApplication()
 
-            let appState = DependencyInjection.container.resolve(AppState.self)!
+            let appState = Container.shared.appState()
             appState.registred = true
-            appState.router.load(.entries)
             WallabagUserDefaults.defaultMode = "allArticles"
             WallabagUserDefaults.badgeEnabled = false
 
-            let context = CoreData.shared.viewContext
+            let context = Container.shared.coreData().viewContext
 
             let entry = Entry(context: context)
             entry.title = "Marc Zuckerberg devrait être passible d'une peine de prison pour mensonges répétés au sujet de la protection de la vie privée des utilisateurs Facebook, d'après le sénateur américain Ron Wyden"
@@ -38,7 +39,7 @@ import UIKit
             do {
                 // MARK: CoreData
 
-                let context = CoreData.shared.viewContext
+                let context = Container.shared.coreData().viewContext
                 let operations = NSBatchDeleteRequest(fetchRequest: Entry.fetchRequest())
                 try context.execute(operations)
 
