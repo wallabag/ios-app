@@ -22,9 +22,7 @@ struct EntryView: View {
                 .fontWeight(.black)
                 .lineLimit(2)
                 .padding(.horizontal)
-            #if os(iOS)
-                WebView(entry: entry)
-            #endif
+            WebView(entry: entry)
             bottomBar
         }
         .sheet(isPresented: $showTag) {
