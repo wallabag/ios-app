@@ -654,7 +654,7 @@
 				09AD75962624F4E800708A1E /* wallabag.entitlements */,
 				09644ACF25C94825000FFDA1 /* bagit */,
 				09644B1525C94CA6000FFDA1 /* Frameworks */,
-				09BFB28625C8348E00E12B4D /* iOS */,
+				09BFB28625C8348E00E12B4D /* App */,
 				09BFB28525C8348E00E12B4D /* Products */,
 				093D13A026263B05008C2150 /* Shortcuts */,
 				094AA03C2629EB1F006E5605 /* wallabagTests */,
@@ -672,7 +672,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		09BFB28625C8348E00E12B4D /* iOS */ = {
+		09BFB28625C8348E00E12B4D /* App */ = {
 			isa = PBXGroup;
 			children = (
 				09BFB27F25C8348E00E12B4D /* Assets.xcassets */,
@@ -689,7 +689,7 @@
 				09644BE425C98343000FFDA1 /* PropertyWrapper */,
 				09644D1E25C98782000FFDA1 /* wallabagStore.xcdatamodeld */,
 			);
-			path = iOS;
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1329,7 +1329,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = iOS/Info.plist;
+				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1357,7 +1357,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = iOS/Info.plist;
+				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
