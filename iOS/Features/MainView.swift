@@ -7,20 +7,14 @@ struct MainView: View {
 
     var body: some View {
         if appState.registred {
-            #if os(iOS)
-                ios
-            #endif
-            #if os(macOS)
-                macOS
-            #endif
-
+            mainView
         } else {
             RegistrationView()
         }
     }
 
     #if os(iOS)
-        var ios: some View {
+        var mainView: some View {
             NavigationStack(path: $router.path) {
                 EntriesView()
                     .toolbar {
@@ -53,61 +47,33 @@ struct MainView: View {
                                 Divider()
                                 Button(role: .destructive, action: {
                                     self.appState.logout()
-                                }) {
+                                }, label: {
                                     Label("Logout", systemImage: "person")
-                                }.foregroundColor(.red)
+                                }).foregroundColor(.red)
                             }, label: {
                                 Label("Menu", systemImage: "line.3.horizontal.decrease.circle")
                             })
                         }
                     }
-                    .navigationDestination(for: RoutePath.self) { route in
-                        switch route {
-                        case .addEntry:
-                            AddEntryView()
-                        case let .entry(entry):
-                            EntryView(entry: entry)
-                        case .about:
-                            AboutView()
-                        case .tips:
-                            TipView()
-                        case .setting:
-                            SettingView()
-                        default:
-                            Text("test")
-                        }
-                    }
+                    .appRouting()
             }
         }
     #endif
 
-    var macOS: some View {
-        NavigationSplitView {
-            EntriesView()
-                .navigationDestination(for: RoutePath.self) { route in
-                    switch route {
-                    case .addEntry:
-                        AddEntryView()
-                    case let .entry(entry):
-                        EntryView(entry: entry)
-                    case .about:
-                        AboutView()
-                    case .tips:
-                        TipView()
-                    case .setting:
-                        SettingView()
-                    default:
-                        Text("test")
-                    }
+    #if os(macOS)
+        var mainView: some View {
+            NavigationSplitView {
+                EntriesView()
+                    .appRouting()
+            } detail: {
+                Text("Choose one entry")
+            }.toolbar {
+                ToolbarItem {
+                    RefreshButton()
                 }
-        } detail: {
-            Text("Detail View")
-        }.toolbar {
-            ToolbarItem {
-                RefreshButton()
             }
         }
-    }
+    #endif
 }
 
 #if DEBUG

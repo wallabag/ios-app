@@ -85,6 +85,7 @@
 		097F81EB25CB18BA006C85F6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F81DF25CB187B006C85F6 /* Router.swift */; };
 		09800D8D29B9DE9E00DAB403 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 09800D8C29B9DE9E00DAB403 /* SharedLib */; };
 		09800D8F29B9DEFE00DAB403 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 09800D8E29B9DEFE00DAB403 /* SharedLib */; };
+		098BDD0829BF04E3003DF719 /* RouteSwiftUIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BDD0729BF04E3003DF719 /* RouteSwiftUIExtension.swift */; };
 		09AD75A12624F93D00708A1E /* article.html in Resources */ = {isa = PBXBuildFile; fileRef = 09AD759D2624F93D00708A1E /* article.html */; };
 		09AD75A22624F93D00708A1E /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 09AD759E2624F93D00708A1E /* main.css */; };
 		09AD75A32624F93D00708A1E /* ratatouille.css in Resources */ = {isa = PBXBuildFile; fileRef = 09AD759F2624F93D00708A1E /* ratatouille.css */; };
@@ -225,6 +226,7 @@
 		09644D1725C98755000FFDA1 /* AppDelegateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
 		09644D1F25C98782000FFDA1 /* wallabagStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabagStore.xcdatamodel; sourceTree = "<group>"; };
 		097F81DF25CB187B006C85F6 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		098BDD0729BF04E3003DF719 /* RouteSwiftUIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSwiftUIExtension.swift; sourceTree = "<group>"; };
 		09AD75962624F4E800708A1E /* wallabag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wallabag.entitlements; sourceTree = "<group>"; };
 		09AD759D2624F93D00708A1E /* article.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = article.html; sourceTree = "<group>"; };
 		09AD759E2624F93D00708A1E /* main.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
@@ -404,6 +406,7 @@
 			children = (
 				09644B8825C98176000FFDA1 /* Route.swift */,
 				097F81DF25CB187B006C85F6 /* Router.swift */,
+				098BDD0729BF04E3003DF719 /* RouteSwiftUIExtension.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -943,6 +946,7 @@
 				09644B5725C9810A000FFDA1 /* WallabagApp.swift in Sources */,
 				09644C6F25C985A9000FFDA1 /* EntryPictoImage.swift in Sources */,
 				09644C9E25C98615000FFDA1 /* MainView.swift in Sources */,
+				098BDD0829BF04E3003DF719 /* RouteSwiftUIExtension.swift in Sources */,
 				09644C8F25C985E8000FFDA1 /* BugReportView.swift in Sources */,
 				09644BFB25C983F8000FFDA1 /* Tag.swift in Sources */,
 				09644CD625C986C0000FFDA1 /* ClientIdClientSecretView.swift in Sources */,

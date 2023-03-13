@@ -100,7 +100,11 @@ import WebKit
             nsView.fontSizePercent(appSetting.webFontSizePercent)
         }
 
-        /* class Coordinator: NSObject, WKNavigationDelegate, UIScrollViewDelegate {
+        func makeCoordinator() -> Coordinator {
+            Coordinator(self, appSetting: appSetting)
+        }
+
+        class Coordinator: NSObject, WKNavigationDelegate {
             @CoreDataViewContext var context: NSManagedObjectContext
             var appSetting: AppSetting
 
@@ -113,9 +117,9 @@ import WebKit
             }
 
             func webViewToLastPosition() {
-                DispatchQueue.main.async {
-                    self.webView.wkWebView.scrollView.setContentOffset(CGPoint(x: 0.0, y: self.webView.entry.screenPositionForWebView), animated: true)
-                }
+                /*    DispatchQueue.main.async {
+                     self.webView.wkWebView.scrollView.setContentOffset(CGPoint(x: 0.0, y: self.webView.entry.screenPositionForWebView), animated: true)
+                 }*/
             }
 
             func webView(_ webView: WKWebView, didFinish _: WKNavigation!) {
@@ -141,34 +145,23 @@ import WebKit
                     return
                 }
 
-                let safariController = SFSafariViewController(url: urlTarget)
-                safariController.modalPresentationStyle = .overFullScreen
+                /* let safariController = SFSafariViewController(url: urlTarget)
+                 safariController.modalPresentationStyle = .overFullScreen
 
-                UIApplication.shared.open(urlTarget, options: [:], completionHandler: nil)
+                 UIApplication.shared.open(urlTarget, options: [:], completionHandler: nil)
+                 */
                 decisionHandler(.cancel)
             }
 
-            func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-                context.perform {
-                    self.webView.entry.screenPosition = Float(scrollView.contentOffset.y)
-                    try? self.context.save()
-                }
-            }
-         */
+            /*
+             func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+             context.perform {
+             self.webView.entry.screenPosition = Float(scrollView.contentOffset.y)
+             try? self.context.save()
+             }
+             }*/
+        }
     }
-
-    /* func makeNSView(context: Context) -> WKWebView {
-             wkWebView.navigationDelegate = context.coordinator
-             wkWebView.scrollView.delegate = context.coordinator
-             wkWebView.load(content: entry.content, justify: false)
-
-             return wkWebView
-         }
-
-         func updateUIView(_ webView: WKWebView, context _: Context) {
-             webView.fontSizePercent(appSetting.webFontSizePercent)
-         }
-     } */
 
 #endif
 
