@@ -43,28 +43,30 @@ struct WallabagApp: App {
 
             if state == .background {
                 coreData.saveContext()
-                #if os(iOS)
-                    updateBadge()
-                #endif
+                updateBadge()
             }
         }
     }
 
-    #if os(iOS)
-        private func updateBadge() {
-            if !WallabagUserDefaults.badgeEnabled {
-                UIApplication.shared.applicationIconBadgeNumber = 0
-                return
-            }
-
-            do {
-                let fetchRequest = Entry.fetchRequestSorted()
-                fetchRequest.predicate = RetrieveMode(fromCase: WallabagUserDefaults.defaultMode).predicate()
-                let entries = try coreData.viewContext.fetch(fetchRequest)
-                UIApplication.shared.applicationIconBadgeNumber = entries.count
-            } catch {
-                fatalError(error.localizedDescription)
-            }
+    private func updateBadge() {
+        if !WallabagUserDefaults.badgeEnabled {
+            setBadgeNumber(0)
+            return
         }
-    #endif
+
+        do {
+            let fetchRequest = Entry.fetchRequestSorted()
+            fetchRequest.predicate = RetrieveMode(fromCase: WallabagUserDefaults.defaultMode).predicate()
+            let entries = try coreData.viewContext.fetch(fetchRequest)
+            setBadgeNumber(entries.count)
+        } catch {
+            fatalError(error.localizedDescription)
+        }
+    }
+
+    private func setBadgeNumber(_ number: Int) {
+        #if os(iOS)
+            UIApplication.shared.applicationIconBadgeNumber = number
+        #endif
+    }
 }
