@@ -1,8 +1,9 @@
-import Combine
-import Factory
-import Foundation
-
 #if os(iOS)
+    import Combine
+    import Factory
+    import Foundation
+    import UIKit
+
     final class ImageDownloaderPublisher: ObservableObject {
         @Injected(\.imageDownloader) private var imageDownloader
         @Published var image: UIImage?
