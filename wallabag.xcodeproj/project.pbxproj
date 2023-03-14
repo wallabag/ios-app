@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		093D139F26263B05008C2150 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093D139E26263B05008C2150 /* Intents.framework */; };
 		093D13A226263B05008C2150 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093D13A126263B05008C2150 /* IntentHandler.swift */; };
-		093D13B626263B05008C2150 /* Shortcuts.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 093D139D26263B05008C2150 /* Shortcuts.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		093D13B626263B05008C2150 /* Shortcuts.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 093D139D26263B05008C2150 /* Shortcuts.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		093D13D826263CC4008C2150 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 093D13D726263CC4008C2150 /* Intents.intentdefinition */; };
 		093D13EC26263F81008C2150 /* AddEntryIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093D13EB26263F81008C2150 /* AddEntryIntentHandler.swift */; };
 		094AA03E2629EB1F006E5605 /* wallabagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094AA03D2629EB1F006E5605 /* wallabagTests.swift */; };
@@ -18,7 +18,7 @@
 		09564E0D2851C57200D39E95 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09564E0C2851C57200D39E95 /* SettingView.swift */; };
 		09644AD125C94825000FFDA1 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644AD025C94825000FFDA1 /* ShareViewController.swift */; };
 		09644AD425C94825000FFDA1 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09644AD225C94825000FFDA1 /* MainInterface.storyboard */; };
-		09644AD825C94825000FFDA1 /* bagit.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 09644ACE25C94825000FFDA1 /* bagit.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		09644AD825C94825000FFDA1 /* bagit.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 09644ACE25C94825000FFDA1 /* bagit.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		09644AE325C94863000FFDA1 /* ShareExtensionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644AE225C94863000FFDA1 /* ShareExtensionError.swift */; };
 		09644AEA25C94879000FFDA1 /* ExtensionClass.js in Resources */ = {isa = PBXBuildFile; fileRef = 09644AE925C94879000FFDA1 /* ExtensionClass.js */; };
 		09644AF725C94982000FFDA1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09644AF625C94982000FFDA1 /* Media.xcassets */; };
@@ -85,6 +85,7 @@
 		097F81EB25CB18BA006C85F6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F81DF25CB187B006C85F6 /* Router.swift */; };
 		09800D8D29B9DE9E00DAB403 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 09800D8C29B9DE9E00DAB403 /* SharedLib */; };
 		09800D8F29B9DEFE00DAB403 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 09800D8E29B9DEFE00DAB403 /* SharedLib */; };
+		098BDD0829BF04E3003DF719 /* RouteSwiftUIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BDD0729BF04E3003DF719 /* RouteSwiftUIExtension.swift */; };
 		09AD75A12624F93D00708A1E /* article.html in Resources */ = {isa = PBXBuildFile; fileRef = 09AD759D2624F93D00708A1E /* article.html */; };
 		09AD75A22624F93D00708A1E /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 09AD759E2624F93D00708A1E /* main.css */; };
 		09AD75A32624F93D00708A1E /* ratatouille.css in Resources */ = {isa = PBXBuildFile; fileRef = 09AD759F2624F93D00708A1E /* ratatouille.css */; };
@@ -225,6 +226,7 @@
 		09644D1725C98755000FFDA1 /* AppDelegateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
 		09644D1F25C98782000FFDA1 /* wallabagStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabagStore.xcdatamodel; sourceTree = "<group>"; };
 		097F81DF25CB187B006C85F6 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		098BDD0729BF04E3003DF719 /* RouteSwiftUIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSwiftUIExtension.swift; sourceTree = "<group>"; };
 		09AD75962624F4E800708A1E /* wallabag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wallabag.entitlements; sourceTree = "<group>"; };
 		09AD759D2624F93D00708A1E /* article.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = article.html; sourceTree = "<group>"; };
 		09AD759E2624F93D00708A1E /* main.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
@@ -404,6 +406,7 @@
 			children = (
 				09644B8825C98176000FFDA1 /* Route.swift */,
 				097F81DF25CB187B006C85F6 /* Router.swift */,
+				098BDD0729BF04E3003DF719 /* RouteSwiftUIExtension.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -651,7 +654,7 @@
 				09AD75962624F4E800708A1E /* wallabag.entitlements */,
 				09644ACF25C94825000FFDA1 /* bagit */,
 				09644B1525C94CA6000FFDA1 /* Frameworks */,
-				09BFB28625C8348E00E12B4D /* iOS */,
+				09BFB28625C8348E00E12B4D /* App */,
 				09BFB28525C8348E00E12B4D /* Products */,
 				093D13A026263B05008C2150 /* Shortcuts */,
 				094AA03C2629EB1F006E5605 /* wallabagTests */,
@@ -669,7 +672,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		09BFB28625C8348E00E12B4D /* iOS */ = {
+		09BFB28625C8348E00E12B4D /* App */ = {
 			isa = PBXGroup;
 			children = (
 				09BFB27F25C8348E00E12B4D /* Assets.xcassets */,
@@ -686,7 +689,7 @@
 				09644BE425C98343000FFDA1 /* PropertyWrapper */,
 				09644D1E25C98782000FFDA1 /* wallabagStore.xcdatamodeld */,
 			);
-			path = iOS;
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -943,6 +946,7 @@
 				09644B5725C9810A000FFDA1 /* WallabagApp.swift in Sources */,
 				09644C6F25C985A9000FFDA1 /* EntryPictoImage.swift in Sources */,
 				09644C9E25C98615000FFDA1 /* MainView.swift in Sources */,
+				098BDD0829BF04E3003DF719 /* RouteSwiftUIExtension.swift in Sources */,
 				09644C8F25C985E8000FFDA1 /* BugReportView.swift in Sources */,
 				09644BFB25C983F8000FFDA1 /* Tag.swift in Sources */,
 				09644CD625C986C0000FFDA1 /* ClientIdClientSecretView.swift in Sources */,
@@ -1005,6 +1009,7 @@
 /* Begin PBXTargetDependency section */
 		093D13B526263B05008C2150 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 093D139C26263B05008C2150 /* Shortcuts */;
 			targetProxy = 093D13B426263B05008C2150 /* PBXContainerItemProxy */;
 		};
@@ -1015,6 +1020,7 @@
 		};
 		09644AD725C94825000FFDA1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 09644ACD25C94825000FFDA1 /* bagit */;
 			targetProxy = 09644AD625C94825000FFDA1 /* PBXContainerItemProxy */;
 		};
@@ -1323,7 +1329,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = iOS/Info.plist;
+				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1332,7 +1338,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag";
 				PRODUCT_NAME = wallabag;
 				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1351,7 +1357,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G97URPCGB8;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = iOS/Info.plist;
+				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1360,7 +1366,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag";
 				PRODUCT_NAME = wallabag;
 				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
