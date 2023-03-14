@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "09BFB28325C8348E00E12B4D"
                BuildableName = "wallabag.app"
-               BlueprintName = "wallabag (iOS)"
+               BlueprintName = "wallabag"
                ReferencedContainer = "container:wallabag.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -78,7 +78,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "09BFB28325C8348E00E12B4D"
             BuildableName = "wallabag.app"
-            BlueprintName = "wallabag (iOS)"
+            BlueprintName = "wallabag"
             ReferencedContainer = "container:wallabag.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -98,7 +98,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "09BFB28325C8348E00E12B4D"
             BuildableName = "wallabag.app"
-            BlueprintName = "wallabag (iOS)"
+            BlueprintName = "wallabag"
             ReferencedContainer = "container:wallabag.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

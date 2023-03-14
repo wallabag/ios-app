@@ -755,9 +755,9 @@
 			productReference = 09644ACE25C94825000FFDA1 /* bagit.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		09BFB28325C8348E00E12B4D /* wallabag (iOS) */ = {
+		09BFB28325C8348E00E12B4D /* wallabag */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 09BFB2B225C8348E00E12B4D /* Build configuration list for PBXNativeTarget "wallabag (iOS)" */;
+			buildConfigurationList = 09BFB2B225C8348E00E12B4D /* Build configuration list for PBXNativeTarget "wallabag" */;
 			buildPhases = (
 				09BFB28025C8348E00E12B4D /* Sources */,
 				09BFB28125C8348E00E12B4D /* Frameworks */,
@@ -771,7 +771,7 @@
 				09644AD725C94825000FFDA1 /* PBXTargetDependency */,
 				093D13B526263B05008C2150 /* PBXTargetDependency */,
 			);
-			name = "wallabag (iOS)";
+			name = wallabag;
 			packageProductDependencies = (
 				09644B0E25C94C6B000FFDA1 /* HTMLEntities */,
 				09C34C7B29B1398B00B5C927 /* SharedLib */,
@@ -834,7 +834,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				09BFB28325C8348E00E12B4D /* wallabag (iOS) */,
+				09BFB28325C8348E00E12B4D /* wallabag */,
 				09644ACD25C94825000FFDA1 /* bagit */,
 				093D139C26263B05008C2150 /* Shortcuts */,
 				094AA03A2629EB1F006E5605 /* wallabagTests */,
@@ -1015,7 +1015,7 @@
 		};
 		094AA0412629EB1F006E5605 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 09BFB28325C8348E00E12B4D /* wallabag (iOS) */;
+			target = 09BFB28325C8348E00E12B4D /* wallabag */;
 			targetProxy = 094AA0402629EB1F006E5605 /* PBXContainerItemProxy */;
 		};
 		09644AD725C94825000FFDA1 /* PBXTargetDependency */ = {
@@ -1328,8 +1328,10 @@
 				CODE_SIGN_ENTITLEMENTS = wallabag.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G97URPCGB8;
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = App/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1356,8 +1358,10 @@
 				CODE_SIGN_ENTITLEMENTS = wallabag.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G97URPCGB8;
+				ENABLE_HARDENED_RUNTIME = NO;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = App/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1415,7 +1419,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		09BFB2B225C8348E00E12B4D /* Build configuration list for PBXNativeTarget "wallabag (iOS)" */ = {
+		09BFB2B225C8348E00E12B4D /* Build configuration list for PBXNativeTarget "wallabag" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				09BFB2B325C8348E00E12B4D /* Debug */,
