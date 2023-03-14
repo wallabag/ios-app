@@ -17,10 +17,12 @@ struct RefreshButton: View {
                         .rotationEffect(.degrees(appSync.inProgress ? 0 : 360))
                         .animation(.spring().repeatForever(autoreverses: false), value: appSync.inProgress)
                 }
-            ).disabled(appSync.inProgress)
-                .buttonStyle(PlainButtonStyle())
-                .accessibilityLabel("Refresh")
-                .accessibilityHint("Refres entries from server")
+            )
+            .disabled(appSync.inProgress)
+            .buttonStyle(PlainButtonStyle())
+            .accessibilityLabel("Refresh")
+            .accessibilityHint("Refres entries from server")
+            .keyboardShortcut("r", modifiers: .command)
         }
     }
 }

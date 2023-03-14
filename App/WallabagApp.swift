@@ -46,6 +46,14 @@ struct WallabagApp: App {
                 updateBadge()
             }
         }
+        .commands {
+            CommandGroup(after: .newItem) {
+                Button("Refresh entries") {
+                    appSync.requestSync()
+                }
+                .keyboardShortcut("r", modifiers: .command)
+            }
+        }
     }
 
     private func updateBadge() {
