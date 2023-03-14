@@ -51,50 +51,61 @@ struct EntryView: View {
             FontSizeSelectorView()
                 .buttonStyle(PlainButtonStyle())
             Spacer()
-            SwiftUI.Menu(content: {
-                Button(action: {
-                    self.showDeleteConfirm = true
+            #if os(iOS)
+                Menu(content: {
+                    bottomBarButton
                 }, label: {
-                    Label("Delete", systemImage: "trash")
-                })
-                Button(action: {
-                    openURL(self.entry.url!.url!)
-                }, label: {
-                    Label("Open in Safari", systemImage: "safari")
-                })
-                Button(action: {
-                    self.showTag.toggle()
-                }, label: {
-                    Label("Tag", systemImage: self.showTag ? "tag.fill" : "tag")
-                })
-                Button(action: {
-                    appSync.refresh(entry: entry)
-                }, label: {
-                    Label("Refresh", systemImage: "arrow.counterclockwise")
-                })
-                StarEntryButton(entry: entry, showText: true)
-                #if os(iOS)
-                    .hapticNotification(.success)
-                #endif
-                ArchiveEntryButton(entry: entry, showText: true)
-                #if os(iOS)
-                    .hapticNotification(.success)
-                #endif
-                #if os(iOS)
-                    Button(action: {
-                        player.load(entry)
-                    }, label: {
-                        Label("Load entry", systemImage: "music.note")
-                    })
-                    .accessibilityHint("Load entry in text-to-speech player")
-                #endif
-            }, label: {
-                Label("Entry option", systemImage: "filemenu.and.selection")
-                    .foregroundColor(.primary)
-                    .labelStyle(.iconOnly)
-                    .frame(width: 28, height: 28)
-            }).accessibilityLabel("Entry option")
+                    Label("Entry option", systemImage: "filemenu.and.selection")
+                        .foregroundColor(.primary)
+                        .labelStyle(.iconOnly)
+                        .frame(width: 28, height: 28)
+                }).accessibilityLabel("Entry option")
+            #endif
+            #if os(macOS)
+                bottomBarButton
+                    .padding(.vertical)
+            #endif
         }.padding(.horizontal)
+    }
+
+    @ViewBuilder
+    private var bottomBarButton: some View {
+        Button(action: {
+            self.showDeleteConfirm = true
+        }, label: {
+            Label("Delete", systemImage: "trash")
+        })
+        Button(action: {
+            openURL(self.entry.url!.url!)
+        }, label: {
+            Label("Open in Safari", systemImage: "safari")
+        })
+        Button(action: {
+            self.showTag.toggle()
+        }, label: {
+            Label("Tag", systemImage: self.showTag ? "tag.fill" : "tag")
+        })
+        Button(action: {
+            appSync.refresh(entry: entry)
+        }, label: {
+            Label("Refresh", systemImage: "arrow.counterclockwise")
+        })
+        StarEntryButton(entry: entry, showText: true)
+        #if os(iOS)
+            .hapticNotification(.success)
+        #endif
+        ArchiveEntryButton(entry: entry, showText: true)
+        #if os(iOS)
+            .hapticNotification(.success)
+        #endif
+        #if os(iOS)
+            Button(action: {
+                player.load(entry)
+            }, label: {
+                Label("Load entry", systemImage: "music.note")
+            })
+            .accessibilityHint("Load entry in text-to-speech player")
+        #endif
     }
 }
 
