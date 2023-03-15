@@ -4,6 +4,7 @@ import SwiftUI
 struct SettingView: View {
     @AppStorage("showImageInList") var showImageInList: Bool = true
     @AppStorage("justifyArticle") var justifyArticle: Bool = true
+    @AppStorage("badge") var badge: Bool = true
     @AppStorage("defaultMode") var defaultMode: String = RetrieveMode.allArticles.rawValue
     @AppStorage("itemPerPageDuringSync") var itemPerPageDuringSync: Int = 50
 
@@ -16,6 +17,9 @@ struct SettingView: View {
                         Text($0.rawValue).tag($0.settingCase)
                     }
                 }
+            }
+            Section("Badge") {
+                Toggle("Show badge", isOn: $badge)
             }
             Section("Entry") {
                 Toggle("Justify entry", isOn: $justifyArticle)

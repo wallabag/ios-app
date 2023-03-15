@@ -61,6 +61,8 @@ struct WallabagApp: App {
             setBadgeNumber(0)
             return
         }
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.badge]) { _, _ in }
 
         do {
             let fetchRequest = Entry.fetchRequestSorted()
