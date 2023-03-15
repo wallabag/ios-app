@@ -61,8 +61,10 @@ struct WallabagApp: App {
             setBadgeNumber(0)
             return
         }
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.badge]) { _, _ in }
+
+        #if os(iOS)
+        requestNotificationAuthorization()
+        #endif
 
         do {
             let fetchRequest = Entry.fetchRequestSorted()
@@ -79,4 +81,12 @@ struct WallabagApp: App {
             UIApplication.shared.applicationIconBadgeNumber = number
         #endif
     }
+
+#if os(iOS)
+    private func requestNotificationAuthorization() {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.badge]) { _, _ in }
+
+    }
+    #endif
 }
