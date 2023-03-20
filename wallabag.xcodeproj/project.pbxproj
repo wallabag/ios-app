@@ -82,6 +82,7 @@
 		09644D1025C9872F000FFDA1 /* BundleKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644D0F25C9872F000FFDA1 /* BundleKey.swift */; };
 		09644D1825C98755000FFDA1 /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644D1725C98755000FFDA1 /* AppDelegateExtension.swift */; };
 		09644D2025C98782000FFDA1 /* wallabagStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09644D1E25C98782000FFDA1 /* wallabagStore.xcdatamodeld */; };
+		097BE4E229C8A46D00AC10E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 097BE4E129C8A46D00AC10E2 /* Assets.xcassets */; };
 		097F81EB25CB18BA006C85F6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F81DF25CB187B006C85F6 /* Router.swift */; };
 		09800D8D29B9DE9E00DAB403 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 09800D8C29B9DE9E00DAB403 /* SharedLib */; };
 		09800D8F29B9DEFE00DAB403 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 09800D8E29B9DEFE00DAB403 /* SharedLib */; };
@@ -95,7 +96,6 @@
 		09AE6ECE29B13ABC0025DF93 /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09AE6ECD29B13ABC0025DF93 /* WallabagKit */; };
 		09AEBEA029B1D2C500050BBE /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 09AEBE9F29B1D2C500050BBE /* Factory */; };
 		09BCBBD4282BD46A00B234CB /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BCBBD3282BD46A00B234CB /* RouterTests.swift */; };
-		09BFB2AE25C8348E00E12B4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09BFB27F25C8348E00E12B4D /* Assets.xcassets */; };
 		09C34C7C29B1398B00B5C927 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 09C34C7B29B1398B00B5C927 /* SharedLib */; };
 		09C34C7E29B1399100B5C927 /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09C34C7D29B1399100B5C927 /* WallabagKit */; };
 /* End PBXBuildFile section */
@@ -225,6 +225,7 @@
 		09644D0F25C9872F000FFDA1 /* BundleKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleKey.swift; sourceTree = "<group>"; };
 		09644D1725C98755000FFDA1 /* AppDelegateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
 		09644D1F25C98782000FFDA1 /* wallabagStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabagStore.xcdatamodel; sourceTree = "<group>"; };
+		097BE4E129C8A46D00AC10E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		097F81DF25CB187B006C85F6 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		098BDD0729BF04E3003DF719 /* RouteSwiftUIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSwiftUIExtension.swift; sourceTree = "<group>"; };
 		09AD75962624F4E800708A1E /* wallabag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wallabag.entitlements; sourceTree = "<group>"; };
@@ -245,7 +246,6 @@
 		09AD75D42624FF5F00708A1E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		09AD75D52624FF6900708A1E /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		09BCBBD3282BD46A00B234CB /* RouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
-		09BFB27F25C8348E00E12B4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09BFB28425C8348E00E12B4D /* wallabag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wallabag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09BFB28725C8348E00E12B4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C1103B626A0852F00E50F26 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
@@ -675,7 +675,6 @@
 		09BFB28625C8348E00E12B4D /* App */ = {
 			isa = PBXGroup;
 			children = (
-				09BFB27F25C8348E00E12B4D /* Assets.xcassets */,
 				09BFB28725C8348E00E12B4D /* Info.plist */,
 				9C1103B626A0852F00E50F26 /* Configuration.storekit */,
 				09644B5D25C98116000FFDA1 /* AppDelegate.swift */,
@@ -688,6 +687,7 @@
 				09AD75C02624FEEE00708A1E /* Localizable.strings */,
 				09644BE425C98343000FFDA1 /* PropertyWrapper */,
 				09644D1E25C98782000FFDA1 /* wallabagStore.xcdatamodeld */,
+				097BE4E129C8A46D00AC10E2 /* Assets.xcassets */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -872,10 +872,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				09AD75A32624F93D00708A1E /* ratatouille.css in Resources */,
-				09BFB2AE25C8348E00E12B4D /* Assets.xcassets in Resources */,
 				09AD75A12624F93D00708A1E /* article.html in Resources */,
 				09AD75BE2624FEEE00708A1E /* Localizable.strings in Resources */,
 				09AD75A42624F93D00708A1E /* justify.css in Resources */,
+				097BE4E229C8A46D00AC10E2 /* Assets.xcassets in Resources */,
 				09AD75A22624F93D00708A1E /* main.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1325,6 +1325,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = wallabag.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G97URPCGB8;
@@ -1355,6 +1356,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = wallabag.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G97URPCGB8;
