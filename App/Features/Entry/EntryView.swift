@@ -15,6 +15,12 @@ struct EntryView: View {
     @State var showTag: Bool = false
     @State private var showDeleteConfirm = false
 
+    #if os(iOS)
+        let toolbarPlacement: ToolbarItemPlacement = .bottomBar
+    #else
+        let toolbarPlacement: ToolbarItemPlacement = .primaryAction
+    #endif
+
     var body: some View {
         VStack(alignment: .leading) {
             Text(entry.title?.htmlUnescape() ?? "Entry")
@@ -23,7 +29,25 @@ struct EntryView: View {
                 .lineLimit(2)
                 .padding(.horizontal)
             WebView(entry: entry)
-            bottomBar
+        }
+        .toolbar {
+            ToolbarItem(placement: toolbarPlacement) {
+                HStack {
+                    FontSizeSelectorView()
+                        .buttonStyle(PlainButtonStyle())
+                    #if os(iOS)
+                        Spacer()
+                    #endif
+                    Menu(content: {
+                        bottomBarButton
+                    }, label: {
+                        Label("Entry option", systemImage: "filemenu.and.selection")
+                            .foregroundColor(.primary)
+                            .labelStyle(.iconOnly)
+                            .frame(width: 28, height: 28)
+                    }).accessibilityLabel("Entry option")
+                }
+            }
         }
         .sheet(isPresented: $showTag) {
             TagListFor(tagsForEntry: TagsForEntryPublisher(entry: self.entry))
@@ -46,35 +70,14 @@ struct EntryView: View {
         #endif
     }
 
-    private var bottomBar: some View {
-        HStack {
-            FontSizeSelectorView()
-                .buttonStyle(PlainButtonStyle())
-            Spacer()
-            #if os(iOS)
-                Menu(content: {
-                    bottomBarButton
-                }, label: {
-                    Label("Entry option", systemImage: "filemenu.and.selection")
-                        .foregroundColor(.primary)
-                        .labelStyle(.iconOnly)
-                        .frame(width: 28, height: 28)
-                }).accessibilityLabel("Entry option")
-            #endif
-            #if os(macOS)
-                bottomBarButton
-                    .padding(.vertical)
-            #endif
-        }.padding(.horizontal)
-    }
-
     @ViewBuilder
     private var bottomBarButton: some View {
-        Button(action: {
+        Button(role: .destructive, action: {
             self.showDeleteConfirm = true
         }, label: {
             Label("Delete", systemImage: "trash")
         })
+        Divider()
         Button(action: {
             openURL(self.entry.url!.url!)
         }, label: {
