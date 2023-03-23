@@ -15,13 +15,13 @@
 		094AA03E2629EB1F006E5605 /* wallabagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094AA03D2629EB1F006E5605 /* wallabagTests.swift */; };
 		094AA05A2629EB60006E5605 /* ImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094A9FED2629E6BB006E5605 /* ImageCacheTests.swift */; };
 		094AA0692629EB98006E5605 /* ImageDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094AA00F2629E739006E5605 /* ImageDownloaderTests.swift */; };
+		0951C61829CC2EB000D8E8C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0951C61729CC2EB000D8E8C6 /* Assets.xcassets */; };
 		09564E0D2851C57200D39E95 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09564E0C2851C57200D39E95 /* SettingView.swift */; };
 		09644AD125C94825000FFDA1 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644AD025C94825000FFDA1 /* ShareViewController.swift */; };
 		09644AD425C94825000FFDA1 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09644AD225C94825000FFDA1 /* MainInterface.storyboard */; };
 		09644AD825C94825000FFDA1 /* bagit.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 09644ACE25C94825000FFDA1 /* bagit.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		09644AE325C94863000FFDA1 /* ShareExtensionError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644AE225C94863000FFDA1 /* ShareExtensionError.swift */; };
 		09644AEA25C94879000FFDA1 /* ExtensionClass.js in Resources */ = {isa = PBXBuildFile; fileRef = 09644AE925C94879000FFDA1 /* ExtensionClass.js */; };
-		09644AF725C94982000FFDA1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09644AF625C94982000FFDA1 /* Media.xcassets */; };
 		09644B0F25C94C6B000FFDA1 /* HTMLEntities in Frameworks */ = {isa = PBXBuildFile; productRef = 09644B0E25C94C6B000FFDA1 /* HTMLEntities */; };
 		09644B5725C9810A000FFDA1 /* WallabagApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B5625C9810A000FFDA1 /* WallabagApp.swift */; };
 		09644B5E25C98116000FFDA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B5D25C98116000FFDA1 /* AppDelegate.swift */; };
@@ -82,7 +82,6 @@
 		09644D1025C9872F000FFDA1 /* BundleKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644D0F25C9872F000FFDA1 /* BundleKey.swift */; };
 		09644D1825C98755000FFDA1 /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644D1725C98755000FFDA1 /* AppDelegateExtension.swift */; };
 		09644D2025C98782000FFDA1 /* wallabagStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09644D1E25C98782000FFDA1 /* wallabagStore.xcdatamodeld */; };
-		097BE4E229C8A46D00AC10E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 097BE4E129C8A46D00AC10E2 /* Assets.xcassets */; };
 		097F81EB25CB18BA006C85F6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F81DF25CB187B006C85F6 /* Router.swift */; };
 		09800D8D29B9DE9E00DAB403 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 09800D8C29B9DE9E00DAB403 /* SharedLib */; };
 		09800D8F29B9DEFE00DAB403 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 09800D8E29B9DEFE00DAB403 /* SharedLib */; };
@@ -157,6 +156,7 @@
 		094AA03B2629EB1F006E5605 /* wallabagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		094AA03D2629EB1F006E5605 /* wallabagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wallabagTests.swift; sourceTree = "<group>"; };
 		094AA03F2629EB1F006E5605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0951C61729CC2EB000D8E8C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09564E0C2851C57200D39E95 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		09644ACE25C94825000FFDA1 /* bagit.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = bagit.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		09644AD025C94825000FFDA1 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
@@ -165,7 +165,6 @@
 		09644AE225C94863000FFDA1 /* ShareExtensionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareExtensionError.swift; sourceTree = "<group>"; };
 		09644AE925C94879000FFDA1 /* ExtensionClass.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = ExtensionClass.js; sourceTree = "<group>"; };
 		09644AF025C9494D000FFDA1 /* bagit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bagit.entitlements; sourceTree = "<group>"; };
-		09644AF625C94982000FFDA1 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		09644B5625C9810A000FFDA1 /* WallabagApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallabagApp.swift; sourceTree = "<group>"; };
 		09644B5D25C98116000FFDA1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09644B7D25C98152000FFDA1 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -225,7 +224,6 @@
 		09644D0F25C9872F000FFDA1 /* BundleKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleKey.swift; sourceTree = "<group>"; };
 		09644D1725C98755000FFDA1 /* AppDelegateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
 		09644D1F25C98782000FFDA1 /* wallabagStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabagStore.xcdatamodel; sourceTree = "<group>"; };
-		097BE4E129C8A46D00AC10E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		097F81DF25CB187B006C85F6 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		098BDD0729BF04E3003DF719 /* RouteSwiftUIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSwiftUIExtension.swift; sourceTree = "<group>"; };
 		09AD75962624F4E800708A1E /* wallabag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wallabag.entitlements; sourceTree = "<group>"; };
@@ -343,7 +341,6 @@
 		09644ACF25C94825000FFDA1 /* bagit */ = {
 			isa = PBXGroup;
 			children = (
-				09644AF625C94982000FFDA1 /* Media.xcassets */,
 				09644AF025C9494D000FFDA1 /* bagit.entitlements */,
 				09644AD025C94825000FFDA1 /* ShareViewController.swift */,
 				09644AD225C94825000FFDA1 /* MainInterface.storyboard */,
@@ -687,7 +684,7 @@
 				09AD75C02624FEEE00708A1E /* Localizable.strings */,
 				09644BE425C98343000FFDA1 /* PropertyWrapper */,
 				09644D1E25C98782000FFDA1 /* wallabagStore.xcdatamodeld */,
-				097BE4E129C8A46D00AC10E2 /* Assets.xcassets */,
+				0951C61729CC2EB000D8E8C6 /* Assets.xcassets */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -862,7 +859,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				09644AD425C94825000FFDA1 /* MainInterface.storyboard in Resources */,
-				09644AF725C94982000FFDA1 /* Media.xcassets in Resources */,
 				09644AEA25C94879000FFDA1 /* ExtensionClass.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -875,7 +871,7 @@
 				09AD75A12624F93D00708A1E /* article.html in Resources */,
 				09AD75BE2624FEEE00708A1E /* Localizable.strings in Resources */,
 				09AD75A42624F93D00708A1E /* justify.css in Resources */,
-				097BE4E229C8A46D00AC10E2 /* Assets.xcassets in Resources */,
+				0951C61829CC2EB000D8E8C6 /* Assets.xcassets in Resources */,
 				09AD75A22624F93D00708A1E /* main.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1325,7 +1321,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = wallabag.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G97URPCGB8;
@@ -1356,7 +1351,6 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = wallabag.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G97URPCGB8;
