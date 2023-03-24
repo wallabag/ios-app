@@ -3,9 +3,8 @@ import Foundation
 import SharedLib
 import SwiftUI
 
-class ServerViewModel: ObservableObject {
+final class ServerViewModel: ObservableObject {
     @Published private(set) var isValid: Bool = false
-
     @Published var url: String = ""
 
     private var cancellable: AnyCancellable?

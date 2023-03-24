@@ -86,6 +86,7 @@
 		09800D8D29B9DE9E00DAB403 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 09800D8C29B9DE9E00DAB403 /* SharedLib */; };
 		09800D8F29B9DEFE00DAB403 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 09800D8E29B9DEFE00DAB403 /* SharedLib */; };
 		098BDD0829BF04E3003DF719 /* RouteSwiftUIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BDD0729BF04E3003DF719 /* RouteSwiftUIExtension.swift */; };
+		098CF4D629CD830E00DEAE50 /* ServerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098CF4D529CD830E00DEAE50 /* ServerViewModelTests.swift */; };
 		09AD75A12624F93D00708A1E /* article.html in Resources */ = {isa = PBXBuildFile; fileRef = 09AD759D2624F93D00708A1E /* article.html */; };
 		09AD75A22624F93D00708A1E /* main.css in Resources */ = {isa = PBXBuildFile; fileRef = 09AD759E2624F93D00708A1E /* main.css */; };
 		09AD75A32624F93D00708A1E /* ratatouille.css in Resources */ = {isa = PBXBuildFile; fileRef = 09AD759F2624F93D00708A1E /* ratatouille.css */; };
@@ -226,6 +227,7 @@
 		09644D1F25C98782000FFDA1 /* wallabagStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabagStore.xcdatamodel; sourceTree = "<group>"; };
 		097F81DF25CB187B006C85F6 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		098BDD0729BF04E3003DF719 /* RouteSwiftUIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteSwiftUIExtension.swift; sourceTree = "<group>"; };
+		098CF4D529CD830E00DEAE50 /* ServerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerViewModelTests.swift; sourceTree = "<group>"; };
 		09AD75962624F4E800708A1E /* wallabag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wallabag.entitlements; sourceTree = "<group>"; };
 		09AD759D2624F93D00708A1E /* article.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = article.html; sourceTree = "<group>"; };
 		09AD759E2624F93D00708A1E /* main.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 		094A9FEC2629E6A3006E5605 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				098CF4D329CD82F100DEAE50 /* Registration */,
 				09BCBBD2282BD44100B234CB /* Router */,
 				094AA0012629E700006E5605 /* Entry */,
 			);
@@ -626,6 +629,22 @@
 			path = Registration;
 			sourceTree = "<group>";
 		};
+		098CF4D329CD82F100DEAE50 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				098CF4D429CD82FA00DEAE50 /* Server */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		098CF4D429CD82FA00DEAE50 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				098CF4D529CD830E00DEAE50 /* ServerViewModelTests.swift */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
 		09AD759C2624F93D00708A1E /* html-ressources */ = {
 			isa = PBXGroup;
 			children = (
@@ -917,6 +936,7 @@
 			files = (
 				09BCBBD4282BD46A00B234CB /* RouterTests.swift in Sources */,
 				094AA05A2629EB60006E5605 /* ImageCacheTests.swift in Sources */,
+				098CF4D629CD830E00DEAE50 /* ServerViewModelTests.swift in Sources */,
 				094AA03E2629EB1F006E5605 /* wallabagTests.swift in Sources */,
 				094AA0692629EB98006E5605 /* ImageDownloaderTests.swift in Sources */,
 			);
