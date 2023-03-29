@@ -24,7 +24,8 @@ import SwiftUI
                                 }, label: {
                                     Image(systemName: "stop.circle")
                                 }).font(.system(size: 30))
-                            }.buttonStyle(PlainButtonStyle())
+                            }
+                            .buttonStyle(.plain)
                         }.padding()
                     }
                 } else {

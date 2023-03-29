@@ -34,7 +34,7 @@ struct EntryView: View {
             ToolbarItem(placement: toolbarPlacement) {
                 HStack {
                     FontSizeSelectorView()
-                        .buttonStyle(PlainButtonStyle())
+                        .buttonStyle(.plain)
                     #if os(iOS)
                         Spacer()
                     #endif

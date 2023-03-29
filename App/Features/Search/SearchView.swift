@@ -17,7 +17,7 @@ struct SearchView: View {
             HStack {
                 if showSearchBar {
                     TextField("Search", text: $searchViewModel.search)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .textFieldStyle(.roundedBorder)
                         .disableAutocorrection(true)
                     #if os(iOS)
                         .autocapitalization(.none)
@@ -33,7 +33,8 @@ struct SearchView: View {
                 }, label: {
                     Image(systemName: self.showSearchBar ? "list.bullet.below.rectangle" : "magnifyingglass")
                         .padding(.trailing)
-                }).buttonStyle(PlainButtonStyle())
+                })
+                .buttonStyle(.plain)
             }
         }
     }

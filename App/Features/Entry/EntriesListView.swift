@@ -22,17 +22,19 @@ struct EntriesListView: View {
                             ArchiveEntryButton(entry: entry)
                             StarEntryButton(entry: entry)
                         }
-                }.buttonStyle(PlainButtonStyle())
-                    .swipeActions(allowsFullSwipe: false, content: {
-                        ArchiveEntryButton(entry: entry)
-                            .tint(.blue)
-                            .labelStyle(.iconOnly)
-                        StarEntryButton(entry: entry)
-                            .tint(.orange)
-                            .labelStyle(.iconOnly)
-                    })
+                }
+                .buttonStyle(.plain)
+                .swipeActions(allowsFullSwipe: false, content: {
+                    ArchiveEntryButton(entry: entry)
+                        .tint(.blue)
+                        .labelStyle(.iconOnly)
+                    StarEntryButton(entry: entry)
+                        .tint(.orange)
+                        .labelStyle(.iconOnly)
+                })
             }
-        }.refreshable { appSync.requestSync() }
-            .listStyle(InsetListStyle())
+        }
+        .refreshable { appSync.requestSync() }
+        .listStyle(.inset)
     }
 }
