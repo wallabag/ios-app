@@ -7,22 +7,20 @@ struct RefreshButton: View {
         HStack {
             if appSync.inProgress {
                 ProgressView(value: appSync.progress, total: 100)
-                    .frame(width: 50)
+                    .progressViewStyle(.circular)
+            } else {
+                Button(
+                    action: appSync.requestSync,
+                    label: {
+                        Image(systemName: "arrow.counterclockwise")
+                            .frame(width: 34, height: 34, alignment: .center)
+                    }
+                )
+                .buttonStyle(.plain)
+                .accessibilityLabel("Refresh")
+                .accessibilityHint("Refres entries from server")
+                .keyboardShortcut("r", modifiers: .command)
             }
-            Button(
-                action: appSync.requestSync,
-                label: {
-                    Image(systemName: "arrow.counterclockwise")
-                        .frame(width: 34, height: 34, alignment: .center)
-                        .rotationEffect(.degrees(appSync.inProgress ? 0 : 360))
-                        .animation(.spring().repeatForever(autoreverses: false), value: appSync.inProgress)
-                }
-            )
-            .disabled(appSync.inProgress)
-            .buttonStyle(PlainButtonStyle())
-            .accessibilityLabel("Refresh")
-            .accessibilityHint("Refres entries from server")
-            .keyboardShortcut("r", modifiers: .command)
         }
     }
 }
