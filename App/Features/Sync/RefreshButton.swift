@@ -7,7 +7,11 @@ struct RefreshButton: View {
         HStack {
             if appSync.inProgress {
                 ProgressView(value: appSync.progress, total: 100)
+                #if os(iOS)
+                    .progressViewStyle(.linear)
+                #else
                     .progressViewStyle(.circular)
+                #endif
             } else {
                 Button(
                     action: appSync.requestSync,
