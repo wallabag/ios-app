@@ -116,6 +116,7 @@
 		09644D1025C9872F000FFDA1 /* BundleKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644D0F25C9872F000FFDA1 /* BundleKey.swift */; };
 		09644D1825C98755000FFDA1 /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644D1725C98755000FFDA1 /* AppDelegateExtension.swift */; };
 		09644D2025C98782000FFDA1 /* wallabagStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09644D1E25C98782000FFDA1 /* wallabagStore.xcdatamodeld */; };
+		097F2A4228442CE1000FC214 /* Readability.js in Resources */ = {isa = PBXBuildFile; fileRef = 097F2A4128442CE1000FC214 /* Readability.js */; };
 		097F818525CAEA79006C85F6 /* wallabagMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F818425CAEA79006C85F6 /* wallabagMacApp.swift */; };
 		097F819D25CAF9FE006C85F6 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F819C25CAF9FE006C85F6 /* SidebarView.swift */; };
 		097F81AA25CB1108006C85F6 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F81A925CB1108006C85F6 /* Route.swift */; };
@@ -311,6 +312,7 @@
 		09644D0F25C9872F000FFDA1 /* BundleKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleKey.swift; sourceTree = "<group>"; };
 		09644D1725C98755000FFDA1 /* AppDelegateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
 		09644D1F25C98782000FFDA1 /* wallabagStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wallabagStore.xcdatamodel; sourceTree = "<group>"; };
+		097F2A4128442CE1000FC214 /* Readability.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Readability.js; sourceTree = "<group>"; };
 		097F818425CAEA79006C85F6 /* wallabagMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wallabagMacApp.swift; sourceTree = "<group>"; };
 		097F819C25CAF9FE006C85F6 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		097F81A925CB1108006C85F6 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
@@ -846,6 +848,7 @@
 			isa = PBXGroup;
 			children = (
 				09AD759D2624F93D00708A1E /* article.html */,
+				097F2A4128442CE1000FC214 /* Readability.js */,
 				09AD759E2624F93D00708A1E /* main.css */,
 				09AD759F2624F93D00708A1E /* ratatouille.css */,
 				09AD75A02624F93D00708A1E /* justify.css */,
@@ -1200,6 +1203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09AD75A32624F93D00708A1E /* ratatouille.css in Resources */,
+				097F2A4228442CE1000FC214 /* Readability.js in Resources */,
 				09BFB2AE25C8348E00E12B4D /* Assets.xcassets in Resources */,
 				09AD75A12624F93D00708A1E /* article.html in Resources */,
 				09AD75BE2624FEEE00708A1E /* Localizable.strings in Resources */,
