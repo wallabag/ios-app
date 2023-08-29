@@ -30,6 +30,7 @@ struct EntryView: View {
                 .padding(.horizontal)
             WebView(entry: entry)
         }
+
         .toolbar {
             ToolbarItem(placement: toolbarPlacement) {
                 HStack {
@@ -47,25 +48,26 @@ struct EntryView: View {
                             .frame(width: 28, height: 28)
                     }).accessibilityLabel("Entry option")
                 }
+                .actionSheet(isPresented: $showDeleteConfirm) {
+                    ActionSheet(
+                        title: Text("Confirm delete?"),
+                        buttons: [
+                            .destructive(Text("Delete")) {
+                                self.context.delete(entry)
+                                dismiss()
+                            },
+                            .cancel(),
+                        ]
+                    )
+                }
             }
+        
         }
         .sheet(isPresented: $showTag) {
             TagListFor(tagsForEntry: TagsForEntryPublisher(entry: self.entry))
                 .environment(\.managedObjectContext, context)
         }
         #if os(iOS)
-        .actionSheet(isPresented: $showDeleteConfirm) {
-            ActionSheet(
-                title: Text("Confirm delete?"),
-                buttons: [
-                    .destructive(Text("Delete")) {
-                        self.context.delete(entry)
-                        dismiss()
-                    },
-                    .cancel(),
-                ]
-            )
-        }
         .navigationBarTitleDisplayMode(.inline)
         #endif
     }
