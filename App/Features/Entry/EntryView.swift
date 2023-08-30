@@ -30,7 +30,9 @@ struct EntryView: View {
                 .padding(.horizontal)
             WebView(entry: entry)
         }
-
+        .addSwipeToBack {
+            dismiss()
+        }
         .toolbar {
             ToolbarItem(placement: toolbarPlacement) {
                 HStack {

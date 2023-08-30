@@ -96,6 +96,7 @@
 		09AE6ECE29B13ABC0025DF93 /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09AE6ECD29B13ABC0025DF93 /* WallabagKit */; };
 		09AEBEA029B1D2C500050BBE /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 09AEBE9F29B1D2C500050BBE /* Factory */; };
 		09BCBBD4282BD46A00B234CB /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BCBBD3282BD46A00B234CB /* RouterTests.swift */; };
+		09BE0AF42A9F45E900193FBF /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE0AF32A9F45E900193FBF /* View+Extension.swift */; };
 		09C34C7C29B1398B00B5C927 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 09C34C7B29B1398B00B5C927 /* SharedLib */; };
 		09C34C7E29B1399100B5C927 /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09C34C7D29B1399100B5C927 /* WallabagKit */; };
 /* End PBXBuildFile section */
@@ -246,6 +247,7 @@
 		09AD75D42624FF5F00708A1E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		09AD75D52624FF6900708A1E /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		09BCBBD3282BD46A00B234CB /* RouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterTests.swift; sourceTree = "<group>"; };
+		09BE0AF32A9F45E900193FBF /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		09BFB28425C8348E00E12B4D /* wallabag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wallabag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09BFB28725C8348E00E12B4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C1103B626A0852F00E50F26 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
@@ -603,6 +605,7 @@
 		09644D1625C9874D000FFDA1 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				09BE0AF22A9F45D200193FBF /* SwiftUI */,
 				09644D1725C98755000FFDA1 /* AppDelegateExtension.swift */,
 			);
 			path = Extension;
@@ -662,6 +665,14 @@
 				09BCBBD3282BD46A00B234CB /* RouterTests.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		09BE0AF22A9F45D200193FBF /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				09BE0AF32A9F45E900193FBF /* View+Extension.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		09BFB27425C8348E00E12B4D = {
@@ -1016,6 +1027,7 @@
 				09644CFF25C9870C000FFDA1 /* TagsForEntryPublisher.swift in Sources */,
 				09644D1025C9872F000FFDA1 /* BundleKey.swift in Sources */,
 				09644BAF25C98213000FFDA1 /* RefreshButton.swift in Sources */,
+				09BE0AF42A9F45E900193FBF /* View+Extension.swift in Sources */,
 				09644C7025C985A9000FFDA1 /* ArchiveEntryButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
