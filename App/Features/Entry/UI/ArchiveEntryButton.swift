@@ -2,10 +2,19 @@ import SwiftUI
 
 struct ArchiveEntryButton: View {
     @ObservedObject var entry: Entry
-    var showText: Bool = true
+    let showText: Bool
+    let action: (() -> Void)?
+
+    init(entry: Entry, showText: Bool = true, action: (() -> Void)? = nil) {
+        self.entry = entry
+        self.showText = showText
+        self.action = action
+    }
+
     var body: some View {
         Button(action: {
             entry.toggleArchive()
+            action?()
         }, label: {
             if showText {
                 Label(

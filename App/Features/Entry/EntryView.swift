@@ -102,9 +102,11 @@ struct EntryView: View {
         #if os(iOS)
             .hapticNotification(.success)
         #endif
-        ArchiveEntryButton(entry: entry, showText: true)
+        ArchiveEntryButton(entry: entry, showText: true) {
+            dismiss()
+        }
         #if os(iOS)
-            .hapticNotification(.success)
+        .hapticNotification(.success)
         #endif
         #if os(iOS)
             Button(action: {
