@@ -3,7 +3,7 @@ import CoreData
 import Factory
 import Foundation
 
-// swiftlint:disable all
+// swiftlint:disable:next all
 class TagsForEntryPublisher: ObservableObject {
     @Injected(\.wallabagSession) private var session
 

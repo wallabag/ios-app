@@ -27,11 +27,9 @@ class CoreDataSync {
             }
     }
 
-    // swiftlint:disable force_cast
     private func deletedObjects(_ deletedObjects: Set<NSManagedObject>) {
         deletedObjects
-            .filter { $0 is Entry }
-            .map { entry -> Entry in entry as! Entry }
+            .compactMap { $0 as? Entry }
             .forEach { entry in
                 self.wallabagSession.delete(entry: entry)
             }
@@ -48,7 +46,7 @@ class CoreDataSync {
                 changedValues.removeValue(forKey: "tags")
                 if changedValues.count > 0 {
                     logger.debug("Push update entry \(entry.id) to remote")
-                    self.wallabagSession.update(
+                    wallabagSession.update(
                         entry,
                         parameters:
                         [

@@ -15,12 +15,12 @@ import SwiftUI
                             .lineLimit(1)
                         HStack {
                             Button(action: {
-                                self.pasteBoardViewModel.addUrl()
+                                pasteBoardViewModel.addUrl()
                             }, label: {
                                 Text("Add")
                             })
                             Button(action: {
-                                self.pasteBoardViewModel.hide()
+                                pasteBoardViewModel.hide()
                             }, label: {
                                 Text("Cancel")
                             })

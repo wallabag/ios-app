@@ -12,10 +12,10 @@ struct TagRow: View {
                 Image(systemName: "checkmark")
             }
         }.onTapGesture {
-            if self.tag.isChecked {
-                self.tagsForEntry.delete(tag: self.tag)
+            if tag.isChecked {
+                tagsForEntry.delete(tag: tag)
             } else {
-                self.tagsForEntry.add(tag: self.tag)
+                tagsForEntry.add(tag: tag)
             }
         }
     }

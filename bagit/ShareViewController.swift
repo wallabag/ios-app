@@ -38,7 +38,7 @@ class ShareViewController: UIViewController {
         view.addSubview(backView)
         view.addSubview(notificationView)
         UIView.animate(withDuration: 0.3) { [unowned self] in
-            self.backView.alpha = 0.6
+            backView.alpha = 0.6
         }
     }
 

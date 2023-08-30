@@ -9,7 +9,7 @@ struct FontSizeSelectorView: View {
         HStack {
             Button(action: {
                 withAnimation {
-                    self.showSelector = !self.showSelector
+                    showSelector = !showSelector
                 }
             }, label: {
                 Image(systemName: "textformat.size")

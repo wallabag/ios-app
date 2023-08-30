@@ -16,8 +16,8 @@ class ClientIdSecretViewModel: ObservableObject {
         clientSecret = WallabagUserDefaults.clientSecret
 
         cancellable = Publishers.CombineLatest($clientId, $clientSecret).sink { [unowned self] clientId, clientSecret in
-            self.isValid = !clientId.isEmpty && !clientSecret.isEmpty
-            if self.isValid {
+            isValid = !clientId.isEmpty && !clientSecret.isEmpty
+            if isValid {
                 WallabagUserDefaults.clientId = clientId.trimmingCharacters(in: .whitespacesAndNewlines)
                 WallabagUserDefaults.clientSecret = clientSecret.trimmingCharacters(in: .whitespacesAndNewlines)
             }

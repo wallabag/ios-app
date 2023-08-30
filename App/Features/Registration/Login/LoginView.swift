@@ -16,7 +16,7 @@ struct LoginView: View {
                 SecureField("Password", text: $loginViewModel.password)
             }
             Button("Login") {
-                self.loginViewModel.tryLogin()
+                loginViewModel.tryLogin()
             }.disabled(!loginViewModel.isValid)
             loginViewModel.error.map { error in
                 VStack {

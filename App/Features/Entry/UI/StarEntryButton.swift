@@ -5,7 +5,7 @@ struct StarEntryButton: View {
     var showText: Bool = true
     var body: some View {
         Button(action: {
-            self.entry.toggleStarred()
+            entry.toggleStarred()
         }, label: {
             if showText {
                 Label(

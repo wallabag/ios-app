@@ -46,7 +46,7 @@ struct MainView: View {
                                 })
                                 Divider()
                                 Button(role: .destructive, action: {
-                                    self.appState.logout()
+                                    appState.logout()
                                 }, label: {
                                     Label("Logout", systemImage: "person")
                                 }).foregroundColor(.red)

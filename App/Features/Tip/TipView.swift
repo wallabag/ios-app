@@ -21,11 +21,11 @@ struct TipView: View {
             HStack {
                 Spacer()
                 if tipViewModel.canMakePayments {
-                    if self.tipViewModel.tipProduct != nil {
+                    if tipViewModel.tipProduct != nil {
                         Button(
                             action: { Task { await purchase() } },
                             label: {
-                                self.tipViewModel.tipProduct.map { product in
+                                tipViewModel.tipProduct.map { product in
                                     HStack {
                                         Text(product.displayName)
                                         Text(product.displayPrice)

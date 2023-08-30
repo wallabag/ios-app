@@ -53,7 +53,7 @@ class WallabagSession: ObservableObject {
         kit.send(to: WallabagEntryEndpoint.add(url: url))
             .catch { _ in Empty<WallabagEntry, Never>() }
             .sink { [unowned self] (wallabagEntry: WallabagEntry) in
-                let entry = Entry(context: self.coreDataContext)
+                let entry = Entry(context: coreDataContext)
                 entry.hydrate(from: wallabagEntry)
                 completion()
             }

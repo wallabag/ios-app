@@ -6,7 +6,7 @@ struct DeleteEntryButton: View {
     var showText: Bool = true
     var body: some View {
         Button(action: {
-            self.showConfirm = true
+            showConfirm = true
         }, label: {
             if showText {
                 Text("Delete")

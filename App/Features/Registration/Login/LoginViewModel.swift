@@ -18,15 +18,15 @@ class LoginViewModel: ObservableObject {
     init() {
         login = WallabagUserDefaults.login
         Publishers.CombineLatest($login, $password).sink { [unowned self] login, password in
-            self.isValid = !login.isEmpty && !password.isEmpty
+            isValid = !login.isEmpty && !password.isEmpty
         }.store(in: &cancellable)
 
         session.$state.receive(on: DispatchQueue.main).sink { [unowned self] state in
             switch state {
             case let .error(reason):
-                self.error = reason
+                error = reason
             case .connected:
-                self.appState.registred = true
+                appState.registred = true
             case .unknown, .connecting, .offline:
                 break
             }

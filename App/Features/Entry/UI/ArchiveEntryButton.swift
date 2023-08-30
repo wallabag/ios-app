@@ -5,7 +5,7 @@ struct ArchiveEntryButton: View {
     var showText: Bool = true
     var body: some View {
         Button(action: {
-            self.entry.toggleArchive()
+            entry.toggleArchive()
         }, label: {
             if showText {
                 Label(

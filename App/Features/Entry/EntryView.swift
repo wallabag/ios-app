@@ -53,7 +53,7 @@ struct EntryView: View {
                         title: Text("Confirm delete?"),
                         buttons: [
                             .destructive(Text("Delete")) {
-                                self.context.delete(entry)
+                                context.delete(entry)
                                 dismiss()
                             },
                             .cancel(),
@@ -61,10 +61,9 @@ struct EntryView: View {
                     )
                 }
             }
-        
         }
         .sheet(isPresented: $showTag) {
-            TagListFor(tagsForEntry: TagsForEntryPublisher(entry: self.entry))
+            TagListFor(tagsForEntry: TagsForEntryPublisher(entry: entry))
                 .environment(\.managedObjectContext, context)
         }
         #if os(iOS)
@@ -75,20 +74,20 @@ struct EntryView: View {
     @ViewBuilder
     private var bottomBarButton: some View {
         Button(role: .destructive, action: {
-            self.showDeleteConfirm = true
+            showDeleteConfirm = true
         }, label: {
             Label("Delete", systemImage: "trash")
         })
         Divider()
         Button(action: {
-            openURL(self.entry.url!.url!)
+            openURL(entry.url!.url!)
         }, label: {
             Label("Open in Safari", systemImage: "safari")
         })
         Button(action: {
-            self.showTag.toggle()
+            showTag.toggle()
         }, label: {
-            Label("Tag", systemImage: self.showTag ? "tag.fill" : "tag")
+            Label("Tag", systemImage: showTag ? "tag.fill" : "tag")
         })
         Button(action: {
             appSync.refresh(entry: entry)

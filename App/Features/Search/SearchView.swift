@@ -28,10 +28,10 @@ struct SearchView: View {
                 }
                 Button(action: {
                     withAnimation {
-                        self.showSearchBar = !self.showSearchBar
+                        showSearchBar = !showSearchBar
                     }
                 }, label: {
-                    Image(systemName: self.showSearchBar ? "list.bullet.below.rectangle" : "magnifyingglass")
+                    Image(systemName: showSearchBar ? "list.bullet.below.rectangle" : "magnifyingglass")
                         .padding(.trailing)
                 })
                 .buttonStyle(.plain)
