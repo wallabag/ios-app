@@ -47,8 +47,10 @@ struct EntryView: View {
                         Label("Entry option", systemImage: "filemenu.and.selection")
                             .foregroundColor(.primary)
                             .labelStyle(.iconOnly)
-                            .frame(width: 28, height: 28)
-                    }).accessibilityLabel("Entry option")
+                    })
+                    .accessibilityLabel("Entry option")
+                    .frame(width: 28, height: 28)
+                    .contentShape(Rectangle())
                 }
                 .actionSheet(isPresented: $showDeleteConfirm) {
                     ActionSheet(
