@@ -6,15 +6,18 @@ struct EntriesListView: View {
     @Environment(\.managedObjectContext) var context: NSManagedObjectContext
     @EnvironmentObject var appSync: AppSync
     @FetchRequest var entries: FetchedResults<Entry>
-    @EnvironmentObject var router: Router
 
-    init(predicate: NSPredicate) {
-        _entries = FetchRequest(entity: Entry.entity(), sortDescriptors: [NSSortDescriptor(key: "id", ascending: false)], predicate: predicate, animation: nil)
+    init(predicate: NSPredicate, entriesSortAscending: Bool) {
+        _entries = FetchRequest(
+            entity: Entry.entity(),
+            sortDescriptors: [NSSortDescriptor(key: "id", ascending: entriesSortAscending)],
+            predicate: predicate, animation: nil
+        )
     }
 
     var body: some View {
         List {
-            ForEach(entries, id: \.id) { entry in
+            ForEach(entries) { entry in
                 NavigationLink(value: RoutePath.entry(entry)) {
                     EntryRowView(entry: entry)
                         .contentShape(Rectangle())
