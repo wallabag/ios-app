@@ -8,6 +8,7 @@ import WebKit
         var entry: Entry
         private(set) var wkWebView = WKWebView(frame: .zero)
         @EnvironmentObject var appSetting: AppSetting
+        @Binding var progress: Double
 
         func makeCoordinator() -> Coordinator {
             Coordinator(self, appSetting: appSetting)
@@ -59,6 +60,10 @@ import WebKit
 
                 UIApplication.shared.open(urlTarget, options: [:], completionHandler: nil)
                 decisionHandler(.cancel)
+            }
+
+            func scrollViewDidScroll(_ scrollView: UIScrollView) {
+                webView.progress = scrollView.contentOffset.y / (scrollView.contentSize.height - scrollView.bounds.height)
             }
 
             func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -176,10 +181,10 @@ struct WebView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             WebView(
-                entry: entry
+                entry: entry, progress: .constant(0.5)
             ).colorScheme(.light)
             WebView(
-                entry: entry
+                entry: entry, progress: .constant(0.5)
             ).colorScheme(.dark)
         }
     }

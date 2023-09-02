@@ -14,6 +14,7 @@ struct EntryView: View {
     @ObservedObject var entry: Entry
     @State var showTag: Bool = false
     @State private var showDeleteConfirm = false
+    @State private var progress = 0.0
 
     #if os(iOS)
         let toolbarPlacement: ToolbarItemPlacement = .bottomBar
@@ -28,7 +29,8 @@ struct EntryView: View {
                 .fontWeight(.black)
                 .lineLimit(2)
                 .padding(.horizontal)
-            WebView(entry: entry)
+            ProgressView(value: progress, total: 1)
+            WebView(entry: entry, progress: $progress)
         }
         .addSwipeToBack {
             dismiss()
