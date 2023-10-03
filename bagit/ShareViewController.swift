@@ -1,5 +1,6 @@
 import Combine
 import MobileCoreServices
+import SharedLib
 import Social
 import UIKit
 import UniformTypeIdentifiers
@@ -37,7 +38,7 @@ class ShareViewController: UIViewController {
         view.addSubview(backView)
         view.addSubview(notificationView)
         UIView.animate(withDuration: 0.3) { [unowned self] in
-            self.backView.alpha = 0.6
+            backView.alpha = 0.6
         }
     }
 
@@ -51,7 +52,7 @@ class ShareViewController: UIViewController {
             kit.password = WallabagUserDefaults.password
 
             getUrl { shareURL in
-                guard let shareURL = shareURL else {
+                guard let shareURL else {
                     self.clearView(withError: .retrievingURL)
                     return
                 }

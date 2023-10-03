@@ -12,10 +12,10 @@ enum WallabagOauth: WallabagKitEndpoint {
         }
     }
 
-    // swiftlint:disable force_try
     func getBody() -> Data {
         switch self {
         case let .request(clientId, clientSecret, username, password):
+            // swiftlint:disable:next force_try
             return try! JSONSerialization.data(withJSONObject: [
                 "grant_type": "password",
                 "client_id": clientId,

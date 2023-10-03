@@ -1,5 +1,4 @@
 import Foundation
-// import UIKit
 import WebKit
 
 public extension WKWebView {
@@ -12,7 +11,7 @@ public extension WKWebView {
 
     func contentForWebView(_ content: String?, justify: Bool) -> String? {
         do {
-            guard let content = content else { return nil }
+            guard let content else { return nil }
             let html = try String(contentsOfFile: Bundle.main.path(forResource: "article", ofType: "html")!)
             let justify = justify ? "justify.css" : ""
 

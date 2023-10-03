@@ -50,14 +50,16 @@ public enum WallabagEntryEndpoint: WallabagKitEndpoint {
         }
     }
 
-    // swiftlint:disable force_try
     public func getBody() -> Data {
         switch self {
         case let .add(url):
+            // swiftlint:disable:next force_try
             return try! JSONSerialization.data(withJSONObject: ["url": url], options: .prettyPrinted)
         case let .update(_, parameters):
+            // swiftlint:disable:next force_try
             return try! JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
         case let .addTag(tag, _):
+            // swiftlint:disable:next force_try
             return try! JSONSerialization.data(withJSONObject: ["tags": tag], options: .prettyPrinted)
         default:
             return "".data(using: .utf8)!

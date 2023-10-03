@@ -1,6 +1,7 @@
 import Combine
 import Foundation
 import Intents
+import SharedLib
 import WallabagKit
 
 class AddEntryIntentHandler: NSObject, AddEntryIntentHandling {

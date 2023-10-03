@@ -3,12 +3,8 @@ import XCTest
 
 class RouterTests: XCTestCase {
     func testLoadRoute() throws {
-        let router = Router(defaultRoute: .registration)
+        let router = Router()
 
-        XCTAssertEqual(.registration, router.route)
-
-        router.load(.about)
-
-        XCTAssertEqual(.about, router.route)
+        XCTAssertEqual(0, router.path.count)
     }
 }
