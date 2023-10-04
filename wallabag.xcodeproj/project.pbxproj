@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09190AFB2ACD461B00634123 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0951C61729CC2EB000D8E8C6 /* Assets.xcassets */; };
 		093D139F26263B05008C2150 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093D139E26263B05008C2150 /* Intents.framework */; };
 		093D13A226263B05008C2150 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093D13A126263B05008C2150 /* IntentHandler.swift */; };
 		093D13B626263B05008C2150 /* Shortcuts.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 093D139D26263B05008C2150 /* Shortcuts.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -889,6 +890,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09644AD425C94825000FFDA1 /* MainInterface.storyboard in Resources */,
+				09190AFB2ACD461B00634123 /* Assets.xcassets in Resources */,
 				09644AEA25C94879000FFDA1 /* ExtensionClass.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,7 +17,7 @@ class ShareViewController: UIViewController {
         notification.center = self.view.center
 
         let image = UIImageView(frame: CGRect(x: 25, y: 25, width: 50, height: 50))
-        image.image = #imageLiteral(resourceName: "wallabag")
+        image.image = UIImage(named: "logo")
 
         notification.addSubview(image)
 
@@ -43,7 +43,6 @@ class ShareViewController: UIViewController {
     }
 
     override func viewWillAppear(_: Bool) {
-        print(WallabagUserDefaults.registred)
         if WallabagUserDefaults.registred {
             let kit = WallabagKit(host: WallabagUserDefaults.host)
             kit.clientId = WallabagUserDefaults.clientId
