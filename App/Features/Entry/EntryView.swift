@@ -37,23 +37,16 @@ struct EntryView: View {
         }
         .toolbar {
             ToolbarItem(placement: toolbarPlacement) {
-                HStack {
-                    FontSizeSelectorView()
-                        .buttonStyle(.plain)
-                    #if os(iOS)
-                        Spacer()
-                    #endif
-                    Menu(content: {
-                        bottomBarButton
-                    }, label: {
-                        Label("Entry option", systemImage: "filemenu.and.selection")
-                            .foregroundColor(.primary)
-                            .labelStyle(.iconOnly)
-                    })
-                    .accessibilityLabel("Entry option")
-                    .frame(width: 28, height: 28)
-                    .contentShape(Rectangle())
-                }
+                Menu(content: {
+                    bottomBarButton
+                }, label: {
+                    Label("Entry option", systemImage: "filemenu.and.selection")
+                        .foregroundColor(.primary)
+                        .labelStyle(.iconOnly)
+                })
+                .accessibilityLabel("Entry option")
+                .frame(width: 28, height: 28)
+                .contentShape(Rectangle())
                 .actionSheet(isPresented: $showDeleteConfirm) {
                     ActionSheet(
                         title: Text("Confirm delete?"),
@@ -66,6 +59,11 @@ struct EntryView: View {
                         ]
                     )
                 }
+            }
+
+            ToolbarItem(placement: toolbarPlacement) {
+                FontSizeSelectorView()
+                    .buttonStyle(.plain)
             }
         }
         .sheet(isPresented: $showTag) {
