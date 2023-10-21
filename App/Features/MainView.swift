@@ -3,6 +3,7 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var appState: AppState
+    @EnvironmentObject var player: PlayerPublisher
     @EnvironmentObject var router: Router
 
     var body: some View {
@@ -15,9 +16,19 @@ struct MainView: View {
 
     #if os(iOS)
         var mainView: some View {
-            NavigationStack(path: $router.path) {
-                EntriesView()
-                    .appRouting()
+            ZStack {
+                GeometryReader { geometry in
+                    NavigationStack(path: $router.path) {
+                        EntriesView()
+                            .appRouting()
+                    }
+                    if player.showPlayer {
+                        PlayerView()
+                            .frame(width: geometry.size.width, height: geometry.size.height, alignment: .topTrailing)
+                            .transition(.move(edge: .trailing))
+                            .offset(x: 0, y: 60)
+                    }
+                }
             }
         }
     #endif

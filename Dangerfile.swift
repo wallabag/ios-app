@@ -1,2 +1,2 @@
-import Danger 
+import Danger
 let danger = Danger()
