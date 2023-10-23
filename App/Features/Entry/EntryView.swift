@@ -47,24 +47,23 @@ struct EntryView: View {
                 .accessibilityLabel("Entry option")
                 .frame(width: 28, height: 28)
                 .contentShape(Rectangle())
-                .actionSheet(isPresented: $showDeleteConfirm) {
-                    ActionSheet(
-                        title: Text("Confirm delete?"),
-                        buttons: [
-                            .destructive(Text("Delete")) {
-                                context.delete(entry)
-                                dismiss()
-                            },
-                            .cancel(),
-                        ]
-                    )
-                }
             }
-
             ToolbarItem(placement: toolbarPlacement) {
                 FontSizeSelectorView()
                     .buttonStyle(.plain)
             }
+        }
+        .actionSheet(isPresented: $showDeleteConfirm) {
+            ActionSheet(
+                title: Text("Confirm delete?"),
+                buttons: [
+                    .destructive(Text("Delete")) {
+                        context.delete(entry)
+                        dismiss()
+                    },
+                    .cancel(),
+                ]
+            )
         }
         .sheet(isPresented: $showTag) {
             TagListFor(tagsForEntry: TagsForEntryPublisher(entry: entry))
