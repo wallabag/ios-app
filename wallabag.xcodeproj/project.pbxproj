@@ -8,11 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		09190AFB2ACD461B00634123 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0951C61729CC2EB000D8E8C6 /* Assets.xcassets */; };
-		093D139F26263B05008C2150 /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 093D139E26263B05008C2150 /* Intents.framework */; };
-		093D13A226263B05008C2150 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093D13A126263B05008C2150 /* IntentHandler.swift */; };
-		093D13B626263B05008C2150 /* Shortcuts.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 093D139D26263B05008C2150 /* Shortcuts.appex */; platformFilter = ios; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		093D13D826263CC4008C2150 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 093D13D726263CC4008C2150 /* Intents.intentdefinition */; };
-		093D13EC26263F81008C2150 /* AddEntryIntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093D13EB26263F81008C2150 /* AddEntryIntentHandler.swift */; };
 		094AA03E2629EB1F006E5605 /* wallabagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094AA03D2629EB1F006E5605 /* wallabagTests.swift */; };
 		094AA05A2629EB60006E5605 /* ImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094A9FED2629E6BB006E5605 /* ImageCacheTests.swift */; };
 		094AA0692629EB98006E5605 /* ImageDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094AA00F2629E739006E5605 /* ImageDownloaderTests.swift */; };
@@ -84,7 +79,6 @@
 		09644D1825C98755000FFDA1 /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644D1725C98755000FFDA1 /* AppDelegateExtension.swift */; };
 		09644D2025C98782000FFDA1 /* wallabagStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09644D1E25C98782000FFDA1 /* wallabagStore.xcdatamodeld */; };
 		097F81EB25CB18BA006C85F6 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097F81DF25CB187B006C85F6 /* Router.swift */; };
-		09800D8D29B9DE9E00DAB403 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 09800D8C29B9DE9E00DAB403 /* SharedLib */; };
 		09800D8F29B9DEFE00DAB403 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 09800D8E29B9DEFE00DAB403 /* SharedLib */; };
 		098BDD0829BF04E3003DF719 /* RouteSwiftUIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098BDD0729BF04E3003DF719 /* RouteSwiftUIExtension.swift */; };
 		098CF4D629CD830E00DEAE50 /* ServerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098CF4D529CD830E00DEAE50 /* ServerViewModelTests.swift */; };
@@ -94,7 +88,6 @@
 		09AD75A42624F93D00708A1E /* justify.css in Resources */ = {isa = PBXBuildFile; fileRef = 09AD75A02624F93D00708A1E /* justify.css */; };
 		09AD75BE2624FEEE00708A1E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09AD75C02624FEEE00708A1E /* Localizable.strings */; };
 		09AE6ECC29B13AAE0025DF93 /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09AE6ECB29B13AAE0025DF93 /* WallabagKit */; };
-		09AE6ECE29B13ABC0025DF93 /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09AE6ECD29B13ABC0025DF93 /* WallabagKit */; };
 		09AEBEA029B1D2C500050BBE /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 09AEBE9F29B1D2C500050BBE /* Factory */; };
 		09BCBBD4282BD46A00B234CB /* RouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BCBBD3282BD46A00B234CB /* RouterTests.swift */; };
 		09BE0AF42A9F45E900193FBF /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE0AF32A9F45E900193FBF /* View+Extension.swift */; };
@@ -103,13 +96,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		093D13B426263B05008C2150 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 09BFB27525C8348E00E12B4D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 093D139C26263B05008C2150;
-			remoteInfo = Shortcuts;
-		};
 		094AA0402629EB1F006E5605 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 09BFB27525C8348E00E12B4D /* Project object */;
@@ -134,7 +120,6 @@
 			dstSubfolderSpec = 13;
 			files = (
 				09644AD825C94825000FFDA1 /* bagit.appex in Embed Foundation Extensions */,
-				093D13B626263B05008C2150 /* Shortcuts.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,13 +128,7 @@
 
 /* Begin PBXFileReference section */
 		093D137226263A96008C2150 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = Library/Frameworks/IntentsUI.framework; sourceTree = DEVELOPER_DIR; };
-		093D139D26263B05008C2150 /* Shortcuts.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Shortcuts.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		093D139E26263B05008C2150 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
-		093D13A126263B05008C2150 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
-		093D13A326263B05008C2150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		093D13D026263B2E008C2150 /* Shortcuts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Shortcuts.entitlements; sourceTree = "<group>"; };
-		093D13D726263CC4008C2150 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
-		093D13EB26263F81008C2150 /* AddEntryIntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryIntentHandler.swift; sourceTree = "<group>"; };
 		09483CC6270498C20084CEB2 /* SharedLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SharedLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		09483CCC270499120084CEB2 /* WallabagKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WallabagKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		09483CCF27049B3E0084CEB2 /* WallabagKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WallabagKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -255,16 +234,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		093D139A26263B05008C2150 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				09AE6ECE29B13ABC0025DF93 /* WallabagKit in Frameworks */,
-				093D139F26263B05008C2150 /* Intents.framework in Frameworks */,
-				09800D8D29B9DE9E00DAB403 /* SharedLib in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		094AA0382629EB1F006E5605 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -295,18 +264,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		093D13A026263B05008C2150 /* Shortcuts */ = {
-			isa = PBXGroup;
-			children = (
-				093D13D026263B2E008C2150 /* Shortcuts.entitlements */,
-				093D13A126263B05008C2150 /* IntentHandler.swift */,
-				093D13A326263B05008C2150 /* Info.plist */,
-				093D13D726263CC4008C2150 /* Intents.intentdefinition */,
-				093D13EB26263F81008C2150 /* AddEntryIntentHandler.swift */,
-			);
-			path = Shortcuts;
-			sourceTree = "<group>";
-		};
 		094A9FEC2629E6A3006E5605 /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -684,7 +641,6 @@
 				09644B1525C94CA6000FFDA1 /* Frameworks */,
 				09BFB28625C8348E00E12B4D /* App */,
 				09BFB28525C8348E00E12B4D /* Products */,
-				093D13A026263B05008C2150 /* Shortcuts */,
 				094AA03C2629EB1F006E5605 /* wallabagTests */,
 			);
 			sourceTree = "<group>";
@@ -694,7 +650,6 @@
 			children = (
 				09BFB28425C8348E00E12B4D /* wallabag.app */,
 				09644ACE25C94825000FFDA1 /* bagit.appex */,
-				093D139D26263B05008C2150 /* Shortcuts.appex */,
 				094AA03B2629EB1F006E5605 /* wallabagTests.xctest */,
 			);
 			name = Products;
@@ -723,27 +678,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		093D139C26263B05008C2150 /* Shortcuts */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 093D13BA26263B05008C2150 /* Build configuration list for PBXNativeTarget "Shortcuts" */;
-			buildPhases = (
-				093D139926263B05008C2150 /* Sources */,
-				093D139A26263B05008C2150 /* Frameworks */,
-				093D139B26263B05008C2150 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Shortcuts;
-			packageProductDependencies = (
-				09AE6ECD29B13ABC0025DF93 /* WallabagKit */,
-				09800D8C29B9DE9E00DAB403 /* SharedLib */,
-			);
-			productName = Shortcuts;
-			productReference = 093D139D26263B05008C2150 /* Shortcuts.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		094AA03A2629EB1F006E5605 /* wallabagTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 094AA0422629EB1F006E5605 /* Build configuration list for PBXNativeTarget "wallabagTests" */;
@@ -797,7 +731,6 @@
 			);
 			dependencies = (
 				09644AD725C94825000FFDA1 /* PBXTargetDependency */,
-				093D13B526263B05008C2150 /* PBXTargetDependency */,
 			);
 			name = wallabag;
 			packageProductDependencies = (
@@ -819,9 +752,6 @@
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					093D139C26263B05008C2150 = {
-						CreatedOnToolsVersion = 12.4;
-					};
 					094AA03A2629EB1F006E5605 = {
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = 09BFB28325C8348E00E12B4D;
@@ -864,20 +794,12 @@
 			targets = (
 				09BFB28325C8348E00E12B4D /* wallabag */,
 				09644ACD25C94825000FFDA1 /* bagit */,
-				093D139C26263B05008C2150 /* Shortcuts */,
 				094AA03A2629EB1F006E5605 /* wallabagTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		093D139B26263B05008C2150 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		094AA0392629EB1F006E5605 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -933,16 +855,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		093D139926263B05008C2150 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				093D13EC26263F81008C2150 /* AddEntryIntentHandler.swift in Sources */,
-				093D13D826263CC4008C2150 /* Intents.intentdefinition in Sources */,
-				093D13A226263B05008C2150 /* IntentHandler.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		094AA0372629EB1F006E5605 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1037,12 +949,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		093D13B526263B05008C2150 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			platformFilter = ios;
-			target = 093D139C26263B05008C2150 /* Shortcuts */;
-			targetProxy = 093D13B426263B05008C2150 /* PBXContainerItemProxy */;
-		};
 		094AA0412629EB1F006E5605 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 09BFB28325C8348E00E12B4D /* wallabag */;
@@ -1087,51 +993,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		093D13BB26263B05008C2150 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Shortcuts/Shortcuts.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G97URPCGB8;
-				INFOPLIST_FILE = Shortcuts/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag.Shortcuts";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		093D13BC26263B05008C2150 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Shortcuts/Shortcuts.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G97URPCGB8;
-				INFOPLIST_FILE = Shortcuts/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "fr.district-web.wallabag.Shortcuts";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		094AA0432629EB1F006E5605 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1413,15 +1274,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		093D13BA26263B05008C2150 /* Build configuration list for PBXNativeTarget "Shortcuts" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				093D13BB26263B05008C2150 /* Debug */,
-				093D13BC26263B05008C2150 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		094AA0422629EB1F006E5605 /* Build configuration list for PBXNativeTarget "wallabagTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1485,19 +1337,11 @@
 			package = 09644B0D25C94C6B000FFDA1 /* XCRemoteSwiftPackageReference "swift-html-entities" */;
 			productName = HTMLEntities;
 		};
-		09800D8C29B9DE9E00DAB403 /* SharedLib */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SharedLib;
-		};
 		09800D8E29B9DEFE00DAB403 /* SharedLib */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SharedLib;
 		};
 		09AE6ECB29B13AAE0025DF93 /* WallabagKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = WallabagKit;
-		};
-		09AE6ECD29B13ABC0025DF93 /* WallabagKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = WallabagKit;
 		};
