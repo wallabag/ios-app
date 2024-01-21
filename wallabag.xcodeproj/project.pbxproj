@@ -93,6 +93,8 @@
 		09BE0AF42A9F45E900193FBF /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE0AF32A9F45E900193FBF /* View+Extension.swift */; };
 		09C34C7C29B1398B00B5C927 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 09C34C7B29B1398B00B5C927 /* SharedLib */; };
 		09C34C7E29B1399100B5C927 /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09C34C7D29B1399100B5C927 /* WallabagKit */; };
+		81505C5B2B5DC21F003B5CDE /* WallabagIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81505C5A2B5DC21F003B5CDE /* WallabagIntent.swift */; };
+		81505C5D2B5DC23C003B5CDE /* AddEntryIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81505C5C2B5DC23C003B5CDE /* AddEntryIntent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -230,6 +232,8 @@
 		09BE0AF32A9F45E900193FBF /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		09BFB28425C8348E00E12B4D /* wallabag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wallabag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09BFB28725C8348E00E12B4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81505C5A2B5DC21F003B5CDE /* WallabagIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallabagIntent.swift; sourceTree = "<group>"; };
+		81505C5C2B5DC23C003B5CDE /* AddEntryIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryIntent.swift; sourceTree = "<group>"; };
 		9C1103B626A0852F00E50F26 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -636,6 +640,7 @@
 		09BFB27425C8348E00E12B4D = {
 			isa = PBXGroup;
 			children = (
+				81505C592B5DC209003B5CDE /* Intents */,
 				09AD75962624F4E800708A1E /* wallabag.entitlements */,
 				09644ACF25C94825000FFDA1 /* bagit */,
 				09644B1525C94CA6000FFDA1 /* Frameworks */,
@@ -673,6 +678,15 @@
 				0951C61729CC2EB000D8E8C6 /* Assets.xcassets */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		81505C592B5DC209003B5CDE /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				81505C5A2B5DC21F003B5CDE /* WallabagIntent.swift */,
+				81505C5C2B5DC23C003B5CDE /* AddEntryIntent.swift */,
+			);
+			path = Intents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -917,6 +931,7 @@
 				09644CFE25C9870C000FFDA1 /* TagRow.swift in Sources */,
 				09644BFC25C983F8000FFDA1 /* Entry.swift in Sources */,
 				097F81EB25CB18BA006C85F6 /* Router.swift in Sources */,
+				81505C5D2B5DC23C003B5CDE /* AddEntryIntent.swift in Sources */,
 				09644BB725C98232000FFDA1 /* AppSetting.swift in Sources */,
 				09644C7F25C985B8000FFDA1 /* ImageDownloaderPublisher.swift in Sources */,
 				09644CE825C986CC000FFDA1 /* ServerView.swift in Sources */,
@@ -940,6 +955,7 @@
 				09644C6025C98596000FFDA1 /* EntryView.swift in Sources */,
 				09644CFF25C9870C000FFDA1 /* TagsForEntryPublisher.swift in Sources */,
 				09644D1025C9872F000FFDA1 /* BundleKey.swift in Sources */,
+				81505C5B2B5DC21F003B5CDE /* WallabagIntent.swift in Sources */,
 				09644BAF25C98213000FFDA1 /* RefreshButton.swift in Sources */,
 				09BE0AF42A9F45E900193FBF /* View+Extension.swift in Sources */,
 				09644C7025C985A9000FFDA1 /* ArchiveEntryButton.swift in Sources */,
