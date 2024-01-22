@@ -1,27 +1,9 @@
 import Factory
 import SwiftUI
 
-final class TagSuggestionViewModel: ObservableObject {
-    @Injected(\.chatAssistant) private var chatAssistant
-    @Published var suggestions: [String] = []
-    @Published var isLoading = false
-
-    @MainActor
-    func generateSynthesis(from entry: Entry) async throws {
-        defer {
-            isLoading = false
-        }
-        isLoading = true
-
-        guard let content = entry.content?.withoutHTML else { return }
-
-        suggestions = try await chatAssistant.generateTags(content: content)
-    }
-}
-
 struct TagSuggestionView: View {
+    @Environment(\.dismiss) private var dismiss
     @StateObject private var viewModel = TagSuggestionViewModel()
-    @State private var selection = Set<String>()
 
     let entry: Entry
 
@@ -34,10 +16,10 @@ struct TagSuggestionView: View {
                 List {
                     ForEach(viewModel.suggestions, id: \.self) { suggestion in
                         Button(action: {
-                            if selection.contains(suggestion) {
-                                selection.remove(suggestion)
+                            if viewModel.tagSelections.contains(suggestion) {
+                                viewModel.tagSelections.remove(suggestion)
                             } else {
-                                selection.insert(suggestion)
+                                viewModel.tagSelections.insert(suggestion)
                             }
                         }, label: {
                             HStack {
@@ -45,7 +27,7 @@ struct TagSuggestionView: View {
                                     .padding()
                                     .fontDesign(.serif)
                                 Spacer()
-                                if selection.contains(suggestion) {
+                                if viewModel.tagSelections.contains(suggestion) {
                                     Image(systemName: "checkmark.circle.fill")
                                 } else {
                                     Image(systemName: "circle")
@@ -55,17 +37,28 @@ struct TagSuggestionView: View {
                     }
                 }
                 .listStyle(.plain)
-                if !selection.isEmpty {
-                    Button(action: {}, label: {
-                        Text("Add \(selection.count.formatted()) tags")
+                if !viewModel.tagSelections.isEmpty {
+                    Button(action: {
+                        Task {
+                            try? await viewModel.addTags(to: entry)
+                            dismiss()
+                        }
+                    }, label: {
+                        if viewModel.addingTags {
+                            ProgressView()
+                        } else {
+                            Text("Add \(viewModel.tagSelections.count.formatted()) tags")
+                        }
                     })
+                    .buttonStyle(.borderedProminent)
+                    .disabled(viewModel.addingTags)
                 }
             }
         }
         .navigationTitle("Tag suggestion")
         .task {
             do {
-                try await viewModel.generateSynthesis(from: entry)
+                try await viewModel.generateTags(from: entry)
             } catch {
                 print(error)
             }

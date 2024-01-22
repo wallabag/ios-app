@@ -11,6 +11,8 @@
 		094AA03E2629EB1F006E5605 /* wallabagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094AA03D2629EB1F006E5605 /* wallabagTests.swift */; };
 		094AA05A2629EB60006E5605 /* ImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094A9FED2629E6BB006E5605 /* ImageCacheTests.swift */; };
 		094AA0692629EB98006E5605 /* ImageDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094AA00F2629E739006E5605 /* ImageDownloaderTests.swift */; };
+		094BE2B52B5E94F900DFBF5A /* SynthesisEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BE2B42B5E94F900DFBF5A /* SynthesisEntryViewModel.swift */; };
+		094BE2B92B5E952C00DFBF5A /* TagSuggestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094BE2B82B5E952C00DFBF5A /* TagSuggestionViewModel.swift */; };
 		0951C61829CC2EB000D8E8C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0951C61729CC2EB000D8E8C6 /* Assets.xcassets */; };
 		09564E0D2851C57200D39E95 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09564E0C2851C57200D39E95 /* SettingView.swift */; };
 		09644AD125C94825000FFDA1 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644AD025C94825000FFDA1 /* ShareViewController.swift */; };
@@ -152,6 +154,8 @@
 		094AA03B2629EB1F006E5605 /* wallabagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wallabagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		094AA03D2629EB1F006E5605 /* wallabagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wallabagTests.swift; sourceTree = "<group>"; };
 		094AA03F2629EB1F006E5605 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		094BE2B42B5E94F900DFBF5A /* SynthesisEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SynthesisEntryViewModel.swift; sourceTree = "<group>"; };
+		094BE2B82B5E952C00DFBF5A /* TagSuggestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagSuggestionViewModel.swift; sourceTree = "<group>"; };
 		0951C61729CC2EB000D8E8C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09564E0C2851C57200D39E95 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		09644ACE25C94825000FFDA1 /* bagit.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = bagit.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -327,6 +331,24 @@
 				094AA03F2629EB1F006E5605 /* Info.plist */,
 			);
 			path = wallabagTests;
+			sourceTree = "<group>";
+		};
+		094BE2B22B5E94EA00DFBF5A /* Synthesis */ = {
+			isa = PBXGroup;
+			children = (
+				09B8C3A72B27AF62002AEA2C /* SynthesisEntryView.swift */,
+				094BE2B42B5E94F900DFBF5A /* SynthesisEntryViewModel.swift */,
+			);
+			path = Synthesis;
+			sourceTree = "<group>";
+		};
+		094BE2B62B5E951F00DFBF5A /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				09952D102B566EAB0059D24F /* TagSuggestionView.swift */,
+				094BE2B82B5E952C00DFBF5A /* TagSuggestionViewModel.swift */,
+			);
+			path = Tag;
 			sourceTree = "<group>";
 		};
 		09644ACF25C94825000FFDA1 /* bagit */ = {
@@ -661,9 +683,9 @@
 		09B8C3A42B27ACB4002AEA2C /* AI */ = {
 			isa = PBXGroup;
 			children = (
+				094BE2B62B5E951F00DFBF5A /* Tag */,
+				094BE2B22B5E94EA00DFBF5A /* Synthesis */,
 				09B8C3A52B27AD2D002AEA2C /* ChatAssistant.swift */,
-				09B8C3A72B27AF62002AEA2C /* SynthesisEntryView.swift */,
-				09952D102B566EAB0059D24F /* TagSuggestionView.swift */,
 			);
 			path = AI;
 			sourceTree = "<group>";
@@ -974,6 +996,7 @@
 				09644B7E25C98152000FFDA1 /* AppState.swift in Sources */,
 				09644C6E25C985A9000FFDA1 /* DeleteEntryButton.swift in Sources */,
 				09644B8C25C98176000FFDA1 /* Route.swift in Sources */,
+				094BE2B52B5E94F900DFBF5A /* SynthesisEntryViewModel.swift in Sources */,
 				09644BAD25C98213000FFDA1 /* CoreDataSync.swift in Sources */,
 				09644BDE25C9833E000FFDA1 /* WallabagSession.swift in Sources */,
 				09644C7125C985A9000FFDA1 /* FontSizeSelectorView.swift in Sources */,
@@ -1000,6 +1023,7 @@
 				09644C7F25C985B8000FFDA1 /* ImageDownloaderPublisher.swift in Sources */,
 				09644CE825C986CC000FFDA1 /* ServerView.swift in Sources */,
 				09B8C3A62B27AD2D002AEA2C /* ChatAssistant.swift in Sources */,
+				094BE2B92B5E952C00DFBF5A /* TagSuggestionViewModel.swift in Sources */,
 				09644CFD25C9870C000FFDA1 /* TagListFor.swift in Sources */,
 				09644BFA25C983F8000FFDA1 /* Podcast.swift in Sources */,
 				09644BAE25C98213000FFDA1 /* AppSync.swift in Sources */,

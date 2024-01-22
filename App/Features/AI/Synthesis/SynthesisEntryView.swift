@@ -8,24 +8,6 @@
 import Factory
 import SwiftUI
 
-final class SynthesisEntryViewModel: ObservableObject {
-    @Injected(\.chatAssistant) private var chatAssistant
-    @Published var synthesis = ""
-    @Published var isLoading = false
-
-    @MainActor
-    func generateSynthesis(from entry: Entry) async throws {
-        defer {
-            isLoading = false
-        }
-        isLoading = true
-
-        guard let content = entry.content?.withoutHTML else { return }
-
-        synthesis = try await chatAssistant.generateSynthesis(content: content)
-    }
-}
-
 struct SynthesisEntryView: View {
     @StateObject private var viewModel = SynthesisEntryViewModel()
     let entry: Entry

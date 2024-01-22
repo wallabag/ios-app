@@ -122,7 +122,7 @@ extension AppSync {
 
     private func synchronizeTags() async {
         do {
-            try await for wallabagTag in fetchTags() {
+            for wallabagTag in try await fetchTags() {
                 if let tag = try? backgroundContext.fetch(Tag.fetchOneById(wallabagTag.id)).first {
                     tags[tag.id] = tag
                 } else {
