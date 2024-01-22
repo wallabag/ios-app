@@ -16,14 +16,22 @@ extension View {
                 AddEntryView()
             case let .entry(entry):
                 EntryView(entry: entry)
+            case let .synthesis(entry):
+                SynthesisEntryView(entry: entry)
+                    .wallabagPlusProtected()
+            case let .tags(entry):
+                TagSuggestionView(entry: entry)
+                    .wallabagPlusProtected()
             case .about:
                 AboutView()
             case .tips:
                 TipView()
             case .setting:
                 SettingView()
-            default:
-                Text("test")
+            case .wallabagPlus:
+                WallabagPlusView()
+            case .registration:
+                RegistrationView()
             }
         }
     }

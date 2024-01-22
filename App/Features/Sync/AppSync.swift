@@ -58,12 +58,12 @@ extension AppSync {
     }
 
     private func handleEntries(_ wallabagEntries: [WallabagEntry]) {
-        wallabagEntries.forEach { wallabagEntry in
-            self.entriesSynced.append(wallabagEntry.id)
-            if let entry = try? self.backgroundContext.fetch(Entry.fetchOneById(wallabagEntry.id)).first {
-                self.update(entry, with: wallabagEntry)
+        for wallabagEntry in wallabagEntries {
+            entriesSynced.append(wallabagEntry.id)
+            if let entry = try? backgroundContext.fetch(Entry.fetchOneById(wallabagEntry.id)).first {
+                update(entry, with: wallabagEntry)
             } else {
-                self.insert(wallabagEntry)
+                insert(wallabagEntry)
             }
         }
     }
@@ -122,15 +122,15 @@ extension AppSync {
 
     private func synchronizeTags() async {
         do {
-            try await fetchTags().forEach { wallabagTag in
-                if let tag = try? self.backgroundContext.fetch(Tag.fetchOneById(wallabagTag.id)).first {
-                    self.tags[tag.id] = tag
+            try await for wallabagTag in fetchTags() {
+                if let tag = try? backgroundContext.fetch(Tag.fetchOneById(wallabagTag.id)).first {
+                    tags[tag.id] = tag
                 } else {
-                    let tag = Tag(context: self.backgroundContext)
+                    let tag = Tag(context: backgroundContext)
                     tag.id = wallabagTag.id
                     tag.label = wallabagTag.label
                     tag.slug = wallabagTag.slug
-                    self.tags[wallabagTag.id] = tag
+                    tags[wallabagTag.id] = tag
                 }
             }
         } catch _ {}

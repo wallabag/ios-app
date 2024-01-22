@@ -13,6 +13,7 @@ struct WallabagApp: App {
         @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     #endif
 
+    @InjectedObject(\.wallabagPlusStore) private var wallabagPlusStore
     @Injected(\.appState) private var appState
     @Injected(\.router) private var router
     #if os(iOS)
@@ -35,8 +36,15 @@ struct WallabagApp: App {
                 .environmentObject(errorHandler)
                 .environmentObject(appSync)
                 .environmentObject(appSetting)
+                .environmentObject(wallabagPlusStore)
                 .environment(\.managedObjectContext, coreData.viewContext)
-        }.onChange(of: scenePhase) { state in
+                .subscriptionStatusTask(for: wallabagPlusStore.groupID) { task in
+                    _ = await task.map { statues in
+                        await wallabagPlusStore.handleStatues(statues)
+                    }
+                }
+        }
+        .onChange(of: scenePhase) { state in
             if state == .active {
                 appState.initSession()
                 #if os(iOS)

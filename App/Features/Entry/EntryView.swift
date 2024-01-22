@@ -52,6 +52,20 @@ struct EntryView: View {
                 FontSizeSelectorView()
                     .buttonStyle(.plain)
             }
+            ToolbarItem(placement: toolbarPlacement) {
+                Menu(content: {
+                    NavigationLink(value: RoutePath.synthesis(entry), label: {
+                        Text("Synthesis")
+                    })
+                    NavigationLink(value: RoutePath.tags(entry), label: {
+                        Text("Suggest tag")
+                    })
+                }, label: {
+                    Label("Help assistant", systemImage: "hands.and.sparkles")
+                        .foregroundColor(.primary)
+                        .labelStyle(.iconOnly)
+                })
+            }
         }
         .actionSheet(isPresented: $showDeleteConfirm) {
             ActionSheet(

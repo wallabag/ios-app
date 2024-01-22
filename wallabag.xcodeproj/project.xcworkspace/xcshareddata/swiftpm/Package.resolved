@@ -1,34 +1,32 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "HTMLEntities",
-        "repositoryURL": "https://github.com/IBM-Swift/swift-html-entities.git",
-        "state": {
-          "branch": null,
-          "revision": "2b14531d0c36dbb7c1c45a4d38db9c2e7898a307",
-          "version": "3.0.200"
-        }
-      },
-      {
-        "package": "Swinject",
-        "repositoryURL": "https://github.com/Swinject/Swinject",
-        "state": {
-          "branch": null,
-          "revision": "8a76d2c74bafbb455763487cc6a08e91bad1f78b",
-          "version": "2.7.1"
-        }
-      },
-      {
-        "package": "WallabagKit",
-        "repositoryURL": "https://github.com/wallabag/WallabagKit.git",
-        "state": {
-          "branch": "master",
-          "revision": "6f83586b893f876e447ae68d1f7c0508bdc8a3bb",
-          "version": null
-        }
+  "pins" : [
+    {
+      "identity" : "factory",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:hmlongco/Factory.git",
+      "state" : {
+        "revision" : "8ca11a7bd1ede031e8e6d7a912bb116e2e43961b",
+        "version" : "2.3.1"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "openaiswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/astrokin/OpenAISwift.git",
+      "state" : {
+        "branch" : "fix_400",
+        "revision" : "db66252954f64c59111abb1932866039a64ef029"
+      }
+    },
+    {
+      "identity" : "swift-html-entities",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/IBM-Swift/swift-html-entities.git",
+      "state" : {
+        "revision" : "2b14531d0c36dbb7c1c45a4d38db9c2e7898a307",
+        "version" : "3.0.200"
+      }
+    }
+  ],
+  "version" : 2
 }

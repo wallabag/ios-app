@@ -60,8 +60,8 @@ import Foundation
             let url = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
             do {
                 let files = try FileManager.default.contentsOfDirectory(atPath: url.path)
-                try files.forEach {
-                    try FileManager.default.removeItem(atPath: url.appendingPathComponent($0).path)
+                for file in files {
+                    try FileManager.default.removeItem(atPath: url.appendingPathComponent(file).path)
                 }
             } catch {
                 print("Error in cache purge")

@@ -74,3 +74,5 @@ fastlane/metadata/trade_representative_contact_information
 
 vendor/
 .bundle/
+
+Config.xcconfig

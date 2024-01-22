@@ -46,6 +46,10 @@ struct EntriesView: View {
                         Label("Don", systemImage: "heart")
                     })
                     Divider()
+                    NavigationLink(value: RoutePath.wallabagPlus) {
+                        Label("wallabag Plus", systemImage: "hands.and.sparkles")
+                    }
+                    Divider()
                     Button(action: {
                         router.path.append(RoutePath.setting)
                     }, label: {

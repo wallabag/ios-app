@@ -12,15 +12,15 @@ public enum WallabagEntryEndpoint: WallabagKitEndpoint {
     public func method() -> HttpMethod {
         switch self {
         case .get:
-            return .get
+            .get
         case .add, .addTag:
-            return .post
+            .post
         case .delete, .deleteTag:
-            return .delete
+            .delete
         case .update:
-            return .patch
+            .patch
         case .reload:
-            return .patch
+            .patch
         }
     }
 
@@ -54,15 +54,15 @@ public enum WallabagEntryEndpoint: WallabagKitEndpoint {
         switch self {
         case let .add(url):
             // swiftlint:disable:next force_try
-            return try! JSONSerialization.data(withJSONObject: ["url": url], options: .prettyPrinted)
+            try! JSONSerialization.data(withJSONObject: ["url": url], options: .prettyPrinted)
         case let .update(_, parameters):
             // swiftlint:disable:next force_try
-            return try! JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+            try! JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
         case let .addTag(tag, _):
             // swiftlint:disable:next force_try
-            return try! JSONSerialization.data(withJSONObject: ["tags": tag], options: .prettyPrinted)
+            try! JSONSerialization.data(withJSONObject: ["tags": tag], options: .prettyPrinted)
         default:
-            return "".data(using: .utf8)!
+            "".data(using: .utf8)!
         }
     }
 

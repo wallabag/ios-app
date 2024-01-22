@@ -1,0 +1,119 @@
+openapi: 3.1.0
+info:
+  title: Back GPT
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+  - url: https://gpt.district-web.com
+tags:
+  - name: wallabag
+    description: Everything about wallabag
+  - name: opinion
+    description: Everything about opinion
+paths:
+  /wallabag/synthesis:
+    post:
+      tags:
+        - wallabag
+      summary: Generate synthesis from entry
+      operationId: wallabagSynthesis
+      requestBody:
+        description: Generate synthesis from entry
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WallabagSynthesisQuery'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WallabagSynthesisResponse'
+  /wallabag/tags:
+    post:
+      tags:
+        - wallabag
+      summary: Generate tags from entry
+      operationId: wallabagTags
+      requestBody:
+        description: Generate tags from entry
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WallabagTagQuery'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WallabagTagResponse'
+  /opinion/review:
+    post:
+      tags:
+        - opinion
+      summary: Generate response from entry
+      operationId: opinionReview
+      requestBody:
+        description: Generate response from entry
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OpinionReview'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OpinionReview'
+components:
+  schemas:
+    WallabagSynthesisQuery:
+      type: object
+      properties:
+        body:
+          type: string
+          examples: ['My content']
+        language:
+          type: string
+          examples: [FR]
+    WallabagSynthesisResponse:
+      type: object
+      properties:
+        content:
+          type: string
+          examples: ['My content']
+    WallabagTagQuery:
+      type: object
+      properties:
+        body:
+          type: string
+          examples: ['My content']
+        language:
+          type: string
+          examples: [FR]
+    WallabagTagResponse:
+      type: object
+      properties:
+        tags:
+          type: array
+          items:
+            type: string
+          examples: ['My content']
+    OpinionReview:
+      type: object
+      properties:
+        content:
+          type: string
+          examples: ['My content']
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+security:
+  - bearerAuth: []
