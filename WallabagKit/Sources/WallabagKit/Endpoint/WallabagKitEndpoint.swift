@@ -8,6 +8,7 @@
 import Foundation
 
 public protocol WallabagKitEndpoint {
+    associatedtype Object: Decodable
     func method() -> HttpMethod
     func endpoint() -> String
     func getBody() -> Data

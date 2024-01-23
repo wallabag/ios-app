@@ -33,12 +33,12 @@ class LoginViewModel: ObservableObject {
         }.store(in: &cancellable)
     }
 
-    func tryLogin() {
+    func tryLogin() async {
         error = nil
         WallabagUserDefaults.login = login
         WallabagUserDefaults.password = password
         session.kit.host = WallabagUserDefaults.host
-        session.requestSession(
+        await session.requestSession(
             clientId: WallabagUserDefaults.clientId,
             clientSecret: WallabagUserDefaults.clientSecret,
             username: login,

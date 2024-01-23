@@ -28,11 +28,12 @@ class CoreDataSync {
     }
 
     private func deletedObjects(_ deletedObjects: Set<NSManagedObject>) {
-        deletedObjects
-            .compactMap { $0 as? Entry }
-            .forEach { entry in
-                self.wallabagSession.delete(entry: entry)
+        Task {
+            for deletedObject in deletedObjects {
+                guard let deletedObject = deletedObject as? Entry else { return }
+                try await self.wallabagSession.delete(entry: deletedObject)
             }
+        }
     }
 
     private func updatedObjects(_ updatedObjects: Set<NSManagedObject>) {
@@ -46,14 +47,16 @@ class CoreDataSync {
                 changedValues.removeValue(forKey: "tags")
                 if changedValues.count > 0 {
                     logger.debug("Push update entry \(entry.id) to remote")
-                    wallabagSession.update(
-                        entry,
-                        parameters:
-                        [
-                            "archive": entry.isArchived.int,
-                            "starred": entry.isStarred.int,
-                        ]
-                    )
+                    Task {
+                        try await wallabagSession.update(
+                            entry,
+                            parameters:
+                            [
+                                "archive": entry.isArchived.int,
+                                "starred": entry.isStarred.int,
+                            ]
+                        )
+                    }
                 }
             }
 

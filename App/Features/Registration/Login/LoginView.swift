@@ -16,7 +16,9 @@ struct LoginView: View {
                 SecureField("Password", text: $loginViewModel.password)
             }
             Button("Login") {
-                loginViewModel.tryLogin()
+                Task {
+                    await loginViewModel.tryLogin()
+                }
             }.disabled(!loginViewModel.isValid)
             loginViewModel.error.map { error in
                 VStack {

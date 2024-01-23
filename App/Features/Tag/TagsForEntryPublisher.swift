@@ -23,19 +23,19 @@ class TagsForEntryPublisher: ObservableObject {
         }.forEach { $0.isChecked = true }
     }
 
-    func add(tag: Tag) {
-        add(tag: tag.label)
+    func add(tag: Tag) async {
+        await add(tag: tag.label)
         tag.isChecked = true
     }
 
-    func add(tag: String) {
-        session.add(tag: tag, for: entry)
+    func add(tag: String) async {
+        try? await session.add(tag: tag, for: entry)
         objectWillChange.send()
     }
 
-    func delete(tag: Tag) {
+    func delete(tag: Tag) async {
         tag.isChecked = false
         tag.objectWillChange.send()
-        session.delete(tag: tag, for: entry)
+        try? await session.delete(tag: tag, for: entry)
     }
 }

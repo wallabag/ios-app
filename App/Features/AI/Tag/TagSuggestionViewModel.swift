@@ -35,7 +35,7 @@ final class TagSuggestionViewModel: ObservableObject {
         }
         addingTags = true
         for tag in tagSelections {
-            wallabagSession.add(tag: tag, for: entry)
+            try await wallabagSession.add(tag: tag, for: entry)
         }
     }
 }

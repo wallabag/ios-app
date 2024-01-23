@@ -44,15 +44,17 @@ struct WallabagApp: App {
                     }
                 }
         }
-        .onChange(of: scenePhase) { state in
-            if state == .active {
-                appState.initSession()
+        .onChange(of: scenePhase) { _, newScenePhase in
+            if newScenePhase == .active {
+                Task {
+                    await appState.initSession()
+                }
                 #if os(iOS)
                     requestNotificationAuthorization()
                 #endif
             }
 
-            if state == .background {
+            if newScenePhase == .background {
                 coreData.saveContext()
                 updateBadge()
             }
@@ -84,9 +86,9 @@ struct WallabagApp: App {
     }
 
     private func setBadgeNumber(_ number: Int) {
-        #if os(iOS)
-            UIApplication.shared.applicationIconBadgeNumber = number
-        #endif
+        Task {
+            try? await UNUserNotificationCenter.current().setBadgeCount(number)
+        }
     }
 
     #if os(iOS)

@@ -100,7 +100,9 @@ extension AppSync {
     }
 
     func refresh(entry: Entry) {
-        session.refresh(entry: entry)
+        Task {
+            try? await session.refresh(entry: entry)
+        }
     }
 }
 

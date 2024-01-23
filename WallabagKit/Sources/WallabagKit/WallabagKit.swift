@@ -41,7 +41,7 @@ public class WallabagKit {
         self.session = session
     }
 
-    public func requestToken() -> AnyPublisher<WallabagToken?, WallabagKitError> {
+    public func requestTokenAsync() async throws -> WallabagToken {
         let urlRequest = request(for: WallabagOauth.request(
             clientId: clientId ?? "",
             clientSecret: clientSecret ?? "",
@@ -49,57 +49,91 @@ public class WallabagKit {
             password: password ?? ""
         ))
 
-        return session.dataTaskPublisher(for: urlRequest)
-            .tryMap { data, response -> Data in
-                guard let response = response as? HTTPURLResponse else { fatalError() }
+        let (data, response) = try await session.data(for: urlRequest)
+        guard let response = response as? HTTPURLResponse else { fatalError() }
 
-                try self.handleStatusCode(from: response, with: data)
+        try handleStatusCode(from: response, with: data)
 
-                return data
-            }
-            .decode(type: WallabagToken.self, decoder: decoder)
-            .mapErrorToWallabagKitError()
-            .map { token in
-                self.accessToken = token.accessToken
-                self.refreshToken = token.refreshToken
-                return token
-            }
-            .eraseToAnyPublisher()
+        let token = try decoder.decode(WallabagToken.self, from: data)
+
+        accessToken = token.accessToken
+        refreshToken = token.refreshToken
+
+        return token
     }
 
-    public func send<T: Decodable>(to: WallabagKitEndpoint) -> AnyPublisher<T, WallabagKitError> {
-        fetch(to: to)
-            .decode(type: T.self, decoder: decoder)
-            .mapErrorToWallabagKitError()
-            .eraseToAnyPublisher()
+    public func send<T: WallabagKitEndpoint>(to: T) async throws -> T.Object {
+        let (data, response) = try await session.data(for: request(for: to, withAuth: true))
+        guard let response = response as? HTTPURLResponse else { fatalError() }
+
+        try handleStatusCode(from: response, with: data)
+
+        return try decoder.decode(T.Object.self, from: data)
+
+//        fetch(to: to)
+//            .decode(type: T.self, decoder: decoder)
+//            .mapErrorToWallabagKitError()
+//            .eraseToAnyPublisher()
     }
 
-    private func fetch(to: WallabagKitEndpoint) -> AnyPublisher<Data, WallabagKitError> {
-        session.dataTaskPublisher(for: request(for: to, withAuth: true))
-            .tryMap { data, response in
-                guard let response = response as? HTTPURLResponse else { fatalError() }
+    //    private func fetch(to: WallabagKitEndpoint) -> AnyPublisher<Data, WallabagKitError> {
+    //        session.dataTaskPublisher(for: request(for: to, withAuth: true))
+    //            .tryMap { data, response in
+    //                guard let response = response as? HTTPURLResponse else { fatalError() }
+    //
+    //                try self.handleStatusCode(from: response, with: data)
+    //
+    //                return data
+    //            }
+    //            .tryCatch { error in
+    //                self.requestToken()
+    //                    .tryMap { token -> AnyPublisher<Data, WallabagKitError> in
+    //                        if token != nil {
+    //                            return self.fetch(to: to)
+    //                        }
+    //                        throw WallabagKitError.invalidToken
+    //                    }
+    //                    .mapError { error in WallabagKitError.wrap(error: error) }
+    //                    .switchToLatest()
+    //                    .eraseToAnyPublisher()
+    //            }
+    //            .mapErrorToWallabagKitError()
+    //            .eraseToAnyPublisher()
+    //    }
 
-                try self.handleStatusCode(from: response, with: data)
+//    public func send<T: Decodable>(to: WallabagKitEndpoint) -> AnyPublisher<T, WallabagKitError> {
+//        fetch(to: to)
+//            .decode(type: T.self, decoder: decoder)
+//            .mapErrorToWallabagKitError()
+//            .eraseToAnyPublisher()
+//    }
 
-                return data
-            }
-            .tryCatch { error in
-                self.requestToken()
-                    .tryMap { token -> AnyPublisher<Data, WallabagKitError> in
-                        if token != nil {
-                            return self.fetch(to: to)
-                        }
-                        throw WallabagKitError.invalidToken
-                    }
-                    .mapError { error in WallabagKitError.wrap(error: error) }
-                    .switchToLatest()
-                    .eraseToAnyPublisher()
-            }
-            .mapErrorToWallabagKitError()
-            .eraseToAnyPublisher()
-    }
+//    private func fetch(to: WallabagKitEndpoint) -> AnyPublisher<Data, WallabagKitError> {
+//        session.dataTaskPublisher(for: request(for: to, withAuth: true))
+//            .tryMap { data, response in
+//                guard let response = response as? HTTPURLResponse else { fatalError() }
+//
+//                try self.handleStatusCode(from: response, with: data)
+//
+//                return data
+//            }
+//            .tryCatch { error in
+//                self.requestToken()
+//                    .tryMap { token -> AnyPublisher<Data, WallabagKitError> in
+//                        if token != nil {
+//                            return self.fetch(to: to)
+//                        }
+//                        throw WallabagKitError.invalidToken
+//                    }
+//                    .mapError { error in WallabagKitError.wrap(error: error) }
+//                    .switchToLatest()
+//                    .eraseToAnyPublisher()
+//            }
+//            .mapErrorToWallabagKitError()
+//            .eraseToAnyPublisher()
+//    }
 
-    public func request(for endpoint: WallabagKitEndpoint, withAuth: Bool = false) -> URLRequest {
+    public func request(for endpoint: any WallabagKitEndpoint, withAuth: Bool = false) -> URLRequest {
         var urlRequest = URLRequest(url: URL(string: "\(host)\(endpoint.endpoint())")!)
         urlRequest.httpMethod = endpoint.method().rawValue
         urlRequest.httpBody = endpoint.getBody()

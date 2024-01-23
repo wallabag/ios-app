@@ -13,8 +13,10 @@ struct TagListFor: View {
             HStack {
                 TextField("New tag", text: $tagLabel)
                 Button(action: {
-                    tagsForEntry.add(tag: tagLabel)
-                    tagLabel = ""
+                    Task {
+                        await tagsForEntry.add(tag: tagLabel)
+                        tagLabel = ""
+                    }
                 }, label: { Text("Add") })
             }.padding(.horizontal)
             List(tagsForEntry.tags) { tag in

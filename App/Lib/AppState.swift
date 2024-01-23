@@ -21,12 +21,13 @@ final class AppState: NSObject, ObservableObject {
         registred = WallabagUserDefaults.registred
     }
 
-    func initSession() {
+    func initSession() async {
         if registred {
             logger.info("App state request session")
-            session.requestSession(clientId: WallabagUserDefaults.clientId, clientSecret: WallabagUserDefaults.clientSecret, username: WallabagUserDefaults.login, password: WallabagUserDefaults.password)
 
-            fetchConfig()
+            await session.requestSession(clientId: WallabagUserDefaults.clientId, clientSecret: WallabagUserDefaults.clientSecret, username: WallabagUserDefaults.login, password: WallabagUserDefaults.password)
+
+            await fetchConfig()
         }
     }
 
@@ -38,14 +39,12 @@ final class AppState: NSObject, ObservableObject {
 
     /// Fetch user config from server
     /// *Require server running version 2.5*
-    private func fetchConfig() {
+    @MainActor
+    private func fetchConfig() async {
         logger.info("Fetch user config")
-        session.config { [weak self] config in
-            guard let config else { return }
-            logger.debug("User config available")
-            DispatchQueue.main.async {
-                self?.readingSpeed = config.readingSpeed
-            }
-        }
+        let config = try? await session.config()
+        guard let config else { return }
+        logger.debug("User config available")
+        readingSpeed = config.readingSpeed
     }
 }

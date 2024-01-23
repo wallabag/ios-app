@@ -39,8 +39,9 @@
             cancellableNotification?.cancel()
         }
 
-        func addUrl() {
-            session.addEntry(url: pasteBoardUrl) {}
+        @MainActor
+        func addUrl() async {
+            try? await session.addEntry(url: pasteBoardUrl)
             showPasteBoardView = false
         }
 

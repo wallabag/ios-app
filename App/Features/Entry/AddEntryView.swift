@@ -13,7 +13,9 @@ struct AddEntryView: View {
                 .disableAutocorrection(true)
             HStack {
                 Button(model.submitting ? "Submitting..." : "Submit") {
-                    model.addEntry()
+                    Task {
+                        await model.addEntry()
+                    }
                 }.disabled(model.submitting)
             }.disabled(model.url.isEmpty)
             if model.succeeded {
@@ -31,18 +33,16 @@ private class AddEntryModel: ObservableObject {
     @Published var submitting: Bool = false
     @Published var succeeded: Bool = false
 
-    func addEntry() {
+    @MainActor
+    func addEntry() async {
         submitting = true
-        session.addEntry(url: url) {
-            DispatchQueue.main.async {
-                self.url = ""
-                self.submitting = false
-                withAnimation {
-                    self.succeeded = true
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                        self.succeeded = false
-                    }
-                }
+        try? await session.addEntry(url: url)
+        url = ""
+        submitting = false
+        withAnimation {
+            self.succeeded = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                self.succeeded = false
             }
         }
     }
