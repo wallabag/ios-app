@@ -1,6 +1,6 @@
-import WallabagKit
 import AppIntents
 import SharedLib
+import WallabagKit
 
 protocol WallabagIntent: AppIntent {}
 

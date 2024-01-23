@@ -12,7 +12,7 @@ struct ChatAssistant: ChatAssistantProtocol {
     var client: Client {
         get throws {
             try Client(
-                serverURL: Servers.server1(),
+                serverURL: Servers.server2(),
                 transport: URLSessionTransport(),
                 middlewares: [AuthenticationMiddleware()]
             )

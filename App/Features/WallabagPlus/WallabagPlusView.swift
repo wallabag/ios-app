@@ -30,7 +30,7 @@ struct WallabagPlusView: View {
                 .padding()
             }
             GroupBox("Privacy") {
-                Text("When you use wallabag Plus, your content will be sent to openAI")
+                Text("When you use wallabag Plus, your entry will be sent to openAI")
                     .frame(idealWidth: .infinity, maxWidth: .infinity, alignment: .leading)
             }
             Spacer()
