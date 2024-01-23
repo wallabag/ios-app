@@ -8,7 +8,7 @@ enum WallabagOauth: WallabagKitEndpoint {
     func endpoint() -> String {
         switch self {
         case .request:
-            return "/oauth/v2/token"
+            "/oauth/v2/token"
         }
     }
 
@@ -16,7 +16,7 @@ enum WallabagOauth: WallabagKitEndpoint {
         switch self {
         case let .request(clientId, clientSecret, username, password):
             // swiftlint:disable:next force_try
-            return try! JSONSerialization.data(withJSONObject: [
+            try! JSONSerialization.data(withJSONObject: [
                 "grant_type": "password",
                 "client_id": clientId,
                 "client_secret": clientSecret,

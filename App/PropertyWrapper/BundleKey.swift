@@ -1,7 +1,7 @@
 import Foundation
 
 @propertyWrapper
-class BundleKey {
+struct BundleKey {
     let key: String
 
     var wrappedValue: String {

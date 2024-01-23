@@ -24,26 +24,26 @@ public enum RetrieveMode: String, CaseIterable {
     public var settingCase: String {
         switch self {
         case .allArticles:
-            return "allArticles"
+            "allArticles"
         case .archivedArticles:
-            return "archivedArticles"
+            "archivedArticles"
         case .unarchivedArticles:
-            return "unarchivedArticles"
+            "unarchivedArticles"
         case .starredArticles:
-            return "starredArticles"
+            "starredArticles"
         }
     }
 
     public func predicate() -> NSPredicate {
         switch self {
         case .unarchivedArticles:
-            return NSPredicate(format: "isArchived == NO")
+            NSPredicate(format: "isArchived == NO")
         case .starredArticles:
-            return NSPredicate(format: "isStarred == YES")
+            NSPredicate(format: "isStarred == YES")
         case .archivedArticles:
-            return NSPredicate(format: "isArchived == YES")
+            NSPredicate(format: "isArchived == YES")
         case .allArticles:
-            return NSPredicate(value: true)
+            NSPredicate(value: true)
         }
     }
 }

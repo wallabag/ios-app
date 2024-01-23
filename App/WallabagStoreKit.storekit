@@ -1,0 +1,124 @@
+{
+  "identifier" : "2657AEEA",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "1247187745",
+      "localizations" : [
+        {
+          "description" : "Cette application est développée sur le temps libre, elle est gratuite et la restera ainsi.Mais vous pouvez contribuer financièrement en faisant un don chaque fois que vous souhaitez soutenir le projet.",
+          "displayName" : "Don",
+          "locale" : "fr"
+        },
+        {
+          "description" : "Diese Anwendung ist auf freie Zeit entwickelt, es ist kostenlos und wird so bleiben. Aber Sie können finanziell beitragen, indem Sie eine Spende machen, wann immer Sie das Projekt unterstützen möchte",
+          "displayName" : "Geschenk",
+          "locale" : "de"
+        },
+        {
+          "description" : "This application is developed on free time, it is free and will remain so. But you can contribute financially by making a donation whenever you want to support the project.",
+          "displayName" : "Tips",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "tips1",
+      "referenceName" : "tips1",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "1170800946",
+    "_developerTeamID" : "G97URPCGB8",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 726670179.27365196,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21433277",
+      "localizations" : [
+
+      ],
+      "name" : "Wallabag",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "2.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6475806829",
+          "introductoryOffer" : null,
+          "localizations" : [
+
+          ],
+          "productID" : "wallabagplus",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Wallabag plus",
+          "subscriptionGroupID" : "21433277",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

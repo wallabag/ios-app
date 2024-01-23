@@ -6,6 +6,10 @@
 	<false/>
 	<key>DOCUMENTATION_URL</key>
 	<string>https://doc.wallabag.org/en/apps/ios.html</string>
+	<key>PRIVACY_URL</key>
+    <string>https://www.district-web.fr/wallabag-reader/privacy</string>
+    <key>TERMS_OF_USE_URL</key>
+    <string>https://www.district-web.fr/wallabag-reader/privacy</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -20,6 +24,8 @@
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
+	<key>GPTBACK_KEY</key>
+	<string>$(GPTBACK_KEY)</string>
 	<key>CFBundleVersion</key>
 	<string>319</string>
 	<key>LSRequiresIPhoneOS</key>

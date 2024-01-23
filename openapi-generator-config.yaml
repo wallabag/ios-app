@@ -1,0 +1,7 @@
+generate:
+  - types
+  - client
+
+filter:
+  tags:
+    - wallabag

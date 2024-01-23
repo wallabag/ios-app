@@ -9,13 +9,13 @@ enum ShareExtensionError: Error, LocalizedError {
     var localizedDescription: String {
         switch self {
         case .unregistredApp:
-            return "App not registred or configured"
+            "App not registred or configured"
         case .authError:
-            return "Error during auth"
+            "Error during auth"
         case .retrievingURL:
-            return "Error retrieve url from extension"
+            "Error retrieve url from extension"
         case .duringAdding:
-            return "Error during pushing to your wallabag server"
+            "Error during pushing to your wallabag server"
         }
     }
 }

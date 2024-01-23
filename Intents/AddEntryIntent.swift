@@ -2,10 +2,9 @@ import AppIntents
 import WallabagKit
 
 struct AddEntryIntent: WallabagIntent {
-
     static var title: LocalizedStringResource = "Add Entry"
 
-    static var description: IntentDescription = IntentDescription("Add entry to your instance")
+    static var description: IntentDescription = .init("Add entry to your instance")
 
     @Parameter(title: "Url")
     var url: URL
@@ -18,7 +17,7 @@ struct AddEntryIntent: WallabagIntent {
         _ = try await kit.send(to: WallabagEntryEndpoint.add(url: url.absoluteString))
             .receive(on: DispatchQueue.main)
             .values
-            .first(where: {(_: WallabagEntry) in true})
+            .first(where: { (_: WallabagEntry) in true })
         return .result()
     }
 }

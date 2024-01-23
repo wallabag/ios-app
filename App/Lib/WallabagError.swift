@@ -9,13 +9,13 @@ extension WallabagError: LocalizedError {
     var localizedDescription: String {
         switch self {
         case let .syncError(error):
-            return "\(error)"
+            "\(error)"
         case let .wallabagKitError(error):
             switch error {
             // case let .jsonError(json):
             //    return json.errorDescription
             default:
-                return error.localizedDescription
+                error.localizedDescription
             }
         }
     }
