@@ -5,7 +5,7 @@ import SharedLib
 import SwiftUI
 import WallabagKit
 
-final class AppState: NSObject, ObservableObject {
+final class AppState: ObservableObject {
     @Injected(\.wallabagSession) private var session
 
     @Published var registred: Bool = false {
@@ -16,8 +16,7 @@ final class AppState: NSObject, ObservableObject {
 
     @AppStorage("readingSpeed") var readingSpeed: Double = 200
 
-    override init() {
-        super.init()
+    init() {
         registred = WallabagUserDefaults.registred
     }
 

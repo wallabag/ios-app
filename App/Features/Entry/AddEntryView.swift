@@ -48,8 +48,6 @@ private class AddEntryModel: ObservableObject {
     }
 }
 
-struct AddEntryView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddEntryView()
-    }
+#Preview {
+    AddEntryView()
 }

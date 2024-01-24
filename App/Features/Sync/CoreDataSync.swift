@@ -4,7 +4,7 @@ import Factory
 import Foundation
 import SharedLib
 
-class CoreDataSync {
+final class CoreDataSync {
     private var objectsDidChangeCancellable: AnyCancellable?
 
     @Injected(\.appSync) private var appSync

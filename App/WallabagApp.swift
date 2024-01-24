@@ -14,15 +14,15 @@ struct WallabagApp: App {
     #endif
 
     @InjectedObject(\.wallabagPlusStore) private var wallabagPlusStore
-    @Injected(\.appState) private var appState
-    @Injected(\.router) private var router
+    @InjectedObject(\.appState) private var appState
+    @InjectedObject(\.router) private var router
     #if os(iOS)
-        @Injected(\.playerPublisher) private var playerPublisher
+        @InjectedObject(\.playerPublisher) private var playerPublisher
     #endif
-    @Injected(\.errorHandler) private var errorHandler
-    @Injected(\.appSync) private var appSync
+    @InjectedObject(\.errorHandler) private var errorHandler
+    @InjectedObject(\.appSync) private var appSync
+    @InjectedObject(\.appSetting) private var appSetting
     @Injected(\.coreDataSync) private var coreDataSync
-    @Injected(\.appSetting) private var appSetting
     @Injected(\.coreData) private var coreData
 
     var body: some Scene {
