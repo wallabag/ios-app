@@ -1,7 +1,8 @@
-import Combine
 import Foundation
+import Observation
 import SwiftUI
 
-final class Router: ObservableObject {
-    @Published var path: [RoutePath] = []
+@Observable
+final class Router {
+    var path: [RoutePath] = []
 }

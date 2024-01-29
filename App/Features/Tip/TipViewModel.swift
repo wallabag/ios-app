@@ -1,12 +1,14 @@
 import Foundation
+import Observation
 import StoreKit
 
-final class TipViewModel: ObservableObject {
-    @Published var canMakePayments: Bool = false
-    @Published var tipProduct: Product?
-    @Published var paymentSuccess = false
+@Observable
+final class TipViewModel {
+    var canMakePayments: Bool = false
+    var tipProduct: Product?
+    var paymentSuccess = false
 
-    var taskHandle: Task<Void, Error>?
+    private var taskHandle: Task<Void, Error>?
 
     init() {
         canMakePayments = SKPaymentQueue.canMakePayments()

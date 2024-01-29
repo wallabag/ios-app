@@ -5,7 +5,7 @@ import Foundation
 import SharedLib
 import WallabagKit
 
-class WallabagSession: ObservableObject {
+final class WallabagSession: ObservableObject {
     enum State {
         case unknown
         case connecting
@@ -43,7 +43,7 @@ class WallabagSession: ObservableObject {
             case WallabagKitError.invalidApiEndpoint:
                 state = .error(reason: "Invalid api endpoint, check your host configuration")
             default:
-                state = .error(reason: "Unknown error")
+                state = .error(reason: error.localizedDescription)
             }
         }
     }

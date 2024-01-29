@@ -4,7 +4,7 @@ import SwiftUI
 struct MainView: View {
     @EnvironmentObject var appState: AppState
     @EnvironmentObject var player: PlayerPublisher
-    @EnvironmentObject var router: Router
+    @Environment(Router.self) var router: Router
 
     var body: some View {
         if appState.registred {
@@ -18,6 +18,7 @@ struct MainView: View {
         var mainView: some View {
             ZStack {
                 GeometryReader { geometry in
+                    @Bindable var router = router
                     NavigationStack(path: $router.path) {
                         EntriesView()
                             .appRouting()

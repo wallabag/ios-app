@@ -1,25 +1,28 @@
 import Combine
 import Factory
 import Foundation
+import Observation
 import SharedLib
 
-class LoginViewModel: ObservableObject {
+@Observable
+final class LoginViewModel {
+    @ObservationIgnored
     @Injected(\.appState) private var appState
+    @ObservationIgnored
     @Injected(\.wallabagSession) private var session
+    @ObservationIgnored
     @Injected(\.router) private var router
-
-    @Published var login: String = ""
-    @Published var password: String = ""
-    @Published var error: String?
-
-    private(set) var isValid: Bool = false
     private var cancellable = Set<AnyCancellable>()
+
+    var login: String = ""
+    var password: String = ""
+    var error: String?
+    var isValid: Bool {
+        !login.isEmpty && !password.isEmpty
+    }
 
     init() {
         login = WallabagUserDefaults.login
-        Publishers.CombineLatest($login, $password).sink { [unowned self] login, password in
-            isValid = !login.isEmpty && !password.isEmpty
-        }.store(in: &cancellable)
 
         session.$state.receive(on: DispatchQueue.main).sink { [unowned self] state in
             switch state {
@@ -44,9 +47,5 @@ class LoginViewModel: ObservableObject {
             username: login,
             password: password
         )
-    }
-
-    deinit {
-        cancellable.forEach { $0.cancel() }
     }
 }

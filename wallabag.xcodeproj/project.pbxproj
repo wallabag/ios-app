@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09190AFB2ACD461B00634123 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0951C61729CC2EB000D8E8C6 /* Assets.xcassets */; };
+		0940869A2B684842000DA980 /* AddEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094086992B684842000DA980 /* AddEntryModel.swift */; };
 		094AA03E2629EB1F006E5605 /* wallabagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094AA03D2629EB1F006E5605 /* wallabagTests.swift */; };
 		094AA05A2629EB60006E5605 /* ImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094A9FED2629E6BB006E5605 /* ImageCacheTests.swift */; };
 		094AA0692629EB98006E5605 /* ImageDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094AA00F2629E739006E5605 /* ImageDownloaderTests.swift */; };
@@ -146,6 +147,7 @@
 /* Begin PBXFileReference section */
 		093D137226263A96008C2150 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = Library/Frameworks/IntentsUI.framework; sourceTree = DEVELOPER_DIR; };
 		093D139E26263B05008C2150 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		094086992B684842000DA980 /* AddEntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryModel.swift; sourceTree = "<group>"; };
 		09483CC6270498C20084CEB2 /* SharedLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SharedLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		09483CCC270499120084CEB2 /* WallabagKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WallabagKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		09483CCF27049B3E0084CEB2 /* WallabagKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WallabagKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -299,6 +301,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		094086972B684837000DA980 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				09644C5725C98596000FFDA1 /* AddEntryView.swift */,
+				094086992B684842000DA980 /* AddEntryModel.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
 		094A9FEC2629E6A3006E5605 /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,9 +486,9 @@
 		09644C5525C9858B000FFDA1 /* Entry */ = {
 			isa = PBXGroup;
 			children = (
+				094086972B684837000DA980 /* Add */,
 				09644C7725C985AE000FFDA1 /* Picture */,
 				09644C6725C9859C000FFDA1 /* UI */,
-				09644C5725C98596000FFDA1 /* AddEntryView.swift */,
 				09644C5B25C98596000FFDA1 /* EntriesListView.swift */,
 				09644C5825C98596000FFDA1 /* EntriesView.swift */,
 				09644C5925C98596000FFDA1 /* EntryRowView.swift */,
@@ -984,6 +995,7 @@
 			files = (
 				09644C5C25C98596000FFDA1 /* WebView.swift in Sources */,
 				09644B5E25C98116000FFDA1 /* AppDelegate.swift in Sources */,
+				0940869A2B684842000DA980 /* AddEntryModel.swift in Sources */,
 				09644D1825C98755000FFDA1 /* AppDelegateExtension.swift in Sources */,
 				09644BD825C9833E000FFDA1 /* DependencyInjection.swift in Sources */,
 				09644B5725C9810A000FFDA1 /* WallabagApp.swift in Sources */,

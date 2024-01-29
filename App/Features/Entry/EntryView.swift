@@ -7,7 +7,7 @@ struct EntryView: View {
     @Environment(\.managedObjectContext) var context: NSManagedObjectContext
     @Environment(\.openURL) var openURL
     @Environment(\.dismiss) private var dismiss
-    @EnvironmentObject var appSync: AppSync
+    @Environment(AppSync.self) var appSync: AppSync
     #if os(iOS)
         @EnvironmentObject var player: PlayerPublisher
     #endif

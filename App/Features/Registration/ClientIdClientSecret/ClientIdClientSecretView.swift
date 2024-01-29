@@ -2,7 +2,7 @@ import SharedLib
 import SwiftUI
 
 struct ClientIdClientSecretView: View {
-    @StateObject var clientIdSecretViewModel = ClientIdSecretViewModel()
+    @State private var clientIdSecretViewModel = ClientIdSecretViewModel()
 
     var body: some View {
         Form {
@@ -20,7 +20,15 @@ struct ClientIdClientSecretView: View {
                     .autocapitalization(.none)
                 #endif
             }
-            NavigationLink("Next", destination: LoginView()).disabled(!clientIdSecretViewModel.isValid)
+            Button(action: {
+                clientIdSecretViewModel.goNext()
+            }, label: {
+                Text("Next")
+            })
+            .disabled(!clientIdSecretViewModel.isValid)
+        }
+        .navigationDestination(isPresented: $clientIdSecretViewModel.shouldGoNextStep) {
+            LoginView()
         }
         #if os(iOS)
         .navigationBarTitle("Client id & secret")
@@ -32,12 +40,8 @@ struct ClientIdClientSecretView: View {
     }
 }
 
-#if DEBUG
-    struct ClientIdClientSecretView_Previews: PreviewProvider {
-        static var previews: some View {
-            NavigationView {
-                ClientIdClientSecretView()
-            }
-        }
+#Preview {
+    NavigationView {
+        ClientIdClientSecretView()
     }
-#endif
+}

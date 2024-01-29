@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct WallabagPlusProtectedModifier: ViewModifier {
-    @EnvironmentObject private var wallabagPlusStore: WallabagPlusStore
+    @Environment(WallabagPlusStore.self) private var wallabagPlusStore
 
     func body(content: Content) -> some View {
         VStack {

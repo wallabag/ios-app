@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct RefreshButton: View {
-    @EnvironmentObject var appSync: AppSync
+    @Environment(AppSync.self) var appSync: AppSync
 
     var body: some View {
         HStack {
@@ -31,6 +31,6 @@ struct RefreshButton: View {
 
 struct RefreshButton_Previews: PreviewProvider {
     static var previews: some View {
-        RefreshButton().environmentObject(AppSync())
+        RefreshButton().environment(AppSync())
     }
 }

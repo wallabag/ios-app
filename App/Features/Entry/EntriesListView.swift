@@ -4,7 +4,7 @@ import SwiftUI
 
 struct EntriesListView: View {
     @Environment(\.managedObjectContext) var context: NSManagedObjectContext
-    @EnvironmentObject var appSync: AppSync
+    @Environment(AppSync.self) var appSync: AppSync
     @FetchRequest var entries: FetchedResults<Entry>
 
     init(predicate: NSPredicate, entriesSortAscending: Bool) {

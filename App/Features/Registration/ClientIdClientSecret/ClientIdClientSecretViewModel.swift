@@ -1,30 +1,25 @@
-import Combine
 import Foundation
+import Observation
 import SharedLib
-import SwiftUI
 
-class ClientIdSecretViewModel: ObservableObject {
-    private(set) var isValid: Bool = false
+@Observable
+final class ClientIdSecretViewModel {
+    var isValid: Bool {
+        !clientId.isEmpty && !clientSecret.isEmpty
+    }
 
-    @Published var clientId: String = ""
-    @Published var clientSecret: String = ""
-
-    private var cancellable: AnyCancellable?
+    var clientId: String = ""
+    var clientSecret: String = ""
+    var shouldGoNextStep = false
 
     init() {
         clientId = WallabagUserDefaults.clientId
         clientSecret = WallabagUserDefaults.clientSecret
-
-        cancellable = Publishers.CombineLatest($clientId, $clientSecret).sink { [unowned self] clientId, clientSecret in
-            isValid = !clientId.isEmpty && !clientSecret.isEmpty
-            if isValid {
-                WallabagUserDefaults.clientId = clientId.trimmingCharacters(in: .whitespacesAndNewlines)
-                WallabagUserDefaults.clientSecret = clientSecret.trimmingCharacters(in: .whitespacesAndNewlines)
-            }
-        }
     }
 
-    deinit {
-        cancellable?.cancel()
+    func goNext() {
+        WallabagUserDefaults.clientId = clientId.trimmingCharacters(in: .whitespacesAndNewlines)
+        WallabagUserDefaults.clientSecret = clientSecret.trimmingCharacters(in: .whitespacesAndNewlines)
+        shouldGoNextStep = true
     }
 }

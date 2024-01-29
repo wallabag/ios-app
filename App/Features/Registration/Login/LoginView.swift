@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @StateObject var loginViewModel = LoginViewModel()
+    @State var loginViewModel = LoginViewModel()
 
     var body: some View {
         Form {

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ServerView: View {
-    @StateObject var serverViewModel = ServerViewModel()
+    @State private var serverViewModel = ServerViewModel()
 
     var body: some View {
         Form {
@@ -12,9 +12,15 @@ struct ServerView: View {
                     .autocapitalization(.none)
                 #endif
             }
-            NavigationLink(destination: ClientIdClientSecretView()) {
+            Button(action: {
+                serverViewModel.goNext()
+            }, label: {
                 Text("Next")
-            }.disabled(!serverViewModel.isValid)
+            })
+            .disabled(!serverViewModel.isValid)
+        }
+        .navigationDestination(isPresented: $serverViewModel.shouldGoNextStep) {
+            ClientIdClientSecretView()
         }
         #if os(iOS)
         .navigationBarTitle("Server")

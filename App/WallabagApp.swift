@@ -13,14 +13,15 @@ struct WallabagApp: App {
         @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     #endif
 
-    @InjectedObject(\.wallabagPlusStore) private var wallabagPlusStore
+    @State private var router = Container.shared.router()
+    @State private var appSync = Container.shared.appSync()
+    @State private var wallabagPlusStore = Container.shared.wallabagPlusStore()
+
     @InjectedObject(\.appState) private var appState
-    @InjectedObject(\.router) private var router
     #if os(iOS)
         @InjectedObject(\.playerPublisher) private var playerPublisher
     #endif
     @InjectedObject(\.errorHandler) private var errorHandler
-    @InjectedObject(\.appSync) private var appSync
     @InjectedObject(\.appSetting) private var appSetting
     @Injected(\.coreDataSync) private var coreDataSync
     @Injected(\.coreData) private var coreData
@@ -32,11 +33,11 @@ struct WallabagApp: App {
             #if os(iOS)
                 .environmentObject(playerPublisher)
             #endif
-                .environmentObject(router)
+                .environment(router)
+                .environment(appSync)
+                .environment(wallabagPlusStore)
                 .environmentObject(errorHandler)
-                .environmentObject(appSync)
                 .environmentObject(appSetting)
-                .environmentObject(wallabagPlusStore)
                 .environment(\.managedObjectContext, coreData.viewContext)
                 .subscriptionStatusTask(for: wallabagPlusStore.groupID) { task in
                     _ = await task.map { statues in

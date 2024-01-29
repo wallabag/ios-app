@@ -15,7 +15,7 @@ struct WallabagPlusSubscribeView: View {
     @BundleKey("TERMS_OF_USE_URL")
     private var termsOfUseURL
 
-    @EnvironmentObject var wallabagPlusStore: WallabagPlusStore
+    @Environment(WallabagPlusStore.self) var wallabagPlusStore
 
     var body: some View {
         SubscriptionStoreView(groupID: wallabagPlusStore.groupID, visibleRelationships: .all)

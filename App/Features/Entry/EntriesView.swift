@@ -3,7 +3,7 @@ import CoreData
 import SwiftUI
 
 struct EntriesView: View {
-    @EnvironmentObject var router: Router
+    @Environment(Router.self) var router: Router
     @EnvironmentObject var appState: AppState
     @StateObject var searchViewModel = SearchViewModel()
     @State var entriesSortAscending = false
