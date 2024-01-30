@@ -4,24 +4,57 @@ import SwiftUI
 struct TagListFor: View {
     @EnvironmentObject var appState: AppState
     @State private var tagLabel: String = ""
+    @ObservedObject var entry: Entry
 
-    @ObservedObject var tagsForEntry: TagsForEntryPublisher
+    @State var viewModel = TagsForEntryViewModel()
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Tag").font(.largeTitle).bold().padding()
-            HStack {
-                TextField("New tag", text: $tagLabel)
-                Button(action: {
-                    Task {
-                        await tagsForEntry.add(tag: tagLabel)
-                        tagLabel = ""
+        NavigationStack {
+            Form {
+                Section("New tag") {
+                    TextField("Tag name", text: $tagLabel)
+                    Button(action: {
+                        Task {
+                            await viewModel.add(tag: tagLabel, for: entry)
+                            tagLabel = ""
+                        }
+                    }, label: {
+                        if viewModel.isLoading {
+                            ProgressView()
+                        } else {
+                            Text("Add")
+                        }
+                    })
+                    .disabled(viewModel.isLoading)
+                }
+                Section("Tags list") {
+                    List(viewModel.tags) { tag in
+                        Button(action: {
+                            Task {
+                                await viewModel.toggle(tag: tag, for: entry)
+                            }
+                        }, label: {
+                            HStack {
+                                Text(tag.label)
+                                Spacer()
+                                if viewModel.isLoading {
+                                    ProgressView()
+                                } else {
+                                    Image(systemName: tag.isChecked ? "checkmark.circle" : "circle")
+                                }
+                            }
+                            .contentShape(Rectangle())
+                        })
+                        .buttonStyle(.plain)
+                        .disabled(viewModel.isLoading)
                     }
-                }, label: { Text("Add") })
-            }.padding(.horizontal)
-            List(tagsForEntry.tags) { tag in
-                TagRow(tag: tag, tagsForEntry: tagsForEntry)
+                }
             }
+            .task {
+                await viewModel.load(for: entry)
+            }
+            .navigationTitle("Tag")
+            .navigationBarTitleDisplayMode(.large)
         }
     }
 }

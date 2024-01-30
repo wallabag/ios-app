@@ -33,8 +33,8 @@ final class AppSync {
         progress = 0
         entriesSynced = []
         Task.detached(priority: .userInitiated) { [unowned self] in
-            await synchronizeEntries()
             await synchronizeTags()
+            await synchronizeEntries()
             purge()
             await MainActor.run {
                 self.inProgress = false
@@ -141,6 +141,7 @@ extension AppSync {
                     tags[wallabagTag.id] = tag
                 }
             }
+            try backgroundContext.save()
         } catch _ {}
     }
 }
