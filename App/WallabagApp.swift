@@ -16,12 +16,13 @@ struct WallabagApp: App {
     @State private var router = Container.shared.router()
     @State private var appSync = Container.shared.appSync()
     @State private var wallabagPlusStore = Container.shared.wallabagPlusStore()
+    @State private var errorHandler = Container.shared.errorHandler()
 
     @InjectedObject(\.appState) private var appState
     #if os(iOS)
-        @InjectedObject(\.playerPublisher) private var playerPublisher
+        @State private var playerPublisher = Container.shared.playerPublisher()
     #endif
-    @InjectedObject(\.errorHandler) private var errorHandler
+
     @InjectedObject(\.appSetting) private var appSetting
     @Injected(\.coreDataSync) private var coreDataSync
     @Injected(\.coreData) private var coreData
@@ -31,12 +32,12 @@ struct WallabagApp: App {
             MainView()
                 .environmentObject(appState)
             #if os(iOS)
-                .environmentObject(playerPublisher)
+                .environment(playerPublisher)
             #endif
                 .environment(router)
                 .environment(appSync)
                 .environment(wallabagPlusStore)
-                .environmentObject(errorHandler)
+                .environment(errorHandler)
                 .environmentObject(appSetting)
                 .environment(\.managedObjectContext, coreData.viewContext)
                 .subscriptionStatusTask(for: wallabagPlusStore.groupID) { task in

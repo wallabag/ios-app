@@ -9,7 +9,7 @@ struct EntryView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(AppSync.self) var appSync: AppSync
     #if os(iOS)
-        @EnvironmentObject var player: PlayerPublisher
+        @Environment(PlayerPublisher.self) var player: PlayerPublisher
     #endif
     @ObservedObject var entry: Entry
     @State var showTag: Bool = false
@@ -138,7 +138,7 @@ struct EntryView: View {
             let coreData = Container.shared.coreData()
             EntryView(entry: Entry(context: coreData.viewContext))
             #if os(iOS)
-                .environmentObject(PlayerPublisher())
+                .environment(PlayerPublisher())
             #endif
                 .environment(\.managedObjectContext, coreData.viewContext)
         }

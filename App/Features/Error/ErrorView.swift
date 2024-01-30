@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ErrorView: View {
-    @EnvironmentObject var errorViewModel: ErrorViewModel
+    @Environment(ErrorViewModel.self) var errorViewModel: ErrorViewModel
     var body: some View {
         errorViewModel.lastError.map {
             Text($0.localizedDescription)

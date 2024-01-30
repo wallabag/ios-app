@@ -4,7 +4,7 @@ import SwiftUI
     import UIKit
 
     struct EntryPicture: View {
-        @StateObject var imagePublisher = ImageDownloaderPublisher()
+        @State var imagePublisher = ImageDownloaderPublisher()
 
         var url: String?
 

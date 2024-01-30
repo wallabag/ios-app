@@ -3,7 +3,7 @@ import SwiftUI
 
 struct MainView: View {
     @EnvironmentObject var appState: AppState
-    @EnvironmentObject var player: PlayerPublisher
+    @Environment(PlayerPublisher.self) var player
     @Environment(Router.self) var router: Router
 
     var body: some View {
