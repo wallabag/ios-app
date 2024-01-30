@@ -1,6 +1,6 @@
 import Foundation
 
-public struct WallabagConfig: Decodable {
+public struct WallabagConfig: Decodable, Sendable {
     public let id: Int
     public let itemsPerPage: Int
     public let language: String

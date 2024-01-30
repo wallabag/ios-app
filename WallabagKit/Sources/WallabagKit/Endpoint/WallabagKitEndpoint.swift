@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol WallabagKitEndpoint {
+public protocol WallabagKitEndpoint: Sendable {
     associatedtype Object: Decodable
     func method() -> HttpMethod
     func endpoint() -> String
