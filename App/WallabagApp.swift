@@ -22,7 +22,6 @@ struct WallabagApp: App {
     #if os(iOS)
         @State private var playerPublisher = Container.shared.playerPublisher()
     #endif
-
     @InjectedObject(\.appSetting) private var appSetting
     @Injected(\.coreDataSync) private var coreDataSync
     @Injected(\.coreData) private var coreData

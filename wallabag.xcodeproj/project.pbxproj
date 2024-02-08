@@ -74,8 +74,7 @@
 		09644CF225C986EE000FFDA1 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644CF025C986EE000FFDA1 /* SearchViewModel.swift */; };
 		09644CF325C986EE000FFDA1 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644CF125C986EE000FFDA1 /* SearchView.swift */; };
 		09644CFD25C9870C000FFDA1 /* TagListFor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644CFA25C9870C000FFDA1 /* TagListFor.swift */; };
-		09644CFE25C9870C000FFDA1 /* TagRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644CFB25C9870C000FFDA1 /* TagRow.swift */; };
-		09644CFF25C9870C000FFDA1 /* TagsForEntryPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644CFC25C9870C000FFDA1 /* TagsForEntryPublisher.swift */; };
+		09644CFF25C9870C000FFDA1 /* TagsForEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644CFC25C9870C000FFDA1 /* TagsForEntryViewModel.swift */; };
 		09644D0825C9871A000FFDA1 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644D0625C9871A000FFDA1 /* TipView.swift */; };
 		09644D0925C9871A000FFDA1 /* TipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644D0725C9871A000FFDA1 /* TipViewModel.swift */; };
 		09644D1025C9872F000FFDA1 /* BundleKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644D0F25C9872F000FFDA1 /* BundleKey.swift */; };
@@ -220,8 +219,7 @@
 		09644CF025C986EE000FFDA1 /* SearchViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		09644CF125C986EE000FFDA1 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		09644CFA25C9870C000FFDA1 /* TagListFor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagListFor.swift; sourceTree = "<group>"; };
-		09644CFB25C9870C000FFDA1 /* TagRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagRow.swift; sourceTree = "<group>"; };
-		09644CFC25C9870C000FFDA1 /* TagsForEntryPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsForEntryPublisher.swift; sourceTree = "<group>"; };
+		09644CFC25C9870C000FFDA1 /* TagsForEntryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsForEntryViewModel.swift; sourceTree = "<group>"; };
 		09644D0625C9871A000FFDA1 /* TipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 		09644D0725C9871A000FFDA1 /* TipViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipViewModel.swift; sourceTree = "<group>"; };
 		09644D0F25C9872F000FFDA1 /* BundleKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleKey.swift; sourceTree = "<group>"; };
@@ -611,8 +609,7 @@
 			isa = PBXGroup;
 			children = (
 				09644CFA25C9870C000FFDA1 /* TagListFor.swift */,
-				09644CFB25C9870C000FFDA1 /* TagRow.swift */,
-				09644CFC25C9870C000FFDA1 /* TagsForEntryPublisher.swift */,
+				09644CFC25C9870C000FFDA1 /* TagsForEntryViewModel.swift */,
 			);
 			path = Tag;
 			sourceTree = "<group>";
@@ -1034,7 +1031,6 @@
 				099CD1312B501D950029E94A /* WallabagPlusStore.swift in Sources */,
 				09644CD725C986C0000FFDA1 /* ClientIdClientSecretViewModel.swift in Sources */,
 				09644CCB25C9869D000FFDA1 /* RegistrationView.swift in Sources */,
-				09644CFE25C9870C000FFDA1 /* TagRow.swift in Sources */,
 				09644BFC25C983F8000FFDA1 /* Entry.swift in Sources */,
 				097F81EB25CB18BA006C85F6 /* Router.swift in Sources */,
 				81505C5D2B5DC23C003B5CDE /* AddEntryIntent.swift in Sources */,
@@ -1062,7 +1058,7 @@
 				09644CDF25C986C6000FFDA1 /* LoginViewModel.swift in Sources */,
 				09644C5D25C98596000FFDA1 /* AddEntryView.swift in Sources */,
 				09644C6025C98596000FFDA1 /* EntryView.swift in Sources */,
-				09644CFF25C9870C000FFDA1 /* TagsForEntryPublisher.swift in Sources */,
+				09644CFF25C9870C000FFDA1 /* TagsForEntryViewModel.swift in Sources */,
 				09644D1025C9872F000FFDA1 /* BundleKey.swift in Sources */,
 				81505C5B2B5DC21F003B5CDE /* WallabagIntent.swift in Sources */,
 				09644BAF25C98213000FFDA1 /* RefreshButton.swift in Sources */,
@@ -1281,7 +1277,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_STRICT_CONCURRENCY = targeted;
 			};
 			name = Debug;
 		};
@@ -1339,7 +1335,7 @@
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_STRICT_CONCURRENCY = targeted;
 			};
 			name = Release;
 		};

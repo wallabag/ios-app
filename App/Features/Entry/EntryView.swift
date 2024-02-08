@@ -80,8 +80,8 @@ struct EntryView: View {
             )
         }
         .sheet(isPresented: $showTag) {
-            TagListFor(tagsForEntry: TagsForEntryPublisher(entry: entry))
-                .environment(\.managedObjectContext, context)
+            TagListFor(entry: entry)
+                .presentationDetents([.medium, .large])
         }
         #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)

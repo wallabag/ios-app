@@ -23,3 +23,9 @@ extension Tag {
     @NSManaged dynamic var label: String
     @NSManaged dynamic var slug: String
 }
+
+extension Tag: Comparable {
+    static func < (lhs: Tag, rhs: Tag) -> Bool {
+        lhs.label < rhs.label
+    }
+}
