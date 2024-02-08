@@ -1,6 +1,7 @@
 import SwiftUI
 
 #if os(iOS)
+    @MainActor
     struct HapticNotificationButtonStyle: ButtonStyle {
         let feedbackType: UINotificationFeedbackGenerator.FeedbackType
         func makeBody(configuration: Configuration) -> some View {
