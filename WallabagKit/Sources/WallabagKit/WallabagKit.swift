@@ -69,69 +69,7 @@ public class WallabagKit {
         try handleStatusCode(from: response, with: data)
 
         return try decoder.decode(T.Object.self, from: data)
-
-//        fetch(to: to)
-//            .decode(type: T.self, decoder: decoder)
-//            .mapErrorToWallabagKitError()
-//            .eraseToAnyPublisher()
     }
-
-    //    private func fetch(to: WallabagKitEndpoint) -> AnyPublisher<Data, WallabagKitError> {
-    //        session.dataTaskPublisher(for: request(for: to, withAuth: true))
-    //            .tryMap { data, response in
-    //                guard let response = response as? HTTPURLResponse else { fatalError() }
-    //
-    //                try self.handleStatusCode(from: response, with: data)
-    //
-    //                return data
-    //            }
-    //            .tryCatch { error in
-    //                self.requestToken()
-    //                    .tryMap { token -> AnyPublisher<Data, WallabagKitError> in
-    //                        if token != nil {
-    //                            return self.fetch(to: to)
-    //                        }
-    //                        throw WallabagKitError.invalidToken
-    //                    }
-    //                    .mapError { error in WallabagKitError.wrap(error: error) }
-    //                    .switchToLatest()
-    //                    .eraseToAnyPublisher()
-    //            }
-    //            .mapErrorToWallabagKitError()
-    //            .eraseToAnyPublisher()
-    //    }
-
-//    public func send<T: Decodable>(to: WallabagKitEndpoint) -> AnyPublisher<T, WallabagKitError> {
-//        fetch(to: to)
-//            .decode(type: T.self, decoder: decoder)
-//            .mapErrorToWallabagKitError()
-//            .eraseToAnyPublisher()
-//    }
-
-//    private func fetch(to: WallabagKitEndpoint) -> AnyPublisher<Data, WallabagKitError> {
-//        session.dataTaskPublisher(for: request(for: to, withAuth: true))
-//            .tryMap { data, response in
-//                guard let response = response as? HTTPURLResponse else { fatalError() }
-//
-//                try self.handleStatusCode(from: response, with: data)
-//
-//                return data
-//            }
-//            .tryCatch { error in
-//                self.requestToken()
-//                    .tryMap { token -> AnyPublisher<Data, WallabagKitError> in
-//                        if token != nil {
-//                            return self.fetch(to: to)
-//                        }
-//                        throw WallabagKitError.invalidToken
-//                    }
-//                    .mapError { error in WallabagKitError.wrap(error: error) }
-//                    .switchToLatest()
-//                    .eraseToAnyPublisher()
-//            }
-//            .mapErrorToWallabagKitError()
-//            .eraseToAnyPublisher()
-//    }
 
     public func request(for endpoint: any WallabagKitEndpoint, withAuth: Bool = false) -> URLRequest {
         var urlRequest = URLRequest(url: URL(string: "\(host)\(endpoint.endpoint())")!)
