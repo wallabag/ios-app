@@ -24,16 +24,16 @@
         private var cancellableNotification: AnyCancellable?
 
         init() {
-//            cancellableNotification = NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)
-//                .map { _ -> Bool in
-//                    guard let pasteBoardUrl = UIPasteboard.general.url,
-//                          pasteBoardUrl.absoluteString != WallabagUserDefaults.previousPasteBoardUrl
-//                    else {
-//                        return false
-//                    }
-//                    return true
-//                }
-//                .assign(to: \.showPasteBoardView, on: self)
+            cancellableNotification = NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)
+                .map { _ -> Bool in
+                    guard let pasteBoardUrl = UIPasteboard.general.url,
+                          pasteBoardUrl.absoluteString != WallabagUserDefaults.previousPasteBoardUrl
+                    else {
+                        return false
+                    }
+                    return true
+                }
+                .assign(to: \.showPasteBoardView, on: self)
         }
 
         deinit {
