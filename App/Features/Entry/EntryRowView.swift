@@ -25,6 +25,25 @@ struct EntryRowView: View {
                         .font(.footnote)
                     Spacer()
                 }
+                ScrollView(.horizontal) {
+                    HStack {
+                        ForEach(entry.tags.sorted(by: >)) { tag in
+                            HStack(spacing: 2) {
+                                Image(systemName: "tag")
+                                Text(tag.label)
+                            }
+                            .foregroundStyle(Color.primary)
+                            .padding(4)
+                            .background(
+                                Capsule()
+                                    .fill(Color.gray.quaternary)
+                                    .clipped()
+                            )
+                            .clipShape(Capsule())
+                            .font(.footnote)
+                        }
+                    }
+                }
             }
         }
     }
