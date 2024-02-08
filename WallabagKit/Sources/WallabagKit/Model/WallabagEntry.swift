@@ -1,6 +1,6 @@
 import Foundation
 
-public struct WallabagEntry: Decodable {
+public struct WallabagEntry: Decodable, Sendable {
     public let id: Int
     public let userId: Int?
     public let uid: String?

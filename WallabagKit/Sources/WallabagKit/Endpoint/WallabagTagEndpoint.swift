@@ -1,6 +1,8 @@
 import Foundation
 
 public enum WallabagTagEndpoint: WallabagKitEndpoint {
+    public typealias Object = WallabagTag
+
     case get
 
     public func method() -> HttpMethod {

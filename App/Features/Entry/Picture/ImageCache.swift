@@ -4,7 +4,7 @@ import Foundation
     import UIKit
 
     actor ImageCache {
-        static var shared = ImageCache()
+        static let shared = ImageCache()
 
         private var memoryCache: NSCache<NSString, UIImage> = {
             let cache = NSCache<NSString, UIImage>()

@@ -15,9 +15,7 @@ struct AddEntryIntent: WallabagIntent {
 
     func perform() async throws -> some IntentResult {
         _ = try await kit.send(to: WallabagEntryEndpoint.add(url: url.absoluteString))
-            .receive(on: DispatchQueue.main)
-            .values
-            .first(where: { (_: WallabagEntry) in true })
+
         return .result()
     }
 }

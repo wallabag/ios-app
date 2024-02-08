@@ -1,12 +1,15 @@
 #if os(iOS)
-    import Combine
     import Factory
     import Foundation
+    import Observation
+    import SwiftUI
     import UIKit
 
-    final class ImageDownloaderPublisher: ObservableObject {
+    @Observable
+    final class ImageDownloaderPublisher {
+        @ObservationIgnored
         @Injected(\.imageDownloader) private var imageDownloader
-        @Published var image: UIImage?
+        var image: UIImage?
 
         @MainActor
         func loadImage(url: String?) async {

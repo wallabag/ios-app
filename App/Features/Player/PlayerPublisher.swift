@@ -1,18 +1,19 @@
 import AVFoundation
-import Combine
 import Foundation
 import MediaPlayer
+import Observation
 import SwiftUI
 
 #if os(iOS)
-    final class PlayerPublisher: ObservableObject {
+    @Observable
+    final class PlayerPublisher {
         static var shared = PlayerPublisher()
         private var speecher = AVSpeechSynthesizer()
         private var utterance: AVSpeechUtterance?
 
-        @Published var podcast: Podcast?
-        @Published var showPlayer: Bool = false
-        @Published private(set) var isPlaying = false {
+        var podcast: Podcast?
+        var showPlayer: Bool = false
+        private(set) var isPlaying = false {
             willSet {
                 if newValue {
                     play()

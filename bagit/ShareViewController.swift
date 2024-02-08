@@ -1,4 +1,5 @@
 import Combine
+import Foundation
 import MobileCoreServices
 import SharedLib
 import Social
@@ -56,18 +57,14 @@ class ShareViewController: UIViewController {
                     return
                 }
 
-                self.requestCancellable = kit.send(to: WallabagEntryEndpoint.add(url: shareURL))
-                    .receive(on: DispatchQueue.main)
-                    .sink(receiveCompletion: { completion in
-                        switch completion {
-                        case .finished:
-                            self.clearView(withError: nil)
-                        case .failure:
-                            self.clearView(withError: .duringAdding)
-                        }
-                    }, receiveValue: { (_: WallabagEntry) in
-
-                    })
+                Task {
+                    do {
+                        let _: WallabagEntry = try await kit.send(to: WallabagEntryEndpoint.add(url: shareURL))
+                        self.clearView(withError: nil)
+                    } catch {
+                        self.clearView(withError: .duringAdding)
+                    }
+                }
             }
             // Missing clearView
 

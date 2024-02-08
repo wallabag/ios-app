@@ -1,26 +1,25 @@
-import Combine
 import Foundation
+import Observation
 import SharedLib
 import SwiftUI
 
-final class ServerViewModel: ObservableObject {
-    @Published private(set) var isValid: Bool = false
-    @Published var url: String = ""
+@Observable
+final class ServerViewModel {
+    var isValid: Bool {
+        validateServer(host: url)
+    }
 
-    private var cancellable: AnyCancellable?
+    var url: String = ""
+
+    var shouldGoNextStep = false
 
     init() {
         url = WallabagUserDefaults.host
-        cancellable = $url.sink { [unowned self] url in
-            isValid = validateServer(host: url)
-            if isValid {
-                WallabagUserDefaults.host = url
-            }
-        }
     }
 
-    deinit {
-        cancellable?.cancel()
+    func goNext() {
+        WallabagUserDefaults.host = url
+        shouldGoNextStep = true
     }
 
     private func validateServer(host: String) -> Bool {

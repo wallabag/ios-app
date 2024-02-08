@@ -1,6 +1,8 @@
 import Foundation
 
 enum WallabagOauth: WallabagKitEndpoint {
+    typealias Object = WallabagToken
+
     func method() -> HttpMethod {
         .post
     }

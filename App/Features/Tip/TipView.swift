@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct TipView: View {
-    @StateObject var tipViewModel = TipViewModel()
+    @State var tipViewModel = TipViewModel()
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -48,13 +48,11 @@ struct TipView: View {
     }
 
     @MainActor
-    func purchase() async {
+    private func purchase() async {
         _ = try? await tipViewModel.purchaseTip()
     }
 }
 
-struct TipView_Previews: PreviewProvider {
-    static var previews: some View {
-        TipView()
-    }
+#Preview {
+    TipView()
 }

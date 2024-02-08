@@ -19,10 +19,6 @@ struct RegistrationView: View {
     }
 }
 
-#if DEBUG
-    struct RegistrationView_Previews: PreviewProvider {
-        static var previews: some View {
-            RegistrationView()
-        }
-    }
-#endif
+#Preview {
+    RegistrationView()
+}

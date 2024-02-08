@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		09190AFB2ACD461B00634123 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0951C61729CC2EB000D8E8C6 /* Assets.xcassets */; };
+		0940869A2B684842000DA980 /* AddEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094086992B684842000DA980 /* AddEntryModel.swift */; };
 		094AA03E2629EB1F006E5605 /* wallabagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094AA03D2629EB1F006E5605 /* wallabagTests.swift */; };
 		094AA05A2629EB60006E5605 /* ImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094A9FED2629E6BB006E5605 /* ImageCacheTests.swift */; };
 		094AA0692629EB98006E5605 /* ImageDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094AA00F2629E739006E5605 /* ImageDownloaderTests.swift */; };
@@ -106,6 +107,8 @@
 		09BE0AF42A9F45E900193FBF /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BE0AF32A9F45E900193FBF /* View+Extension.swift */; };
 		09C34C7C29B1398B00B5C927 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 09C34C7B29B1398B00B5C927 /* SharedLib */; };
 		09C34C7E29B1399100B5C927 /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09C34C7D29B1399100B5C927 /* WallabagKit */; };
+		09FCA39F2B60766400148104 /* WallabagKit in Frameworks */ = {isa = PBXBuildFile; productRef = 09FCA39E2B60766400148104 /* WallabagKit */; };
+		09FCA3A32B60768000148104 /* SharedLib in Frameworks */ = {isa = PBXBuildFile; productRef = 09FCA3A22B60768000148104 /* SharedLib */; };
 		81505C5B2B5DC21F003B5CDE /* WallabagIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81505C5A2B5DC21F003B5CDE /* WallabagIntent.swift */; };
 		81505C5D2B5DC23C003B5CDE /* AddEntryIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81505C5C2B5DC23C003B5CDE /* AddEntryIntent.swift */; };
 /* End PBXBuildFile section */
@@ -144,6 +147,7 @@
 /* Begin PBXFileReference section */
 		093D137226263A96008C2150 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = Library/Frameworks/IntentsUI.framework; sourceTree = DEVELOPER_DIR; };
 		093D139E26263B05008C2150 /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
+		094086992B684842000DA980 /* AddEntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryModel.swift; sourceTree = "<group>"; };
 		09483CC6270498C20084CEB2 /* SharedLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SharedLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		09483CCC270499120084CEB2 /* WallabagKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WallabagKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		09483CCF27049B3E0084CEB2 /* WallabagKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WallabagKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -287,14 +291,25 @@
 				09C34C7E29B1399100B5C927 /* WallabagKit in Frameworks */,
 				097DD8FC2B4C0E02005D3930 /* OpenAPIRuntime in Frameworks */,
 				09C34C7C29B1398B00B5C927 /* SharedLib in Frameworks */,
+				09FCA39F2B60766400148104 /* WallabagKit in Frameworks */,
 				097DD8FE2B4C0E08005D3930 /* OpenAPIURLSession in Frameworks */,
 				097DD8FA2B4C0DB8005D3930 /* Factory in Frameworks */,
+				09FCA3A32B60768000148104 /* SharedLib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		094086972B684837000DA980 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				09644C5725C98596000FFDA1 /* AddEntryView.swift */,
+				094086992B684842000DA980 /* AddEntryModel.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
 		094A9FEC2629E6A3006E5605 /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,9 +486,9 @@
 		09644C5525C9858B000FFDA1 /* Entry */ = {
 			isa = PBXGroup;
 			children = (
+				094086972B684837000DA980 /* Add */,
 				09644C7725C985AE000FFDA1 /* Picture */,
 				09644C6725C9859C000FFDA1 /* UI */,
-				09644C5725C98596000FFDA1 /* AddEntryView.swift */,
 				09644C5B25C98596000FFDA1 /* EntriesListView.swift */,
 				09644C5825C98596000FFDA1 /* EntriesView.swift */,
 				09644C5925C98596000FFDA1 /* EntryRowView.swift */,
@@ -826,6 +841,8 @@
 				097DD8F92B4C0DB8005D3930 /* Factory */,
 				097DD8FB2B4C0E02005D3930 /* OpenAPIRuntime */,
 				097DD8FD2B4C0E08005D3930 /* OpenAPIURLSession */,
+				09FCA39E2B60766400148104 /* WallabagKit */,
+				09FCA3A22B60768000148104 /* SharedLib */,
 			);
 			productName = "wallabag (iOS)";
 			productReference = 09BFB28425C8348E00E12B4D /* wallabag.app */;
@@ -839,7 +856,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1510;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					094AA03A2629EB1F006E5605 = {
 						CreatedOnToolsVersion = 12.4;
@@ -879,6 +896,8 @@
 				097DD8F62B4C0D3A005D3930 /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */,
 				097DD8F72B4C0D54005D3930 /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */,
 				097DD8F82B4C0DB8005D3930 /* XCRemoteSwiftPackageReference "Factory" */,
+				09FCA39D2B60766400148104 /* XCLocalSwiftPackageReference "WallabagKit" */,
+				09FCA3A12B60768000148104 /* XCLocalSwiftPackageReference "SharedLib" */,
 			);
 			productRefGroup = 09BFB28525C8348E00E12B4D /* Products */;
 			projectDirPath = "";
@@ -976,6 +995,7 @@
 			files = (
 				09644C5C25C98596000FFDA1 /* WebView.swift in Sources */,
 				09644B5E25C98116000FFDA1 /* AppDelegate.swift in Sources */,
+				0940869A2B684842000DA980 /* AddEntryModel.swift in Sources */,
 				09644D1825C98755000FFDA1 /* AppDelegateExtension.swift in Sources */,
 				09644BD825C9833E000FFDA1 /* DependencyInjection.swift in Sources */,
 				09644B5725C9810A000FFDA1 /* WallabagApp.swift in Sources */,
@@ -1261,6 +1281,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
 			};
 			name = Debug;
 		};
@@ -1318,6 +1339,7 @@
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
 			};
 			name = Release;
 		};
@@ -1423,6 +1445,17 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		09FCA39D2B60766400148104 /* XCLocalSwiftPackageReference "WallabagKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = WallabagKit;
+		};
+		09FCA3A12B60768000148104 /* XCLocalSwiftPackageReference "SharedLib" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = SharedLib;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		09644B0D25C94C6B000FFDA1 /* XCRemoteSwiftPackageReference "swift-html-entities" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -1507,6 +1540,14 @@
 		09C34C7D29B1399100B5C927 /* WallabagKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = WallabagKit;
+		};
+		09FCA39E2B60766400148104 /* WallabagKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WallabagKit;
+		};
+		09FCA3A22B60768000148104 /* SharedLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SharedLib;
 		};
 /* End XCSwiftPackageProductDependency section */
 

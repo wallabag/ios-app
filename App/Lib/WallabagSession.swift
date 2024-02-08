@@ -5,7 +5,7 @@ import Foundation
 import SharedLib
 import WallabagKit
 
-class WallabagSession: ObservableObject {
+final class WallabagSession: ObservableObject {
     enum State {
         case unknown
         case connecting
@@ -19,78 +19,64 @@ class WallabagSession: ObservableObject {
     @CoreDataViewContext var coreDataContext: NSManagedObjectContext
     private var cancellable = Set<AnyCancellable>()
 
-    func requestSession(clientId: String, clientSecret: String, username: String, password: String) {
+    func requestSession(clientId: String, clientSecret: String, username: String, password: String) async {
         kit.clientId = clientId
         kit.clientSecret = clientSecret
         kit.username = username
         kit.password = password
 
-        state = .connecting
-        kit.requestToken()
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { completion in
-                if case let .failure(error) = completion {
-                    switch error {
-                    case let WallabagKitError.jsonError(jsonError):
-                        self.state = .error(reason: jsonError.errorDescription)
-                    case WallabagKitError.invalidApiEndpoint:
-                        self.state = .error(reason: "Invalid api endpoint, check your host configuration")
-                    default:
-                        self.state = .error(reason: "Unknown error")
-                    }
-                }
-            }, receiveValue: { token in
-                guard let token else { self.state = .unknown; return }
-                WallabagUserDefaults.refreshToken = token.refreshToken
-                WallabagUserDefaults.accessToken = token.accessToken
-                self.kit.accessToken = token.accessToken
-                self.kit.refreshToken = token.refreshToken
-                self.state = .connected
-            }).store(in: &cancellable)
-    }
-
-    func addEntry(url: String, completion: @escaping () -> Void) {
-        kit.send(to: WallabagEntryEndpoint.add(url: url))
-            .catch { _ in Empty<WallabagEntry, Never>() }
-            .sink { [unowned self] (wallabagEntry: WallabagEntry) in
-                let entry = Entry(context: coreDataContext)
-                entry.hydrate(from: wallabagEntry)
-                completion()
+        do {
+            let token = try await kit.requestTokenAsync()
+            WallabagUserDefaults.refreshToken = token.refreshToken
+            WallabagUserDefaults.accessToken = token.accessToken
+            kit.accessToken = token.accessToken
+            kit.refreshToken = token.refreshToken
+            state = .connected
+        } catch {
+            guard let error = error as? WallabagKitError else {
+                state = .error(reason: "Unknown error")
+                return
             }
-            .store(in: &cancellable)
+            switch error {
+            case let WallabagKitError.jsonError(jsonError):
+                state = .error(reason: jsonError.errorDescription)
+            case WallabagKitError.invalidApiEndpoint:
+                state = .error(reason: "Invalid api endpoint, check your host configuration")
+            default:
+                state = .error(reason: error.localizedDescription)
+            }
+        }
     }
 
-    func update(_ entry: Entry, parameters: WallabagKit.Parameters) {
-        kit.send(to: WallabagEntryEndpoint.update(id: entry.id, parameters: parameters)).sink(receiveCompletion: { _ in }, receiveValue: { (_: WallabagEntry) in })
-            .store(in: &cancellable)
+    func addEntry(url: String) async throws {
+        let wallabagEntry: WallabagEntry = try await kit.send(to: WallabagEntryEndpoint.add(url: url))
+
+        let entry = Entry(context: coreDataContext)
+        entry.hydrate(from: wallabagEntry)
     }
 
-    func delete(entry: Entry) {
-        kit.send(to: WallabagEntryEndpoint.delete(id: entry.id)).sink(receiveCompletion: { _ in }, receiveValue: { (_: WallabagEntry) in })
-            .store(in: &cancellable)
+    func update(_ entry: Entry, parameters: WallabagKit.Parameters) async throws {
+        _ = try await kit.send(to: WallabagEntryEndpoint.update(id: entry.id, parameters: parameters))
     }
 
-    func add(tag: String, for entry: Entry) {
-        kit.send(to: WallabagEntryEndpoint.addTag(tag: tag, entry: entry.id))
-            .sink(receiveCompletion: { _ in }, receiveValue: { (wallabagEntry: WallabagEntry) in
-                self.syncTag(for: entry, with: wallabagEntry)
-            })
-            .store(in: &cancellable)
+    func delete(entry: Entry) async throws {
+        _ = try await kit.send(to: WallabagEntryEndpoint.delete(id: entry.id))
     }
 
-    func refresh(entry: Entry) {
-        kit.send(to: WallabagEntryEndpoint.reload(id: entry.id))
-            .sink(receiveCompletion: { _ in }, receiveValue: { (wallabagEntry: WallabagEntry) in
-                entry.hydrate(from: wallabagEntry)
-            })
-            .store(in: &cancellable)
+    func add(tag: String, for entry: Entry) async throws {
+        let wallabagEntry = try await kit.send(to: WallabagEntryEndpoint.addTag(tag: tag, entry: entry.id))
+        syncTag(for: entry, with: wallabagEntry)
     }
 
-    func delete(tag: Tag, for entry: Entry) {
-        kit.send(to: WallabagEntryEndpoint.deleteTag(tagId: tag.id, entry: entry.id)).sink(receiveCompletion: { _ in }, receiveValue: { (wallabagEntry: WallabagEntry) in
-            self.syncTag(for: entry, with: wallabagEntry)
-        })
-        .store(in: &cancellable)
+    func refresh(entry: Entry) async throws {
+        let wallabagEntry = try await kit.send(to: WallabagEntryEndpoint.reload(id: entry.id))
+
+        entry.hydrate(from: wallabagEntry)
+    }
+
+    func delete(tag: Tag, for entry: Entry) async throws {
+        let wallabagEntry = try await kit.send(to: WallabagEntryEndpoint.deleteTag(tagId: tag.id, entry: entry.id))
+        syncTag(for: entry, with: wallabagEntry)
     }
 
     private func syncTag(for entry: Entry, with wallabagEntry: WallabagEntry) {
@@ -111,11 +97,7 @@ class WallabagSession: ObservableObject {
     }
 
     /// try retrieve wallabag config (available on server 2.5)
-    func config(completion: @escaping (WallabagConfig?) -> Void) {
-        kit.send(to: WallabagConfigEndpoint.get)
-            .replaceError(with: nil)
-            .sink(receiveValue: { (config: WallabagConfig?) in
-                completion(config)
-            }).store(in: &cancellable)
+    func config() async throws -> WallabagConfig? {
+        try? await kit.send(to: WallabagConfigEndpoint.get)
     }
 }

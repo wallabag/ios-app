@@ -53,6 +53,7 @@
                 }
             }
         }
+        // swiftlint:enable line_length
     #endif
 
 #endif

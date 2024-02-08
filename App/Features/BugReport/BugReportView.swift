@@ -17,8 +17,6 @@ struct BugReportView: View {
     }
 }
 
-struct BugReportView_Previews: PreviewProvider {
-    static var previews: some View {
-        BugReportView()
-    }
+#Preview {
+    BugReportView()
 }

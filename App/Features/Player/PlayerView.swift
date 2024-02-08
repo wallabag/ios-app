@@ -3,7 +3,7 @@ import SwiftUI
 
 #if os(iOS)
     struct PlayerView: View {
-        @EnvironmentObject var playerPublisher: PlayerPublisher
+        @Environment(PlayerPublisher.self) var playerPublisher: PlayerPublisher
 
         var body: some View {
             VStack {
@@ -65,11 +65,11 @@ import SwiftUI
 
         static var previews: some View {
             PlayerView()
-                .environmentObject(PlayerPublisher())
+                .environment(PlayerPublisher())
                 .previewLayout(.sizeThatFits)
 
             PlayerView()
-                .environmentObject(player)
+                .environment(player)
                 .previewLayout(.sizeThatFits)
         }
     }

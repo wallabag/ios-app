@@ -1,19 +1,14 @@
-//
-//  WallabagPlusStore.swift
-//  wallabag
-//
-//  Created by maxime marinel on 11/01/2024.
-//
-
 import Foundation
+import Observation
 import StoreKit
 
-final class WallabagPlusStore: ObservableObject {
+@Observable
+final class WallabagPlusStore {
     private var obs: Task<Void, Never>?
 
     let groupID = "21433277"
 
-    @Published var proUnlocked = false
+    var proUnlocked = false
 
     init() {
         obs = observeTransactionUpdates()

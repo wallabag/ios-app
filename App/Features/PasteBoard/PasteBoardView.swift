@@ -15,7 +15,9 @@ import SwiftUI
                             .lineLimit(1)
                         HStack {
                             Button(action: {
-                                pasteBoardViewModel.addUrl()
+                                Task {
+                                    await pasteBoardViewModel.addUrl()
+                                }
                             }, label: {
                                 Text("Add")
                             })

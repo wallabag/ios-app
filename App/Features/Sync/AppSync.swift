@@ -1,19 +1,25 @@
-import Combine
 import CoreData
 import Factory
 import Foundation
+import Observation
 import SharedLib
 import WallabagKit
 
-final class AppSync: ObservableObject {
+@Observable
+final class AppSync {
+    @ObservationIgnored
     @Injected(\.wallabagSession) private var session
+    @ObservationIgnored
     @Injected(\.errorHandler) private var errorViewModel
+    @ObservationIgnored
     @Injected(\.coreData) private var coreData
+    @ObservationIgnored
     @CoreDataViewContext var coreDataContext: NSManagedObjectContext
 
-    @Published private(set) var inProgress = false
-    @Published private(set) var progress: Float = 0.0
+    private(set) var inProgress = false
+    private(set) var progress: Float = 0.0
 
+    @ObservationIgnored
     private lazy var backgroundContext: NSManagedObjectContext = {
         let context = coreData.persistentContainer.newBackgroundContext()
         context.mergePolicy = NSOverwriteMergePolicy
@@ -100,7 +106,9 @@ extension AppSync {
     }
 
     func refresh(entry: Entry) {
-        session.refresh(entry: entry)
+        Task {
+            try? await session.refresh(entry: entry)
+        }
     }
 }
 

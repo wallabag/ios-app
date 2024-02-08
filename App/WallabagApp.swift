@@ -13,16 +13,18 @@ struct WallabagApp: App {
         @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     #endif
 
-    @InjectedObject(\.wallabagPlusStore) private var wallabagPlusStore
-    @Injected(\.appState) private var appState
-    @Injected(\.router) private var router
+    @State private var router = Container.shared.router()
+    @State private var appSync = Container.shared.appSync()
+    @State private var wallabagPlusStore = Container.shared.wallabagPlusStore()
+    @State private var errorHandler = Container.shared.errorHandler()
+
+    @InjectedObject(\.appState) private var appState
     #if os(iOS)
-        @Injected(\.playerPublisher) private var playerPublisher
+        @State private var playerPublisher = Container.shared.playerPublisher()
     #endif
-    @Injected(\.errorHandler) private var errorHandler
-    @Injected(\.appSync) private var appSync
+
+    @InjectedObject(\.appSetting) private var appSetting
     @Injected(\.coreDataSync) private var coreDataSync
-    @Injected(\.appSetting) private var appSetting
     @Injected(\.coreData) private var coreData
 
     var body: some Scene {
@@ -30,13 +32,13 @@ struct WallabagApp: App {
             MainView()
                 .environmentObject(appState)
             #if os(iOS)
-                .environmentObject(playerPublisher)
+                .environment(playerPublisher)
             #endif
-                .environmentObject(router)
-                .environmentObject(errorHandler)
-                .environmentObject(appSync)
+                .environment(router)
+                .environment(appSync)
+                .environment(wallabagPlusStore)
+                .environment(errorHandler)
                 .environmentObject(appSetting)
-                .environmentObject(wallabagPlusStore)
                 .environment(\.managedObjectContext, coreData.viewContext)
                 .subscriptionStatusTask(for: wallabagPlusStore.groupID) { task in
                     _ = await task.map { statues in
@@ -44,15 +46,17 @@ struct WallabagApp: App {
                     }
                 }
         }
-        .onChange(of: scenePhase) { state in
-            if state == .active {
-                appState.initSession()
+        .onChange(of: scenePhase) { _, newScenePhase in
+            if newScenePhase == .active {
+                Task {
+                    await appState.initSession()
+                }
                 #if os(iOS)
                     requestNotificationAuthorization()
                 #endif
             }
 
-            if state == .background {
+            if newScenePhase == .background {
                 coreData.saveContext()
                 updateBadge()
             }
@@ -84,9 +88,9 @@ struct WallabagApp: App {
     }
 
     private func setBadgeNumber(_ number: Int) {
-        #if os(iOS)
-            UIApplication.shared.applicationIconBadgeNumber = number
-        #endif
+        Task {
+            try? await UNUserNotificationCenter.current().setBadgeCount(number)
+        }
     }
 
     #if os(iOS)

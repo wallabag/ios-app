@@ -5,6 +5,7 @@
     import SharedLib
     import UIKit
 
+    @MainActor
     class PasteBoardViewModel: ObservableObject {
         @Published var showPasteBoardView: Bool = false {
             willSet {
@@ -39,8 +40,9 @@
             cancellableNotification?.cancel()
         }
 
-        func addUrl() {
-            session.addEntry(url: pasteBoardUrl) {}
+        @MainActor
+        func addUrl() async {
+            try? await session.addEntry(url: pasteBoardUrl)
             showPasteBoardView = false
         }
 

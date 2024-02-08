@@ -1,6 +1,8 @@
 import Foundation
 
 public enum WallabagEntryEndpoint: WallabagKitEndpoint {
+    public typealias Object = WallabagEntry
+
     case get(page: Int = 1, perPage: Int = 30)
     case add(url: String)
     case addTag(tag: String, entry: Int)

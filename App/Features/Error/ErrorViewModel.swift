@@ -1,19 +1,22 @@
 import Combine
 import Foundation
+import Observation
 
-final class ErrorViewModel: ObservableObject {
+@Observable
+final class ErrorViewModel {
     private var resetAfter: Double
+    private(set) var lastError: WallabagError?
 
     init(_ resetAfter: Double = 10) {
         self.resetAfter = resetAfter
     }
 
-    @Published private(set) var lastError: WallabagError?
-
     func setLast(_ error: WallabagError) {
         lastError = error
-        DispatchQueue.main.asyncAfter(deadline: .now() + resetAfter) { [weak self] in
-            self?.lastError = nil
+        Task.detached { [weak self] in
+            guard let self else { return }
+            try? await Task.sleep(for: .seconds(resetAfter))
+            lastError = nil
         }
     }
 }

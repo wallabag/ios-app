@@ -1,6 +1,6 @@
 import Foundation
 
-public struct WallabagCollection<T: Decodable>: Decodable {
+public struct WallabagCollection<T: Decodable>: Decodable, Sendable {
     public let limit: Int
     public let page: Int
     public let pages: Int
