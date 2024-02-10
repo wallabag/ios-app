@@ -59,6 +59,7 @@ class ShareViewController: UIViewController {
 
                 Task {
                     do {
+                        _ = try await kit.requestTokenAsync()
                         let _: WallabagEntry = try await kit.send(to: WallabagEntryEndpoint.add(url: shareURL))
                         self.clearView(withError: nil)
                     } catch {
