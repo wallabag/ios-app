@@ -7,9 +7,9 @@
 	<key>DOCUMENTATION_URL</key>
 	<string>https://doc.wallabag.org/en/apps/ios.html</string>
 	<key>PRIVACY_URL</key>
-    <string>https://www.district-web.fr/wallabag-reader/privacy</string>
-    <key>TERMS_OF_USE_URL</key>
-    <string>https://www.district-web.fr/wallabag-reader/privacy</string>
+	<string>https://www.district-web.fr/wallabag-reader/privacy</string>
+	<key>TERMS_OF_USE_URL</key>
+	<string>https://www.district-web.fr/wallabag-reader/privacy</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -58,5 +58,10 @@
 	</array>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.utilities</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
