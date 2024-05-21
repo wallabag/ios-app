@@ -34,6 +34,13 @@ struct EntriesListView: View {
                     StarEntryButton(entry: entry)
                         .tint(.orange)
                         .labelStyle(.iconOnly)
+                    Button(action: {
+                        context.delete(entry)
+                    }, label: {
+                        Label("Delete", systemImage: "trash")
+                    })
+                    .tint(.red)
+                    .labelStyle(.iconOnly)
                 })
             }
         }

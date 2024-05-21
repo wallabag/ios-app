@@ -29,7 +29,7 @@ struct EntryView: View {
                 .fontWeight(.black)
                 .lineLimit(2)
                 .padding(.horizontal)
-            ProgressView(value: progress, total: 1)
+            ProgressView(value: min(progress, 1), total: 1)
             WebView(entry: entry, progress: $progress)
         }
         .addSwipeToBack {
