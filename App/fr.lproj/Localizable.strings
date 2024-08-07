@@ -50,3 +50,7 @@
 //Player
 "Select one entry" = "Sélectionnez une entrée";
 "Confirm delete?" = "Confirmer la suppression ?";
+
+"Order by id" = "Trier par id";
+"Order by reading time" = "Trier par temps de lecture";
+"Sorting" = "Tri";

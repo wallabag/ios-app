@@ -6,7 +6,9 @@ struct EntriesView: View {
     @Environment(Router.self) var router: Router
     @EnvironmentObject var appState: AppState
     @StateObject var searchViewModel = SearchViewModel()
-    @State var entriesSortAscending = false
+    @State var entriesSortedById = true
+    @State var entriesSortedByReadingTime = false
+    @State var entriesSortedByAscending = false
 
     var body: some View {
         VStack {
@@ -14,19 +16,27 @@ struct EntriesView: View {
                 PasteBoardView()
             #endif
             SearchView(searchViewModel: searchViewModel)
-            EntriesListView(predicate: searchViewModel.predicate, entriesSortAscending: entriesSortAscending)
+            EntriesListView(
+                predicate: searchViewModel.predicate,
+                entriesSortedById: entriesSortedById,
+                entriesSortedByReadingTime: entriesSortedByReadingTime,
+                entriesSortedByAscending: entriesSortedByAscending
+            )
+        }
+        .onChange(of: entriesSortedByReadingTime) { _, _ in
+            entriesSortedById = false
         }
         .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                HStack {
-                    Button(action: {
-                        entriesSortAscending.toggle()
-                    }, label: {
-                        Image(systemName: "line.3.horizontal.decrease.circle")
-                            .rotationEffect(.degrees(entriesSortAscending ? 180 : 0))
-                    })
-                    RefreshButton()
-                }
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                Menu(content: {
+                    Toggle("Order by id", systemImage: "line.3.horizontal.decrease.circle", isOn: $entriesSortedById)
+                    Toggle("Order by reading time", systemImage: "clock.arrow.circlepath", isOn: $entriesSortedByReadingTime)
+                    Divider()
+                    Toggle("Sorting", systemImage: entriesSortedByAscending ? "arrow.up.circle" : "arrow.down.circle", isOn: $entriesSortedByAscending)
+                }, label: {
+                    Label("Sort options", systemImage: "line.3.horizontal.decrease.circle")
+                })
+                RefreshButton()
             }
             ToolbarItem(placement: .navigationBarLeading) {
                 Menu(content: {

@@ -7,10 +7,24 @@ struct EntriesListView: View {
     @Environment(AppSync.self) var appSync: AppSync
     @FetchRequest var entries: FetchedResults<Entry>
 
-    init(predicate: NSPredicate, entriesSortAscending: Bool) {
+    init(
+        predicate: NSPredicate,
+        entriesSortedById: Bool,
+        entriesSortedByReadingTime: Bool,
+        entriesSortedByAscending: Bool
+    ) {
+        var sortDescriptors: [NSSortDescriptor] = []
+        if entriesSortedById {
+            sortDescriptors.append(NSSortDescriptor(key: "id", ascending: entriesSortedByAscending))
+        }
+
+        if entriesSortedByReadingTime {
+            sortDescriptors.append(NSSortDescriptor(key: "readingTime", ascending: entriesSortedByAscending))
+        }
+
         _entries = FetchRequest(
             entity: Entry.entity(),
-            sortDescriptors: [NSSortDescriptor(key: "id", ascending: entriesSortAscending)],
+            sortDescriptors: sortDescriptors,
             predicate: predicate, animation: nil
         )
     }
