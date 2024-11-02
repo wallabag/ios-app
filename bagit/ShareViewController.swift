@@ -51,7 +51,7 @@ class ShareViewController: UIViewController {
             kit.username = WallabagUserDefaults.login
             kit.password = WallabagUserDefaults.password
 
-            getUrl { shareURL in
+            getUrl { shareURL, title, contentHtml in
                 guard let shareURL else {
                     self.clearView(withError: .retrievingURL)
                     return
@@ -60,7 +60,7 @@ class ShareViewController: UIViewController {
                 Task {
                     do {
                         _ = try await kit.requestTokenAsync()
-                        let _: WallabagEntry = try await kit.send(to: WallabagEntryEndpoint.add(url: shareURL))
+                        let _: WallabagEntry = try await kit.send(to: WallabagEntryEndpoint.add(url: shareURL, title: title, content: contentHtml))
                         self.clearView(withError: nil)
                     } catch {
                         self.clearView(withError: .duringAdding)
@@ -74,9 +74,9 @@ class ShareViewController: UIViewController {
         }
     }
 
-    private func getUrl(completion: @escaping (String?) -> Void) {
+    private func getUrl(completion: @escaping (String?, String?, String?) -> Void) {
         guard let item = extensionContext?.inputItems.first as? NSExtensionItem else {
-            completion(nil)
+            completion(nil, nil, nil)
             return
         }
 
@@ -93,18 +93,21 @@ class ShareViewController: UIViewController {
                               let results = dictionary[NSExtensionJavaScriptPreprocessingResultsKey] as? NSDictionary,
                               let href = results["href"] as? String
                         else {
-                            completion(nil)
+                            completion(nil, nil, nil)
                             return
                         }
 
-                        completion(href)
+                        let title = results["title"] as? String
+                        let contentHtml = results["contentHTML"] as? String
+
+                        completion(href, title, contentHtml)
                     }
                 )
             }
 
             if attachment.hasItemConformingToTypeIdentifier(publicURL) {
                 attachment.loadItem(forTypeIdentifier: publicURL, options: nil) { item, _ in
-                    completion((item as? NSURL)!.absoluteString!)
+                    completion((item as? NSURL)!.absoluteString!, nil, nil)
                 }
             }
         }

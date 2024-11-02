@@ -4,7 +4,7 @@ public enum WallabagEntryEndpoint: WallabagKitEndpoint {
     public typealias Object = WallabagEntry
 
     case get(page: Int = 1, perPage: Int = 30)
-    case add(url: String)
+    case add(url: String, title: String?, content: String?)
     case addTag(tag: String, entry: Int)
     case delete(id: Int)
     case deleteTag(tagId: Int, entry: Int)
@@ -54,9 +54,9 @@ public enum WallabagEntryEndpoint: WallabagKitEndpoint {
 
     public func getBody() -> Data {
         switch self {
-        case let .add(url):
+        case let .add(url, title, content):
             // swiftlint:disable:next force_try
-            try! JSONSerialization.data(withJSONObject: ["url": url], options: .prettyPrinted)
+            try! JSONSerialization.data(withJSONObject: ["url": url, "title": title, "content": content], options: .prettyPrinted)
         case let .update(_, parameters):
             // swiftlint:disable:next force_try
             try! JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
