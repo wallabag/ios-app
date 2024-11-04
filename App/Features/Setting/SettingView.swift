@@ -18,17 +18,17 @@ struct SettingView: View {
                     }
                 }
             }
-            Section("Badge") {
-                Toggle("Show badge", isOn: $badge)
+            Section("Notifications") {
+                Toggle("Show unread articles badge", isOn: $badge)
             }
             Section("Entry") {
                 Toggle("Justify entry", isOn: $justifyArticle)
             }
             Section("Sync") {
-                Stepper("Item per page during sync \(itemPerPageDuringSync)", value: $itemPerPageDuringSync, in: 20 ... 200)
+                Stepper("Items per page during sync: \(itemPerPageDuringSync)", value: $itemPerPageDuringSync, in: 20 ... 200)
             }
         }
-        .navigationTitle("Setting")
+        .navigationTitle("Settings")
     }
 }
 
