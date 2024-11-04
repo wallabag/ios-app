@@ -19,7 +19,7 @@ struct SettingView: View {
                 }
             }
             Section("Notifications") {
-                Toggle("Show unread articles badge", isOn: $badge)
+                Toggle("Show total entries badge", isOn: $badge)
             }
             Section("Entry") {
                 Toggle("Justify entry", isOn: $justifyArticle)

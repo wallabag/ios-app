@@ -9,7 +9,7 @@ struct WallabagPlusView: View {
                 Text("wallabag Plus offers premium features powered by AI")
                     .frame(idealWidth: .infinity, maxWidth: .infinity, alignment: .leading)
             }
-            GroupBox("Is wallabag Plus available on my self-hosted instance?") {
+            GroupBox("Is wallabag Plus available on my instance?") {
                 Text("No, wallabag Plus is a premium feature only available on your iOS devices.")
                     .frame(idealWidth: .infinity, maxWidth: .infinity, alignment: .leading)
                 Text("wallabag Plus is not affiliated with any other service.")
