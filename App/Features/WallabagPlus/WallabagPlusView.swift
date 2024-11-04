@@ -47,7 +47,7 @@ struct WallabagPlusView: View {
         .fullScreenCover(isPresented: $showSubscriptionView, content: {
             WallabagPlusSubscribeView()
         })
-        .navigationTitle("Wallabag Plus")
+        .navigationTitle("wallabag Plus")
     }
 }
 
