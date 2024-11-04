@@ -7,7 +7,7 @@ struct RegistrationView: View {
                 Image("logo")
                     .resizable()
                     .scaledToFit()
-                Text("Wallabag")
+                Text("wallabag")
                     .font(.title)
                 NavigationLink("Log in", destination: ServerView())
                     .buttonStyle(.borderedProminent)

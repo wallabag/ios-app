@@ -5,17 +5,17 @@ struct WallabagPlusView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            GroupBox("What is wallabag Plus ?") {
-                Text("Wallabag plus offert premium feature powered by AI")
+            GroupBox("What is wallabag Plus?") {
+                Text("wallabag Plus offers premium features powered by AI")
                     .frame(idealWidth: .infinity, maxWidth: .infinity, alignment: .leading)
             }
-            GroupBox("wallabag Plus is available on my instance ?") {
-                Text("No, wallabag plus is a premium feature only available on your iOS devices")
+            GroupBox("Is wallabag Plus available on my instance?") {
+                Text("No, wallabag Plus is a premium feature only available on your iOS devices.")
                     .frame(idealWidth: .infinity, maxWidth: .infinity, alignment: .leading)
-                Text("Wallabag Plus is not affiliate with any other service.")
+                Text("wallabag Plus is not affiliated with any other service.")
                     .font(.footnote)
             }
-            GroupBox("What is included with wallabag Plus") {
+            GroupBox("What is included with wallabag Plus?") {
                 Grid(alignment: .leading, horizontalSpacing: 10, verticalSpacing: 10) {
                     GridRow {
                         Image(systemName: "checkmark.circle.fill")
@@ -30,7 +30,7 @@ struct WallabagPlusView: View {
                 .padding()
             }
             GroupBox("Privacy") {
-                Text("When you use wallabag Plus, your entry will be sent to openAI")
+                Text("When you use wallabag Plus, your entry will be sent to [OpenAI](https://openai.com)")
                     .frame(idealWidth: .infinity, maxWidth: .infinity, alignment: .leading)
             }
             Spacer()
@@ -47,7 +47,7 @@ struct WallabagPlusView: View {
         .fullScreenCover(isPresented: $showSubscriptionView, content: {
             WallabagPlusSubscribeView()
         })
-        .navigationTitle("Wallabag Plus")
+        .navigationTitle("wallabag Plus")
     }
 }
 

@@ -9,7 +9,7 @@ struct AboutView: View {
 
     var body: some View {
         VStack {
-            Text("Wallabag").font(.largeTitle).fontWeight(.bold)
+            Text("wallabag").font(.largeTitle).fontWeight(.bold)
             Text(String(format: "Version %@ build %@".localized, arguments: [version, build]))
             Spacer()
             Link("Project page", destination: "https://github.com/wallabag/ios-app")
