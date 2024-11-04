@@ -1,16 +1,14 @@
 # wallabag 2 official iOS [![Build Status](https://travis-ci.org/wallabag/ios-app.svg?branch=master)](https://travis-ci.org/wallabag/ios-app)
 
-<img src="/readme/wallabag_logo.png" align="left" width="200" hspace="10" vspace="10">
+<img align="left" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/78/23/c3/7823c39e-9da9-8f0b-7a13-299a2de43725/AppIcon-0-0-1x_U007epad-0-85-220.jpeg/540x540bb.jpg" alt="Wallabag 2 official" style="width: 20%; object-fit: contain;" />
 
 wallabag is a self-hosted read-it-later app.  
 Unlike other services, wallabag is free and open source.  
 wallabag 2 official iOS is a companion app for [wallabag](https://www.wallabag.org).  
 
-<p align="left">
-	<a href="https://itunes.apple.com/fr/app/wallabag-2-official/id1170800946?mt=8">
-		<img src="https://linkmaker.itunes.apple.com/assets/shared/badges/en-gb/appstore-lrg.svg"/>
-	</a>
-</p>
+<a href="https://apps.apple.com/us/app/wallabag-2-official/id1170800946?itscg=30200&itsct=apps_box_badge&mttnsubad=1170800946" style="display: inline-block;">
+	<img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1479340800" alt="Download on the App Store" style="width: 246px; height: 82px; vertical-align: middle; object-fit: contain;" />
+</a>
 
 [Join TestFlight Beta](https://testflight.apple.com/join/73Pvd1wL)
 
