@@ -49,7 +49,7 @@ final class WallabagSession: ObservableObject {
     }
 
     func addEntry(url: String) async throws {
-        let wallabagEntry: WallabagEntry = try await kit.send(to: WallabagEntryEndpoint.add(url: url))
+        let wallabagEntry: WallabagEntry = try await kit.send(to: WallabagEntryEndpoint.add(url: url, title: nil, content: nil))
 
         let entry = Entry(context: coreDataContext)
         entry.hydrate(from: wallabagEntry)

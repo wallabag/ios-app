@@ -15,7 +15,7 @@ struct AddEntryIntent: WallabagIntent {
 
     func perform() async throws -> some IntentResult {
         _ = try await kit.requestTokenAsync()
-        _ = try await kit.send(to: WallabagEntryEndpoint.add(url: url.absoluteString))
+        _ = try await kit.send(to: WallabagEntryEndpoint.add(url: url.absoluteString, title: nil, content: nil))
 
         return .result()
     }
