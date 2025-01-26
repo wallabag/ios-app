@@ -27,8 +27,8 @@ struct TipView: View {
                             label: {
                                 tipViewModel.tipProduct.map { product in
                                     HStack {
-                                        Text(product.displayName)
-                                        Text(product.displayPrice)
+                                        Text(product.localizedTitle)
+                                        Text(product.localizedPriceString)
                                     }
                                 }
                             }
@@ -45,6 +45,9 @@ struct TipView: View {
         }
         .padding()
         .navigationTitle("Don")
+        .task {
+            await tipViewModel.loadProduct()
+        }
     }
 
     @MainActor

@@ -39,16 +39,12 @@ struct WallabagApp: App {
                 .environment(errorHandler)
                 .environmentObject(appSetting)
                 .environment(\.managedObjectContext, coreData.viewContext)
-                .subscriptionStatusTask(for: wallabagPlusStore.groupID) { task in
-                    _ = await task.map { statues in
-                        await wallabagPlusStore.handleStatues(statues)
-                    }
-                }
         }
         .onChange(of: scenePhase) { _, newScenePhase in
             if newScenePhase == .active {
                 Task {
                     await appState.initSession()
+                    await wallabagPlusStore.checkPro()
                 }
                 #if os(iOS)
                     requestNotificationAuthorization()

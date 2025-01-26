@@ -28,8 +28,6 @@ extension View {
                 TipView()
             case .setting:
                 SettingView()
-            case .wallabagPlus:
-                WallabagPlusView()
             case .registration:
                 RegistrationView()
             }

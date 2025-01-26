@@ -5,7 +5,8 @@
 //  Created by maxime marinel on 11/01/2024.
 //
 
-import StoreKit
+import RevenueCat
+import RevenueCatUI
 import SwiftUI
 
 struct WallabagPlusSubscribeView: View {
@@ -18,19 +19,8 @@ struct WallabagPlusSubscribeView: View {
     @Environment(WallabagPlusStore.self) var wallabagPlusStore
 
     var body: some View {
-        SubscriptionStoreView(groupID: wallabagPlusStore.groupID, visibleRelationships: .all)
-            .subscriptionStoreButtonLabel(.multiline)
-            .storeButton(.visible, for: .restorePurchases)
-            .subscriptionStorePolicyDestination(url: privacyURL.url!, for: .privacyPolicy)
-            .subscriptionStorePolicyDestination(url: termsOfUseURL.url!, for: .termsOfService)
-            .subscriptionStoreControlStyle(.prominentPicker)
-            .onInAppPurchaseCompletion { _, result in
-                if case let .success(.success(transaction)) = result {
-                    Task {
-                        await wallabagPlusStore.finish(transaction)
-                    }
-                }
-            }
+        Text("")
+            .presentPaywallIfNeeded(requiredEntitlementIdentifier: "pro")
     }
 }
 
