@@ -1,4 +1,14 @@
 {
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
   "identifier" : "2657AEEA",
   "nonRenewingSubscriptions" : [
 
@@ -112,13 +122,16 @@
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "Wallabag plus",
           "subscriptionGroupID" : "21433277",
-          "type" : "RecurringSubscription"
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
         }
       ]
     }
   ],
   "version" : {
-    "major" : 3,
+    "major" : 4,
     "minor" : 0
   }
 }

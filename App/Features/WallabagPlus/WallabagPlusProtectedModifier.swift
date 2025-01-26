@@ -1,3 +1,5 @@
+import RevenueCat
+import RevenueCatUI
 import SwiftUI
 
 struct WallabagPlusProtectedModifier: ViewModifier {
@@ -8,11 +10,14 @@ struct WallabagPlusProtectedModifier: ViewModifier {
             if wallabagPlusStore.proUnlocked {
                 content
             } else {
-                Image("logo")
-                    .resizable()
-                    .scaledToFit()
-                Text("Sorry, this feature require you subscribe to wallabag Plus")
-                    .fontDesign(.rounded)
+                VStack {
+                    Image("logo")
+                        .resizable()
+                        .scaledToFit()
+                    Text("Sorry, this feature require you subscribe to wallabag Plus")
+                        .fontDesign(.rounded)
+                }
+                .presentPaywallIfNeeded(requiredEntitlementIdentifier: "pro")
             }
         }
     }

@@ -1,14 +1,17 @@
 import Combine
 import CoreData
+import RevenueCatUI
 import SwiftUI
 
 struct EntriesView: View {
     @Environment(Router.self) var router: Router
+    @Environment(WallabagPlusStore.self) private var wallabagPlusStore
     @EnvironmentObject var appState: AppState
     @StateObject var searchViewModel = SearchViewModel()
     @State var entriesSortedById = true
     @State var entriesSortedByReadingTime = false
     @State var entriesSortedByAscending = false
+    @State private var showPaywallWallabagPlus = false
 
     var body: some View {
         VStack {
@@ -56,10 +59,14 @@ struct EntriesView: View {
                         Label("Don", systemImage: "heart")
                     })
                     Divider()
-                    NavigationLink(value: RoutePath.wallabagPlus) {
-                        Label("wallabag Plus", systemImage: "hands.and.sparkles")
+                    if !wallabagPlusStore.proUnlocked {
+                        Button(action: {
+                            showPaywallWallabagPlus = true
+                        }, label: {
+                            Label("wallabag Plus", systemImage: "hands.and.sparkles")
+                        })
+                        Divider()
                     }
-                    Divider()
                     Button(action: {
                         router.path.append(RoutePath.setting)
                     }, label: {
@@ -75,6 +82,9 @@ struct EntriesView: View {
                     Label("Menu", systemImage: "list.bullet")
                 })
             }
+        }
+        .sheet(isPresented: $showPaywallWallabagPlus) {
+            PaywallView(displayCloseButton: true)
         }
         .navigationTitle("Entries")
     }

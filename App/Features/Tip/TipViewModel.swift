@@ -1,69 +1,32 @@
 import Foundation
 import Observation
-import StoreKit
+import RevenueCat
 
 @Observable
 final class TipViewModel {
+    @ObservationIgnored @BundleKey("REVENUECAT_KEY")
+    private var revenueCatKey: String
+
     var canMakePayments: Bool = false
-    var tipProduct: Product?
+    var tipProduct: StoreProduct?
     var paymentSuccess = false
 
-    private var taskHandle: Task<Void, Error>?
-
     init() {
-        canMakePayments = SKPaymentQueue.canMakePayments()
-        if canMakePayments {
-            Task { @MainActor in
-                let product = try? await requestProduct()
-                tipProduct = product?.first
-            }
-        }
-
-        taskHandle = listenForTransactions()
+        canMakePayments = Purchases.canMakePayments()
+        Purchases.configure(withAPIKey: revenueCatKey)
     }
 
-    private func requestProduct() async throws -> [Product] {
-        try await Product.products(for: ["tips1"])
+    func loadProduct() async {
+        guard canMakePayments else { return }
+        tipProduct = await Purchases.shared.products(["tips1"]).first
     }
 
-    func listenForTransactions() -> Task<Void, Error> {
-        Task {
-            for await result in Transaction.updates {
-                do {
-                    let transaction = try self.checkVerified(result)
-                    await transaction.finish()
-                } catch {
-                    print("Transaction failed verification")
-                }
-            }
-        }
-    }
+    func purchaseTip() async throws {
+        guard let product = tipProduct else { return }
 
-    func checkVerified<T>(_ result: VerificationResult<T>) throws -> T {
-        switch result {
-        case .unverified:
-            throw StoreError.failedVerification
-        case let .verified(safe):
-            return safe
-        }
-    }
+        let result = try await Purchases.shared.purchase(product: product)
 
-    func purchaseTip() async throws -> StoreKit.Transaction? {
-        guard let product = tipProduct else { return nil }
-
-        let result = try await product.purchase()
-
-        switch result {
-        case let .success(verification):
-            let transaction = try checkVerified(verification)
-            await transaction.finish()
-            paymentSuccess = true
-            return transaction
-        case .userCancelled, .pending:
-            return nil
-        default:
-            return nil
-        }
+        paymentSuccess = !result.userCancelled
     }
 }
 
