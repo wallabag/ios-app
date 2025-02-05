@@ -8,7 +8,7 @@ struct FontSizeSelectorView: View {
     var body: some View {
         HStack {
             Button(action: {
-                withAnimation {
+                withAnimation(.smooth) {
                     showSelector = !showSelector
                 }
             }, label: {

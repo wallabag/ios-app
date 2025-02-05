@@ -27,9 +27,13 @@ import WebKit
             }
 
             func webViewToLastPosition() {
-                DispatchQueue.main.async {
-                    self.webView.wkWebView.scrollView.setContentOffset(CGPoint(x: 0.0, y: self.webView.entry.screenPositionForWebView), animated: true)
-                }
+                webView.wkWebView.scrollView.setContentOffset(
+                    CGPoint(
+                        x: 0.0,
+                        y: webView.entry.screenPositionForWebView
+                    ),
+                    animated: true
+                )
             }
 
             func webView(_ webView: WKWebView, didFinish _: WKNavigation!) {
@@ -77,7 +81,7 @@ import WebKit
         func makeUIView(context: Context) -> WKWebView {
             wkWebView.navigationDelegate = context.coordinator
             wkWebView.scrollView.delegate = context.coordinator
-            wkWebView.load(content: entry.content, justify: false)
+            wkWebView.load(content: entry.content, justify: UserDefaults.standard.bool(forKey: "justifyArticle"))
 
             return wkWebView
         }

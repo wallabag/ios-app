@@ -50,7 +50,6 @@ struct EntryView: View {
             }
             ToolbarItem(placement: toolbarPlacement) {
                 FontSizeSelectorView()
-                    .buttonStyle(.plain)
             }
             ToolbarItem(placement: toolbarPlacement) {
                 Menu(content: {
@@ -67,17 +66,14 @@ struct EntryView: View {
                 })
             }
         }
-        .actionSheet(isPresented: $showDeleteConfirm) {
-            ActionSheet(
-                title: Text("Confirm delete?"),
-                buttons: [
-                    .destructive(Text("Delete")) {
-                        context.delete(entry)
-                        dismiss()
-                    },
-                    .cancel(),
-                ]
-            )
+        .alert("Confirm delete?", isPresented: $showDeleteConfirm) {
+            Button(role: .destructive, action: {
+                context.delete(entry)
+                dismiss()
+            }, label: {
+                Text("Delete")
+            })
+            Button("Cancel", role: .cancel) {}
         }
         .sheet(isPresented: $showTag) {
             TagListFor(entry: entry)

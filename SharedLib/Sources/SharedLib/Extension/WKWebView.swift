@@ -3,13 +3,11 @@ import WebKit
 
 public extension WKWebView {
     func load(content: String?, justify: Bool) {
-        DispatchQueue.main.async { [weak self] in
-            guard let content = self?.contentForWebView(content, justify: justify) else { return }
-            self?.loadHTMLString(content, baseURL: Bundle.main.bundleURL)
-        }
+        guard let content = contentForWebView(content, justify: justify) else { return }
+        loadHTMLString(content, baseURL: Bundle.main.bundleURL)
     }
 
-    func contentForWebView(_ content: String?, justify: Bool) -> String? {
+    nonisolated func contentForWebView(_ content: String?, justify: Bool) -> String? {
         do {
             guard let content else { return nil }
             let html = try String(contentsOfFile: Bundle.main.path(forResource: "article", ofType: "html")!)
