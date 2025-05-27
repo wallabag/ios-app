@@ -86,10 +86,6 @@ extension AppSync {
     }
 
     private func purge() {
-        if entriesSynced.count == 0 {
-            return
-        }
-
         let fetchRequest = Entry.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "NOT (id IN %@)", argumentArray: [entriesSynced])
 
@@ -100,15 +96,7 @@ extension AppSync {
 
                 backgroundContext.delete(entryToDelete)
             }
-            // Ensure deletions are saved and changes are merged
             try backgroundContext.save()
-            coreData.persistentContainer.viewContext.perform {
-                do {
-                    try self.coreData.persistentContainer.viewContext.save()
-                } catch {
-                    logger.error("Error saving main context after purge: \(error.localizedDescription)")
-                }
-            }
         } catch {
             logger.error("Error in batch delete")
         }
