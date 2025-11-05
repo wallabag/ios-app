@@ -1,0 +1,33 @@
+name: SharedLib Tests
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'SharedLib/**'
+      - '.github/workflows/sharedlib-tests.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'SharedLib/**'
+      - '.github/workflows/sharedlib-tests.yml'
+
+jobs:
+  test:
+    name: Run SharedLib Tests
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Select Xcode version
+      run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+    - name: Show Swift version
+      run: swift --version
+
+    - name: Run SharedLib tests
+      run: |
+        cd SharedLib
+        swift test
