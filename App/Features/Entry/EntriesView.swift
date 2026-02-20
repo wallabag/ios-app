@@ -8,9 +8,9 @@ struct EntriesView: View {
     @Environment(WallabagPlusStore.self) private var wallabagPlusStore
     @EnvironmentObject var appState: AppState
     @StateObject var searchViewModel = SearchViewModel()
-    @State var entriesSortedById = true
-    @State var entriesSortedByReadingTime = false
-    @State var entriesSortedByAscending = false
+    @AppStorage("entriesSortedById") var entriesSortedById = true
+    @AppStorage("entriesSortedByReadingTime") var entriesSortedByReadingTime = false
+    @AppStorage("entriesSortedByAscending") var entriesSortedByAscending = false
     @State private var showPaywallWallabagPlus = false
 
     var body: some View {
@@ -26,8 +26,15 @@ struct EntriesView: View {
                 entriesSortedByAscending: entriesSortedByAscending
             )
         }
-        .onChange(of: entriesSortedByReadingTime) { _, _ in
-            entriesSortedById = false
+        .onChange(of: entriesSortedById) { _, newValue in
+            if newValue {
+                entriesSortedByReadingTime = false
+            }
+        }
+        .onChange(of: entriesSortedByReadingTime) { _, newValue in
+            if newValue {
+                entriesSortedById = false
+            }
         }
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
