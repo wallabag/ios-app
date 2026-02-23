@@ -7,6 +7,7 @@ import WallabagKit
 
 final class AppState: ObservableObject {
     @Injected(\.wallabagSession) private var session
+    @Injected(\.appSync) private var appSync
 
     @Published var registred: Bool = false {
         didSet {
@@ -25,6 +26,10 @@ final class AppState: ObservableObject {
             logger.info("App state request session")
 
             await session.requestSession(clientId: WallabagUserDefaults.clientId, clientSecret: WallabagUserDefaults.clientSecret, username: WallabagUserDefaults.login, password: WallabagUserDefaults.password)
+
+            if UserDefaults.standard.bool(forKey: "refreshOnStartup") {
+                appSync.requestSync()
+            }
 
             await fetchConfig()
         }

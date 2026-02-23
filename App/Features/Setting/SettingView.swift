@@ -7,6 +7,7 @@ struct SettingView: View {
     @AppStorage("badge") var badge: Bool = true
     @AppStorage("defaultMode") var defaultMode: String = RetrieveMode.allArticles.rawValue
     @AppStorage("itemPerPageDuringSync") var itemPerPageDuringSync: Int = 50
+    @AppStorage("refreshOnStartup") var refreshOnStartup: Bool = true
 
     var body: some View {
         Form {
@@ -26,6 +27,7 @@ struct SettingView: View {
             }
             Section("Sync") {
                 Stepper("Items per page during sync: \(itemPerPageDuringSync)", value: $itemPerPageDuringSync, in: 20 ... 200)
+                Toggle("Refresh on startup", isOn: $refreshOnStartup)
             }
         }
         .navigationTitle("Settings")
