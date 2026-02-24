@@ -1,3 +1,4 @@
+import Factory
 import SharedLib
 import SwiftUI
 
@@ -7,9 +8,17 @@ struct SettingView: View {
     @AppStorage("badge") var badge: Bool = true
     @AppStorage("defaultMode") var defaultMode: String = RetrieveMode.allArticles.rawValue
     @AppStorage("itemPerPageDuringSync") var itemPerPageDuringSync: Int = 50
+    @ObservedObject var appSetting: AppSetting = Container.shared.appSetting()
 
     var body: some View {
         Form {
+            Section("Appearance") {
+                Picker("Theme", selection: $appSetting.theme) {
+                    ForEach(Theme.allCases) { theme in
+                        Text(theme.name).tag(theme)
+                    }
+                }
+            }
             Section("Entries list") {
                 Toggle("Show image in list", isOn: $showImageInList)
                 Picker("Default mode", selection: $defaultMode) {

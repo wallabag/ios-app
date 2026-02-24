@@ -25,6 +25,7 @@
 		09644B5725C9810A000FFDA1 /* WallabagApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B5625C9810A000FFDA1 /* WallabagApp.swift */; };
 		09644B5E25C98116000FFDA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B5D25C98116000FFDA1 /* AppDelegate.swift */; };
 		09644B7E25C98152000FFDA1 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B7D25C98152000FFDA1 /* AppState.swift */; };
+		09FA20240000000000000002 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FA20240000000000000001 /* Theme.swift */; };
 		09644B8C25C98176000FFDA1 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B8825C98176000FFDA1 /* Route.swift */; };
 		09644B9725C9819F000FFDA1 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B9425C9819F000FFDA1 /* PlayerView.swift */; };
 		09644B9825C9819F000FFDA1 /* PlayerPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09644B9525C9819F000FFDA1 /* PlayerPublisher.swift */; };
@@ -171,6 +172,7 @@
 		09644B5625C9810A000FFDA1 /* WallabagApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallabagApp.swift; sourceTree = "<group>"; };
 		09644B5D25C98116000FFDA1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09644B7D25C98152000FFDA1 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		09FA20240000000000000001 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		09644B8825C98176000FFDA1 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		09644B9425C9819F000FFDA1 /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		09644B9525C9819F000FFDA1 /* PlayerPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerPublisher.swift; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 				09644B7D25C98152000FFDA1 /* AppState.swift */,
 				09644BD125C9833D000FFDA1 /* DependencyInjection.swift */,
 				09644BD325C9833D000FFDA1 /* WallabagError.swift */,
+				09FA20240000000000000001 /* Theme.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -744,6 +747,18 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		09FA20300000000000000001 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				09AD759C2624F93D00708A1E /* html-ressources */,
+				09AD75C02624FEEE00708A1E /* Localizable.strings */,
+				09644D1E25C98782000FFDA1 /* wallabagStore.xcdatamodeld */,
+				0951C61729CC2EB000D8E8C6 /* Assets.xcassets */,
+				099CD12E2B5019F40029E94A /* WallabagStoreKit.storekit */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		09BFB28625C8348E00E12B4D /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -753,13 +768,9 @@
 				097F824C25CB1B17006C85F6 /* Entity */,
 				09644D1625C9874D000FFDA1 /* Extension */,
 				09644B8425C98161000FFDA1 /* Features */,
-				09AD759C2624F93D00708A1E /* html-ressources */,
 				09644B7C25C9814C000FFDA1 /* Lib */,
-				09AD75C02624FEEE00708A1E /* Localizable.strings */,
 				09644BE425C98343000FFDA1 /* PropertyWrapper */,
-				09644D1E25C98782000FFDA1 /* wallabagStore.xcdatamodeld */,
-				0951C61729CC2EB000D8E8C6 /* Assets.xcassets */,
-				099CD12E2B5019F40029E94A /* WallabagStoreKit.storekit */,
+				09FA20300000000000000001 /* Resources */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -1067,6 +1078,7 @@
 				09644BAF25C98213000FFDA1 /* RefreshButton.swift in Sources */,
 				09BE0AF42A9F45E900193FBF /* View+Extension.swift in Sources */,
 				09644C7025C985A9000FFDA1 /* ArchiveEntryButton.swift in Sources */,
+				09FA20240000000000000002 /* Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
