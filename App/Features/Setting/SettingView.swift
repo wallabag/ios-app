@@ -8,7 +8,7 @@ struct SettingView: View {
     @AppStorage("badge") var badge: Bool = true
     @AppStorage("defaultMode") var defaultMode: String = RetrieveMode.allArticles.rawValue
     @AppStorage("itemPerPageDuringSync") var itemPerPageDuringSync: Int = 50
-    @ObservedObject var appSetting: AppSetting = Container.shared.appSetting()
+    @EnvironmentObject var appSetting: AppSetting
 
     var body: some View {
         Form {
@@ -44,5 +44,6 @@ struct SettingView: View {
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
         SettingView()
+            .environmentObject(AppSetting())
     }
 }
