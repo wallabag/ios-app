@@ -1,3 +1,4 @@
+import Factory
 import SharedLib
 import SwiftUI
 
@@ -8,9 +9,17 @@ struct SettingView: View {
     @AppStorage("defaultMode") var defaultMode: String = RetrieveMode.allArticles.rawValue
     @AppStorage("itemPerPageDuringSync") var itemPerPageDuringSync: Int = 50
     @AppStorage("refreshOnStartup") var refreshOnStartup: Bool = false
+    @EnvironmentObject var appSetting: AppSetting
 
     var body: some View {
         Form {
+            Section("Appearance") {
+                Picker("Theme", selection: $appSetting.theme) {
+                    ForEach(Theme.allCases) { theme in
+                        Text(theme.name).tag(theme)
+                    }
+                }
+            }
             Section("Entries list") {
                 Toggle("Show image in list", isOn: $showImageInList)
                 Picker("Default mode", selection: $defaultMode) {
@@ -37,5 +46,6 @@ struct SettingView: View {
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
         SettingView()
+            .environmentObject(AppSetting())
     }
 }

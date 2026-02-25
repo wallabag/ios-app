@@ -97,6 +97,11 @@ struct EntryView: View {
         }, label: {
             Label("Open in Safari", systemImage: "safari")
         })
+        if let url = entry.url?.url {
+            ShareLink(item: url) {
+                Label("Share", systemImage: "square.and.arrow.up")
+            }
+        }
         Button(action: {
             showTag.toggle()
         }, label: {

@@ -48,4 +48,7 @@ public enum WallabagUserDefaults {
 
     @GeneralSetting("itemPerPageDuringSync", defaultValue: 50)
     public static var itemPerPageDuringSync: Int
+
+    @GeneralSetting("theme", defaultValue: "auto")
+    public static var theme: String
 }
