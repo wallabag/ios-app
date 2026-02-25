@@ -28,7 +28,7 @@ final class AppState: ObservableObject {
             await session.requestSession(clientId: WallabagUserDefaults.clientId, clientSecret: WallabagUserDefaults.clientSecret, username: WallabagUserDefaults.login, password: WallabagUserDefaults.password)
 
             if UserDefaults.standard.bool(forKey: "refreshOnStartup") {
-                appSync.requestSync()
+                await appSync.requestSync()
             }
 
             await fetchConfig()
