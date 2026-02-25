@@ -7,7 +7,7 @@ struct SettingView: View {
     @AppStorage("badge") var badge: Bool = true
     @AppStorage("defaultMode") var defaultMode: String = RetrieveMode.allArticles.rawValue
     @AppStorage("itemPerPageDuringSync") var itemPerPageDuringSync: Int = 50
-    @AppStorage("refreshOnStartup") var refreshOnStartup: Bool = true
+    @AppStorage("refreshOnStartup") var refreshOnStartup: Bool = false
 
     var body: some View {
         Form {
