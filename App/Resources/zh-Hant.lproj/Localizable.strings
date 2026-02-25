@@ -1,0 +1,51 @@
+
+
+"Made by Maxime Marinel @bourvill" = "由 Maxime Marinel @bourvill 製作完成";
+
+// About
+"Project page" = "項目主頁";
+
+// Entry
+"Reading time %@" = "閱讀時間 %@";
+
+// Search
+"Search" = "搜索";
+"Cancel" = "取消";
+"Add" = "添加";
+"Back" = "返回";
+
+// Common
+"Submit" = "提交";
+"It seems impossible to make a payment." = "似乎無法付款。";
+"Loading..." = "載入中...";
+"But you can contribute financially by making a donation whenever you want to support the project." = "但如果您想支持該項目，可以通過捐款來進行財務捐助。";
+"It is free and will remain so." = "它是免費的，今後仍將如此。";
+
+// Tip View
+"This application is developed on free time" = "此應用程序是在空閒時間開發的";
+
+// PasteBoard View
+"New url in pasteboard detected" = "檢測到粘貼板中的新網址";
+"Read" = "已讀";
+"Unread" = "未讀";
+"Starred" = "已加星標";
+
+// Picker
+"All" = "全部";
+"Logout" = "登出";
+"Setting" = "設定";
+"Bug report" = "錯誤報告";
+"Don" = "捐贈";
+"About" = "關於";
+"Add entry" = "添加條目";
+"Entries" = "條目";
+
+// Menu
+"Menu" = "菜單";
+
+// Theme
+"Appearance" = "外觀";
+"Theme" = "主題";
+"Auto" = "自動";
+"Light" = "淺色";
+"Dark" = "深色";

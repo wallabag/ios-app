@@ -1,0 +1,42 @@
+
+
+
+"Cancel" = "Annulla";
+"Add" = "Aggiungi";
+"Back" = "Indietro";
+
+// Common
+"Submit" = "Invia";
+"It seems impossible to make a payment." = "Sembra impossibile effettuare un pagamento.";
+"Loading..." = "Caricamento…";
+"But you can contribute financially by making a donation whenever you want to support the project." = "Ma puoi contribuire finanziariamente facendo una donazione ogni volta che vuoi sostenere il progetto.";
+"It is free and will remain so." = "È gratuita e lo rimarrà.";
+
+// Tip View
+"This application is developed on free time" = "Questa applicazione è sviluppata nel tempo libero";
+
+// PasteBoard View
+"New url in pasteboard detected" = "Rilevato nuovo URL negli appunti";
+"Read" = "Letti";
+"Unread" = "Non letti";
+"Starred" = "Preferiti";
+
+// Mode picker
+"All" = "Tutti";
+"Logout" = "Esci";
+"Setting" = "Impostazione";
+"Bug report" = "Segnalazione di errore";
+"Tips" = "Suggerimenti";
+"About" = "Informazioni";
+"Add entry" = "Aggiungi un articolo";
+"Entries" = "Articoli";
+
+// Menu
+"Menu" = "Menù";
+
+// Theme
+"Appearance" = "Aspetto";
+"Theme" = "Tema";
+"Auto" = "Automatico";
+"Light" = "Chiaro";
+"Dark" = "Scuro";

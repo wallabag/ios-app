@@ -39,6 +39,7 @@ struct WallabagApp: App {
                 .environment(errorHandler)
                 .environmentObject(appSetting)
                 .environment(\.managedObjectContext, coreData.viewContext)
+                .preferredColorScheme(appSetting.theme.colorScheme)
         }
         .onChange(of: scenePhase) { _, newScenePhase in
             if newScenePhase == .active {
