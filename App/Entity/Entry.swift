@@ -1,6 +1,7 @@
 import CoreData
 import CoreSpotlight
 import Foundation
+import HTMLEntities
 import SharedLib
 
 // import MobileCoreServices
@@ -79,5 +80,10 @@ extension Entry {
             return 0.0
         }
         return Double(screenPosition)
+    }
+
+    var titleHtml: String {
+        let escapedTitle = (title ?? "").htmlEscape()
+        return "<h1>\(escapedTitle)</h1>"
     }
 }

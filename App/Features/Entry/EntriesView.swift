@@ -14,17 +14,23 @@ struct EntriesView: View {
     @State private var showPaywallWallabagPlus = false
 
     var body: some View {
-        VStack {
-            #if os(iOS)
-                PasteBoardView()
-            #endif
-            SearchView(searchViewModel: searchViewModel)
-            EntriesListView(
-                predicate: searchViewModel.predicate,
-                entriesSortedById: entriesSortedById,
-                entriesSortedByReadingTime: entriesSortedByReadingTime,
-                entriesSortedByAscending: entriesSortedByAscending
-            )
+        EntriesListView(
+            predicate: searchViewModel.predicate,
+            entriesSortedById: entriesSortedById,
+            entriesSortedByReadingTime: entriesSortedByReadingTime,
+            entriesSortedByAscending: entriesSortedByAscending
+        )
+        .scrollContentBackground(.hidden)
+        .safeAreaInset(edge: .top) {
+            VStack(spacing: 0) {
+                #if os(iOS)
+                    PasteBoardView()
+                #endif
+                SearchView(searchViewModel: searchViewModel)
+                    .padding(.bottom, 8)
+                Divider()
+            }
+            .background(.ultraThinMaterial)
         }
         .onChange(of: entriesSortedById) { _, newValue in
             if newValue {
@@ -94,6 +100,8 @@ struct EntriesView: View {
             PaywallView(displayCloseButton: true)
         }
         .navigationTitle("Entries")
+         .navigationBarTitleDisplayMode(.inline)
+        .ignoresSafeArea(.all, edges: .bottom)
     }
 }
 
