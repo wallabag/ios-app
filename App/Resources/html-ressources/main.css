@@ -14,7 +14,8 @@ html {
   min-height: 100%;
 }
 
-html, body {
+html,
+body {
   overscroll-behavior: none;
 }
 
@@ -31,16 +32,20 @@ a {
   font-weight: bold;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
   font-family: 'PT Sans', sans-serif;
   text-transform: uppercase;
 }
 
-p, li {
+p,
+li {
   color: #666;
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
   text-decoration: none;
 }
 
@@ -58,11 +63,11 @@ h2:after {
    ========================================================================== */
 
 #main {
-    margin-left: 13em;
-    position: relative;
-    z-index: 10;
-    padding-right: 5%;
-    padding-bottom: 1em;
+  margin-left: 13em;
+  position: relative;
+  z-index: 10;
+  padding-right: 5%;
+  padding-bottom: 1em;
 }
 
 #content {
@@ -86,7 +91,9 @@ blockquote {
   margin: 0;
 }
 
-#article h2, #article h3, #article h4 {
+#article h2,
+#article h3,
+#article h4 {
   text-transform: none;
 }
 
@@ -97,7 +104,7 @@ blockquote {
 
 
 @media screen {
-  body > header {
+  body>header {
     background: #333;
     position: fixed;
     top: 0;
@@ -117,35 +124,45 @@ blockquote {
   }
 
   #article h1 {
-    font-size: 1.2em;
+    font-size: 2.2em;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-top: 1em;
+    margin-bottom: 0.8em;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   video {
-      width: 100%
+    width: 100%
   }
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-      color: #FFF;
-      background: #000;
+    color: #FFF;
+    background: #000;
   }
 
   ::selection {
-      color: #777;
-      background: #000;
+    color: #777;
+    background: #000;
   }
 
-  p, li {
-      color: #FFF;
+  p,
+  li {
+    color: #FFF;
   }
 
   a {
-      color: #6CA0DC;
+    color: #6CA0DC;
   }
 
   blockquote {
-      background: #111;
+    background: #111;
   }
 }
 

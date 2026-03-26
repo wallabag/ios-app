@@ -4,20 +4,15 @@ struct RefreshButton: View {
     @Environment(AppSync.self) var appSync: AppSync
 
     var body: some View {
-        HStack {
+        ZStack {
             if appSync.inProgress {
-                ProgressView(value: appSync.progress, total: 100)
-                #if os(iOS)
-                    .progressViewStyle(.linear)
-                #else
+                ProgressView()
                     .progressViewStyle(.circular)
-                #endif
             } else {
                 Button(
                     action: appSync.requestSync,
                     label: {
                         Image(systemName: "arrow.counterclockwise")
-                            .frame(width: 34, height: 34, alignment: .center)
                     }
                 )
                 .buttonStyle(.plain)
@@ -26,6 +21,7 @@ struct RefreshButton: View {
                 .keyboardShortcut("r", modifiers: .command)
             }
         }
+        .frame(width: 34, height: 34, alignment: .center)
     }
 }
 

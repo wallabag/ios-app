@@ -6,7 +6,6 @@ import WebKit
 #if os(iOS)
     struct WebView: UIViewRepresentable {
         var entry: Entry
-        private(set) var wkWebView = WKWebView(frame: .zero)
         @EnvironmentObject var appSetting: AppSetting
         @Binding var progress: Double
 
@@ -26,19 +25,27 @@ import WebKit
                 super.init()
             }
 
-            func webViewToLastPosition() {
-                webView.wkWebView.scrollView.setContentOffset(
-                    CGPoint(
-                        x: 0.0,
-                        y: webView.entry.screenPositionForWebView
-                    ),
-                    animated: true
-                )
+            func webViewToLastPosition(in webView: WKWebView) {
+                let position = self.webView.entry.screenPositionForWebView
+                if position > 0 {
+                    // Check if content is actually loaded by verifying contentSize
+                    if webView.scrollView.contentSize.height > webView.bounds.height {
+                        webView.scrollView.setContentOffset(
+                            CGPoint(x: 0.0, y: position),
+                            animated: true
+                        )
+                    } else {
+                        // Content not ready yet, try again after a minimal delay
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+                            self.webViewToLastPosition(in: webView)
+                        }
+                    }
+                }
             }
 
             func webView(_ webView: WKWebView, didFinish _: WKNavigation!) {
-                webViewToLastPosition()
                 webView.fontSizePercent(appSetting.webFontSizePercent)
+                self.webViewToLastPosition(in: webView)
             }
 
             func webView(_: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
@@ -67,7 +74,12 @@ import WebKit
             }
 
             func scrollViewDidScroll(_ scrollView: UIScrollView) {
-                webView.progress = scrollView.contentOffset.y / (scrollView.contentSize.height - scrollView.bounds.height)
+                let scrollableHeight = scrollView.contentSize.height - scrollView.bounds.height
+                if scrollableHeight > 0 {
+                    webView.progress = scrollView.contentOffset.y / scrollableHeight
+                } else {
+                    webView.progress = 0
+                }
             }
 
             func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -79,11 +91,17 @@ import WebKit
         }
 
         func makeUIView(context: Context) -> WKWebView {
-            wkWebView.navigationDelegate = context.coordinator
-            wkWebView.scrollView.delegate = context.coordinator
-            wkWebView.load(content: entry.content, justify: UserDefaults.standard.bool(forKey: "justifyArticle"))
+            let webView = WKWebView(frame: .zero)
+            webView.navigationDelegate = context.coordinator
+            webView.scrollView.delegate = context.coordinator
+            webView.isOpaque = false
+            webView.backgroundColor = .clear
+            webView.scrollView.backgroundColor = .clear
+            webView.scrollView.contentInsetAdjustmentBehavior = .always
+            
+            webView.load(content: entry.titleHtml + (entry.content ?? ""), justify: UserDefaults.standard.bool(forKey: "justifyArticle"))
 
-            return wkWebView
+            return webView
         }
 
         func updateUIView(_ webView: WKWebView, context _: Context) {
@@ -95,17 +113,18 @@ import WebKit
 #if os(macOS)
     struct WebView: NSViewRepresentable {
         var entry: Entry
-        private(set) var wkWebView = WKWebView(frame: .zero)
         @EnvironmentObject var appSetting: AppSetting
+        @Binding var progress: Double
 
-        func makeNSView(context _: Context) -> WKWebView {
-            wkWebView.load(content: entry.content, justify: false)
+        func makeNSView(context: Context) -> WKWebView {
+            let webView = WKWebView(frame: .zero)
+            webView.navigationDelegate = context.coordinator
+            webView.load(content: entry.titleHtml + (entry.content ?? ""), justify: false)
 
-            return wkWebView
+            return webView
         }
 
         func updateNSView(_ nsView: WKWebView, context _: Context) {
-            nsView.load(content: entry.content, justify: false)
             nsView.fontSizePercent(appSetting.webFontSizePercent)
         }
 
@@ -186,10 +205,12 @@ struct WebView_Previews: PreviewProvider {
         Group {
             WebView(
                 entry: entry, progress: .constant(0.5)
-            ).colorScheme(.light)
+            ).environmentObject(AppSetting())
+            .colorScheme(.light)
             WebView(
                 entry: entry, progress: .constant(0.5)
-            ).colorScheme(.dark)
+            ).environmentObject(AppSetting())
+            .colorScheme(.dark)
         }
     }
 }

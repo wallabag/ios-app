@@ -23,18 +23,14 @@ struct EntryView: View {
     #endif
 
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(entry.title?.htmlUnescape() ?? "Entry")
-                .font(.title)
-                .fontWeight(.black)
-                .lineLimit(2)
-                .padding(.horizontal)
-            ProgressView(value: min(progress, 1), total: 1)
-            WebView(entry: entry, progress: $progress)
-        }
-        .addSwipeToBack {
-            dismiss()
-        }
+        WebView(entry: entry, progress: $progress)
+            .ignoresSafeArea()
+            .safeAreaInset(edge: .top) {
+                ProgressView(value: max(0, min(progress, 1)), total: 1)
+            }
+            .addSwipeToBack {
+                dismiss()
+            }
         .toolbar {
             ToolbarItem(placement: toolbarPlacement) {
                 Menu(content: {
@@ -79,6 +75,9 @@ struct EntryView: View {
             TagListFor(entry: entry)
                 .presentationDetents([.medium, .large])
         }
+        .toolbarBackground(.ultraThinMaterial, for: .bottomBar)
+        .toolbarBackground(.visible, for: .bottomBar)
+        .ignoresSafeArea(.all, edges: .bottom)
         #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
         #endif
