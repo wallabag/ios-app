@@ -1,3 +1,8 @@
+This repository is no longer accepting contributions.
+The original maintainer has shifted focus to a closed-source version (version 7.6 onwards), and the wallabag core team will not be overseeing further development of this open-source repository at that time.
+
+Please refer to the related [App Store](https://apps.apple.com/us/app/wallabag-2-official/id1170800946) page for any comment or inquiry regarding the current iOS application.
+
 # wallabag 2 official iOS [![Build Status](https://travis-ci.org/wallabag/ios-app.svg?branch=master)](https://travis-ci.org/wallabag/ios-app)
 
 <img align="left" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/78/23/c3/7823c39e-9da9-8f0b-7a13-299a2de43725/AppIcon-0-0-1x_U007epad-0-85-220.jpeg/540x540bb.jpg" alt="Wallabag 2 official" style="width: 20%; object-fit: contain;" />
